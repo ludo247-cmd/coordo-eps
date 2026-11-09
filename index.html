@@ -121,6 +121,11 @@ input[type=number]{min-height:44px;border:1px solid #CDD3DD;border-radius:10px;p
   .tabs .btn{flex:1 1 auto}
   .ptitle{font-size:22px}
 }
+.plist{display:flex;flex-direction:column;gap:10px}.pole{padding:0;gap:0}.phead{display:flex;gap:14px;align-items:center;width:100%;background:none;border:0;padding:14px 16px;cursor:pointer;font:inherit;color:inherit;min-height:64px}
+.pnum{font-size:30px;font-weight:800;color:var(--accent);width:40px;text-align:center}.pbody{padding:0 16px 8px;display:flex;flex-direction:column;gap:10px}.pole .row.noprint{padding:0 16px 14px}
+.pmis{margin:0;font-size:15px}.proles{display:flex;flex-direction:column;gap:8px}.pphase{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px}.pphase>div{border:1px solid var(--line);border-radius:10px;padding:10px 12px}
+.pphase h3,.pfoot h3{font-size:15px;margin:0 0 4px;color:var(--accent)}.pphase ul{margin:0;padding-left:18px}.pfoot{background:#F1F5FC;border-radius:10px;padding:12px 14px}.pfoot p{margin:4px 0}.pplus{margin:0;font-style:italic;border-left:3px solid #E8562B;padding-left:10px}
+.pbody[contenteditable=true]{outline:2px dashed var(--accent);outline-offset:4px;border-radius:6px}
 @media print{header.top,.noprint,#subnav,#bottombar,#drawer{display:none!important}}
 
 </style>
@@ -164,7 +169,7 @@ var o=[];var l=Array.isArray(e);for(f=n.s.c;f<=n.e.c;++f)s[f]=ya(f);for(var c=n.
 </script>
 <script>
 "use strict";
-const VERSION = '0.6.2';
+const VERSION = '0.7.0';
 const CAL = {"classes":[{"c":"6A","d":"lun","s":"08:00","e":"10:00","qz":false},{"c":"4A","d":"lun","s":"10:30","e":"12:30","qz":false},{"c":"5C","d":"lun","s":"10:30","e":"12:30","qz":false},{"c":"5A","d":"lun","s":"13:30","e":"15:30","qz":false},{"c":"6C","d":"mar","s":"08:00","e":"10:00","qz":false},{"c":"3A","d":"mar","s":"10:30","e":"12:30","qz":false},{"c":"3B","d":"mar","s":"10:30","e":"12:30","qz":false},{"c":"5B","d":"mar","s":"13:30","e":"15:30","qz":false},{"c":"6B","d":"mer","s":"10:30","e":"12:30","qz":false},{"c":"3C","d":"mer","s":"10:30","e":"12:30","qz":true},{"c":"4B","d":"mer","s":"10:30","e":"12:30","qz":true},{"c":"6A","d":"jeu","s":"08:00","e":"10:00","qz":false},{"c":"5B","d":"jeu","s":"10:00","e":"12:00","qz":true},{"c":"5A","d":"jeu","s":"10:00","e":"12:00","qz":true},{"c":"4A","d":"jeu","s":"10:00","e":"12:00","qz":true},{"c":"3A","d":"jeu","s":"10:00","e":"12:00","qz":true},{"c":"5C","d":"jeu","s":"13:30","e":"15:30","qz":true},{"c":"3B","d":"jeu","s":"13:30","e":"15:30","qz":true},{"c":"1B","d":"jeu","s":"15:30","e":"17:30","qz":false},{"c":"1A","d":"jeu","s":"15:30","e":"17:30","qz":false},{"c":"2A","d":"jeu","s":"15:30","e":"17:30","qz":false},{"c":"6C","d":"ven","s":"08:00","e":"10:00","qz":false},{"c":"3C","d":"ven","s":"10:30","e":"12:30","qz":false},{"c":"4B","d":"ven","s":"10:30","e":"12:30","qz":false},{"c":"6B","d":"ven","s":"13:30","e":"15:30","qz":false},{"c":"2B","d":"ven","s":"15:30","e":"17:30","qz":false},{"c":"Term","d":"ven","s":"15:30","e":"17:30","qz":false},{"c":"Term","d":"ven","s":"15:30","e":"17:30","qz":false}],"cal":{"2026-09-01":[[4,"DF"],[5,"Bad"],[6,"combiné"],[7,"Combiné"]],"2026-09-02":[[8,"DF"],[9,"combiné"]],"2026-09-03":[[11,"Gym"],[13,"Combiné"],[15,"Bad"],[16,"Bad"],[18,"Gym"],[19,"Bad"],[20,"DF"]],"2026-09-04":[[21,"jeux collectifs"],[22,"combiné"],[23,"VB"],[24,"jeux collectifs"],[25,"Danse"],[26,"VB"],[27,"DF"]],"2026-09-07":[[0,"DF"],[1,"DF"],[2,"Bad"],[3,"Combiné"]],"2026-09-08":[[4,"DF"],[5,"Bad"],[6,"combiné"],[7,"Combiné"]],"2026-09-09":[[8,"DF"],[10,"VB"]],"2026-09-10":[[11,"Gym"],[12,"Combiné"],[14,"DF"],[17,"combiné"],[18,"Gym"],[19,"Bad"],[20,"DF"]],"2026-09-11":[[21,"jeux collectifs"],[22,"combiné"],[23,"VB"],[24,"jeux collectifs"],[25,"Danse"],[26,"VB"],[27,"DF"]],"2026-09-14":[[0,"DF"],[1,"DF"],[2,"Bad"],[3,"Combiné"]],"2026-09-15":[[4,"DF"],[5,"Bad"],[6,"combiné"],[7,"Combiné"]],"2026-09-16":[[8,"DF"],[9,"combiné"]],"2026-09-17":[[11,"Gym"],[13,"Combiné"],[15,"Bad"],[16,"Bad"],[18,"Gym"],[19,"Bad"],[20,"DF"]],"2026-09-18":[[21,"jeux collectifs"],[22,"combiné"],[23,"VB"],[24,"jeux collectifs"],[25,"Danse"],[26,"VB"],[27,"DF"]],"2026-09-21":[[0,"DF"],[1,"DF"],[2,"Bad"],[3,"Combiné"]],"2026-09-22":[[4,"DF"],[5,"Bad"],[6,"combiné"],[7,"Combiné"]],"2026-09-23":[[8,"DF"],[10,"VB"]],"2026-09-24":[[11,"Gym"],[12,"Combiné"],[14,"DF"],[17,"combiné"],[18,"Gym"],[19,"Bad"],[20,"DF"]],"2026-09-28":[[0,"DF"],[1,"DF"],[2,"Bad"],[3,"Combiné"]],"2026-09-29":[[4,"DF"],[5,"Bad"],[6,"combiné"],[7,"Combiné"]],"2026-09-30":[[8,"DF"],[9,"combiné"]],"2026-10-08":[[11,"Gym"],[12,"Combiné"],[14,"DF"],[17,"combiné"],[18,"Gym"],[19,"Bad"],[20,"DF"]],"2026-10-09":[[21,"jeux collectifs"],[22,"combiné"],[23,"VB"],[24,"jeux collectifs"],[25,"Danse"],[26,"VB"],[27,"DF"]],"2026-10-12":[[0,"DF"],[1,"DF"],[2,"Bad"],[3,"Combiné"]],"2026-10-13":[[4,"DF"],[5,"Bad"],[6,"combiné"],[7,"Combiné"]],"2026-10-14":[[8,"DF"],[9,"combiné"]],"2026-10-15":[[11,"Gym"],[13,"Combiné"],[15,"Bad"],[16,"Bad"],[18,"Gym"],[19,"Bad"],[20,"DF"]],"2026-10-16":[[21,"jeux collectifs"],[22,"combiné"],[23,"VB"],[24,"jeux collectifs"],[25,"Danse"],[26,"VB"],[27,"DF"]],"2026-10-19":[[0,"DF"],[1,"DF"],[2,"Bad"],[3,"Combiné"]],"2026-10-20":[[4,"DF"],[5,"Bad"],[6,"combiné"],[7,"Combiné"]],"2026-10-21":[[8,"DF"],[10,"VB"]],"2026-10-22":[[11,"Gym"],[12,"Combiné"],[14,"DF"],[17,"combiné"],[18,"Gym"],[19,"Bad"],[20,"DF"]],"2026-10-23":[[21,"jeux collectifs"],[22,"combiné"],[23,"VB"],[24,"jeux collectifs"],[25,"Danse"],[26,"VB"],[27,"DF"]],"2026-10-26":[[0,"DF"],[1,"DF"],[2,"Bad"],[3,"Combiné"]],"2026-10-27":[[4,"DF"],[5,"Bad"],[6,"combiné"],[7,"Combiné"]],"2026-10-28":[[8,"DF"],[9,"combiné"]],"2026-10-29":[[11,"Gym"],[13,"Combiné"],[15,"Bad"],[16,"Bad"],[18,"Gym"],[19,"Bad"],[20,"DF"]],"2026-10-30":[[21,"jeux collectifs"],[22,"combiné"],[23,"VB"],[24,"jeux collectifs"],[25,"Danse"],[26,"VB"],[27,"DF"]],"2026-11-02":[[0,"DF"],[1,"Boxe"],[2,"Handball"],[3,"Gym"]],"2026-11-03":[[4,"DF"],[5,"Handball"],[6,"cross training"],[7,"Handball"]],"2026-11-04":[[8,"DF"],[10,"Boxe"]],"2026-11-05":[[11,"Gym"],[12,"Handball"],[14,"Boxe"],[17,"cross training"],[18,"Gym"],[19,"Bad"],[20,"DF"]],"2026-11-06":[[21,"jeux collectifs"],[22,"Handball"],[23,"Boxe"],[24,"jeux collectifs"],[25,"Danse"],[26,"VB"],[27,"DF"]],"2026-11-16":[[0,"DF"],[1,"Boxe"],[2,"Handball"],[3,"Gym"]],"2026-11-17":[[4,"DF"],[5,"Handball"],[6,"cross training"],[7,"Handball"]],"2026-11-18":[[8,"DF"],[9,"Handball"]],"2026-11-19":[[11,"Gym"],[13,"Gym"],[15,"Handball"],[16,"Handball"],[18,"Gym"],[19,"Bad"],[20,"DF"]],"2026-11-20":[[21,"jeux collectifs"],[22,"Handball"],[23,"Boxe"],[24,"jeux collectifs"],[25,"Danse"],[26,"VB"],[27,"DF"]],"2026-11-23":[[0,"DF"],[1,"Boxe"],[2,"Handball"],[3,"Gym"]],"2026-11-24":[[4,"DF"],[5,"Handball"],[6,"cross training"],[7,"Handball"]],"2026-11-25":[[8,"DF"],[10,"Boxe"]],"2026-11-26":[[11,"Gym"],[12,"Handball"],[14,"Boxe"],[17,"cross training"],[18,"Gym"],[19,"Bad"],[20,"DF"]],"2026-11-27":[[21,"jeux collectifs"],[22,"Handball"],[23,"Boxe"],[24,"jeux collectifs"],[25,"Danse"],[26,"VB"],[27,"Eval DF"]],"2026-11-30":[[0,"Danse"],[1,"Boxe"],[2,"Handball"],[3,"Gym"]],"2026-12-01":[[4,"Danse"],[5,"Handball"],[6,"cross training"],[7,"Handball"]],"2026-12-02":[[8,"Danse"],[9,"Handball"]],"2026-12-03":[[11,"jeux collectifs"],[13,"Gym"],[15,"Handball"],[16,"Handball"],[18,"Bad"],[19,"cross training"],[20,"Danse"]],"2026-12-04":[[21,"Gym"],[22,"Handball"],[23,"Boxe"],[24,"Basket"],[25,"VB"],[26,"Eval VB"],[27,"Danse"]],"2026-12-07":[[0,"Danse"],[1,"Boxe"],[2,"Handball"],[3,"Gym"]],"2026-12-08":[[4,"Danse"],[5,"Handball"],[6,"cross training"],[7,"Handball"]],"2026-12-09":[[8,"Danse"],[10,"Boxe"]],"2026-12-10":[[11,"jeux collectifs"],[12,"Handball"],[14,"Boxe"],[17,"cross training"],[18,"Bad"],[19,"cross training"],[20,"Danse"]],"2026-12-11":[[21,"Gym"],[22,"Handball"],[23,"Boxe"],[24,"Basket"],[25,"VB"],[26,"cross training"],[27,"Danse"]],"2026-12-14":[[0,"Danse"],[1,"Boxe"],[2,"Handball"],[3,"Gym"]],"2026-12-15":[[4,"Danse"],[5,"Handball"],[6,"cross training"],[7,"Handball"]],"2026-12-16":[[8,"Danse"],[9,"Handball"]],"2026-12-17":[[11,"jeux collectifs"],[13,"Gym"],[15,"Handball"],[16,"Handball"],[18,"Bad"],[19,"cross training"],[20,"Danse"]],"2026-12-18":[[21,"Gym"],[22,"Handball"],[23,"Boxe"],[24,"Basket"],[25,"VB"],[26,"cross training"],[27,"Danse"]],"2027-01-04":[[0,"Danse"],[1,"Boxe"],[2,"Handball"],[3,"Gym"]],"2027-01-05":[[4,"Danse"],[5,"Handball"],[6,"cross training"],[7,"Handball"]],"2027-01-06":[[8,"Danse"],[10,"Boxe"]],"2027-01-07":[[11,"jeux collectifs"],[12,"Handball"],[14,"Boxe"],[17,"cross training"],[18,"Bad"],[19,"cross training"],[20,"Danse"]],"2027-01-08":[[21,"Gym"],[22,"Handball"],[23,"Boxe"],[24,"Basket"],[25,"VB"],[26,"cross training"],[27,"Danse"]],"2027-01-11":[[0,"Danse"],[1,"Boxe"],[2,"Handball"],[3,"Gym"]],"2027-01-12":[[4,"Danse"],[5,"Handball"],[6,"cross training"],[7,"Handball"]],"2027-01-13":[[8,"Danse"],[9,"Handball"]],"2027-01-14":[[11,"jeux collectifs"],[13,"Gym"],[15,"Handball"],[16,"Handball"],[18,"Bad"],[19,"cross training"],[20,"Danse"]],"2027-01-15":[[21,"Gym"],[22,"Handball"],[23,"Boxe"],[24,"Basket"],[25,"VB"],[26,"cross training"],[27,"Danse"]],"2027-01-18":[[0,"Danse"],[1,"VB"],[2,"Gym"],[3,"Handball"]],"2027-01-19":[[4,"Danse"],[5,"cross training"],[6,"Handball"],[7,"Gym"]],"2027-01-20":[[8,"Danse"],[10,"Danse"]],"2027-01-21":[[11,"jeux collectifs"],[12,"Gym"],[14,"VB"],[17,"Handball"],[18,"Bad"],[19,"cross training"],[20,"Danse"]],"2027-01-22":[[21,"Gym"],[22,"cross training"],[23,"Danse"],[24,"Basket"],[25,"VB"],[26,"cross training"],[27,"Danse"]],"2027-01-25":[[0,"Danse"],[1,"VB"],[2,"Gym"],[3,"Handball"]],"2027-01-26":[[4,"Danse"],[5,"cross training"],[6,"Handball"],[7,"Gym"]],"2027-01-27":[[8,"Danse"],[9,"cross training"]],"2027-01-28":[[11,"jeux collectifs"],[13,"Handball"],[15,"cross training"],[16,"Gym"],[18,"Bad"],[19,"cross training"],[20,"Danse"]],"2027-01-29":[[21,"Gym"],[22,"cross training"],[23,"Danse"],[24,"Basket"],[25,"VB"],[26,"cross training"],[27,"Danse"]],"2027-02-01":[[0,"Danse"],[1,"VB"],[2,"Gym"],[3,"Handball"]],"2027-02-02":[[4,"Danse"],[5,"cross training"],[6,"Handball"],[7,"Gym"]],"2027-02-03":[[8,"Danse"],[10,"Danse"]],"2027-02-04":[[11,"jeux collectifs"],[12,"Gym"],[14,"VB"],[17,"Handball"],[18,"Bad"],[19,"cross training"],[20,"Danse"]],"2027-02-22":[[0,"Danse"],[1,"VB"],[2,"Gym"],[3,"Handball"]],"2027-02-23":[[4,"Danse"],[5,"cross training"],[6,"Handball"],[7,"Gym"]],"2027-02-24":[[8,"Danse"],[9,"cross training"]],"2027-02-25":[[11,"jeux collectifs"],[13,"Handball"],[15,"cross training"],[16,"Gym"],[18,"Bad"],[19,"cross training"],[20,"Danse"]],"2027-02-26":[[21,"Gym"],[22,"cross training"],[23,"Danse"],[24,"Basket"],[25,"VB"],[26,"cross training"],[27,"Danse"]],"2027-03-01":[[0,"Danse"],[1,"VB"],[2,"Gym"],[3,"Handball"]],"2027-03-02":[[4,"Danse"],[5,"cross training"],[6,"Handball"],[7,"Gym"]],"2027-03-03":[[8,"Danse"],[10,"Danse"]],"2027-03-04":[[11,"jeux collectifs"],[12,"Gym"],[14,"VB"],[17,"Handball"],[18,"Bad"],[19,"cross training"],[20,"Danse"]],"2027-03-05":[[21,"Gym"],[22,"cross training"],[23,"Danse"],[24,"Basket"],[25,"VB"],[26,"Eval Cross training"],[27,"Eval Danse"]],"2027-03-08":[[0,"Basket"],[1,"VB"],[2,"Gym"],[3,"Handball"]],"2027-03-09":[[4,"Basket"],[5,"cross training"],[6,"Handball"],[7,"Gym"]],"2027-03-10":[[8,"Gym"],[9,"cross training"]],"2027-03-11":[[11,"Natation"],[13,"Handball"],[15,"cross training"],[16,"Gym"],[18,"cross training"],[19,"Gym"],[20,"VB"]],"2027-03-12":[[21,"Natation"],[22,"cross training"],[23,"Danse"],[24,"Natation"],[25,"DF"],[26,"combiné"],[27,"Bad"]],"2027-03-15":[[0,"Basket"],[1,"VB"],[2,"Gym"],[3,"Handball"]],"2027-03-16":[[4,"Basket"],[5,"cross training"],[6,"Handball"],[7,"Gym"]],"2027-03-17":[[8,"Gym"],[10,"Danse"]],"2027-03-18":[[11,"Natation"],[12,"Gym"],[14,"VB"],[17,"Handball"],[18,"cross training"],[19,"Gym"],[20,"VB"]],"2027-03-19":[[21,"Natation"],[22,"cross training"],[23,"Danse"],[24,"Natation"],[25,"DF"],[26,"combiné"],[27,"Bad"]],"2027-03-22":[[0,"Basket"],[1,"VB"],[2,"Gym"],[3,"Handball"]],"2027-03-23":[[4,"Basket"],[5,"cross training"],[6,"Handball"],[7,"Gym"]],"2027-03-24":[[8,"Gym"],[9,"cross training"]],"2027-03-25":[[11,"Natation"],[13,"Handball"],[15,"cross training"],[16,"Gym"],[18,"cross training"],[19,"Gym"],[20,"VB"]],"2027-03-26":[[21,"Natation"],[22,"cross training"],[23,"Danse"],[24,"Natation"],[25,"DF"],[26,"combiné"],[27,"Bad"]],"2027-03-29":[[0,"Basket"],[1,"Danse"],[2,"Combiné"],[3,"Bad"]],"2027-03-30":[[4,"Basket"],[5,"combiné"],[6,"Bad"],[7,"Bad"]],"2027-03-31":[[8,"Gym"],[10,"DF"]],"2027-04-01":[[11,"Natation"],[12,"Bad"],[14,"Danse"],[17,"Bad"],[18,"cross training"],[19,"Gym"],[20,"VB"]],"2027-04-06":[[4,"Basket"],[5,"combiné"],[6,"Bad"],[7,"Bad"]],"2027-04-07":[[8,"Gym"],[9,"Bad"]],"2027-04-08":[[11,"Natation"],[13,"Bad"],[15,"combiné"],[16,"Combiné"],[18,"cross training"],[19,"Gym"],[20,"VB"]],"2027-04-09":[[21,"Natation"],[22,"Bad"],[23,"DF"],[24,"Natation"],[25,"DF"],[26,"combiné"],[27,"Bad"]],"2027-04-12":[[0,"Basket"],[1,"Danse"],[2,"Combiné"],[3,"Bad"]],"2027-04-13":[[4,"Basket"],[5,"combiné"],[6,"Bad"],[7,"Bad"]],"2027-04-14":[[8,"Gym"],[10,"DF"]],"2027-04-15":[[11,"Natation"],[12,"Bad"],[14,"Danse"],[17,"Bad"],[18,"cross training"],[19,"Gym"],[20,"VB"]],"2027-04-16":[[21,"Natation"],[22,"Bad"],[23,"DF"],[24,"Natation"],[25,"DF"],[26,"combiné"],[27,"Bad"]],"2027-04-19":[[0,"Basket"],[1,"Danse"],[2,"Combiné"],[3,"Bad"]],"2027-04-20":[[4,"Basket"],[5,"combiné"],[6,"Bad"],[7,"Bad"]],"2027-04-21":[[8,"Gym"],[9,"Bad"]],"2027-04-22":[[11,"Natation"],[13,"Bad"],[15,"combiné"],[16,"Combiné"],[18,"cross training"],[19,"Gym"],[20,"VB"]],"2027-04-23":[[21,"Natation"],[22,"Bad"],[23,"DF"],[24,"Natation"],[25,"DF"],[26,"combiné"],[27,"Bad"]],"2027-05-10":[[0,"Basket"],[1,"Danse"],[2,"Combiné"],[3,"Bad"]],"2027-05-11":[[4,"Basket"],[5,"combiné"],[6,"Bad"],[7,"Bad"]],"2027-05-12":[[8,"Gym"],[10,"DF"]],"2027-05-13":[[11,"Natation"],[12,"Bad"],[14,"Danse"],[17,"Bad"],[18,"cross training"],[19,"Gym"],[20,"VB"]],"2027-05-14":[[21,"Natation"],[22,"Bad"],[23,"DF"],[24,"Natation"],[25,"DF"],[26,"combiné"],[27,"Bad"]],"2027-05-17":[[0,"Basket"],[1,"Danse"],[2,"Combiné"],[3,"Bad"]],"2027-05-18":[[4,"Basket"],[5,"combiné"],[6,"Bad"],[7,"Bad"]],"2027-05-19":[[8,"Gym"],[9,"Bad"]],"2027-05-20":[[11,"Natation"],[13,"Bad"],[15,"combiné"],[16,"Combiné"],[18,"cross training"],[19,"Gym"],[20,"VB"]],"2027-05-21":[[21,"Natation"],[22,"Bad"],[23,"DF"],[24,"Natation"],[25,"DF"],[26,"combiné"],[27,"Bad"]],"2027-05-24":[[0,"Basket"],[1,"Danse"],[2,"Combiné"],[3,"Bad"]],"2027-05-25":[[4,"Basket"],[5,"combiné"],[6,"Bad"],[7,"Bad"]],"2027-05-26":[[8,"Gym"],[10,"DF"]],"2027-05-27":[[11,"Natation"],[12,"Bad"],[14,"Danse"],[17,"Bad"],[18,"cross training"],[19,"Gym"],[20,"VB"]],"2027-05-28":[[21,"Natation"],[22,"Bad"],[23,"DF"],[24,"Natation"],[25,"DF"],[26,"Eval Combiné"],[27,"Eval Bad"]],"2027-05-31":[[0,"Basket"],[1,"Danse"],[2,"Combiné"],[3,"Bad"]],"2027-06-01":[[4,"Basket"],[5,"combiné"],[6,"Bad"],[7,"Bad"]],"2027-06-02":[[8,"Gym"],[9,"Bad"]],"2027-06-03":[[11,"jeux collectifs"],[13,"Bad"],[15,"combiné"],[16,"Combiné"],[18,"cross training"],[19,"Gym"],[20,"VB"]],"2027-06-04":[[21,"Natation"],[22,"Bad"],[23,"DF"],[24,"jeux collectifs"],[25,"DF"]]},"feries":["2026-09-25","2027-04-02","2027-04-05","2027-06-09"],"weeks":{"2026-08-31":1,"2026-09-07":2,"2026-09-14":1,"2026-09-21":2,"2026-09-28":1,"2026-10-05":2,"2026-10-12":1,"2026-10-19":2,"2026-10-26":1,"2026-11-02":2,"2026-11-16":1,"2026-11-23":2,"2026-11-30":1,"2026-12-07":2,"2026-12-14":1,"2027-01-04":2,"2027-01-11":1,"2027-01-18":2,"2027-01-25":1,"2027-02-01":2,"2027-02-22":1,"2027-03-01":2,"2027-03-08":1,"2027-03-15":2,"2027-03-22":1,"2027-03-29":2,"2027-04-05":1,"2027-04-12":2,"2027-04-19":1,"2027-05-10":2,"2027-05-17":1,"2027-05-24":2,"2027-05-31":1,"2027-06-07":2,"2027-06-14":1,"2027-06-21":2,"2027-06-28":1}};
 const $ = (s, el = document) => el.querySelector(s);
 const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
@@ -2297,6 +2302,166 @@ function addPreset(k) {
   const p = { id: 'pj' + Date.now(), titre: P.titre, theme: P.theme, format: P.format, amb: P.amb, niveaux: P.niveaux, parNiveau: P.parNiveau, inst: P.inst, date: P.date, fils: P.fils, s: { ...P.s }, todo: P.todo.map(([d, t, q]) => ({ d, t, qui: q, ok: false })), src: P.src, created: iso(new Date()) };
   PROJ.unshift(p); saveProj(); return p;
 }
+
+/* ================= v0.7.0 : fiches des pôles de l'AS foot ================= */
+const POLES_INTRO = [
+  ['La solidarité avant tout', 'Prendre une responsabilité ne dispense personne d’aider partout : rangement, ambiance, jeu, dans les deux équipes. Les AS filles et garçons ne seront plus autant séparées.'],
+  ['Plusieurs élèves par pôle', 'Pour remplacer les absents et avoir des responsables au Prozap comme à l’entraînement. Il faut des filles et des garçons dans chaque pôle.'],
+  ['Tu choisis ton investissement', 'Tu décides jusqu’où tu t’impliques. Les rôles sont un point de départ : propose tes idées pour faire vivre ton pôle.']
+];
+const POLES_AS = [
+  { id: 'jeu', n: 1, t: 'Pôle Jeu', tag: 'Capitaines de l’attaque et de la défense',
+    mission: 'Un capitaine a une vision d’ensemble du jeu et encourage tout le monde. Il connaît les principes d’organisation de l’équipe, les rappelle à ceux qui les oublient en match et aide les coachs à organiser certains exercices.',
+    roles: [['Capitaine de l’attaque', 'À chaque séance', 'Maîtrise les principes d’attaque, aide à organiser des exercices, encourage et donne un conseil à chaque pause, à la mi-temps et en fin de match.'], ['Capitaine de la défense', 'À chaque séance', 'Même rôle pour les principes de défense.']],
+    avant: ['Relire les 2 principes du jour avec le coach', 'Les annoncer à l’équipe pendant l’échauffement'],
+    pendant: ['À chaque arrêt : 1 encouragement + 1 principe, pas plus', 'Mi-temps : trois questions à l’équipe (Qu’est-ce qui marche ? Qu’est-ce qui coince ? Quel principe on applique ?)'],
+    apres: ['Dire au coach le principe le mieux réussi et celui à retravailler'],
+    foot: { titre: 'La roue du jeu : 4 moments, des règles simples', items: [
+      ['Attaque placée · 1. Écarter', 'Dès qu’on a le ballon, les joueurs sans ballon s’écartent sur les côtés pour étirer l’adversaire.'],
+      ['Attaque placée · 2. Garder et regarder', 'À la réception, bloquer la balle sous le pied, lever la tête, puis donner.'],
+      ['Attaque placée · 3. Changer de couloir', 'Reçu au centre : je cherche un partenaire sur le côté. Reçu sur le côté : je joue vers l’avant ou vers l’axe.'],
+      ['Attaque placée · 4. Passe et va', 'Passe courte au sol, puis je repars tout de suite dans l’espace libre pour être de nouveau une solution.'],
+      ['Transition à la perte', 'Dès la perte : courir se placer entre le ballon et notre but pour fermer le centre.'],
+      ['Défense placée', 'Objectif n°1 : revenir protéger son but, pas courir après le ballon.']] },
+    plus: 'Capitaine officiel : désigné par un vote ou par les coachs, parmi les capitaines de l’attaque et de la défense. Les capitaines peuvent aussi aider à coacher une autre équipe au Prozap.' },
+  { id: 'prepa', n: 2, t: 'Pôle Prépa physique', tag: 'L’échauffement, c’est vous',
+    mission: 'S’occuper surtout de l’échauffement. Avec le temps, choisir les exercices et la musique qui va avec.',
+    roles: [['Préparateur ou préparatrice physique', 'À chaque séance', 'Mène l’échauffement du groupe.'], ['Choix des exercices', 'De temps en temps', 'Propose et prépare de nouveaux exercices.'], ['DJ de l’échauffement', 'De temps en temps', 'Prépare la playlist, validée par les coachs.']],
+    avant: ['Vérifier la météo et la qualité de l’air : par grand froid, échauffement plus long', 'Préparer plots et ballons de l’échauffement'],
+    pendant: ['Parler fort, montrer l’exercice, compter les répétitions', 'Arrêter quelqu’un qui a mal et prévenir le coach'],
+    apres: ['Noter ce qui a plu et ce qui était trop long'],
+    foot: { titre: 'Un échauffement foot en 15 minutes', items: [
+      ['1. Mise en train · 3 min', 'Conduite de balle libre dans un carré, en changeant de pied et de direction.'],
+      ['2. Mobilité · 3 min', 'Montées de genoux, talons-fesses, pas chassés, ouverture et fermeture de hanches.'],
+      ['3. Gammes avec ballon · 4 min', 'Passes à deux, contrôle orienté, passe et va.'],
+      ['4. Accélérations · 3 min', '3 ou 4 sprints courts de 10 à 15 m, de plus en plus vite.'],
+      ['5. Conservation · 2 à 3 min', 'Toro à 4 contre 1 : on se met dans le rythme du match.']] },
+    plus: 'Musique : sans paroles grossières, volume raisonnable, playlist validée par les coachs.' },
+  { id: 'stats', n: 3, t: 'Pôle Stats', tag: 'Les chiffres du match',
+    mission: 'Devenir spécialiste de l’application d’observation d’équipe : relever ce qui se passe pendant les matchs et aider l’équipe à voir ses progrès.',
+    roles: [['Statisticien ou statisticienne', 'À chaque séance', 'Fait les relevés en match avec l’application.'], ['Vidéo', 'De temps en temps', 'Filme quelques séquences de jeu pour les analyser ensemble.']],
+    avant: ['Choisir avec le capitaine 2 ou 3 choses à observer, liées aux principes du jour', 'Vérifier la batterie de la tablette ou du téléphone'],
+    pendant: ['Relever sans commenter : on compte, on ne juge pas', 'Noter les temps forts (minute, action)'],
+    apres: ['Donner 1 chiffre positif et 1 chiffre à améliorer à l’équipe'],
+    foot: { titre: 'Quoi relever en match', items: [
+      ['Tirs', 'Cadrés et non cadrés, et d’où ils partent.'],
+      ['Passes à la suite', 'La plus longue série de passes réussies : elle montre si on « garde et regarde ».'],
+      ['Récupérations et pertes', 'Où on gagne le ballon, où on le perd.'],
+      ['Buts et passes décisives', 'Et qui a participé à l’action.'],
+      ['Temps de jeu', 'Vérifier que chacun joue à peu près autant.']] },
+    plus: 'Vidéo : 2 minutes de jeu suffisent pour une analyse. On ne filme et on ne diffuse qu’avec l’accord des personnes et dans le respect du droit à l’image.' },
+  { id: 'arbitrage', n: 4, t: 'Pôle Arbitrage', tag: 'Siffler juste',
+    mission: 'Arbitrer les matchs à chaque séance et faire des tests sur le règlement pour progresser.',
+    roles: [['Arbitre de séance', 'À chaque séance', 'Arbitre les matchs d’entraînement, à tour de rôle.'], ['Validation nationale d’arbitre', 'Sur projet', 'Se former au Prozap pour passer la validation (à mettre en valeur sur ton CV).']],
+    avant: ['Annoncer les règles du match : durée, taille du terrain, hors-jeu ou non', 'Prendre sifflet et chronomètre'],
+    pendant: ['Siffler fort, montrer la direction avec le bras', 'Rester calme, expliquer sa décision en une phrase'],
+    apres: ['Faire le point avec le coach sur une décision difficile'],
+    foot: { titre: 'Les bases du règlement et les gestes', items: [
+      ['Touche', 'À deux mains, ballon lancé de derrière la tête, les deux pieds au sol.'],
+      ['Coup franc direct ou indirect', 'Indirect : bras levé jusqu’à ce que le ballon soit touché par un deuxième joueur.'],
+      ['Fautes', 'Pousser, tenir, faire un croche-pied, charger dangereusement, toucher volontairement le ballon de la main.'],
+      ['Avantage', 'Si l’équipe qui a subi la faute garde une bonne occasion, on laisse jouer : les deux bras tendus vers l’avant.'],
+      ['Corner et 6 mètres', 'Bras vers le point de corner, ou vers la surface de but.'],
+      ['Hors-jeu', 'Selon le format du match : souvent supprimé en jeu réduit à l’entraînement, à annoncer avant.']] },
+    plus: 'Au Prozap : pôle arbitrage professionnel avec une validation nationale d’arbitre.' },
+  { id: 'logistique', n: 5, t: 'Pôle Logistique', tag: 'Le matériel et les terrains',
+    mission: 'Coordonner le rangement et la gestion du matériel. Le ou la responsable organise, et tout le monde range : il ou elle ne range pas à la place des autres et n’est pas responsable des pertes des autres.',
+    roles: [['Responsable matériel', 'À chaque séance', 'Vérifie que le matériel sort et revient, répartit le rangement.'], ['Matériel des matchs', 'Sur projet', 'Prépare et vérifie le matériel avant les matchs et les compétitions.'], ['Mise en place des terrains', 'De temps en temps', 'Aide à installer buts et plots sur la partie de terrain prévue.']],
+    avant: ['Compter les ballons à la sortie du local', 'Installer les buts mobiles et les plots sur la partie de terrain du groupe'],
+    pendant: ['Garder les chasubles rangées par couleur', 'Signaler tout matériel abîmé'],
+    apres: ['Recompter les ballons, répartir le rangement', 'Matériel abîmé : le signaler dans l’app (Matériel › Incidents), photo à l’appui'],
+    foot: { titre: 'La check-list matériel foot', items: [
+      ['Ballons', 'Nombre sorti = nombre rentré. Pompe et aiguille dans le sac.'],
+      ['Chasubles', 'Par couleur, une couleur par équipe, lavage à prévoir.'],
+      ['Buts', 'Buts à 7 fixes, buts mobiles et mini-buts : bien lestés ou fixés avant de jouer.'],
+      ['Plots et coupelles', 'Délimiter les terrains à 7 ou à 5.'],
+      ['Eau', 'Chacun sa gourde, surtout en septembre et en juin.']] },
+    plus: 'Un but mobile mal fixé peut basculer : on ne s’y suspend jamais.' },
+  { id: 'com', n: 6, t: 'Pôle Com’', tag: 'Faire vivre l’AS dans l’établissement',
+    mission: 'Informer les membres, afficher les photos des équipes, raconter les événements et trouver d’autres idées pour faire vivre l’AS, et pourquoi pas les autres AS.',
+    roles: [['Community manager', 'De temps en temps', 'Prépare les publications de l’AS foot, validées par les coachs.'], ['Communication interne', 'De temps en temps', 'Fait passer les infos aux membres : horaires, matchs, rappels.'], ['Photos des équipes', 'De temps en temps', 'Prend et affiche les photos des équipes.'], ['Reporter', 'Sur projet', 'Raconte les matchs et les événements.']],
+    avant: ['Vérifier qui a donné son accord pour les photos', 'Préparer le rappel de la semaine (date, heure, lieu)'],
+    pendant: ['Photos de groupe et d’action, sans gêner le jeu'],
+    apres: ['Écrire la publication et la faire valider par un coach avant de la diffuser'],
+    foot: { titre: 'Une publication de match en 4 lignes', items: [
+      ['1. Le résultat', 'Score, adversaire, lieu.'],
+      ['2. Le moment fort', 'Une action ou un but, raconté simplement.'],
+      ['3. Le collectif', 'Une phrase sur l’équipe et l’esprit du match, pas seulement sur les buteurs.'],
+      ['4. La suite', 'Prochain match ou prochain entraînement.']] },
+    plus: 'Les photos ne sont publiées ou affichées qu’avec l’accord des personnes concernées et dans le respect des règles de l’établissement sur le droit à l’image.' },
+  { id: 'evenements', n: 7, t: 'Pôle Événements', tag: 'Plus de matchs, plus de moments',
+    mission: 'Organiser des moments en dehors des entraînements et du Prozap, pour que tout le monde puisse jouer, même celles et ceux qui n’iront pas à Bangkok.',
+    roles: [['Sortie de l’AS', 'Sur projet', 'Imaginer et préparer une sortie pour l’AS.'], ['Foot des filles en primaire', 'Sur projet', 'Organiser un événement pour donner envie aux filles du primaire de jouer au foot (projet « Elles jouent ! »).'], ['Recherche de matchs', 'Sur projet', 'Aider à trouver des matchs contre d’autres équipes, hors Prozap.']],
+    avant: ['Choisir la date avec les coachs, vérifier que le terrain est libre', 'Préparer le message d’invitation (les coachs l’envoient)'],
+    pendant: ['Accueillir l’autre équipe, présenter les arbitres', 'Tenir le planning des matchs'],
+    apres: ['Remercier l’équipe invitée, donner le score au pôle Com’'],
+    foot: { titre: 'Organiser un mini-tournoi', items: [
+      ['Format', '4 équipes en poule : 6 matchs. Matchs de 8 minutes sur 2 terrains = environ 30 minutes de jeu.'],
+      ['Équipes', 'Mélangées et équilibrées ; un capitaine et un arbitre par match.'],
+      ['Points', 'Victoire 3, nul 1, défaite 0 ; prix du fair-play en plus.'],
+      ['Check-list', 'Terrain réservé, autorisation de la direction, arbitres, matériel, eau, photos, message aux familles.']] },
+    plus: 'Les matchs contre d’autres établissements passent par les coachs : l’app prépare les messages en français, en anglais et en chinois.' },
+  { id: 'representants', n: 8, t: 'Pôle Représentants', tag: 'La voix des élèves au bureau de l’AS',
+    mission: 'Représenter les élèves de l’AS foot au bureau de l’AS : faire remonter les idées, les demandes et les retours, puis expliquer à l’équipe ce qui a été décidé.',
+    roles: [['Représentant ou représentante au bureau de l’AS', 'De temps en temps', 'Participe aux réunions du bureau de l’AS si tu es élu ou élue.']],
+    avant: ['Recueillir les idées : 5 minutes en fin d’entraînement ou une boîte à idées', 'Les classer : urgent, important, plus tard'],
+    pendant: ['Présenter les idées au nom de l’équipe, pas en son nom propre'],
+    apres: ['Compte rendu en 3 phrases à l’équipe : ce qui a été demandé, ce qui a été décidé, ce qui reste à faire'],
+    foot: { titre: 'Les sujets qui reviennent souvent', items: [
+      ['Les entraînements', 'Ce qui plaît, ce qui manque (plus de matchs, travail par poste…).'],
+      ['Les compétitions', 'Qui part, comment on choisit, comment les autres jouent aussi.'],
+      ['La vie du groupe', 'Ambiance, mélange filles-garçons, accueil des nouveaux.'],
+      ['Le matériel et les tenues', 'Ce qui manque, le futur maillot.']] },
+    plus: 'Tu représentes tout le monde, y compris ceux qui parlent peu : pense à leur demander leur avis.' }
+];
+let POLV = { open: null, edit: false };
+const polesEdits = () => LS.get('polesEdits', {});
+function poleBody(p) {
+  const L = a => a.map(x => `<li>${esc(x)}</li>`).join('');
+  return `<p class="pmis">${esc(p.mission)}</p>
+    <div class="proles">${p.roles.map(([r, f, w]) => `<div><strong>${esc(r)}</strong> <span class="chip ${f === 'À chaque séance' ? 'ca4' : f === 'Sur projet' ? 'ca1' : 'ca0'}">${esc(f)}</span><br><span class="muted">${esc(w)}</span></div>`).join('')}</div>
+    <div class="pphase"><div><h3>Avant</h3><ul>${L(p.avant)}</ul></div><div><h3>Pendant</h3><ul>${L(p.pendant)}</ul></div><div><h3>Après</h3><ul>${L(p.apres)}</ul></div></div>
+    <div class="pfoot"><h3>Côté foot · ${esc(p.foot.titre)}</h3>${p.foot.items.map(([a, b]) => `<p><strong>${esc(a)}</strong> · ${esc(b)}</p>`).join('')}</div>
+    <p class="pplus">${esc(p.plus)}</p>`;
+}
+const poleHTML = p => polesEdits()[p.id] || poleBody(p);
+VIEWS.poles = function () {
+  const app = $('#app');
+  app.innerHTML = `<main>
+    <div class="row" style="justify-content:space-between"><div><h1>Pôles de l’AS foot</h1><span class="muted">Une fiche par responsabilité, tirée du projet AS foot 2026-2027, avec ce qu’il faut savoir côté foot.</span></div>
+      <div class="row"><button class="btn go" id="pl_all">Imprimer les 8 fiches (A4)</button><button class="btn ${POLV.edit ? 'on' : ''}" id="pl_ed">${POLV.edit ? 'Terminer les modifications' : 'Modifier les textes'}</button></div></div>
+    <div class="pgrid">${POLES_INTRO.map(([t, d]) => `<div class="card"><strong>${esc(t)}</strong><span class="muted">${esc(d)}</span></div>`).join('')}</div>
+    ${POLV.edit ? '<div class="banner">Clique dans une fiche pour modifier son texte ; c’est enregistré sur cet appareil quand tu quittes la fiche. « Texte d’origine » annule tes changements.</div>' : ''}
+    <div class="plist">${POLES_AS.map(p => `<article class="card pole ${POLV.open === p.id ? 'open' : ''}">
+      <button class="phead" data-pl="${p.id}" aria-expanded="${POLV.open === p.id}"><span class="pnum">${p.n}</span><span style="flex:1;text-align:left"><strong style="font-size:18px">${esc(p.t)}</strong><br><span class="muted">${esc(p.tag)}</span></span><span aria-hidden="true">${POLV.open === p.id ? '▲' : '▼'}</span></button>
+      ${POLV.open === p.id ? `<div class="pbody" data-pb="${p.id}" ${POLV.edit ? 'contenteditable="true"' : ''}>${poleHTML(p)}</div>
+      <div class="row noprint"><button class="btn go" data-plp="${p.id}">Imprimer cette fiche</button>${polesEdits()[p.id] ? `<button class="btn" data-plr="${p.id}">Texte d’origine</button>` : ''}</div>` : ''}
+    </article>`).join('')}</div>
+  </main>`;
+  app.querySelectorAll('[data-pl]').forEach(b => b.onclick = () => { POLV.open = POLV.open === b.dataset.pl ? null : b.dataset.pl; VIEWS.poles(); });
+  $('#pl_ed').onclick = () => { POLV.edit = !POLV.edit; if (POLV.edit && !POLV.open) POLV.open = POLES_AS[0].id; VIEWS.poles(); };
+  app.querySelectorAll('[data-pb]').forEach(d => d.addEventListener('blur', () => { if (!POLV.edit) return; const e = polesEdits(); e[d.dataset.pb] = d.innerHTML; LS.set('polesEdits', e); }));
+  app.querySelectorAll('[data-plr]').forEach(b => b.onclick = () => { const e = polesEdits(); delete e[b.dataset.plr]; LS.set('polesEdits', e); VIEWS.poles(); });
+  app.querySelectorAll('[data-plp]').forEach(b => b.onclick = () => printPoles([POLES_AS.find(p => p.id === b.dataset.plp)]));
+  $('#pl_all').onclick = () => printPoles(POLES_AS);
+};
+function printPoles(list) {
+  const w = window.open('', '_blank'); if (!w) { alertMsg('Autorise les fenêtres pour imprimer.'); return; }
+  w.document.write(`<!doctype html><html lang="fr"><head><meta charset="utf-8"><title>Pôles de l’AS foot</title><style>
+    @page{size:A4;margin:13mm}body{font:11pt/1.4 Calibri,Carlito,system-ui,sans-serif;color:#1B2330;margin:0}
+    .f{break-after:page}.f:last-child{break-after:auto}
+    .h{display:flex;gap:4mm;align-items:center;border-bottom:3px solid #1F4FA8;padding-bottom:3mm;margin-bottom:4mm}.n{font-size:30pt;font-weight:700;color:#1F4FA8;line-height:1}.h h1{margin:0;font-size:20pt}.h p{margin:0;color:#5A6578}
+    .pmis{font-size:12pt;margin:0 0 3mm}.proles div{margin-bottom:2mm}.chip{font-size:8pt;font-weight:700;border:1px solid #9AA6B8;border-radius:10mm;padding:0 2mm}.muted{color:#5A6578}
+    .pphase{display:grid;grid-template-columns:1fr 1fr 1fr;gap:3mm;margin:3mm 0}.pphase div{border:1px solid #D7DCE4;border-radius:2mm;padding:2mm 3mm}h3{font-size:12pt;margin:0 0 1mm;color:#1F4FA8}ul{margin:0;padding-left:4mm}
+    .pfoot{background:#F1F5FC;border-radius:2mm;padding:3mm 4mm}.pfoot p{margin:1mm 0}.pplus{font-style:italic;margin-top:3mm;border-left:3px solid #E8562B;padding-left:3mm}
+    .ft{margin-top:4mm;font-size:9pt;color:#5A6578}</style></head><body>
+    ${list.map(p => `<section class="f"><div class="h"><span class="n">${p.n}</span><div><h1>${esc(p.t)}</h1><p>${esc(p.tag)}</p></div></div>${poleHTML(p)}<p class="ft">AS Football · LFIP · 2026-2027 · La solidarité avant tout : chacun range, encourage et joue.</p></section>`).join('')}
+    <script>window.onload=()=>setTimeout(()=>window.print(),300)<\/script></body></html>`);
+  w.document.close();
+}
+PROFILS.eps.views.push('poles'); PROFILS.as.views.push('poles');
+SECTIONS.find(s => s.k === 'eq').views.splice(2, 0, 'poles');
+VLAB.poles = 'Pôles de l’AS';
 
 /* --- Réglages --- */
 VIEWS.reglages = function () {
