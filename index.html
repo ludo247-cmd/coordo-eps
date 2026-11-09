@@ -83,6 +83,7 @@ body.tv{background:#10151F}
   <nav aria-label="Menu principal">
     <a href="#ecran" data-v="ecran">Grand écran</a>
     <a href="#planning" data-v="planning">Planning</a>
+    <a href="#generateur" data-v="generateur">Générateur</a>
     <a href="#incidents" data-v="incidents">Incidents</a>
     <a href="#as" data-v="as">AS (privé)</a>
     <a href="#reglages" data-v="reglages">Réglages</a>
@@ -116,7 +117,7 @@ var o=[];var l=Array.isArray(e);for(f=n.s.c;f<=n.e.c;++f)s[f]=ya(f);for(var c=n.
 </script>
 <script>
 "use strict";
-const VERSION = '0.1.0';
+const VERSION = '0.2.0';
 const CAL = {"classes":[{"c":"6A","d":"lun","s":"08:00","e":"10:00","qz":false},{"c":"4A","d":"lun","s":"10:30","e":"12:30","qz":false},{"c":"5C","d":"lun","s":"10:30","e":"12:30","qz":false},{"c":"5A","d":"lun","s":"13:30","e":"15:30","qz":false},{"c":"6C","d":"mar","s":"08:00","e":"10:00","qz":false},{"c":"3A","d":"mar","s":"10:30","e":"12:30","qz":false},{"c":"3B","d":"mar","s":"10:30","e":"12:30","qz":false},{"c":"5B","d":"mar","s":"13:30","e":"15:30","qz":false},{"c":"6B","d":"mer","s":"10:30","e":"12:30","qz":false},{"c":"3C","d":"mer","s":"10:30","e":"12:30","qz":true},{"c":"4B","d":"mer","s":"10:30","e":"12:30","qz":true},{"c":"6A","d":"jeu","s":"08:00","e":"10:00","qz":false},{"c":"5B","d":"jeu","s":"10:00","e":"12:00","qz":true},{"c":"5A","d":"jeu","s":"10:00","e":"12:00","qz":true},{"c":"4A","d":"jeu","s":"10:00","e":"12:00","qz":true},{"c":"3A","d":"jeu","s":"10:00","e":"12:00","qz":true},{"c":"5C","d":"jeu","s":"13:30","e":"15:30","qz":true},{"c":"3B","d":"jeu","s":"13:30","e":"15:30","qz":true},{"c":"1B","d":"jeu","s":"15:30","e":"17:30","qz":false},{"c":"1A","d":"jeu","s":"15:30","e":"17:30","qz":false},{"c":"2A","d":"jeu","s":"15:30","e":"17:30","qz":false},{"c":"6C","d":"ven","s":"08:00","e":"10:00","qz":false},{"c":"3C","d":"ven","s":"10:30","e":"12:30","qz":false},{"c":"4B","d":"ven","s":"10:30","e":"12:30","qz":false},{"c":"6B","d":"ven","s":"13:30","e":"15:30","qz":false},{"c":"2B","d":"ven","s":"15:30","e":"17:30","qz":false},{"c":"Term","d":"ven","s":"15:30","e":"17:30","qz":false},{"c":"Term","d":"ven","s":"15:30","e":"17:30","qz":false}],"cal":{"2026-09-01":[[4,"DF"],[5,"Bad"],[6,"combiné"],[7,"Combiné"]],"2026-09-02":[[8,"DF"],[9,"combiné"]],"2026-09-03":[[11,"Gym"],[13,"Combiné"],[15,"Bad"],[16,"Bad"],[18,"Gym"],[19,"Bad"],[20,"DF"]],"2026-09-04":[[21,"jeux collectifs"],[22,"combiné"],[23,"VB"],[24,"jeux collectifs"],[25,"Danse"],[26,"VB"],[27,"DF"]],"2026-09-07":[[0,"DF"],[1,"DF"],[2,"Bad"],[3,"Combiné"]],"2026-09-08":[[4,"DF"],[5,"Bad"],[6,"combiné"],[7,"Combiné"]],"2026-09-09":[[8,"DF"],[10,"VB"]],"2026-09-10":[[11,"Gym"],[12,"Combiné"],[14,"DF"],[17,"combiné"],[18,"Gym"],[19,"Bad"],[20,"DF"]],"2026-09-11":[[21,"jeux collectifs"],[22,"combiné"],[23,"VB"],[24,"jeux collectifs"],[25,"Danse"],[26,"VB"],[27,"DF"]],"2026-09-14":[[0,"DF"],[1,"DF"],[2,"Bad"],[3,"Combiné"]],"2026-09-15":[[4,"DF"],[5,"Bad"],[6,"combiné"],[7,"Combiné"]],"2026-09-16":[[8,"DF"],[9,"combiné"]],"2026-09-17":[[11,"Gym"],[13,"Combiné"],[15,"Bad"],[16,"Bad"],[18,"Gym"],[19,"Bad"],[20,"DF"]],"2026-09-18":[[21,"jeux collectifs"],[22,"combiné"],[23,"VB"],[24,"jeux collectifs"],[25,"Danse"],[26,"VB"],[27,"DF"]],"2026-09-21":[[0,"DF"],[1,"DF"],[2,"Bad"],[3,"Combiné"]],"2026-09-22":[[4,"DF"],[5,"Bad"],[6,"combiné"],[7,"Combiné"]],"2026-09-23":[[8,"DF"],[10,"VB"]],"2026-09-24":[[11,"Gym"],[12,"Combiné"],[14,"DF"],[17,"combiné"],[18,"Gym"],[19,"Bad"],[20,"DF"]],"2026-09-28":[[0,"DF"],[1,"DF"],[2,"Bad"],[3,"Combiné"]],"2026-09-29":[[4,"DF"],[5,"Bad"],[6,"combiné"],[7,"Combiné"]],"2026-09-30":[[8,"DF"],[9,"combiné"]],"2026-10-08":[[11,"Gym"],[12,"Combiné"],[14,"DF"],[17,"combiné"],[18,"Gym"],[19,"Bad"],[20,"DF"]],"2026-10-09":[[21,"jeux collectifs"],[22,"combiné"],[23,"VB"],[24,"jeux collectifs"],[25,"Danse"],[26,"VB"],[27,"DF"]],"2026-10-12":[[0,"DF"],[1,"DF"],[2,"Bad"],[3,"Combiné"]],"2026-10-13":[[4,"DF"],[5,"Bad"],[6,"combiné"],[7,"Combiné"]],"2026-10-14":[[8,"DF"],[9,"combiné"]],"2026-10-15":[[11,"Gym"],[13,"Combiné"],[15,"Bad"],[16,"Bad"],[18,"Gym"],[19,"Bad"],[20,"DF"]],"2026-10-16":[[21,"jeux collectifs"],[22,"combiné"],[23,"VB"],[24,"jeux collectifs"],[25,"Danse"],[26,"VB"],[27,"DF"]],"2026-10-19":[[0,"DF"],[1,"DF"],[2,"Bad"],[3,"Combiné"]],"2026-10-20":[[4,"DF"],[5,"Bad"],[6,"combiné"],[7,"Combiné"]],"2026-10-21":[[8,"DF"],[10,"VB"]],"2026-10-22":[[11,"Gym"],[12,"Combiné"],[14,"DF"],[17,"combiné"],[18,"Gym"],[19,"Bad"],[20,"DF"]],"2026-10-23":[[21,"jeux collectifs"],[22,"combiné"],[23,"VB"],[24,"jeux collectifs"],[25,"Danse"],[26,"VB"],[27,"DF"]],"2026-10-26":[[0,"DF"],[1,"DF"],[2,"Bad"],[3,"Combiné"]],"2026-10-27":[[4,"DF"],[5,"Bad"],[6,"combiné"],[7,"Combiné"]],"2026-10-28":[[8,"DF"],[9,"combiné"]],"2026-10-29":[[11,"Gym"],[13,"Combiné"],[15,"Bad"],[16,"Bad"],[18,"Gym"],[19,"Bad"],[20,"DF"]],"2026-10-30":[[21,"jeux collectifs"],[22,"combiné"],[23,"VB"],[24,"jeux collectifs"],[25,"Danse"],[26,"VB"],[27,"DF"]],"2026-11-02":[[0,"DF"],[1,"Boxe"],[2,"Handball"],[3,"Gym"]],"2026-11-03":[[4,"DF"],[5,"Handball"],[6,"cross training"],[7,"Handball"]],"2026-11-04":[[8,"DF"],[10,"Boxe"]],"2026-11-05":[[11,"Gym"],[12,"Handball"],[14,"Boxe"],[17,"cross training"],[18,"Gym"],[19,"Bad"],[20,"DF"]],"2026-11-06":[[21,"jeux collectifs"],[22,"Handball"],[23,"Boxe"],[24,"jeux collectifs"],[25,"Danse"],[26,"VB"],[27,"DF"]],"2026-11-16":[[0,"DF"],[1,"Boxe"],[2,"Handball"],[3,"Gym"]],"2026-11-17":[[4,"DF"],[5,"Handball"],[6,"cross training"],[7,"Handball"]],"2026-11-18":[[8,"DF"],[9,"Handball"]],"2026-11-19":[[11,"Gym"],[13,"Gym"],[15,"Handball"],[16,"Handball"],[18,"Gym"],[19,"Bad"],[20,"DF"]],"2026-11-20":[[21,"jeux collectifs"],[22,"Handball"],[23,"Boxe"],[24,"jeux collectifs"],[25,"Danse"],[26,"VB"],[27,"DF"]],"2026-11-23":[[0,"DF"],[1,"Boxe"],[2,"Handball"],[3,"Gym"]],"2026-11-24":[[4,"DF"],[5,"Handball"],[6,"cross training"],[7,"Handball"]],"2026-11-25":[[8,"DF"],[10,"Boxe"]],"2026-11-26":[[11,"Gym"],[12,"Handball"],[14,"Boxe"],[17,"cross training"],[18,"Gym"],[19,"Bad"],[20,"DF"]],"2026-11-27":[[21,"jeux collectifs"],[22,"Handball"],[23,"Boxe"],[24,"jeux collectifs"],[25,"Danse"],[26,"VB"],[27,"Eval DF"]],"2026-11-30":[[0,"Danse"],[1,"Boxe"],[2,"Handball"],[3,"Gym"]],"2026-12-01":[[4,"Danse"],[5,"Handball"],[6,"cross training"],[7,"Handball"]],"2026-12-02":[[8,"Danse"],[9,"Handball"]],"2026-12-03":[[11,"jeux collectifs"],[13,"Gym"],[15,"Handball"],[16,"Handball"],[18,"Bad"],[19,"cross training"],[20,"Danse"]],"2026-12-04":[[21,"Gym"],[22,"Handball"],[23,"Boxe"],[24,"Basket"],[25,"VB"],[26,"Eval VB"],[27,"Danse"]],"2026-12-07":[[0,"Danse"],[1,"Boxe"],[2,"Handball"],[3,"Gym"]],"2026-12-08":[[4,"Danse"],[5,"Handball"],[6,"cross training"],[7,"Handball"]],"2026-12-09":[[8,"Danse"],[10,"Boxe"]],"2026-12-10":[[11,"jeux collectifs"],[12,"Handball"],[14,"Boxe"],[17,"cross training"],[18,"Bad"],[19,"cross training"],[20,"Danse"]],"2026-12-11":[[21,"Gym"],[22,"Handball"],[23,"Boxe"],[24,"Basket"],[25,"VB"],[26,"cross training"],[27,"Danse"]],"2026-12-14":[[0,"Danse"],[1,"Boxe"],[2,"Handball"],[3,"Gym"]],"2026-12-15":[[4,"Danse"],[5,"Handball"],[6,"cross training"],[7,"Handball"]],"2026-12-16":[[8,"Danse"],[9,"Handball"]],"2026-12-17":[[11,"jeux collectifs"],[13,"Gym"],[15,"Handball"],[16,"Handball"],[18,"Bad"],[19,"cross training"],[20,"Danse"]],"2026-12-18":[[21,"Gym"],[22,"Handball"],[23,"Boxe"],[24,"Basket"],[25,"VB"],[26,"cross training"],[27,"Danse"]],"2027-01-04":[[0,"Danse"],[1,"Boxe"],[2,"Handball"],[3,"Gym"]],"2027-01-05":[[4,"Danse"],[5,"Handball"],[6,"cross training"],[7,"Handball"]],"2027-01-06":[[8,"Danse"],[10,"Boxe"]],"2027-01-07":[[11,"jeux collectifs"],[12,"Handball"],[14,"Boxe"],[17,"cross training"],[18,"Bad"],[19,"cross training"],[20,"Danse"]],"2027-01-08":[[21,"Gym"],[22,"Handball"],[23,"Boxe"],[24,"Basket"],[25,"VB"],[26,"cross training"],[27,"Danse"]],"2027-01-11":[[0,"Danse"],[1,"Boxe"],[2,"Handball"],[3,"Gym"]],"2027-01-12":[[4,"Danse"],[5,"Handball"],[6,"cross training"],[7,"Handball"]],"2027-01-13":[[8,"Danse"],[9,"Handball"]],"2027-01-14":[[11,"jeux collectifs"],[13,"Gym"],[15,"Handball"],[16,"Handball"],[18,"Bad"],[19,"cross training"],[20,"Danse"]],"2027-01-15":[[21,"Gym"],[22,"Handball"],[23,"Boxe"],[24,"Basket"],[25,"VB"],[26,"cross training"],[27,"Danse"]],"2027-01-18":[[0,"Danse"],[1,"VB"],[2,"Gym"],[3,"Handball"]],"2027-01-19":[[4,"Danse"],[5,"cross training"],[6,"Handball"],[7,"Gym"]],"2027-01-20":[[8,"Danse"],[10,"Danse"]],"2027-01-21":[[11,"jeux collectifs"],[12,"Gym"],[14,"VB"],[17,"Handball"],[18,"Bad"],[19,"cross training"],[20,"Danse"]],"2027-01-22":[[21,"Gym"],[22,"cross training"],[23,"Danse"],[24,"Basket"],[25,"VB"],[26,"cross training"],[27,"Danse"]],"2027-01-25":[[0,"Danse"],[1,"VB"],[2,"Gym"],[3,"Handball"]],"2027-01-26":[[4,"Danse"],[5,"cross training"],[6,"Handball"],[7,"Gym"]],"2027-01-27":[[8,"Danse"],[9,"cross training"]],"2027-01-28":[[11,"jeux collectifs"],[13,"Handball"],[15,"cross training"],[16,"Gym"],[18,"Bad"],[19,"cross training"],[20,"Danse"]],"2027-01-29":[[21,"Gym"],[22,"cross training"],[23,"Danse"],[24,"Basket"],[25,"VB"],[26,"cross training"],[27,"Danse"]],"2027-02-01":[[0,"Danse"],[1,"VB"],[2,"Gym"],[3,"Handball"]],"2027-02-02":[[4,"Danse"],[5,"cross training"],[6,"Handball"],[7,"Gym"]],"2027-02-03":[[8,"Danse"],[10,"Danse"]],"2027-02-04":[[11,"jeux collectifs"],[12,"Gym"],[14,"VB"],[17,"Handball"],[18,"Bad"],[19,"cross training"],[20,"Danse"]],"2027-02-22":[[0,"Danse"],[1,"VB"],[2,"Gym"],[3,"Handball"]],"2027-02-23":[[4,"Danse"],[5,"cross training"],[6,"Handball"],[7,"Gym"]],"2027-02-24":[[8,"Danse"],[9,"cross training"]],"2027-02-25":[[11,"jeux collectifs"],[13,"Handball"],[15,"cross training"],[16,"Gym"],[18,"Bad"],[19,"cross training"],[20,"Danse"]],"2027-02-26":[[21,"Gym"],[22,"cross training"],[23,"Danse"],[24,"Basket"],[25,"VB"],[26,"cross training"],[27,"Danse"]],"2027-03-01":[[0,"Danse"],[1,"VB"],[2,"Gym"],[3,"Handball"]],"2027-03-02":[[4,"Danse"],[5,"cross training"],[6,"Handball"],[7,"Gym"]],"2027-03-03":[[8,"Danse"],[10,"Danse"]],"2027-03-04":[[11,"jeux collectifs"],[12,"Gym"],[14,"VB"],[17,"Handball"],[18,"Bad"],[19,"cross training"],[20,"Danse"]],"2027-03-05":[[21,"Gym"],[22,"cross training"],[23,"Danse"],[24,"Basket"],[25,"VB"],[26,"Eval Cross training"],[27,"Eval Danse"]],"2027-03-08":[[0,"Basket"],[1,"VB"],[2,"Gym"],[3,"Handball"]],"2027-03-09":[[4,"Basket"],[5,"cross training"],[6,"Handball"],[7,"Gym"]],"2027-03-10":[[8,"Gym"],[9,"cross training"]],"2027-03-11":[[11,"Natation"],[13,"Handball"],[15,"cross training"],[16,"Gym"],[18,"cross training"],[19,"Gym"],[20,"VB"]],"2027-03-12":[[21,"Natation"],[22,"cross training"],[23,"Danse"],[24,"Natation"],[25,"DF"],[26,"combiné"],[27,"Bad"]],"2027-03-15":[[0,"Basket"],[1,"VB"],[2,"Gym"],[3,"Handball"]],"2027-03-16":[[4,"Basket"],[5,"cross training"],[6,"Handball"],[7,"Gym"]],"2027-03-17":[[8,"Gym"],[10,"Danse"]],"2027-03-18":[[11,"Natation"],[12,"Gym"],[14,"VB"],[17,"Handball"],[18,"cross training"],[19,"Gym"],[20,"VB"]],"2027-03-19":[[21,"Natation"],[22,"cross training"],[23,"Danse"],[24,"Natation"],[25,"DF"],[26,"combiné"],[27,"Bad"]],"2027-03-22":[[0,"Basket"],[1,"VB"],[2,"Gym"],[3,"Handball"]],"2027-03-23":[[4,"Basket"],[5,"cross training"],[6,"Handball"],[7,"Gym"]],"2027-03-24":[[8,"Gym"],[9,"cross training"]],"2027-03-25":[[11,"Natation"],[13,"Handball"],[15,"cross training"],[16,"Gym"],[18,"cross training"],[19,"Gym"],[20,"VB"]],"2027-03-26":[[21,"Natation"],[22,"cross training"],[23,"Danse"],[24,"Natation"],[25,"DF"],[26,"combiné"],[27,"Bad"]],"2027-03-29":[[0,"Basket"],[1,"Danse"],[2,"Combiné"],[3,"Bad"]],"2027-03-30":[[4,"Basket"],[5,"combiné"],[6,"Bad"],[7,"Bad"]],"2027-03-31":[[8,"Gym"],[10,"DF"]],"2027-04-01":[[11,"Natation"],[12,"Bad"],[14,"Danse"],[17,"Bad"],[18,"cross training"],[19,"Gym"],[20,"VB"]],"2027-04-06":[[4,"Basket"],[5,"combiné"],[6,"Bad"],[7,"Bad"]],"2027-04-07":[[8,"Gym"],[9,"Bad"]],"2027-04-08":[[11,"Natation"],[13,"Bad"],[15,"combiné"],[16,"Combiné"],[18,"cross training"],[19,"Gym"],[20,"VB"]],"2027-04-09":[[21,"Natation"],[22,"Bad"],[23,"DF"],[24,"Natation"],[25,"DF"],[26,"combiné"],[27,"Bad"]],"2027-04-12":[[0,"Basket"],[1,"Danse"],[2,"Combiné"],[3,"Bad"]],"2027-04-13":[[4,"Basket"],[5,"combiné"],[6,"Bad"],[7,"Bad"]],"2027-04-14":[[8,"Gym"],[10,"DF"]],"2027-04-15":[[11,"Natation"],[12,"Bad"],[14,"Danse"],[17,"Bad"],[18,"cross training"],[19,"Gym"],[20,"VB"]],"2027-04-16":[[21,"Natation"],[22,"Bad"],[23,"DF"],[24,"Natation"],[25,"DF"],[26,"combiné"],[27,"Bad"]],"2027-04-19":[[0,"Basket"],[1,"Danse"],[2,"Combiné"],[3,"Bad"]],"2027-04-20":[[4,"Basket"],[5,"combiné"],[6,"Bad"],[7,"Bad"]],"2027-04-21":[[8,"Gym"],[9,"Bad"]],"2027-04-22":[[11,"Natation"],[13,"Bad"],[15,"combiné"],[16,"Combiné"],[18,"cross training"],[19,"Gym"],[20,"VB"]],"2027-04-23":[[21,"Natation"],[22,"Bad"],[23,"DF"],[24,"Natation"],[25,"DF"],[26,"combiné"],[27,"Bad"]],"2027-05-10":[[0,"Basket"],[1,"Danse"],[2,"Combiné"],[3,"Bad"]],"2027-05-11":[[4,"Basket"],[5,"combiné"],[6,"Bad"],[7,"Bad"]],"2027-05-12":[[8,"Gym"],[10,"DF"]],"2027-05-13":[[11,"Natation"],[12,"Bad"],[14,"Danse"],[17,"Bad"],[18,"cross training"],[19,"Gym"],[20,"VB"]],"2027-05-14":[[21,"Natation"],[22,"Bad"],[23,"DF"],[24,"Natation"],[25,"DF"],[26,"combiné"],[27,"Bad"]],"2027-05-17":[[0,"Basket"],[1,"Danse"],[2,"Combiné"],[3,"Bad"]],"2027-05-18":[[4,"Basket"],[5,"combiné"],[6,"Bad"],[7,"Bad"]],"2027-05-19":[[8,"Gym"],[9,"Bad"]],"2027-05-20":[[11,"Natation"],[13,"Bad"],[15,"combiné"],[16,"Combiné"],[18,"cross training"],[19,"Gym"],[20,"VB"]],"2027-05-21":[[21,"Natation"],[22,"Bad"],[23,"DF"],[24,"Natation"],[25,"DF"],[26,"combiné"],[27,"Bad"]],"2027-05-24":[[0,"Basket"],[1,"Danse"],[2,"Combiné"],[3,"Bad"]],"2027-05-25":[[4,"Basket"],[5,"combiné"],[6,"Bad"],[7,"Bad"]],"2027-05-26":[[8,"Gym"],[10,"DF"]],"2027-05-27":[[11,"Natation"],[12,"Bad"],[14,"Danse"],[17,"Bad"],[18,"cross training"],[19,"Gym"],[20,"VB"]],"2027-05-28":[[21,"Natation"],[22,"Bad"],[23,"DF"],[24,"Natation"],[25,"DF"],[26,"Eval Combiné"],[27,"Eval Bad"]],"2027-05-31":[[0,"Basket"],[1,"Danse"],[2,"Combiné"],[3,"Bad"]],"2027-06-01":[[4,"Basket"],[5,"combiné"],[6,"Bad"],[7,"Bad"]],"2027-06-02":[[8,"Gym"],[9,"Bad"]],"2027-06-03":[[11,"jeux collectifs"],[13,"Bad"],[15,"combiné"],[16,"Combiné"],[18,"cross training"],[19,"Gym"],[20,"VB"]],"2027-06-04":[[21,"Natation"],[22,"Bad"],[23,"DF"],[24,"jeux collectifs"],[25,"DF"]]},"feries":["2026-09-25","2027-04-02","2027-04-05","2027-06-09"],"weeks":{"2026-08-31":1,"2026-09-07":2,"2026-09-14":1,"2026-09-21":2,"2026-09-28":1,"2026-10-05":2,"2026-10-12":1,"2026-10-19":2,"2026-10-26":1,"2026-11-02":2,"2026-11-16":1,"2026-11-23":2,"2026-11-30":1,"2026-12-07":2,"2026-12-14":1,"2027-01-04":2,"2027-01-11":1,"2027-01-18":2,"2027-01-25":1,"2027-02-01":2,"2027-02-22":1,"2027-03-01":2,"2027-03-08":1,"2027-03-15":2,"2027-03-22":1,"2027-03-29":2,"2027-04-05":1,"2027-04-12":2,"2027-04-19":1,"2027-05-10":2,"2027-05-17":1,"2027-05-24":2,"2027-05-31":1,"2027-06-07":2,"2027-06-14":1,"2027-06-21":2,"2027-06-28":1}};
 const $ = (s, el = document) => el.querySelector(s);
 const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
@@ -726,6 +727,230 @@ function exportAS(sel) {
   XLSX.writeFile(wb, 'AS - ' + (by === 'groupe' ? 'groupes' : 'APSA') + ' - ' + iso(new Date()) + '.xlsx');
 }
 
+/* --- Générateur d'emploi du temps EPS --- */
+const GEN_LEVELS = [['oblig', 'Obligatoire', 1e6], ['forte', 'Forte', 10], ['moy', 'Moyenne', 4], ['faible', 'Faible', 1], ['ign', 'Ignorée', 0]];
+const GEN_RULES_DEF = [
+  ['stable', 'Garder les installations actuelles', 'Ne change une installation que si c’est utile.', 'forte'],
+  ['dispAS', 'Ne pas déplacer l’AS', 'Priorité 2 : l’AS passe juste après les cours EPS.', 'oblig'],
+  ['dispPR', 'Ne pas déplacer le primaire', 'Priorité 3 : les réservations des classes du primaire.', 'forte'],
+  ['dispACS', 'Ne pas déplacer l’ACS', 'Priorité 4 : activités culturelles et sportives.', 'moy'],
+  ['same', 'Une seule installation par classe et par période', 'Ses deux créneaux (hebdo + quinzaine) au même endroit.', 'moy']
+];
+const GEN = { per: null, rules: null, results: null, pick: 0, onlyChanged: true, scratch: false };
+function genRules() {
+  const saved = LS.get('genRules', null);
+  const r = GEN_RULES_DEF.map(([k, t, d, l]) => ({ k, t, d, l: (saved && saved[k]) || l }));
+  return r;
+}
+const W = lvl => (GEN_LEVELS.find(x => x[0] === lvl) || GEN_LEVELS[4])[2];
+function genCompat() {
+  const saved = LS.get('compat', null);
+  if (saved) return saved;
+  const c = {};
+  for (const p of PLAN.periods) for (const i of p.items) {
+    if (!i.apsa) continue;
+    const k = apsaKey(i.apsa); if (!k || k === 'autre') continue;
+    (c[k] = c[k] || {})[i.base] = true;
+  }
+  return c;
+}
+function genSessions(per) {
+  const byClass = new Map();
+  for (const [ds, list] of Object.entries(CAL.cal)) {
+    if (ds < per.from || ds > per.to) continue;
+    const wt = weekType(fromIso(ds));
+    for (const [ci, act] of list) {
+      if (!byClass.has(ci)) byClass.set(ci, { acts: {}, wts: new Set() });
+      const o = byClass.get(ci); o.acts[act] = (o.acts[act] || 0) + 1; o.wts.add(wt);
+    }
+  }
+  const sessions = [];
+  for (const [ci, o] of byClass) {
+    const c = CAL.classes[ci];
+    const act = Object.entries(o.acts).sort((a, b) => b[1] - a[1])[0][0];
+    if (/^autre$/i.test(act)) continue;
+    let s = c.s;
+    const [h, m] = s.split(':').map(Number);
+    if (m === 0 && (h === 8 || h === 10)) s = pad(h) + ':30';
+    const e = (() => { const t = toMin(s) + 120; return pad(Math.floor(t / 60)) + ':' + pad(t % 60); })();
+    const qz = c.qz ? (o.wts.size === 1 ? [...o.wts][0] : null) : null;
+    const key = apsaKey(act);
+    // installation actuelle
+    const cur = per.items.filter(i => i.st === 'eps' && i.d === c.d && apsaKey(i.apsa) === key && (!i.qz || !qz || i.qz === qz) &&
+      Math.min(toMin(i.e), toMin(e)) - Math.max(toMin(i.s), toMin(s)) > 0);
+    const curInst = cur.length ? cur.map(i => i.inst).sort((a, b) => cur.filter(x => x.inst === b).length - cur.filter(x => x.inst === a).length)[0] : null;
+    const who = (cur.find(i => i.inst === curInst && i.who) || cur.find(i => i.who) || {}).who || '';
+    sessions.push({ id: ci, cl: c.c, d: c.d, s, e, qz, apsa: act, key, cur: curInst, who, curItems: cur });
+  }
+  const dOrd = { lun: 1, mar: 2, mer: 3, jeu: 4, ven: 5 };
+  return sessions.sort((a, b) => dOrd[a.d] - dOrd[b.d] || a.s.localeCompare(b.s) || a.cl.localeCompare(b.cl));
+}
+const overlap = (a, b) => Math.min(toMin(a.e), toMin(b.e)) - Math.max(toMin(a.s), toMin(b.s)) > 0;
+const qzOk = (a, b) => !a.qz || !b.qz || a.qz === b.qz;
+function genRun(per, rules, compat) {
+  const R = {}; rules.forEach(r => R[r.k] = W(r.l)); if (GEN.scratch) R.stable = 0;
+  const sessions = genSessions(per);
+  const allInst = [...new Set(per.items.map(i => i.inst).concat(PLAN.periods.flatMap(p => p.items.map(i => i.inst))))].filter(i => !/^autre/i.test(i));
+  const baseOf = inst => inst.split(' · ')[0];
+  const matched = new Set(sessions.flatMap(s => s.curItems));
+  const others = per.items.filter(i => i.st !== 'eps' || !matched.has(i));
+  const dispW = st => st === 'as' ? R.dispAS : st === 'primaire' ? R.dispPR : st === 'acs' ? R.dispACS : st === 'eps' ? 1e6 : R.dispACS;
+  for (const s of sessions) {
+    s.cands = allInst.filter(i => compat[s.key] && compat[s.key][baseOf(i)]);
+    if (s.cur && !s.cands.includes(s.cur)) s.cands.push(s.cur);
+    s.costs = {};
+    for (const inst of s.cands) {
+      let cost = 0; const hits = [];
+      for (const o of others) if (o.inst === inst && o.d === s.d && overlap(o, s) && qzOk(o, s)) hits.push(o);
+      const groups = new Map();
+      for (const h of hits) groups.set(h.st + '|' + h.who + '|' + h.apsa, h);
+      for (const h of groups.values()) cost += dispW(h.st);
+      if (s.cur && inst !== s.cur) cost += R.stable;
+      s.costs[inst] = { cost, hits: [...groups.values()], all: hits };
+    }
+  }
+  const order = [...sessions].sort((a, b) => a.cands.length - b.cands.length);
+  const sols = [];
+  const ITER = 400;
+  for (let it = 0; it < ITER; it++) {
+    const asg = new Map(); let total = 0;
+    const seq = it === 0 ? order : order.map(s => [s, s.cands.length + Math.random() * 2]).sort((a, b) => a[1] - b[1]).map(x => x[0]);
+    for (const s of seq) {
+      let best = null, bc = Infinity;
+      const opts = s.cands.map(i => [i, s.costs[i].cost + (it ? Math.random() * 3 : 0)]).sort((a, b) => a[1] - b[1]);
+      for (const [inst, c] of opts) {
+        if (c >= 1e6) continue;
+        let clash = false;
+        for (const [o, oi] of asg) if (oi === inst && o.d === s.d && overlap(o, s) && qzOk(o, s)) { clash = true; break; }
+        if (clash) continue;
+        const sameCls = [...asg].filter(([o]) => o.cl === s.cl && o.key === s.key).map(([, oi]) => baseOf(oi));
+        const extra = sameCls.length && !sameCls.includes(baseOf(inst)) ? R.same : 0;
+        if (c + extra < bc) { bc = c + extra; best = inst; }
+      }
+      if (best) { asg.set(s, best); total += s.costs[best].cost; } else total += 1000;
+    }
+    // pénalité même installation
+    const byCls = new Map();
+    for (const [s, i] of asg) { const k = s.cl + '|' + s.key; if (!byCls.has(k)) byCls.set(k, new Set()); byCls.get(k).add(baseOf(i)); }
+    for (const v of byCls.values()) total += (v.size - 1) * R.same;
+    const sig = sessions.map(s => asg.get(s) || '-').join('|');
+    if (!sols.some(x => x.sig === sig)) sols.push({ sig, total, asg });
+  }
+  sols.sort((a, b) => a.total - b.total);
+  const pickDistinct = [];
+  for (const s of sols) { if (pickDistinct.length >= 3) break; pickDistinct.push(s); }
+  return {
+    sessions, others, matched,
+    props: pickDistinct.map((sol, n) => {
+      const rows = sessions.map(s => { const i = sol.asg.get(s) || null; return { s, inst: i, hits: i ? s.costs[i].hits : [], all: i ? s.costs[i].all : [] }; });
+      return {
+        n, total: sol.total, rows,
+        unplaced: rows.filter(r => !r.inst).length,
+        changed: rows.filter(r => r.inst && r.inst !== r.s.cur).length,
+        displaced: rows.flatMap(r => r.hits.map(h => ({ h, r })))
+      };
+    })
+  };
+}
+const DLAB = { lun: 'Lundi', mar: 'Mardi', mer: 'Mercredi', jeu: 'Jeudi', ven: 'Vendredi' };
+VIEWS.generateur = function () {
+  const app = $('#app');
+  if (!PLAN) { app.innerHTML = '<main>' + needPlanning() + '</main>'; return; }
+  if (!GEN.per || !PLAN.periods.find(p => p.name === GEN.per)) {
+    const t = iso(new Date());
+    GEN.per = (PLAN.periods.find(p => p.to >= t) || PLAN.periods[0]).name;
+  }
+  if (!GEN.rules) GEN.rules = genRules();
+  const per = PLAN.periods.find(p => p.name === GEN.per);
+  const compat = genCompat();
+  const bases = installations().filter(b => !/^autre/i.test(b));
+  const keys = [...new Set(Object.values(CAL.cal).flat().map(x => apsaKey(x[1])))].filter(k => k && k !== 'autre').sort();
+  const KLAB = { bad: 'Badminton', basket: 'Basket', boxe: 'Boxe', combi: 'Combiné / relais', cross: 'Cross training', danse: 'Danse', df: 'Demi-fond', gym: 'Gymnastique', hand: 'Handball', jeux: 'Jeux collectifs', nat: 'Natation', vb: 'Volley-ball', tt: 'Tennis de table', foot: 'Football', judo: 'Judo' };
+  const res = GEN.results;
+  const prop = res && res.props[GEN.pick];
+  app.innerHTML = `<main>
+    <h1>Générateur d’emploi du temps EPS</h1>
+    <p class="muted" style="margin:0">Place chaque cours EPS sur une installation, période par période, à partir des créneaux des classes, de leurs APSA et des réservations déjà faites (primaire, AS, ACS). Rien n’est modifié tant que tu ne cliques pas sur « Appliquer ».</p>
+    <div class="card">
+      <div class="row">
+        <label class="f">Période<select id="gper">${PLAN.periods.map(p => `<option value="${esc(p.name)}" ${p.name === GEN.per ? 'selected' : ''}>${esc(p.name)} · ${fromIso(p.from).toLocaleDateString('fr-FR')} → ${fromIso(p.to).toLocaleDateString('fr-FR')}</option>`).join('')}</select></label>
+        <label class="row" style="font-size:14px;align-self:flex-end;min-height:44px"><input type="checkbox" id="gscratch" ${GEN.scratch ? 'checked' : ''} style="width:20px;height:20px"> Partir de zéro (ignorer les installations EPS actuelles)</label>
+        <button class="btn blue" id="ggo" style="align-self:flex-end">Générer 3 propositions</button>
+        ${LS.get('planning_backup', null) ? '<button class="btn" id="gundo" style="align-self:flex-end">Annuler la dernière application</button>' : ''}
+      </div>
+    </div>
+    <div class="card">
+      <h2>Priorités</h2>
+      <table class="t"><tr><th>Règle</th><th>Importance</th></tr>
+        <tr><td><strong>Un seul groupe par installation (ou moitié d’installation) à la fois</strong><br><span class="muted">Les quinzaines Q1 et Q2 peuvent partager une installation.</span></td><td><span class="chip ca0">Toujours</span></td></tr>
+        <tr><td><strong>APSA compatible avec l’installation</strong><br><span class="muted">Voir le tableau des compatibilités plus bas.</span></td><td><span class="chip ca0">Toujours</span></td></tr>
+        ${GEN.rules.map(r => `<tr><td><strong>${esc(r.t)}</strong><br><span class="muted">${esc(r.d)}</span></td><td><select data-rule="${r.k}">${GEN_LEVELS.map(([k, t]) => `<option value="${k}" ${k === r.l ? 'selected' : ''}>${t}</option>`).join('')}</select></td></tr>`).join('')}
+      </table>
+    </div>
+    <details class="card"><summary style="cursor:pointer;font-weight:700">Compatibilités APSA × installations (déduites de ton planning, modifiables)</summary>
+      <div class="scroll"><table class="t" style="min-width:${180 + bases.length * 110}px"><tr><th>APSA</th>${bases.map(b => `<th>${esc(b)}</th>`).join('')}</tr>
+      ${keys.map(k => `<tr><td><span class="chip ca${caOf(KLAB[k] || k)}">${esc(KLAB[k] || k)}</span></td>${bases.map(b => `<td><input type="checkbox" data-ck="${esc(k)}" data-cb="${esc(b)}" ${compat[k] && compat[k][b] ? 'checked' : ''} style="width:20px;height:20px" aria-label="${esc((KLAB[k] || k) + ' – ' + b)}"></td>`).join('')}</tr>`).join('')}
+      </table></div>
+      <button class="btn" id="gcreset" style="align-self:flex-start">Revenir aux compatibilités déduites du planning</button>
+    </details>
+    ${res ? `<div class="card">
+      <h2>Propositions · ${esc(GEN.per)}</h2>
+      <div class="row">${res.props.length === 1 && !res.props[0].changed ? '<span class="muted">Une seule bonne solution : le planning actuel respecte déjà toutes tes priorités. Coche « Partir de zéro » pour voir d’autres organisations possibles.</span>' : ''}${res.props.map(p => `<button class="btn ${p.n === GEN.pick ? 'on' : ''}" data-pick="${p.n}">${String.fromCharCode(65 + p.n)} · ${p.unplaced ? p.unplaced + ' non placé(s) · ' : ''}${p.changed} changement(s) · ${p.displaced.length} réservation(s) déplacée(s)</button>`).join('')}</div>
+      ${prop ? `
+        ${prop.unplaced ? `<div class="banner"><strong>${prop.unplaced} cours sans installation possible.</strong> Ajoute une compatibilité ou autorise à déplacer une réservation.</div>` : ''}
+        ${prop.displaced.length ? `<div class="banner"><strong>Réservations à replacer si tu appliques :</strong><br>${prop.displaced.map(x => `${DLAB[x.h.d]} ${hh(x.h.s)}–${hh(x.h.e)} · ${esc(x.h.inst)} · ${esc(x.h.stl || x.h.st)} ${esc(x.h.who)} ${esc(x.h.apsa)} → remplacé par ${esc(x.r.s.cl)} ${esc(x.r.s.apsa)}`).join('<br>')}</div>` : ''}
+        <label class="row" style="font-size:14px"><input type="checkbox" id="gonly" ${GEN.onlyChanged ? 'checked' : ''} style="width:20px;height:20px"> Afficher seulement les changements</label>
+        <div class="scroll"><table class="t" style="min-width:760px"><tr><th>Jour</th><th>Heure</th><th>Classe</th><th>Quinzaine</th><th>APSA</th><th>Installation actuelle</th><th>Proposée</th></tr>
+        ${prop.rows.filter(r => !GEN.onlyChanged || r.inst !== r.s.cur).map(r => `<tr><td>${DLAB[r.s.d]}</td><td>${hh(r.s.s)}–${hh(r.s.e)}</td><td><strong>${esc(r.s.cl)}</strong></td><td>${r.s.qz || 'chaque semaine'}</td><td><span class="chip ca${caOf(r.s.apsa)}">${esc(r.s.apsa)}</span></td><td>${esc(r.s.cur || '—')}</td><td style="${r.inst !== r.s.cur ? 'font-weight:700;color:#C2410C' : ''}">${esc(r.inst || 'aucune')}</td></tr>`).join('') || '<tr><td colspan="7" class="muted">Aucun changement : le planning actuel respecte déjà tes priorités.</td></tr>'}
+        </table></div>
+        <div class="row"><button class="btn go" id="gapply">Appliquer la proposition ${String.fromCharCode(65 + GEN.pick)}</button><button class="btn" id="gxls">Exporter en Excel</button>
+        <span class="muted">Appliquer met à jour le planning de l’app (une sauvegarde est gardée pour annuler).</span></div>` : ''}
+    </div>` : ''}
+  </main>`;
+  $('#gscratch').onchange = e => { GEN.scratch = e.target.checked; GEN.results = null; };
+  $('#gper').onchange = e => { GEN.per = e.target.value; GEN.results = null; VIEWS.generateur(); };
+  app.querySelectorAll('[data-rule]').forEach(s => s.onchange = () => {
+    const r = GEN.rules.find(x => x.k === s.dataset.rule); r.l = s.value;
+    LS.set('genRules', Object.fromEntries(GEN.rules.map(x => [x.k, x.l]))); GEN.results = null;
+  });
+  app.querySelectorAll('[data-ck]').forEach(c => c.onchange = () => {
+    const cp = genCompat(); (cp[c.dataset.ck] = cp[c.dataset.ck] || {})[c.dataset.cb] = c.checked; LS.set('compat', cp); GEN.results = null;
+  });
+  $('#gcreset').onclick = () => { localStorage.removeItem('coordo.compat'); GEN.results = null; VIEWS.generateur(); };
+  $('#ggo').onclick = () => {
+    const b = $('#ggo'); b.textContent = 'Calcul…'; b.disabled = true;
+    setTimeout(() => { GEN.results = genRun(per, GEN.rules, genCompat()); GEN.pick = 0; VIEWS.generateur(); }, 30);
+  };
+  const u = $('#gundo'); if (u) u.onclick = () => { if (!confirm('Revenir au planning d’avant la dernière application ?')) return; PLAN = LS.get('planning_backup', PLAN); LS.set('planning', PLAN); localStorage.removeItem('coordo.planning_backup'); GEN.results = null; alertMsg('Planning restauré.'); VIEWS.generateur(); };
+  if (!res) return;
+  app.querySelectorAll('[data-pick]').forEach(b => b.onclick = () => { GEN.pick = +b.dataset.pick; VIEWS.generateur(); });
+  if (!prop) return;
+  $('#gonly').onchange = e => { GEN.onlyChanged = e.target.checked; VIEWS.generateur(); };
+  $('#gxls').onclick = () => {
+    const aoa = [['Proposition ' + String.fromCharCode(65 + GEN.pick) + ' · ' + GEN.per], [], ['Jour', 'Début', 'Fin', 'Classe', 'Quinzaine', 'APSA', 'Intervenant', 'Installation actuelle', 'Installation proposée', 'Changement']];
+    for (const r of prop.rows) aoa.push([DLAB[r.s.d], hh(r.s.s), hh(r.s.e), r.s.cl, r.s.qz || 'chaque semaine', r.s.apsa, r.s.who, r.s.cur || '', r.inst || 'aucune', r.inst !== r.s.cur ? 'oui' : '']);
+    if (prop.displaced.length) { aoa.push([], ['Réservations à replacer']); for (const x of prop.displaced) aoa.push([DLAB[x.h.d], hh(x.h.s), hh(x.h.e), x.h.stl || x.h.st, x.h.qz || '', x.h.apsa, x.h.who, x.h.inst, '', 'à replacer']); }
+    const ws = XLSX.utils.aoa_to_sheet(aoa); ws['!cols'] = [10, 7, 7, 8, 14, 18, 14, 24, 24, 11].map(w => ({ wch: w }));
+    const wb = XLSX.utils.book_new(); XLSX.utils.book_append_sheet(wb, ws, 'Proposition'); XLSX.writeFile(wb, 'Générateur EPS - ' + GEN.per + ' - proposition ' + String.fromCharCode(65 + GEN.pick) + '.xlsx');
+  };
+  $('#gapply').onclick = () => {
+    if (prop.unplaced && !confirm(prop.unplaced + ' cours resteront sans installation. Appliquer quand même ?')) return;
+    if (!confirm('Mettre à jour le planning de la ' + GEN.per + ' avec la proposition ' + String.fromCharCode(65 + GEN.pick) + ' ?')) return;
+    LS.set('planning_backup', PLAN);
+    const P = JSON.parse(JSON.stringify(PLAN));
+    const pp = P.periods.find(p => p.name === GEN.per);
+    const orig = PLAN.periods.find(p => p.name === GEN.per).items;
+    const drop = new Set();
+    res.matched.forEach(i => drop.add(orig.indexOf(i)));
+    prop.rows.forEach(r => r.all.forEach(h => drop.add(orig.indexOf(h))));
+    pp.items = pp.items.filter((_, i) => !drop.has(i));
+    pp.displaced = prop.displaced.map(x => ({ ...x.h }));
+    for (const r of prop.rows) if (r.inst) pp.items.push({ d: r.s.d, s: r.s.s, e: r.s.e, inst: r.inst, base: r.inst.split(' · ')[0], st: 'eps', stl: 'Cours EPS', who: r.s.who, apsa: r.s.apsa, qz: r.s.qz, gen: true });
+    PLAN = P; LS.set('planning', PLAN); GEN.results = null;
+    alertMsg('Planning mis à jour. Les réservations déplacées sont listées dans Réglages.'); VIEWS.generateur();
+  };
+};
+
 /* --- Réglages --- */
 VIEWS.reglages = function () {
   const app = $('#app');
@@ -737,6 +962,7 @@ VIEWS.reglages = function () {
       <div class="row"><label class="btn blue" style="display:flex;align-items:center;gap:8px">Importer l’Excel <input type="file" id="fplan" accept=".xlsx,.xls" style="max-width:220px"></label>
       ${PLAN ? `<span class="muted">${esc(PLAN.file)} · importé le ${new Date(PLAN.at).toLocaleDateString('fr-FR')}</span>` : ''}</div>
       ${PLAN ? `<table class="t"><tr><th>Onglet</th><th>Du</th><th>Au</th><th>Réservations (créneaux d’1 h)</th></tr>${PLAN.periods.map(p => `<tr><td>${esc(p.name)}</td><td>${fromIso(p.from).toLocaleDateString('fr-FR')}</td><td>${fromIso(p.to).toLocaleDateString('fr-FR')}</td><td>${p.items.length}</td></tr>`).join('')}</table>` : ''}
+      ${PLAN && PLAN.periods.some(p => p.displaced && p.displaced.length) ? `<div class="banner"><strong>Réservations déplacées par le générateur, à replacer :</strong><br>${PLAN.periods.filter(p => p.displaced && p.displaced.length).map(p => p.displaced.map(h => `${esc(p.name)} · ${DLAB[h.d]} ${hh(h.s)}–${hh(h.e)} · ${esc(h.inst)} · ${esc(h.stl || h.st)} ${esc(h.who)} ${esc(h.apsa)}`).join('<br>')).join('<br>')}</div>` : ''}
     </div>
     <div class="card">
       <h2>Sauvegarde</h2>
