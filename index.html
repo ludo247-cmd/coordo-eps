@@ -85,6 +85,7 @@ body.tv{background:#10151F}
     <a href="#planning" data-v="planning">Planning</a>
     <a href="#generateur" data-v="generateur">Générateur</a>
     <a href="#incidents" data-v="incidents">Incidents</a>
+    <a href="#materiel" data-v="materiel">Matériel</a>
     <a href="#as" data-v="as">AS (privé)</a>
     <a href="#reglages" data-v="reglages">Réglages</a>
   </nav>
@@ -117,7 +118,7 @@ var o=[];var l=Array.isArray(e);for(f=n.s.c;f<=n.e.c;++f)s[f]=ya(f);for(var c=n.
 </script>
 <script>
 "use strict";
-const VERSION = '0.2.0';
+const VERSION = '0.3.0';
 const CAL = {"classes":[{"c":"6A","d":"lun","s":"08:00","e":"10:00","qz":false},{"c":"4A","d":"lun","s":"10:30","e":"12:30","qz":false},{"c":"5C","d":"lun","s":"10:30","e":"12:30","qz":false},{"c":"5A","d":"lun","s":"13:30","e":"15:30","qz":false},{"c":"6C","d":"mar","s":"08:00","e":"10:00","qz":false},{"c":"3A","d":"mar","s":"10:30","e":"12:30","qz":false},{"c":"3B","d":"mar","s":"10:30","e":"12:30","qz":false},{"c":"5B","d":"mar","s":"13:30","e":"15:30","qz":false},{"c":"6B","d":"mer","s":"10:30","e":"12:30","qz":false},{"c":"3C","d":"mer","s":"10:30","e":"12:30","qz":true},{"c":"4B","d":"mer","s":"10:30","e":"12:30","qz":true},{"c":"6A","d":"jeu","s":"08:00","e":"10:00","qz":false},{"c":"5B","d":"jeu","s":"10:00","e":"12:00","qz":true},{"c":"5A","d":"jeu","s":"10:00","e":"12:00","qz":true},{"c":"4A","d":"jeu","s":"10:00","e":"12:00","qz":true},{"c":"3A","d":"jeu","s":"10:00","e":"12:00","qz":true},{"c":"5C","d":"jeu","s":"13:30","e":"15:30","qz":true},{"c":"3B","d":"jeu","s":"13:30","e":"15:30","qz":true},{"c":"1B","d":"jeu","s":"15:30","e":"17:30","qz":false},{"c":"1A","d":"jeu","s":"15:30","e":"17:30","qz":false},{"c":"2A","d":"jeu","s":"15:30","e":"17:30","qz":false},{"c":"6C","d":"ven","s":"08:00","e":"10:00","qz":false},{"c":"3C","d":"ven","s":"10:30","e":"12:30","qz":false},{"c":"4B","d":"ven","s":"10:30","e":"12:30","qz":false},{"c":"6B","d":"ven","s":"13:30","e":"15:30","qz":false},{"c":"2B","d":"ven","s":"15:30","e":"17:30","qz":false},{"c":"Term","d":"ven","s":"15:30","e":"17:30","qz":false},{"c":"Term","d":"ven","s":"15:30","e":"17:30","qz":false}],"cal":{"2026-09-01":[[4,"DF"],[5,"Bad"],[6,"combiné"],[7,"Combiné"]],"2026-09-02":[[8,"DF"],[9,"combiné"]],"2026-09-03":[[11,"Gym"],[13,"Combiné"],[15,"Bad"],[16,"Bad"],[18,"Gym"],[19,"Bad"],[20,"DF"]],"2026-09-04":[[21,"jeux collectifs"],[22,"combiné"],[23,"VB"],[24,"jeux collectifs"],[25,"Danse"],[26,"VB"],[27,"DF"]],"2026-09-07":[[0,"DF"],[1,"DF"],[2,"Bad"],[3,"Combiné"]],"2026-09-08":[[4,"DF"],[5,"Bad"],[6,"combiné"],[7,"Combiné"]],"2026-09-09":[[8,"DF"],[10,"VB"]],"2026-09-10":[[11,"Gym"],[12,"Combiné"],[14,"DF"],[17,"combiné"],[18,"Gym"],[19,"Bad"],[20,"DF"]],"2026-09-11":[[21,"jeux collectifs"],[22,"combiné"],[23,"VB"],[24,"jeux collectifs"],[25,"Danse"],[26,"VB"],[27,"DF"]],"2026-09-14":[[0,"DF"],[1,"DF"],[2,"Bad"],[3,"Combiné"]],"2026-09-15":[[4,"DF"],[5,"Bad"],[6,"combiné"],[7,"Combiné"]],"2026-09-16":[[8,"DF"],[9,"combiné"]],"2026-09-17":[[11,"Gym"],[13,"Combiné"],[15,"Bad"],[16,"Bad"],[18,"Gym"],[19,"Bad"],[20,"DF"]],"2026-09-18":[[21,"jeux collectifs"],[22,"combiné"],[23,"VB"],[24,"jeux collectifs"],[25,"Danse"],[26,"VB"],[27,"DF"]],"2026-09-21":[[0,"DF"],[1,"DF"],[2,"Bad"],[3,"Combiné"]],"2026-09-22":[[4,"DF"],[5,"Bad"],[6,"combiné"],[7,"Combiné"]],"2026-09-23":[[8,"DF"],[10,"VB"]],"2026-09-24":[[11,"Gym"],[12,"Combiné"],[14,"DF"],[17,"combiné"],[18,"Gym"],[19,"Bad"],[20,"DF"]],"2026-09-28":[[0,"DF"],[1,"DF"],[2,"Bad"],[3,"Combiné"]],"2026-09-29":[[4,"DF"],[5,"Bad"],[6,"combiné"],[7,"Combiné"]],"2026-09-30":[[8,"DF"],[9,"combiné"]],"2026-10-08":[[11,"Gym"],[12,"Combiné"],[14,"DF"],[17,"combiné"],[18,"Gym"],[19,"Bad"],[20,"DF"]],"2026-10-09":[[21,"jeux collectifs"],[22,"combiné"],[23,"VB"],[24,"jeux collectifs"],[25,"Danse"],[26,"VB"],[27,"DF"]],"2026-10-12":[[0,"DF"],[1,"DF"],[2,"Bad"],[3,"Combiné"]],"2026-10-13":[[4,"DF"],[5,"Bad"],[6,"combiné"],[7,"Combiné"]],"2026-10-14":[[8,"DF"],[9,"combiné"]],"2026-10-15":[[11,"Gym"],[13,"Combiné"],[15,"Bad"],[16,"Bad"],[18,"Gym"],[19,"Bad"],[20,"DF"]],"2026-10-16":[[21,"jeux collectifs"],[22,"combiné"],[23,"VB"],[24,"jeux collectifs"],[25,"Danse"],[26,"VB"],[27,"DF"]],"2026-10-19":[[0,"DF"],[1,"DF"],[2,"Bad"],[3,"Combiné"]],"2026-10-20":[[4,"DF"],[5,"Bad"],[6,"combiné"],[7,"Combiné"]],"2026-10-21":[[8,"DF"],[10,"VB"]],"2026-10-22":[[11,"Gym"],[12,"Combiné"],[14,"DF"],[17,"combiné"],[18,"Gym"],[19,"Bad"],[20,"DF"]],"2026-10-23":[[21,"jeux collectifs"],[22,"combiné"],[23,"VB"],[24,"jeux collectifs"],[25,"Danse"],[26,"VB"],[27,"DF"]],"2026-10-26":[[0,"DF"],[1,"DF"],[2,"Bad"],[3,"Combiné"]],"2026-10-27":[[4,"DF"],[5,"Bad"],[6,"combiné"],[7,"Combiné"]],"2026-10-28":[[8,"DF"],[9,"combiné"]],"2026-10-29":[[11,"Gym"],[13,"Combiné"],[15,"Bad"],[16,"Bad"],[18,"Gym"],[19,"Bad"],[20,"DF"]],"2026-10-30":[[21,"jeux collectifs"],[22,"combiné"],[23,"VB"],[24,"jeux collectifs"],[25,"Danse"],[26,"VB"],[27,"DF"]],"2026-11-02":[[0,"DF"],[1,"Boxe"],[2,"Handball"],[3,"Gym"]],"2026-11-03":[[4,"DF"],[5,"Handball"],[6,"cross training"],[7,"Handball"]],"2026-11-04":[[8,"DF"],[10,"Boxe"]],"2026-11-05":[[11,"Gym"],[12,"Handball"],[14,"Boxe"],[17,"cross training"],[18,"Gym"],[19,"Bad"],[20,"DF"]],"2026-11-06":[[21,"jeux collectifs"],[22,"Handball"],[23,"Boxe"],[24,"jeux collectifs"],[25,"Danse"],[26,"VB"],[27,"DF"]],"2026-11-16":[[0,"DF"],[1,"Boxe"],[2,"Handball"],[3,"Gym"]],"2026-11-17":[[4,"DF"],[5,"Handball"],[6,"cross training"],[7,"Handball"]],"2026-11-18":[[8,"DF"],[9,"Handball"]],"2026-11-19":[[11,"Gym"],[13,"Gym"],[15,"Handball"],[16,"Handball"],[18,"Gym"],[19,"Bad"],[20,"DF"]],"2026-11-20":[[21,"jeux collectifs"],[22,"Handball"],[23,"Boxe"],[24,"jeux collectifs"],[25,"Danse"],[26,"VB"],[27,"DF"]],"2026-11-23":[[0,"DF"],[1,"Boxe"],[2,"Handball"],[3,"Gym"]],"2026-11-24":[[4,"DF"],[5,"Handball"],[6,"cross training"],[7,"Handball"]],"2026-11-25":[[8,"DF"],[10,"Boxe"]],"2026-11-26":[[11,"Gym"],[12,"Handball"],[14,"Boxe"],[17,"cross training"],[18,"Gym"],[19,"Bad"],[20,"DF"]],"2026-11-27":[[21,"jeux collectifs"],[22,"Handball"],[23,"Boxe"],[24,"jeux collectifs"],[25,"Danse"],[26,"VB"],[27,"Eval DF"]],"2026-11-30":[[0,"Danse"],[1,"Boxe"],[2,"Handball"],[3,"Gym"]],"2026-12-01":[[4,"Danse"],[5,"Handball"],[6,"cross training"],[7,"Handball"]],"2026-12-02":[[8,"Danse"],[9,"Handball"]],"2026-12-03":[[11,"jeux collectifs"],[13,"Gym"],[15,"Handball"],[16,"Handball"],[18,"Bad"],[19,"cross training"],[20,"Danse"]],"2026-12-04":[[21,"Gym"],[22,"Handball"],[23,"Boxe"],[24,"Basket"],[25,"VB"],[26,"Eval VB"],[27,"Danse"]],"2026-12-07":[[0,"Danse"],[1,"Boxe"],[2,"Handball"],[3,"Gym"]],"2026-12-08":[[4,"Danse"],[5,"Handball"],[6,"cross training"],[7,"Handball"]],"2026-12-09":[[8,"Danse"],[10,"Boxe"]],"2026-12-10":[[11,"jeux collectifs"],[12,"Handball"],[14,"Boxe"],[17,"cross training"],[18,"Bad"],[19,"cross training"],[20,"Danse"]],"2026-12-11":[[21,"Gym"],[22,"Handball"],[23,"Boxe"],[24,"Basket"],[25,"VB"],[26,"cross training"],[27,"Danse"]],"2026-12-14":[[0,"Danse"],[1,"Boxe"],[2,"Handball"],[3,"Gym"]],"2026-12-15":[[4,"Danse"],[5,"Handball"],[6,"cross training"],[7,"Handball"]],"2026-12-16":[[8,"Danse"],[9,"Handball"]],"2026-12-17":[[11,"jeux collectifs"],[13,"Gym"],[15,"Handball"],[16,"Handball"],[18,"Bad"],[19,"cross training"],[20,"Danse"]],"2026-12-18":[[21,"Gym"],[22,"Handball"],[23,"Boxe"],[24,"Basket"],[25,"VB"],[26,"cross training"],[27,"Danse"]],"2027-01-04":[[0,"Danse"],[1,"Boxe"],[2,"Handball"],[3,"Gym"]],"2027-01-05":[[4,"Danse"],[5,"Handball"],[6,"cross training"],[7,"Handball"]],"2027-01-06":[[8,"Danse"],[10,"Boxe"]],"2027-01-07":[[11,"jeux collectifs"],[12,"Handball"],[14,"Boxe"],[17,"cross training"],[18,"Bad"],[19,"cross training"],[20,"Danse"]],"2027-01-08":[[21,"Gym"],[22,"Handball"],[23,"Boxe"],[24,"Basket"],[25,"VB"],[26,"cross training"],[27,"Danse"]],"2027-01-11":[[0,"Danse"],[1,"Boxe"],[2,"Handball"],[3,"Gym"]],"2027-01-12":[[4,"Danse"],[5,"Handball"],[6,"cross training"],[7,"Handball"]],"2027-01-13":[[8,"Danse"],[9,"Handball"]],"2027-01-14":[[11,"jeux collectifs"],[13,"Gym"],[15,"Handball"],[16,"Handball"],[18,"Bad"],[19,"cross training"],[20,"Danse"]],"2027-01-15":[[21,"Gym"],[22,"Handball"],[23,"Boxe"],[24,"Basket"],[25,"VB"],[26,"cross training"],[27,"Danse"]],"2027-01-18":[[0,"Danse"],[1,"VB"],[2,"Gym"],[3,"Handball"]],"2027-01-19":[[4,"Danse"],[5,"cross training"],[6,"Handball"],[7,"Gym"]],"2027-01-20":[[8,"Danse"],[10,"Danse"]],"2027-01-21":[[11,"jeux collectifs"],[12,"Gym"],[14,"VB"],[17,"Handball"],[18,"Bad"],[19,"cross training"],[20,"Danse"]],"2027-01-22":[[21,"Gym"],[22,"cross training"],[23,"Danse"],[24,"Basket"],[25,"VB"],[26,"cross training"],[27,"Danse"]],"2027-01-25":[[0,"Danse"],[1,"VB"],[2,"Gym"],[3,"Handball"]],"2027-01-26":[[4,"Danse"],[5,"cross training"],[6,"Handball"],[7,"Gym"]],"2027-01-27":[[8,"Danse"],[9,"cross training"]],"2027-01-28":[[11,"jeux collectifs"],[13,"Handball"],[15,"cross training"],[16,"Gym"],[18,"Bad"],[19,"cross training"],[20,"Danse"]],"2027-01-29":[[21,"Gym"],[22,"cross training"],[23,"Danse"],[24,"Basket"],[25,"VB"],[26,"cross training"],[27,"Danse"]],"2027-02-01":[[0,"Danse"],[1,"VB"],[2,"Gym"],[3,"Handball"]],"2027-02-02":[[4,"Danse"],[5,"cross training"],[6,"Handball"],[7,"Gym"]],"2027-02-03":[[8,"Danse"],[10,"Danse"]],"2027-02-04":[[11,"jeux collectifs"],[12,"Gym"],[14,"VB"],[17,"Handball"],[18,"Bad"],[19,"cross training"],[20,"Danse"]],"2027-02-22":[[0,"Danse"],[1,"VB"],[2,"Gym"],[3,"Handball"]],"2027-02-23":[[4,"Danse"],[5,"cross training"],[6,"Handball"],[7,"Gym"]],"2027-02-24":[[8,"Danse"],[9,"cross training"]],"2027-02-25":[[11,"jeux collectifs"],[13,"Handball"],[15,"cross training"],[16,"Gym"],[18,"Bad"],[19,"cross training"],[20,"Danse"]],"2027-02-26":[[21,"Gym"],[22,"cross training"],[23,"Danse"],[24,"Basket"],[25,"VB"],[26,"cross training"],[27,"Danse"]],"2027-03-01":[[0,"Danse"],[1,"VB"],[2,"Gym"],[3,"Handball"]],"2027-03-02":[[4,"Danse"],[5,"cross training"],[6,"Handball"],[7,"Gym"]],"2027-03-03":[[8,"Danse"],[10,"Danse"]],"2027-03-04":[[11,"jeux collectifs"],[12,"Gym"],[14,"VB"],[17,"Handball"],[18,"Bad"],[19,"cross training"],[20,"Danse"]],"2027-03-05":[[21,"Gym"],[22,"cross training"],[23,"Danse"],[24,"Basket"],[25,"VB"],[26,"Eval Cross training"],[27,"Eval Danse"]],"2027-03-08":[[0,"Basket"],[1,"VB"],[2,"Gym"],[3,"Handball"]],"2027-03-09":[[4,"Basket"],[5,"cross training"],[6,"Handball"],[7,"Gym"]],"2027-03-10":[[8,"Gym"],[9,"cross training"]],"2027-03-11":[[11,"Natation"],[13,"Handball"],[15,"cross training"],[16,"Gym"],[18,"cross training"],[19,"Gym"],[20,"VB"]],"2027-03-12":[[21,"Natation"],[22,"cross training"],[23,"Danse"],[24,"Natation"],[25,"DF"],[26,"combiné"],[27,"Bad"]],"2027-03-15":[[0,"Basket"],[1,"VB"],[2,"Gym"],[3,"Handball"]],"2027-03-16":[[4,"Basket"],[5,"cross training"],[6,"Handball"],[7,"Gym"]],"2027-03-17":[[8,"Gym"],[10,"Danse"]],"2027-03-18":[[11,"Natation"],[12,"Gym"],[14,"VB"],[17,"Handball"],[18,"cross training"],[19,"Gym"],[20,"VB"]],"2027-03-19":[[21,"Natation"],[22,"cross training"],[23,"Danse"],[24,"Natation"],[25,"DF"],[26,"combiné"],[27,"Bad"]],"2027-03-22":[[0,"Basket"],[1,"VB"],[2,"Gym"],[3,"Handball"]],"2027-03-23":[[4,"Basket"],[5,"cross training"],[6,"Handball"],[7,"Gym"]],"2027-03-24":[[8,"Gym"],[9,"cross training"]],"2027-03-25":[[11,"Natation"],[13,"Handball"],[15,"cross training"],[16,"Gym"],[18,"cross training"],[19,"Gym"],[20,"VB"]],"2027-03-26":[[21,"Natation"],[22,"cross training"],[23,"Danse"],[24,"Natation"],[25,"DF"],[26,"combiné"],[27,"Bad"]],"2027-03-29":[[0,"Basket"],[1,"Danse"],[2,"Combiné"],[3,"Bad"]],"2027-03-30":[[4,"Basket"],[5,"combiné"],[6,"Bad"],[7,"Bad"]],"2027-03-31":[[8,"Gym"],[10,"DF"]],"2027-04-01":[[11,"Natation"],[12,"Bad"],[14,"Danse"],[17,"Bad"],[18,"cross training"],[19,"Gym"],[20,"VB"]],"2027-04-06":[[4,"Basket"],[5,"combiné"],[6,"Bad"],[7,"Bad"]],"2027-04-07":[[8,"Gym"],[9,"Bad"]],"2027-04-08":[[11,"Natation"],[13,"Bad"],[15,"combiné"],[16,"Combiné"],[18,"cross training"],[19,"Gym"],[20,"VB"]],"2027-04-09":[[21,"Natation"],[22,"Bad"],[23,"DF"],[24,"Natation"],[25,"DF"],[26,"combiné"],[27,"Bad"]],"2027-04-12":[[0,"Basket"],[1,"Danse"],[2,"Combiné"],[3,"Bad"]],"2027-04-13":[[4,"Basket"],[5,"combiné"],[6,"Bad"],[7,"Bad"]],"2027-04-14":[[8,"Gym"],[10,"DF"]],"2027-04-15":[[11,"Natation"],[12,"Bad"],[14,"Danse"],[17,"Bad"],[18,"cross training"],[19,"Gym"],[20,"VB"]],"2027-04-16":[[21,"Natation"],[22,"Bad"],[23,"DF"],[24,"Natation"],[25,"DF"],[26,"combiné"],[27,"Bad"]],"2027-04-19":[[0,"Basket"],[1,"Danse"],[2,"Combiné"],[3,"Bad"]],"2027-04-20":[[4,"Basket"],[5,"combiné"],[6,"Bad"],[7,"Bad"]],"2027-04-21":[[8,"Gym"],[9,"Bad"]],"2027-04-22":[[11,"Natation"],[13,"Bad"],[15,"combiné"],[16,"Combiné"],[18,"cross training"],[19,"Gym"],[20,"VB"]],"2027-04-23":[[21,"Natation"],[22,"Bad"],[23,"DF"],[24,"Natation"],[25,"DF"],[26,"combiné"],[27,"Bad"]],"2027-05-10":[[0,"Basket"],[1,"Danse"],[2,"Combiné"],[3,"Bad"]],"2027-05-11":[[4,"Basket"],[5,"combiné"],[6,"Bad"],[7,"Bad"]],"2027-05-12":[[8,"Gym"],[10,"DF"]],"2027-05-13":[[11,"Natation"],[12,"Bad"],[14,"Danse"],[17,"Bad"],[18,"cross training"],[19,"Gym"],[20,"VB"]],"2027-05-14":[[21,"Natation"],[22,"Bad"],[23,"DF"],[24,"Natation"],[25,"DF"],[26,"combiné"],[27,"Bad"]],"2027-05-17":[[0,"Basket"],[1,"Danse"],[2,"Combiné"],[3,"Bad"]],"2027-05-18":[[4,"Basket"],[5,"combiné"],[6,"Bad"],[7,"Bad"]],"2027-05-19":[[8,"Gym"],[9,"Bad"]],"2027-05-20":[[11,"Natation"],[13,"Bad"],[15,"combiné"],[16,"Combiné"],[18,"cross training"],[19,"Gym"],[20,"VB"]],"2027-05-21":[[21,"Natation"],[22,"Bad"],[23,"DF"],[24,"Natation"],[25,"DF"],[26,"combiné"],[27,"Bad"]],"2027-05-24":[[0,"Basket"],[1,"Danse"],[2,"Combiné"],[3,"Bad"]],"2027-05-25":[[4,"Basket"],[5,"combiné"],[6,"Bad"],[7,"Bad"]],"2027-05-26":[[8,"Gym"],[10,"DF"]],"2027-05-27":[[11,"Natation"],[12,"Bad"],[14,"Danse"],[17,"Bad"],[18,"cross training"],[19,"Gym"],[20,"VB"]],"2027-05-28":[[21,"Natation"],[22,"Bad"],[23,"DF"],[24,"Natation"],[25,"DF"],[26,"Eval Combiné"],[27,"Eval Bad"]],"2027-05-31":[[0,"Basket"],[1,"Danse"],[2,"Combiné"],[3,"Bad"]],"2027-06-01":[[4,"Basket"],[5,"combiné"],[6,"Bad"],[7,"Bad"]],"2027-06-02":[[8,"Gym"],[9,"Bad"]],"2027-06-03":[[11,"jeux collectifs"],[13,"Bad"],[15,"combiné"],[16,"Combiné"],[18,"cross training"],[19,"Gym"],[20,"VB"]],"2027-06-04":[[21,"Natation"],[22,"Bad"],[23,"DF"],[24,"jeux collectifs"],[25,"DF"]]},"feries":["2026-09-25","2027-04-02","2027-04-05","2027-06-09"],"weeks":{"2026-08-31":1,"2026-09-07":2,"2026-09-14":1,"2026-09-21":2,"2026-09-28":1,"2026-10-05":2,"2026-10-12":1,"2026-10-19":2,"2026-10-26":1,"2026-11-02":2,"2026-11-16":1,"2026-11-23":2,"2026-11-30":1,"2026-12-07":2,"2026-12-14":1,"2027-01-04":2,"2027-01-11":1,"2027-01-18":2,"2027-01-25":1,"2027-02-01":2,"2027-02-22":1,"2027-03-01":2,"2027-03-08":1,"2027-03-15":2,"2027-03-22":1,"2027-03-29":2,"2027-04-05":1,"2027-04-12":2,"2027-04-19":1,"2027-05-10":2,"2027-05-17":1,"2027-05-24":2,"2027-05-31":1,"2027-06-07":2,"2027-06-14":1,"2027-06-21":2,"2027-06-28":1}};
 const $ = (s, el = document) => el.querySelector(s);
 const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
@@ -951,6 +952,249 @@ VIEWS.generateur = function () {
   };
 };
 
+/* --- Matériel et commandes --- */
+const STATUTS = ['Demandé', 'Envoyé DAF', 'Validé', 'Refusé', 'Reporté', 'Commandé', 'Reçu'];
+const STATUT_CL = { 'Demandé': 'ca0', 'Envoyé DAF': 'st-acs', 'Validé': 'ca2', 'Refusé': 'ca1', 'Reporté': 'st-pr', 'Commandé': 'ca4', 'Reçu': 'ca3' };
+let MAT = LS.get('materiel', []);
+const MATV = { tab: 'commandes', tres: 'EPS', filtre: 'tous', edit: null, lieu: 'tous' };
+const num = v => { if (v == null || v === '') return null; if (typeof v === 'number') return v; const m = String(v).replace(/\s/g, '').replace(',', '.').match(/-?\d+(\.\d+)?/); return m ? parseFloat(m[0]) : null; };
+const yuan = n => n == null ? '—' : (Math.round(n * 100) / 100).toLocaleString('fr-FR', { maximumFractionDigits: 2 }) + ' ¥';
+const lineTotal = i => (num(i.qte) != null && num(i.pu) != null) ? num(i.qte) * num(i.pu) : null;
+const saveMat = () => LS.set('materiel', MAT);
+/* glossaire français → chinois (termes EPS), complété par les corrections de l'équipe */
+const GLOSS = [
+  ['raquettes? de (tt|ping[- ]?pong)', '乒乓球拍'], ['tables? (de )?(tt|ping[- ]?pong)', '乒乓球台'], ['filets? (de )?(tt|ping[- ]?pong)', '乒乓球网'], ['balles? (de )?(tt|ping[- ]?pong)', '乒乓球'],
+  ['dodgeball', '躲避球'], ['volants? en plastique', '尼龙羽毛球'], ['plots? numérot[ée]s?', '数字标志桶'], ['fosses? (mobiles?|de réception)?', '海绵坑 保护垫'],
+  ['blocs? de mousse inclin[ée]s?', '斜坡海绵垫'], ['tapis (à fixer )?au mur', '墙面防护垫'], ['tablettes?', '平板电脑'], ['de bonne qualité', ''],
+  ['ballons? de football', '足球'], ['ballons? de basket(ball)?', '篮球'], ['ballons? de volley(-ball)?', '排球'], ['ballons? de handball', '手球'], ['ballons? de dodgeball', '躲避球'], ['ballons? de gym(nastique)?', '健身球'], ['ballons? en mousse', '海绵球'],
+  ['tennis de table', '乒乓球'], ['raquettes? de badminton', '羽毛球拍'], ['raquettes? de tennis de table', '乒乓球拍'], ['volants? plumes?', '羽毛球 鹅毛'], ['volants? (synthétiques?|plastiques?|nylon)', '尼龙羽毛球'], ['volants?', '羽毛球'],
+  ['mini[- ]buts?', '迷你球门'], ['buts? mobiles?', '可移动球门'], ['buts?', '球门'], ['poteaux et filets', '网柱 球网'], ['poteaux', '网柱'], ['filets? de rangement', '球网袋'], ['filets?', '球网'],
+  ['football', '足球'], ['basket(ball)?', '篮球'], ['volley(-ball)?', '排球'], ['handball', '手球'], ['badminton', '羽毛球'], ['raquettes?', '球拍'], ['tables?', '球台'],
+  ['gonflables?', '充气'], ['chronomètres?', '秒表'], ['sifflets?', '哨子'], ['plots? numérotés?', '数字标志桶'], ['plots?', '标志桶'], ['cônes?', '标志桶'], ['coupelles?', '标志碟'], ['lattes?', '平面标志'], ['chasubles?', '训练背心'], ['dossards?', '号码布'],
+  ['cerceaux?', '体操圈'], ['haies?', '跨栏架'], ['témoins?', '接力棒'], ['tapis de gym(nastique)?', '体操垫'], ['tapis de réception', '落地垫'], ['tapis', '垫子'], ['plinths?', '跳箱'], ['tremplins?', '踏跳板'], ['poutres?', '平衡木'], ['trampolines?', '蹦床'],
+  ['blocs? de mousse', '海绵块'], ['mousse', '海绵'], ['cordes? à sauter', '跳绳'], ['élastiques?', '弹力带'], ['kettlebells?', '壶铃'], ['haltères?', '哑铃'], ['médecine[- ]balls?', '药球'], ['steps?', '健身踏板'],
+  ['kimonos?', '柔道服'], ['judo', '柔道'], ['gants de boxe', '拳击手套'], ['boxe', '拳击'], ['casques?', '头盔'], ['pompes?', '打气筒'], ['tableaux? de score', '记分牌'], ['marquage', '场地标线'], ['sacs?', '收纳袋'],
+  ['entraînement', '训练'], ['compétition', '比赛'], ['enfants?', '儿童'], ['adultes?', '成人'], ['lots?', '套装']
+];
+function toChinese(fr) {
+  const learned = LS.get('glossaire', {});
+  const k = String(fr || '').trim().toLowerCase();
+  if (learned[k]) return learned[k];
+  let s = ' ' + k.normalize('NFC') + ' ', out = [];
+  const t = s.match(/taille\s*(\d+)/); if (t) out.push(t[1] + '号');
+  for (const [re, zh] of GLOSS) { const r = new RegExp('(^|[^a-zà-ÿ])(' + re + ')(?=$|[^a-zà-ÿ])', 'i'); if (r.test(s)) { if (zh) out.push(zh); s = s.replace(r, ' '); } }
+  const model = k.match(/\b[a-z]*\d{2,}[a-z0-9]*\b/i); if (model && !out.join(' ').includes(model[0].toUpperCase())) out.push(model[0].toUpperCase());
+  return [...new Set(out)].join(' ');
+}
+const SHOPS = [
+  ['Taobao', '#FF5000', q => 'https://s.taobao.com/search?q=' + encodeURIComponent(q)],
+  ['JD.com', '#C8102E', q => 'https://search.jd.com/Search?keyword=' + encodeURIComponent(q) + '&enc=utf-8'],
+  ['Decathlon (Tmall/Taobao)', '#0055A0', q => 'https://s.taobao.com/search?q=' + encodeURIComponent('迪卡侬 ' + q)]
+];
+function importInventaire(wb) {
+  const out = [];
+  for (const name of wb.SheetNames) {
+    const rows = XLSX.utils.sheet_to_json(wb.Sheets[name], { header: 1, defval: null, raw: true });
+    const h = rows.findIndex(r => r && r.some(v => typeof v === 'string' && /désignation/i.test(v)));
+    if (h < 0) continue;
+    const H = rows[h].map(v => String(v || '').toLowerCase());
+    const col = re => H.findIndex(x => re.test(x));
+    const c = { apsa: col(/^apsa/), des: col(/désignation/), spec: col(/spécification|caractéristique/), stock: col(/stock/), besoin: col(/besoin/), qte: col(/quantité|commander/), pu: col(/prix/), prio: col(/priorit/), statut: col(/statut/), lien: col(/lien/) };
+    const tres = /\bas\b/i.test(name) ? 'AS' : 'EPS';
+    let cat = '';
+    for (const r of rows.slice(h + 1)) {
+      if (!r) continue;
+      const first = String(r[0] || '').trim();
+      if (first.startsWith('■')) { cat = first.replace('■', '').trim(); continue; }
+      const des = r[c.des]; if (!des) continue;
+      const lien = c.lien >= 0 ? String(r[c.lien] || '') : '';
+      out.push({
+        id: 'm' + Date.now().toString(36) + Math.random().toString(36).slice(2, 7), tres, cat, apsa: first, des: String(des).trim(), spec: c.spec >= 0 ? String(r[c.spec] || '').trim() : '',
+        stock: num(r[c.stock]), besoin: c.besoin >= 0 ? (r[c.besoin] == null ? '' : String(r[c.besoin])) : '', qte: num(r[c.qte]), pu: num(r[c.pu]), prio: num(r[c.prio]),
+        statut: STATUTS.includes(r[c.statut]) ? r[c.statut] : 'Demandé', lien: /^https?:/i.test(lien) ? lien : '', boutique: '', variante: '', zh: toChinese(des), demandeur: 'EPS', lieu: '', bon: num(r[c.stock]), use: 0, hs: 0, img: false
+      });
+    }
+  }
+  return out;
+}
+VIEWS.materiel = function () {
+  const app = $('#app');
+  const list = MAT.filter(i => MATV.tres === 'Toutes' || i.tres === MATV.tres);
+  const shown = list.filter(i => MATV.filtre === 'tous' || i.statut === MATV.filtre);
+  const tot = st => list.filter(i => st.includes(i.statut)).reduce((a, i) => a + (lineTotal(i) || 0), 0);
+  const sansPrix = list.filter(i => !['Refusé', 'Reçu'].includes(i.statut) && num(i.pu) == null).length;
+  const ed = MATV.edit ? MAT.find(i => i.id === MATV.edit) || { id: MATV.edit, nouveau: true, tres: MATV.tres === 'Toutes' ? 'EPS' : MATV.tres, statut: 'Demandé', demandeur: 'EPS', des: '', zh: '' } : null;
+  const lieux = [...new Set(MAT.map(i => i.lieu).filter(Boolean))].sort();
+  app.innerHTML = `<main>
+    <div class="row" style="justify-content:space-between"><h1>Matériel et commandes</h1>
+      <div class="row" role="tablist">${[['commandes', 'Commandes'], ['inventaire', 'Inventaire et usure']].map(([k, t]) => `<button class="btn ${MATV.tab === k ? 'on' : ''}" data-tab="${k}">${t}</button>`).join('')}</div></div>
+    ${!MAT.length ? `<div class="card"><h2>Commencer</h2><p class="muted" style="margin:0">Importe ton fichier « Inventaire et Commande Matériel EPS » : l’onglet AS va dans la trésorerie AS, l’autre dans la trésorerie EPS. Les totaux sont recalculés correctement (prix écrits en texte compris).</p>
+      <div class="row"><label class="btn blue" style="display:flex;align-items:center;gap:8px">Importer l’Excel <input type="file" id="minv" accept=".xlsx,.xls" style="max-width:220px"></label><button class="btn" data-new="1">Ou ajouter une demande à la main</button></div></div>` : ''}
+    ${MAT.length ? `<div class="row" role="group" aria-label="Trésorerie">${['EPS', 'AS', 'Toutes'].map(t => `<button class="btn ${MATV.tres === t ? 'on' : ''}" data-tres="${t}">${t === 'Toutes' ? 'Les deux trésoreries' : 'Trésorerie ' + t}</button>`).join('')}</div>` : ''}
+    ${MAT.length && MATV.tab === 'commandes' ? `
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px">
+      ${[['À envoyer / chez la DAF', ['Demandé', 'Envoyé DAF']], ['Validé, à commander', ['Validé']], ['Commandé', ['Commandé']], ['Reçu', ['Reçu']]].map(([t, st]) => `<div class="card" style="gap:2px"><span class="muted">${t}</span><strong style="font-size:24px">${yuan(tot(st))}</strong><span class="muted">${list.filter(i => st.includes(i.statut)).length} ligne(s)</span></div>`).join('')}
+    </div>
+    ${sansPrix ? `<div class="banner">${sansPrix} ligne(s) sans prix : le total est sous-estimé.</div>` : ''}
+    <div class="card">
+      <div class="row" style="justify-content:space-between">
+        <label class="f">Statut<select id="mfil"><option value="tous">Tous</option>${STATUTS.map(s => `<option ${MATV.filtre === s ? 'selected' : ''}>${s}</option>`).join('')}</select></label>
+        <div class="row" style="align-self:flex-end">
+          <button class="btn blue" data-new="1">Nouvelle demande</button>
+          <button class="btn go" id="mdaf">Demande à la DAF (Excel)</button>
+          <button class="btn" id="machat">Fiche pour la responsable des achats</button>
+        </div>
+      </div>
+      <div class="scroll"><table class="t" style="min-width:900px"><tr><th>Article</th><th>Demandeur</th><th>Qté</th><th>P.U.</th><th>Total</th><th>Prio.</th><th>Statut</th><th></th></tr>
+      ${shown.map(i => `<tr><td><strong>${esc(i.des)}</strong>${i.spec ? `<br><span class="muted">${esc(i.spec)}</span>` : ''}<br><span class="chip ca${caOf(i.apsa)}">${esc(i.apsa || i.cat || '—')}</span> ${MATV.tres === 'Toutes' ? `<span class="chip ca0">${i.tres}</span>` : ''} ${i.variante ? '<span class="chip ca2">variante notée</span>' : (i.statut === 'Validé' ? '<span class="chip ca1">variante à préciser</span>' : '')} ${i.img ? '<span class="chip ca0">capture</span>' : ''}</td>
+        <td>${esc(i.demandeur || '')}</td><td>${i.qte ?? '—'}</td><td>${yuan(num(i.pu))}</td><td><strong>${yuan(lineTotal(i))}</strong></td><td>${i.prio ?? ''}</td>
+        <td><select data-st="${i.id}" aria-label="Statut">${STATUTS.map(s => `<option ${s === i.statut ? 'selected' : ''}>${s}</option>`).join('')}</select></td>
+        <td><button class="btn" data-ed="${i.id}">Modifier</button></td></tr>`).join('') || '<tr><td colspan="8" class="empty">Aucune ligne.</td></tr>'}
+      </table></div>
+    </div>` : ''}
+    ${MAT.length && MATV.tab === 'inventaire' ? `
+    <div class="card">
+      <div class="row" style="justify-content:space-between">
+        <label class="f">Lieu de rangement<select id="mlieu"><option value="tous">Tous</option>${lieux.map(l => `<option ${MATV.lieu === l ? 'selected' : ''}>${esc(l)}</option>`).join('')}<option value="">(non renseigné)</option></select></label>
+        <button class="btn go" id="minvx" style="align-self:flex-end">Fiche d’inventaire par lieu (Excel)</button>
+      </div>
+      <div class="scroll"><table class="t" style="min-width:820px"><tr><th>Article</th><th>Lieu</th><th>Bon état</th><th>Usé</th><th>HS</th><th>Total</th></tr>
+      ${list.filter(i => MATV.lieu === 'tous' || (i.lieu || '') === MATV.lieu).map(i => `<tr><td><strong>${esc(i.des)}</strong><br><span class="muted">${esc(i.apsa || '')}</span></td>
+        <td><input type="text" data-inv="${i.id}" data-k="lieu" value="${esc(i.lieu || '')}" list="lieux" style="width:160px"></td>
+        ${['bon', 'use', 'hs'].map(k => `<td><input type="number" min="0" data-inv="${i.id}" data-k="${k}" value="${i[k] ?? ''}" style="width:80px;min-height:40px;border:1px solid #CDD3DD;border-radius:8px;padding:0 6px"></td>`).join('')}
+        <td><strong>${(num(i.bon) || 0) + (num(i.use) || 0) + (num(i.hs) || 0)}</strong></td></tr>`).join('')}
+      </table><datalist id="lieux">${lieux.map(l => `<option value="${esc(l)}">`).join('')}</datalist></div>
+      <span class="muted">Quand une commande passe en « Reçu », la quantité s’ajoute au stock en bon état.</span>
+    </div>` : ''}
+    ${ed ? `<div class="card" id="medit" style="border:2px solid var(--accent)">
+      <h2>${ed.nouveau ? 'Nouvelle demande' : 'Modifier la demande'}</h2>
+      <div class="row">
+        <label class="f">Trésorerie<select id="e_tres">${['EPS', 'AS'].map(t => `<option ${ed.tres === t ? 'selected' : ''}>${t}</option>`).join('')}</select></label>
+        <label class="f">Demandeur<select id="e_dem">${['EPS', 'Primaire', 'AS', 'ACS'].map(t => `<option ${ed.demandeur === t ? 'selected' : ''}>${t}</option>`).join('')}</select></label>
+        <label class="f" style="flex:1 1 160px">APSA<input type="text" id="e_apsa" value="${esc(ed.apsa || '')}"></label>
+        <label class="f">Priorité (1 à 5)<input type="text" id="e_prio" value="${ed.prio ?? ''}" style="width:90px"></label>
+      </div>
+      <div class="row">
+        <label class="f" style="flex:2 1 280px">Désignation (français)<input type="text" id="e_des" value="${esc(ed.des || '')}"></label>
+        <label class="f" style="flex:2 1 220px">Spécifications<input type="text" id="e_spec" value="${esc(ed.spec || '')}"></label>
+      </div>
+      <div class="row">
+        <label class="f">Qté<input type="text" id="e_qte" value="${ed.qte ?? ''}" style="width:90px"></label>
+        <label class="f">Prix unitaire (¥)<input type="text" id="e_pu" value="${ed.pu ?? ''}" style="width:120px"></label>
+        <label class="f">Stock actuel<input type="text" id="e_stock" value="${ed.stock ?? ''}" style="width:100px"></label>
+      </div>
+      <div class="card" style="background:#F4F7FC">
+        <h2>Chercher et choisir le produit</h2>
+        <div class="row">
+          <label class="f" style="flex:1 1 260px">Recherche en chinois (proposée, modifiable)<input type="text" id="e_zh" value="${esc(ed.zh || toChinese(ed.des))}" style="font-size:16px"></label>
+          <div class="row" style="align-self:flex-end">${SHOPS.map(([n, c], k) => `<button class="btn" data-shop="${k}" style="background:${c};color:#fff;border-color:${c};font-weight:700">${n}</button>`).join('')}</div>
+        </div>
+        <div class="row">
+          <label class="f" style="flex:2 1 280px">Lien du produit<input type="text" id="e_lien" value="${esc(ed.lien || '')}" placeholder="https://…"></label>
+          <label class="f" style="flex:1 1 180px">Boutique<input type="text" id="e_bout" value="${esc(ed.boutique || '')}"></label>
+        </div>
+        <label class="f">Variante exacte à commander (规格 / 颜色 / 尺码, lot, couleur, taille) — indispensable sur Taobao<input type="text" id="e_var" value="${esc(ed.variante || '')}"></label>
+        <div class="row"><label class="btn" style="display:flex;align-items:center;gap:8px">Capture d’écran de la variante <input type="file" id="e_img" accept="image/*" style="max-width:200px"></label><span id="e_imgv" class="muted">${ed.img ? 'Capture enregistrée' : ''}</span></div>
+      </div>
+      <label class="f">Notes<input type="text" id="e_notes" value="${esc(ed.notes || '')}"></label>
+      <div class="row"><button class="btn go" id="e_save">Enregistrer</button><button class="btn" id="e_cancel">Fermer</button>${ed.nouveau ? '' : '<button class="btn" id="e_del" style="margin-left:auto">Supprimer la ligne</button>'}</div>
+    </div>` : ''}
+    <div class="card" style="border-style:dashed"><h2>Bientôt : demandes de travaux</h2><span class="muted">Une partie pour signaler et suivre les travaux sur les installations (prévue dans une prochaine version).</span></div>
+    ${MAT.length ? `<div class="row"><label class="btn" style="display:flex;align-items:center;gap:8px">Réimporter l’Excel (remplace tout) <input type="file" id="minv" accept=".xlsx,.xls" style="max-width:200px"></label></div>` : ''}
+  </main>`;
+  app.querySelectorAll('[data-tab]').forEach(b => b.onclick = () => { MATV.tab = b.dataset.tab; VIEWS.materiel(); });
+  app.querySelectorAll('[data-tres]').forEach(b => b.onclick = () => { MATV.tres = b.dataset.tres; VIEWS.materiel(); });
+  app.querySelectorAll('[data-new]').forEach(b => b.onclick = () => { MATV.edit = 'm' + Date.now().toString(36); VIEWS.materiel(); $('#medit').scrollIntoView({ behavior: 'smooth' }); });
+  app.querySelectorAll('[data-ed]').forEach(b => b.onclick = async () => { MATV.edit = b.dataset.ed; VIEWS.materiel(); $('#medit').scrollIntoView({ behavior: 'smooth' }); });
+  const fi = $('#minv'); if (fi) fi.onchange = async e => {
+    const f = e.target.files[0]; if (!f) return;
+    if (MAT.length && !confirm('Remplacer toutes les lignes actuelles par celles du fichier ?')) return;
+    try { const wb = XLSX.read(await f.arrayBuffer(), { type: 'array' }); const items = importInventaire(wb); if (!items.length) throw new Error('aucun tableau avec une colonne « Désignation »'); MAT = items; saveMat(); alertMsg(items.length + ' lignes importées.'); VIEWS.materiel(); }
+    catch (err) { alertMsg('Import impossible : ' + err.message); }
+  };
+  const mf = $('#mfil'); if (mf) mf.onchange = e => { MATV.filtre = e.target.value; VIEWS.materiel(); };
+  const ml = $('#mlieu'); if (ml) ml.onchange = e => { MATV.lieu = e.target.value; VIEWS.materiel(); };
+  app.querySelectorAll('[data-st]').forEach(s => s.onchange = () => {
+    const i = MAT.find(x => x.id === s.dataset.st), old = i.statut; i.statut = s.value;
+    if (s.value === 'Reçu' && old !== 'Reçu' && num(i.qte) && confirm('Ajouter ' + num(i.qte) + ' au stock en bon état ?')) { i.bon = (num(i.bon) || 0) + num(i.qte); i.stock = (num(i.stock) || 0) + num(i.qte); }
+    saveMat(); VIEWS.materiel();
+  });
+  app.querySelectorAll('[data-inv]').forEach(inp => inp.onchange = () => { const i = MAT.find(x => x.id === inp.dataset.inv); i[inp.dataset.k] = inp.dataset.k === 'lieu' ? inp.value.trim() : num(inp.value); saveMat(); if (inp.dataset.k === 'lieu') return; VIEWS.materiel(); });
+  const mdaf = $('#mdaf'); if (mdaf) mdaf.onclick = exportDAF;
+  const ma = $('#machat'); if (ma) ma.onclick = ficheAchats;
+  const mix = $('#minvx'); if (mix) mix.onclick = exportInventaire;
+  if (ed) {
+    const desI = $('#e_des'), zhI = $('#e_zh');
+    let zhTouched = !!ed.zh;
+    desI.oninput = () => { if (!zhTouched) zhI.value = toChinese(desI.value); };
+    zhI.oninput = () => { zhTouched = true; };
+    app.querySelectorAll('[data-shop]').forEach(b => b.onclick = () => { const q = zhI.value.trim() || desI.value.trim(); if (!q) return; window.open(SHOPS[+b.dataset.shop][2](q), '_blank', 'noopener'); });
+    let newImg = null;
+    $('#e_img').onchange = async e => { const f = e.target.files[0]; if (!f) return; newImg = await compressImage(f); $('#e_imgv').textContent = 'Capture prête à enregistrer'; };
+    $('#e_cancel').onclick = () => { MATV.edit = null; VIEWS.materiel(); };
+    const del = $('#e_del'); if (del) del.onclick = () => { if (confirm('Supprimer cette ligne ?')) { MAT = MAT.filter(x => x.id !== ed.id); saveMat(); MATV.edit = null; VIEWS.materiel(); } };
+    $('#e_save').onclick = async () => {
+      const v = id => $('#' + id).value.trim();
+      if (!v('e_des')) { alertMsg('Indique la désignation.'); return; }
+      let it = MAT.find(x => x.id === ed.id);
+      if (!it) { it = { id: ed.id, statut: 'Demandé', bon: null, use: 0, hs: 0, lieu: '', img: false, cat: '' }; MAT.push(it); }
+      Object.assign(it, { tres: v('e_tres'), demandeur: v('e_dem'), apsa: v('e_apsa'), prio: num(v('e_prio')), des: v('e_des'), spec: v('e_spec'), qte: num(v('e_qte')), pu: num(v('e_pu')), stock: num(v('e_stock')), zh: v('e_zh'), lien: v('e_lien'), boutique: v('e_bout'), variante: v('e_var'), notes: v('e_notes') });
+      if (it.zh && it.zh !== toChinese(it.des)) { const g = LS.get('glossaire', {}); g[it.des.toLowerCase()] = it.zh; LS.set('glossaire', g); }
+      if (newImg) { try { await mediaPut('mat_' + it.id, newImg); it.img = true; } catch (err) { alertMsg('Capture non enregistrée : ' + err.message); } }
+      saveMat(); MATV.edit = null; VIEWS.materiel();
+    };
+  }
+};
+function exportDAF() {
+  const tres = MATV.tres === 'Toutes' ? ['EPS', 'AS'] : [MATV.tres];
+  const wb = XLSX.utils.book_new(); let n = 0;
+  for (const t of tres) {
+    const lines = MAT.filter(i => i.tres === t && ['Demandé', 'Envoyé DAF'].includes(i.statut));
+    if (!lines.length) continue; n += lines.length;
+    const aoa = [['Demande d’achat · trésorerie ' + t + ' · ' + new Date().toLocaleDateString('fr-FR')], [], ['APSA', 'Désignation', 'Spécifications', 'Demandeur', 'Priorité', 'Quantité', 'Prix unitaire (¥)', 'Total (¥)', 'Validation DAF']];
+    lines.forEach(i => aoa.push([i.apsa || '', i.des, i.spec || '', i.demandeur || '', i.prio ?? '', num(i.qte) ?? '', num(i.pu) ?? '', null, '']));
+    const ws = XLSX.utils.aoa_to_sheet(aoa);
+    lines.forEach((_, k) => { const r = 4 + k; ws['H' + r] = { t: 'n', f: 'IF(AND(ISNUMBER(F' + r + '),ISNUMBER(G' + r + ')),F' + r + '*G' + r + ',"")' }; });
+    const last = 3 + lines.length;
+    XLSX.utils.sheet_add_aoa(ws, [['', '', '', '', '', '', 'TOTAL', null]], { origin: 'A' + (last + 2) });
+    ws['H' + (last + 2)] = { t: 'n', f: 'SUM(H4:H' + last + ')' };
+    ws['!cols'] = [16, 36, 28, 11, 9, 9, 15, 12, 16].map(w => ({ wch: w }));
+    XLSX.utils.book_append_sheet(wb, ws, 'Trésorerie ' + t);
+  }
+  if (!n) { alertMsg('Aucune ligne « Demandé » ou « Envoyé DAF » à envoyer.'); return; }
+  XLSX.writeFile(wb, 'Demande DAF - ' + iso(new Date()) + '.xlsx');
+  if (confirm('Passer ces ' + n + ' lignes au statut « Envoyé DAF » ?')) { MAT.forEach(i => { if (tres.includes(i.tres) && i.statut === 'Demandé') i.statut = 'Envoyé DAF'; }); saveMat(); VIEWS.materiel(); }
+}
+async function ficheAchats() {
+  const tres = MATV.tres === 'Toutes' ? ['EPS', 'AS'] : [MATV.tres];
+  const lines = MAT.filter(i => tres.includes(i.tres) && i.statut === 'Validé');
+  if (!lines.length) { alertMsg('Aucune ligne « Validé ».'); return; }
+  const imgs = {};
+  for (const i of lines) if (i.img) { const b = await mediaGet('mat_' + i.id); if (b) imgs[i.id] = await new Promise(r => { const fr = new FileReader(); fr.onload = () => r(fr.result); fr.readAsDataURL(b); }); }
+  const w = window.open('', '_blank');
+  if (!w) { alertMsg('Autorise l’ouverture de fenêtre pour cette page.'); return; }
+  const total = lines.reduce((a, i) => a + (lineTotal(i) || 0), 0);
+  w.document.write(`<!doctype html><html lang="fr"><head><meta charset="utf-8"><title>Commande matériel EPS</title><style>@page{size:A4;margin:14mm}body{font:12pt Calibri,Arial,sans-serif;color:#111}h1{font-size:16pt}table{border-collapse:collapse;width:100%}td,th{border:1px solid #999;padding:6px;vertical-align:top;text-align:left}th{background:#eee}img{max-width:160px;max-height:160px}.zh{font-size:13pt}</style></head><body>
+  <h1>Commande matériel · trésorerie ${tres.join(' + ')} · ${new Date().toLocaleDateString('fr-FR')}</h1>
+  <p>Lignes validées par la DAF : ${lines.length} · total estimé ${yuan(total)}</p>
+  <table><tr><th>Article</th><th>Variante exacte à commander</th><th>Qté</th><th>P.U.</th><th>Total</th><th>Lien / boutique</th><th>Capture</th></tr>
+  ${lines.map(i => `<tr><td><b>${esc(i.des)}</b><br><span class="zh">${esc(i.zh || '')}</span><br>${esc(i.tres)} · ${esc(i.apsa || '')}</td><td>${esc(i.variante || '⚠ à préciser')}</td><td>${i.qte ?? ''}</td><td>${yuan(num(i.pu))}</td><td>${yuan(lineTotal(i))}</td><td>${esc(i.boutique || '')}<br><span style="word-break:break-all;font-size:9pt">${esc(i.lien || '⚠ lien manquant')}</span></td><td>${imgs[i.id] ? `<img src="${imgs[i.id]}" alt="Capture de la variante">` : ''}</td></tr>`).join('')}
+  </table><p><button onclick="print()">Imprimer / enregistrer en PDF</button></p></body></html>`);
+  w.document.close();
+}
+function exportInventaire() {
+  const groups = new Map();
+  for (const i of MAT.filter(i => MATV.tres === 'Toutes' || i.tres === MATV.tres)) { const k = i.lieu || 'Lieu non renseigné'; if (!groups.has(k)) groups.set(k, []); groups.get(k).push(i); }
+  const wb = XLSX.utils.book_new(), used = new Set();
+  for (const [k, list] of [...groups].sort()) {
+    const aoa = [['Inventaire · ' + k + ' · ' + new Date().toLocaleDateString('fr-FR')], [], ['APSA', 'Article', 'Bon état (app)', 'Usé (app)', 'HS (app)', 'Compté bon', 'Compté usé', 'Compté HS', 'Remarque']];
+    list.forEach(i => aoa.push([i.apsa || '', i.des, i.bon ?? '', i.use ?? '', i.hs ?? '', '', '', '', '']));
+    const ws = XLSX.utils.aoa_to_sheet(aoa); ws['!cols'] = [16, 36, 12, 10, 9, 11, 11, 11, 24].map(w => ({ wch: w }));
+    XLSX.utils.book_append_sheet(wb, ws, sheetName(k, used));
+  }
+  XLSX.writeFile(wb, 'Inventaire par lieu - ' + iso(new Date()) + '.xlsx');
+}
+
 /* --- Réglages --- */
 VIEWS.reglages = function () {
   const app = $('#app');
@@ -967,7 +1211,7 @@ VIEWS.reglages = function () {
     <div class="card">
       <h2>Sauvegarde</h2>
       <div class="row"><button class="btn" id="bk">Télécharger une sauvegarde</button><label class="btn" style="display:flex;align-items:center;gap:8px">Restaurer <input type="file" id="rs" accept=".json" style="max-width:200px"></label></div>
-      <span class="muted">Planning et incidents (sans les photos). Aucune donnée d’élève n’est jamais sauvegardée.</span>
+      <span class="muted">Planning, incidents et matériel (sans les photos ni captures). Aucune donnée d’élève n’est jamais sauvegardée.</span>
     </div>
     <div class="card"><h2>Calendrier Q1 / Q2</h2><span class="muted">Intégré à l’app (calendrier de l’établissement 2026-2027) : les semaines de vacances ne comptent pas dans l’alternance.</span></div>
     <p class="muted">Coordo EPS · version ${VERSION}</p>
@@ -983,12 +1227,12 @@ VIEWS.reglages = function () {
     } catch (err) { alertMsg('Import impossible : ' + err.message); }
   };
   $('#bk').onclick = () => {
-    const blob = new Blob([JSON.stringify({ app: 'coordo-eps', v: VERSION, planning: PLAN, incidents: INC.map(i => ({ ...i, media: null })) }, null, 1)], { type: 'application/json' });
+    const blob = new Blob([JSON.stringify({ app: 'coordo-eps', v: VERSION, planning: PLAN, incidents: INC.map(i => ({ ...i, media: null })), materiel: MAT, glossaire: LS.get('glossaire', {}) }, null, 1)], { type: 'application/json' });
     const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'coordo-eps-sauvegarde-' + iso(new Date()) + '.json'; a.click();
   };
   $('#rs').onchange = async e => {
     const f = e.target.files[0]; if (!f) return;
-    try { const d = JSON.parse(await f.text()); if (d.app !== 'coordo-eps') throw new Error('fichier non reconnu'); if (d.planning) { PLAN = d.planning; LS.set('planning', PLAN); } if (d.incidents) { INC = d.incidents; LS.set('incidents', INC); } alertMsg('Sauvegarde restaurée.'); VIEWS.reglages(); }
+    try { const d = JSON.parse(await f.text()); if (d.app !== 'coordo-eps') throw new Error('fichier non reconnu'); if (d.planning) { PLAN = d.planning; LS.set('planning', PLAN); } if (d.incidents) { INC = d.incidents; LS.set('incidents', INC); } if (d.materiel) { MAT = d.materiel; LS.set('materiel', MAT); } if (d.glossaire) LS.set('glossaire', d.glossaire); alertMsg('Sauvegarde restaurée.'); VIEWS.reglages(); }
     catch (err) { alertMsg('Restauration impossible : ' + err.message); }
   };
 };
