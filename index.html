@@ -84,9 +84,12 @@ body.tv{background:#10151F}
     <a href="#ecran" data-v="ecran">Grand écran</a>
     <a href="#planning" data-v="planning">Planning</a>
     <a href="#generateur" data-v="generateur">Générateur</a>
+    <a href="#programmation" data-v="programmation">Programmation</a>
     <a href="#incidents" data-v="incidents">Incidents</a>
+    <a href="#travaux" data-v="travaux">Travaux</a>
     <a href="#materiel" data-v="materiel">Matériel</a>
     <a href="#as" data-v="as">AS (privé)</a>
+    <a href="#partage" data-v="partage">Partage</a>
     <a href="#reglages" data-v="reglages">Réglages</a>
   </nav>
   <span class="wk" id="wkbadge"></span>
@@ -118,7 +121,7 @@ var o=[];var l=Array.isArray(e);for(f=n.s.c;f<=n.e.c;++f)s[f]=ya(f);for(var c=n.
 </script>
 <script>
 "use strict";
-const VERSION = '0.3.0';
+const VERSION = '0.4.0';
 const CAL = {"classes":[{"c":"6A","d":"lun","s":"08:00","e":"10:00","qz":false},{"c":"4A","d":"lun","s":"10:30","e":"12:30","qz":false},{"c":"5C","d":"lun","s":"10:30","e":"12:30","qz":false},{"c":"5A","d":"lun","s":"13:30","e":"15:30","qz":false},{"c":"6C","d":"mar","s":"08:00","e":"10:00","qz":false},{"c":"3A","d":"mar","s":"10:30","e":"12:30","qz":false},{"c":"3B","d":"mar","s":"10:30","e":"12:30","qz":false},{"c":"5B","d":"mar","s":"13:30","e":"15:30","qz":false},{"c":"6B","d":"mer","s":"10:30","e":"12:30","qz":false},{"c":"3C","d":"mer","s":"10:30","e":"12:30","qz":true},{"c":"4B","d":"mer","s":"10:30","e":"12:30","qz":true},{"c":"6A","d":"jeu","s":"08:00","e":"10:00","qz":false},{"c":"5B","d":"jeu","s":"10:00","e":"12:00","qz":true},{"c":"5A","d":"jeu","s":"10:00","e":"12:00","qz":true},{"c":"4A","d":"jeu","s":"10:00","e":"12:00","qz":true},{"c":"3A","d":"jeu","s":"10:00","e":"12:00","qz":true},{"c":"5C","d":"jeu","s":"13:30","e":"15:30","qz":true},{"c":"3B","d":"jeu","s":"13:30","e":"15:30","qz":true},{"c":"1B","d":"jeu","s":"15:30","e":"17:30","qz":false},{"c":"1A","d":"jeu","s":"15:30","e":"17:30","qz":false},{"c":"2A","d":"jeu","s":"15:30","e":"17:30","qz":false},{"c":"6C","d":"ven","s":"08:00","e":"10:00","qz":false},{"c":"3C","d":"ven","s":"10:30","e":"12:30","qz":false},{"c":"4B","d":"ven","s":"10:30","e":"12:30","qz":false},{"c":"6B","d":"ven","s":"13:30","e":"15:30","qz":false},{"c":"2B","d":"ven","s":"15:30","e":"17:30","qz":false},{"c":"Term","d":"ven","s":"15:30","e":"17:30","qz":false},{"c":"Term","d":"ven","s":"15:30","e":"17:30","qz":false}],"cal":{"2026-09-01":[[4,"DF"],[5,"Bad"],[6,"combiné"],[7,"Combiné"]],"2026-09-02":[[8,"DF"],[9,"combiné"]],"2026-09-03":[[11,"Gym"],[13,"Combiné"],[15,"Bad"],[16,"Bad"],[18,"Gym"],[19,"Bad"],[20,"DF"]],"2026-09-04":[[21,"jeux collectifs"],[22,"combiné"],[23,"VB"],[24,"jeux collectifs"],[25,"Danse"],[26,"VB"],[27,"DF"]],"2026-09-07":[[0,"DF"],[1,"DF"],[2,"Bad"],[3,"Combiné"]],"2026-09-08":[[4,"DF"],[5,"Bad"],[6,"combiné"],[7,"Combiné"]],"2026-09-09":[[8,"DF"],[10,"VB"]],"2026-09-10":[[11,"Gym"],[12,"Combiné"],[14,"DF"],[17,"combiné"],[18,"Gym"],[19,"Bad"],[20,"DF"]],"2026-09-11":[[21,"jeux collectifs"],[22,"combiné"],[23,"VB"],[24,"jeux collectifs"],[25,"Danse"],[26,"VB"],[27,"DF"]],"2026-09-14":[[0,"DF"],[1,"DF"],[2,"Bad"],[3,"Combiné"]],"2026-09-15":[[4,"DF"],[5,"Bad"],[6,"combiné"],[7,"Combiné"]],"2026-09-16":[[8,"DF"],[9,"combiné"]],"2026-09-17":[[11,"Gym"],[13,"Combiné"],[15,"Bad"],[16,"Bad"],[18,"Gym"],[19,"Bad"],[20,"DF"]],"2026-09-18":[[21,"jeux collectifs"],[22,"combiné"],[23,"VB"],[24,"jeux collectifs"],[25,"Danse"],[26,"VB"],[27,"DF"]],"2026-09-21":[[0,"DF"],[1,"DF"],[2,"Bad"],[3,"Combiné"]],"2026-09-22":[[4,"DF"],[5,"Bad"],[6,"combiné"],[7,"Combiné"]],"2026-09-23":[[8,"DF"],[10,"VB"]],"2026-09-24":[[11,"Gym"],[12,"Combiné"],[14,"DF"],[17,"combiné"],[18,"Gym"],[19,"Bad"],[20,"DF"]],"2026-09-28":[[0,"DF"],[1,"DF"],[2,"Bad"],[3,"Combiné"]],"2026-09-29":[[4,"DF"],[5,"Bad"],[6,"combiné"],[7,"Combiné"]],"2026-09-30":[[8,"DF"],[9,"combiné"]],"2026-10-08":[[11,"Gym"],[12,"Combiné"],[14,"DF"],[17,"combiné"],[18,"Gym"],[19,"Bad"],[20,"DF"]],"2026-10-09":[[21,"jeux collectifs"],[22,"combiné"],[23,"VB"],[24,"jeux collectifs"],[25,"Danse"],[26,"VB"],[27,"DF"]],"2026-10-12":[[0,"DF"],[1,"DF"],[2,"Bad"],[3,"Combiné"]],"2026-10-13":[[4,"DF"],[5,"Bad"],[6,"combiné"],[7,"Combiné"]],"2026-10-14":[[8,"DF"],[9,"combiné"]],"2026-10-15":[[11,"Gym"],[13,"Combiné"],[15,"Bad"],[16,"Bad"],[18,"Gym"],[19,"Bad"],[20,"DF"]],"2026-10-16":[[21,"jeux collectifs"],[22,"combiné"],[23,"VB"],[24,"jeux collectifs"],[25,"Danse"],[26,"VB"],[27,"DF"]],"2026-10-19":[[0,"DF"],[1,"DF"],[2,"Bad"],[3,"Combiné"]],"2026-10-20":[[4,"DF"],[5,"Bad"],[6,"combiné"],[7,"Combiné"]],"2026-10-21":[[8,"DF"],[10,"VB"]],"2026-10-22":[[11,"Gym"],[12,"Combiné"],[14,"DF"],[17,"combiné"],[18,"Gym"],[19,"Bad"],[20,"DF"]],"2026-10-23":[[21,"jeux collectifs"],[22,"combiné"],[23,"VB"],[24,"jeux collectifs"],[25,"Danse"],[26,"VB"],[27,"DF"]],"2026-10-26":[[0,"DF"],[1,"DF"],[2,"Bad"],[3,"Combiné"]],"2026-10-27":[[4,"DF"],[5,"Bad"],[6,"combiné"],[7,"Combiné"]],"2026-10-28":[[8,"DF"],[9,"combiné"]],"2026-10-29":[[11,"Gym"],[13,"Combiné"],[15,"Bad"],[16,"Bad"],[18,"Gym"],[19,"Bad"],[20,"DF"]],"2026-10-30":[[21,"jeux collectifs"],[22,"combiné"],[23,"VB"],[24,"jeux collectifs"],[25,"Danse"],[26,"VB"],[27,"DF"]],"2026-11-02":[[0,"DF"],[1,"Boxe"],[2,"Handball"],[3,"Gym"]],"2026-11-03":[[4,"DF"],[5,"Handball"],[6,"cross training"],[7,"Handball"]],"2026-11-04":[[8,"DF"],[10,"Boxe"]],"2026-11-05":[[11,"Gym"],[12,"Handball"],[14,"Boxe"],[17,"cross training"],[18,"Gym"],[19,"Bad"],[20,"DF"]],"2026-11-06":[[21,"jeux collectifs"],[22,"Handball"],[23,"Boxe"],[24,"jeux collectifs"],[25,"Danse"],[26,"VB"],[27,"DF"]],"2026-11-16":[[0,"DF"],[1,"Boxe"],[2,"Handball"],[3,"Gym"]],"2026-11-17":[[4,"DF"],[5,"Handball"],[6,"cross training"],[7,"Handball"]],"2026-11-18":[[8,"DF"],[9,"Handball"]],"2026-11-19":[[11,"Gym"],[13,"Gym"],[15,"Handball"],[16,"Handball"],[18,"Gym"],[19,"Bad"],[20,"DF"]],"2026-11-20":[[21,"jeux collectifs"],[22,"Handball"],[23,"Boxe"],[24,"jeux collectifs"],[25,"Danse"],[26,"VB"],[27,"DF"]],"2026-11-23":[[0,"DF"],[1,"Boxe"],[2,"Handball"],[3,"Gym"]],"2026-11-24":[[4,"DF"],[5,"Handball"],[6,"cross training"],[7,"Handball"]],"2026-11-25":[[8,"DF"],[10,"Boxe"]],"2026-11-26":[[11,"Gym"],[12,"Handball"],[14,"Boxe"],[17,"cross training"],[18,"Gym"],[19,"Bad"],[20,"DF"]],"2026-11-27":[[21,"jeux collectifs"],[22,"Handball"],[23,"Boxe"],[24,"jeux collectifs"],[25,"Danse"],[26,"VB"],[27,"Eval DF"]],"2026-11-30":[[0,"Danse"],[1,"Boxe"],[2,"Handball"],[3,"Gym"]],"2026-12-01":[[4,"Danse"],[5,"Handball"],[6,"cross training"],[7,"Handball"]],"2026-12-02":[[8,"Danse"],[9,"Handball"]],"2026-12-03":[[11,"jeux collectifs"],[13,"Gym"],[15,"Handball"],[16,"Handball"],[18,"Bad"],[19,"cross training"],[20,"Danse"]],"2026-12-04":[[21,"Gym"],[22,"Handball"],[23,"Boxe"],[24,"Basket"],[25,"VB"],[26,"Eval VB"],[27,"Danse"]],"2026-12-07":[[0,"Danse"],[1,"Boxe"],[2,"Handball"],[3,"Gym"]],"2026-12-08":[[4,"Danse"],[5,"Handball"],[6,"cross training"],[7,"Handball"]],"2026-12-09":[[8,"Danse"],[10,"Boxe"]],"2026-12-10":[[11,"jeux collectifs"],[12,"Handball"],[14,"Boxe"],[17,"cross training"],[18,"Bad"],[19,"cross training"],[20,"Danse"]],"2026-12-11":[[21,"Gym"],[22,"Handball"],[23,"Boxe"],[24,"Basket"],[25,"VB"],[26,"cross training"],[27,"Danse"]],"2026-12-14":[[0,"Danse"],[1,"Boxe"],[2,"Handball"],[3,"Gym"]],"2026-12-15":[[4,"Danse"],[5,"Handball"],[6,"cross training"],[7,"Handball"]],"2026-12-16":[[8,"Danse"],[9,"Handball"]],"2026-12-17":[[11,"jeux collectifs"],[13,"Gym"],[15,"Handball"],[16,"Handball"],[18,"Bad"],[19,"cross training"],[20,"Danse"]],"2026-12-18":[[21,"Gym"],[22,"Handball"],[23,"Boxe"],[24,"Basket"],[25,"VB"],[26,"cross training"],[27,"Danse"]],"2027-01-04":[[0,"Danse"],[1,"Boxe"],[2,"Handball"],[3,"Gym"]],"2027-01-05":[[4,"Danse"],[5,"Handball"],[6,"cross training"],[7,"Handball"]],"2027-01-06":[[8,"Danse"],[10,"Boxe"]],"2027-01-07":[[11,"jeux collectifs"],[12,"Handball"],[14,"Boxe"],[17,"cross training"],[18,"Bad"],[19,"cross training"],[20,"Danse"]],"2027-01-08":[[21,"Gym"],[22,"Handball"],[23,"Boxe"],[24,"Basket"],[25,"VB"],[26,"cross training"],[27,"Danse"]],"2027-01-11":[[0,"Danse"],[1,"Boxe"],[2,"Handball"],[3,"Gym"]],"2027-01-12":[[4,"Danse"],[5,"Handball"],[6,"cross training"],[7,"Handball"]],"2027-01-13":[[8,"Danse"],[9,"Handball"]],"2027-01-14":[[11,"jeux collectifs"],[13,"Gym"],[15,"Handball"],[16,"Handball"],[18,"Bad"],[19,"cross training"],[20,"Danse"]],"2027-01-15":[[21,"Gym"],[22,"Handball"],[23,"Boxe"],[24,"Basket"],[25,"VB"],[26,"cross training"],[27,"Danse"]],"2027-01-18":[[0,"Danse"],[1,"VB"],[2,"Gym"],[3,"Handball"]],"2027-01-19":[[4,"Danse"],[5,"cross training"],[6,"Handball"],[7,"Gym"]],"2027-01-20":[[8,"Danse"],[10,"Danse"]],"2027-01-21":[[11,"jeux collectifs"],[12,"Gym"],[14,"VB"],[17,"Handball"],[18,"Bad"],[19,"cross training"],[20,"Danse"]],"2027-01-22":[[21,"Gym"],[22,"cross training"],[23,"Danse"],[24,"Basket"],[25,"VB"],[26,"cross training"],[27,"Danse"]],"2027-01-25":[[0,"Danse"],[1,"VB"],[2,"Gym"],[3,"Handball"]],"2027-01-26":[[4,"Danse"],[5,"cross training"],[6,"Handball"],[7,"Gym"]],"2027-01-27":[[8,"Danse"],[9,"cross training"]],"2027-01-28":[[11,"jeux collectifs"],[13,"Handball"],[15,"cross training"],[16,"Gym"],[18,"Bad"],[19,"cross training"],[20,"Danse"]],"2027-01-29":[[21,"Gym"],[22,"cross training"],[23,"Danse"],[24,"Basket"],[25,"VB"],[26,"cross training"],[27,"Danse"]],"2027-02-01":[[0,"Danse"],[1,"VB"],[2,"Gym"],[3,"Handball"]],"2027-02-02":[[4,"Danse"],[5,"cross training"],[6,"Handball"],[7,"Gym"]],"2027-02-03":[[8,"Danse"],[10,"Danse"]],"2027-02-04":[[11,"jeux collectifs"],[12,"Gym"],[14,"VB"],[17,"Handball"],[18,"Bad"],[19,"cross training"],[20,"Danse"]],"2027-02-22":[[0,"Danse"],[1,"VB"],[2,"Gym"],[3,"Handball"]],"2027-02-23":[[4,"Danse"],[5,"cross training"],[6,"Handball"],[7,"Gym"]],"2027-02-24":[[8,"Danse"],[9,"cross training"]],"2027-02-25":[[11,"jeux collectifs"],[13,"Handball"],[15,"cross training"],[16,"Gym"],[18,"Bad"],[19,"cross training"],[20,"Danse"]],"2027-02-26":[[21,"Gym"],[22,"cross training"],[23,"Danse"],[24,"Basket"],[25,"VB"],[26,"cross training"],[27,"Danse"]],"2027-03-01":[[0,"Danse"],[1,"VB"],[2,"Gym"],[3,"Handball"]],"2027-03-02":[[4,"Danse"],[5,"cross training"],[6,"Handball"],[7,"Gym"]],"2027-03-03":[[8,"Danse"],[10,"Danse"]],"2027-03-04":[[11,"jeux collectifs"],[12,"Gym"],[14,"VB"],[17,"Handball"],[18,"Bad"],[19,"cross training"],[20,"Danse"]],"2027-03-05":[[21,"Gym"],[22,"cross training"],[23,"Danse"],[24,"Basket"],[25,"VB"],[26,"Eval Cross training"],[27,"Eval Danse"]],"2027-03-08":[[0,"Basket"],[1,"VB"],[2,"Gym"],[3,"Handball"]],"2027-03-09":[[4,"Basket"],[5,"cross training"],[6,"Handball"],[7,"Gym"]],"2027-03-10":[[8,"Gym"],[9,"cross training"]],"2027-03-11":[[11,"Natation"],[13,"Handball"],[15,"cross training"],[16,"Gym"],[18,"cross training"],[19,"Gym"],[20,"VB"]],"2027-03-12":[[21,"Natation"],[22,"cross training"],[23,"Danse"],[24,"Natation"],[25,"DF"],[26,"combiné"],[27,"Bad"]],"2027-03-15":[[0,"Basket"],[1,"VB"],[2,"Gym"],[3,"Handball"]],"2027-03-16":[[4,"Basket"],[5,"cross training"],[6,"Handball"],[7,"Gym"]],"2027-03-17":[[8,"Gym"],[10,"Danse"]],"2027-03-18":[[11,"Natation"],[12,"Gym"],[14,"VB"],[17,"Handball"],[18,"cross training"],[19,"Gym"],[20,"VB"]],"2027-03-19":[[21,"Natation"],[22,"cross training"],[23,"Danse"],[24,"Natation"],[25,"DF"],[26,"combiné"],[27,"Bad"]],"2027-03-22":[[0,"Basket"],[1,"VB"],[2,"Gym"],[3,"Handball"]],"2027-03-23":[[4,"Basket"],[5,"cross training"],[6,"Handball"],[7,"Gym"]],"2027-03-24":[[8,"Gym"],[9,"cross training"]],"2027-03-25":[[11,"Natation"],[13,"Handball"],[15,"cross training"],[16,"Gym"],[18,"cross training"],[19,"Gym"],[20,"VB"]],"2027-03-26":[[21,"Natation"],[22,"cross training"],[23,"Danse"],[24,"Natation"],[25,"DF"],[26,"combiné"],[27,"Bad"]],"2027-03-29":[[0,"Basket"],[1,"Danse"],[2,"Combiné"],[3,"Bad"]],"2027-03-30":[[4,"Basket"],[5,"combiné"],[6,"Bad"],[7,"Bad"]],"2027-03-31":[[8,"Gym"],[10,"DF"]],"2027-04-01":[[11,"Natation"],[12,"Bad"],[14,"Danse"],[17,"Bad"],[18,"cross training"],[19,"Gym"],[20,"VB"]],"2027-04-06":[[4,"Basket"],[5,"combiné"],[6,"Bad"],[7,"Bad"]],"2027-04-07":[[8,"Gym"],[9,"Bad"]],"2027-04-08":[[11,"Natation"],[13,"Bad"],[15,"combiné"],[16,"Combiné"],[18,"cross training"],[19,"Gym"],[20,"VB"]],"2027-04-09":[[21,"Natation"],[22,"Bad"],[23,"DF"],[24,"Natation"],[25,"DF"],[26,"combiné"],[27,"Bad"]],"2027-04-12":[[0,"Basket"],[1,"Danse"],[2,"Combiné"],[3,"Bad"]],"2027-04-13":[[4,"Basket"],[5,"combiné"],[6,"Bad"],[7,"Bad"]],"2027-04-14":[[8,"Gym"],[10,"DF"]],"2027-04-15":[[11,"Natation"],[12,"Bad"],[14,"Danse"],[17,"Bad"],[18,"cross training"],[19,"Gym"],[20,"VB"]],"2027-04-16":[[21,"Natation"],[22,"Bad"],[23,"DF"],[24,"Natation"],[25,"DF"],[26,"combiné"],[27,"Bad"]],"2027-04-19":[[0,"Basket"],[1,"Danse"],[2,"Combiné"],[3,"Bad"]],"2027-04-20":[[4,"Basket"],[5,"combiné"],[6,"Bad"],[7,"Bad"]],"2027-04-21":[[8,"Gym"],[9,"Bad"]],"2027-04-22":[[11,"Natation"],[13,"Bad"],[15,"combiné"],[16,"Combiné"],[18,"cross training"],[19,"Gym"],[20,"VB"]],"2027-04-23":[[21,"Natation"],[22,"Bad"],[23,"DF"],[24,"Natation"],[25,"DF"],[26,"combiné"],[27,"Bad"]],"2027-05-10":[[0,"Basket"],[1,"Danse"],[2,"Combiné"],[3,"Bad"]],"2027-05-11":[[4,"Basket"],[5,"combiné"],[6,"Bad"],[7,"Bad"]],"2027-05-12":[[8,"Gym"],[10,"DF"]],"2027-05-13":[[11,"Natation"],[12,"Bad"],[14,"Danse"],[17,"Bad"],[18,"cross training"],[19,"Gym"],[20,"VB"]],"2027-05-14":[[21,"Natation"],[22,"Bad"],[23,"DF"],[24,"Natation"],[25,"DF"],[26,"combiné"],[27,"Bad"]],"2027-05-17":[[0,"Basket"],[1,"Danse"],[2,"Combiné"],[3,"Bad"]],"2027-05-18":[[4,"Basket"],[5,"combiné"],[6,"Bad"],[7,"Bad"]],"2027-05-19":[[8,"Gym"],[9,"Bad"]],"2027-05-20":[[11,"Natation"],[13,"Bad"],[15,"combiné"],[16,"Combiné"],[18,"cross training"],[19,"Gym"],[20,"VB"]],"2027-05-21":[[21,"Natation"],[22,"Bad"],[23,"DF"],[24,"Natation"],[25,"DF"],[26,"combiné"],[27,"Bad"]],"2027-05-24":[[0,"Basket"],[1,"Danse"],[2,"Combiné"],[3,"Bad"]],"2027-05-25":[[4,"Basket"],[5,"combiné"],[6,"Bad"],[7,"Bad"]],"2027-05-26":[[8,"Gym"],[10,"DF"]],"2027-05-27":[[11,"Natation"],[12,"Bad"],[14,"Danse"],[17,"Bad"],[18,"cross training"],[19,"Gym"],[20,"VB"]],"2027-05-28":[[21,"Natation"],[22,"Bad"],[23,"DF"],[24,"Natation"],[25,"DF"],[26,"Eval Combiné"],[27,"Eval Bad"]],"2027-05-31":[[0,"Basket"],[1,"Danse"],[2,"Combiné"],[3,"Bad"]],"2027-06-01":[[4,"Basket"],[5,"combiné"],[6,"Bad"],[7,"Bad"]],"2027-06-02":[[8,"Gym"],[9,"Bad"]],"2027-06-03":[[11,"jeux collectifs"],[13,"Bad"],[15,"combiné"],[16,"Combiné"],[18,"cross training"],[19,"Gym"],[20,"VB"]],"2027-06-04":[[21,"Natation"],[22,"Bad"],[23,"DF"],[24,"jeux collectifs"],[25,"DF"]]},"feries":["2026-09-25","2027-04-02","2027-04-05","2027-06-09"],"weeks":{"2026-08-31":1,"2026-09-07":2,"2026-09-14":1,"2026-09-21":2,"2026-09-28":1,"2026-10-05":2,"2026-10-12":1,"2026-10-19":2,"2026-10-26":1,"2026-11-02":2,"2026-11-16":1,"2026-11-23":2,"2026-11-30":1,"2026-12-07":2,"2026-12-14":1,"2027-01-04":2,"2027-01-11":1,"2027-01-18":2,"2027-01-25":1,"2027-02-01":2,"2027-02-22":1,"2027-03-01":2,"2027-03-08":1,"2027-03-15":2,"2027-03-22":1,"2027-03-29":2,"2027-04-05":1,"2027-04-12":2,"2027-04-19":1,"2027-05-10":2,"2027-05-17":1,"2027-05-24":2,"2027-05-31":1,"2027-06-07":2,"2027-06-14":1,"2027-06-21":2,"2027-06-28":1}};
 const $ = (s, el = document) => el.querySelector(s);
 const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
@@ -257,6 +260,7 @@ function blocksFor(date) {
       if (ov >= 60 && apsaKey(act) === k && !b.classes.includes(c.c)) b.classes.push(c.c);
     }
   }
+  for (const r of resaFor(date)) out.push(r);
   return out;
 }
 function mergeHalves(list) {
@@ -274,6 +278,7 @@ function installations() {
   const set = new Map();
   for (const p of PLAN.periods) for (const i of p.items) if (!set.has(i.base)) set.set(i.base, new Set());
   for (const p of PLAN.periods) for (const i of p.items) set.get(i.base).add(i.inst);
+  for (const r of (typeof RESA !== 'undefined' ? RESA : [])) { const b = prettyInst(r.inst).base; if (!set.has(b)) set.set(b, new Set([r.inst])); }
   return [...set.keys()].sort((x, y) => (/^autre/i.test(x) - /^autre/i.test(y)) || x.localeCompare(y));
 }
 function blockLabel(b) {
@@ -1099,7 +1104,7 @@ VIEWS.materiel = function () {
       <label class="f">Notes<input type="text" id="e_notes" value="${esc(ed.notes || '')}"></label>
       <div class="row"><button class="btn go" id="e_save">Enregistrer</button><button class="btn" id="e_cancel">Fermer</button>${ed.nouveau ? '' : '<button class="btn" id="e_del" style="margin-left:auto">Supprimer la ligne</button>'}</div>
     </div>` : ''}
-    <div class="card" style="border-style:dashed"><h2>Bientôt : demandes de travaux</h2><span class="muted">Une partie pour signaler et suivre les travaux sur les installations (prévue dans une prochaine version).</span></div>
+    <div class="card" style="border-style:dashed"><h2>Demandes de travaux</h2><span class="muted">Elles ont maintenant leur onglet : <a href="#travaux">Travaux</a>.</span></div>
     ${MAT.length ? `<div class="row"><label class="btn" style="display:flex;align-items:center;gap:8px">Réimporter l’Excel (remplace tout) <input type="file" id="minv" accept=".xlsx,.xls" style="max-width:200px"></label></div>` : ''}
   </main>`;
   app.querySelectorAll('[data-tab]').forEach(b => b.onclick = () => { MATV.tab = b.dataset.tab; VIEWS.materiel(); });
@@ -1195,6 +1200,254 @@ function exportInventaire() {
   XLSX.writeFile(wb, 'Inventaire par lieu - ' + iso(new Date()) + '.xlsx');
 }
 
+/* --- Demandes de travaux --- */
+const TSTAT = ['Signalé', 'Transmis', 'Planifié', 'Réalisé'];
+const TSTAT_CL = { 'Signalé': 'st-acs', 'Transmis': 'ca4', 'Planifié': 'ca3', 'Réalisé': 'ca2' };
+let TRAV = LS.get('travaux', []);
+const saveTrav = () => LS.set('travaux', TRAV);
+const lieuxList = () => { const i = installations(); return i.length ? i : ['Grand gymnase', 'Salle de gym', 'Dojo', 'Terrain de foot', 'Piste', 'Sautoir', 'Terrain Basket ext']; };
+VIEWS.travaux = function () {
+  const app = $('#app');
+  app.innerHTML = `<main>
+    <h1>Demandes de travaux</h1>
+    <form class="card" id="trf">
+      <h2>Nouvelle demande</h2>
+      <div class="row">
+        <label class="f" style="flex:1 1 180px">Où ?<select name="lieu">${lieuxList().map(l => `<option>${esc(l)}</option>`).join('')}<option>Vestiaires</option><option>Local matériel</option><option>Autre</option></select></label>
+        <label class="f" style="flex:2 1 260px">Objet<input type="text" name="objet" placeholder="Ex. : éclairage du gymnase côté tribune" required></label>
+        <label class="f">Urgence<select name="urg"><option>Normale</option><option>Urgente</option><option>Sécurité</option></select></label>
+        <label class="f">Demandé par<select name="dem"><option>EPS</option><option>Primaire</option><option>AS</option><option>ACS</option></select></label>
+      </div>
+      <label class="f">Description<textarea name="desc" placeholder="Ce qui ne va pas, depuis quand, ce qu’il faudrait faire"></textarea></label>
+      <div class="row"><label class="btn" style="display:flex;align-items:center;gap:8px">Photo <input type="file" name="photo" accept="image/*" capture="environment" style="max-width:200px"></label>
+      <button class="btn blue" type="submit">Enregistrer</button></div>
+    </form>
+    <div class="card">
+      <div class="row" style="justify-content:space-between"><h2>Suivi</h2><button class="btn go" id="trx">Demande aux services techniques (Excel)</button></div>
+      <div id="trl"></div>
+    </div>
+  </main>`;
+  const f = $('#trf');
+  f.onsubmit = async e => {
+    e.preventDefault();
+    const t = { id: 't' + Date.now(), date: new Date().toISOString(), lieu: f.lieu.value, objet: f.objet.value.trim(), desc: f.desc.value.trim(), urg: f.urg.value, dem: f.dem.value, statut: 'Signalé', photo: false };
+    const p = f.photo.files[0];
+    if (p) { try { await mediaPut('trav_' + t.id, await compressImage(p)); t.photo = true; } catch (err) { alertMsg('Photo non enregistrée : ' + err.message); } }
+    TRAV.unshift(t); saveTrav(); VIEWS.travaux();
+  };
+  $('#trx').onclick = () => {
+    const l = TRAV.filter(t => t.statut !== 'Réalisé');
+    if (!l.length) { alertMsg('Aucune demande en cours.'); return; }
+    const aoa = [['Demandes de travaux · installations sportives · ' + new Date().toLocaleDateString('fr-FR')], [], ['Date', 'Lieu', 'Objet', 'Description', 'Urgence', 'Demandé par', 'Statut', 'Réponse / date prévue']];
+    l.forEach(t => aoa.push([new Date(t.date), t.lieu, t.objet, t.desc, t.urg, t.dem, t.statut, '']));
+    const ws = XLSX.utils.aoa_to_sheet(aoa, { cellDates: true, dateNF: 'dd/mm/yyyy' }); ws['!cols'] = [11, 18, 30, 50, 10, 11, 10, 24].map(w => ({ wch: w }));
+    const wb = XLSX.utils.book_new(); XLSX.utils.book_append_sheet(wb, ws, 'Travaux'); XLSX.writeFile(wb, 'Demandes de travaux - ' + iso(new Date()) + '.xlsx');
+    if (confirm('Passer les demandes « Signalé » en « Transmis » ?')) { TRAV.forEach(t => { if (t.statut === 'Signalé') t.statut = 'Transmis'; }); saveTrav(); VIEWS.travaux(); }
+  };
+  renderTrav();
+};
+async function renderTrav() {
+  const el = $('#trl'); if (!el) return;
+  if (!TRAV.length) { el.innerHTML = '<div class="empty">Aucune demande.</div>'; return; }
+  const ord = t => (t.statut === 'Réalisé' ? 10 : 0) + (t.urg === 'Sécurité' ? 0 : t.urg === 'Urgente' ? 1 : 2);
+  el.innerHTML = [...TRAV].sort((a, b) => ord(a) - ord(b) || b.date.localeCompare(a.date)).map(t => `<div style="border-top:1px solid #EEF0F4;padding:10px 0;display:flex;gap:12px;flex-wrap:wrap;${t.statut === 'Réalisé' ? 'opacity:.55' : ''}">
+    <div style="flex:1 1 300px;display:flex;flex-direction:column;gap:3px">
+      <div class="row"><strong>${esc(t.lieu)} · ${esc(t.objet)}</strong>${t.urg !== 'Normale' ? `<span class="chip ca1">${esc(t.urg)}</span>` : ''}<span class="chip ${TSTAT_CL[t.statut]}">${esc(t.statut)}</span></div>
+      ${t.desc ? `<span class="muted">${esc(t.desc)}</span>` : ''}
+      <span class="muted">${new Date(t.date).toLocaleDateString('fr-FR')} · ${esc(t.dem)}${t.nom ? ' (' + esc(t.nom) + ')' : ''}</span>
+    </div>
+    <div data-tph="${t.photo ? t.id : ''}"></div>
+    <div class="row"><select data-tst="${t.id}" aria-label="Statut">${TSTAT.map(s => `<option ${s === t.statut ? 'selected' : ''}>${s}</option>`).join('')}</select><button class="btn" data-tdel="${t.id}">Supprimer</button></div>
+  </div>`).join('');
+  el.querySelectorAll('[data-tst]').forEach(s => s.onchange = () => { TRAV.find(t => t.id === s.dataset.tst).statut = s.value; saveTrav(); renderTrav(); });
+  el.querySelectorAll('[data-tdel]').forEach(b => b.onclick = () => { if (confirm('Supprimer cette demande ?')) { TRAV = TRAV.filter(t => t.id !== b.dataset.tdel); saveTrav(); renderTrav(); } });
+  for (const d of el.querySelectorAll('[data-tph]')) { if (!d.dataset.tph) continue; const b = await mediaGet('trav_' + d.dataset.tph); if (b) d.innerHTML = `<img src="${URL.createObjectURL(b)}" alt="Photo des travaux" style="max-width:200px;border-radius:10px">`; }
+}
+
+/* --- Réservations ponctuelles (venant des collègues) --- */
+let RESA = LS.get('resa', []);
+const saveResa = () => LS.set('resa', RESA);
+function resaFor(date) {
+  const ds = iso(date);
+  return RESA.filter(r => r.date === ds).map(r => {
+    const p = prettyInst(r.inst);
+    return { d: JK[date.getDay()], s: r.s, e: r.e, inst: r.inst, base: p.base, st: normStruct(r.st), stl: r.st || '', who: r.who || '', apsa: r.apsa || '', qz: null, classes: [], ponctuel: true };
+  });
+}
+
+/* --- Partage par fichiers Excel --- */
+const PARTAGE_SHEETS = {
+  materiel: ['Demandes matériel', ['Trésorerie (EPS ou AS)', 'Demandeur (EPS, Primaire, AS, ACS)', 'Nom du collègue', 'APSA', 'Désignation', 'Spécifications', 'Quantité', 'Prix unitaire (¥) si connu', 'Lien du produit', 'Variante exacte (couleur, taille, lot)', 'Priorité (1 à 5)']],
+  incidents: ['Incidents', ['Date (jj/mm/aaaa)', 'Lieu', 'Type (Matériel abîmé, Défaut de rangement, Sécurité)', 'Matériel concerné', 'Gravité (À surveiller, Inutilisable, Danger)', 'Message', 'Nom du collègue']],
+  travaux: ['Travaux', ['Date (jj/mm/aaaa)', 'Lieu', 'Objet', 'Description', 'Urgence (Normale, Urgente, Sécurité)', 'Demandeur (EPS, Primaire, AS, ACS)', 'Nom du collègue']],
+  resa: ['Réservations', ['Date (jj/mm/aaaa)', 'Début (ex. 13h30)', 'Fin (ex. 14h30)', 'Installation', 'Structure (Primaire, AS, ACS, Cours EPS)', 'Intervenant', 'Activité']]
+};
+function exportModele() {
+  const wb = XLSX.utils.book_new();
+  const lire = [['Coordo EPS · fichier à remplir'], [],
+    ['1. Remplis seulement les onglets utiles, une ligne par demande (ne change pas la ligne de titres).'],
+    ['2. Enregistre le fichier et renvoie-le à la coordination EPS (Teams, OneDrive ou e-mail).'],
+    ['3. La coordination l’importe dans l’app : tes demandes apparaissent dans le planning, le matériel, les incidents ou les travaux.'], [],
+    ['Installations possibles :'], ...lieuxList().map(l => ['· ' + l]), [],
+    ['Ne mets aucun nom d’élève dans ce fichier.']];
+  const w0 = XLSX.utils.aoa_to_sheet(lire); w0['!cols'] = [{ wch: 100 }];
+  XLSX.utils.book_append_sheet(wb, w0, 'À lire');
+  for (const [name, head] of Object.values(PARTAGE_SHEETS)) {
+    const ws = XLSX.utils.aoa_to_sheet([head]); ws['!cols'] = head.map(h => ({ wch: Math.max(14, Math.min(40, h.length + 2)) }));
+    XLSX.utils.book_append_sheet(wb, ws, name);
+  }
+  XLSX.writeFile(wb, 'Coordo EPS - fichier collègues.xlsx');
+}
+const parseDate = v => {
+  if (v instanceof Date) return iso(v);
+  const m = String(v || '').match(/(\d{1,2})[\/.-](\d{1,2})[\/.-](\d{2,4})/);
+  if (!m) return null; const y = m[3].length === 2 ? '20' + m[3] : m[3];
+  return y + '-' + pad(m[2]) + '-' + pad(m[1]);
+};
+const parseHeure = v => {
+  if (v instanceof Date) return pad(v.getHours()) + ':' + pad(v.getMinutes());
+  if (typeof v === 'number' && v < 1) { const t = Math.round(v * 1440); return pad(Math.floor(t / 60)) + ':' + pad(t % 60); }
+  const m = String(v || '').match(/(\d{1,2})\s*[h:]\s*(\d{2})?/i); return m ? pad(m[1]) + ':' + (m[2] || '00') : null;
+};
+const sig = o => JSON.stringify(o).toLowerCase();
+function importCollegue(wb) {
+  const seen = new Set(LS.get('importSig', []));
+  const res = { materiel: 0, incidents: 0, travaux: 0, resa: 0, conflits: [], doublons: 0 };
+  const rowsOf = name => { const ws = wb.Sheets[name]; return ws ? XLSX.utils.sheet_to_json(ws, { header: 1, defval: null, raw: true, cellDates: true }).slice(1).filter(r => r && r.some(v => v != null && String(v).trim() !== '')) : []; };
+  const once = (kind, r) => { const k = kind + sig(r); if (seen.has(k)) { res.doublons++; return false; } seen.add(k); return true; };
+  for (const r of rowsOf(PARTAGE_SHEETS.materiel[0])) {
+    if (!r[4] || !once('m', r)) continue;
+    MAT.push({ id: 'm' + Date.now().toString(36) + Math.random().toString(36).slice(2, 6), tres: /as/i.test(r[0] || '') ? 'AS' : 'EPS', demandeur: ['EPS', 'Primaire', 'AS', 'ACS'].find(x => new RegExp(x, 'i').test(r[1] || '')) || 'EPS', nom: r[2] || '', apsa: r[3] || '', des: String(r[4]).trim(), spec: r[5] || '', qte: num(r[6]), pu: num(r[7]), lien: r[8] || '', variante: r[9] || '', prio: num(r[10]), statut: 'Demandé', zh: toChinese(r[4]), cat: '', bon: null, use: 0, hs: 0, lieu: '', img: false });
+    res.materiel++;
+  }
+  for (const r of rowsOf(PARTAGE_SHEETS.incidents[0])) {
+    if (!r[1] || !once('i', r)) continue;
+    const ds = parseDate(r[0]) || iso(new Date());
+    INC.unshift({ id: 'i' + Date.now() + Math.random().toString(36).slice(2, 5), date: fromIso(ds).toISOString(), type: r[2] || 'Matériel abîmé', lieu: String(r[1]), objet: r[3] || '', grav: r[4] || 'À surveiller', msg: (r[5] || '') + (r[6] ? ' (' + r[6] + ')' : ''), closed: false, media: null });
+    res.incidents++;
+  }
+  for (const r of rowsOf(PARTAGE_SHEETS.travaux[0])) {
+    if (!r[2] || !once('t', r)) continue;
+    const ds = parseDate(r[0]) || iso(new Date());
+    TRAV.unshift({ id: 't' + Date.now() + Math.random().toString(36).slice(2, 5), date: fromIso(ds).toISOString(), lieu: r[1] || '', objet: String(r[2]), desc: r[3] || '', urg: r[4] || 'Normale', dem: r[5] || 'EPS', nom: r[6] || '', statut: 'Signalé', photo: false });
+    res.travaux++;
+  }
+  for (const r of rowsOf(PARTAGE_SHEETS.resa[0])) {
+    const ds = parseDate(r[0]), s = parseHeure(r[1]), e = parseHeure(r[2]);
+    if (!ds || !s || !e || !r[3] || !once('r', r)) continue;
+    const nr = { id: 'r' + Date.now() + Math.random().toString(36).slice(2, 5), date: ds, s, e, inst: String(r[3]).trim(), st: r[4] || 'Primaire', who: r[5] || '', apsa: r[6] || '' };
+    const d = fromIso(ds), base = prettyInst(nr.inst).base;
+    const clash = blocksFor(d).filter(b => b.base === base && Math.min(toMin(b.e), toMin(e)) - Math.max(toMin(b.s), toMin(s)) > 0);
+    if (dayStatus(d) !== 'cours') res.conflits.push(fromIso(ds).toLocaleDateString('fr-FR') + ' : pas de cours ce jour-là (' + nr.inst + ')');
+    clash.forEach(b => res.conflits.push(fromIso(ds).toLocaleDateString('fr-FR') + ' ' + hh(s) + ' · ' + nr.inst + ' : déjà pris par ' + blockLabel(b) + ' ' + (b.apsa || '')));
+    RESA.push(nr); res.resa++;
+  }
+  LS.set('importSig', [...seen]); saveMat(); LS.set('incidents', INC); saveTrav(); saveResa();
+  return res;
+}
+function exportEtat() {
+  const wb = XLSX.utils.book_new(), used = new Set(), today = new Date();
+  const mon = monday(today);
+  if (PLAN) for (const w of [0, 1]) {
+    const m = addDays(mon, 7 * w), aoa = [['Planning des installations · semaine du ' + m.toLocaleDateString('fr-FR') + ' · ' + weekLabel(m)], [], ['Jour', 'Début', 'Fin', 'Installation', 'Structure', 'Intervenant', 'Activité', 'Classe(s)']];
+    for (let i = 0; i < 5; i++) { const d = addDays(m, i); for (const b of mergeHalves(blocksFor(d))) aoa.push([JOURS[d.getDay()] + ' ' + d.getDate(), hh(b.s), hh(b.e), b.halves ? b.base + ' (2 moitiés)' : b.inst, b.stl || b.st, b.who, b.apsa, b.classes.join(', ')]); }
+    const ws = XLSX.utils.aoa_to_sheet(aoa); ws['!cols'] = [12, 7, 7, 26, 12, 16, 24, 14].map(x => ({ wch: x }));
+    XLSX.utils.book_append_sheet(wb, ws, sheetName(w ? 'Semaine prochaine' : 'Cette semaine', used));
+  }
+  const inc = [['Incidents en cours'], [], ['Date', 'Lieu', 'Type', 'Gravité', 'Matériel', 'Message']];
+  INC.filter(i => !i.closed).forEach(i => inc.push([new Date(i.date).toLocaleDateString('fr-FR'), i.lieu, i.type, i.grav, i.objet, i.msg]));
+  let ws = XLSX.utils.aoa_to_sheet(inc); ws['!cols'] = [11, 20, 18, 12, 26, 50].map(x => ({ wch: x })); XLSX.utils.book_append_sheet(wb, ws, 'Incidents');
+  const tr = [['Demandes de travaux'], [], ['Date', 'Lieu', 'Objet', 'Urgence', 'Statut']];
+  TRAV.filter(t => t.statut !== 'Réalisé').forEach(t => tr.push([new Date(t.date).toLocaleDateString('fr-FR'), t.lieu, t.objet, t.urg, t.statut]));
+  ws = XLSX.utils.aoa_to_sheet(tr); ws['!cols'] = [11, 20, 36, 10, 10].map(x => ({ wch: x })); XLSX.utils.book_append_sheet(wb, ws, 'Travaux');
+  const mt = [['Demandes de matériel (suivi)'], [], ['Trésorerie', 'Demandeur', 'Article', 'Quantité', 'Statut']];
+  MAT.filter(i => !['Reçu', 'Refusé'].includes(i.statut)).forEach(i => mt.push([i.tres, i.demandeur || '', i.des, i.qte ?? '', i.statut]));
+  ws = XLSX.utils.aoa_to_sheet(mt); ws['!cols'] = [10, 11, 40, 9, 12].map(x => ({ wch: x })); XLSX.utils.book_append_sheet(wb, ws, 'Matériel');
+  XLSX.writeFile(wb, 'Coordo EPS - partage équipe - ' + iso(today) + '.xlsx');
+}
+VIEWS.partage = function () {
+  const app = $('#app');
+  const next = RESA.filter(r => r.date >= iso(new Date())).sort((a, b) => (a.date + a.s).localeCompare(b.date + b.s));
+  app.innerHTML = `<main>
+    <h1>Partage avec les collègues (Excel)</h1>
+    <p class="muted" style="margin:0">Les collègues n’ont besoin que d’Excel. Tu leur envoies les fichiers par Teams, OneDrive ou e-mail ; ils te renvoient le fichier rempli, que tu importes ici.</p>
+    <div class="card"><h2>1 · Envoyer l’état de la coordination</h2>
+      <span class="muted">Planning de cette semaine et de la suivante, incidents en cours, travaux, suivi des commandes. Aucune donnée d’élève.</span>
+      <div class="row"><button class="btn go" id="pxe">Télécharger « partage équipe » (Excel)</button></div></div>
+    <div class="card"><h2>2 · Fichier à remplir par les collègues</h2>
+      <span class="muted">Un modèle avec 4 onglets : demandes de matériel, incidents, travaux, réservations ponctuelles d’installation.</span>
+      <div class="row"><button class="btn" id="pxm">Télécharger le modèle</button></div></div>
+    <div class="card"><h2>3 · Importer un fichier rempli</h2>
+      <span class="muted">Tu peux importer plusieurs fichiers : les lignes déjà importées ne sont pas ajoutées deux fois.</span>
+      <div class="row"><label class="btn blue" style="display:flex;align-items:center;gap:8px">Importer <input type="file" id="pxi" accept=".xlsx,.xls" multiple style="max-width:220px"></label></div>
+      <div id="pxr"></div></div>
+    <div class="card"><h2>Réservations ponctuelles à venir</h2>
+      ${next.length ? `<table class="t"><tr><th>Date</th><th>Horaire</th><th>Installation</th><th>Structure</th><th>Intervenant</th><th>Activité</th><th></th></tr>${next.map(r => `<tr><td>${fromIso(r.date).toLocaleDateString('fr-FR')}</td><td>${hh(r.s)}–${hh(r.e)}</td><td>${esc(r.inst)}</td><td>${esc(r.st)}</td><td>${esc(r.who)}</td><td>${esc(r.apsa)}</td><td><button class="btn" data-rdel="${r.id}">Supprimer</button></td></tr>`).join('')}</table>` : '<div class="empty">Aucune.</div>'}
+      <span class="muted">Elles s’affichent dans le planning et sur le grand écran.</span></div>
+  </main>`;
+  $('#pxe').onclick = exportEtat;
+  $('#pxm').onclick = exportModele;
+  $('#pxi').onchange = async e => {
+    const tot = { materiel: 0, incidents: 0, travaux: 0, resa: 0, conflits: [], doublons: 0 };
+    for (const f of e.target.files) {
+      try { const r = importCollegue(XLSX.read(await f.arrayBuffer(), { type: 'array', cellDates: true })); for (const k of ['materiel', 'incidents', 'travaux', 'resa', 'doublons']) tot[k] += r[k]; tot.conflits.push(...r.conflits); }
+      catch (err) { alertMsg(f.name + ' : ' + err.message); }
+    }
+    VIEWS.partage();
+    $('#pxr').innerHTML = `<div class="banner"><strong>Importé :</strong> ${tot.materiel} demande(s) de matériel · ${tot.incidents} incident(s) · ${tot.travaux} demande(s) de travaux · ${tot.resa} réservation(s)${tot.doublons ? ' · ' + tot.doublons + ' ligne(s) déjà importée(s) ignorée(s)' : ''}${tot.conflits.length ? '<br><strong>À vérifier :</strong><br>' + tot.conflits.map(esc).join('<br>') : ''}</div>`;
+  };
+  app.querySelectorAll('[data-rdel]').forEach(b => b.onclick = () => { RESA = RESA.filter(r => r.id !== b.dataset.rdel); saveResa(); VIEWS.partage(); });
+};
+
+/* --- Programmation --- */
+const PROG = { r: 'college' };
+const RYTHMES = {
+  college: { t: '5e · 4e · 3e (3 h)', cls: ['5A', '5B', '5C', '4A', '4B', '3A', '3B', '3C'], per: [['P1', '2026-08-31', '2026-10-30'], ['P2', '2026-11-02', '2027-01-15'], ['P3', '2027-01-18', '2027-03-26'], ['P4', '2027-03-29', '2027-06-04']] },
+  lycee: { t: '6e (4 h) et lycée (2 h)', cls: ['6A', '6B', '6C', '2A', '2B', '1A', '1B', 'Term'], per: [['P1', '2026-08-31', '2026-11-27'], ['P2', '2026-11-30', '2027-03-05'], ['P3', '2027-03-08', '2027-05-28']] }
+};
+function progData(r) {
+  const R = RYTHMES[r], out = [];
+  for (const cl of R.cls) {
+    const idx = CAL.classes.map((c, i) => [c, i]).filter(([c]) => c.c === cl);
+    let mk = 0;
+    for (const [c, ci] of idx) {
+      mk++;
+      const cells = R.per.map(([, a, b]) => {
+        const cnt = {}; let n = 0;
+        for (const [ds, list] of Object.entries(CAL.cal)) if (ds >= a && ds <= b) for (const [i, act] of list) if (i === ci && !/^(autre|eval)/i.test(act)) { cnt[act] = (cnt[act] || 0) + 1; n++; }
+        const top = Object.entries(cnt).sort((x, y) => y[1] - x[1])[0];
+        return top ? { apsa: top[0].replace(/^./, m => m.toUpperCase()), n } : null;
+      });
+      out.push({ cl: cl === 'Term' ? 'Term · menu ' + mk : cl, cren: JOURS[['dim', 'lun', 'mar', 'mer', 'jeu', 'ven', 'sam'].indexOf(c.d)] + ' ' + hh(c.s) + (c.qz ? ' (quinzaine)' : ''), cells });
+    }
+  }
+  return out;
+}
+VIEWS.programmation = function () {
+  const app = $('#app'), R = RYTHMES[PROG.r], rows = progData(PROG.r);
+  const cov = cl => { const s = new Set(); rows.filter(x => x.cl === cl).forEach(x => x.cells.forEach(c => c && s.add(caOf(c.apsa)))); return s; };
+  app.innerHTML = `<main>
+    <div class="row" style="justify-content:space-between"><h1>Programmation des APSA</h1>
+      <div class="row">${Object.entries(RYTHMES).map(([k, v]) => `<button class="btn ${PROG.r === k ? 'on' : ''}" data-r="${k}">${v.t}</button>`).join('')}</div></div>
+    <p class="muted" style="margin:0">Lue dans le calendrier EPS : toutes les classes d’un même rythme changent d’APSA en même temps. Le chiffre = nombre de séances.</p>
+    <div class="card" style="padding:0"><div class="scroll"><table class="t" style="min-width:900px"><tr><th>Classe</th><th>Créneau</th>${R.per.map(([p, a, b]) => `<th>${p} · ${fromIso(a).toLocaleDateString('fr-FR').slice(0, 5)} → ${fromIso(b).toLocaleDateString('fr-FR').slice(0, 5)}</th>`).join('')}<th>CA vus</th></tr>
+      ${rows.map((x, i) => `<tr${i && rows[i - 1].cl !== x.cl ? ' style="border-top:2px solid #CDD3DD"' : ''}><td><strong>${esc(x.cl)}</strong></td><td class="muted">${esc(x.cren)}</td>${x.cells.map(c => `<td>${c ? `<span class="chip ca${caOf(c.apsa)}">${esc(c.apsa)}</span> <span class="muted">${c.n}</span>` : '—'}</td>`).join('')}<td>${i && rows[i - 1].cl === x.cl ? '' : [1, 2, 3, 4, 5].map(n => `<span class="chip ${cov(x.cl).has(n) ? 'ca' + n : ''}" style="${cov(x.cl).has(n) ? '' : 'border:1px dashed #B8C0CC;color:#8792A2'}">${n}</span>`).join(' ')}</td></tr>`).join('')}
+    </table></div></div>
+    <div class="row"><button class="btn go" id="prx">Exporter en Excel</button><span class="muted">Cercle en pointillés = champ d’apprentissage non vu dans l’année (ou dans le menu, en Terminale).</span></div>
+  </main>`;
+  app.querySelectorAll('[data-r]').forEach(b => b.onclick = () => { PROG.r = b.dataset.r; VIEWS.programmation(); });
+  $('#prx').onclick = () => {
+    const wb = XLSX.utils.book_new();
+    for (const [k, v] of Object.entries(RYTHMES)) {
+      const aoa = [['Programmation EPS 2026-2027 · ' + v.t], [], ['Classe', 'Créneau', ...v.per.map(([p, a, b]) => p + ' (' + fromIso(a).toLocaleDateString('fr-FR') + ' → ' + fromIso(b).toLocaleDateString('fr-FR') + ')')]];
+      progData(k).forEach(x => aoa.push([x.cl, x.cren, ...x.cells.map(c => c ? c.apsa + ' (' + c.n + ' séances, CA' + caOf(c.apsa) + ')' : '')]));
+      const ws = XLSX.utils.aoa_to_sheet(aoa); ws['!cols'] = [8, 22, ...v.per.map(() => ({ wch: 30 }))].map(x => typeof x === 'number' ? { wch: x } : x);
+      XLSX.utils.book_append_sheet(wb, ws, k === 'college' ? '5e-4e-3e' : '6e et lycée');
+    }
+    XLSX.writeFile(wb, 'Programmation EPS 2026-2027.xlsx');
+  };
+};
+
 /* --- Réglages --- */
 VIEWS.reglages = function () {
   const app = $('#app');
@@ -1227,12 +1480,12 @@ VIEWS.reglages = function () {
     } catch (err) { alertMsg('Import impossible : ' + err.message); }
   };
   $('#bk').onclick = () => {
-    const blob = new Blob([JSON.stringify({ app: 'coordo-eps', v: VERSION, planning: PLAN, incidents: INC.map(i => ({ ...i, media: null })), materiel: MAT, glossaire: LS.get('glossaire', {}) }, null, 1)], { type: 'application/json' });
+    const blob = new Blob([JSON.stringify({ app: 'coordo-eps', v: VERSION, planning: PLAN, incidents: INC.map(i => ({ ...i, media: null })), materiel: MAT, glossaire: LS.get('glossaire', {}), travaux: TRAV.map(t => ({ ...t, photo: false })), resa: RESA }, null, 1)], { type: 'application/json' });
     const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'coordo-eps-sauvegarde-' + iso(new Date()) + '.json'; a.click();
   };
   $('#rs').onchange = async e => {
     const f = e.target.files[0]; if (!f) return;
-    try { const d = JSON.parse(await f.text()); if (d.app !== 'coordo-eps') throw new Error('fichier non reconnu'); if (d.planning) { PLAN = d.planning; LS.set('planning', PLAN); } if (d.incidents) { INC = d.incidents; LS.set('incidents', INC); } if (d.materiel) { MAT = d.materiel; LS.set('materiel', MAT); } if (d.glossaire) LS.set('glossaire', d.glossaire); alertMsg('Sauvegarde restaurée.'); VIEWS.reglages(); }
+    try { const d = JSON.parse(await f.text()); if (d.app !== 'coordo-eps') throw new Error('fichier non reconnu'); if (d.planning) { PLAN = d.planning; LS.set('planning', PLAN); } if (d.incidents) { INC = d.incidents; LS.set('incidents', INC); } if (d.materiel) { MAT = d.materiel; LS.set('materiel', MAT); } if (d.glossaire) LS.set('glossaire', d.glossaire); if (d.travaux) { TRAV = d.travaux; saveTrav(); } if (d.resa) { RESA = d.resa; saveResa(); } alertMsg('Sauvegarde restaurée.'); VIEWS.reglages(); }
     catch (err) { alertMsg('Restauration impossible : ' + err.message); }
   };
 };
