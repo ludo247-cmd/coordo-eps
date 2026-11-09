@@ -73,34 +73,70 @@ body.tv{background:#10151F}
 .wkgrid .d{font-weight:700;font-size:18px;padding-top:6px}
 .wkgrid .c{background:#161C27;border-radius:12px;padding:8px;display:flex;flex-direction:column;gap:5px;min-height:60px}
 #newver{display:none;background:#1F4FA8;color:#fff;padding:10px 16px;text-align:center;font-weight:600;cursor:pointer}
-@media print{header.top,.noprint{display:none!important}}
+header.top .hamb,.hamb{background:none;border:0;color:inherit;width:48px;height:48px;border-radius:10px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;font-size:20px}
+header.top .hamb:hover{background:#34405A}
+header.top .brand{color:#fff;text-decoration:none}
+#secnav{display:flex;flex-wrap:wrap;gap:4px;flex:1 1 400px}
+#secnav a{color:#D5DBE6;text-decoration:none;padding:11px 14px;border-radius:8px;font-size:15px}
+#secnav a.on{background:#34405A;color:#fff;font-weight:600}
+#subnav{display:flex;gap:6px;overflow-x:auto;padding:10px 16px;background:#fff;border-bottom:1px solid var(--line);position:sticky;top:68px;z-index:9;scrollbar-width:none}
+#subnav a{flex:0 0 auto;text-decoration:none;color:var(--ink);padding:10px 14px;border-radius:999px;border:1px solid #CDD3DD;font-size:14px;min-height:44px;display:inline-flex;align-items:center}
+#subnav a.on{background:var(--nav);color:#fff;border-color:var(--nav);font-weight:600}
+#bottombar{display:none}
+#scrim{display:none;position:fixed;inset:0;background:rgba(16,21,31,.45);z-index:40}
+#drawer{position:fixed;top:0;bottom:0;left:0;width:min(320px,86vw);background:#fff;z-index:41;transform:translateX(-105%);transition:transform .2s ease;display:flex;flex-direction:column;box-shadow:4px 0 24px rgba(0,0,0,.15)}
+body.drawer-open #drawer{transform:none}body.drawer-open #scrim{display:block}
+#drawer .dhead{display:flex;justify-content:space-between;align-items:center;padding:10px 12px 10px 18px;border-bottom:1px solid var(--line);font-size:18px}
+#drawer .dlist{overflow-y:auto;padding:8px 0 24px}
+#drawer .dsec{display:flex;align-items:center;gap:10px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.4px;color:var(--mute);padding:14px 18px 6px}
+#drawer .dlist a{display:block;padding:13px 18px 13px 52px;color:var(--ink);text-decoration:none;font-size:16px}
+#drawer .dlist a.on{background:#EEF2FA;font-weight:700;color:var(--accent)}
+.tabs{display:flex;gap:6px;flex-wrap:wrap}
+.pgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+.pcard{text-align:left;background:#fff;border:2px solid var(--line);border-radius:14px;padding:16px;display:flex;flex-direction:column;gap:6px;cursor:pointer;min-height:96px;font:inherit;color:inherit}
+.pcard.on{border-color:var(--accent);background:#F2F6FD}
+.btn.big{min-height:52px;display:inline-flex;align-items:center;gap:8px;font-weight:600}
+.mpick{display:flex;flex-wrap:wrap;gap:8px;align-items:center}.mpick label.btn{cursor:pointer}.mprev{flex:1 1 100%;display:flex;align-items:center;gap:10px}
+.gstep{display:flex;gap:12px;align-items:flex-start;border-top:1px solid #EEF0F4;padding-top:12px}
+.gstep .num{flex:0 0 32px;height:32px;border-radius:50%;background:var(--nav);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+.chipbtn{min-height:44px;padding:0 14px;border-radius:999px;border:1px solid #CDD3DD;background:#fff;cursor:pointer;font:inherit;font-size:14px;display:inline-flex;align-items:center;gap:6px;color:var(--ink)}
+.chipbtn.on{background:#EEF2FA;border-color:var(--accent);color:var(--accent);font-weight:600}
+.dot{width:10px;height:10px;border-radius:50%;display:inline-block}.dot.ca0{background:#B8C0CC}.dot.ca1{background:#E8803A}.dot.ca2{background:#2E9E5B}.dot.ca3{background:#7D52C7}.dot.ca4{background:#2F6FC4}.dot.ca5{background:#D04D8C}
+.bgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:14px}.bcard ul{margin:6px 0 0;padding-left:18px}
+.phero{border-left:6px solid var(--accent)}.ptitle{font-size:26px;font-weight:700;border:0;padding:0;min-height:44px;background:transparent;width:100%}
+.pgrid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:14px}.psec.wide{grid-column:1/-1}.psec textarea{width:100%;resize:vertical}
+.todo.ok input[type=text]{text-decoration:line-through;opacity:.6}.todo input[type=checkbox]{width:24px;height:24px}
+input[type=number]{min-height:44px;border:1px solid #CDD3DD;border-radius:10px;padding:0 10px;background:#fff}
+@media (max-width:900px){
+  body{font-size:16px}
+  header.top{padding:6px 10px;gap:6px;flex-wrap:nowrap}header.top .brand{font-size:18px;flex:1}
+  #secnav{display:none}
+  #subnav{top:60px}
+  #bottombar{display:grid;grid-auto-flow:column;grid-auto-columns:1fr;position:fixed;left:0;right:0;bottom:0;z-index:30;background:#fff;border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom)}
+  #bottombar a{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;min-height:64px;color:#5A6578;text-decoration:none;font-size:11.5px;font-weight:600}
+  #bottombar a.on{color:var(--accent)}#bottombar a.on svg{background:#E3EBFA;border-radius:999px;padding:2px 12px;width:48px;box-sizing:content-box}
+  main{padding:14px 12px 100px}
+  .btn,select,input[type=text],input[type=date],input[type=number],input[type=password]{min-height:48px}
+  .tabs .btn{flex:1 1 auto}
+  .ptitle{font-size:22px}
+}
+@media print{header.top,.noprint,#subnav,#bottombar,#drawer{display:none!important}}
+
 </style>
 </head>
 <body>
 <div id="newver" role="button" tabindex="0">Nouvelle version disponible : cliquer pour mettre à jour</div>
 <header class="top noprint" id="top">
-  <div class="brand">Coordo EPS</div>
-  <nav aria-label="Menu principal">
-    <a href="#accueil" data-v="accueil">Accueil</a>
-    <a href="#ecran" data-v="ecran">Grand écran</a>
-    <a href="#planning" data-v="planning">Planning</a>
-    <a href="#generateur" data-v="generateur">Générateur</a>
-    <a href="#programmation" data-v="programmation">Programmation</a>
-    <a href="#evaluations" data-v="evaluations">Évaluations</a>
-    <a href="#bac" data-v="bac">Bac</a>
-    <a href="#incidents" data-v="incidents">Incidents</a>
-    <a href="#travaux" data-v="travaux">Travaux</a>
-    <a href="#materiel" data-v="materiel">Matériel</a>
-    <a href="#reunions" data-v="reunions">Réunions</a>
-    <a href="#cycle3" data-v="cycle3">Cycle 3</a>
-    <a href="#as" data-v="as">AS (privé)</a>
-    <a href="#ressources" data-v="ressources">Ressources</a>
-    <a href="#partage" data-v="partage">Partage</a>
-    <a href="#acces" data-v="acces">Accès</a>
-    <a href="#reglages" data-v="reglages">Réglages</a>
-  </nav>
+  <button id="hamb" class="hamb" aria-label="Ouvrir le menu" aria-controls="drawer"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+  <a class="brand" href="#accueil">Coordo EPS</a>
+  <nav id="secnav" aria-label="Rubriques"></nav>
   <span class="wk" id="wkbadge"></span>
 </header>
+<nav id="subnav" class="noprint" aria-label="Pages de la rubrique"></nav>
+<div id="scrim" class="noprint"></div>
+<aside id="drawer" class="noprint" aria-hidden="true" aria-label="Menu détaillé"><div class="dhead"><strong>Coordo EPS</strong><button id="dclose" class="hamb" aria-label="Fermer le menu">✕</button></div><div class="dlist"></div></aside>
+<nav id="bottombar" class="noprint" aria-label="Rubriques"></nav>
 <div id="app"></div>
 
 <script>/*! xlsx.js (C) 2013-present SheetJS -- http://sheetjs.com */
@@ -128,7 +164,7 @@ var o=[];var l=Array.isArray(e);for(f=n.s.c;f<=n.e.c;++f)s[f]=ya(f);for(var c=n.
 </script>
 <script>
 "use strict";
-const VERSION = '0.5.0';
+const VERSION = '0.6.0';
 const CAL = {"classes":[{"c":"6A","d":"lun","s":"08:00","e":"10:00","qz":false},{"c":"4A","d":"lun","s":"10:30","e":"12:30","qz":false},{"c":"5C","d":"lun","s":"10:30","e":"12:30","qz":false},{"c":"5A","d":"lun","s":"13:30","e":"15:30","qz":false},{"c":"6C","d":"mar","s":"08:00","e":"10:00","qz":false},{"c":"3A","d":"mar","s":"10:30","e":"12:30","qz":false},{"c":"3B","d":"mar","s":"10:30","e":"12:30","qz":false},{"c":"5B","d":"mar","s":"13:30","e":"15:30","qz":false},{"c":"6B","d":"mer","s":"10:30","e":"12:30","qz":false},{"c":"3C","d":"mer","s":"10:30","e":"12:30","qz":true},{"c":"4B","d":"mer","s":"10:30","e":"12:30","qz":true},{"c":"6A","d":"jeu","s":"08:00","e":"10:00","qz":false},{"c":"5B","d":"jeu","s":"10:00","e":"12:00","qz":true},{"c":"5A","d":"jeu","s":"10:00","e":"12:00","qz":true},{"c":"4A","d":"jeu","s":"10:00","e":"12:00","qz":true},{"c":"3A","d":"jeu","s":"10:00","e":"12:00","qz":true},{"c":"5C","d":"jeu","s":"13:30","e":"15:30","qz":true},{"c":"3B","d":"jeu","s":"13:30","e":"15:30","qz":true},{"c":"1B","d":"jeu","s":"15:30","e":"17:30","qz":false},{"c":"1A","d":"jeu","s":"15:30","e":"17:30","qz":false},{"c":"2A","d":"jeu","s":"15:30","e":"17:30","qz":false},{"c":"6C","d":"ven","s":"08:00","e":"10:00","qz":false},{"c":"3C","d":"ven","s":"10:30","e":"12:30","qz":false},{"c":"4B","d":"ven","s":"10:30","e":"12:30","qz":false},{"c":"6B","d":"ven","s":"13:30","e":"15:30","qz":false},{"c":"2B","d":"ven","s":"15:30","e":"17:30","qz":false},{"c":"Term","d":"ven","s":"15:30","e":"17:30","qz":false},{"c":"Term","d":"ven","s":"15:30","e":"17:30","qz":false}],"cal":{"2026-09-01":[[4,"DF"],[5,"Bad"],[6,"combiné"],[7,"Combiné"]],"2026-09-02":[[8,"DF"],[9,"combiné"]],"2026-09-03":[[11,"Gym"],[13,"Combiné"],[15,"Bad"],[16,"Bad"],[18,"Gym"],[19,"Bad"],[20,"DF"]],"2026-09-04":[[21,"jeux collectifs"],[22,"combiné"],[23,"VB"],[24,"jeux collectifs"],[25,"Danse"],[26,"VB"],[27,"DF"]],"2026-09-07":[[0,"DF"],[1,"DF"],[2,"Bad"],[3,"Combiné"]],"2026-09-08":[[4,"DF"],[5,"Bad"],[6,"combiné"],[7,"Combiné"]],"2026-09-09":[[8,"DF"],[10,"VB"]],"2026-09-10":[[11,"Gym"],[12,"Combiné"],[14,"DF"],[17,"combiné"],[18,"Gym"],[19,"Bad"],[20,"DF"]],"2026-09-11":[[21,"jeux collectifs"],[22,"combiné"],[23,"VB"],[24,"jeux collectifs"],[25,"Danse"],[26,"VB"],[27,"DF"]],"2026-09-14":[[0,"DF"],[1,"DF"],[2,"Bad"],[3,"Combiné"]],"2026-09-15":[[4,"DF"],[5,"Bad"],[6,"combiné"],[7,"Combiné"]],"2026-09-16":[[8,"DF"],[9,"combiné"]],"2026-09-17":[[11,"Gym"],[13,"Combiné"],[15,"Bad"],[16,"Bad"],[18,"Gym"],[19,"Bad"],[20,"DF"]],"2026-09-18":[[21,"jeux collectifs"],[22,"combiné"],[23,"VB"],[24,"jeux collectifs"],[25,"Danse"],[26,"VB"],[27,"DF"]],"2026-09-21":[[0,"DF"],[1,"DF"],[2,"Bad"],[3,"Combiné"]],"2026-09-22":[[4,"DF"],[5,"Bad"],[6,"combiné"],[7,"Combiné"]],"2026-09-23":[[8,"DF"],[10,"VB"]],"2026-09-24":[[11,"Gym"],[12,"Combiné"],[14,"DF"],[17,"combiné"],[18,"Gym"],[19,"Bad"],[20,"DF"]],"2026-09-28":[[0,"DF"],[1,"DF"],[2,"Bad"],[3,"Combiné"]],"2026-09-29":[[4,"DF"],[5,"Bad"],[6,"combiné"],[7,"Combiné"]],"2026-09-30":[[8,"DF"],[9,"combiné"]],"2026-10-08":[[11,"Gym"],[12,"Combiné"],[14,"DF"],[17,"combiné"],[18,"Gym"],[19,"Bad"],[20,"DF"]],"2026-10-09":[[21,"jeux collectifs"],[22,"combiné"],[23,"VB"],[24,"jeux collectifs"],[25,"Danse"],[26,"VB"],[27,"DF"]],"2026-10-12":[[0,"DF"],[1,"DF"],[2,"Bad"],[3,"Combiné"]],"2026-10-13":[[4,"DF"],[5,"Bad"],[6,"combiné"],[7,"Combiné"]],"2026-10-14":[[8,"DF"],[9,"combiné"]],"2026-10-15":[[11,"Gym"],[13,"Combiné"],[15,"Bad"],[16,"Bad"],[18,"Gym"],[19,"Bad"],[20,"DF"]],"2026-10-16":[[21,"jeux collectifs"],[22,"combiné"],[23,"VB"],[24,"jeux collectifs"],[25,"Danse"],[26,"VB"],[27,"DF"]],"2026-10-19":[[0,"DF"],[1,"DF"],[2,"Bad"],[3,"Combiné"]],"2026-10-20":[[4,"DF"],[5,"Bad"],[6,"combiné"],[7,"Combiné"]],"2026-10-21":[[8,"DF"],[10,"VB"]],"2026-10-22":[[11,"Gym"],[12,"Combiné"],[14,"DF"],[17,"combiné"],[18,"Gym"],[19,"Bad"],[20,"DF"]],"2026-10-23":[[21,"jeux collectifs"],[22,"combiné"],[23,"VB"],[24,"jeux collectifs"],[25,"Danse"],[26,"VB"],[27,"DF"]],"2026-10-26":[[0,"DF"],[1,"DF"],[2,"Bad"],[3,"Combiné"]],"2026-10-27":[[4,"DF"],[5,"Bad"],[6,"combiné"],[7,"Combiné"]],"2026-10-28":[[8,"DF"],[9,"combiné"]],"2026-10-29":[[11,"Gym"],[13,"Combiné"],[15,"Bad"],[16,"Bad"],[18,"Gym"],[19,"Bad"],[20,"DF"]],"2026-10-30":[[21,"jeux collectifs"],[22,"combiné"],[23,"VB"],[24,"jeux collectifs"],[25,"Danse"],[26,"VB"],[27,"DF"]],"2026-11-02":[[0,"DF"],[1,"Boxe"],[2,"Handball"],[3,"Gym"]],"2026-11-03":[[4,"DF"],[5,"Handball"],[6,"cross training"],[7,"Handball"]],"2026-11-04":[[8,"DF"],[10,"Boxe"]],"2026-11-05":[[11,"Gym"],[12,"Handball"],[14,"Boxe"],[17,"cross training"],[18,"Gym"],[19,"Bad"],[20,"DF"]],"2026-11-06":[[21,"jeux collectifs"],[22,"Handball"],[23,"Boxe"],[24,"jeux collectifs"],[25,"Danse"],[26,"VB"],[27,"DF"]],"2026-11-16":[[0,"DF"],[1,"Boxe"],[2,"Handball"],[3,"Gym"]],"2026-11-17":[[4,"DF"],[5,"Handball"],[6,"cross training"],[7,"Handball"]],"2026-11-18":[[8,"DF"],[9,"Handball"]],"2026-11-19":[[11,"Gym"],[13,"Gym"],[15,"Handball"],[16,"Handball"],[18,"Gym"],[19,"Bad"],[20,"DF"]],"2026-11-20":[[21,"jeux collectifs"],[22,"Handball"],[23,"Boxe"],[24,"jeux collectifs"],[25,"Danse"],[26,"VB"],[27,"DF"]],"2026-11-23":[[0,"DF"],[1,"Boxe"],[2,"Handball"],[3,"Gym"]],"2026-11-24":[[4,"DF"],[5,"Handball"],[6,"cross training"],[7,"Handball"]],"2026-11-25":[[8,"DF"],[10,"Boxe"]],"2026-11-26":[[11,"Gym"],[12,"Handball"],[14,"Boxe"],[17,"cross training"],[18,"Gym"],[19,"Bad"],[20,"DF"]],"2026-11-27":[[21,"jeux collectifs"],[22,"Handball"],[23,"Boxe"],[24,"jeux collectifs"],[25,"Danse"],[26,"VB"],[27,"Eval DF"]],"2026-11-30":[[0,"Danse"],[1,"Boxe"],[2,"Handball"],[3,"Gym"]],"2026-12-01":[[4,"Danse"],[5,"Handball"],[6,"cross training"],[7,"Handball"]],"2026-12-02":[[8,"Danse"],[9,"Handball"]],"2026-12-03":[[11,"jeux collectifs"],[13,"Gym"],[15,"Handball"],[16,"Handball"],[18,"Bad"],[19,"cross training"],[20,"Danse"]],"2026-12-04":[[21,"Gym"],[22,"Handball"],[23,"Boxe"],[24,"Basket"],[25,"VB"],[26,"Eval VB"],[27,"Danse"]],"2026-12-07":[[0,"Danse"],[1,"Boxe"],[2,"Handball"],[3,"Gym"]],"2026-12-08":[[4,"Danse"],[5,"Handball"],[6,"cross training"],[7,"Handball"]],"2026-12-09":[[8,"Danse"],[10,"Boxe"]],"2026-12-10":[[11,"jeux collectifs"],[12,"Handball"],[14,"Boxe"],[17,"cross training"],[18,"Bad"],[19,"cross training"],[20,"Danse"]],"2026-12-11":[[21,"Gym"],[22,"Handball"],[23,"Boxe"],[24,"Basket"],[25,"VB"],[26,"cross training"],[27,"Danse"]],"2026-12-14":[[0,"Danse"],[1,"Boxe"],[2,"Handball"],[3,"Gym"]],"2026-12-15":[[4,"Danse"],[5,"Handball"],[6,"cross training"],[7,"Handball"]],"2026-12-16":[[8,"Danse"],[9,"Handball"]],"2026-12-17":[[11,"jeux collectifs"],[13,"Gym"],[15,"Handball"],[16,"Handball"],[18,"Bad"],[19,"cross training"],[20,"Danse"]],"2026-12-18":[[21,"Gym"],[22,"Handball"],[23,"Boxe"],[24,"Basket"],[25,"VB"],[26,"cross training"],[27,"Danse"]],"2027-01-04":[[0,"Danse"],[1,"Boxe"],[2,"Handball"],[3,"Gym"]],"2027-01-05":[[4,"Danse"],[5,"Handball"],[6,"cross training"],[7,"Handball"]],"2027-01-06":[[8,"Danse"],[10,"Boxe"]],"2027-01-07":[[11,"jeux collectifs"],[12,"Handball"],[14,"Boxe"],[17,"cross training"],[18,"Bad"],[19,"cross training"],[20,"Danse"]],"2027-01-08":[[21,"Gym"],[22,"Handball"],[23,"Boxe"],[24,"Basket"],[25,"VB"],[26,"cross training"],[27,"Danse"]],"2027-01-11":[[0,"Danse"],[1,"Boxe"],[2,"Handball"],[3,"Gym"]],"2027-01-12":[[4,"Danse"],[5,"Handball"],[6,"cross training"],[7,"Handball"]],"2027-01-13":[[8,"Danse"],[9,"Handball"]],"2027-01-14":[[11,"jeux collectifs"],[13,"Gym"],[15,"Handball"],[16,"Handball"],[18,"Bad"],[19,"cross training"],[20,"Danse"]],"2027-01-15":[[21,"Gym"],[22,"Handball"],[23,"Boxe"],[24,"Basket"],[25,"VB"],[26,"cross training"],[27,"Danse"]],"2027-01-18":[[0,"Danse"],[1,"VB"],[2,"Gym"],[3,"Handball"]],"2027-01-19":[[4,"Danse"],[5,"cross training"],[6,"Handball"],[7,"Gym"]],"2027-01-20":[[8,"Danse"],[10,"Danse"]],"2027-01-21":[[11,"jeux collectifs"],[12,"Gym"],[14,"VB"],[17,"Handball"],[18,"Bad"],[19,"cross training"],[20,"Danse"]],"2027-01-22":[[21,"Gym"],[22,"cross training"],[23,"Danse"],[24,"Basket"],[25,"VB"],[26,"cross training"],[27,"Danse"]],"2027-01-25":[[0,"Danse"],[1,"VB"],[2,"Gym"],[3,"Handball"]],"2027-01-26":[[4,"Danse"],[5,"cross training"],[6,"Handball"],[7,"Gym"]],"2027-01-27":[[8,"Danse"],[9,"cross training"]],"2027-01-28":[[11,"jeux collectifs"],[13,"Handball"],[15,"cross training"],[16,"Gym"],[18,"Bad"],[19,"cross training"],[20,"Danse"]],"2027-01-29":[[21,"Gym"],[22,"cross training"],[23,"Danse"],[24,"Basket"],[25,"VB"],[26,"cross training"],[27,"Danse"]],"2027-02-01":[[0,"Danse"],[1,"VB"],[2,"Gym"],[3,"Handball"]],"2027-02-02":[[4,"Danse"],[5,"cross training"],[6,"Handball"],[7,"Gym"]],"2027-02-03":[[8,"Danse"],[10,"Danse"]],"2027-02-04":[[11,"jeux collectifs"],[12,"Gym"],[14,"VB"],[17,"Handball"],[18,"Bad"],[19,"cross training"],[20,"Danse"]],"2027-02-22":[[0,"Danse"],[1,"VB"],[2,"Gym"],[3,"Handball"]],"2027-02-23":[[4,"Danse"],[5,"cross training"],[6,"Handball"],[7,"Gym"]],"2027-02-24":[[8,"Danse"],[9,"cross training"]],"2027-02-25":[[11,"jeux collectifs"],[13,"Handball"],[15,"cross training"],[16,"Gym"],[18,"Bad"],[19,"cross training"],[20,"Danse"]],"2027-02-26":[[21,"Gym"],[22,"cross training"],[23,"Danse"],[24,"Basket"],[25,"VB"],[26,"cross training"],[27,"Danse"]],"2027-03-01":[[0,"Danse"],[1,"VB"],[2,"Gym"],[3,"Handball"]],"2027-03-02":[[4,"Danse"],[5,"cross training"],[6,"Handball"],[7,"Gym"]],"2027-03-03":[[8,"Danse"],[10,"Danse"]],"2027-03-04":[[11,"jeux collectifs"],[12,"Gym"],[14,"VB"],[17,"Handball"],[18,"Bad"],[19,"cross training"],[20,"Danse"]],"2027-03-05":[[21,"Gym"],[22,"cross training"],[23,"Danse"],[24,"Basket"],[25,"VB"],[26,"Eval Cross training"],[27,"Eval Danse"]],"2027-03-08":[[0,"Basket"],[1,"VB"],[2,"Gym"],[3,"Handball"]],"2027-03-09":[[4,"Basket"],[5,"cross training"],[6,"Handball"],[7,"Gym"]],"2027-03-10":[[8,"Gym"],[9,"cross training"]],"2027-03-11":[[11,"Natation"],[13,"Handball"],[15,"cross training"],[16,"Gym"],[18,"cross training"],[19,"Gym"],[20,"VB"]],"2027-03-12":[[21,"Natation"],[22,"cross training"],[23,"Danse"],[24,"Natation"],[25,"DF"],[26,"combiné"],[27,"Bad"]],"2027-03-15":[[0,"Basket"],[1,"VB"],[2,"Gym"],[3,"Handball"]],"2027-03-16":[[4,"Basket"],[5,"cross training"],[6,"Handball"],[7,"Gym"]],"2027-03-17":[[8,"Gym"],[10,"Danse"]],"2027-03-18":[[11,"Natation"],[12,"Gym"],[14,"VB"],[17,"Handball"],[18,"cross training"],[19,"Gym"],[20,"VB"]],"2027-03-19":[[21,"Natation"],[22,"cross training"],[23,"Danse"],[24,"Natation"],[25,"DF"],[26,"combiné"],[27,"Bad"]],"2027-03-22":[[0,"Basket"],[1,"VB"],[2,"Gym"],[3,"Handball"]],"2027-03-23":[[4,"Basket"],[5,"cross training"],[6,"Handball"],[7,"Gym"]],"2027-03-24":[[8,"Gym"],[9,"cross training"]],"2027-03-25":[[11,"Natation"],[13,"Handball"],[15,"cross training"],[16,"Gym"],[18,"cross training"],[19,"Gym"],[20,"VB"]],"2027-03-26":[[21,"Natation"],[22,"cross training"],[23,"Danse"],[24,"Natation"],[25,"DF"],[26,"combiné"],[27,"Bad"]],"2027-03-29":[[0,"Basket"],[1,"Danse"],[2,"Combiné"],[3,"Bad"]],"2027-03-30":[[4,"Basket"],[5,"combiné"],[6,"Bad"],[7,"Bad"]],"2027-03-31":[[8,"Gym"],[10,"DF"]],"2027-04-01":[[11,"Natation"],[12,"Bad"],[14,"Danse"],[17,"Bad"],[18,"cross training"],[19,"Gym"],[20,"VB"]],"2027-04-06":[[4,"Basket"],[5,"combiné"],[6,"Bad"],[7,"Bad"]],"2027-04-07":[[8,"Gym"],[9,"Bad"]],"2027-04-08":[[11,"Natation"],[13,"Bad"],[15,"combiné"],[16,"Combiné"],[18,"cross training"],[19,"Gym"],[20,"VB"]],"2027-04-09":[[21,"Natation"],[22,"Bad"],[23,"DF"],[24,"Natation"],[25,"DF"],[26,"combiné"],[27,"Bad"]],"2027-04-12":[[0,"Basket"],[1,"Danse"],[2,"Combiné"],[3,"Bad"]],"2027-04-13":[[4,"Basket"],[5,"combiné"],[6,"Bad"],[7,"Bad"]],"2027-04-14":[[8,"Gym"],[10,"DF"]],"2027-04-15":[[11,"Natation"],[12,"Bad"],[14,"Danse"],[17,"Bad"],[18,"cross training"],[19,"Gym"],[20,"VB"]],"2027-04-16":[[21,"Natation"],[22,"Bad"],[23,"DF"],[24,"Natation"],[25,"DF"],[26,"combiné"],[27,"Bad"]],"2027-04-19":[[0,"Basket"],[1,"Danse"],[2,"Combiné"],[3,"Bad"]],"2027-04-20":[[4,"Basket"],[5,"combiné"],[6,"Bad"],[7,"Bad"]],"2027-04-21":[[8,"Gym"],[9,"Bad"]],"2027-04-22":[[11,"Natation"],[13,"Bad"],[15,"combiné"],[16,"Combiné"],[18,"cross training"],[19,"Gym"],[20,"VB"]],"2027-04-23":[[21,"Natation"],[22,"Bad"],[23,"DF"],[24,"Natation"],[25,"DF"],[26,"combiné"],[27,"Bad"]],"2027-05-10":[[0,"Basket"],[1,"Danse"],[2,"Combiné"],[3,"Bad"]],"2027-05-11":[[4,"Basket"],[5,"combiné"],[6,"Bad"],[7,"Bad"]],"2027-05-12":[[8,"Gym"],[10,"DF"]],"2027-05-13":[[11,"Natation"],[12,"Bad"],[14,"Danse"],[17,"Bad"],[18,"cross training"],[19,"Gym"],[20,"VB"]],"2027-05-14":[[21,"Natation"],[22,"Bad"],[23,"DF"],[24,"Natation"],[25,"DF"],[26,"combiné"],[27,"Bad"]],"2027-05-17":[[0,"Basket"],[1,"Danse"],[2,"Combiné"],[3,"Bad"]],"2027-05-18":[[4,"Basket"],[5,"combiné"],[6,"Bad"],[7,"Bad"]],"2027-05-19":[[8,"Gym"],[9,"Bad"]],"2027-05-20":[[11,"Natation"],[13,"Bad"],[15,"combiné"],[16,"Combiné"],[18,"cross training"],[19,"Gym"],[20,"VB"]],"2027-05-21":[[21,"Natation"],[22,"Bad"],[23,"DF"],[24,"Natation"],[25,"DF"],[26,"combiné"],[27,"Bad"]],"2027-05-24":[[0,"Basket"],[1,"Danse"],[2,"Combiné"],[3,"Bad"]],"2027-05-25":[[4,"Basket"],[5,"combiné"],[6,"Bad"],[7,"Bad"]],"2027-05-26":[[8,"Gym"],[10,"DF"]],"2027-05-27":[[11,"Natation"],[12,"Bad"],[14,"Danse"],[17,"Bad"],[18,"cross training"],[19,"Gym"],[20,"VB"]],"2027-05-28":[[21,"Natation"],[22,"Bad"],[23,"DF"],[24,"Natation"],[25,"DF"],[26,"Eval Combiné"],[27,"Eval Bad"]],"2027-05-31":[[0,"Basket"],[1,"Danse"],[2,"Combiné"],[3,"Bad"]],"2027-06-01":[[4,"Basket"],[5,"combiné"],[6,"Bad"],[7,"Bad"]],"2027-06-02":[[8,"Gym"],[9,"Bad"]],"2027-06-03":[[11,"jeux collectifs"],[13,"Bad"],[15,"combiné"],[16,"Combiné"],[18,"cross training"],[19,"Gym"],[20,"VB"]],"2027-06-04":[[21,"Natation"],[22,"Bad"],[23,"DF"],[24,"jeux collectifs"],[25,"DF"]]},"feries":["2026-09-25","2027-04-02","2027-04-05","2027-06-09"],"weeks":{"2026-08-31":1,"2026-09-07":2,"2026-09-14":1,"2026-09-21":2,"2026-09-28":1,"2026-10-05":2,"2026-10-12":1,"2026-10-19":2,"2026-10-26":1,"2026-11-02":2,"2026-11-16":1,"2026-11-23":2,"2026-11-30":1,"2026-12-07":2,"2026-12-14":1,"2027-01-04":2,"2027-01-11":1,"2027-01-18":2,"2027-01-25":1,"2027-02-01":2,"2027-02-22":1,"2027-03-01":2,"2027-03-08":1,"2027-03-15":2,"2027-03-22":1,"2027-03-29":2,"2027-04-05":1,"2027-04-12":2,"2027-04-19":1,"2027-05-10":2,"2027-05-17":1,"2027-05-24":2,"2027-05-31":1,"2027-06-07":2,"2027-06-14":1,"2027-06-21":2,"2027-06-28":1}};
 const $ = (s, el = document) => el.querySelector(s);
 const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
@@ -335,7 +371,9 @@ let current = null, timer = null;
 function route() {
   const v = (location.hash || '#accueil').slice(1).split('?')[0];
   current = VIEWS[v] ? v : 'accueil';
-  document.querySelectorAll('header.top nav a').forEach(a => a.classList.toggle('on', a.dataset.v === current));
+  if (current !== 'ecran' && !profil() && current !== 'profil') { current = 'profil'; }
+  if (!allowed(current)) current = 'accueil';
+  renderNav(current); openDrawer(false);
   clearInterval(timer); timer = null;
   document.body.classList.toggle('tv', current === 'ecran');
   $('#wkbadge').textContent = weekLabel(new Date());
@@ -513,14 +551,14 @@ VIEWS.incidents = function () {
       <div id="lastgrp" class="muted"></div>
       <label class="f">Message aux collègues<textarea name="msg" placeholder="Ce qu’il faut savoir ou faire en attendant"></textarea></label>
       <div class="row">
-        <label class="btn" style="display:flex;align-items:center;gap:8px">Photo ou vidéo <input type="file" name="media" accept="image/*,video/*" capture="environment" style="max-width:220px"></label>
-        <span class="muted">Pas d’élève reconnaissable sur les photos et vidéos.</span>
+        ${mediaPickerHTML('incmp', true)}
+        <span class="muted">Pas d’élève reconnaissable sur les photos et vidéos. Vidéo : 30 secondes au plus.</span>
       </div>
       <div class="row"><button class="btn warn" type="submit">Envoyer</button><span class="muted">Enregistré sur cet appareil (partage entre collègues : prochaine version).</span></div>
     </form>
     <div class="card"><h2>En cours</h2><div id="incl"></div></div>
   </main>`;
-  const f = $('#incf');
+  const f = $('#incf'); const pickInc = bindMediaPicker('incmp');
   const upd = () => {
     const t = f.type.value, l = f.lieu.value;
     $('#lastgrp').textContent = t === 'Défaut de rangement' && PLAN ? ('Dernier groupe sur place : ' + (lastGroupAt(l, new Date()) || 'introuvable')) : '';
@@ -531,7 +569,7 @@ VIEWS.incidents = function () {
     const id = 'i' + Date.now();
     const inc = { id, date: new Date().toISOString(), type: f.type.value, lieu: f.lieu.value, objet: f.objet.value.trim(), grav: f.grav.value, msg: f.msg.value.trim(), closed: false, media: null };
     if (inc.type === 'Défaut de rangement' && PLAN) inc.dernier = lastGroupAt(inc.lieu, new Date());
-    const file = f.media.files[0];
+    const file = pickInc();
     if (file) {
       try {
         let blob = file;
@@ -1227,20 +1265,20 @@ VIEWS.travaux = function () {
         <label class="f">Demandé par<select name="dem"><option>EPS</option><option>Primaire</option><option>AS</option><option>ACS</option></select></label>
       </div>
       <label class="f">Description<textarea name="desc" placeholder="Ce qui ne va pas, depuis quand, ce qu’il faudrait faire"></textarea></label>
-      <div class="row"><label class="btn" style="display:flex;align-items:center;gap:8px">Photo <input type="file" name="photo" accept="image/*" capture="environment" style="max-width:200px"></label>
-      <button class="btn blue" type="submit">Enregistrer</button></div>
+      ${mediaPickerHTML('travmp', true)}
+      <div class="row"><button class="btn blue big" type="submit">Enregistrer</button></div>
     </form>
     <div class="card">
       <div class="row" style="justify-content:space-between"><h2>Suivi</h2><button class="btn go" id="trx">Demande aux services techniques (Excel)</button></div>
       <div id="trl"></div>
     </div>
   </main>`;
-  const f = $('#trf');
+  const f = $('#trf'); const pickTrav = bindMediaPicker('travmp');
   f.onsubmit = async e => {
     e.preventDefault();
     const t = { id: 't' + Date.now(), date: new Date().toISOString(), lieu: f.lieu.value, objet: f.objet.value.trim(), desc: f.desc.value.trim(), urg: f.urg.value, dem: f.dem.value, statut: 'Signalé', photo: false };
-    const p = f.photo.files[0];
-    if (p) { try { await mediaPut('trav_' + t.id, await compressImage(p)); t.photo = true; } catch (err) { alertMsg('Photo non enregistrée : ' + err.message); } }
+    const p = pickTrav();
+    if (p) { try { const vid = p.type.startsWith('video/'); if (vid && p.size > 40e6) throw new Error('vidéo trop lourde (40 Mo max)'); await mediaPut('trav_' + t.id, vid ? p : await compressImage(p)); t.photo = vid ? 'video' : 'image'; } catch (err) { alertMsg('Photo ou vidéo non enregistrée : ' + err.message); } }
     TRAV.unshift(t); saveTrav(); VIEWS.travaux();
   };
   $('#trx').onclick = () => {
@@ -1269,7 +1307,7 @@ async function renderTrav() {
   </div>`).join('');
   el.querySelectorAll('[data-tst]').forEach(s => s.onchange = () => { TRAV.find(t => t.id === s.dataset.tst).statut = s.value; saveTrav(); renderTrav(); });
   el.querySelectorAll('[data-tdel]').forEach(b => b.onclick = () => { if (confirm('Supprimer cette demande ?')) { TRAV = TRAV.filter(t => t.id !== b.dataset.tdel); saveTrav(); renderTrav(); } });
-  for (const d of el.querySelectorAll('[data-tph]')) { if (!d.dataset.tph) continue; const b = await mediaGet('trav_' + d.dataset.tph); if (b) d.innerHTML = `<img src="${URL.createObjectURL(b)}" alt="Photo des travaux" style="max-width:200px;border-radius:10px">`; }
+  for (const d of el.querySelectorAll('[data-tph]')) { if (!d.dataset.tph) continue; const b = await mediaGet('trav_' + d.dataset.tph); if (b) d.innerHTML = (b.type || '').startsWith('video/') ? `<video src="${URL.createObjectURL(b)}" controls playsinline style="max-width:220px;border-radius:10px"></video>` : `<img src="${URL.createObjectURL(b)}" alt="Photo des travaux" style="max-width:200px;border-radius:10px">`; }
 }
 
 /* --- Réservations ponctuelles (venant des collègues) --- */
@@ -1518,7 +1556,7 @@ VIEWS.evaluations = function () {
     <div class="card"><h2>Calendrier des évaluations</h2>
       <div class="scroll"><table class="t" style="min-width:820px"><tr><th>Date</th><th>Classe</th><th>APSA</th><th>Période</th><th>Rattrapage</th><th>Co-évaluateur</th><th></th></tr>
       ${ev.map(e => `<tr style="${e.date && e.date < today ? 'opacity:.6' : ''}"><td><input type="date" data-ev="${e.id}" data-k="date" value="${e.date || ''}"></td><td><strong>${esc(e.cls)}</strong></td><td><span class="chip ca${caOf(e.apsa)}">${esc(e.apsa)}</span></td><td>${e.date ? periodOf(e.cls, e.date) || '' : ''}</td>
-        <td><input type="date" data-ev="${e.id}" data-k="ratt" value="${e.ratt || ''}"></td><td><input type="text" data-ev="${e.id}" data-k="coeval" value="${esc(e.coeval || '')}" style="width:130px"></td><td><button class="btn" data-evdel="${e.id}">Supprimer</button></td></tr>`).join('') || '<tr><td colspan="7" class="empty">Aucune évaluation.</td></tr>'}
+        <td><input type="date" data-ev="${e.id}" data-k="ratt" value="${e.ratt || ''}"></td><td><input type="text" data-ev="${e.id}" data-k="coeval" list="coevl" value="${esc(e.coeval || '')}" style="width:130px"></td><td><button class="btn" data-evdel="${e.id}">Supprimer</button></td></tr>`).join('') || '<tr><td colspan="7" class="empty">Aucune évaluation.</td></tr>'}
       </table></div>
       <div class="row"><button class="btn go" id="ev_x">Exporter en Excel</button><span class="muted">Les dates de Terminale alimentent l’écran Protocole bac.</span></div>
     </div>
@@ -1579,7 +1617,7 @@ VIEWS.bac = function () {
     <div class="card"><h2>Prêt pour iPackEPS ?</h2>${checks.map(([ok, t]) => `<div class="row"><span class="chip ${ok ? 'ca2' : 'st-acs'}">${ok ? '✓' : 'à faire'}</span><span>${esc(t)}</span></div>`).join('')}
       <div class="row"><button class="btn go" id="bx">Fiche de saisie iPack (Excel)</button></div></div>
     ${blocks.map(({ m, lines }) => `<div class="card" style="padding:0"><div style="padding:14px 16px"><h2>${esc(m.cl)}</h2></div><div class="scroll"><table class="t" style="min-width:760px"><tr><th>APSA</th><th>CA</th><th>Évaluation</th><th>Rattrapage</th><th>Co-évaluateur</th></tr>
-      ${lines.map(l => `<tr><td><strong>${esc(l.apsa)}</strong></td><td><span class="chip ca${l.ca}">CA${l.ca}</span></td>${l.e ? `<td><input type="date" data-bev="${l.e.id}" data-k="date" value="${l.e.date || ''}"></td><td><input type="date" data-bev="${l.e.id}" data-k="ratt" value="${l.e.ratt || ''}"></td><td><input type="text" data-bev="${l.e.id}" data-k="coeval" value="${esc(l.e.coeval || '')}"></td>` : `<td colspan="3"><button class="btn" data-bnew="${esc(m.cl)}|${esc(l.apsa)}">Créer l’évaluation</button></td>`}</tr>`).join('')}
+      ${lines.map(l => `<tr><td><strong>${esc(l.apsa)}</strong></td><td><span class="chip ca${l.ca}">CA${l.ca}</span></td>${l.e ? `<td><input type="date" data-bev="${l.e.id}" data-k="date" value="${l.e.date || ''}"></td><td><input type="date" data-bev="${l.e.id}" data-k="ratt" value="${l.e.ratt || ''}"></td><td><input type="text" data-bev="${l.e.id}" data-k="coeval" list="coevl" value="${esc(l.e.coeval || '')}"></td>` : `<td colspan="3"><button class="btn" data-bnew="${esc(m.cl)}|${esc(l.apsa)}">Créer l’évaluation</button></td>`}</tr>`).join('')}
     </table></div></div>`).join('')}
     <div class="card"><h2>Inaptitudes et dispenses</h2>
       <div class="banner">Données nominatives : à saisir seulement sur ton ordinateur personnel. Elles restent sur cet appareil, ne partent jamais dans les fichiers de partage, et le certificat reste dans ton Drive (l’app ne garde que le lien).</div>
@@ -1714,7 +1752,7 @@ VIEWS.acces = function () {
 /* --- Liaison cycle 3 --- */
 let C3 = LS.get('cycle3', { cm1: {}, cm2: {}, assn: {}, projets: [] });
 const saveC3 = () => LS.set('cycle3', C3);
-VIEWS.cycle3 = function () {
+function cycle3Reperes() {
   const app = $('#app');
   const six = { 1: new Set(), 2: new Set(), 3: new Set(), 4: new Set(), 5: new Set() };
   progData('lycee').filter(x => /^6/.test(x.cl)).forEach(x => x.cells.forEach(c => c && six[caOf(c.apsa)] && six[caOf(c.apsa)].add(c.apsa)));
@@ -1779,7 +1817,7 @@ VIEWS.accueil = function () {
   const reu = REU.filter(r => r.date >= today).sort((a, b) => a.date.localeCompare(b.date))[0];
   const incO = INC.filter(i => !i.closed), trO = TRAV.filter(t => t.statut !== 'Réalisé');
   const daf = MAT.filter(i => ['Demandé', 'Envoyé DAF'].includes(i.statut)), val = MAT.filter(i => i.statut === 'Validé');
-  const card = (t, body, link) => `<div class="card"><div class="row" style="justify-content:space-between"><h2>${t}</h2>${link ? `<a href="#${link}" style="font-size:13px">Ouvrir</a>` : ''}</div>${body}</div>`;
+  const card = (t, body, link) => link && !allowed(link) ? '' : `<div class="card"><div class="row" style="justify-content:space-between"><h2>${t}</h2>${link ? `<a href="#${link}" style="font-size:13px">Ouvrir</a>` : ''}</div>${body}</div>`;
   app.innerHTML = `<main>
     <div class="row" style="justify-content:space-between"><h1>${esc(frDate(now))}</h1><span class="chip ${weekType(now) === 'Q1' ? 'ca2' : weekType(now) === 'Q2' ? 'ca4' : 'st-acs'}">${esc(weekLabel(now))}</span></div>
     ${!PLAN ? needPlanning() : ''}
@@ -1793,6 +1831,411 @@ VIEWS.accueil = function () {
     </div>
   </main>`;
 };
+
+/* ================= v0.6 : navigation, profils, équipe et service, médias, projets cycle 3 ================= */
+
+/* --- Profils d'appareil et rubriques --- */
+const PROFILS = {
+  coord: { t: 'Coordination EPS', views: '*' },
+  eps: { t: 'Professeur d’EPS', views: ['accueil', 'ecran', 'planning', 'programmation', 'evaluations', 'bac', 'cycle3', 'ressources', 'materiel', 'incidents', 'travaux', 'reunions', 'equipe'] },
+  primaire: { t: 'Enseignant du primaire', views: ['accueil', 'ecran', 'planning', 'cycle3', 'ressources', 'materiel', 'incidents', 'travaux', 'reunions'] },
+  as: { t: 'Responsable AS', views: ['accueil', 'ecran', 'planning', 'as', 'materiel', 'incidents', 'travaux', 'reunions'] },
+  acs: { t: 'Intervenant ACS', views: ['accueil', 'ecran', 'planning', 'incidents', 'travaux'] },
+  secr: { t: 'Secrétariat', views: ['accueil', 'ecran', 'as'] }
+};
+const SECTIONS = [
+  { k: 'accueil', t: 'Accueil', views: ['accueil'], ic: '<path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/>' },
+  { k: 'inst', t: 'Installations', views: ['ecran', 'planning', 'generateur'], ic: '<rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/>' },
+  { k: 'ens', t: 'Enseignement', views: ['programmation', 'evaluations', 'bac', 'cycle3', 'ressources'], ic: '<path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"/><path d="M4 19V5M9 7h6"/>' },
+  { k: 'mat', t: 'Matériel', views: ['materiel', 'incidents', 'travaux'], ic: '<path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.5-.5-.5-2.5z"/>' },
+  { k: 'eq', t: 'Équipe', views: ['reunions', 'as', 'equipe', 'partage', 'reglages'], ic: '<circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><circle cx="17" cy="9" r="2.5"/><path d="M16 14a5 5 0 0 1 6 5"/>' }
+];
+const VLAB = { accueil: 'Accueil', ecran: 'Grand écran', planning: 'Planning', generateur: 'Générateur d’EDT', programmation: 'Programmation', evaluations: 'Évaluations', bac: 'Protocole bac', cycle3: 'Liaison cycle 3', ressources: 'Ressources', materiel: 'Matériel et commandes', incidents: 'Incidents', travaux: 'Travaux', reunions: 'Réunions', as: 'AS', equipe: 'Équipe et service', partage: 'Partage Excel', reglages: 'Réglages' };
+const profil = () => LS.get('profil', null);
+function allowed(v) {
+  if (v === 'profil') return true;
+  const p = PROFILS[profil()] || PROFILS.coord;
+  return p.views === '*' || p.views.includes(v);
+}
+const svgIc = d => `<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${d}</svg>`;
+function renderNav(cur) {
+  const sec = SECTIONS.find(s => s.views.includes(cur)) || SECTIONS[0];
+  const vis = SECTIONS.map(s => ({ ...s, views: s.views.filter(allowed) })).filter(s => s.views.length);
+  $('#secnav').innerHTML = vis.map(s => `<a href="#${s.views[0]}" class="${s.k === sec.k ? 'on' : ''}">${s.t}</a>`).join('');
+  $('#bottombar').innerHTML = vis.map(s => `<a href="#${s.views.includes(cur) ? cur : s.views[0]}" class="${s.k === sec.k ? 'on' : ''}">${svgIc(s.ic)}<span>${s.t}</span></a>`).join('');
+  const subs = (vis.find(s => s.k === sec.k) || { views: [] }).views;
+  const sn = $('#subnav');
+  sn.innerHTML = subs.length > 1 ? subs.map(v => `<a href="#${v}" class="${v === cur ? 'on' : ''}">${VLAB[v]}</a>`).join('') : '';
+  sn.style.display = subs.length > 1 && cur !== 'ecran' ? '' : 'none';
+  const onA = sn.querySelector('a.on'); if (onA) sn.scrollLeft = onA.offsetLeft - (sn.clientWidth - onA.offsetWidth) / 2;
+  $('#drawer .dlist').innerHTML = vis.map(s => `<div class="dsec">${svgIc(s.ic)}${s.t}</div>` + s.views.map(v => `<a href="#${v}" class="${v === cur ? 'on' : ''}">${VLAB[v]}</a>`).join('')).join('')
+    + `<div class="dsec">Cet appareil</div><a href="#profil">Profil : ${esc((PROFILS[profil()] || PROFILS.coord).t)} · changer</a>`;
+  let dl = $('#coevl'); if (!dl) { dl = document.createElement('datalist'); dl.id = 'coevl'; document.body.appendChild(dl); }
+  dl.innerHTML = coevalNames().map(n => `<option value="${esc(n)}">`).join('');
+}
+function openDrawer(o) { document.body.classList.toggle('drawer-open', o); $('#drawer').setAttribute('aria-hidden', o ? 'false' : 'true'); }
+document.addEventListener('click', e => {
+  if (e.target.closest('#hamb')) { openDrawer(true); return; }
+  if (e.target.closest('#drawer a') || e.target.id === 'scrim' || e.target.closest('#dclose')) openDrawer(false);
+});
+document.addEventListener('keydown', e => { if (e.key === 'Escape') openDrawer(false); });
+
+VIEWS.profil = function () {
+  const cur = profil();
+  $('#app').innerHTML = `<main>
+    <h1>Qui utilise cet appareil ?</h1>
+    <p class="muted" style="margin:0">L’app n’affiche que les rubriques utiles à chacun. Ce choix reste enregistré sur cet appareil. Il simplifie l’affichage mais ne remplace pas un vrai contrôle d’accès : les données privées (AS, inaptitudes) restent protégées par le code de l’appareil.</p>
+    <div class="pgrid">${Object.entries(PROFILS).map(([k, p]) => `<button class="pcard ${k === cur ? 'on' : ''}" data-prof="${k}"><strong>${p.t}</strong><span class="muted">${p.views === '*' ? 'Toutes les rubriques' : p.views.filter(v => v !== 'accueil').map(v => VLAB[v]).join(' · ')}</span></button>`).join('')}</div>
+  </main>`;
+  $('#app').querySelectorAll('[data-prof]').forEach(b => b.onclick = async () => {
+    const k = b.dataset.prof, lock = LS.get('lock', null);
+    if (cur && k !== cur && lock && !SESSION_OK.v) {
+      const c = prompt('Code de l’appareil pour changer de profil :'); if (c == null) return;
+      if (await sha(c) !== lock) { alertMsg('Code incorrect.'); return; }
+      SESSION_OK.v = true;
+    }
+    LS.set('profil', k); location.hash = '#accueil'; route();
+  });
+};
+
+/* --- Prise de photo / vidéo : appareil ou galerie --- */
+function mediaPickerHTML(id, video) {
+  return `<div class="mpick" id="${id}">
+    <label class="btn big"><input type="file" accept="image/*" capture="environment" hidden>${svgIc('<path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/>')} Prendre une photo</label>
+    ${video ? `<label class="btn big"><input type="file" accept="video/*" capture="environment" hidden>${svgIc('<rect x="3" y="6" width="13" height="12" rx="2"/><path d="M16 10l5-3v10l-5-3z"/>')} Filmer</label>` : ''}
+    <label class="btn big"><input type="file" accept="${video ? 'image/*,video/*' : 'image/*'}" hidden>${svgIc('<rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-9 9"/>')} Galerie</label>
+    <div class="mprev muted">Aucune photo ni vidéo.</div>
+  </div>`;
+}
+function bindMediaPicker(id) {
+  const box = $('#' + id); let file = null;
+  box.querySelectorAll('input[type=file]').forEach(i => i.onchange = () => {
+    file = i.files[0] || null; const pv = box.querySelector('.mprev');
+    if (!file) { pv.textContent = 'Aucune photo ni vidéo.'; return; }
+    const u = URL.createObjectURL(file);
+    pv.innerHTML = (file.type.startsWith('video/') ? `<video src="${u}" muted playsinline style="max-width:160px;border-radius:10px"></video>` : `<img src="${u}" alt="Aperçu" style="max-width:160px;border-radius:10px">`) + ' <button type="button" class="btn">Retirer</button>';
+    pv.querySelector('button').onclick = () => { file = null; box.querySelectorAll('input[type=file]').forEach(x => x.value = ''); pv.textContent = 'Aucune photo ni vidéo.'; };
+  });
+  return () => file;
+}
+
+/* --- Co-évaluateurs : profs d’EPS de l’annuaire + noms ajoutés --- */
+function coevalNames() { return [...new Set([...ANN.filter(a => a.c === 'EPS').map(a => a.n), ...LS.get('coevals', [])])].sort((a, b) => a.localeCompare(b)); }
+document.addEventListener('change', e => {
+  const t = e.target; if (!t.matches || !t.matches('[data-k=coeval]')) return;
+  const v = t.value.trim(); if (!v) return;
+  const l = LS.get('coevals', []); if (!coevalNames().includes(v)) { l.push(v); LS.set('coevals', l); const dl = $('#coevl'); if (dl) dl.innerHTML = coevalNames().map(n => `<option value="${esc(n)}">`).join(''); }
+}, true);
+
+/* --- Équipe : intervenants, service EPS, priorités et accès --- */
+const STATUTS_EPS = { 'Certifié': 20, 'Agrégé': 17, 'Contractuel / contrat local': 20 };
+const EQV = { tab: 'inter' };
+function epsTeachers() {
+  const l = ANN.filter(a => a.c === 'EPS');
+  if (l.length) return l;
+  const s = new Set(); (PLAN ? PLAN.periods : []).forEach(p => p.items.forEach(i => { if (i.st === 'eps' && i.who && !/prof|^\d/.test(i.who)) i.who.split(/\s*(?:,|\+|\/| et )\s*/).forEach(n => n && s.add(n)); }));
+  return [...s].map(n => ({ id: 'tmp' + n, n, c: 'EPS', tmp: true }));
+}
+const nameKeys = a => [a.n, ...(a.alias || '').split(',')].map(x => x.trim().toLowerCase()).filter(Boolean);
+function guessAffect() {
+  const T = epsTeachers(), out = {};
+  if (!PLAN) return out;
+  CAL.classes.forEach((c, ci) => {
+    const votes = {};
+    for (const per of PLAN.periods) {
+      const act = Object.entries(CAL.cal).filter(([ds]) => ds >= per.from && ds <= per.to).flatMap(([, l]) => l.filter(([i]) => i === ci).map(([, a]) => a))[0];
+      for (const it of per.items) {
+        if (it.st !== 'eps' || it.d !== c.d || !it.who) continue;
+        const ov = Math.min(toMin(c.e), toMin(it.e)) - Math.max(toMin(c.s), toMin(it.s)); if (ov < 30) continue;
+        const w = act && apsaKey(act) === apsaKey(it.apsa) ? 3 : 1;
+        it.who.split(/\s*(?:,|\+|\/| et )\s*/).forEach(n => { const t = T.find(a => nameKeys(a).includes(n.trim().toLowerCase())); if (t) votes[t.n] = (votes[t.n] || 0) + w * ov; });
+      }
+    }
+    const best = Object.entries(votes).sort((a, b) => b[1] - a[1])[0]; if (best) out[ci] = best[0];
+  });
+  return out;
+}
+const fmtH = n => (Math.round(n * 100) / 100).toLocaleString('fr-FR') + ' h';
+function serviceOf(name, aff) {
+  const lines = [];
+  CAL.classes.forEach((c, ci) => { if (aff[ci] !== name) return; const h = (toMin(c.e) - toMin(c.s)) / 60; lines.push({ txt: `${c.c} ${c.d} ${hh(c.s)}-${hh(c.e)} : ${String(h).replace('.', ',')} h${c.qz ? ' ÷ 2 (quinzaine)' : ''}`, h: c.qz ? h / 2 : h }); });
+  return { lines, cours: lines.reduce((a, l) => a + l.h, 0) };
+}
+VIEWS.equipe = function () {
+  const app = $('#app'), co = profil() === 'coord' || !profil();
+  const tabs = [['inter', 'Intervenants'], ['service', 'Service des profs d’EPS'], ...(co ? [['acces', 'Priorités et accès']] : [])];
+  if (!tabs.some(t => t[0] === EQV.tab)) EQV.tab = 'inter';
+  const cats = ['EPS', 'Primaire', 'AS', 'ACS', 'Secrétariat', 'DAF', 'Achats', 'Direction', 'Services techniques', 'Co-évaluateur extérieur'];
+  let body = '';
+  if (EQV.tab === 'inter') {
+    body = `<div class="card"><h2>Ajouter un intervenant</h2>
+      <div class="row"><label class="f" style="flex:1 1 160px">Nom<input type="text" id="an_n"></label><label class="f">Catégorie<select id="an_c">${cats.map(c => `<option>${c}</option>`).join('')}</select></label>
+      <label class="f" style="flex:1 1 180px">Rôle / classes<input type="text" id="an_r" placeholder="ex. CM2 B, responsable AS volley"></label><label class="f" style="flex:1 1 200px">E-mail<input type="text" id="an_e" inputmode="email"></label>
+      <label class="f" style="flex:1 1 160px">Nom dans le planning<input type="text" id="an_a" placeholder="si différent, ex. Chen"></label><button class="btn blue" id="an_add" style="align-self:flex-end">Ajouter</button></div>
+      <span class="muted">Le nom dans le planning sert à retrouver ses créneaux. La catégorie décide aussi des listes d’e-mails et des co-évaluateurs proposés au bac.</span></div>
+      ${cats.filter(c => ANN.some(a => a.c === c)).map(c => `<div class="card"><div class="row" style="justify-content:space-between"><h2>${c} · ${ANN.filter(a => a.c === c).length}</h2>${ANN.some(a => a.c === c && a.e) ? `<button class="btn" data-mail="${c}">Copier les e-mails</button>` : ''}</div>
+        ${ANN.filter(a => a.c === c).map(a => `<div class="row" style="border-top:1px solid #EEF0F4;padding-top:8px"><strong style="flex:1 1 160px">${esc(a.n)}</strong><span class="muted" style="flex:1 1 160px">${esc(a.r || '')}${a.alias ? ' · planning : ' + esc(a.alias) : ''}</span><span class="muted" style="flex:1 1 180px">${esc(a.e || '')}</span><button class="btn" data-adel="${a.id}">Retirer</button></div>`).join('')}</div>`).join('') || '<div class="empty">Personne pour l’instant. Commence par les profs d’EPS.</div>'}
+      ${!ANN.some(a => a.c === 'EPS') && epsTeachers().length ? `<div class="banner">Trouvés dans le planning : ${epsTeachers().map(t => esc(t.n)).join(', ')}. <button class="btn" id="an_imp">Les ajouter comme profs d’EPS</button></div>` : ''}
+      <div class="card"><h2>Co-évaluateurs ajoutés à la main</h2><div class="row">${LS.get('coevals', []).map((n, k) => `<span class="chip ca0">${esc(n)} <a href="#" data-cvd="${k}" aria-label="Retirer">✕</a></span>`).join('') || '<span class="muted">Aucun. Un nom tapé dans « Co-évaluateur » (bac, évaluations) est ajouté ici automatiquement.</span>'}</div></div>`;
+  } else if (EQV.tab === 'service') {
+    const T = epsTeachers(); const saved = LS.get('affect', null); const aff = saved || guessAffect();
+    const SV = LS.get('serviceParams', {});
+    body = `<div class="card"><h2>Comment c’est calculé</h2>
+      <p class="muted" style="margin:0">1. On additionne les créneaux de cours de chaque prof (tableau « Qui a quelle classe ? » plus bas). 2. Un créneau en quinzaine (une semaine sur deux) compte pour moitié : 2 h ÷ 2 = 1 h par semaine en moyenne. 3. On ajoute le forfait AS (3 h) et les éventuelles décharges. 4. On compare au maximum de service : 20 h pour un certifié, 17 h pour un agrégé, AS comprise. Au-delà, ce sont des heures supplémentaires.</p></div>
+      <div class="card" style="padding:0"><div class="scroll"><table class="t" style="min-width:760px"><tr><th>Prof</th><th>Statut</th><th>Cours / semaine</th><th>AS</th><th>Décharge</th><th>Total</th><th>Service dû</th><th>Écart</th></tr>
+      ${T.map(t => { const p = SV[t.n] || {}; const st = p.statut || 'Certifié'; const ors = p.ors ?? STATUTS_EPS[st]; const as = p.as ?? 3; const dch = p.dch ?? 0; const s = serviceOf(t.n, aff); const tot = s.cours + as + dch; const ec = tot - ors;
+        return `<tr><td><strong>${esc(t.n)}</strong><details><summary class="muted">détail</summary><div class="muted">${s.lines.map(l => esc(l.txt)).join('<br>') || 'Aucune classe attribuée'}<br>= ${fmtH(s.cours)}</div></details></td>
+        <td><select data-sv="${esc(t.n)}" data-k="statut">${Object.keys(STATUTS_EPS).map(x => `<option ${x === st ? 'selected' : ''}>${x}</option>`).join('')}</select></td>
+        <td><strong>${fmtH(s.cours)}</strong></td><td><input type="number" step="0.5" min="0" data-sv="${esc(t.n)}" data-k="as" value="${as}" style="width:70px"></td><td><input type="number" step="0.5" min="0" data-sv="${esc(t.n)}" data-k="dch" value="${dch}" style="width:70px"></td>
+        <td><strong>${fmtH(tot)}</strong></td><td><input type="number" step="0.5" min="0" data-sv="${esc(t.n)}" data-k="ors" value="${ors}" style="width:70px"></td>
+        <td><span class="chip ${ec > 0 ? 'ca4' : ec < 0 ? 'ca1' : 'ca2'}">${ec > 0 ? '+' + fmtH(ec) + ' sup.' : ec < 0 ? fmtH(ec) + ' à compléter' : 'juste'}</span></td></tr>`; }).join('') || '<tr><td colspan="8" class="empty">Ajoute les profs d’EPS dans « Intervenants », ou importe le planning.</td></tr>'}
+      </table></div></div>
+      <div class="card"><div class="row" style="justify-content:space-between"><h2>Qui a quelle classe ?</h2><div class="row">${saved ? '<button class="btn" id="af_re">Re-deviner depuis le planning</button>' : '<span class="chip st-acs">deviné depuis le planning : à vérifier</span>'}<button class="btn go" id="sv_x">Exporter le service (Excel)</button></div></div>
+      <div class="scroll"><table class="t" style="min-width:520px"><tr><th>Classe</th><th>Créneau</th><th>Prof</th></tr>${CAL.classes.map((c, ci) => `<tr><td><strong>${esc(c.c)}</strong></td><td class="muted">${c.d} ${hh(c.s)}-${hh(c.e)}${c.qz ? ' · quinzaine' : ''}</td><td><select data-af="${ci}"><option value="">—</option>${T.map(t => `<option ${aff[ci] === t.n ? 'selected' : ''}>${esc(t.n)}</option>`).join('')}</select></td></tr>`).join('')}</table></div></div>`;
+  } else {
+    const lock = LS.get('lock', null);
+    body = `<div class="card"><h2>Ordre de priorité sur les installations</h2>
+      ${PRIO.map((p, k) => `<div class="row" style="border:1px solid #E1E5EC;border-radius:10px;padding:8px"><strong style="width:28px">${k + 1}</strong><span style="flex:1">${esc(p)}</span><button class="btn" data-pu="${k}" aria-label="Monter">▲</button><button class="btn" data-pd="${k}" aria-label="Descendre">▼</button></div>`).join('')}
+      <span class="muted">Utilisé par le générateur et à l’import des réservations : en cas de conflit, la catégorie la mieux placée garde le créneau.</span></div>
+      <div class="card"><h2>Ce que voit chaque profil</h2><div class="scroll"><table class="t" style="min-width:640px"><tr><th>Profil</th><th>Rubriques visibles</th></tr>${Object.values(PROFILS).map(p => `<tr><td><strong>${p.t}</strong></td><td class="muted">${p.views === '*' ? 'Tout' : p.views.map(v => VLAB[v]).join(' · ')}</td></tr>`).join('')}</table></div>
+      <div class="row"><a class="btn" href="#profil" style="display:inline-flex;align-items:center;text-decoration:none">Changer le profil de cet appareil</a></div></div>
+      <div class="card"><h2>Code de cet appareil</h2><span class="muted">Protège l’AS, les inaptitudes et le changement de profil sur un appareil partagé (tablette, TV du gymnase, ordinateur d’un collègue).</span>
+      <div class="row"><label class="f">${lock ? 'Nouveau code' : 'Code'}<input type="password" id="lc" autocomplete="new-password" style="width:160px"></label><button class="btn blue" id="lcs" style="align-self:flex-end">${lock ? 'Changer' : 'Activer'}</button>${lock ? '<button class="btn" id="lcr" style="align-self:flex-end">Retirer le code</button>' : ''}</div></div>`;
+  }
+  app.innerHTML = `<main><h1>Équipe</h1><div class="tabs">${tabs.map(([k, t]) => `<button class="btn ${EQV.tab === k ? 'on' : ''}" data-eqt="${k}">${t}</button>`).join('')}</div>${body}</main>`;
+  app.querySelectorAll('[data-eqt]').forEach(b => b.onclick = () => { EQV.tab = b.dataset.eqt; VIEWS.equipe(); });
+  const on = (sel, fn) => { const el = $(sel); if (el) el.onclick = fn; };
+  on('#an_add', () => { const n = $('#an_n').value.trim(); if (!n) return; ANN.push({ id: 'a' + Date.now(), n, c: $('#an_c').value, r: $('#an_r').value.trim(), e: $('#an_e').value.trim(), alias: $('#an_a').value.trim() }); saveAnn(); VIEWS.equipe(); });
+  on('#an_imp', () => { epsTeachers().forEach((t, k) => ANN.push({ id: 'a' + Date.now() + k, n: t.n, c: 'EPS', r: '', e: '', alias: '' })); saveAnn(); VIEWS.equipe(); });
+  app.querySelectorAll('[data-adel]').forEach(b => b.onclick = () => { if (confirm('Retirer cette personne ?')) { ANN = ANN.filter(a => a.id !== b.dataset.adel); saveAnn(); VIEWS.equipe(); } });
+  app.querySelectorAll('[data-cvd]').forEach(a => a.onclick = e => { e.preventDefault(); const l = LS.get('coevals', []); l.splice(+a.dataset.cvd, 1); LS.set('coevals', l); VIEWS.equipe(); });
+  app.querySelectorAll('[data-mail]').forEach(b => b.onclick = () => { const l = ANN.filter(a => a.e && a.c === b.dataset.mail).map(a => a.e).join('; '); (navigator.clipboard ? navigator.clipboard.writeText(l) : Promise.reject()).then(() => alertMsg('Copié : ' + l), () => prompt('Copie cette liste :', l)); });
+  app.querySelectorAll('[data-sv]').forEach(i => i.onchange = () => { const SV = LS.get('serviceParams', {}); const p = SV[i.dataset.sv] = SV[i.dataset.sv] || {}; if (i.dataset.k === 'statut') { p.statut = i.value; delete p.ors; } else p[i.dataset.k] = num(i.value) || 0; LS.set('serviceParams', SV); setTimeout(VIEWS.equipe, 0); });
+  app.querySelectorAll('[data-af]').forEach(s => s.onchange = () => { const a = LS.get('affect', null) || guessAffect(); if (s.value) a[s.dataset.af] = s.value; else delete a[s.dataset.af]; LS.set('affect', a); setTimeout(VIEWS.equipe, 0); });
+  on('#af_re', () => { if (confirm('Remplacer les attributions par celles devinées depuis le planning ?')) { localStorage.removeItem('coordo.affect'); VIEWS.equipe(); } });
+  on('#sv_x', () => {
+    const aff = LS.get('affect', null) || guessAffect(), SV = LS.get('serviceParams', {});
+    const aoa = [['Service des professeurs d’EPS · ' + new Date().toLocaleDateString('fr-FR')], [], ['Prof', 'Statut', 'Cours / semaine (h)', 'AS (h)', 'Décharge (h)', 'Total (h)', 'Service dû (h)', 'Écart (h)', 'Détail']];
+    epsTeachers().forEach((t, k) => { const p = SV[t.n] || {}; const st = p.statut || 'Certifié'; const s = serviceOf(t.n, aff); const r = 4 + k; aoa.push([t.n, st, Math.round(s.cours * 100) / 100, p.as ?? 3, p.dch ?? 0, { f: `C${r}+D${r}+E${r}` }, p.ors ?? STATUTS_EPS[st], { f: `F${r}-G${r}` }, s.lines.map(l => l.txt).join(' ; ')]); });
+    const ws = XLSX.utils.aoa_to_sheet(aoa); ws['!cols'] = [14, 22, 12, 8, 10, 9, 12, 9, 80].map(w => ({ wch: w }));
+    const wb = XLSX.utils.book_new(); XLSX.utils.book_append_sheet(wb, ws, 'Service EPS'); XLSX.writeFile(wb, 'Service EPS - ' + iso(new Date()) + '.xlsx');
+  });
+  const mv = (k, d) => { const j = k + d; if (j < 0 || j >= PRIO.length) return; [PRIO[k], PRIO[j]] = [PRIO[j], PRIO[k]]; LS.set('priorites', PRIO); VIEWS.equipe(); };
+  app.querySelectorAll('[data-pu]').forEach(b => b.onclick = () => mv(+b.dataset.pu, -1));
+  app.querySelectorAll('[data-pd]').forEach(b => b.onclick = () => mv(+b.dataset.pd, 1));
+  on('#lcs', async () => { const v = $('#lc').value; if (v.length < 4) { alertMsg('4 caractères minimum.'); return; } LS.set('lock', await sha(v)); SESSION_OK.v = true; alertMsg('Code enregistré sur cet appareil.'); VIEWS.equipe(); });
+  on('#lcr', () => { if (confirm('Retirer le code ?')) { localStorage.removeItem('coordo.lock'); VIEWS.equipe(); } });
+};
+VIEWS.acces = () => { EQV.tab = 'acces'; location.replace('#equipe'); };
+
+/* --- Liaison cycle 3 : générateur de projets, banque, repères --- */
+const BANQUE = [
+  { id: 'b-tlj', titre: 'La Tête et les Jambes', type: 'Rencontre', ca: 1, niveaux: 'CM1 · CM2 · 6e', origine: 'LFIP · 2025-2026 (notre projet)', theme: 'relais', format: 'rencontre',
+    resume: 'Cross relais inspiré du biathlon : chaque binôme court un tour de 200 m puis répond à une question sur le thème « Créez, inventez, innovez ». Bonne réponse = un plot pour l’équipe ; erreur = 50 m de pénalité.',
+    garder: ['Équipes de 6 : un binôme de CM1, un de CM2, un de 6e, mixtes et équilibrées', 'Niveau physique 1-2-3 évalué avant pour équilibrer les équipes', '3 sessions de 30 min (une 6e + un CM1 + un CM2 chacune), environ 75 élèves par session', 'Trois valorisations : la course (tête et jambes), les questions (la tête), le temps cumulé (les jambes)', 'Un parent par équipe en zone d’attente, des adultes ou lycéens en zone questions', 'Temps de passage relevés pour un suivi individuel en EPS'],
+    lien: 'https://docs.google.com/document/d/1N69CWldt1GS9hYVSz99Zt7tzMENCI_HkT0J9XZDdLZs/edit' },
+  { id: 'b-egal', titre: 'Égal’on’nous', type: 'Parcours interdisciplinaire', ca: 3, niveaux: 'Maternelle → lycée', origine: 'Dossier Enseigner l’EPS n°10 (Leautaud Paccalet)',
+    theme: 'danse', format: 'parcours', resume: 'Création chorégraphique coopérative (EPS, français, EMC) inscrite dans un parcours de la maternelle au lycée, avec un carnet de bord réflexif et une restitution publique dans un vrai théâtre.',
+    garder: ['Quatre figures qui progressent d’un cycle à l’autre : spectateur, danseur, chorégraphe, « coopéracteur »', 'Au cycle 3 : analyser un spectacle avec des outils simples, créer une courte danse avec intention, rôles tournants', 'Un carnet de bord pour mettre des mots sur ce qui est vécu', 'Un festival en mai qui réunit écoles, collège et familles', 'Un lieu culturel hors du gymnase pour changer le regard des élèves'],
+    lien: 'https://drive.google.com/file/d/1AGDpkrQN8k6eWjshJOUQBvvq0d70jNmD/view' },
+  { id: 'b-vtt', titre: 'Savoir rouler, de l’école au lycée', type: 'Parcours', ca: 2, niveaux: 'Maternelle → post-bac', origine: 'Dossier Enseigner l’EPS n°10 (Fayaubost, Lacroix)',
+    theme: 'velo', format: 'parcours', resume: 'Un continuum vélo : draisienne en maternelle, parcours de maniabilité à l’école, « savoir rouler à vélo » comme projet école-collège en 6e, puis sorties en autonomie au lycée.',
+    garder: ['Ordre des apprentissages : équilibre → direction → freinage → pédalage', 'Indicateur simple : nombre de problèmes combinés sur un parcours de maniabilité de 100 m', 'Le « savoir rouler » est cité comme particulièrement adapté à l’année de 6e et aux projets école-collège', 'Jeu du « qui perd gagne » (course de lenteur) pour maîtriser pédaler-freiner', 'Parents partenaires pour l’attestation de première éducation à la route'],
+    lien: 'https://drive.google.com/file/d/1SMJfJkZsUC1B845DBxslyd3wPJzH6Ils/view' },
+  { id: 'b-leon', titre: 'Projet Léon : du nageur sécurisé au nageur compétent', type: 'Dispositif', ca: 2, niveaux: '6e (après le CM2)', origine: 'Dossier Enseigner l’EPS n°10 (Duprat, Desachy)',
+    theme: 'nager', format: 'parcours', resume: 'Pour faire progresser les non-nageurs à l’entrée en 6e : des profils d’élèves, des parcours d’agilité fer, bronze, argent, or, et plus de temps de pratique (AS, stage, sorties).',
+    garder: ['Cinq profils au lieu de « non-nageurs » : craintifs, baigneurs, barboteurs, combattants, agiles', 'Parcours qui se valident un à un : chaque réussite est acquise pour de bon', 'Des temps en plus du cours : AS non-nageurs, stage massé en juin, sorties', 'De 30 % à 60 % de nageurs sécurisés en fin de 6e dans leur collège'],
+    lien: 'https://drive.google.com/file/d/1B8zVJOJHL3svsp0PA1odxYTBgcD6qwpE/view' },
+  { id: 'b-evasion', titre: 'La Grande Évasion', type: 'Cycle commun CM2-6e', ca: 2, niveaux: 'CM2 · 6e', origine: 'Revue EP.S n°312 (Potdevin et al.)',
+    theme: 'nager', format: 'cycle', resume: 'Dix séances massées de 40 min en fin d’année pour les CM2 non autonomes et les 6e non-nageurs, racontées comme une évasion : chaque élève prépare et dessine son plan d’évasion pour le jour J.',
+    garder: ['Professeurs des écoles et d’EPS ensemble, parents informés', 'Un scénario qui enlève la peur : situations « déguisées », musique, tee-shirts', 'Trois objets : surplace, immersion, propulsion', 'Score individuel converti en kilomètres d’avance pour tout le groupe'],
+    lien: 'https://drive.google.com/file/d/1bmjua9sLPO6ReTpaeTuGHm6v2W6_uLo_/view' },
+  { id: 'b-ekiden', titre: 'L’Ekiden scolaire', type: 'Dispositif coopératif', ca: 1, niveaux: 'Cycle 4 (adaptable)', origine: 'Groupe Coopér@ction AE-EPS (Gaudoux)',
+    theme: 'relais', format: 'cycle', resume: 'Course de 20 minutes en peloton : il faut toujours un coureur de l’équipe en piste, et plus on court nombreux ensemble, plus le tour rapporte. Contrat collectif : 42 195 points.',
+    garder: ['Un tour de 400 m à 4 coureurs ensemble rapporte 400 × 4 × 4 = 6 400 points', 'Le collectif d’abord, le projet individuel ensuite', 'Facile à transposer en équipes mixtes CM2-6e avec des distances réduites', 'Un tableur compte les points en direct'],
+    lien: 'https://drive.google.com/file/d/15elYs0fl9FTywGTBMJXC5OuW_lZKGEx3/view' },
+  { id: 'b-combine', titre: 'Épreuves combinées par clubs', type: 'Rencontre', ca: 1, niveaux: 'Cycle 3 · cycle 4', origine: 'Stage FPC 2018, Lyon (Antolinos)',
+    theme: 'combine', format: 'rencontre', resume: 'Des clubs de 3 équipes (or, argent, bronze) s’affrontent sur relais, sauts et lancers. Les performances deviennent des points pour le club ; chacun est tour à tour athlète, juge, observateur ou coach.',
+    garder: ['Équipes de même niveau, clubs équilibrés', 'Tests diagnostiques simples : vitesse, explosivité, lancer, VMA', 'Rotation des ateliers au temps, un club juge pendant que les autres concourent', 'Situation « 18 secondes / 36 secondes par équipe » pour apprendre à gérer son allure'],
+    lien: 'https://drive.google.com/file/d/1MzaFDr7jefuEOI-wD_lgL95NmvhsPsiT/view' },
+  { id: 'b-tennis', titre: 'De la cour au court', type: 'Rencontre interclasses', ca: 4, niveaux: 'Cycles 1, 2 et 3', origine: 'DSDEN 53, comité de tennis 53, USEP 53',
+    theme: 'raquettes', format: 'tutorat', resume: 'Une progression tennis jouable dans la cour, avec des rencontres interclasses où les élèves tiennent aussi des rôles : arbitre, juge, maître du temps, table de marque.',
+    garder: ['Les élèves préparent eux-mêmes les ateliers et le planning des rotations', 'Présenter l’activité à une autre classe comme projet collectif', 'Trois situations de référence : ballon-roule, multi-rebond, match', 'Fiche collective d’évaluation de cycle'],
+    lien: 'https://drive.google.com/file/d/12JaKXTouStdjbfX0J2EcSN_dLgi4gVIR/view' },
+  { id: 'b-tabc3', titre: 'Programmer le cycle 3 ensemble', type: 'Outil de programmation', ca: 0, niveaux: 'CM1 · CM2 · 6e', origine: 'Projet pédagogique EPS cycle 3 (tableaux)',
+    theme: '', format: '', resume: 'Exemples de programmation CM1, CM2, 6e par champ d’apprentissage, grilles vierges à 4 ou 5 périodes, et compétences générales déclinées par niveau.',
+    garder: ['Compter les activités vécues par champ en fin de CM2 et en fin de 6e', 'Différencier les compétences générales : CM1 (premiers rôles avec l’enseignant), CM2 (projet d’action, outils de mesure), 6e (planifier, juger, choisir son niveau)', 'Grille à remplir à l’onglet « Repères » de cette page'],
+    lien: 'https://docs.google.com/document/d/1SxEUoOq_kcNWwqfX-AYjeIj5wjMgMs8ChUHhIjSt9tY/edit' }
+];
+const PTHEMES = {
+  relais: { t: 'Course et relais coopératifs', ca: 1, titres: ['La Tête et les Jambes', 'Le Relais des trois classes'], inst: 'Piste et terrain de foot', constat: 'Beaucoup d’élèves arrivent en 6e sans repères sur leur effort et sans avoir couru avec des plus grands ou des plus petits.', vivent: 'Des équipes mixtes CM1-CM2-6e enchaînent des relais courts ; chaque passage se valide par un défi (question, adresse) avant de transmettre le relais.', moteur: 'Courir vite et longtemps en gérant son allure au service de l’équipe', materiel: ['Plots et coupelles de couleur', 'Chasubles par équipe', 'Chronomètres', 'Cartes questions plastifiées', 'Podium et diplômes'], indic: ['100 % des élèves terminent leurs relais', 'Équipes à moins de 10 % d’écart de temps (équipes bien équilibrées)', 'Au moins 70 % de bonnes réponses aux questions'], src: ['b-tlj', 'b-ekiden'] },
+  combine: { t: 'Épreuves combinées athlétiques', ca: 1, titres: ['Le Décathlon des clubs', 'Les Jeux du cycle 3'], inst: 'Piste, sautoir, terrain de foot', constat: 'Les élèves connaissent peu la diversité de l’athlétisme et rarement leurs propres performances.', vivent: 'Des clubs mélangeant CM1, CM2 et 6e tournent sur des ateliers de course, de saut et de lancer ; chaque performance rapporte des points au club.', moteur: 'Courir, sauter, lancer pour réaliser sa meilleure performance', materiel: ['Haies basses et lattes', 'Vortex ou balles lestées', 'Décamètres', 'Fiches de juge', 'Tablette pour le total des points'], indic: ['Chaque élève réalise au moins 3 épreuves', 'Chaque élève tient au moins un rôle de juge ou d’observateur', 'Feuilles de résultats complètes à la fin'], src: ['b-combine'] },
+  nager: { t: 'Savoir nager', ca: 2, titres: ['La Grande Traversée', 'Objectif ASNS : tous à l’eau'], inst: 'Piscine', constat: 'Une partie des élèves entre en 6e sans savoir nager en sécurité ; l’échec répété crée des blocages.', vivent: 'Un parcours d’agilité à étapes (fer, bronze, argent, or) commun au CM2 et à la 6e, raconté comme une aventure, avec une épreuve finale partagée.', moteur: 'Enchaîner entrée dans l’eau, immersion, surplace et déplacement sans appui', materiel: ['Tapis flottants', 'Frites et anneaux lestés', 'Fiches parcours par niveau', 'Diplômes par étape'], indic: ['Part d’élèves qui valident l’ASNS en fin de 6e', 'Chaque élève valide au moins une étape de plus qu’au départ', 'Aucun élève ne refuse l’immersion à la fin'], src: ['b-leon', 'b-evasion'] },
+  velo: { t: 'Savoir rouler à vélo', ca: 2, titres: ['En selle vers la 6e', 'Le Brevet du cycliste'], inst: 'Cour, terrain de basket extérieur', constat: 'Le savoir rouler est un savoir fondamental, mais il est rarement construit de façon continue de l’école au collège.', vivent: 'Un parcours de maniabilité commun (équilibre, direction, freinage, pédalage) puis un brevet passé ensemble, avec des 6e en tuteurs.', moteur: 'Piloter son vélo en sécurité : équilibre, trajectoire, freinage, pédaler-freiner', materiel: ['Vélos et casques', 'Plots et lattes', 'Fiche parcours de maniabilité', 'Caisse à outils'], indic: ['Nombre d’éléments combinés réussis sur le parcours', 'Part d’élèves qui obtiennent le brevet', 'Aucun incident de sécurité'], src: ['b-vtt'] },
+  danse: { t: 'Danse et création', ca: 3, titres: ['Tous en scène, du CM1 à la 6e', 'Le Bal des trois classes'], inst: 'Salle de gym ou dojo', constat: 'Danser devant les autres reste difficile, surtout au passage en 6e ; la création collective soude un groupe.', vivent: 'Chaque classe crée un fragment sur un thème commun ; les fragments se rassemblent en une chorégraphie unique présentée aux familles.', moteur: 'Créer et interpréter une courte danse avec une intention', materiel: ['Enceinte', 'Tissus ou accessoires', 'Fiches spectateur', 'Carnet de bord'], indic: ['Chaque élève danse devant un public', 'Chaque élève remplit au moins une fiche spectateur', 'Les trois fragments sont reliés par des transitions travaillées ensemble'], src: ['b-egal'] },
+  jeux: { t: 'Jeux collectifs et jeux traditionnels', ca: 4, titres: ['Les Olympiades du cycle 3', 'Le Grand Jeu'], inst: 'Grand gymnase et terrain de foot', constat: 'Les jeux collectifs mettent vite à l’écart les moins à l’aise ; les rencontres entre niveaux sont rares.', vivent: 'Un tournoi de jeux à effectif réduit (balle au capitaine, poules-renards-vipères, ultimate) en équipes mixtes inter-niveaux, avec des 6e arbitres.', moteur: 'S’opposer collectivement : attaquer, défendre, faire des choix', materiel: ['Ballons mousse', 'Chasubles de 4 couleurs', 'Plots', 'Feuilles de match', 'Sifflets pour les arbitres'], indic: ['Chaque élève touche le ballon au moins 5 fois par match', 'Les matchs sont arbitrés par des élèves sans intervention adulte', 'Aucune équipe ne perd tous ses matchs'], src: ['b-tennis'] },
+  raquettes: { t: 'Jeux de raquettes', ca: 4, titres: ['De la cour au court', 'La Coupe des raquettes'], inst: 'Grand gymnase', constat: 'Les jeux de raquettes se pratiquent à tous les niveaux mais rarement ensemble.', vivent: 'Les 6e conçoivent et animent des ateliers de badminton ou de tennis pour les CM ; la rencontre finale mélange les niveaux en doubles.', moteur: 'Renvoyer, puis créer une rupture dans l’échange', materiel: ['Raquettes et volants ou balles mousse', 'Filets bas', 'Fiches d’atelier', 'Feuilles de score'], indic: ['Chaque CM vit au moins 4 ateliers', 'Chaque 6e anime un atelier', 'Échanges d’au moins 5 renvois en coopération'], src: ['b-tennis'] },
+  orientation: { t: 'Course d’orientation', ca: 2, titres: ['La Chasse au trésor du campus', 'Mission orientation'], inst: 'Tout le campus', constat: 'Se repérer sur un plan est utile à l’entrée au collège, où les lieux sont nouveaux pour les CM2.', vivent: 'Des binômes CM2-6e parcourent le campus avec un plan ; les 6e font découvrir les lieux du collège, les CM2 lisent le plan.', moteur: 'Lire un plan, choisir un itinéraire, retrouver des balises', materiel: ['Plans du campus', 'Balises et pinces', 'Cartons de contrôle', 'Chronomètres'], indic: ['Chaque binôme trouve au moins 8 balises sur 10', 'Les CM2 savent situer 5 lieux clés du collège', 'Aucun binôme perdu plus de 10 minutes'], src: [] }
+};
+const PFORMATS = {
+  rencontre: { t: 'Rencontre d’une demi-journée', etapes: [[-28, 'Présenter le projet à l’équipe et à la direction', 'Coordination EPS'], [-21, 'Constituer les équipes mixtes (niveau 1, 2 ou 3)', 'Enseignants des classes'], [-14, 'Préparer en classe : règles, rôles, questions', 'Enseignants des classes'], [-10, 'Réserver l’installation et le matériel', 'Coordination EPS'], [-7, 'Prévenir vie scolaire, familles et communication ; recruter les parents', 'Direction / enseignants'], [-1, 'Installer le parcours et les zones, préparer chasubles et diplômes', 'Profs d’EPS'], [0, 'Jour J : rencontre', 'Tous'], [7, 'Bilan avec les élèves, remise des diplômes, article', 'Enseignants des classes'], [14, 'Bilan d’équipe et pistes pour l’an prochain', 'Coordination EPS']] },
+  cycle: { t: 'Cycle commun en parallèle et rencontre finale', etapes: [[-56, 'Se mettre d’accord sur les contenus et la situation finale', 'Réunion cycle 3'], [-49, 'Début du cycle dans chaque classe (6 à 8 séances)', 'Enseignants des classes'], [-21, 'Séance d’échange : les 6e reçoivent une classe de CM', 'Profs d’EPS'], [-14, 'Constituer les équipes mixtes', 'Enseignants des classes'], [-7, 'Logistique de la rencontre finale', 'Coordination EPS'], [0, 'Rencontre finale', 'Tous'], [10, 'Bilan croisé des progrès CM et 6e', 'Réunion cycle 3']] },
+  tutorat: { t: 'Tutorat : les 6e préparent et animent', etapes: [[-35, 'Présenter le défi aux 6e : concevoir des ateliers pour les CM', 'Profs d’EPS'], [-28, 'Les 6e testent et écrivent leurs fiches d’atelier', 'Profs d’EPS'], [-14, 'Répétition : chaque groupe de 6e anime devant sa classe', 'Profs d’EPS'], [-7, 'Envoyer le programme aux enseignants de CM', 'Coordination EPS'], [0, 'Jour J : les 6e animent, les CM pratiquent', 'Tous'], [7, 'Retour des CM aux 6e (messages, dessins)', 'Enseignants des classes']] },
+  parcours: { t: 'Fil rouge sur l’année (trois temps forts)', etapes: [[-30, 'Écrire le projet et le présenter au conseil école-collège', 'Coordination EPS'], [0, 'Temps fort 1 (automne) : découverte ensemble', 'Tous'], [90, 'Temps fort 2 (hiver) : échange de pratiques', 'Tous'], [180, 'Temps fort 3 (printemps) : rencontre finale et familles', 'Tous'], [200, 'Bilan annuel et transmission aux professeurs de 6e', 'Réunion cycle 3']] }
+};
+const PFILS = {
+  francais: ['Français', 'Carnet de bord, récit du jour J, questions écrites par les élèves'], maths: ['Mathématiques', 'Mesurer temps et distances, calculer des moyennes, lire des tableaux de résultats'],
+  sciences: ['Sciences', 'Cœur, respiration et effort : mesurer son pouls avant et après'], emc: ['EMC', 'Règles, rôles d’arbitre et de juge, égalité filles-garçons dans les équipes'],
+  arts: ['Arts', 'Affiche, diplômes et logo dessinés par les élèves'], langues: ['Langues', 'Consignes et vocabulaire du jour en anglais et en chinois'],
+  sante: ['Santé', 'Échauffement, hydratation, récupération : une routine affichée et réutilisée']
+};
+const PAMB = {
+  essentiel: { t: 'Essentiel', d: 'Un temps fort bien organisé' },
+  ambitieux: { t: 'Ambitieux', d: '+ fil rouge interdisciplinaire, rôles d’élèves, suivi des progrès' },
+  vitrine: { t: 'Vitrine', d: '+ familles, communication, partenaires, trace vidéo' }
+};
+const CG3 = { 1: 'CA1 · Produire une performance optimale', 2: 'CA2 · Adapter ses déplacements à des environnements variés', 3: 'CA3 · S’exprimer devant les autres par une prestation artistique et/ou acrobatique', 4: 'CA4 · Conduire et maîtriser un affrontement collectif ou interindividuel' };
+let PROJ = LS.get('projets', []);
+const saveProj = () => LS.set('projets', PROJ);
+const C3V = { tab: 'projets', edit: null, form: null };
+const addDaysIso = (ds, n) => { const d = fromIso(ds); d.setDate(d.getDate() + n); return iso(d); };
+
+function genererProjet(o) {
+  const T = PTHEMES[o.theme], F = PFORMATS[o.format], amb = o.amb;
+  const niv = o.niveaux.join(', ');
+  const nbCl = o.niveaux.length * (o.parNiveau || 3);
+  const titre = o.titre || T.titres[0];
+  const fils = o.fils.map(k => PFILS[k]);
+  const s = {};
+  s.accroche = `${niv} : ${nbCl} classes réunies autour de « ${T.t.toLowerCase()} » pour que l’entrée en 6e se prépare en bougeant ensemble.`;
+  s.pourquoi = `${T.constat}\nLe cycle 3 va du CM1 à la 6e : ce projet fait vivre cette continuité aux élèves, pas seulement aux programmes. Les CM2 découvrent les lieux, les adultes et les élèves du collège ; les 6e prennent des responsabilités.`;
+  s.objectifs = [`Moteur · ${T.moteur}.`, `Ensemble · Agir dans des équipes mixtes ${niv}, en tenant des rôles (${o.format === 'tutorat' ? 'animateur, juge, chronométreur' : 'coéquipier, juge, observateur'}).`, `Liaison · Que chaque CM2 connaisse au moins un lieu, un adulte et un élève du collège avant la rentrée.`].join('\n');
+  s.public = `Niveaux : ${niv} · environ ${nbCl} classes, soit ${nbCl * 25} élèves.\nInstallation : ${o.inst || T.inst}.\n${o.format === 'rencontre' ? `Organisation proposée : ${Math.max(1, o.parNiveau || 3)} sessions de 30 à 40 min, chacune avec une classe de chaque niveau (environ ${o.niveaux.length * 25} élèves par session).` : `Format : ${F.t.toLowerCase()}.`}\nÉquipes mixtes (filles-garçons et niveaux), équilibrées grâce à un niveau physique 1, 2 ou 3 donné par chaque enseignant.`;
+  s.deroule = `${T.vivent}\n` + (o.format === 'tutorat' ? 'Les 6e conçoivent les situations, les testent, puis les animent pour les CM.\n' : '') + (o.format === 'cycle' ? 'Chaque classe vit le même cycle de 6 à 8 séances avec la même situation de référence, ce qui permet de comparer les progrès.\n' : '') + `Fin : regroupement, podium et valorisation de tous les élèves.`;
+  s.roles = ['Coureurs / pratiquants : tous', 'Juges et chronométreurs : élèves de 6e (ou CM2 au 2e passage)', 'Capitaine d’équipe : un élève par équipe, qui vérifie l’ordre de passage', amb !== 'essentiel' ? 'Reporters : 2 élèves par classe prennent des notes et des photos (sans visage reconnaissable si pas d’autorisation)' : ''].filter(Boolean).join('\n');
+  s.adultes = `Profs d’EPS : installation, sécurité, règles.\nEnseignants du primaire : préparation en classe, constitution des équipes.\n${amb === 'vitrine' ? 'Parents volontaires : un par équipe ; lycéens de l’AS en renfort.\n' : 'Parents volontaires si besoin.\n'}Direction : validation, information des familles.`;
+  s.programmes = `${T.ca ? CG3[T.ca] : ''}\nCompétences générales : partager des règles, assumer des rôles (CM1 avec l’enseignant, CM2 sous son contrôle, 6e en autonomie) ; apprendre à entretenir sa santé (choisir un niveau d’effort).`;
+  s.interdisciplinaire = fils.length ? fils.map(([t, d]) => `${t} · ${d}`).join('\n') : 'À compléter si des collègues veulent s’associer.';
+  s.indicateurs = [...T.indic, amb !== 'essentiel' ? 'Questionnaire de 3 questions aux CM2 avant et après : « Je connais le collège », « J’ai aimé », « J’ai appris »' : ''].filter(Boolean).join('\n');
+  s.valorisation = ['Diplôme pour chaque élève, pas seulement les premiers', 'Podium par équipe et prix « esprit d’équipe »', amb !== 'essentiel' ? 'Affiche et retour en classe dans chaque niveau' : '', amb === 'vitrine' ? 'Article sur le site et les réseaux du lycée, courte vidéo, invitation des familles' : ''].filter(Boolean).join('\n');
+  s.logistique = `Matériel : ${T.materiel.join(', ')}.\nSécurité : zones délimitées, trousse de secours, un adulte référent par zone, liste des élèves dispensés.\nPrévoir la vie scolaire pour les 6e et le décalage éventuel des cours.`;
+  s.risques = 'Pluie ou pollution : solution de repli en salle ou report à une date fixée à l’avance.\nÉquipes déséquilibrées : niveaux 1-2-3 donnés avant, ajustement le jour même.\nManque d’adultes : lycéens de l’AS et parents recrutés trois semaines avant.';
+  const todo = F.etapes.map(([d, t, q]) => ({ t, qui: q, d: o.date ? addDaysIso(o.date, d) : '', ok: false }));
+  return { id: 'pj' + Date.now(), titre, theme: o.theme, format: o.format, amb, niveaux: o.niveaux, parNiveau: o.parNiveau, inst: o.inst || T.inst, date: o.date, fils: o.fils, s, todo, src: T.src, created: iso(new Date()) };
+}
+const PSECT = [['accroche', 'En une phrase'], ['pourquoi', 'Pourquoi ce projet'], ['objectifs', 'Trois objectifs'], ['public', 'Pour qui, où, comment'], ['deroule', 'Ce que vivent les élèves'], ['roles', 'Rôles des élèves'], ['adultes', 'Les adultes'], ['programmes', 'Lien avec les programmes'], ['interdisciplinaire', 'Fil rouge avec les autres disciplines'], ['indicateurs', 'Comment on saura que c’est réussi'], ['valorisation', 'Valorisation'], ['logistique', 'Logistique, matériel, sécurité'], ['risques', 'Ce qui peut coincer et la parade']];
+
+VIEWS.cycle3 = function () {
+  const app = $('#app');
+  const tabs = [['projets', 'Projets'], ['banque', 'Banque de projets'], ['reperes', 'Repères CM1 · CM2 · 6e']];
+  const head = `<h1>Liaison cycle 3</h1><div class="tabs">${tabs.map(([k, t]) => `<button class="btn ${C3V.tab === k ? 'on' : ''}" data-c3t="${k}">${t}</button>`).join('')}</div>`;
+  if (C3V.tab === 'reperes') { cycle3Reperes(); const m = $('#app main'); m.insertAdjacentHTML('afterbegin', head); m.querySelector('h1:nth-of-type(2)')?.remove(); bindC3Tabs(); return; }
+  if (C3V.tab === 'banque') {
+    const mine = LS.get('banque', []);
+    app.innerHTML = `<main>${head}
+      <p class="muted" style="margin:0">Projets interdegrés trouvés dans le Drive, résumés pour en garder l’essentiel. Le lien ouvre le document d’origine (ton Drive). Tes propres projets peuvent rejoindre la banque depuis « Projets ».</p>
+      <div class="bgrid">${[...mine, ...BANQUE].map(b => `<article class="card bcard">
+        <div class="row" style="justify-content:space-between"><span class="chip ${b.ca ? 'ca' + b.ca : 'ca0'}">${b.ca ? 'CA' + b.ca : 'Outil'} · ${esc(b.type)}</span><span class="muted">${esc(b.niveaux)}</span></div>
+        <h2>${esc(b.titre)}</h2><span class="muted">${esc(b.origine)}</span>
+        <p style="margin:0">${esc(b.resume)}</p>
+        <details><summary><strong>Ce qu’on peut reprendre</strong></summary><ul>${b.garder.map(g => `<li>${esc(g)}</li>`).join('')}</ul></details>
+        <div class="row">${b.theme ? `<button class="btn blue" data-bfrom="${b.id}">Créer un projet à partir de celui-ci</button>` : ''}${b.lien ? `<a class="btn" href="${esc(b.lien)}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;text-decoration:none">Ouvrir le document</a>` : ''}${b.mine ? `<button class="btn" data-bdel="${b.id}">Retirer</button>` : ''}</div>
+      </article>`).join('')}</div></main>`;
+    bindC3Tabs();
+    app.querySelectorAll('[data-bfrom]').forEach(x => x.onclick = () => { const b = [...mine, ...BANQUE].find(y => y.id === x.dataset.bfrom); C3V.form = { theme: b.theme, format: b.format || 'rencontre', titre: b.mine ? b.titre : '' }; C3V.tab = 'projets'; C3V.edit = null; VIEWS.cycle3(); window.scrollTo(0, 0); });
+    app.querySelectorAll('[data-bdel]').forEach(x => x.onclick = () => { LS.set('banque', mine.filter(b => b.id !== x.dataset.bdel)); VIEWS.cycle3(); });
+    return;
+  }
+  const P = C3V.edit && PROJ.find(p => p.id === C3V.edit);
+  if (P) { renderProjet(P, head); return; }
+  const F = Object.assign({ theme: 'relais', format: 'rencontre', amb: 'ambitieux', niveaux: ['CM1', 'CM2', '6e'], parNiveau: 3, fils: ['francais', 'maths', 'emc'], date: '', titre: '', inst: '' }, C3V.form || {});
+  app.innerHTML = `<main>${head}
+    <div class="card"><h2>Générateur de projet</h2>
+      <span class="muted">Quatre choix suffisent. La fiche produite suit la trame d’une présentation de projet : une phrase d’accroche, le pourquoi, trois objectifs, le déroulé, les rôles, des indicateurs chiffrés et le calendrier. Tout reste modifiable ensuite.</span>
+      <div class="gstep"><span class="num">1</span><div style="flex:1"><strong>L’activité</strong><div class="chips">${Object.entries(PTHEMES).map(([k, t]) => `<button class="chipbtn ${F.theme === k ? 'on' : ''}" data-pf="theme" data-v="${k}"><span class="dot ca${t.ca}"></span>${t.t}</button>`).join('')}</div></div></div>
+      <div class="gstep"><span class="num">2</span><div style="flex:1"><strong>La forme</strong><div class="chips">${Object.entries(PFORMATS).map(([k, f]) => `<button class="chipbtn ${F.format === k ? 'on' : ''}" data-pf="format" data-v="${k}">${f.t}</button>`).join('')}</div></div></div>
+      <div class="gstep"><span class="num">3</span><div style="flex:1"><strong>Qui</strong><div class="chips">${['GS', 'CP', 'CE1', 'CE2', 'CM1', 'CM2', '6e', '5e', 'Lycée (AS)'].map(n => `<button class="chipbtn ${F.niveaux.includes(n) ? 'on' : ''}" data-pn="${n}">${n}</button>`).join('')}</div>
+        <div class="row"><label class="f">Classes par niveau<input type="number" min="1" max="6" id="pg_pn" value="${F.parNiveau}" style="width:90px"></label><label class="f">Date du temps fort<input type="date" id="pg_d" value="${F.date}"></label><label class="f" style="flex:1 1 200px">Installation<input type="text" id="pg_i" value="${esc(F.inst)}" placeholder="${esc(PTHEMES[F.theme].inst)}"></label></div></div></div>
+      <div class="gstep"><span class="num">4</span><div style="flex:1"><strong>L’ambition</strong><div class="chips">${Object.entries(PAMB).map(([k, a]) => `<button class="chipbtn ${F.amb === k ? 'on' : ''}" data-pf="amb" data-v="${k}"><strong>${a.t}</strong>&nbsp;<span class="muted">${a.d}</span></button>`).join('')}</div>
+        ${F.amb !== 'essentiel' ? `<div style="margin-top:8px"><strong style="font-size:13px">Fil rouge avec</strong><div class="chips">${Object.entries(PFILS).map(([k, [t]]) => `<button class="chipbtn ${F.fils.includes(k) ? 'on' : ''}" data-pfil="${k}">${t}</button>`).join('')}</div></div>` : ''}</div></div>
+      <div class="row"><label class="f" style="flex:1 1 260px">Titre (facultatif)<input type="text" id="pg_t" value="${esc(F.titre)}" placeholder="${esc(PTHEMES[F.theme].titres.join(' · '))}"></label><button class="btn go big" id="pg_go" style="align-self:flex-end">Générer la fiche projet</button></div>
+    </div>
+    <div class="card"><h2>Mes projets · ${PROJ.length}</h2>
+      ${PROJ.map(p => { const done = p.todo.filter(t => t.ok).length; return `<div class="row" style="border-top:1px solid #EEF0F4;padding-top:8px"><span class="chip ca${PTHEMES[p.theme]?.ca || 0}">${esc(PTHEMES[p.theme]?.t || '')}</span><strong style="flex:1 1 200px">${esc(p.titre)}</strong><span class="muted">${p.date ? frd(p.date) : 'sans date'} · ${done}/${p.todo.length} étapes</span><button class="btn" data-popen="${p.id}">Ouvrir</button></div>`; }).join('') || '<span class="muted">Aucun projet pour l’instant.</span>'}</div>
+  </main>`;
+  bindC3Tabs();
+  const keep = () => { F.parNiveau = num($('#pg_pn').value) || 3; F.date = $('#pg_d').value; F.inst = $('#pg_i').value.trim(); F.titre = $('#pg_t').value.trim(); C3V.form = F; };
+  app.querySelectorAll('[data-pf]').forEach(b => b.onclick = () => { keep(); F[b.dataset.pf] = b.dataset.v; VIEWS.cycle3(); });
+  app.querySelectorAll('[data-pn]').forEach(b => b.onclick = () => { keep(); const n = b.dataset.pn; F.niveaux = F.niveaux.includes(n) ? F.niveaux.filter(x => x !== n) : [...F.niveaux, n]; VIEWS.cycle3(); });
+  app.querySelectorAll('[data-pfil]').forEach(b => b.onclick = () => { keep(); const n = b.dataset.pfil; F.fils = F.fils.includes(n) ? F.fils.filter(x => x !== n) : [...F.fils, n]; VIEWS.cycle3(); });
+  $('#pg_go').onclick = () => { keep(); if (!F.niveaux.length) { alertMsg('Choisis au moins un niveau.'); return; } const p = genererProjet(F); PROJ.unshift(p); saveProj(); C3V.edit = p.id; C3V.form = null; VIEWS.cycle3(); window.scrollTo(0, 0); };
+  app.querySelectorAll('[data-popen]').forEach(b => b.onclick = () => { C3V.edit = b.dataset.popen; VIEWS.cycle3(); window.scrollTo(0, 0); });
+};
+function bindC3Tabs() { $('#app').querySelectorAll('[data-c3t]').forEach(b => b.onclick = () => { C3V.tab = b.dataset.c3t; C3V.edit = null; VIEWS.cycle3(); }); }
+function renderProjet(P, head) {
+  const app = $('#app'), T = PTHEMES[P.theme] || {};
+  const srcs = (P.src || []).map(id => BANQUE.find(b => b.id === id)).filter(Boolean);
+  app.innerHTML = `<main>${head}
+    <div class="row noprint"><button class="btn" id="pj_back">← Mes projets</button><button class="btn go" id="pj_pr">Imprimer / PDF (A4)</button><button class="btn" id="pj_x">Excel (fiche, calendrier, équipes)</button><button class="btn" id="pj_reu">Inscrire à la prochaine réunion</button><button class="btn" id="pj_bk">Mettre en banque</button><button class="btn" id="pj_del">Supprimer</button></div>
+    <div class="card phero"><span class="chip ca${T.ca || 0}">${esc(T.t || '')}${T.ca ? ' · CA' + T.ca : ''}</span>
+      <input type="text" class="ptitle" id="pj_t" value="${esc(P.titre)}" aria-label="Titre du projet">
+      <div class="row muted">${esc(P.niveaux.join(' · '))} · ${esc(PFORMATS[P.format]?.t || '')} · ambition ${esc(PAMB[P.amb]?.t || '')}${P.date ? ' · temps fort le ' + frd(P.date) : ''}</div></div>
+    <div class="pgrid2">${PSECT.map(([k, t]) => `<div class="card psec ${k === 'accroche' ? 'wide' : ''}"><h2>${t}</h2><textarea data-ps="${k}" rows="2">${esc(P.s[k] || '')}</textarea></div>`).join('')}</div>
+    <div class="card"><h2>Calendrier et to-do</h2>
+      ${P.todo.map((t, k) => `<div class="row todo ${t.ok ? 'ok' : ''}"><input type="checkbox" data-tk="${k}" ${t.ok ? 'checked' : ''} aria-label="Fait"><input type="date" data-td="${k}" value="${t.d || ''}"><input type="text" data-tt="${k}" value="${esc(t.t)}" style="flex:2 1 240px"><input type="text" data-tq="${k}" value="${esc(t.qui)}" style="flex:1 1 140px" list="annl"><button class="btn" data-tx="${k}" aria-label="Retirer">✕</button></div>`).join('')}
+      <datalist id="annl">${[...new Set([...ANN.map(a => a.n), 'Coordination EPS', 'Profs d’EPS', 'Enseignants des classes', 'Direction', 'Tous'])].map(n => `<option value="${esc(n)}">`).join('')}</datalist>
+      <div class="row"><button class="btn" id="tk_add">Ajouter une étape</button></div></div>
+    ${srcs.length ? `<div class="card"><h2>Pour aller plus loin</h2>${srcs.map(b => `<div><a href="${esc(b.lien)}" target="_blank" rel="noopener">${esc(b.titre)}</a> <span class="muted">· ${esc(b.origine)}</span></div>`).join('')}</div>` : ''}
+  </main>`;
+  bindC3Tabs();
+  const sv = () => saveProj();
+  $('#pj_back').onclick = () => { C3V.edit = null; VIEWS.cycle3(); };
+  $('#pj_t').onchange = e => { P.titre = e.target.value.trim() || P.titre; sv(); };
+  const fit = t => { t.style.height = 'auto'; t.style.height = (t.scrollHeight + 4) + 'px'; };
+  app.querySelectorAll('[data-ps]').forEach(t => { fit(t); t.oninput = () => fit(t); t.onchange = () => { P.s[t.dataset.ps] = t.value; sv(); }; });
+  app.querySelectorAll('[data-tk]').forEach(c => c.onchange = () => { P.todo[+c.dataset.tk].ok = c.checked; sv(); c.closest('.todo').classList.toggle('ok', c.checked); });
+  [['td', 'd'], ['tt', 't'], ['tq', 'qui']].forEach(([a, f]) => app.querySelectorAll(`[data-${a}]`).forEach(i => i.onchange = () => { P.todo[+i.dataset[a]][f] = i.value; sv(); }));
+  app.querySelectorAll('[data-tx]').forEach(b => b.onclick = () => { P.todo.splice(+b.dataset.tx, 1); sv(); renderProjet(P, head); });
+  $('#tk_add').onclick = () => { P.todo.push({ t: 'Nouvelle étape', qui: '', d: '', ok: false }); sv(); renderProjet(P, head); };
+  $('#pj_del').onclick = () => { if (confirm('Supprimer ce projet ?')) { PROJ = PROJ.filter(p => p.id !== P.id); sv(); C3V.edit = null; VIEWS.cycle3(); } };
+  $('#pj_bk').onclick = () => { const l = LS.get('banque', []).filter(b => b.id !== 'mine' + P.id); l.unshift({ id: 'mine' + P.id, mine: true, titre: P.titre, type: PFORMATS[P.format]?.t || 'Projet', ca: T.ca || 0, niveaux: P.niveaux.join(' · '), origine: 'Notre équipe · ' + (P.date ? P.date.slice(0, 4) : P.created.slice(0, 4)), theme: P.theme, format: P.format, resume: P.s.accroche || '', garder: (P.s.deroule || '').split('\n').filter(Boolean), lien: '' }); LS.set('banque', l); alertMsg('Ajouté à la banque de projets.'); };
+  $('#pj_reu').onclick = () => {
+    const today = iso(new Date()); let r = REU.filter(x => x.date >= today).sort((a, b) => a.date.localeCompare(b.date))[0];
+    if (!r) { alertMsg('Aucune réunion à venir : crée-la d’abord dans « Réunions ».'); return; }
+    r.points.push({ id: 'p' + Date.now(), t: 'Projet cycle 3 : ' + P.titre, qui: 'Coordination EPS', min: 15, type: 'Décision', votes: 0 }); saveReu(); alertMsg('Ajouté à la réunion du ' + frd(r.date) + '.');
+  };
+  $('#pj_pr').onclick = () => printProjet(P);
+  $('#pj_x').onclick = () => {
+    const wb = XLSX.utils.book_new();
+    const f = [[P.titre], [P.niveaux.join(' · ') + ' · ' + (PFORMATS[P.format]?.t || '') + (P.date ? ' · ' + frd(P.date) : '')], []];
+    PSECT.forEach(([k, t]) => { f.push([t]); (P.s[k] || '').split('\n').forEach(l => f.push(['', l])); f.push([]); });
+    const w1 = XLSX.utils.aoa_to_sheet(f); w1['!cols'] = [{ wch: 34 }, { wch: 100 }];
+    const c = [['Calendrier et to-do · ' + P.titre], [], ['Date', 'Étape', 'Qui', 'Fait']]; P.todo.forEach(t => c.push([frd(t.d), t.t, t.qui, t.ok ? 'oui' : '']));
+    const w2 = XLSX.utils.aoa_to_sheet(c); w2['!cols'] = [12, 60, 24, 6].map(w => ({ wch: w }));
+    const e = [['Équipes · ' + P.titre + ' · à remplir par chaque enseignant (ne pas diffuser hors de l’équipe)'], [], ['Équipe', 'Classe', 'Binôme', 'Élève', 'Niveau physique (1, 2 ou 3)', 'Fille / garçon', 'Ordre de passage']];
+    const nEq = Math.max(1, Math.round((P.parNiveau || 3) * 25 * P.niveaux.length / 6 / Math.max(1, P.parNiveau || 3)));
+    for (let q = 1; q <= nEq; q++) P.niveaux.forEach(n => [1, 2].forEach(b => e.push([q, n, b, '', '', '', ''])));
+    const w3 = XLSX.utils.aoa_to_sheet(e); w3['!cols'] = [8, 10, 8, 24, 22, 14, 16].map(w => ({ wch: w }));
+    XLSX.utils.book_append_sheet(wb, w1, 'Fiche projet'); XLSX.utils.book_append_sheet(wb, w2, 'Calendrier'); XLSX.utils.book_append_sheet(wb, w3, 'Équipes (une session)');
+    XLSX.writeFile(wb, 'Projet cycle 3 - ' + P.titre.replace(/[\\/:*?"<>|]/g, '') + '.xlsx');
+  };
+}
+function printProjet(P) {
+  const T = PTHEMES[P.theme] || {};
+  const w = window.open('', '_blank'); if (!w) { alertMsg('Autorise les fenêtres pour imprimer.'); return; }
+  const blk = k => esc(P.s[k] || '').split('\n').filter(Boolean).map(l => `<li>${l}</li>`).join('');
+  w.document.write(`<!doctype html><html lang="fr"><head><meta charset="utf-8"><title>${esc(P.titre)}</title><style>
+    @page{size:A4;margin:14mm}body{font:11pt/1.4 Calibri,Carlito,system-ui,sans-serif;color:#1B2330;margin:0}
+    .hero{border-left:8px solid #1F4FA8;padding:4mm 6mm;background:#F4F6FB;margin-bottom:5mm}.hero h1{font-size:22pt;margin:0 0 2mm}.hero p{margin:0;font-size:12pt}
+    .tag{display:inline-block;font-size:9pt;font-weight:700;padding:1mm 3mm;border-radius:10mm;background:#DCEBFA;color:#13396E;margin-bottom:2mm}
+    .g{display:grid;grid-template-columns:1fr 1fr;gap:4mm}.b{border:1px solid #D7DCE4;border-radius:3mm;padding:3mm 4mm;break-inside:avoid}.b h2{font-size:12pt;margin:0 0 1mm;color:#1F4FA8}.b ul{margin:0;padding-left:5mm}.w{grid-column:1/-1}
+    table{border-collapse:collapse;width:100%;font-size:10pt}td,th{border-bottom:1px solid #E1E5EC;padding:1.5mm;text-align:left}</style></head><body>
+    <div class="hero"><span class="tag">${esc(T.t || '')}${T.ca ? ' · CA' + T.ca : ''} · ${esc(P.niveaux.join(' · '))}</span><h1>${esc(P.titre)}</h1><p>${esc(P.s.accroche || '')}</p></div>
+    <div class="g">${PSECT.filter(([k]) => k !== 'accroche').map(([k, t]) => `<div class="b ${['deroule', 'pourquoi'].includes(k) ? 'w' : ''}"><h2>${t}</h2><ul>${blk(k)}</ul></div>`).join('')}
+    <div class="b w"><h2>Calendrier</h2><table><tr><th>Date</th><th>Étape</th><th>Qui</th></tr>${P.todo.map(t => `<tr><td>${frd(t.d)}</td><td>${esc(t.t)}</td><td>${esc(t.qui)}</td></tr>`).join('')}</table></div></div>
+    <script>window.onload=()=>setTimeout(()=>window.print(),300)<\/script></body></html>`);
+  w.document.close();
+}
 
 /* --- Réglages --- */
 VIEWS.reglages = function () {
@@ -1826,12 +2269,12 @@ VIEWS.reglages = function () {
     } catch (err) { alertMsg('Import impossible : ' + err.message); }
   };
   $('#bk').onclick = () => {
-    const blob = new Blob([JSON.stringify({ app: 'coordo-eps', v: VERSION, planning: PLAN, incidents: INC.map(i => ({ ...i, media: null })), materiel: MAT, glossaire: LS.get('glossaire', {}), travaux: TRAV.map(t => ({ ...t, photo: false })), resa: RESA, evals: EVALS, reunions: REU, annuaire: ANN, priorites: PRIO, cycle3: C3, ressources: RES }, null, 1)], { type: 'application/json' });
+    const blob = new Blob([JSON.stringify({ app: 'coordo-eps', v: VERSION, planning: PLAN, incidents: INC.map(i => ({ ...i, media: null })), materiel: MAT, glossaire: LS.get('glossaire', {}), travaux: TRAV.map(t => ({ ...t, photo: false })), resa: RESA, evals: EVALS, reunions: REU, annuaire: ANN, priorites: PRIO, cycle3: C3, ressources: RES, projets: PROJ, banque: LS.get('banque', []), affect: LS.get('affect', null), serviceParams: LS.get('serviceParams', {}), coevals: LS.get('coevals', []) }, null, 1)], { type: 'application/json' });
     const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'coordo-eps-sauvegarde-' + iso(new Date()) + '.json'; a.click();
   };
   $('#rs').onchange = async e => {
     const f = e.target.files[0]; if (!f) return;
-    try { const d = JSON.parse(await f.text()); if (d.app !== 'coordo-eps') throw new Error('fichier non reconnu'); if (d.planning) { PLAN = d.planning; LS.set('planning', PLAN); } if (d.incidents) { INC = d.incidents; LS.set('incidents', INC); } if (d.materiel) { MAT = d.materiel; LS.set('materiel', MAT); } if (d.glossaire) LS.set('glossaire', d.glossaire); if (d.travaux) { TRAV = d.travaux; saveTrav(); } if (d.resa) { RESA = d.resa; saveResa(); } if (d.evals) { EVALS = d.evals; saveEvals(); } if (d.reunions) { REU = d.reunions; saveReu(); } if (d.annuaire) { ANN = d.annuaire; saveAnn(); } if (d.priorites) { PRIO = d.priorites; LS.set('priorites', PRIO); } if (d.cycle3) { C3 = d.cycle3; saveC3(); } if (d.ressources) { RES = d.ressources; saveRes(); } alertMsg('Sauvegarde restaurée.'); VIEWS.reglages(); }
+    try { const d = JSON.parse(await f.text()); if (d.app !== 'coordo-eps') throw new Error('fichier non reconnu'); if (d.planning) { PLAN = d.planning; LS.set('planning', PLAN); } if (d.incidents) { INC = d.incidents; LS.set('incidents', INC); } if (d.materiel) { MAT = d.materiel; LS.set('materiel', MAT); } if (d.glossaire) LS.set('glossaire', d.glossaire); if (d.travaux) { TRAV = d.travaux; saveTrav(); } if (d.resa) { RESA = d.resa; saveResa(); } if (d.evals) { EVALS = d.evals; saveEvals(); } if (d.reunions) { REU = d.reunions; saveReu(); } if (d.annuaire) { ANN = d.annuaire; saveAnn(); } if (d.priorites) { PRIO = d.priorites; LS.set('priorites', PRIO); } if (d.cycle3) { C3 = d.cycle3; saveC3(); } if (d.ressources) { RES = d.ressources; saveRes(); } if (d.projets) { PROJ = d.projets; saveProj(); } for (const k of ['banque', 'affect', 'serviceParams', 'coevals']) if (d[k]) LS.set(k, d[k]); alertMsg('Sauvegarde restaurée.'); VIEWS.reglages(); }
     catch (err) { alertMsg('Restauration impossible : ' + err.message); }
   };
 };
