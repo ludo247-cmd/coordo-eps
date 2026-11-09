@@ -36,7 +36,7 @@ h1{font-size:24px;margin:0}h2{font-size:17px;margin:0}
 .btn.blue{background:var(--accent);color:#fff;border-color:var(--accent);font-weight:700}
 .btn.warn{background:var(--warn);color:#fff;border-color:var(--warn);font-weight:700}
 .btn:disabled{opacity:.5;cursor:default}
-select,input[type=text],input[type=date],textarea{min-height:44px;border:1px solid #CDD3DD;border-radius:10px;padding:0 10px;background:#fff}
+select,input[type=text],input[type=date],input[type=password],textarea{min-height:44px;border:1px solid #CDD3DD;border-radius:10px;padding:0 10px;background:#fff}
 textarea{padding:10px;min-height:70px}
 label.f{display:flex;flex-direction:column;gap:5px;font-size:13px;font-weight:600}
 .muted{color:var(--mute);font-size:13px}
@@ -134,6 +134,8 @@ input[type=number]{min-height:44px;border:1px solid #CDD3DD;border-radius:10px;p
 .pmis{margin:0;font-size:15px}.proles{display:flex;flex-direction:column;gap:8px}.pphase{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px}.pphase>div{border:1px solid var(--line);border-radius:10px;padding:10px 12px}
 .pphase h3,.pfoot h3{font-size:15px;margin:0 0 4px;color:var(--accent)}.pphase ul{margin:0;padding-left:18px}.pfoot{background:#F1F5FC;border-radius:10px;padding:12px 14px}.pfoot p{margin:4px 0}.pplus{margin:0;font-style:italic;border-left:3px solid #E8562B;padding-left:10px}
 .pbody[contenteditable=true]{outline:2px dashed var(--accent);outline-offset:4px;border-radius:6px}
+.syncst{display:inline-flex;align-items:center;gap:6px;color:#fff;text-decoration:none;font-size:12px;background:rgba(255,255,255,.12);border-radius:999px;padding:6px 10px;min-height:32px}
+@media (max-width:900px){.syncst .synct{display:none}.syncst{padding:8px 10px}}
 @media print{header.top,.noprint,#subnav,#bottombar,#drawer{display:none!important}}
 
 </style>
@@ -144,6 +146,7 @@ input[type=number]{min-height:44px;border:1px solid #CDD3DD;border-radius:10px;p
   <button id="hamb" class="hamb" aria-label="Ouvrir le menu" aria-controls="drawer"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
   <a class="brand" href="#accueil">Coordo EPS</a>
   <nav id="secnav" aria-label="Rubriques"></nav>
+  <a href="#reglages" id="syncst" class="syncst" aria-label="État de la synchronisation"></a>
   <span class="wk" id="wkbadge"></span>
 </header>
 <nav id="subnav" class="noprint" aria-label="Pages de la rubrique"></nav>
@@ -176,14 +179,52 @@ var o=((a=s[17])==null?void 0:a[0])?Ob(e,e[_b(s[17][0].data)][0]):[];var l=vb(s[
 var o=[];var l=Array.isArray(e);for(f=n.s.c;f<=n.e.c;++f)s[f]=ya(f);for(var c=n.s.r;c<=n.e.r;++c){i=Ta(c);for(f=n.s.c;f<=n.e.c;++f){r=s[f]+i;t=l?(e[c]||[])[f]:e[r];a="";if(t===undefined)continue;else if(t.F!=null){r=t.F;if(!t.f)continue;a=t.f;if(r.indexOf(":")==-1)r=r+":"+r}if(t.f!=null)a=t.f;else if(t.t=="z")continue;else if(t.t=="n"&&t.v!=null)a=""+t.v;else if(t.t=="b")a=t.v?"TRUE":"FALSE";else if(t.w!==undefined)a="'"+t.w;else if(t.v===undefined)continue;else if(t.t=="s")a="'"+t.v;else a=""+t.v;o[o.length]=r+"="+a}}return o}function xw(e,r,t){var a=t||{};var n=+!a.skipHeader;var i=e||{};var s=0,f=0;if(i&&a.origin!=null){if(typeof a.origin=="number")s=a.origin;else{var o=typeof a.origin=="string"?Oa(a.origin):a.origin;s=o.r;f=o.c}}var l;var c={s:{c:0,r:0},e:{c:f,r:s+r.length-1+n}};if(i["!ref"]){var h=Da(i["!ref"]);c.e.c=Math.max(c.e.c,h.e.c);c.e.r=Math.max(c.e.r,h.e.r);if(s==-1){s=h.e.r+1;c.e.r=s+r.length-1+n}}else{if(s==-1){s=0;c.e.r=r.length-1+n}}var u=a.header||[],d=0;r.forEach(function(e,r){rr(e).forEach(function(t){if((d=u.indexOf(t))==-1)u[d=u.length]=t;var o=e[t];var c="z";var h="";var v=Ra({c:f+d,r:s+r+n});l=Rw(i,v);if(o&&typeof o==="object"&&!(o instanceof Date)){i[v]=o}else{if(typeof o=="number")c="n";else if(typeof o=="boolean")c="b";else if(typeof o=="string")c="s";else if(o instanceof Date){c="d";if(!a.cellDates){c="n";o=fr(o)}h=a.dateNF||X[14]}else if(o===null&&a.nullError){c="e";o=0}if(!l)i[v]=l={t:c,v:o};else{l.t=c;l.v=o;delete l.w;delete l.R;if(h)l.z=h}if(h)l.z=h}})});c.e.c=Math.max(c.e.c,f+u.length-1);var v=Ta(s);if(n)for(d=0;d<u.length;++d)i[ya(d+f)+v]={t:"s",v:u[d]};i["!ref"]=Na(c);return i}function Ow(e,r){return xw(null,e,r)}function Rw(e,r,t){if(typeof r=="string"){if(Array.isArray(e)){var a=Oa(r);if(!e[a.r])e[a.r]=[];return e[a.r][a.c]||(e[a.r][a.c]={t:"z"})}return e[r]||(e[r]={t:"z"})}if(typeof r!="number")return Rw(e,Ra(r));return Rw(e,Ra({r:r,c:t||0}))}function Iw(e,r){if(typeof r=="number"){if(r>=0&&e.SheetNames.length>r)return r;throw new Error("Cannot find sheet # "+r)}else if(typeof r=="string"){var t=e.SheetNames.indexOf(r);if(t>-1)return t;throw new Error("Cannot find sheet name |"+r+"|")}else throw new Error("Cannot find sheet |"+r+"|")}function Nw(){return{SheetNames:[],Sheets:{}}}function Dw(e,r,t,a){var n=1;if(!t)for(;n<=65535;++n,t=undefined)if(e.SheetNames.indexOf(t="Sheet"+n)==-1)break;if(!t||e.SheetNames.length>=65535)throw new Error("Too many worksheets");if(a&&e.SheetNames.indexOf(t)>=0){var i=t.match(/(^.*?)(\d+)$/);n=i&&+i[2]||0;var s=i&&i[1]||t;for(++n;n<=65535;++n)if(e.SheetNames.indexOf(t=s+n)==-1)break}Jp(t);if(e.SheetNames.indexOf(t)>=0)throw new Error("Worksheet with name |"+t+"| already exists!");e.SheetNames.push(t);e.Sheets[t]=r;return t}function Fw(e,r,t){if(!e.Workbook)e.Workbook={};if(!e.Workbook.Sheets)e.Workbook.Sheets=[];var a=Iw(e,r);if(!e.Workbook.Sheets[a])e.Workbook.Sheets[a]={};switch(t){case 0:;case 1:;case 2:break;default:throw new Error("Bad sheet visibility setting "+t);}e.Workbook.Sheets[a].Hidden=t}function Pw(e,r){e.z=r;return e}function Lw(e,r,t){if(!r){delete e.l}else{e.l={Target:r};if(t)e.l.Tooltip=t}return e}function Mw(e,r,t){return Lw(e,"#"+r,t)}function Uw(e,r,t){if(!e.c)e.c=[];e.c.push({t:r,a:t||"SheetJS"})}function Bw(e,r,t,a){var n=typeof r!="string"?r:Da(r);var i=typeof r=="string"?r:Na(r);for(var s=n.s.r;s<=n.e.r;++s)for(var f=n.s.c;f<=n.e.c;++f){var o=Rw(e,s,f);o.t="n";o.F=i;delete o.v;if(s==n.s.r&&f==n.s.c){o.f=t;if(a)o.D=true}}return e}var Ww={encode_col:ya,encode_row:Ta,encode_cell:Ra,encode_range:Na,decode_col:Ca,decode_row:ka,split_cell:xa,decode_cell:Oa,decode_range:Ia,format_cell:Pa,sheet_add_aoa:Ma,sheet_add_json:xw,sheet_add_dom:Gm,aoa_to_sheet:Ua,json_to_sheet:Ow,table_to_sheet:jm,table_to_book:Xm,sheet_to_csv:yw,sheet_to_txt:Sw,sheet_to_json:Aw,sheet_to_html:Vm,sheet_to_formulae:_w,sheet_to_row_object_array:Aw,sheet_get_cell:Rw,book_new:Nw,book_append_sheet:Dw,book_set_sheet_visibility:Fw,cell_set_number_format:Pw,cell_set_hyperlink:Lw,cell_set_internal_link:Mw,cell_add_comment:Uw,sheet_set_array_formula:Bw,consts:{SHEET_VISIBLE:0,SHEET_HIDDEN:1,SHEET_VERY_HIDDEN:2}};var Hw;function zw(e){Hw=e}function Vw(e,r){var t=Hw();var a=r==null?{}:r;if(e==null||e["!ref"]==null){t.push(null);return t}var n=Da(e["!ref"]);var i=a.FS!==undefined?a.FS:",",s=i.charCodeAt(0);var f=a.RS!==undefined?a.RS:"\n",o=f.charCodeAt(0);var l=new RegExp((i=="|"?"\\|":i)+"+$");var c="",h=[];a.dense=Array.isArray(e);var u=a.skipHidden&&e["!cols"]||[];var d=a.skipHidden&&e["!rows"]||[];for(var v=n.s.c;v<=n.e.c;++v)if(!(u[v]||{}).hidden)h[v]=ya(v);var p=n.s.r;var g=false,m=0;t._read=function(){if(!g){g=true;return t.push("\ufeff")}while(p<=n.e.r){++p;if((d[p-1]||{}).hidden)continue;c=Cw(e,n,p-1,h,s,o,i,a);if(c!=null){if(a.strip)c=c.replace(l,"");if(c||a.blankrows!==false)return t.push((m++?f:"")+c)}}return t.push(null)};return t}function Gw(e,r){var t=Hw();var a=r||{};var n=a.header!=null?a.header:Bm;var i=a.footer!=null?a.footer:Wm;t.push(n);var s=Ia(e["!ref"]);a.dense=Array.isArray(e);t.push(zm(e,s,a));var f=s.s.r;var o=false;t._read=function(){if(f>s.e.r){if(!o){o=true;t.push("</table>"+i)}return t.push(null)}while(f<=s.e.r){t.push(Um(e,s,f,a));++f;break}};return t}function jw(e,r){var t=Hw({objectMode:true});if(e==null||e["!ref"]==null){t.push(null);return t}var a={t:"n",v:0},n=0,i=1,s=[],f=0,o="";var l={s:{r:0,c:0},e:{r:0,c:0}};var c=r||{};var h=c.range!=null?c.range:e["!ref"];if(c.header===1)n=1;else if(c.header==="A")n=2;else if(Array.isArray(c.header))n=3;switch(typeof h){case"string":l=Da(h);break;case"number":l=Da(e["!ref"]);l.s.r=h;break;default:l=h;}if(n>0)i=0;var u=Ta(l.s.r);var d=[];var v=0;var p=Array.isArray(e);var g=l.s.r,m=0;var b={};if(p&&!e[g])e[g]=[];var w=c.skipHidden&&e["!cols"]||[];var k=c.skipHidden&&e["!rows"]||[];for(m=l.s.c;m<=l.e.c;++m){if((w[m]||{}).hidden)continue;d[m]=ya(m);a=p?e[g][m]:e[d[m]+u];switch(n){case 1:s[m]=m-l.s.c;break;case 2:s[m]=d[m];break;case 3:s[m]=c.header[m-l.s.c];break;default:if(a==null)a={w:"__EMPTY",t:"s"};o=f=Pa(a,null,c);v=b[f]||0;if(!v)b[f]=1;else{do{o=f+"_"+v++}while(b[o]);b[f]=v;b[o]=1}s[m]=o;}}g=l.s.r+i;t._read=function(){while(g<=l.e.r){if((k[g-1]||{}).hidden)continue;var r=Tw(e,l,g,d,n,s,p,c);++g;if(r.isempty===false||(n===1?c.blankrows!==false:!!c.blankrows)){t.push(r.row);return}}return t.push(null)};return t}var Xw={to_json:jw,to_html:Gw,to_csv:Vw,set_readable:zw};if(typeof vm!=="undefined")e.parse_xlscfb=vm;e.parse_zip=Xb;e.read=iw;e.readFile=sw;e.readFileSync=sw;e.write=gw;e.writeFile=bw;e.writeFileSync=bw;e.writeFileAsync=kw;e.utils=Ww;e.writeXLSX=pw;e.writeFileXLSX=ww;e.SSF=Ve;if(typeof Xw!=="undefined")e.stream=Xw;if(typeof Ke!=="undefined")e.CFB=Ke;if(typeof require!=="undefined"){var $w=undefined;if(($w||{}).Readable)zw($w.Readable)}}if(typeof exports!=="undefined")make_xlsx_lib(exports);else if(typeof module!=="undefined"&&module.exports)make_xlsx_lib(module.exports);else if(typeof define==="function"&&define.amd)define("xlsx",function(){if(!XLSX.version)make_xlsx_lib(XLSX);return XLSX});else make_xlsx_lib(XLSX);if(typeof window!=="undefined"&&!window.XLSX)try{window.XLSX=XLSX}catch(e){}
 </script>
 <script>
+/* Démarrage : charge les données de la coordo (mémoire IndexedDB, séparée de Gribouillis), migre l'ancien stockage, puis lance l'app */
+window.__CS = {};
+(function () {
+  var started = false;
+  function boot() { if (started) return; started = true; var m = document.getElementById('appmain'); var sc = document.createElement('script'); sc.text = m.textContent; document.body.appendChild(sc); }
+  function fromLS() { for (var i = localStorage.length - 1; i >= 0; i--) { var k = localStorage.key(i); if (k && k.indexOf('coordo.') === 0) { try { window.__CS[k.slice(7)] = JSON.parse(localStorage.getItem(k)); } catch (e) { } } } }
+  try { if (navigator.storage && navigator.storage.persist) navigator.storage.persist(); } catch (e) { }
+  try {
+    var r = indexedDB.open('coordo-eps', 2);
+    r.onupgradeneeded = function () { var db = r.result; if (!db.objectStoreNames.contains('media')) db.createObjectStore('media'); if (!db.objectStoreNames.contains('kv')) db.createObjectStore('kv'); };
+    r.onsuccess = function () {
+      var db = r.result; window.__CDB = db;
+      var req = db.transaction('kv').objectStore('kv').openCursor();
+      req.onsuccess = function () {
+        var c = req.result; if (c) { window.__CS[c.key] = c.value; c.continue(); return; }
+        var mig = {}, ks = [];
+        for (var i = localStorage.length - 1; i >= 0; i--) { var k = localStorage.key(i); if (k && k.indexOf('coordo.') === 0) { var kk = k.slice(7); if (!(kk in window.__CS)) { try { mig[kk] = JSON.parse(localStorage.getItem(k)); ks.push(kk); } catch (e) { } } } }
+        if (!ks.length) { boot(); return; }
+        var t = db.transaction('kv', 'readwrite'); ks.forEach(function (k) { t.objectStore('kv').put(mig[k], k); window.__CS[k] = mig[k]; });
+        t.oncomplete = function () { ks.forEach(function (k) { localStorage.removeItem('coordo.' + k); }); boot(); };
+        t.onerror = function () { boot(); };
+      };
+      req.onerror = function () { fromLS(); boot(); };
+    };
+    r.onerror = function () { fromLS(); window.__CNOIDB = true; boot(); };
+    r.onblocked = function () { fromLS(); window.__CNOIDB = true; boot(); };
+  } catch (e) { fromLS(); window.__CNOIDB = true; boot(); }
+  setTimeout(function () { if (!started) { fromLS(); window.__CNOIDB = true; boot(); } }, 4000);
+})();
+</script>
+<script type="text/plain" id="appmain">
 "use strict";
-const VERSION = '0.7.1';
+const VERSION = '0.8.0';
 const CAL = {"classes":[{"c":"6A","d":"lun","s":"08:00","e":"10:00","qz":false},{"c":"4A","d":"lun","s":"10:30","e":"12:30","qz":false},{"c":"5C","d":"lun","s":"10:30","e":"12:30","qz":false},{"c":"5A","d":"lun","s":"13:30","e":"15:30","qz":false},{"c":"6C","d":"mar","s":"08:00","e":"10:00","qz":false},{"c":"3A","d":"mar","s":"10:30","e":"12:30","qz":false},{"c":"3B","d":"mar","s":"10:30","e":"12:30","qz":false},{"c":"5B","d":"mar","s":"13:30","e":"15:30","qz":false},{"c":"6B","d":"mer","s":"10:30","e":"12:30","qz":false},{"c":"3C","d":"mer","s":"10:30","e":"12:30","qz":true},{"c":"4B","d":"mer","s":"10:30","e":"12:30","qz":true},{"c":"6A","d":"jeu","s":"08:00","e":"10:00","qz":false},{"c":"5B","d":"jeu","s":"10:00","e":"12:00","qz":true},{"c":"5A","d":"jeu","s":"10:00","e":"12:00","qz":true},{"c":"4A","d":"jeu","s":"10:00","e":"12:00","qz":true},{"c":"3A","d":"jeu","s":"10:00","e":"12:00","qz":true},{"c":"5C","d":"jeu","s":"13:30","e":"15:30","qz":true},{"c":"3B","d":"jeu","s":"13:30","e":"15:30","qz":true},{"c":"1B","d":"jeu","s":"15:30","e":"17:30","qz":false},{"c":"1A","d":"jeu","s":"15:30","e":"17:30","qz":false},{"c":"2A","d":"jeu","s":"15:30","e":"17:30","qz":false},{"c":"6C","d":"ven","s":"08:00","e":"10:00","qz":false},{"c":"3C","d":"ven","s":"10:30","e":"12:30","qz":false},{"c":"4B","d":"ven","s":"10:30","e":"12:30","qz":false},{"c":"6B","d":"ven","s":"13:30","e":"15:30","qz":false},{"c":"2B","d":"ven","s":"15:30","e":"17:30","qz":false},{"c":"Term","d":"ven","s":"15:30","e":"17:30","qz":false},{"c":"Term","d":"ven","s":"15:30","e":"17:30","qz":false}],"cal":{"2026-09-01":[[4,"DF"],[5,"Bad"],[6,"combiné"],[7,"Combiné"]],"2026-09-02":[[8,"DF"],[9,"combiné"]],"2026-09-03":[[11,"Gym"],[13,"Combiné"],[15,"Bad"],[16,"Bad"],[18,"Gym"],[19,"Bad"],[20,"DF"]],"2026-09-04":[[21,"jeux collectifs"],[22,"combiné"],[23,"VB"],[24,"jeux collectifs"],[25,"Danse"],[26,"VB"],[27,"DF"]],"2026-09-07":[[0,"DF"],[1,"DF"],[2,"Bad"],[3,"Combiné"]],"2026-09-08":[[4,"DF"],[5,"Bad"],[6,"combiné"],[7,"Combiné"]],"2026-09-09":[[8,"DF"],[10,"VB"]],"2026-09-10":[[11,"Gym"],[12,"Combiné"],[14,"DF"],[17,"combiné"],[18,"Gym"],[19,"Bad"],[20,"DF"]],"2026-09-11":[[21,"jeux collectifs"],[22,"combiné"],[23,"VB"],[24,"jeux collectifs"],[25,"Danse"],[26,"VB"],[27,"DF"]],"2026-09-14":[[0,"DF"],[1,"DF"],[2,"Bad"],[3,"Combiné"]],"2026-09-15":[[4,"DF"],[5,"Bad"],[6,"combiné"],[7,"Combiné"]],"2026-09-16":[[8,"DF"],[9,"combiné"]],"2026-09-17":[[11,"Gym"],[13,"Combiné"],[15,"Bad"],[16,"Bad"],[18,"Gym"],[19,"Bad"],[20,"DF"]],"2026-09-18":[[21,"jeux collectifs"],[22,"combiné"],[23,"VB"],[24,"jeux collectifs"],[25,"Danse"],[26,"VB"],[27,"DF"]],"2026-09-21":[[0,"DF"],[1,"DF"],[2,"Bad"],[3,"Combiné"]],"2026-09-22":[[4,"DF"],[5,"Bad"],[6,"combiné"],[7,"Combiné"]],"2026-09-23":[[8,"DF"],[10,"VB"]],"2026-09-24":[[11,"Gym"],[12,"Combiné"],[14,"DF"],[17,"combiné"],[18,"Gym"],[19,"Bad"],[20,"DF"]],"2026-09-28":[[0,"DF"],[1,"DF"],[2,"Bad"],[3,"Combiné"]],"2026-09-29":[[4,"DF"],[5,"Bad"],[6,"combiné"],[7,"Combiné"]],"2026-09-30":[[8,"DF"],[9,"combiné"]],"2026-10-08":[[11,"Gym"],[12,"Combiné"],[14,"DF"],[17,"combiné"],[18,"Gym"],[19,"Bad"],[20,"DF"]],"2026-10-09":[[21,"jeux collectifs"],[22,"combiné"],[23,"VB"],[24,"jeux collectifs"],[25,"Danse"],[26,"VB"],[27,"DF"]],"2026-10-12":[[0,"DF"],[1,"DF"],[2,"Bad"],[3,"Combiné"]],"2026-10-13":[[4,"DF"],[5,"Bad"],[6,"combiné"],[7,"Combiné"]],"2026-10-14":[[8,"DF"],[9,"combiné"]],"2026-10-15":[[11,"Gym"],[13,"Combiné"],[15,"Bad"],[16,"Bad"],[18,"Gym"],[19,"Bad"],[20,"DF"]],"2026-10-16":[[21,"jeux collectifs"],[22,"combiné"],[23,"VB"],[24,"jeux collectifs"],[25,"Danse"],[26,"VB"],[27,"DF"]],"2026-10-19":[[0,"DF"],[1,"DF"],[2,"Bad"],[3,"Combiné"]],"2026-10-20":[[4,"DF"],[5,"Bad"],[6,"combiné"],[7,"Combiné"]],"2026-10-21":[[8,"DF"],[10,"VB"]],"2026-10-22":[[11,"Gym"],[12,"Combiné"],[14,"DF"],[17,"combiné"],[18,"Gym"],[19,"Bad"],[20,"DF"]],"2026-10-23":[[21,"jeux collectifs"],[22,"combiné"],[23,"VB"],[24,"jeux collectifs"],[25,"Danse"],[26,"VB"],[27,"DF"]],"2026-10-26":[[0,"DF"],[1,"DF"],[2,"Bad"],[3,"Combiné"]],"2026-10-27":[[4,"DF"],[5,"Bad"],[6,"combiné"],[7,"Combiné"]],"2026-10-28":[[8,"DF"],[9,"combiné"]],"2026-10-29":[[11,"Gym"],[13,"Combiné"],[15,"Bad"],[16,"Bad"],[18,"Gym"],[19,"Bad"],[20,"DF"]],"2026-10-30":[[21,"jeux collectifs"],[22,"combiné"],[23,"VB"],[24,"jeux collectifs"],[25,"Danse"],[26,"VB"],[27,"DF"]],"2026-11-02":[[0,"DF"],[1,"Boxe"],[2,"Handball"],[3,"Gym"]],"2026-11-03":[[4,"DF"],[5,"Handball"],[6,"cross training"],[7,"Handball"]],"2026-11-04":[[8,"DF"],[10,"Boxe"]],"2026-11-05":[[11,"Gym"],[12,"Handball"],[14,"Boxe"],[17,"cross training"],[18,"Gym"],[19,"Bad"],[20,"DF"]],"2026-11-06":[[21,"jeux collectifs"],[22,"Handball"],[23,"Boxe"],[24,"jeux collectifs"],[25,"Danse"],[26,"VB"],[27,"DF"]],"2026-11-16":[[0,"DF"],[1,"Boxe"],[2,"Handball"],[3,"Gym"]],"2026-11-17":[[4,"DF"],[5,"Handball"],[6,"cross training"],[7,"Handball"]],"2026-11-18":[[8,"DF"],[9,"Handball"]],"2026-11-19":[[11,"Gym"],[13,"Gym"],[15,"Handball"],[16,"Handball"],[18,"Gym"],[19,"Bad"],[20,"DF"]],"2026-11-20":[[21,"jeux collectifs"],[22,"Handball"],[23,"Boxe"],[24,"jeux collectifs"],[25,"Danse"],[26,"VB"],[27,"DF"]],"2026-11-23":[[0,"DF"],[1,"Boxe"],[2,"Handball"],[3,"Gym"]],"2026-11-24":[[4,"DF"],[5,"Handball"],[6,"cross training"],[7,"Handball"]],"2026-11-25":[[8,"DF"],[10,"Boxe"]],"2026-11-26":[[11,"Gym"],[12,"Handball"],[14,"Boxe"],[17,"cross training"],[18,"Gym"],[19,"Bad"],[20,"DF"]],"2026-11-27":[[21,"jeux collectifs"],[22,"Handball"],[23,"Boxe"],[24,"jeux collectifs"],[25,"Danse"],[26,"VB"],[27,"Eval DF"]],"2026-11-30":[[0,"Danse"],[1,"Boxe"],[2,"Handball"],[3,"Gym"]],"2026-12-01":[[4,"Danse"],[5,"Handball"],[6,"cross training"],[7,"Handball"]],"2026-12-02":[[8,"Danse"],[9,"Handball"]],"2026-12-03":[[11,"jeux collectifs"],[13,"Gym"],[15,"Handball"],[16,"Handball"],[18,"Bad"],[19,"cross training"],[20,"Danse"]],"2026-12-04":[[21,"Gym"],[22,"Handball"],[23,"Boxe"],[24,"Basket"],[25,"VB"],[26,"Eval VB"],[27,"Danse"]],"2026-12-07":[[0,"Danse"],[1,"Boxe"],[2,"Handball"],[3,"Gym"]],"2026-12-08":[[4,"Danse"],[5,"Handball"],[6,"cross training"],[7,"Handball"]],"2026-12-09":[[8,"Danse"],[10,"Boxe"]],"2026-12-10":[[11,"jeux collectifs"],[12,"Handball"],[14,"Boxe"],[17,"cross training"],[18,"Bad"],[19,"cross training"],[20,"Danse"]],"2026-12-11":[[21,"Gym"],[22,"Handball"],[23,"Boxe"],[24,"Basket"],[25,"VB"],[26,"cross training"],[27,"Danse"]],"2026-12-14":[[0,"Danse"],[1,"Boxe"],[2,"Handball"],[3,"Gym"]],"2026-12-15":[[4,"Danse"],[5,"Handball"],[6,"cross training"],[7,"Handball"]],"2026-12-16":[[8,"Danse"],[9,"Handball"]],"2026-12-17":[[11,"jeux collectifs"],[13,"Gym"],[15,"Handball"],[16,"Handball"],[18,"Bad"],[19,"cross training"],[20,"Danse"]],"2026-12-18":[[21,"Gym"],[22,"Handball"],[23,"Boxe"],[24,"Basket"],[25,"VB"],[26,"cross training"],[27,"Danse"]],"2027-01-04":[[0,"Danse"],[1,"Boxe"],[2,"Handball"],[3,"Gym"]],"2027-01-05":[[4,"Danse"],[5,"Handball"],[6,"cross training"],[7,"Handball"]],"2027-01-06":[[8,"Danse"],[10,"Boxe"]],"2027-01-07":[[11,"jeux collectifs"],[12,"Handball"],[14,"Boxe"],[17,"cross training"],[18,"Bad"],[19,"cross training"],[20,"Danse"]],"2027-01-08":[[21,"Gym"],[22,"Handball"],[23,"Boxe"],[24,"Basket"],[25,"VB"],[26,"cross training"],[27,"Danse"]],"2027-01-11":[[0,"Danse"],[1,"Boxe"],[2,"Handball"],[3,"Gym"]],"2027-01-12":[[4,"Danse"],[5,"Handball"],[6,"cross training"],[7,"Handball"]],"2027-01-13":[[8,"Danse"],[9,"Handball"]],"2027-01-14":[[11,"jeux collectifs"],[13,"Gym"],[15,"Handball"],[16,"Handball"],[18,"Bad"],[19,"cross training"],[20,"Danse"]],"2027-01-15":[[21,"Gym"],[22,"Handball"],[23,"Boxe"],[24,"Basket"],[25,"VB"],[26,"cross training"],[27,"Danse"]],"2027-01-18":[[0,"Danse"],[1,"VB"],[2,"Gym"],[3,"Handball"]],"2027-01-19":[[4,"Danse"],[5,"cross training"],[6,"Handball"],[7,"Gym"]],"2027-01-20":[[8,"Danse"],[10,"Danse"]],"2027-01-21":[[11,"jeux collectifs"],[12,"Gym"],[14,"VB"],[17,"Handball"],[18,"Bad"],[19,"cross training"],[20,"Danse"]],"2027-01-22":[[21,"Gym"],[22,"cross training"],[23,"Danse"],[24,"Basket"],[25,"VB"],[26,"cross training"],[27,"Danse"]],"2027-01-25":[[0,"Danse"],[1,"VB"],[2,"Gym"],[3,"Handball"]],"2027-01-26":[[4,"Danse"],[5,"cross training"],[6,"Handball"],[7,"Gym"]],"2027-01-27":[[8,"Danse"],[9,"cross training"]],"2027-01-28":[[11,"jeux collectifs"],[13,"Handball"],[15,"cross training"],[16,"Gym"],[18,"Bad"],[19,"cross training"],[20,"Danse"]],"2027-01-29":[[21,"Gym"],[22,"cross training"],[23,"Danse"],[24,"Basket"],[25,"VB"],[26,"cross training"],[27,"Danse"]],"2027-02-01":[[0,"Danse"],[1,"VB"],[2,"Gym"],[3,"Handball"]],"2027-02-02":[[4,"Danse"],[5,"cross training"],[6,"Handball"],[7,"Gym"]],"2027-02-03":[[8,"Danse"],[10,"Danse"]],"2027-02-04":[[11,"jeux collectifs"],[12,"Gym"],[14,"VB"],[17,"Handball"],[18,"Bad"],[19,"cross training"],[20,"Danse"]],"2027-02-22":[[0,"Danse"],[1,"VB"],[2,"Gym"],[3,"Handball"]],"2027-02-23":[[4,"Danse"],[5,"cross training"],[6,"Handball"],[7,"Gym"]],"2027-02-24":[[8,"Danse"],[9,"cross training"]],"2027-02-25":[[11,"jeux collectifs"],[13,"Handball"],[15,"cross training"],[16,"Gym"],[18,"Bad"],[19,"cross training"],[20,"Danse"]],"2027-02-26":[[21,"Gym"],[22,"cross training"],[23,"Danse"],[24,"Basket"],[25,"VB"],[26,"cross training"],[27,"Danse"]],"2027-03-01":[[0,"Danse"],[1,"VB"],[2,"Gym"],[3,"Handball"]],"2027-03-02":[[4,"Danse"],[5,"cross training"],[6,"Handball"],[7,"Gym"]],"2027-03-03":[[8,"Danse"],[10,"Danse"]],"2027-03-04":[[11,"jeux collectifs"],[12,"Gym"],[14,"VB"],[17,"Handball"],[18,"Bad"],[19,"cross training"],[20,"Danse"]],"2027-03-05":[[21,"Gym"],[22,"cross training"],[23,"Danse"],[24,"Basket"],[25,"VB"],[26,"Eval Cross training"],[27,"Eval Danse"]],"2027-03-08":[[0,"Basket"],[1,"VB"],[2,"Gym"],[3,"Handball"]],"2027-03-09":[[4,"Basket"],[5,"cross training"],[6,"Handball"],[7,"Gym"]],"2027-03-10":[[8,"Gym"],[9,"cross training"]],"2027-03-11":[[11,"Natation"],[13,"Handball"],[15,"cross training"],[16,"Gym"],[18,"cross training"],[19,"Gym"],[20,"VB"]],"2027-03-12":[[21,"Natation"],[22,"cross training"],[23,"Danse"],[24,"Natation"],[25,"DF"],[26,"combiné"],[27,"Bad"]],"2027-03-15":[[0,"Basket"],[1,"VB"],[2,"Gym"],[3,"Handball"]],"2027-03-16":[[4,"Basket"],[5,"cross training"],[6,"Handball"],[7,"Gym"]],"2027-03-17":[[8,"Gym"],[10,"Danse"]],"2027-03-18":[[11,"Natation"],[12,"Gym"],[14,"VB"],[17,"Handball"],[18,"cross training"],[19,"Gym"],[20,"VB"]],"2027-03-19":[[21,"Natation"],[22,"cross training"],[23,"Danse"],[24,"Natation"],[25,"DF"],[26,"combiné"],[27,"Bad"]],"2027-03-22":[[0,"Basket"],[1,"VB"],[2,"Gym"],[3,"Handball"]],"2027-03-23":[[4,"Basket"],[5,"cross training"],[6,"Handball"],[7,"Gym"]],"2027-03-24":[[8,"Gym"],[9,"cross training"]],"2027-03-25":[[11,"Natation"],[13,"Handball"],[15,"cross training"],[16,"Gym"],[18,"cross training"],[19,"Gym"],[20,"VB"]],"2027-03-26":[[21,"Natation"],[22,"cross training"],[23,"Danse"],[24,"Natation"],[25,"DF"],[26,"combiné"],[27,"Bad"]],"2027-03-29":[[0,"Basket"],[1,"Danse"],[2,"Combiné"],[3,"Bad"]],"2027-03-30":[[4,"Basket"],[5,"combiné"],[6,"Bad"],[7,"Bad"]],"2027-03-31":[[8,"Gym"],[10,"DF"]],"2027-04-01":[[11,"Natation"],[12,"Bad"],[14,"Danse"],[17,"Bad"],[18,"cross training"],[19,"Gym"],[20,"VB"]],"2027-04-06":[[4,"Basket"],[5,"combiné"],[6,"Bad"],[7,"Bad"]],"2027-04-07":[[8,"Gym"],[9,"Bad"]],"2027-04-08":[[11,"Natation"],[13,"Bad"],[15,"combiné"],[16,"Combiné"],[18,"cross training"],[19,"Gym"],[20,"VB"]],"2027-04-09":[[21,"Natation"],[22,"Bad"],[23,"DF"],[24,"Natation"],[25,"DF"],[26,"combiné"],[27,"Bad"]],"2027-04-12":[[0,"Basket"],[1,"Danse"],[2,"Combiné"],[3,"Bad"]],"2027-04-13":[[4,"Basket"],[5,"combiné"],[6,"Bad"],[7,"Bad"]],"2027-04-14":[[8,"Gym"],[10,"DF"]],"2027-04-15":[[11,"Natation"],[12,"Bad"],[14,"Danse"],[17,"Bad"],[18,"cross training"],[19,"Gym"],[20,"VB"]],"2027-04-16":[[21,"Natation"],[22,"Bad"],[23,"DF"],[24,"Natation"],[25,"DF"],[26,"combiné"],[27,"Bad"]],"2027-04-19":[[0,"Basket"],[1,"Danse"],[2,"Combiné"],[3,"Bad"]],"2027-04-20":[[4,"Basket"],[5,"combiné"],[6,"Bad"],[7,"Bad"]],"2027-04-21":[[8,"Gym"],[9,"Bad"]],"2027-04-22":[[11,"Natation"],[13,"Bad"],[15,"combiné"],[16,"Combiné"],[18,"cross training"],[19,"Gym"],[20,"VB"]],"2027-04-23":[[21,"Natation"],[22,"Bad"],[23,"DF"],[24,"Natation"],[25,"DF"],[26,"combiné"],[27,"Bad"]],"2027-05-10":[[0,"Basket"],[1,"Danse"],[2,"Combiné"],[3,"Bad"]],"2027-05-11":[[4,"Basket"],[5,"combiné"],[6,"Bad"],[7,"Bad"]],"2027-05-12":[[8,"Gym"],[10,"DF"]],"2027-05-13":[[11,"Natation"],[12,"Bad"],[14,"Danse"],[17,"Bad"],[18,"cross training"],[19,"Gym"],[20,"VB"]],"2027-05-14":[[21,"Natation"],[22,"Bad"],[23,"DF"],[24,"Natation"],[25,"DF"],[26,"combiné"],[27,"Bad"]],"2027-05-17":[[0,"Basket"],[1,"Danse"],[2,"Combiné"],[3,"Bad"]],"2027-05-18":[[4,"Basket"],[5,"combiné"],[6,"Bad"],[7,"Bad"]],"2027-05-19":[[8,"Gym"],[9,"Bad"]],"2027-05-20":[[11,"Natation"],[13,"Bad"],[15,"combiné"],[16,"Combiné"],[18,"cross training"],[19,"Gym"],[20,"VB"]],"2027-05-21":[[21,"Natation"],[22,"Bad"],[23,"DF"],[24,"Natation"],[25,"DF"],[26,"combiné"],[27,"Bad"]],"2027-05-24":[[0,"Basket"],[1,"Danse"],[2,"Combiné"],[3,"Bad"]],"2027-05-25":[[4,"Basket"],[5,"combiné"],[6,"Bad"],[7,"Bad"]],"2027-05-26":[[8,"Gym"],[10,"DF"]],"2027-05-27":[[11,"Natation"],[12,"Bad"],[14,"Danse"],[17,"Bad"],[18,"cross training"],[19,"Gym"],[20,"VB"]],"2027-05-28":[[21,"Natation"],[22,"Bad"],[23,"DF"],[24,"Natation"],[25,"DF"],[26,"Eval Combiné"],[27,"Eval Bad"]],"2027-05-31":[[0,"Basket"],[1,"Danse"],[2,"Combiné"],[3,"Bad"]],"2027-06-01":[[4,"Basket"],[5,"combiné"],[6,"Bad"],[7,"Bad"]],"2027-06-02":[[8,"Gym"],[9,"Bad"]],"2027-06-03":[[11,"jeux collectifs"],[13,"Bad"],[15,"combiné"],[16,"Combiné"],[18,"cross training"],[19,"Gym"],[20,"VB"]],"2027-06-04":[[21,"Natation"],[22,"Bad"],[23,"DF"],[24,"jeux collectifs"],[25,"DF"]]},"feries":["2026-09-25","2027-04-02","2027-04-05","2027-06-09"],"weeks":{"2026-08-31":1,"2026-09-07":2,"2026-09-14":1,"2026-09-21":2,"2026-09-28":1,"2026-10-05":2,"2026-10-12":1,"2026-10-19":2,"2026-10-26":1,"2026-11-02":2,"2026-11-16":1,"2026-11-23":2,"2026-11-30":1,"2026-12-07":2,"2026-12-14":1,"2027-01-04":2,"2027-01-11":1,"2027-01-18":2,"2027-01-25":1,"2027-02-01":2,"2027-02-22":1,"2027-03-01":2,"2027-03-08":1,"2027-03-15":2,"2027-03-22":1,"2027-03-29":2,"2027-04-05":1,"2027-04-12":2,"2027-04-19":1,"2027-05-10":2,"2027-05-17":1,"2027-05-24":2,"2027-05-31":1,"2027-06-07":2,"2027-06-14":1,"2027-06-21":2,"2027-06-28":1}};
 const $ = (s, el = document) => el.querySelector(s);
 const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+const _clone = v => v == null ? v : JSON.parse(JSON.stringify(v));
+function _persist(k, del) {
+  const db = window.__CDB;
+  if (db) { try { const t = db.transaction('kv', 'readwrite'); if (del) t.objectStore('kv').delete(k); else t.objectStore('kv').put(window.__CS[k], k); t.onerror = () => alertMsg('Enregistrement impossible sur cet appareil : ' + (t.error && t.error.message)); return; } catch (e) { } }
+  try { if (del) localStorage.removeItem('coordo.' + k); else localStorage.setItem('coordo.' + k, JSON.stringify(window.__CS[k])); } catch (e) { alertMsg('Mémoire de l’appareil pleine : ' + e.message); }
+}
 const LS = {
-  get(k, d) { try { const v = localStorage.getItem('coordo.' + k); return v ? JSON.parse(v) : d; } catch (e) { return d; } },
-  set(k, v) { try { localStorage.setItem('coordo.' + k, JSON.stringify(v)); return true; } catch (e) { alertMsg('Mémoire de l’appareil pleine : ' + e.message); return false; } }
+  get(k, d) { return k in window.__CS ? _clone(window.__CS[k]) : d; },
+  set(k, v, silent) { window.__CS[k] = _clone(v); _persist(k); if (!silent && window.__SYREADY) onLocalChange(k); return true; },
+  del(k, silent) { delete window.__CS[k]; _persist(k, true); if (!silent && window.__SYREADY) onLocalChange(k); }
 };
 function alertMsg(m) { const b = document.createElement('div'); b.className = 'banner'; b.textContent = m; b.style.cssText += ';position:fixed;bottom:16px;left:16px;right:16px;z-index:99'; document.body.appendChild(b); setTimeout(() => b.remove(), 5000); }
 
@@ -348,8 +389,9 @@ const DB = { db: null };
 function idb() {
   return new Promise((res, rej) => {
     if (DB.db) return res(DB.db);
-    const r = indexedDB.open('coordo-eps', 1);
-    r.onupgradeneeded = () => r.result.createObjectStore('media');
+    if (window.__CDB) { DB.db = window.__CDB; return res(DB.db); }
+    const r = indexedDB.open('coordo-eps', 2);
+    r.onupgradeneeded = () => { const db = r.result; if (!db.objectStoreNames.contains('media')) db.createObjectStore('media'); if (!db.objectStoreNames.contains('kv')) db.createObjectStore('kv'); };
     r.onsuccess = () => { DB.db = r.result; res(DB.db); };
     r.onerror = () => rej(r.error);
   });
@@ -982,12 +1024,12 @@ VIEWS.generateur = function () {
   app.querySelectorAll('[data-ck]').forEach(c => c.onchange = () => {
     const cp = genCompat(); (cp[c.dataset.ck] = cp[c.dataset.ck] || {})[c.dataset.cb] = c.checked; LS.set('compat', cp); GEN.results = null;
   });
-  $('#gcreset').onclick = () => { localStorage.removeItem('coordo.compat'); GEN.results = null; VIEWS.generateur(); };
+  $('#gcreset').onclick = () => { LS.del('compat'); GEN.results = null; VIEWS.generateur(); };
   $('#ggo').onclick = () => {
     const b = $('#ggo'); b.textContent = 'Calcul…'; b.disabled = true;
     setTimeout(() => { GEN.results = genRun(per, GEN.rules, genCompat()); GEN.pick = 0; VIEWS.generateur(); }, 30);
   };
-  const u = $('#gundo'); if (u) u.onclick = () => { if (!confirm('Revenir au planning d’avant la dernière application ?')) return; PLAN = LS.get('planning_backup', PLAN); LS.set('planning', PLAN); localStorage.removeItem('coordo.planning_backup'); GEN.results = null; alertMsg('Planning restauré.'); VIEWS.generateur(); };
+  const u = $('#gundo'); if (u) u.onclick = () => { if (!confirm('Revenir au planning d’avant la dernière application ?')) return; PLAN = LS.get('planning_backup', PLAN); LS.set('planning', PLAN); LS.del('planning_backup'); GEN.results = null; alertMsg('Planning restauré.'); VIEWS.generateur(); };
   if (!res) return;
   app.querySelectorAll('[data-pick]').forEach(b => b.onclick = () => { GEN.pick = +b.dataset.pick; VIEWS.generateur(); });
   if (!prop) return;
@@ -1760,7 +1802,7 @@ VIEWS.acces = function () {
   app.querySelectorAll('[data-adel]').forEach(b => b.onclick = () => { ANN = ANN.filter(a => a.id !== b.dataset.adel); saveAnn(); VIEWS.acces(); });
   app.querySelectorAll('[data-mail]').forEach(b => b.onclick = () => { const l = ANN.filter(a => a.e && (b.dataset.mail === '*' || a.c === b.dataset.mail)).map(a => a.e).join('; '); (navigator.clipboard ? navigator.clipboard.writeText(l) : Promise.reject()).then(() => alertMsg('Copié : ' + l), () => prompt('Copie cette liste :', l)); });
   $('#lcs').onclick = async () => { const v = $('#lc').value; if (v.length < 4) { alertMsg('4 caractères minimum.'); return; } LS.set('lock', await sha(v)); SESSION_OK.v = true; alertMsg('Code enregistré sur cet appareil.'); VIEWS.acces(); };
-  const lr = $('#lcr'); if (lr) lr.onclick = () => { if (confirm('Retirer le code ?')) { localStorage.removeItem('coordo.lock'); VIEWS.acces(); } };
+  const lr = $('#lcr'); if (lr) lr.onclick = () => { if (confirm('Retirer le code ?')) { LS.del('lock'); VIEWS.acces(); } };
 };
 
 /* --- Liaison cycle 3 --- */
@@ -2026,7 +2068,7 @@ VIEWS.equipe = function () {
   app.querySelectorAll('[data-mail]').forEach(b => b.onclick = () => { const l = ANN.filter(a => a.e && a.c === b.dataset.mail).map(a => a.e).join('; '); (navigator.clipboard ? navigator.clipboard.writeText(l) : Promise.reject()).then(() => alertMsg('Copié : ' + l), () => prompt('Copie cette liste :', l)); });
   app.querySelectorAll('[data-sv]').forEach(i => i.onchange = () => { const SV = LS.get('serviceParams', {}); const p = SV[i.dataset.sv] = SV[i.dataset.sv] || {}; if (i.dataset.k === 'statut') { p.statut = i.value; delete p.ors; } else p[i.dataset.k] = num(i.value) || 0; LS.set('serviceParams', SV); setTimeout(VIEWS.equipe, 0); });
   app.querySelectorAll('[data-af]').forEach(s => s.onchange = () => { const a = LS.get('affect', null) || guessAffect(); if (s.value) a[s.dataset.af] = s.value; else delete a[s.dataset.af]; LS.set('affect', a); setTimeout(VIEWS.equipe, 0); });
-  on('#af_re', () => { if (confirm('Remplacer les attributions par celles devinées depuis le planning ?')) { localStorage.removeItem('coordo.affect'); VIEWS.equipe(); } });
+  on('#af_re', () => { if (confirm('Remplacer les attributions par celles devinées depuis le planning ?')) { LS.del('affect'); VIEWS.equipe(); } });
   on('#sv_x', () => {
     const aff = LS.get('affect', null) || guessAffect(), SV = LS.get('serviceParams', {});
     const aoa = [['Service des professeurs d’EPS · ' + new Date().toLocaleDateString('fr-FR')], [], ['Prof', 'Statut', 'Cours / semaine (h)', 'AS (h)', 'Décharge (h)', 'Total (h)', 'Service dû (h)', 'Écart (h)', 'Détail']];
@@ -2038,7 +2080,7 @@ VIEWS.equipe = function () {
   app.querySelectorAll('[data-pu]').forEach(b => b.onclick = () => mv(+b.dataset.pu, -1));
   app.querySelectorAll('[data-pd]').forEach(b => b.onclick = () => mv(+b.dataset.pd, 1));
   on('#lcs', async () => { const v = $('#lc').value; if (v.length < 4) { alertMsg('4 caractères minimum.'); return; } LS.set('lock', await sha(v)); SESSION_OK.v = true; alertMsg('Code enregistré sur cet appareil.'); VIEWS.equipe(); });
-  on('#lcr', () => { if (confirm('Retirer le code ?')) { localStorage.removeItem('coordo.lock'); VIEWS.equipe(); } });
+  on('#lcr', () => { if (confirm('Retirer le code ?')) { LS.del('lock'); VIEWS.equipe(); } });
 };
 VIEWS.acces = () => { EQV.tab = 'acces'; location.replace('#equipe'); };
 
@@ -2514,6 +2556,121 @@ VIEWS.reglages = function () {
   };
 };
 
+/* ================= v0.8 : synchronisation entre appareils (dépôt GitHub privé) ================= */
+const NOSYNC = ['lock', 'profil', 'sync', 'syncMeta', 'planning_backup'];
+const PRIVATE_KEYS = ['prive_inapt'];
+const SYNC_PATH = 'coordo/donnees.json';
+const SY = { timer: null, busy: false, state: 'off', msg: '' };
+const syncCfg = () => Object.assign({ owner: 'ludo247-cmd', repo: 'coordo-sauvegardes', token: '', auto: true, prive: false }, LS.get('sync', {}));
+const syncMeta = () => Object.assign({ sha: null, at: null, dirty: false }, LS.get('syncMeta', {}));
+const syncable = k => !NOSYNC.includes(k) && (!PRIVATE_KEYS.includes(k) || syncCfg().prive);
+function setSyncState(st, msg) {
+  SY.state = st; SY.msg = msg || '';
+  const el = $('#syncst'); if (!el) return;
+  const L = { off: ['Sur cet appareil seulement', '#5A6578'], ok: ['Synchronisé', '#1F7A45'], wait: ['Modifications à envoyer', '#7A3E00'], busy: ['Synchronisation…', '#1F4FA8'], err: ['Synchronisation impossible', '#B42318'], conflict: ['Conflit à régler', '#B42318'] };
+  const [t, c] = L[st] || L.off;
+  el.innerHTML = `<span style="width:9px;height:9px;border-radius:50%;background:${c};display:inline-block"></span><span class="synct">${t}</span>`;
+  el.title = t + (msg ? ' · ' + msg : '');
+}
+function onLocalChange(k) {
+  if (!syncable(k)) return;
+  const m = syncMeta(); if (!m.dirty) { m.dirty = true; LS.set('syncMeta', m); }
+  const c = syncCfg(); if (!c.token) return;
+  setSyncState('wait');
+  if (c.auto) { clearTimeout(SY.timer); SY.timer = setTimeout(() => syncPush(false), 15000); }
+}
+async function ghReq(method, path, body, raw) {
+  const c = syncCfg();
+  const r = await fetch('https://api.github.com' + path, { method, headers: { Authorization: 'Bearer ' + c.token, Accept: raw ? 'application/vnd.github.raw+json' : 'application/vnd.github+json', 'X-GitHub-Api-Version': '2022-11-28', ...(body ? { 'Content-Type': 'application/json' } : {}) }, body: body ? JSON.stringify(body) : undefined, cache: 'no-store' });
+  if (r.status === 404) return { status: 404 };
+  if (!r.ok) { let m = ''; try { m = (await r.json()).message; } catch (e) { } throw new Error(r.status + (m ? ' · ' + m : '')); }
+  return { status: r.status, data: raw ? await r.text() : await r.json() };
+}
+const ep = () => { const c = syncCfg(); return '/repos/' + encodeURIComponent(c.owner) + '/' + encodeURIComponent(c.repo) + '/contents/' + SYNC_PATH; };
+function b64utf8(s) { const b = new TextEncoder().encode(s); let bin = ''; for (let i = 0; i < b.length; i += 0x8000) bin += String.fromCharCode.apply(null, b.subarray(i, i + 0x8000)); return btoa(bin); }
+function snapshot() { const d = {}; for (const k of Object.keys(window.__CS)) if (syncable(k)) d[k] = window.__CS[k]; return { app: 'coordo-eps', v: VERSION, savedAt: new Date().toISOString(), data: d }; }
+async function remoteSha() { const r = await ghReq('GET', ep()); return r.status === 404 ? null : r.data.sha; }
+async function syncPush(force) {
+  const c = syncCfg(); if (!c.token || SY.busy) return false;
+  SY.busy = true; setSyncState('busy');
+  try {
+    const m = syncMeta(); const sha = await remoteSha();
+    if (sha && sha !== m.sha && !force) { setSyncState('conflict', 'Les données ont aussi changé sur un autre appareil.'); showConflict(); return false; }
+    const r = await ghReq('PUT', ep(), { message: 'Coordo EPS · sauvegarde ' + new Date().toLocaleString('fr-FR'), content: b64utf8(JSON.stringify(snapshot())), ...(sha ? { sha } : {}) });
+    if (r.status === 404) throw new Error('dépôt « ' + c.repo + ' » introuvable');
+    LS.set('syncMeta', { sha: r.data.content.sha, at: new Date().toISOString(), dirty: false });
+    setSyncState('ok'); return true;
+  } catch (e) { setSyncState('err', e.message); return false; }
+  finally { SY.busy = false; }
+}
+async function syncPull(force) {
+  const c = syncCfg(); if (!c.token || SY.busy) return false;
+  SY.busy = true; setSyncState('busy');
+  try {
+    const m = syncMeta(); const sha = await remoteSha();
+    if (!sha) { SY.busy = false; return syncPush(true); }
+    if (sha === m.sha && !force) { setSyncState(m.dirty ? 'wait' : 'ok'); return false; }
+    if (m.dirty && !force) { setSyncState('conflict', 'Les données ont changé ici et sur un autre appareil.'); showConflict(); return false; }
+    const r = await ghReq('GET', ep(), null, true); const j = JSON.parse(r.data);
+    if (j.app !== 'coordo-eps') throw new Error('fichier non reconnu');
+    for (const k of Object.keys(window.__CS)) if (syncable(k) && !(k in j.data)) LS.del(k, true);
+    for (const [k, v] of Object.entries(j.data)) if (syncable(k)) LS.set(k, v, true);
+    LS.set('syncMeta', { sha, at: new Date().toISOString(), dirty: false });
+    setSyncState('ok');
+    alertMsg('Données mises à jour depuis la sauvegarde du ' + new Date(j.savedAt).toLocaleString('fr-FR') + '.');
+    setTimeout(() => location.reload(), 1200);
+    return true;
+  } catch (e) { setSyncState('err', e.message); return false; }
+  finally { SY.busy = false; }
+}
+function showConflict() {
+  if ($('#syncconf')) return;
+  const d = document.createElement('div'); d.id = 'syncconf'; d.className = 'banner';
+  d.style.cssText += ';position:fixed;left:16px;right:16px;bottom:90px;z-index:60;display:flex;flex-wrap:wrap;gap:8px;align-items:center';
+  d.innerHTML = '<strong style="flex:1 1 260px">Les données ont changé sur cet appareil et sur un autre. Lesquelles garder ?</strong><button class="btn" id="sc_l">Celles de cet appareil</button><button class="btn" id="sc_r">Celles de l’autre appareil</button>';
+  document.body.appendChild(d);
+  $('#sc_l').onclick = async () => { d.remove(); await syncPush(true); };
+  $('#sc_r').onclick = async () => { if (!confirm('Remplacer les données de cet appareil par la dernière sauvegarde ?')) return; d.remove(); await syncPull(true); };
+}
+function syncStart() {
+  const c = syncCfg();
+  if (!c.token) { setSyncState('off'); return; }
+  setSyncState(syncMeta().dirty ? 'wait' : 'ok');
+  if (c.auto) syncPull(false);
+  document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'visible' && syncCfg().auto && syncCfg().token) syncPull(false); else if (document.visibilityState === 'hidden' && syncMeta().dirty && syncCfg().token) syncPush(false); });
+}
+function syncCardHTML() {
+  const c = syncCfg(), m = syncMeta();
+  const grib = (() => { try { const g = JSON.parse(localStorage.getItem('grib_gh_v1') || '{}'); return g && g.token ? g : null; } catch (e) { return null; } })();
+  return `<div class="card" id="synccard"><h2>Synchronisation entre appareils</h2>
+    <span class="muted">Comme Gribouillis : tes données sont enregistrées dans un dépôt GitHub privé, et chaque appareil (ordinateur, tablette, téléphone) récupère la dernière version. Le jeton reste sur l’appareil, jamais dans le code de l’app.</span>
+    <div class="row"><label class="f">Compte GitHub<input type="text" id="sy_o" value="${esc(c.owner)}" style="width:160px"></label><label class="f">Dépôt privé<input type="text" id="sy_r" value="${esc(c.repo)}" style="width:200px"></label>
+      <label class="f" style="flex:1 1 240px">Jeton<input type="password" id="sy_t" value="${esc(c.token)}" autocomplete="off" placeholder="github_pat_…"></label></div>
+    ${grib && !c.token ? '<div class="row"><button class="btn blue" id="sy_g">Reprendre le compte et le jeton de Gribouillis sur cet appareil</button></div>' : ''}
+    <label style="display:flex;flex-direction:row;align-items:center;gap:10px;min-height:44px;margin:6px 0"><input type="checkbox" id="sy_a" ${c.auto ? 'checked' : ''} style="width:22px;height:22px"> Synchroniser automatiquement</label>
+    <label style="display:flex;flex-direction:row;align-items:center;gap:10px;min-height:44px;margin:6px 0"><input type="checkbox" id="sy_p" ${c.prive ? 'checked' : ''} style="width:22px;height:22px"> Inclure les données nominatives des élèves (inaptitudes du bac)</label>
+    <span class="muted">Ne sont jamais envoyés : les listes d’élèves de l’AS (elles ne sont pas conservées par l’app), les photos et vidéos, le code et le profil de l’appareil.</span>
+    <div class="row"><button class="btn go" id="sy_s">Enregistrer et synchroniser</button><button class="btn" id="sy_push">Envoyer maintenant</button><button class="btn" id="sy_pull">Récupérer la dernière sauvegarde</button></div>
+    <span class="muted">${m.at ? 'Dernière synchronisation : ' + new Date(m.at).toLocaleString('fr-FR') : 'Jamais synchronisé.'} · Fichier : ${esc(c.repo)}/${SYNC_PATH}</span>
+    <span class="muted">Le dépôt doit exister et être privé, et le jeton doit avoir le droit d’y écrire (Contents : lecture et écriture). Tu peux aussi indiquer « gribouillis-sauvegardes » : la coordo écrit alors dans un dossier « coordo » à part, sans toucher aux fichiers de Gribouillis.</span>
+  </div>`;
+}
+function bindSyncCard() {
+  const save = () => { LS.set('sync', { owner: $('#sy_o').value.trim(), repo: $('#sy_r').value.trim(), token: $('#sy_t').value.trim(), auto: $('#sy_a').checked, prive: $('#sy_p').checked }); };
+  const g = $('#sy_g'); if (g) g.onclick = () => { try { const x = JSON.parse(localStorage.getItem('grib_gh_v1') || '{}'); $('#sy_o').value = x.owner || 'ludo247-cmd'; $('#sy_t').value = x.token || ''; alertMsg('Jeton de Gribouillis repris. Vérifie le nom du dépôt puis enregistre.'); } catch (e) { } };
+  $('#sy_s').onclick = async () => { save(); if (!syncCfg().token) { setSyncState('off'); alertMsg('Synchronisation désactivée : aucun jeton.'); return; } const sha = await remoteSha().catch(e => { alertMsg('GitHub injoignable : ' + e.message); return undefined; }); if (sha === undefined) return; if (sha && !syncMeta().sha) { if (confirm('Une sauvegarde existe déjà dans ce dépôt. La récupérer sur cet appareil ? (Annuler = envoyer les données de cet appareil à la place)')) await syncPull(true); else await syncPush(true); } else await syncPush(false); VIEWS.reglages(); };
+  $('#sy_push').onclick = async () => { save(); if (await syncPush(false)) alertMsg('Données envoyées.'); VIEWS.reglages(); };
+  $('#sy_pull').onclick = async () => { save(); if (confirm('Remplacer les données de cet appareil par la dernière sauvegarde ?')) await syncPull(true); };
+}
+
+window.__SYREADY = true;
+(function () {
+  const _r = VIEWS.reglages;
+  VIEWS.reglages = function () { _r(); const m = $('#app main'); if (!m) return; const h = m.querySelector('h1'); (h ? h : m.firstChild).insertAdjacentHTML(h ? 'afterend' : 'beforebegin', syncCardHTML()); bindSyncCard(); };
+  const _a = VIEWS.accueil;
+  VIEWS.accueil = function () { _a(); if (syncCfg().token) return; const m = $('#app main'); if (m) m.insertAdjacentHTML('afterbegin', '<div class="banner"><strong>Tes données ne sont que sur cet appareil.</strong> Pour les retrouver sur la tablette ou le téléphone, et ne pas les perdre, active la synchronisation dans <a href="#reglages">Réglages</a>.</div>'); };
+})();
+
 /* ---------- nouvelle version ---------- */
 (async function checkVersion() {
   if (!location.protocol.startsWith('http')) return;
@@ -2521,10 +2678,11 @@ VIEWS.reglages = function () {
     const r = await fetch('version.json?' + Date.now(), { cache: 'no-store' });
     if (!r.ok) return;
     const j = await r.json();
-    if (j.version && j.version !== VERSION) { const b = $('#newver'); b.style.display = 'block'; b.onclick = () => location.reload(); }
+    if (j.version && j.version !== VERSION) { const b = $('#newver'); b.style.display = 'block'; b.onclick = async () => { b.textContent = 'Enregistrement puis mise à jour…'; if (syncCfg().token && syncMeta().dirty) await syncPush(false); location.reload(); }; }
   } catch (e) { }
 })();
 route();
+syncStart();
 </script>
 </body>
 </html>
