@@ -36,7 +36,7 @@ h1{font-size:24px;margin:0}h2{font-size:17px;margin:0}
 .btn.blue{background:var(--accent);color:#fff;border-color:var(--accent);font-weight:700}
 .btn.warn{background:var(--warn);color:#fff;border-color:var(--warn);font-weight:700}
 .btn:disabled{opacity:.5;cursor:default}
-select,input[type=text],input[type=date],input[type=password],textarea{min-height:44px;border:1px solid #CDD3DD;border-radius:10px;padding:0 10px;background:#fff}
+select,input[type=text],input[type=date],input[type=password],input[type=email],textarea{min-height:44px;border:1px solid #CDD3DD;border-radius:10px;padding:0 10px;background:#fff}
 textarea{padding:10px;min-height:70px}
 label.f{display:flex;flex-direction:column;gap:5px;font-size:13px;font-weight:600}
 .muted{color:var(--mute);font-size:13px}
@@ -136,6 +136,25 @@ input[type=number]{min-height:44px;border:1px solid #CDD3DD;border-radius:10px;p
 .pbody[contenteditable=true]{outline:2px dashed var(--accent);outline-offset:4px;border-radius:6px}
 .syncst{display:inline-flex;align-items:center;gap:6px;color:#fff;text-decoration:none;font-size:12px;background:rgba(255,255,255,.12);border-radius:999px;padding:6px 10px;min-height:32px}
 @media (max-width:900px){.syncst .synct{display:none}.syncst{padding:8px 10px}}
+
+.tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:10px}
+.tile{background:#fff;border:1px solid var(--line);border-radius:14px;display:flex;align-items:stretch}
+.tile .tl{flex:1;display:flex;gap:12px;align-items:flex-start;padding:14px;color:var(--ink);text-decoration:none;min-height:64px}
+.tile .tl svg{flex-shrink:0;color:var(--accent);margin-top:2px}.tile .tl>span{display:flex;flex-direction:column;gap:3px}
+.star{border:0;background:none;font-size:26px;min-width:56px;color:#9AA6B8;cursor:pointer;position:relative;border-left:1px solid #EEF0F4}
+.star.on{color:#D99A0B}.star small{position:absolute;bottom:6px;right:8px;font-size:11px;color:var(--mute);font-weight:700}
+.inst{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px;font-size:14px}.inst>div{background:#F4F6FB;border-radius:10px;padding:10px 12px}
+.chk{display:inline-flex;align-items:center;gap:8px;min-height:40px;font-size:14px;margin-right:12px}.chk input{width:20px;height:20px;flex-shrink:0}
+.tvmeteo{display:flex;gap:16px;align-items:center;font-size:20px;color:#C7CFDB;margin-left:auto;margin-right:24px}
+.syn{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}.syn h3{font-size:14px;margin:0 0 6px}.syn>div{display:flex;flex-direction:column;gap:6px;font-size:14px}
+.bar{display:flex;border-radius:6px;overflow:hidden;min-width:160px;height:24px}.bar span{display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;border-radius:0}
+input.svin{width:72px;min-height:38px}
+.ckl{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2px 12px;margin-top:6px}
+.rules{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px;margin-top:10px}.rules>div{background:#F4F6FB;border-radius:10px;padding:12px;display:flex;flex-direction:column;gap:4px;font-size:14px}.rules span{font-size:13px;color:#3D4757}
+.kan{display:grid;grid-template-columns:repeat(5,minmax(200px,1fr));gap:12px;overflow-x:auto}
+.kan section{background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px;display:flex;flex-direction:column;gap:8px;min-height:120px}
+.kc{text-align:left;border:1px solid var(--line);border-radius:12px;padding:10px;background:#FAFBFC;display:flex;flex-direction:column;gap:5px;cursor:pointer;font:inherit;color:inherit}
+@media (max-width:900px){.kan{grid-template-columns:1fr}.tvmeteo{font-size:15px;margin-right:10px}}
 @media print{header.top,.noprint,#subnav,#bottombar,#drawer{display:none!important}}
 
 </style>
@@ -211,8 +230,8 @@ window.__CS = {};
 </script>
 <script type="text/plain" id="appmain">
 "use strict";
-const VERSION = '0.8.0';
-const CAL = {"classes":[{"c":"6A","d":"lun","s":"08:00","e":"10:00","qz":false},{"c":"4A","d":"lun","s":"10:30","e":"12:30","qz":false},{"c":"5C","d":"lun","s":"10:30","e":"12:30","qz":false},{"c":"5A","d":"lun","s":"13:30","e":"15:30","qz":false},{"c":"6C","d":"mar","s":"08:00","e":"10:00","qz":false},{"c":"3A","d":"mar","s":"10:30","e":"12:30","qz":false},{"c":"3B","d":"mar","s":"10:30","e":"12:30","qz":false},{"c":"5B","d":"mar","s":"13:30","e":"15:30","qz":false},{"c":"6B","d":"mer","s":"10:30","e":"12:30","qz":false},{"c":"3C","d":"mer","s":"10:30","e":"12:30","qz":true},{"c":"4B","d":"mer","s":"10:30","e":"12:30","qz":true},{"c":"6A","d":"jeu","s":"08:00","e":"10:00","qz":false},{"c":"5B","d":"jeu","s":"10:00","e":"12:00","qz":true},{"c":"5A","d":"jeu","s":"10:00","e":"12:00","qz":true},{"c":"4A","d":"jeu","s":"10:00","e":"12:00","qz":true},{"c":"3A","d":"jeu","s":"10:00","e":"12:00","qz":true},{"c":"5C","d":"jeu","s":"13:30","e":"15:30","qz":true},{"c":"3B","d":"jeu","s":"13:30","e":"15:30","qz":true},{"c":"1B","d":"jeu","s":"15:30","e":"17:30","qz":false},{"c":"1A","d":"jeu","s":"15:30","e":"17:30","qz":false},{"c":"2A","d":"jeu","s":"15:30","e":"17:30","qz":false},{"c":"6C","d":"ven","s":"08:00","e":"10:00","qz":false},{"c":"3C","d":"ven","s":"10:30","e":"12:30","qz":false},{"c":"4B","d":"ven","s":"10:30","e":"12:30","qz":false},{"c":"6B","d":"ven","s":"13:30","e":"15:30","qz":false},{"c":"2B","d":"ven","s":"15:30","e":"17:30","qz":false},{"c":"Term","d":"ven","s":"15:30","e":"17:30","qz":false},{"c":"Term","d":"ven","s":"15:30","e":"17:30","qz":false}],"cal":{"2026-09-01":[[4,"DF"],[5,"Bad"],[6,"combiné"],[7,"Combiné"]],"2026-09-02":[[8,"DF"],[9,"combiné"]],"2026-09-03":[[11,"Gym"],[13,"Combiné"],[15,"Bad"],[16,"Bad"],[18,"Gym"],[19,"Bad"],[20,"DF"]],"2026-09-04":[[21,"jeux collectifs"],[22,"combiné"],[23,"VB"],[24,"jeux collectifs"],[25,"Danse"],[26,"VB"],[27,"DF"]],"2026-09-07":[[0,"DF"],[1,"DF"],[2,"Bad"],[3,"Combiné"]],"2026-09-08":[[4,"DF"],[5,"Bad"],[6,"combiné"],[7,"Combiné"]],"2026-09-09":[[8,"DF"],[10,"VB"]],"2026-09-10":[[11,"Gym"],[12,"Combiné"],[14,"DF"],[17,"combiné"],[18,"Gym"],[19,"Bad"],[20,"DF"]],"2026-09-11":[[21,"jeux collectifs"],[22,"combiné"],[23,"VB"],[24,"jeux collectifs"],[25,"Danse"],[26,"VB"],[27,"DF"]],"2026-09-14":[[0,"DF"],[1,"DF"],[2,"Bad"],[3,"Combiné"]],"2026-09-15":[[4,"DF"],[5,"Bad"],[6,"combiné"],[7,"Combiné"]],"2026-09-16":[[8,"DF"],[9,"combiné"]],"2026-09-17":[[11,"Gym"],[13,"Combiné"],[15,"Bad"],[16,"Bad"],[18,"Gym"],[19,"Bad"],[20,"DF"]],"2026-09-18":[[21,"jeux collectifs"],[22,"combiné"],[23,"VB"],[24,"jeux collectifs"],[25,"Danse"],[26,"VB"],[27,"DF"]],"2026-09-21":[[0,"DF"],[1,"DF"],[2,"Bad"],[3,"Combiné"]],"2026-09-22":[[4,"DF"],[5,"Bad"],[6,"combiné"],[7,"Combiné"]],"2026-09-23":[[8,"DF"],[10,"VB"]],"2026-09-24":[[11,"Gym"],[12,"Combiné"],[14,"DF"],[17,"combiné"],[18,"Gym"],[19,"Bad"],[20,"DF"]],"2026-09-28":[[0,"DF"],[1,"DF"],[2,"Bad"],[3,"Combiné"]],"2026-09-29":[[4,"DF"],[5,"Bad"],[6,"combiné"],[7,"Combiné"]],"2026-09-30":[[8,"DF"],[9,"combiné"]],"2026-10-08":[[11,"Gym"],[12,"Combiné"],[14,"DF"],[17,"combiné"],[18,"Gym"],[19,"Bad"],[20,"DF"]],"2026-10-09":[[21,"jeux collectifs"],[22,"combiné"],[23,"VB"],[24,"jeux collectifs"],[25,"Danse"],[26,"VB"],[27,"DF"]],"2026-10-12":[[0,"DF"],[1,"DF"],[2,"Bad"],[3,"Combiné"]],"2026-10-13":[[4,"DF"],[5,"Bad"],[6,"combiné"],[7,"Combiné"]],"2026-10-14":[[8,"DF"],[9,"combiné"]],"2026-10-15":[[11,"Gym"],[13,"Combiné"],[15,"Bad"],[16,"Bad"],[18,"Gym"],[19,"Bad"],[20,"DF"]],"2026-10-16":[[21,"jeux collectifs"],[22,"combiné"],[23,"VB"],[24,"jeux collectifs"],[25,"Danse"],[26,"VB"],[27,"DF"]],"2026-10-19":[[0,"DF"],[1,"DF"],[2,"Bad"],[3,"Combiné"]],"2026-10-20":[[4,"DF"],[5,"Bad"],[6,"combiné"],[7,"Combiné"]],"2026-10-21":[[8,"DF"],[10,"VB"]],"2026-10-22":[[11,"Gym"],[12,"Combiné"],[14,"DF"],[17,"combiné"],[18,"Gym"],[19,"Bad"],[20,"DF"]],"2026-10-23":[[21,"jeux collectifs"],[22,"combiné"],[23,"VB"],[24,"jeux collectifs"],[25,"Danse"],[26,"VB"],[27,"DF"]],"2026-10-26":[[0,"DF"],[1,"DF"],[2,"Bad"],[3,"Combiné"]],"2026-10-27":[[4,"DF"],[5,"Bad"],[6,"combiné"],[7,"Combiné"]],"2026-10-28":[[8,"DF"],[9,"combiné"]],"2026-10-29":[[11,"Gym"],[13,"Combiné"],[15,"Bad"],[16,"Bad"],[18,"Gym"],[19,"Bad"],[20,"DF"]],"2026-10-30":[[21,"jeux collectifs"],[22,"combiné"],[23,"VB"],[24,"jeux collectifs"],[25,"Danse"],[26,"VB"],[27,"DF"]],"2026-11-02":[[0,"DF"],[1,"Boxe"],[2,"Handball"],[3,"Gym"]],"2026-11-03":[[4,"DF"],[5,"Handball"],[6,"cross training"],[7,"Handball"]],"2026-11-04":[[8,"DF"],[10,"Boxe"]],"2026-11-05":[[11,"Gym"],[12,"Handball"],[14,"Boxe"],[17,"cross training"],[18,"Gym"],[19,"Bad"],[20,"DF"]],"2026-11-06":[[21,"jeux collectifs"],[22,"Handball"],[23,"Boxe"],[24,"jeux collectifs"],[25,"Danse"],[26,"VB"],[27,"DF"]],"2026-11-16":[[0,"DF"],[1,"Boxe"],[2,"Handball"],[3,"Gym"]],"2026-11-17":[[4,"DF"],[5,"Handball"],[6,"cross training"],[7,"Handball"]],"2026-11-18":[[8,"DF"],[9,"Handball"]],"2026-11-19":[[11,"Gym"],[13,"Gym"],[15,"Handball"],[16,"Handball"],[18,"Gym"],[19,"Bad"],[20,"DF"]],"2026-11-20":[[21,"jeux collectifs"],[22,"Handball"],[23,"Boxe"],[24,"jeux collectifs"],[25,"Danse"],[26,"VB"],[27,"DF"]],"2026-11-23":[[0,"DF"],[1,"Boxe"],[2,"Handball"],[3,"Gym"]],"2026-11-24":[[4,"DF"],[5,"Handball"],[6,"cross training"],[7,"Handball"]],"2026-11-25":[[8,"DF"],[10,"Boxe"]],"2026-11-26":[[11,"Gym"],[12,"Handball"],[14,"Boxe"],[17,"cross training"],[18,"Gym"],[19,"Bad"],[20,"DF"]],"2026-11-27":[[21,"jeux collectifs"],[22,"Handball"],[23,"Boxe"],[24,"jeux collectifs"],[25,"Danse"],[26,"VB"],[27,"Eval DF"]],"2026-11-30":[[0,"Danse"],[1,"Boxe"],[2,"Handball"],[3,"Gym"]],"2026-12-01":[[4,"Danse"],[5,"Handball"],[6,"cross training"],[7,"Handball"]],"2026-12-02":[[8,"Danse"],[9,"Handball"]],"2026-12-03":[[11,"jeux collectifs"],[13,"Gym"],[15,"Handball"],[16,"Handball"],[18,"Bad"],[19,"cross training"],[20,"Danse"]],"2026-12-04":[[21,"Gym"],[22,"Handball"],[23,"Boxe"],[24,"Basket"],[25,"VB"],[26,"Eval VB"],[27,"Danse"]],"2026-12-07":[[0,"Danse"],[1,"Boxe"],[2,"Handball"],[3,"Gym"]],"2026-12-08":[[4,"Danse"],[5,"Handball"],[6,"cross training"],[7,"Handball"]],"2026-12-09":[[8,"Danse"],[10,"Boxe"]],"2026-12-10":[[11,"jeux collectifs"],[12,"Handball"],[14,"Boxe"],[17,"cross training"],[18,"Bad"],[19,"cross training"],[20,"Danse"]],"2026-12-11":[[21,"Gym"],[22,"Handball"],[23,"Boxe"],[24,"Basket"],[25,"VB"],[26,"cross training"],[27,"Danse"]],"2026-12-14":[[0,"Danse"],[1,"Boxe"],[2,"Handball"],[3,"Gym"]],"2026-12-15":[[4,"Danse"],[5,"Handball"],[6,"cross training"],[7,"Handball"]],"2026-12-16":[[8,"Danse"],[9,"Handball"]],"2026-12-17":[[11,"jeux collectifs"],[13,"Gym"],[15,"Handball"],[16,"Handball"],[18,"Bad"],[19,"cross training"],[20,"Danse"]],"2026-12-18":[[21,"Gym"],[22,"Handball"],[23,"Boxe"],[24,"Basket"],[25,"VB"],[26,"cross training"],[27,"Danse"]],"2027-01-04":[[0,"Danse"],[1,"Boxe"],[2,"Handball"],[3,"Gym"]],"2027-01-05":[[4,"Danse"],[5,"Handball"],[6,"cross training"],[7,"Handball"]],"2027-01-06":[[8,"Danse"],[10,"Boxe"]],"2027-01-07":[[11,"jeux collectifs"],[12,"Handball"],[14,"Boxe"],[17,"cross training"],[18,"Bad"],[19,"cross training"],[20,"Danse"]],"2027-01-08":[[21,"Gym"],[22,"Handball"],[23,"Boxe"],[24,"Basket"],[25,"VB"],[26,"cross training"],[27,"Danse"]],"2027-01-11":[[0,"Danse"],[1,"Boxe"],[2,"Handball"],[3,"Gym"]],"2027-01-12":[[4,"Danse"],[5,"Handball"],[6,"cross training"],[7,"Handball"]],"2027-01-13":[[8,"Danse"],[9,"Handball"]],"2027-01-14":[[11,"jeux collectifs"],[13,"Gym"],[15,"Handball"],[16,"Handball"],[18,"Bad"],[19,"cross training"],[20,"Danse"]],"2027-01-15":[[21,"Gym"],[22,"Handball"],[23,"Boxe"],[24,"Basket"],[25,"VB"],[26,"cross training"],[27,"Danse"]],"2027-01-18":[[0,"Danse"],[1,"VB"],[2,"Gym"],[3,"Handball"]],"2027-01-19":[[4,"Danse"],[5,"cross training"],[6,"Handball"],[7,"Gym"]],"2027-01-20":[[8,"Danse"],[10,"Danse"]],"2027-01-21":[[11,"jeux collectifs"],[12,"Gym"],[14,"VB"],[17,"Handball"],[18,"Bad"],[19,"cross training"],[20,"Danse"]],"2027-01-22":[[21,"Gym"],[22,"cross training"],[23,"Danse"],[24,"Basket"],[25,"VB"],[26,"cross training"],[27,"Danse"]],"2027-01-25":[[0,"Danse"],[1,"VB"],[2,"Gym"],[3,"Handball"]],"2027-01-26":[[4,"Danse"],[5,"cross training"],[6,"Handball"],[7,"Gym"]],"2027-01-27":[[8,"Danse"],[9,"cross training"]],"2027-01-28":[[11,"jeux collectifs"],[13,"Handball"],[15,"cross training"],[16,"Gym"],[18,"Bad"],[19,"cross training"],[20,"Danse"]],"2027-01-29":[[21,"Gym"],[22,"cross training"],[23,"Danse"],[24,"Basket"],[25,"VB"],[26,"cross training"],[27,"Danse"]],"2027-02-01":[[0,"Danse"],[1,"VB"],[2,"Gym"],[3,"Handball"]],"2027-02-02":[[4,"Danse"],[5,"cross training"],[6,"Handball"],[7,"Gym"]],"2027-02-03":[[8,"Danse"],[10,"Danse"]],"2027-02-04":[[11,"jeux collectifs"],[12,"Gym"],[14,"VB"],[17,"Handball"],[18,"Bad"],[19,"cross training"],[20,"Danse"]],"2027-02-22":[[0,"Danse"],[1,"VB"],[2,"Gym"],[3,"Handball"]],"2027-02-23":[[4,"Danse"],[5,"cross training"],[6,"Handball"],[7,"Gym"]],"2027-02-24":[[8,"Danse"],[9,"cross training"]],"2027-02-25":[[11,"jeux collectifs"],[13,"Handball"],[15,"cross training"],[16,"Gym"],[18,"Bad"],[19,"cross training"],[20,"Danse"]],"2027-02-26":[[21,"Gym"],[22,"cross training"],[23,"Danse"],[24,"Basket"],[25,"VB"],[26,"cross training"],[27,"Danse"]],"2027-03-01":[[0,"Danse"],[1,"VB"],[2,"Gym"],[3,"Handball"]],"2027-03-02":[[4,"Danse"],[5,"cross training"],[6,"Handball"],[7,"Gym"]],"2027-03-03":[[8,"Danse"],[10,"Danse"]],"2027-03-04":[[11,"jeux collectifs"],[12,"Gym"],[14,"VB"],[17,"Handball"],[18,"Bad"],[19,"cross training"],[20,"Danse"]],"2027-03-05":[[21,"Gym"],[22,"cross training"],[23,"Danse"],[24,"Basket"],[25,"VB"],[26,"Eval Cross training"],[27,"Eval Danse"]],"2027-03-08":[[0,"Basket"],[1,"VB"],[2,"Gym"],[3,"Handball"]],"2027-03-09":[[4,"Basket"],[5,"cross training"],[6,"Handball"],[7,"Gym"]],"2027-03-10":[[8,"Gym"],[9,"cross training"]],"2027-03-11":[[11,"Natation"],[13,"Handball"],[15,"cross training"],[16,"Gym"],[18,"cross training"],[19,"Gym"],[20,"VB"]],"2027-03-12":[[21,"Natation"],[22,"cross training"],[23,"Danse"],[24,"Natation"],[25,"DF"],[26,"combiné"],[27,"Bad"]],"2027-03-15":[[0,"Basket"],[1,"VB"],[2,"Gym"],[3,"Handball"]],"2027-03-16":[[4,"Basket"],[5,"cross training"],[6,"Handball"],[7,"Gym"]],"2027-03-17":[[8,"Gym"],[10,"Danse"]],"2027-03-18":[[11,"Natation"],[12,"Gym"],[14,"VB"],[17,"Handball"],[18,"cross training"],[19,"Gym"],[20,"VB"]],"2027-03-19":[[21,"Natation"],[22,"cross training"],[23,"Danse"],[24,"Natation"],[25,"DF"],[26,"combiné"],[27,"Bad"]],"2027-03-22":[[0,"Basket"],[1,"VB"],[2,"Gym"],[3,"Handball"]],"2027-03-23":[[4,"Basket"],[5,"cross training"],[6,"Handball"],[7,"Gym"]],"2027-03-24":[[8,"Gym"],[9,"cross training"]],"2027-03-25":[[11,"Natation"],[13,"Handball"],[15,"cross training"],[16,"Gym"],[18,"cross training"],[19,"Gym"],[20,"VB"]],"2027-03-26":[[21,"Natation"],[22,"cross training"],[23,"Danse"],[24,"Natation"],[25,"DF"],[26,"combiné"],[27,"Bad"]],"2027-03-29":[[0,"Basket"],[1,"Danse"],[2,"Combiné"],[3,"Bad"]],"2027-03-30":[[4,"Basket"],[5,"combiné"],[6,"Bad"],[7,"Bad"]],"2027-03-31":[[8,"Gym"],[10,"DF"]],"2027-04-01":[[11,"Natation"],[12,"Bad"],[14,"Danse"],[17,"Bad"],[18,"cross training"],[19,"Gym"],[20,"VB"]],"2027-04-06":[[4,"Basket"],[5,"combiné"],[6,"Bad"],[7,"Bad"]],"2027-04-07":[[8,"Gym"],[9,"Bad"]],"2027-04-08":[[11,"Natation"],[13,"Bad"],[15,"combiné"],[16,"Combiné"],[18,"cross training"],[19,"Gym"],[20,"VB"]],"2027-04-09":[[21,"Natation"],[22,"Bad"],[23,"DF"],[24,"Natation"],[25,"DF"],[26,"combiné"],[27,"Bad"]],"2027-04-12":[[0,"Basket"],[1,"Danse"],[2,"Combiné"],[3,"Bad"]],"2027-04-13":[[4,"Basket"],[5,"combiné"],[6,"Bad"],[7,"Bad"]],"2027-04-14":[[8,"Gym"],[10,"DF"]],"2027-04-15":[[11,"Natation"],[12,"Bad"],[14,"Danse"],[17,"Bad"],[18,"cross training"],[19,"Gym"],[20,"VB"]],"2027-04-16":[[21,"Natation"],[22,"Bad"],[23,"DF"],[24,"Natation"],[25,"DF"],[26,"combiné"],[27,"Bad"]],"2027-04-19":[[0,"Basket"],[1,"Danse"],[2,"Combiné"],[3,"Bad"]],"2027-04-20":[[4,"Basket"],[5,"combiné"],[6,"Bad"],[7,"Bad"]],"2027-04-21":[[8,"Gym"],[9,"Bad"]],"2027-04-22":[[11,"Natation"],[13,"Bad"],[15,"combiné"],[16,"Combiné"],[18,"cross training"],[19,"Gym"],[20,"VB"]],"2027-04-23":[[21,"Natation"],[22,"Bad"],[23,"DF"],[24,"Natation"],[25,"DF"],[26,"combiné"],[27,"Bad"]],"2027-05-10":[[0,"Basket"],[1,"Danse"],[2,"Combiné"],[3,"Bad"]],"2027-05-11":[[4,"Basket"],[5,"combiné"],[6,"Bad"],[7,"Bad"]],"2027-05-12":[[8,"Gym"],[10,"DF"]],"2027-05-13":[[11,"Natation"],[12,"Bad"],[14,"Danse"],[17,"Bad"],[18,"cross training"],[19,"Gym"],[20,"VB"]],"2027-05-14":[[21,"Natation"],[22,"Bad"],[23,"DF"],[24,"Natation"],[25,"DF"],[26,"combiné"],[27,"Bad"]],"2027-05-17":[[0,"Basket"],[1,"Danse"],[2,"Combiné"],[3,"Bad"]],"2027-05-18":[[4,"Basket"],[5,"combiné"],[6,"Bad"],[7,"Bad"]],"2027-05-19":[[8,"Gym"],[9,"Bad"]],"2027-05-20":[[11,"Natation"],[13,"Bad"],[15,"combiné"],[16,"Combiné"],[18,"cross training"],[19,"Gym"],[20,"VB"]],"2027-05-21":[[21,"Natation"],[22,"Bad"],[23,"DF"],[24,"Natation"],[25,"DF"],[26,"combiné"],[27,"Bad"]],"2027-05-24":[[0,"Basket"],[1,"Danse"],[2,"Combiné"],[3,"Bad"]],"2027-05-25":[[4,"Basket"],[5,"combiné"],[6,"Bad"],[7,"Bad"]],"2027-05-26":[[8,"Gym"],[10,"DF"]],"2027-05-27":[[11,"Natation"],[12,"Bad"],[14,"Danse"],[17,"Bad"],[18,"cross training"],[19,"Gym"],[20,"VB"]],"2027-05-28":[[21,"Natation"],[22,"Bad"],[23,"DF"],[24,"Natation"],[25,"DF"],[26,"Eval Combiné"],[27,"Eval Bad"]],"2027-05-31":[[0,"Basket"],[1,"Danse"],[2,"Combiné"],[3,"Bad"]],"2027-06-01":[[4,"Basket"],[5,"combiné"],[6,"Bad"],[7,"Bad"]],"2027-06-02":[[8,"Gym"],[9,"Bad"]],"2027-06-03":[[11,"jeux collectifs"],[13,"Bad"],[15,"combiné"],[16,"Combiné"],[18,"cross training"],[19,"Gym"],[20,"VB"]],"2027-06-04":[[21,"Natation"],[22,"Bad"],[23,"DF"],[24,"jeux collectifs"],[25,"DF"]]},"feries":["2026-09-25","2027-04-02","2027-04-05","2027-06-09"],"weeks":{"2026-08-31":1,"2026-09-07":2,"2026-09-14":1,"2026-09-21":2,"2026-09-28":1,"2026-10-05":2,"2026-10-12":1,"2026-10-19":2,"2026-10-26":1,"2026-11-02":2,"2026-11-16":1,"2026-11-23":2,"2026-11-30":1,"2026-12-07":2,"2026-12-14":1,"2027-01-04":2,"2027-01-11":1,"2027-01-18":2,"2027-01-25":1,"2027-02-01":2,"2027-02-22":1,"2027-03-01":2,"2027-03-08":1,"2027-03-15":2,"2027-03-22":1,"2027-03-29":2,"2027-04-05":1,"2027-04-12":2,"2027-04-19":1,"2027-05-10":2,"2027-05-17":1,"2027-05-24":2,"2027-05-31":1,"2027-06-07":2,"2027-06-14":1,"2027-06-21":2,"2027-06-28":1}};
+const VERSION = '0.9.0';
+const CAL = (window.__CS && window.__CS.calendrier) || {"classes":[{"c":"6A","d":"lun","s":"08:00","e":"10:00","qz":false},{"c":"4A","d":"lun","s":"10:30","e":"12:30","qz":false},{"c":"5C","d":"lun","s":"10:30","e":"12:30","qz":false},{"c":"5A","d":"lun","s":"13:30","e":"15:30","qz":false},{"c":"6C","d":"mar","s":"08:00","e":"10:00","qz":false},{"c":"3A","d":"mar","s":"10:30","e":"12:30","qz":false},{"c":"3B","d":"mar","s":"10:30","e":"12:30","qz":false},{"c":"5B","d":"mar","s":"13:30","e":"15:30","qz":false},{"c":"6B","d":"mer","s":"10:30","e":"12:30","qz":false},{"c":"3C","d":"mer","s":"10:30","e":"12:30","qz":true},{"c":"4B","d":"mer","s":"10:30","e":"12:30","qz":true},{"c":"6A","d":"jeu","s":"08:00","e":"10:00","qz":false},{"c":"5B","d":"jeu","s":"10:00","e":"12:00","qz":true},{"c":"5A","d":"jeu","s":"10:00","e":"12:00","qz":true},{"c":"4A","d":"jeu","s":"10:00","e":"12:00","qz":true},{"c":"3A","d":"jeu","s":"10:00","e":"12:00","qz":true},{"c":"5C","d":"jeu","s":"13:30","e":"15:30","qz":true},{"c":"3B","d":"jeu","s":"13:30","e":"15:30","qz":true},{"c":"1B","d":"jeu","s":"15:30","e":"17:30","qz":false},{"c":"1A","d":"jeu","s":"15:30","e":"17:30","qz":false},{"c":"2A","d":"jeu","s":"15:30","e":"17:30","qz":false},{"c":"6C","d":"ven","s":"08:00","e":"10:00","qz":false},{"c":"3C","d":"ven","s":"10:30","e":"12:30","qz":false},{"c":"4B","d":"ven","s":"10:30","e":"12:30","qz":false},{"c":"6B","d":"ven","s":"13:30","e":"15:30","qz":false},{"c":"2B","d":"ven","s":"15:30","e":"17:30","qz":false},{"c":"Term","d":"ven","s":"15:30","e":"17:30","qz":false},{"c":"Term","d":"ven","s":"15:30","e":"17:30","qz":false}],"cal":{"2026-09-01":[[4,"DF"],[5,"Bad"],[6,"combiné"],[7,"Combiné"]],"2026-09-02":[[8,"DF"],[9,"combiné"]],"2026-09-03":[[11,"Gym"],[13,"Combiné"],[15,"Bad"],[16,"Bad"],[18,"Gym"],[19,"Bad"],[20,"DF"]],"2026-09-04":[[21,"jeux collectifs"],[22,"combiné"],[23,"VB"],[24,"jeux collectifs"],[25,"Danse"],[26,"VB"],[27,"DF"]],"2026-09-07":[[0,"DF"],[1,"DF"],[2,"Bad"],[3,"Combiné"]],"2026-09-08":[[4,"DF"],[5,"Bad"],[6,"combiné"],[7,"Combiné"]],"2026-09-09":[[8,"DF"],[10,"VB"]],"2026-09-10":[[11,"Gym"],[12,"Combiné"],[14,"DF"],[17,"combiné"],[18,"Gym"],[19,"Bad"],[20,"DF"]],"2026-09-11":[[21,"jeux collectifs"],[22,"combiné"],[23,"VB"],[24,"jeux collectifs"],[25,"Danse"],[26,"VB"],[27,"DF"]],"2026-09-14":[[0,"DF"],[1,"DF"],[2,"Bad"],[3,"Combiné"]],"2026-09-15":[[4,"DF"],[5,"Bad"],[6,"combiné"],[7,"Combiné"]],"2026-09-16":[[8,"DF"],[9,"combiné"]],"2026-09-17":[[11,"Gym"],[13,"Combiné"],[15,"Bad"],[16,"Bad"],[18,"Gym"],[19,"Bad"],[20,"DF"]],"2026-09-18":[[21,"jeux collectifs"],[22,"combiné"],[23,"VB"],[24,"jeux collectifs"],[25,"Danse"],[26,"VB"],[27,"DF"]],"2026-09-21":[[0,"DF"],[1,"DF"],[2,"Bad"],[3,"Combiné"]],"2026-09-22":[[4,"DF"],[5,"Bad"],[6,"combiné"],[7,"Combiné"]],"2026-09-23":[[8,"DF"],[10,"VB"]],"2026-09-24":[[11,"Gym"],[12,"Combiné"],[14,"DF"],[17,"combiné"],[18,"Gym"],[19,"Bad"],[20,"DF"]],"2026-09-28":[[0,"DF"],[1,"DF"],[2,"Bad"],[3,"Combiné"]],"2026-09-29":[[4,"DF"],[5,"Bad"],[6,"combiné"],[7,"Combiné"]],"2026-09-30":[[8,"DF"],[9,"combiné"]],"2026-10-08":[[11,"Gym"],[12,"Combiné"],[14,"DF"],[17,"combiné"],[18,"Gym"],[19,"Bad"],[20,"DF"]],"2026-10-09":[[21,"jeux collectifs"],[22,"combiné"],[23,"VB"],[24,"jeux collectifs"],[25,"Danse"],[26,"VB"],[27,"DF"]],"2026-10-12":[[0,"DF"],[1,"DF"],[2,"Bad"],[3,"Combiné"]],"2026-10-13":[[4,"DF"],[5,"Bad"],[6,"combiné"],[7,"Combiné"]],"2026-10-14":[[8,"DF"],[9,"combiné"]],"2026-10-15":[[11,"Gym"],[13,"Combiné"],[15,"Bad"],[16,"Bad"],[18,"Gym"],[19,"Bad"],[20,"DF"]],"2026-10-16":[[21,"jeux collectifs"],[22,"combiné"],[23,"VB"],[24,"jeux collectifs"],[25,"Danse"],[26,"VB"],[27,"DF"]],"2026-10-19":[[0,"DF"],[1,"DF"],[2,"Bad"],[3,"Combiné"]],"2026-10-20":[[4,"DF"],[5,"Bad"],[6,"combiné"],[7,"Combiné"]],"2026-10-21":[[8,"DF"],[10,"VB"]],"2026-10-22":[[11,"Gym"],[12,"Combiné"],[14,"DF"],[17,"combiné"],[18,"Gym"],[19,"Bad"],[20,"DF"]],"2026-10-23":[[21,"jeux collectifs"],[22,"combiné"],[23,"VB"],[24,"jeux collectifs"],[25,"Danse"],[26,"VB"],[27,"DF"]],"2026-10-26":[[0,"DF"],[1,"DF"],[2,"Bad"],[3,"Combiné"]],"2026-10-27":[[4,"DF"],[5,"Bad"],[6,"combiné"],[7,"Combiné"]],"2026-10-28":[[8,"DF"],[9,"combiné"]],"2026-10-29":[[11,"Gym"],[13,"Combiné"],[15,"Bad"],[16,"Bad"],[18,"Gym"],[19,"Bad"],[20,"DF"]],"2026-10-30":[[21,"jeux collectifs"],[22,"combiné"],[23,"VB"],[24,"jeux collectifs"],[25,"Danse"],[26,"VB"],[27,"DF"]],"2026-11-02":[[0,"DF"],[1,"Boxe"],[2,"Handball"],[3,"Gym"]],"2026-11-03":[[4,"DF"],[5,"Handball"],[6,"cross training"],[7,"Handball"]],"2026-11-04":[[8,"DF"],[10,"Boxe"]],"2026-11-05":[[11,"Gym"],[12,"Handball"],[14,"Boxe"],[17,"cross training"],[18,"Gym"],[19,"Bad"],[20,"DF"]],"2026-11-06":[[21,"jeux collectifs"],[22,"Handball"],[23,"Boxe"],[24,"jeux collectifs"],[25,"Danse"],[26,"VB"],[27,"DF"]],"2026-11-16":[[0,"DF"],[1,"Boxe"],[2,"Handball"],[3,"Gym"]],"2026-11-17":[[4,"DF"],[5,"Handball"],[6,"cross training"],[7,"Handball"]],"2026-11-18":[[8,"DF"],[9,"Handball"]],"2026-11-19":[[11,"Gym"],[13,"Gym"],[15,"Handball"],[16,"Handball"],[18,"Gym"],[19,"Bad"],[20,"DF"]],"2026-11-20":[[21,"jeux collectifs"],[22,"Handball"],[23,"Boxe"],[24,"jeux collectifs"],[25,"Danse"],[26,"VB"],[27,"DF"]],"2026-11-23":[[0,"DF"],[1,"Boxe"],[2,"Handball"],[3,"Gym"]],"2026-11-24":[[4,"DF"],[5,"Handball"],[6,"cross training"],[7,"Handball"]],"2026-11-25":[[8,"DF"],[10,"Boxe"]],"2026-11-26":[[11,"Gym"],[12,"Handball"],[14,"Boxe"],[17,"cross training"],[18,"Gym"],[19,"Bad"],[20,"DF"]],"2026-11-27":[[21,"jeux collectifs"],[22,"Handball"],[23,"Boxe"],[24,"jeux collectifs"],[25,"Danse"],[26,"VB"],[27,"Eval DF"]],"2026-11-30":[[0,"Danse"],[1,"Boxe"],[2,"Handball"],[3,"Gym"]],"2026-12-01":[[4,"Danse"],[5,"Handball"],[6,"cross training"],[7,"Handball"]],"2026-12-02":[[8,"Danse"],[9,"Handball"]],"2026-12-03":[[11,"jeux collectifs"],[13,"Gym"],[15,"Handball"],[16,"Handball"],[18,"Bad"],[19,"cross training"],[20,"Danse"]],"2026-12-04":[[21,"Gym"],[22,"Handball"],[23,"Boxe"],[24,"Basket"],[25,"VB"],[26,"Eval VB"],[27,"Danse"]],"2026-12-07":[[0,"Danse"],[1,"Boxe"],[2,"Handball"],[3,"Gym"]],"2026-12-08":[[4,"Danse"],[5,"Handball"],[6,"cross training"],[7,"Handball"]],"2026-12-09":[[8,"Danse"],[10,"Boxe"]],"2026-12-10":[[11,"jeux collectifs"],[12,"Handball"],[14,"Boxe"],[17,"cross training"],[18,"Bad"],[19,"cross training"],[20,"Danse"]],"2026-12-11":[[21,"Gym"],[22,"Handball"],[23,"Boxe"],[24,"Basket"],[25,"VB"],[26,"cross training"],[27,"Danse"]],"2026-12-14":[[0,"Danse"],[1,"Boxe"],[2,"Handball"],[3,"Gym"]],"2026-12-15":[[4,"Danse"],[5,"Handball"],[6,"cross training"],[7,"Handball"]],"2026-12-16":[[8,"Danse"],[9,"Handball"]],"2026-12-17":[[11,"jeux collectifs"],[13,"Gym"],[15,"Handball"],[16,"Handball"],[18,"Bad"],[19,"cross training"],[20,"Danse"]],"2026-12-18":[[21,"Gym"],[22,"Handball"],[23,"Boxe"],[24,"Basket"],[25,"VB"],[26,"cross training"],[27,"Danse"]],"2027-01-04":[[0,"Danse"],[1,"Boxe"],[2,"Handball"],[3,"Gym"]],"2027-01-05":[[4,"Danse"],[5,"Handball"],[6,"cross training"],[7,"Handball"]],"2027-01-06":[[8,"Danse"],[10,"Boxe"]],"2027-01-07":[[11,"jeux collectifs"],[12,"Handball"],[14,"Boxe"],[17,"cross training"],[18,"Bad"],[19,"cross training"],[20,"Danse"]],"2027-01-08":[[21,"Gym"],[22,"Handball"],[23,"Boxe"],[24,"Basket"],[25,"VB"],[26,"cross training"],[27,"Danse"]],"2027-01-11":[[0,"Danse"],[1,"Boxe"],[2,"Handball"],[3,"Gym"]],"2027-01-12":[[4,"Danse"],[5,"Handball"],[6,"cross training"],[7,"Handball"]],"2027-01-13":[[8,"Danse"],[9,"Handball"]],"2027-01-14":[[11,"jeux collectifs"],[13,"Gym"],[15,"Handball"],[16,"Handball"],[18,"Bad"],[19,"cross training"],[20,"Danse"]],"2027-01-15":[[21,"Gym"],[22,"Handball"],[23,"Boxe"],[24,"Basket"],[25,"VB"],[26,"cross training"],[27,"Danse"]],"2027-01-18":[[0,"Danse"],[1,"VB"],[2,"Gym"],[3,"Handball"]],"2027-01-19":[[4,"Danse"],[5,"cross training"],[6,"Handball"],[7,"Gym"]],"2027-01-20":[[8,"Danse"],[10,"Danse"]],"2027-01-21":[[11,"jeux collectifs"],[12,"Gym"],[14,"VB"],[17,"Handball"],[18,"Bad"],[19,"cross training"],[20,"Danse"]],"2027-01-22":[[21,"Gym"],[22,"cross training"],[23,"Danse"],[24,"Basket"],[25,"VB"],[26,"cross training"],[27,"Danse"]],"2027-01-25":[[0,"Danse"],[1,"VB"],[2,"Gym"],[3,"Handball"]],"2027-01-26":[[4,"Danse"],[5,"cross training"],[6,"Handball"],[7,"Gym"]],"2027-01-27":[[8,"Danse"],[9,"cross training"]],"2027-01-28":[[11,"jeux collectifs"],[13,"Handball"],[15,"cross training"],[16,"Gym"],[18,"Bad"],[19,"cross training"],[20,"Danse"]],"2027-01-29":[[21,"Gym"],[22,"cross training"],[23,"Danse"],[24,"Basket"],[25,"VB"],[26,"cross training"],[27,"Danse"]],"2027-02-01":[[0,"Danse"],[1,"VB"],[2,"Gym"],[3,"Handball"]],"2027-02-02":[[4,"Danse"],[5,"cross training"],[6,"Handball"],[7,"Gym"]],"2027-02-03":[[8,"Danse"],[10,"Danse"]],"2027-02-04":[[11,"jeux collectifs"],[12,"Gym"],[14,"VB"],[17,"Handball"],[18,"Bad"],[19,"cross training"],[20,"Danse"]],"2027-02-22":[[0,"Danse"],[1,"VB"],[2,"Gym"],[3,"Handball"]],"2027-02-23":[[4,"Danse"],[5,"cross training"],[6,"Handball"],[7,"Gym"]],"2027-02-24":[[8,"Danse"],[9,"cross training"]],"2027-02-25":[[11,"jeux collectifs"],[13,"Handball"],[15,"cross training"],[16,"Gym"],[18,"Bad"],[19,"cross training"],[20,"Danse"]],"2027-02-26":[[21,"Gym"],[22,"cross training"],[23,"Danse"],[24,"Basket"],[25,"VB"],[26,"cross training"],[27,"Danse"]],"2027-03-01":[[0,"Danse"],[1,"VB"],[2,"Gym"],[3,"Handball"]],"2027-03-02":[[4,"Danse"],[5,"cross training"],[6,"Handball"],[7,"Gym"]],"2027-03-03":[[8,"Danse"],[10,"Danse"]],"2027-03-04":[[11,"jeux collectifs"],[12,"Gym"],[14,"VB"],[17,"Handball"],[18,"Bad"],[19,"cross training"],[20,"Danse"]],"2027-03-05":[[21,"Gym"],[22,"cross training"],[23,"Danse"],[24,"Basket"],[25,"VB"],[26,"Eval Cross training"],[27,"Eval Danse"]],"2027-03-08":[[0,"Basket"],[1,"VB"],[2,"Gym"],[3,"Handball"]],"2027-03-09":[[4,"Basket"],[5,"cross training"],[6,"Handball"],[7,"Gym"]],"2027-03-10":[[8,"Gym"],[9,"cross training"]],"2027-03-11":[[11,"Natation"],[13,"Handball"],[15,"cross training"],[16,"Gym"],[18,"cross training"],[19,"Gym"],[20,"VB"]],"2027-03-12":[[21,"Natation"],[22,"cross training"],[23,"Danse"],[24,"Natation"],[25,"DF"],[26,"combiné"],[27,"Bad"]],"2027-03-15":[[0,"Basket"],[1,"VB"],[2,"Gym"],[3,"Handball"]],"2027-03-16":[[4,"Basket"],[5,"cross training"],[6,"Handball"],[7,"Gym"]],"2027-03-17":[[8,"Gym"],[10,"Danse"]],"2027-03-18":[[11,"Natation"],[12,"Gym"],[14,"VB"],[17,"Handball"],[18,"cross training"],[19,"Gym"],[20,"VB"]],"2027-03-19":[[21,"Natation"],[22,"cross training"],[23,"Danse"],[24,"Natation"],[25,"DF"],[26,"combiné"],[27,"Bad"]],"2027-03-22":[[0,"Basket"],[1,"VB"],[2,"Gym"],[3,"Handball"]],"2027-03-23":[[4,"Basket"],[5,"cross training"],[6,"Handball"],[7,"Gym"]],"2027-03-24":[[8,"Gym"],[9,"cross training"]],"2027-03-25":[[11,"Natation"],[13,"Handball"],[15,"cross training"],[16,"Gym"],[18,"cross training"],[19,"Gym"],[20,"VB"]],"2027-03-26":[[21,"Natation"],[22,"cross training"],[23,"Danse"],[24,"Natation"],[25,"DF"],[26,"combiné"],[27,"Bad"]],"2027-03-29":[[0,"Basket"],[1,"Danse"],[2,"Combiné"],[3,"Bad"]],"2027-03-30":[[4,"Basket"],[5,"combiné"],[6,"Bad"],[7,"Bad"]],"2027-03-31":[[8,"Gym"],[10,"DF"]],"2027-04-01":[[11,"Natation"],[12,"Bad"],[14,"Danse"],[17,"Bad"],[18,"cross training"],[19,"Gym"],[20,"VB"]],"2027-04-06":[[4,"Basket"],[5,"combiné"],[6,"Bad"],[7,"Bad"]],"2027-04-07":[[8,"Gym"],[9,"Bad"]],"2027-04-08":[[11,"Natation"],[13,"Bad"],[15,"combiné"],[16,"Combiné"],[18,"cross training"],[19,"Gym"],[20,"VB"]],"2027-04-09":[[21,"Natation"],[22,"Bad"],[23,"DF"],[24,"Natation"],[25,"DF"],[26,"combiné"],[27,"Bad"]],"2027-04-12":[[0,"Basket"],[1,"Danse"],[2,"Combiné"],[3,"Bad"]],"2027-04-13":[[4,"Basket"],[5,"combiné"],[6,"Bad"],[7,"Bad"]],"2027-04-14":[[8,"Gym"],[10,"DF"]],"2027-04-15":[[11,"Natation"],[12,"Bad"],[14,"Danse"],[17,"Bad"],[18,"cross training"],[19,"Gym"],[20,"VB"]],"2027-04-16":[[21,"Natation"],[22,"Bad"],[23,"DF"],[24,"Natation"],[25,"DF"],[26,"combiné"],[27,"Bad"]],"2027-04-19":[[0,"Basket"],[1,"Danse"],[2,"Combiné"],[3,"Bad"]],"2027-04-20":[[4,"Basket"],[5,"combiné"],[6,"Bad"],[7,"Bad"]],"2027-04-21":[[8,"Gym"],[9,"Bad"]],"2027-04-22":[[11,"Natation"],[13,"Bad"],[15,"combiné"],[16,"Combiné"],[18,"cross training"],[19,"Gym"],[20,"VB"]],"2027-04-23":[[21,"Natation"],[22,"Bad"],[23,"DF"],[24,"Natation"],[25,"DF"],[26,"combiné"],[27,"Bad"]],"2027-05-10":[[0,"Basket"],[1,"Danse"],[2,"Combiné"],[3,"Bad"]],"2027-05-11":[[4,"Basket"],[5,"combiné"],[6,"Bad"],[7,"Bad"]],"2027-05-12":[[8,"Gym"],[10,"DF"]],"2027-05-13":[[11,"Natation"],[12,"Bad"],[14,"Danse"],[17,"Bad"],[18,"cross training"],[19,"Gym"],[20,"VB"]],"2027-05-14":[[21,"Natation"],[22,"Bad"],[23,"DF"],[24,"Natation"],[25,"DF"],[26,"combiné"],[27,"Bad"]],"2027-05-17":[[0,"Basket"],[1,"Danse"],[2,"Combiné"],[3,"Bad"]],"2027-05-18":[[4,"Basket"],[5,"combiné"],[6,"Bad"],[7,"Bad"]],"2027-05-19":[[8,"Gym"],[9,"Bad"]],"2027-05-20":[[11,"Natation"],[13,"Bad"],[15,"combiné"],[16,"Combiné"],[18,"cross training"],[19,"Gym"],[20,"VB"]],"2027-05-21":[[21,"Natation"],[22,"Bad"],[23,"DF"],[24,"Natation"],[25,"DF"],[26,"combiné"],[27,"Bad"]],"2027-05-24":[[0,"Basket"],[1,"Danse"],[2,"Combiné"],[3,"Bad"]],"2027-05-25":[[4,"Basket"],[5,"combiné"],[6,"Bad"],[7,"Bad"]],"2027-05-26":[[8,"Gym"],[10,"DF"]],"2027-05-27":[[11,"Natation"],[12,"Bad"],[14,"Danse"],[17,"Bad"],[18,"cross training"],[19,"Gym"],[20,"VB"]],"2027-05-28":[[21,"Natation"],[22,"Bad"],[23,"DF"],[24,"Natation"],[25,"DF"],[26,"Eval Combiné"],[27,"Eval Bad"]],"2027-05-31":[[0,"Basket"],[1,"Danse"],[2,"Combiné"],[3,"Bad"]],"2027-06-01":[[4,"Basket"],[5,"combiné"],[6,"Bad"],[7,"Bad"]],"2027-06-02":[[8,"Gym"],[9,"Bad"]],"2027-06-03":[[11,"jeux collectifs"],[13,"Bad"],[15,"combiné"],[16,"Combiné"],[18,"cross training"],[19,"Gym"],[20,"VB"]],"2027-06-04":[[21,"Natation"],[22,"Bad"],[23,"DF"],[24,"jeux collectifs"],[25,"DF"]]},"feries":["2026-09-25","2027-04-02","2027-04-05","2027-06-09"],"weeks":{"2026-08-31":1,"2026-09-07":2,"2026-09-14":1,"2026-09-21":2,"2026-09-28":1,"2026-10-05":2,"2026-10-12":1,"2026-10-19":2,"2026-10-26":1,"2026-11-02":2,"2026-11-16":1,"2026-11-23":2,"2026-11-30":1,"2026-12-07":2,"2026-12-14":1,"2027-01-04":2,"2027-01-11":1,"2027-01-18":2,"2027-01-25":1,"2027-02-01":2,"2027-02-22":1,"2027-03-01":2,"2027-03-08":1,"2027-03-15":2,"2027-03-22":1,"2027-03-29":2,"2027-04-05":1,"2027-04-12":2,"2027-04-19":1,"2027-05-10":2,"2027-05-17":1,"2027-05-24":2,"2027-05-31":1,"2027-06-07":2,"2027-06-14":1,"2027-06-21":2,"2027-06-28":1}};
 const $ = (s, el = document) => el.querySelector(s);
 const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const _clone = v => v == null ? v : JSON.parse(JSON.stringify(v));
@@ -906,6 +925,7 @@ function genRun(per, rules, compat) {
   for (const s of sessions) {
     s.cands = allInst.filter(i => compat[s.key] && compat[s.key][baseOf(i)]);
     if (s.cur && !s.cands.includes(s.cur)) s.cands.push(s.cur);
+    s.cands = s.cands.filter(i => periodRuleOk(per, baseOf(i), s.key));
     s.costs = {};
     for (const inst of s.cands) {
       let cost = 0; const hits = [];
@@ -914,6 +934,7 @@ function genRun(per, rules, compat) {
       for (const h of hits) groups.set(h.st + '|' + h.who + '|' + h.apsa, h);
       for (const h of groups.values()) cost += dispW(h.st);
       if (s.cur && inst !== s.cur) cost += R.stable;
+      if (R.hiver && isDehors(baseOf(inst)) && perWinter(per)) cost += R.hiver;
       s.costs[inst] = { cost, hits: [...groups.values()], all: hits };
     }
   }
@@ -932,7 +953,7 @@ function genRun(per, rules, compat) {
         for (const [o, oi] of asg) if (oi === inst && o.d === s.d && overlap(o, s) && qzOk(o, s)) { clash = true; break; }
         if (clash) continue;
         const sameCls = [...asg].filter(([o]) => o.cl === s.cl && o.key === s.key).map(([, oi]) => baseOf(oi));
-        const extra = sameCls.length && !sameCls.includes(baseOf(inst)) ? R.same : 0;
+        const extra = (sameCls.length && !sameCls.includes(baseOf(inst)) ? R.same : 0) + ensembleExtra(asg, s, inst, baseOf);
         if (c + extra < bc) { bc = c + extra; best = inst; }
       }
       if (best) { asg.set(s, best); total += s.costs[best].cost; } else total += 1000;
@@ -941,6 +962,7 @@ function genRun(per, rules, compat) {
     const byCls = new Map();
     for (const [s, i] of asg) { const k = s.cl + '|' + s.key; if (!byCls.has(k)) byCls.set(k, new Set()); byCls.get(k).add(baseOf(i)); }
     for (const v of byCls.values()) total += (v.size - 1) * R.same;
+    if (R.ensemble) { const L = [...asg]; for (let i = 0; i < L.length; i++) for (let j = i + 1; j < L.length; j++) { const [a, ai] = L[i], [b, bi] = L[j]; if (a.key === b.key && a.d === b.d && overlap(a, b) && qzOk(a, b) && baseOf(ai) !== baseOf(bi)) total += R.ensemble; } }
     const sig = sessions.map(s => asg.get(s) || '-').join('|');
     if (!sols.some(x => x.sig === sig)) sols.push({ sig, total, asg });
   }
@@ -2669,6 +2691,748 @@ window.__SYREADY = true;
   VIEWS.reglages = function () { _r(); const m = $('#app main'); if (!m) return; const h = m.querySelector('h1'); (h ? h : m.firstChild).insertAdjacentHTML(h ? 'afterend' : 'beforebegin', syncCardHTML()); bindSyncCard(); };
   const _a = VIEWS.accueil;
   VIEWS.accueil = function () { _a(); if (syncCfg().token) return; const m = $('#app main'); if (m) m.insertAdjacentHTML('afterbegin', '<div class="banner"><strong>Tes données ne sont que sur cet appareil.</strong> Pour les retrouver sur la tablette ou le téléphone, et ne pas les perdre, active la synchronisation dans <a href="#reglages">Réglages</a>.</div>'); };
+})();
+
+/* ================= v0.9 : navigation par favoris, établissement, météo et qualité de l'air ================= */
+NOSYNC.push('meteoCache', 'gemini');
+PRIVATE_KEYS.push('suivi');
+
+/* --- Icônes et descriptions de chaque rubrique --- */
+const IC = {
+  accueil: '<path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/>',
+  ecran: '<rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 21h8M12 17v4"/>',
+  planning: '<rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/>',
+  generateur: '<rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/><path d="M10 6.5h4a3 3 0 0 1 3 3V14M14 17.5h-4a3 3 0 0 1-3-3V10"/>',
+  programmation: '<path d="M4 5h16M4 10h16M4 15h10M4 20h7"/>',
+  evaluations: '<path d="M9 11l3 3 8-8"/><path d="M20 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h11"/>',
+  suivi: '<path d="M3 20h18M6 16v-4M11 16V8M16 16v-6M21 16V5"/>',
+  bac: '<path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c3 2 9 2 12 0v-5"/>',
+  cycle3: '<circle cx="8" cy="12" r="5"/><circle cx="16" cy="12" r="5"/>',
+  ressources: '<path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"/><path d="M4 19V5M9 7h6"/>',
+  as: '<circle cx="12" cy="12" r="9"/><path d="M12 7.5l3.8 2.8-1.5 4.5H9.7l-1.5-4.5z"/>',
+  rencontres: '<rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/><circle cx="12" cy="15" r="2.6"/>',
+  poles: '<circle cx="12" cy="5" r="2.5"/><circle cx="5" cy="18" r="2.5"/><circle cx="19" cy="18" r="2.5"/><path d="M12 7.5v4M12 11.5L6.5 16M12 11.5l5.5 4.5"/>',
+  medias: '<rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-8 8"/>',
+  materiel: '<path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.5-.5-.5-2.5z"/>',
+  incidents: '<path d="M12 3l10 18H2z"/><path d="M12 10v5M12 18v.5"/>',
+  travaux: '<path d="M3 21h18M5 21V10l7-5 7 5v11"/><path d="M10 21v-6h4v6"/>',
+  reunions: '<path d="M4 5h16v11H9l-5 4z"/><path d="M8 9h8M8 12h5"/>',
+  equipe: '<circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><circle cx="17" cy="9" r="2.5"/><path d="M16 14a5 5 0 0 1 6 5"/>',
+  partage: '<path d="M4 12v7a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-7M12 3v13M7 8l5-5 5 5"/>',
+  etab: '<path d="M3 21h18M4 21V8l8-5 8 5v13M9 21v-5h6v5"/><path d="M9 11h.01M15 11h.01"/>',
+  reglages: '<circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9L7 7M17 17l2.1 2.1M4.9 19.1L7 17M17 7l2.1-2.1"/>',
+  tout: '<rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/>'
+};
+Object.assign(VLAB, { suivi: 'Suivi des élèves', rencontres: 'Rencontres AS', medias: 'Médias de l’AS', etab: 'Établissement', tout: 'Toutes les rubriques' });
+const VDESC = {
+  accueil: 'Ce qui compte aujourd’hui, en un coup d’œil.',
+  ecran: 'Qui est où, maintenant, demain, cette semaine. Pour la télé du gymnase.',
+  planning: 'Les installations jour par jour, réservations et exports.',
+  generateur: 'Placer les cours EPS sur les installations, avec tes règles.',
+  programmation: 'Les APSA de chaque classe, période par période.',
+  evaluations: 'Les dates d’évaluation et le nombre de séances.',
+  suivi: 'Quadrathlon, course longue, tests nationaux, cibles 6e et 5e.',
+  bac: 'Protocole bac EPS : inaptitudes, épreuves adaptées.',
+  cycle3: 'Projets CM1-CM2-6e, banque d’idées, générateur de projet.',
+  ressources: 'Liens et documents utiles de l’équipe.',
+  as: 'Listes Eduka, groupes, extractions pour l’AS.',
+  rencontres: 'Matchs contre d’autres établissements, contacts, messages en 3 langues.',
+  poles: 'Les fiches des responsabilités confiées aux élèves.',
+  medias: 'Photos, vidéos et articles de l’AS, avec les règles RGPD.',
+  materiel: 'Inventaire, commandes, circuit DAF.',
+  incidents: 'Signaler un problème sur une installation ou du matériel.',
+  travaux: 'Demandes de travaux et suivi.',
+  reunions: 'Ordre du jour participatif et comptes rendus.',
+  equipe: 'Annuaire, attributions et calcul des services.',
+  partage: 'Envoyer et récupérer des fichiers Excel avec les collègues.',
+  etab: 'Nom, lieu, seuils de pollution, installations extérieures : tout se règle ici.',
+  reglages: 'Import du planning, sauvegarde, synchronisation entre appareils.'
+};
+const ORDER = ['accueil', 'ecran', 'planning', 'generateur', 'programmation', 'evaluations', 'suivi', 'bac', 'cycle3', 'ressources', 'as', 'rencontres', 'poles', 'medias', 'materiel', 'incidents', 'travaux', 'reunions', 'equipe', 'partage', 'etab', 'reglages'];
+PROFILS.eps.views.push('suivi', 'rencontres', 'medias');
+PROFILS.primaire.views.push('suivi');
+PROFILS.as.views.push('rencontres', 'medias');
+PROFILS.secr.views.push('rencontres');
+const FAV_DEF = {
+  coord: ['ecran', 'planning', 'materiel', 'reunions', 'rencontres', 'suivi'],
+  eps: ['planning', 'evaluations', 'suivi', 'materiel', 'incidents'],
+  primaire: ['planning', 'suivi', 'cycle3', 'incidents'],
+  as: ['rencontres', 'as', 'poles', 'planning', 'medias'],
+  acs: ['planning', 'incidents', 'travaux'],
+  secr: ['rencontres', 'as']
+};
+const favs = () => (LS.get('favs', null) || FAV_DEF[profil()] || FAV_DEF.coord).filter(v => VIEWS[v] && allowed(v) && v !== 'accueil');
+const nIc = v => svgIc(IC[v] || IC.tout);
+
+renderNav = function (cur) {
+  const f = favs();
+  const top = ['accueil', ...f.slice(0, 6)];
+  $('#secnav').innerHTML = top.map(v => `<a href="#${v}" class="${v === cur ? 'on' : ''}">${esc(NAVLAB[v] || VLAB[v])}</a>`).join('')
+    + `<a href="#tout" class="${!top.includes(cur) ? 'on' : ''}">${!top.includes(cur) && cur !== 'tout' ? esc(NAVLAB[cur] || VLAB[cur]) + ' · ' : ''}Tout voir</a>`;
+  const bar = ['accueil', ...f.slice(0, 3)];
+  $('#bottombar').innerHTML = bar.map(v => `<a href="#${v}" class="${v === cur ? 'on' : ''}">${nIc(v)}<span>${esc(v === 'accueil' ? 'Accueil' : (VSHORT[v] || VLAB[v]))}</span></a>`).join('')
+    + `<a href="#tout" class="${!bar.includes(cur) ? 'on' : ''}">${nIc('tout')}<span>${!bar.includes(cur) && cur !== 'tout' ? esc(VSHORT[cur] || VLAB[cur] || 'Tout') : 'Tout'}</span></a>`;
+  const sn = $('#subnav'); sn.innerHTML = ''; sn.style.display = 'none';
+  const all = ORDER.filter(v => VIEWS[v] && allowed(v));
+  const link = v => `<a href="#${v}" class="${v === cur ? 'on' : ''}" style="display:flex;align-items:center;gap:12px;padding-left:18px">${nIc(v)}${esc(VLAB[v])}</a>`;
+  $('#drawer .dlist').innerHTML = `<div class="dsec">Mes favoris</div>${['accueil', ...f].map(link).join('')}
+    <div class="dsec">Toutes les rubriques</div>${all.filter(v => v !== 'accueil' && !f.includes(v)).map(link).join('')}
+    <div class="dsec">Cet appareil</div><a href="#profil">Profil : ${esc((PROFILS[profil()] || PROFILS.coord).t)} · changer</a><a href="#tout">Choisir mes favoris · installer l’app</a>`;
+  let dl = $('#coevl'); if (!dl) { dl = document.createElement('datalist'); dl.id = 'coevl'; document.body.appendChild(dl); }
+  dl.innerHTML = coevalNames().map(n => `<option value="${esc(n)}">`).join('');
+};
+const NAVLAB = { materiel: 'Matériel', rencontres: 'Matchs AS', suivi: 'Suivi élèves', evaluations: 'Évaluations', generateur: 'Générateur', medias: 'Médias AS', poles: 'Pôles AS', equipe: 'Équipe', partage: 'Partage Excel', ressources: 'Ressources', cycle3: 'Cycle 3', bac: 'Bac', etab: 'Établissement' };
+const VSHORT = { ecran: 'Écran', planning: 'Planning', generateur: 'Générateur', programmation: 'Program.', evaluations: 'Évals', suivi: 'Suivi', cycle3: 'Cycle 3', ressources: 'Ressources', rencontres: 'Matchs', poles: 'Pôles', medias: 'Médias', materiel: 'Matériel', incidents: 'Incidents', travaux: 'Travaux', reunions: 'Réunions', equipe: 'Équipe', partage: 'Partage', etab: 'Établ.', reglages: 'Réglages', bac: 'Bac', as: 'AS' };
+
+/* --- Installation de l'app --- */
+let INSTALL_EVT = null;
+window.addEventListener('beforeinstallprompt', e => { e.preventDefault(); INSTALL_EVT = e; const b = $('#instbtn'); if (b) b.style.display = ''; });
+window.addEventListener('appinstalled', () => { INSTALL_EVT = null; alertMsg('Application installée.'); });
+const isStandalone = () => matchMedia('(display-mode: standalone)').matches || navigator.standalone === true;
+
+VIEWS.tout = function () {
+  const f = favs(), all = ORDER.filter(v => VIEWS[v] && allowed(v) && v !== 'accueil');
+  const q = (TOUT.q || '').toLowerCase();
+  const show = all.filter(v => !q || (VLAB[v] + ' ' + (VDESC[v] || '')).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').includes(q.normalize('NFD').replace(/[̀-ͯ]/g, '')));
+  $('#app').innerHTML = `<main>
+    <h1>Toutes les rubriques</h1>
+    <p class="muted" style="margin:0">Touche l’étoile pour mettre une rubrique dans tes favoris : ils s’affichent en bas de l’écran du téléphone (les 3 premiers) et en haut sur ordinateur (les 6 premiers). L’ordre suit l’ordre où tu les choisis.</p>
+    <input type="text" id="tq" placeholder="Chercher une rubrique…" value="${esc(TOUT.q || '')}" aria-label="Chercher une rubrique">
+    <div class="tiles">${show.map(v => `<div class="tile"><a href="#${v}" class="tl">${nIc(v)}<span><strong>${esc(VLAB[v])}</strong><span class="muted">${esc(VDESC[v] || '')}</span></span></a>
+      <button class="star${f.includes(v) ? ' on' : ''}" data-fav="${v}" aria-label="${f.includes(v) ? 'Retirer des favoris' : 'Ajouter aux favoris'} : ${esc(VLAB[v])}" aria-pressed="${f.includes(v)}">${f.includes(v) ? '★' : '☆'}${f.includes(v) ? `<small>${f.indexOf(v) + 1}</small>` : ''}</button></div>`).join('') || '<p class="muted">Aucune rubrique ne correspond.</p>'}</div>
+    <div class="row"><button class="btn" id="favreset">Revenir aux favoris conseillés pour mon profil</button></div>
+    <div class="card" id="inst">
+      <h2>Installer l’app sur cet appareil</h2>
+      ${isStandalone() ? '<span class="muted">C’est déjà fait : tu utilises l’app installée.</span>' : `<button class="btn blue" id="instbtn" style="align-self:flex-start;${INSTALL_EVT ? '' : 'display:none'}">Installer Coordo EPS</button>`}
+      <div class="inst">
+        <div><strong>Ordinateur (Chrome ou Edge)</strong><br>Icône d’installation à droite de la barre d’adresse, ou menu ⋮ › « Caster, enregistrer et partager » › « Installer la page en tant qu’application ».</div>
+        <div><strong>Android (Chrome)</strong><br>Menu ⋮ › « Ajouter à l’écran d’accueil ». Si Chrome répond « impossible d’installer » : c’est fréquent en Chine, car l’installation complète passe par les services Google. Choisis alors « Créer un raccourci » (ou « Ajouter ») : l’app s’ouvre pareil, en plein écran.</div>
+        <div><strong>iPhone et iPad</strong><br>Ouvrir dans Safari › bouton Partager › « Sur l’écran d’accueil ». Attention : l’app installée a sa propre mémoire, séparée de Safari ; active la synchronisation pour y retrouver tes données.</div>
+      </div>
+    </div>
+  </main>`;
+  const tq = $('#tq'); tq.oninput = () => { TOUT.q = tq.value; const p = tq.selectionStart; VIEWS.tout(); const n = $('#tq'); n.focus(); n.setSelectionRange(p, p); };
+  $('#app').querySelectorAll('[data-fav]').forEach(b => b.onclick = () => {
+    const v = b.dataset.fav; let l = favs();
+    l = l.includes(v) ? l.filter(x => x !== v) : [...l, v];
+    LS.set('favs', l); renderNav('tout'); VIEWS.tout();
+  });
+  $('#favreset').onclick = () => { LS.del('favs'); renderNav('tout'); VIEWS.tout(); };
+  const ib = $('#instbtn'); if (ib) ib.onclick = async () => { if (!INSTALL_EVT) return; INSTALL_EVT.prompt(); await INSTALL_EVT.userChoice; INSTALL_EVT = null; ib.style.display = 'none'; };
+};
+const TOUT = { q: '' };
+
+/* --- Établissement : tout ce qui change d'un lycée à l'autre --- */
+const ETAB_DEF = {
+  nom: 'Lycée français international de Pékin', court: 'LFIP', ville: 'Pékin', lat: 39.96, lon: 116.47, tz: 'Asia/Shanghai',
+  aqiVigil: 100, aqiStop: 150, tFroid: -8, tChaud: 35, protoTxt: '', protoUrl: '',
+  dehors: [], hiver: [12, 1, 2], opuss: 'https://opuss.unss.org', comEmail: '', comNom: 'conseiller communication', asNom: 'AS', dossierMedias: '',
+  meteoOn: true
+};
+const etab = () => Object.assign({}, ETAB_DEF, LS.get('etab', {}));
+const isDehors = base => etab().dehors.includes(base);
+VIEWS.etab = function () {
+  const E = etab(), insts = PLAN ? installations().filter(b => !/^autre/i.test(b)) : [];
+  const fld = (k, t, type = 'text', w = '') => `<label class="f" style="${w}">${t}<input type="${type === 'num' ? 'text' : type}" ${type === 'num' ? 'inputmode="decimal"' : ''} data-e="${k}" data-t="${type}" value="${esc(E[k])}"></label>`;
+  $('#app').innerHTML = `<main>
+    <h1>Établissement</h1>
+    <p class="muted" style="margin:0">Tout ce qui est propre à ton lycée. Pour utiliser l’app ailleurs, il suffit de changer ces réglages, d’importer le planning des installations et le calendrier EPS du nouvel établissement.</p>
+    <div class="card"><h2>Identité</h2>
+      <div class="row">${fld('nom', 'Nom de l’établissement', 'text', 'flex:1 1 320px')}${fld('court', 'Nom court', 'text', 'width:120px')}${fld('ville', 'Ville')}</div>
+      <div class="row">${fld('lat', 'Latitude', 'num', 'width:120px')}${fld('lon', 'Longitude', 'num', 'width:120px')}${fld('tz', 'Fuseau horaire', 'text', 'width:180px')}<button class="btn" id="geo" style="align-self:flex-end">Utiliser la position de cet appareil</button></div>
+      <span class="muted">La position sert à la météo et à la qualité de l’air. Elle n’est envoyée qu’au service météo gratuit Open-Meteo.</span>
+    </div>
+    <div class="card"><h2>Qualité de l’air et météo</h2>
+      <label class="row" style="min-height:44px"><input type="checkbox" data-e="meteoOn" data-t="bool" ${E.meteoOn ? 'checked' : ''} style="width:22px;height:22px"> Afficher la météo et la qualité de l’air (accueil, grand écran, générateur)</label>
+      <div class="row">${fld('aqiVigil', 'Vigilance à partir de l’indice', 'num', 'width:190px')}${fld('aqiStop', 'Pas d’activité dehors à partir de', 'num', 'width:220px')}${fld('tFroid', 'Froid : en dessous de (°C)', 'num', 'width:190px')}${fld('tChaud', 'Chaleur : au-dessus de (°C)', 'num', 'width:190px')}</div>
+      <span class="muted">Indice utilisé : AQI américain (le même que les applis et capteurs utilisés à Pékin). Le seuil de 150 est à confirmer avec le protocole officiel du lycée. Les valeurs affichées sont des estimations du modèle Open-Meteo : la décision se prend toujours sur la mesure de référence prévue par le protocole (capteur du lycée, appli officielle).</span>
+      <label class="f">Protocole pollution : lien vers le document officiel${`<input type="text" data-e="protoUrl" data-t="text" value="${esc(E.protoUrl)}" placeholder="https://…">`}</label>
+      <label class="f">Protocole pollution : texte affiché dans l’app (ce qu’on fait à chaque niveau)<textarea data-e="protoTxt" data-t="text" rows="6" placeholder="Exemple : AQI 100 à 150 : pas d’effort intense dehors, élèves sensibles à l’intérieur. Au-delà de 150 : toutes les activités à l’intérieur. Au-delà de 200 : …">${esc(E.protoTxt)}</textarea></label>
+    </div>
+    <div class="card"><h2>Installations extérieures</h2>
+      <span class="muted">Coche les installations en plein air. Elles sont signalées quand la pollution ou la température dépasse tes seuils, et le générateur peut les éviter pendant les mois d’hiver.</span>
+      <div class="row">${insts.map(b => `<label class="chk"><input type="checkbox" data-out="${esc(b)}" ${E.dehors.includes(b) ? 'checked' : ''}> ${esc(b)}</label>`).join('') || '<span class="muted">Importe d’abord le planning des installations (Réglages).</span>'}</div>
+      <div class="row"><span style="font-weight:600;font-size:14px">Mois d’hiver à éviter dehors :</span>${MOIS.map((m, i) => `<label class="chk"><input type="checkbox" data-hiv="${i + 1}" ${E.hiver.includes(i + 1) ? 'checked' : ''}> ${m.slice(0, 4)}.</label>`).join('')}</div>
+    </div>
+    <div class="card"><h2>Association sportive et communication</h2>
+      <div class="row">${fld('asNom', 'Nom de l’AS', 'text', 'width:200px')}${fld('opuss', 'Lien OPUSS (licences UNSS)', 'text', 'flex:1 1 280px')}</div>
+      <div class="row">${fld('comNom', 'Interlocuteur communication', 'text', 'width:240px')}${fld('comEmail', 'Son adresse e-mail', 'email', 'flex:1 1 240px')}${fld('dossierMedias', 'Lien du dossier médias de l’AS (espace Microsoft du lycée)', 'text', 'flex:1 1 320px')}</div>
+    </div>
+    <div class="card"><h2>Calendrier EPS de l’année</h2>
+      <span class="muted">Classes, créneaux, quinzaines et APSA de chaque séance. ${LS.get('calendrier', null) ? 'Un calendrier importé est utilisé.' : 'Calendrier intégré : LFIP 2026-2027.'} ${Object.keys(CAL.classes || {}).length} classes, ${Object.keys(CAL.cal || {}).length} jours.</span>
+      <div class="row"><button class="btn" id="calx">Exporter le calendrier (fichier de l’app)</button><label class="btn" style="display:inline-flex;align-items:center">Importer un calendrier<input type="file" id="cali" accept=".json" hidden></label>${LS.get('calendrier', null) ? '<button class="btn" id="calr">Revenir au calendrier intégré</button>' : ''}</div>
+    </div>
+    <div class="card"><h2>Modèle pour un autre établissement</h2>
+      <span class="muted">Exporte tes réglages (établissement, règles du générateur, compatibilités, épreuves du suivi, banque de projets, fiches des pôles, check-list AS, modèles de messages), sans aucune donnée d’élève ni de collègue. Un autre coordonnateur l’importe et adapte.</span>
+      <div class="row"><button class="btn" id="mdx">Exporter le modèle</button><label class="btn" style="display:inline-flex;align-items:center">Importer un modèle<input type="file" id="mdi" accept=".json" hidden></label></div>
+    </div>
+  </main>`;
+  const save = () => { const o = {}; $('#app').querySelectorAll('[data-e]').forEach(i => { const t = i.dataset.t; o[i.dataset.e] = t === 'bool' ? i.checked : t === 'num' ? (num(i.value) ?? ETAB_DEF[i.dataset.e]) : i.value.trim(); });
+    o.dehors = [...$('#app').querySelectorAll('[data-out]:checked')].map(i => i.dataset.out); o.hiver = [...$('#app').querySelectorAll('[data-hiv]:checked')].map(i => +i.dataset.hiv);
+    const prev = etab(); LS.set('etab', o); if (prev.lat !== o.lat || prev.lon !== o.lon) { LS.del('meteoCache'); METEO.data = null; } };
+  $('#app').querySelectorAll('[data-e],[data-out],[data-hiv]').forEach(i => i.onchange = save);
+  $('#geo').onclick = () => { if (!navigator.geolocation) return alertMsg('Position indisponible sur cet appareil.'); navigator.geolocation.getCurrentPosition(p => { $('[data-e=lat]').value = p.coords.latitude.toFixed(3); $('[data-e=lon]').value = p.coords.longitude.toFixed(3); save(); alertMsg('Position enregistrée.'); }, () => alertMsg('Position refusée ou indisponible.')); };
+  const dl = (obj, name) => { const a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([JSON.stringify(obj, null, 1)], { type: 'application/json' })); a.download = name; a.click(); setTimeout(() => URL.revokeObjectURL(a.href), 2000); };
+  $('#calx').onclick = () => dl({ app: 'coordo-eps', type: 'calendrier', ...CAL }, 'Calendrier EPS.json');
+  $('#cali').onchange = async e => { try { const d = JSON.parse(await e.target.files[0].text()); if (!d.cal || !d.classes) throw new Error('fichier non reconnu'); delete d.app; delete d.type; LS.set('calendrier', d); alertMsg('Calendrier importé. L’app redémarre.'); setTimeout(() => location.reload(), 900); } catch (er) { alertMsg('Import impossible : ' + er.message); } };
+  const cr = $('#calr'); if (cr) cr.onclick = () => { LS.del('calendrier'); location.reload(); };
+  const MODEL_KEYS = ['etab', 'genRules', 'compat', 'banque', 'polesEdits', 'priorites', 'serviceParams'];
+  $('#mdx').onclick = () => { const d = { app: 'coordo-eps', type: 'modele', v: VERSION }; for (const k of MODEL_KEYS) { const x = LS.get(k, null); if (x != null) d[k] = x; } const s = LS.get('suivi', null); if (s) d.suiviReglages = { epreuves: s.epreuves, prog: s.prog, cl: s.cl }; const r = LS.get('rencontres', null); if (r) d.asChk = r.chk; d.periodRules = LS.get('periodRules', []); dl(d, 'Coordo EPS - modèle d’établissement.json'); };
+  $('#mdi').onchange = async e => { try { const d = JSON.parse(await e.target.files[0].text()); if (d.app !== 'coordo-eps' || d.type !== 'modele') throw new Error('ce n’est pas un modèle Coordo EPS'); if (!confirm('Remplacer tes réglages par ceux du modèle ? Tes données (planning, matériel, élèves…) ne sont pas touchées.')) return; for (const k of MODEL_KEYS) if (d[k] != null) LS.set(k, d[k]); if (d.suiviReglages) LS.set('suivi', Object.assign(LS.get('suivi', {}), d.suiviReglages)); if (d.asChk) LS.set('rencontres', Object.assign(LS.get('rencontres', {}), { chk: d.asChk })); if (d.periodRules) LS.set('periodRules', d.periodRules); alertMsg('Modèle importé.'); setTimeout(() => location.reload(), 900); } catch (er) { alertMsg('Import impossible : ' + er.message); } };
+};
+
+/* --- Météo et qualité de l'air (Open-Meteo, gratuit, sans clé) --- */
+const METEO = { data: null, busy: false, err: null };
+const WMO = c => c === 0 ? 'Ciel clair' : c <= 2 ? 'Peu nuageux' : c === 3 ? 'Couvert' : c <= 48 ? 'Brouillard' : c <= 57 ? 'Bruine' : c <= 67 ? 'Pluie' : c <= 77 ? 'Neige' : c <= 82 ? 'Averses' : c <= 86 ? 'Averses de neige' : 'Orage';
+async function meteoLoad(force) {
+  const E = etab(); if (!E.meteoOn) return null;
+  if (!METEO.data) METEO.data = LS.get('meteoCache', null);
+  if (!force && METEO.data && Date.now() - METEO.data.at < 30 * 60e3 && METEO.data.lat === E.lat) return METEO.data;
+  if (METEO.busy) return METEO.data; METEO.busy = true;
+  try {
+    const q = `latitude=${E.lat}&longitude=${E.lon}&timezone=${encodeURIComponent(E.tz)}`;
+    const [w, a] = await Promise.all([
+      fetch(`https://api.open-meteo.com/v1/forecast?${q}&current=temperature_2m,apparent_temperature,weather_code,wind_speed_10m,precipitation&hourly=temperature_2m,weather_code,precipitation_probability&daily=temperature_2m_max,temperature_2m_min,weather_code,precipitation_probability_max&forecast_days=3`).then(r => r.json()),
+      fetch(`https://air-quality-api.open-meteo.com/v1/air-quality?${q}&current=us_aqi,pm2_5&hourly=us_aqi,pm2_5&forecast_days=3`).then(r => r.json())
+    ]);
+    const hours = (w.hourly.time || []).map((t, i) => ({ t, temp: w.hourly.temperature_2m[i], code: w.hourly.weather_code[i], pp: w.hourly.precipitation_probability[i], aqi: (a.hourly && a.hourly.time.indexOf(t) >= 0) ? a.hourly.us_aqi[a.hourly.time.indexOf(t)] : null }));
+    METEO.data = { at: Date.now(), lat: E.lat, temp: w.current.temperature_2m, feel: w.current.apparent_temperature, code: w.current.weather_code, wind: w.current.wind_speed_10m, aqi: a.current ? a.current.us_aqi : null, pm25: a.current ? a.current.pm2_5 : null, hours, days: (w.daily.time || []).map((t, i) => ({ t, max: w.daily.temperature_2m_max[i], min: w.daily.temperature_2m_min[i], code: w.daily.weather_code[i], pp: w.daily.precipitation_probability_max[i] })) };
+    LS.set('meteoCache', METEO.data, true); METEO.err = null;
+  } catch (e) { METEO.err = e.message; }
+  finally { METEO.busy = false; }
+  return METEO.data;
+}
+/* niveau pour une heure donnée (ou maintenant) : ok / vigil / stop */
+function airLevel(aqi, temp) {
+  const E = etab(); const why = [];
+  let lv = 'ok';
+  if (aqi != null && aqi >= E.aqiStop) { lv = 'stop'; why.push('AQI ' + Math.round(aqi) + ' ≥ ' + E.aqiStop); }
+  else if (aqi != null && aqi >= E.aqiVigil) { lv = 'vigil'; why.push('AQI ' + Math.round(aqi)); }
+  if (temp != null && (temp <= E.tFroid || temp >= E.tChaud)) { if (lv === 'ok') lv = 'vigil'; why.push(Math.round(temp) + ' °C'); }
+  return { lv, why };
+}
+const LVL = { ok: ['Dehors possible', '#1F7A45', '#DCF2E4'], vigil: ['Vigilance', '#7A3E00', '#FFF1DC'], stop: ['Activités à l’intérieur', '#B42318', '#FDE3E0'] };
+const aqiCol = v => v == null ? '#8792A2' : v < 51 ? '#1F7A45' : v < 101 ? '#A16207' : v < 151 ? '#C2410C' : v < 201 ? '#B42318' : '#7E1D7E';
+function meteoSmall() {
+  const d = METEO.data; if (!d) return METEO.err ? '<span title="Météo indisponible">Météo indisponible</span>' : '';
+  return `<span>${Math.round(d.temp)}°</span><span>${esc(WMO(d.code))}</span><span style="display:inline-flex;align-items:center;gap:5px"><i style="width:9px;height:9px;border-radius:50%;background:${aqiCol(d.aqi)};display:inline-block"></i>AQI ${d.aqi == null ? '—' : Math.round(d.aqi)}</span>`;
+}
+function meteoCardHTML() {
+  const E = etab(), d = METEO.data;
+  if (!E.meteoOn) return '';
+  const head = `<div class="row" style="justify-content:space-between"><h2>Dehors aujourd’hui ?</h2><a href="#etab" style="font-size:13px">Seuils et protocole</a></div>`;
+  if (!d) return `<div class="card" data-meteo="card">${head}<span class="muted">${METEO.err ? 'Météo et qualité de l’air indisponibles pour l’instant (réseau).' : 'Chargement…'}</span></div>`;
+  const today = iso(new Date()), H = new Date().getHours();
+  const school = d.hours.filter(h => h.t.startsWith(today) && +h.t.slice(11, 13) >= Math.max(8, H) && +h.t.slice(11, 13) <= 17);
+  const now = airLevel(d.aqi, d.temp);
+  const maxA = school.reduce((m, h) => h.aqi != null && h.aqi > m ? h.aqi : m, d.aqi || 0);
+  const later = airLevel(maxA, null);
+  const [t, c, bg] = LVL[now.lv];
+  const tl = school.filter((_, i) => i % 2 === 0).slice(0, 5);
+  return `<div class="card" data-meteo="card">${head}
+    <div style="background:${bg};color:${c};border-radius:12px;padding:12px 14px;display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center"><strong style="font-size:18px">${t}</strong><span>${esc(now.why.join(' · ') || 'Air et température dans tes seuils')}</span></div>
+    <div class="row" style="gap:16px"><span style="font-size:28px;font-weight:700">${Math.round(d.temp)}°</span><span>${esc(WMO(d.code))}<br><span class="muted">ressenti ${Math.round(d.feel)}° · vent ${Math.round(d.wind)} km/h</span></span><span><strong style="color:${aqiCol(d.aqi)}">AQI ${d.aqi == null ? '—' : Math.round(d.aqi)}</strong><br><span class="muted">PM2,5 ${d.pm25 == null ? '—' : Math.round(d.pm25)} µg/m³</span></span></div>
+    ${tl.length ? `<div class="row" style="gap:6px">${tl.map(h => `<span class="chip" style="background:#F4F6FB;color:#1B2330;font-weight:600">${+h.t.slice(11, 13)}h · ${Math.round(h.temp)}° · <span style="color:${aqiCol(h.aqi)}">AQI ${h.aqi == null ? '—' : Math.round(h.aqi)}</span></span>`).join('')}</div>` : ''}
+    ${later.lv !== 'ok' && later.lv !== now.lv ? `<span style="color:${LVL[later.lv][1]};font-weight:600">D’ici 17h : jusqu’à AQI ${Math.round(maxA)} prévu.</span>` : ''}
+    ${E.protoTxt || E.protoUrl ? `<details><summary style="cursor:pointer;font-weight:600">Protocole pollution</summary><div style="white-space:pre-line;margin-top:6px">${esc(E.protoTxt)}</div>${E.protoUrl ? `<a href="${esc(E.protoUrl)}" target="_blank" rel="noopener">Ouvrir le document officiel</a>` : ''}</details>` : '<span class="muted">Ajoute le protocole pollution du lycée dans Établissement : il s’affichera ici.</span>'}
+    <span class="muted">Estimation Open-Meteo, mise à jour toutes les 30 min. La mesure de référence du protocole fait foi.</span>
+  </div>`;
+}
+function paintMeteo() {
+  document.querySelectorAll('[data-meteo=card]').forEach(el => { el.outerHTML = meteoCardHTML(); });
+  document.querySelectorAll('[data-meteo=small]').forEach(el => { el.innerHTML = meteoSmall(); });
+}
+(function () {
+  const _a = VIEWS.accueil;
+  VIEWS.accueil = function () {
+    _a();
+    const g = $('#app main > div[style*="grid"]');
+    if (g && etab().meteoOn) { g.insertAdjacentHTML('afterbegin', meteoCardHTML()); meteoLoad().then(paintMeteo); }
+    if (g && allowed('rencontres')) {
+      const t = iso(new Date()), R = LS.get('rencontres', {}), ms = (R.matchs || []).filter(m => m.date >= t && m.statut !== 'annulé').sort((a, b) => (a.date + a.h).localeCompare(b.date + b.h)).slice(0, 4);
+      const card = `<div class="card"><div class="row" style="justify-content:space-between"><h2>Prochains matchs de l’AS</h2><a href="#rencontres" style="font-size:13px">Ouvrir</a></div>${ms.map(m => `<div><strong>${frd(m.date)}${m.h ? ' · ' + hh(m.h) : ''}</strong> · ${esc(m.sport)} ${esc(m.cat || '')} · ${m.lieu === 'ext' ? 'chez ' : 'contre '}${esc(advName(m))} <span class="chip ${MST_CL[m.statut] || 'ca0'}">${esc(m.statut)}</span></div>`).join('') || '<span class="muted">Aucun match prévu.</span>'}</div>`;
+      g.insertAdjacentHTML('beforeend', card);
+    }
+  };
+  const _e = VIEWS.ecran;
+  VIEWS.ecran = function () {
+    _e();
+    const c = $('#app .clock');
+    if (c && etab().meteoOn) { c.insertAdjacentHTML('beforebegin', `<div data-meteo="small" class="tvmeteo">${meteoSmall()}</div>`); meteoLoad().then(paintMeteo); }
+    const d = METEO.data;
+    if (d && TV.mode === 'now' && etab().dehors.length) {
+      const lv = airLevel(d.aqi, d.temp);
+      if (lv.lv === 'stop') etab().dehors.forEach(n => $('#app').querySelectorAll('.tvcard .nm').forEach(el => { if (el.textContent === n) el.insertAdjacentHTML('afterend', '<span class="badge" style="background:#B42318;color:#fff">Pas d’activité dehors</span>'); }));
+    }
+  };
+})();
+
+/* ================= v0.9 : générateur (règles d'installation, regroupements, hiver, synergies) ================= */
+GEN_RULES_DEF.push(
+  ['ensemble', 'Regrouper les classes qui ont la même APSA au même moment', 'Même installation ou installation voisine : gym ensemble (les gros tapis restent installés), athlétisme ensemble (quadrathlon interdegré).', 'moy'],
+  ['hiver', 'Éviter les installations extérieures en hiver', 'Mois et installations extérieures réglés dans Établissement.', 'faible']
+);
+const KLAB2 = { bad: 'Badminton', basket: 'Basket', boxe: 'Boxe', combi: 'Combiné / relais', cross: 'Cross training', danse: 'Danse', df: 'Demi-fond', gym: 'Gymnastique', hand: 'Handball', jeux: 'Jeux collectifs', nat: 'Natation', vb: 'Volley-ball', tt: 'Tennis de table', foot: 'Football', judo: 'Judo', athle: 'Athlétisme', acro: 'Acrosport' };
+const kLab = k => KLAB2[k] || k;
+const periodRules = () => LS.get('periodRules', []);
+function periodRuleOk(per, base, key) {
+  const rs = periodRules().filter(r => r.base === base && (r.per === '*' || r.per === per.name));
+  return !rs.length || rs.some(r => r.keys.includes(key));
+}
+function perWinter(per) {
+  const H = etab().hiver; if (!H.length) return false;
+  for (let d = fromIso(per.from); d <= fromIso(per.to); d = addDays(d, 7)) if (H.includes(d.getMonth() + 1)) return true;
+  return H.includes(fromIso(per.to).getMonth() + 1);
+}
+function ensembleExtra(asg, s, inst, baseOf) {
+  const R = genRules().find(r => r.k === 'ensemble'); const w = R ? W(R.l) : 0; if (!w) return 0;
+  const mates = [...asg].filter(([o]) => o !== s && o.key === s.key && o.d === s.d && overlap(o, s) && qzOk(o, s)).map(([, oi]) => baseOf(oi));
+  return mates.length && !mates.includes(baseOf(inst)) ? w : 0;
+}
+function synergies(per) {
+  const ses = genSessions(per), out = { ens: [], inter: [], mix: [] }, seen = new Set();
+  for (const a of ses) for (const b of ses) {
+    if (a === b || a.d !== b.d || !overlap(a, b) || !qzOk(a, b)) continue;
+    const id = [a.id, b.id].sort().join('-'); if (seen.has(id)) continue; seen.add(id);
+    (a.key === b.key ? out.ens : out.mix).push({ a, b });
+  }
+  for (const p of per.items.filter(i => i.st === 'primaire' && i.apsa)) {
+    const k = apsaKey(p.apsa);
+    for (const s of ses) if (s.key === k && s.d === p.d && overlap(s, p) && qzOk(s, p) && /^6/.test(s.cl)) { const id = p.who + '|' + s.id; if (!seen.has(id)) { seen.add(id); out.inter.push({ p, s }); } }
+  }
+  return out;
+}
+(function () {
+  const _g = VIEWS.generateur;
+  VIEWS.generateur = function () {
+    _g();
+    if (!PLAN) return;
+    const per = PLAN.periods.find(p => p.name === GEN.per); if (!per) return;
+    const pri = [...$('#app').querySelectorAll('.card')].find(c => /Priorités/.test((c.querySelector('h2') || {}).textContent || ''));
+    if (!pri) return;
+    const bases = installations().filter(b => !/^autre/i.test(b));
+    const keys = [...new Set(Object.values(CAL.cal).flat().map(x => apsaKey(x[1])))].filter(k => k && k !== 'autre').sort();
+    const rs = periodRules();
+    const bad = per.items.filter(i => i.st !== 'eps' && i.apsa && !periodRuleOk(per, i.base, apsaKey(i.apsa)));
+    const sy = synergies(per);
+    const W8 = etab().hiver.length && perWinter(per) ? etab().dehors : [];
+    pri.insertAdjacentHTML('afterend', `<div class="card" id="prules">
+      <h2>Installations réservées à certaines APSA</h2>
+      <span class="muted">Exemple : pendant la période de gym, la salle de gym ne reçoit que de la gym (pas de danse), pour laisser les gros tapis installés. Le générateur respecte ces règles et signale les réservations qui ne les respectent pas.</span>
+      ${rs.length ? `<table class="t"><tr><th>Installation</th><th>APSA autorisées</th><th>Période</th><th></th></tr>${rs.map((r, i) => `<tr><td><strong>${esc(r.base)}</strong></td><td>${r.keys.map(k => `<span class="chip ca${caOf(kLab(k))}">${esc(kLab(k))}</span>`).join(' ')}</td><td>${r.per === '*' ? 'Toute l’année' : esc(r.per)}</td><td><button class="btn" data-prdel="${i}" aria-label="Supprimer la règle">Supprimer</button></td></tr>`).join('')}</table>` : ''}
+      <details><summary style="cursor:pointer;font-weight:600">Ajouter une règle</summary>
+        <div class="row" style="margin-top:8px"><label class="f">Installation<select id="pr_b">${bases.map(b => `<option>${esc(b)}</option>`).join('')}</select></label>
+        <label class="f">Période<select id="pr_p"><option value="${esc(per.name)}">${esc(per.name)} (celle-ci)</option><option value="*">Toute l’année</option>${PLAN.periods.filter(p => p !== per).map(p => `<option value="${esc(p.name)}">${esc(p.name)}</option>`).join('')}</select></label></div>
+        <div class="row" style="margin-top:6px">${keys.map(k => `<label class="chk"><input type="checkbox" data-prk="${k}"> ${esc(kLab(k))}</label>`).join('')}</div>
+        <button class="btn blue" id="pr_add" style="margin-top:8px">Ajouter la règle</button>
+      </details>
+      ${bad.length ? `<div class="banner"><strong>${bad.length} réservation(s) ne respectent pas ces règles :</strong><br>${bad.slice(0, 12).map(i => `${DLAB[i.d]} ${hh(i.s)} · ${esc(i.inst)} · ${esc(i.stl || i.st)} ${esc(i.who)} · ${esc(i.apsa)}`).join('<br>')}</div>` : ''}
+      ${W8.length ? `<span class="muted">Période d’hiver : installations extérieures concernées : ${W8.map(esc).join(', ')}.</span>` : ''}
+    </div>
+    <div class="card" id="synerg">
+      <h2>Synergies possibles · ${esc(per.name)}</h2>
+      <span class="muted">Ce que la programmation actuelle rend possible, ou presque.</span>
+      <div class="syn"><div><h3>Classes qui pratiquent la même APSA au même moment</h3>${sy.ens.slice(0, 12).map(x => `<div>${DLAB[x.a.d]} ${hh(x.a.s)} · <strong>${esc(x.a.cl)} + ${esc(x.b.cl)}</strong> · <span class="chip ca${caOf(x.a.apsa)}">${esc(x.a.apsa)}</span></div>`).join('') || '<span class="muted">Aucune.</span>'}</div>
+      <div><h3>Rencontres interdegré possibles (primaire + 6e)</h3>${sy.inter.slice(0, 12).map(x => `<div>${DLAB[x.s.d]} ${hh(x.s.s)} · <strong>${esc(x.p.who)}</strong> et <strong>${esc(x.s.cl)}</strong> · <span class="chip ca${caOf(x.s.apsa)}">${esc(x.s.apsa)}</span></div>`).join('') || '<span class="muted">Aucune sur cette période. Une même APSA pour une classe de CM2 et une classe de 6e sur le même créneau ouvrirait cette possibilité (ex. athlétisme pour un quadrathlon commun).</span>'}</div>
+      <div><h3>Même créneau, APSA différentes</h3>${sy.mix.slice(0, 10).map(x => `<div>${DLAB[x.a.d]} ${hh(x.a.s)} · ${esc(x.a.cl)} <span class="chip ca${caOf(x.a.apsa)}">${esc(x.a.apsa)}</span> et ${esc(x.b.cl)} <span class="chip ca${caOf(x.b.apsa)}">${esc(x.b.apsa)}</span></div>`).join('') || '<span class="muted">Aucun.</span>'}${sy.mix.length ? '<span class="muted">Aligner l’APSA de ces classes dans la programmation permettrait de les regrouper (matériel installé une fois, co-enseignement, rencontres).</span>' : ''}</div></div>
+    </div>`);
+    $('#app').querySelectorAll('[data-prdel]').forEach(b => b.onclick = () => { const l = periodRules(); l.splice(+b.dataset.prdel, 1); LS.set('periodRules', l); GEN.results = null; VIEWS.generateur(); });
+    $('#pr_add').onclick = () => {
+      const ks = [...$('#app').querySelectorAll('[data-prk]:checked')].map(i => i.dataset.prk);
+      if (!ks.length) return alertMsg('Coche au moins une APSA autorisée.');
+      LS.set('periodRules', [...periodRules(), { base: $('#pr_b').value, per: $('#pr_p').value, keys: ks }]); GEN.results = null; VIEWS.generateur();
+    };
+  };
+})();
+
+/* ================= v0.9 : suivi des élèves (cycle 3, cibles 6e et 5e) ================= */
+const SUIVI_DEF = {
+  epreuves: [
+    { k: 'sprint', t: 'Sprint 30 m', u: 's', sens: -1, b1: 6.8, b2: 6.0, re: 'sprint|vitesse' },
+    { k: 'haies', t: 'Haies 40 m', u: 's', sens: -1, re: 'haie' },
+    { k: 'longueur', t: 'Saut en longueur', u: 'm', sens: 1, re: 'longueur' },
+    { k: 'vortex', t: 'Lancer de vortex', u: 'm', sens: 1, re: 'vortex|lancer' },
+    { k: 'cl', t: 'Course longue (VMA)', u: 'km/h', sens: 1, vma: true, re: 'course longue|vma|endurance' },
+    { k: 'navette', t: 'Navette (test national)', u: 'paliers', sens: 1, b1: 1, b2: 3, off: true, re: 'navette|palier' },
+    { k: 'ssel', t: 'Saut sans élan (test national)', u: 'cm', sens: 1, b1: 110, b2: 140, off: true, re: 'sans [ée]lan' }
+  ],
+  prog: { besoin: 6, fragile: 4, satis: 2 },
+  cl: { duree: 6, pct: 85 },
+  classes: {}
+};
+const GRP = { besoin: ['en route', 'st-acs'], fragile: ['en progrès', 'ca4'], satis: ['à l’aise', 'ca2'] };
+const suivi = () => { const s = LS.get('suivi', {}); return Object.assign(JSON.parse(JSON.stringify(SUIVI_DEF)), s, { prog: Object.assign({}, SUIVI_DEF.prog, s.prog || {}), cl: Object.assign({}, SUIVI_DEF.cl, s.cl || {}) }); };
+const SV = { tab: 'classes', cls: null };
+const rnd = (v, u) => v == null || isNaN(v) ? null : u === 'cm' || u === 'paliers' ? Math.round(v) : u === 'm' ? Math.round(v * 100) / 100 : Math.round(v * 10) / 10;
+const fmtv = (v, u) => v == null ? '' : String(rnd(v, u)).replace('.', ',');
+function grpOf(S, ep, v) {
+  if (v == null) return null;
+  if (ep.b1 != null && ep.b2 != null) {
+    if (ep.sens > 0) return v <= ep.b1 ? 'besoin' : v <= ep.b2 ? 'fragile' : 'satis';
+    return v >= ep.b1 ? 'besoin' : v >= ep.b2 ? 'fragile' : 'satis';
+  }
+  const all = Object.values(S.classes).flatMap(c => c.rows.map(r => r.v && r.v[ep.k])).filter(x => x != null).sort((a, b) => (a - b) * ep.sens);
+  if (all.length < 6) return null;
+  const i = all.indexOf(v), n = all.length;
+  return i < n / 3 ? 'besoin' : i < 2 * n / 3 ? 'fragile' : 'satis';
+}
+function cible(S, ep, v, g) {
+  if (v == null || !g) return null;
+  const p = (S.prog[g] || 0) / 100, f = x => ep.sens > 0 ? x * (1 + p) : x * (1 - p);
+  const c6 = f(v), c5 = f(c6);
+  const o = { c6: rnd(c6, ep.u), c5: rnd(c5, ep.u) };
+  if (ep.vma) { const d = x => Math.round(x / 3.6 * S.cl.pct / 100 * S.cl.duree * 60 / 10) * 10; o.d6 = d(c6); o.d5 = d(c5); }
+  return o;
+}
+function parseSuiviWorkbook(wb, fname, S) {
+  const sn = wb.SheetNames.find(n => /[ée]l[èe]ves/i.test(n)) || wb.SheetNames[0];
+  const aoa = XLSX.utils.sheet_to_json(wb.Sheets[sn], { header: 1, defval: '' });
+  const hi = aoa.findIndex(r => r.some(c => /^nom$/i.test(String(c).trim())));
+  if (hi < 0) throw new Error(fname + ' : colonne « Nom » introuvable');
+  const h = aoa[hi];
+  const ci = { nom: h.findIndex(c => /^nom$/i.test(String(c).trim())), prenom: findCol(h, /pr[ée]nom/), sexe: findCol(h, /f ?\/ ?g|sexe|genre/), abs: findCol(h, /absent|dispens/), rem: findCol(h, /remarque|observ/) };
+  const eps = S.epreuves.map(ep => ({ ep, i: findCol(h, new RegExp(ep.re || ep.t.split(' ')[0].toLowerCase())) }));
+  const title = String(aoa[0][0] || '');
+  const name = (title.split(' · ')[0] || '').trim() || fname.replace(/\.xlsx?$/i, '').replace(/^.*- /, '');
+  const rows = [];
+  for (const r of aoa.slice(hi + 1)) {
+    const nom = String(r[ci.nom] || '').trim(); if (!nom) continue;
+    const v = {}; for (const { ep, i } of eps) if (i >= 0) { const x = num(r[i]); if (x != null) v[ep.k] = x; }
+    rows.push({ nom, prenom: ci.prenom >= 0 ? String(r[ci.prenom] || '').trim() : '', sexe: ci.sexe >= 0 ? String(r[ci.sexe] || '').trim().toUpperCase().slice(0, 1) : '', abs: ci.abs >= 0 ? String(r[ci.abs] || '').trim() : '', rem: ci.rem >= 0 ? String(r[ci.rem] || '').trim() : '', v });
+  }
+  const afc = {};
+  for (const n of wb.SheetNames.filter(n => /^(AFC|Programme)/i.test(n))) {
+    const a = XLSX.utils.sheet_to_json(wb.Sheets[n], { header: 1, defval: '' });
+    const head = a[2] || []; const items = [];
+    for (let j = 3; j < head.length; j++) if (String(head[j]).trim()) items.push({ j, t: String(head[j]).trim(), g: String((a[1] || [])[j] || '').trim(), c: [0, 0, 0, 0] });
+    for (const r of a.slice(3)) for (const it of items) { const x = +r[it.j]; if (x >= 1 && x <= 4) it.c[x - 1]++; }
+    let g = ''; items.forEach(it => { if (it.g) g = it.g; else it.g = g; });
+    if (items.some(it => it.c.some(Boolean))) afc[n] = items.map(({ t, g, c }) => ({ t, g, c }));
+  }
+  return { name, rows, afc, sheet: sn };
+}
+const saveSuivi = S => LS.set('suivi', { epreuves: S.epreuves, prog: S.prog, cl: S.cl, classes: S.classes });
+VIEWS.suivi = function () {
+  const S = suivi(), names = Object.keys(S.classes).sort();
+  if (!SV.cls || !S.classes[SV.cls]) SV.cls = names[0] || null;
+  const C = SV.cls && S.classes[SV.cls], EP = S.epreuves.filter(e => !e.off);
+  const tabs = [['classes', 'Résultats par classe'], ['synthese', 'Synthèse'], ['fiches', 'Fiches élèves'], ['epreuves', 'Épreuves et cibles']];
+  let body = '';
+  if (SV.tab === 'classes') {
+    body = `<div class="card"><div class="row">${names.map(n => `<button class="btn ${n === SV.cls ? 'on' : ''}" data-cls="${esc(n)}">${esc(n)} · ${S.classes[n].rows.length}</button>`).join('')}
+        <label class="btn blue" style="display:inline-flex;align-items:center">Importer des fichiers de classe<input type="file" id="sv_imp" accept=".xlsx,.xls" multiple hidden></label>
+        <button class="btn" id="sv_new">Nouvelle classe</button><button class="btn" id="sv_tpl">Fichier vierge à remplir</button></div>
+      <span class="muted">Chaque enseignant remplit le fichier Excel de sa classe (feuille « Élèves et épreuves ») et te l’envoie ; tu les importes ici, plusieurs à la fois. Les noms des élèves restent sur cet appareil : ils ne sont synchronisés que si tu l’autorises dans Réglages.</span></div>
+      ${C ? `<div class="card"><div class="row" style="justify-content:space-between"><h2>${esc(SV.cls)}</h2><div class="row"><button class="btn" id="sv_add">Ajouter un élève</button><button class="btn" id="sv_xls">Exporter avec les cibles</button><button class="btn" id="sv_del">Supprimer la classe</button></div></div>
+        <div class="scroll"><table class="t sv" style="min-width:${300 + EP.length * 150}px"><tr><th>Élève</th><th>F/G</th>${EP.map(e => `<th>${esc(e.t)} <span class="muted">(${esc(e.u)})</span></th>`).join('')}</tr>
+        ${C.rows.map((r, ri) => `<tr><td><strong>${esc(r.nom)}</strong> ${esc(r.prenom)}${r.abs ? `<br><span class="chip ca0">${esc(r.abs)}</span>` : ''}</td><td>${esc(r.sexe)}</td>${EP.map(e => { const v = r.v[e.k], g = grpOf(S, e, v), c = cible(S, e, v, g); return `<td><input type="text" inputmode="decimal" class="svin" data-r="${ri}" data-k="${e.k}" value="${esc(fmtv(v, e.u))}" aria-label="${esc(e.t + ' ' + r.nom)}">${g ? ` <span class="chip ${GRP[g][1]}">${GRP[g][0]}</span>` : ''}${c ? `<div class="muted">6e : ${fmtv(c.c6, e.u)} · 5e : ${fmtv(c.c5, e.u)}${c.d6 ? `<br>6e : ${c.d6} m en ${S.cl.duree} min` : ''}</div>` : ''}</td>`; }).join('')}</tr>`).join('')}
+        </table></div>
+        <span class="muted">Sous chaque résultat : le groupe de départ (en route, en progrès, à l’aise) et le défi visé en 6e puis en 5e. Réglages dans « Épreuves et cibles ».</span></div>` : '<div class="card empty">Aucune classe pour l’instant. Importe les fichiers des enseignants ou crée une classe.</div>'}`;
+  } else if (SV.tab === 'synthese') {
+    body = names.length ? names.map(n => {
+      const c = S.classes[n];
+      return `<div class="card"><h2>${esc(n)} · ${c.rows.length} élèves</h2><div class="scroll"><table class="t" style="min-width:640px"><tr><th>Épreuve</th><th>Résultats</th><th>Moyenne</th><th>Filles</th><th>Garçons</th><th>Répartition</th></tr>
+        ${EP.map(e => { const vs = c.rows.map(r => r.v[e.k]).filter(x => x != null), m = a => a.length ? fmtv(a.reduce((x, y) => x + y, 0) / a.length, e.u) : '—';
+          const gs = { besoin: 0, fragile: 0, satis: 0 }; c.rows.forEach(r => { const g = grpOf(S, e, r.v[e.k]); if (g) gs[g]++; }); const tot = gs.besoin + gs.fragile + gs.satis;
+          return `<tr><td><strong>${esc(e.t)}</strong></td><td>${vs.length}</td><td>${m(vs)} ${esc(e.u)}</td><td>${m(c.rows.filter(r => r.sexe === 'F').map(r => r.v[e.k]).filter(x => x != null))}</td><td>${m(c.rows.filter(r => r.sexe === 'G').map(r => r.v[e.k]).filter(x => x != null))}</td>
+          <td>${tot ? `<div class="bar">${Object.entries(gs).filter(([, x]) => x).map(([g, x]) => `<span class="${GRP[g][1]}" style="flex:${x}" title="${GRP[g][0]} : ${x}">${x}</span>`).join('')}</div>` : '—'}</td></tr>`; }).join('')}</table></div>
+        ${Object.entries(c.afc || {}).map(([sn, items]) => `<details><summary style="cursor:pointer;font-weight:600">${esc(sn)} · niveaux de maîtrise (nombre d’élèves)</summary><div class="scroll"><table class="t" style="min-width:560px"><tr><th>Attendu</th><th>1 insuffisante</th><th>2 fragile</th><th>3 satisfaisante</th><th>4 très bonne</th></tr>${items.map(it => `<tr><td><span class="muted">${esc(it.g)}</span><br>${esc(it.t)}</td>${it.c.map(x => `<td>${x || ''}</td>`).join('')}</tr>`).join('')}</table></div></details>`).join('')}
+      </div>`;
+    }).join('') : '<div class="card empty">Rien à synthétiser pour l’instant.</div>';
+  } else if (SV.tab === 'fiches') {
+    body = `<div class="card"><h2>Fiches « Ma forme » à remettre aux élèves</h2>
+      <span class="muted">Une fiche par élève, sans classement ni comparaison : ce que l’élève sait faire aujourd’hui et son prochain défi. Le vocabulaire reste positif : en route, en progrès, à l’aise.</span>
+      <div class="row">${names.map(n => `<button class="btn" data-fp="${esc(n)}">Imprimer ${esc(n)}</button>`).join('') || '<span class="muted">Importe d’abord une classe.</span>'}</div></div>`;
+  } else {
+    body = `<div class="card"><h2>Épreuves</h2><span class="muted">Tout est modifiable : nom, unité, sens (plus c’est grand, mieux c’est, ou l’inverse), seuils de départ. Sans seuils, le groupe vient du tiers de l’ensemble des élèves saisis. Décoche « affichée » pour masquer une épreuve.</span>
+      <div class="scroll"><table class="t" style="min-width:820px"><tr><th>Affichée</th><th>Épreuve</th><th>Unité</th><th>Meilleur résultat</th><th>Seuil « en route »</th><th>Seuil « à l’aise »</th><th></th></tr>
+      ${S.epreuves.map((e, i) => `<tr><td><input type="checkbox" data-ep="${i}" data-f="on" ${e.off ? '' : 'checked'} style="width:22px;height:22px"></td><td><input type="text" data-ep="${i}" data-f="t" value="${esc(e.t)}"></td><td><input type="text" data-ep="${i}" data-f="u" value="${esc(e.u)}" style="width:80px"></td>
+        <td><select data-ep="${i}" data-f="sens"><option value="1" ${e.sens > 0 ? 'selected' : ''}>le plus grand</option><option value="-1" ${e.sens < 0 ? 'selected' : ''}>le plus petit (temps)</option></select></td>
+        <td><input type="text" inputmode="decimal" data-ep="${i}" data-f="b1" value="${esc(fmtv(e.b1, e.u))}" style="width:80px" placeholder="tiers"></td><td><input type="text" inputmode="decimal" data-ep="${i}" data-f="b2" value="${esc(fmtv(e.b2, e.u))}" style="width:80px" placeholder="tiers"></td>
+        <td><button class="btn" data-epdel="${i}">Supprimer</button></td></tr>`).join('')}</table></div>
+      <div class="row"><button class="btn" id="ep_add">Ajouter une épreuve</button><button class="btn" id="ep_reset">Revenir aux épreuves conseillées</button></div>
+      <span class="muted">Seuils conseillés en 6e (DEPP, note d’information 26.17) : navette 0-1 palier en route, 4 et plus à l’aise ; saut sans élan 110 cm et moins en route, plus de 140 cm à l’aise ; 30 m 6,8 s et plus en route, moins de 6,0 s à l’aise. « En route » = élève au seuil ou en deçà ; « à l’aise » = au-delà du second seuil.</span></div>
+      <div class="card"><h2>Progrès visé par an</h2><span class="muted">Pour un temps on enlève ce pourcentage, pour une distance on l’ajoute. Cible 6e = résultat de CM2 avec ce progrès ; cible 5e = cible 6e avec ce progrès.</span>
+      <div class="row">${Object.keys(GRP).map(g => `<label class="f">${GRP[g][0]} (%)<input type="text" inputmode="decimal" data-pg="${g}" value="${esc(S.prog[g])}" style="width:100px"></label>`).join('')}
+      <label class="f">Durée de la course longue en 6e (min)<input type="text" inputmode="decimal" data-cl="duree" value="${esc(S.cl.duree)}" style="width:120px"></label><label class="f">Allure en % de la VMA<input type="text" inputmode="decimal" data-cl="pct" value="${esc(S.cl.pct)}" style="width:120px"></label></div></div>`;
+  }
+  $('#app').innerHTML = `<main><h1>Suivi des élèves</h1>
+    <p class="muted" style="margin:0">Quadrathlon et course longue au CM, tests nationaux, cibles pour le CA1 en 6e et en 5e. Un outil de suivi des progrès, jamais de classement.</p>
+    <div class="row noprint">${tabs.map(([k, t]) => `<button class="btn ${SV.tab === k ? 'on' : ''}" data-svt="${k}">${t}</button>`).join('')}</div>${body}</main>`;
+  const A = $('#app');
+  A.querySelectorAll('[data-svt]').forEach(b => b.onclick = () => { SV.tab = b.dataset.svt; VIEWS.suivi(); });
+  A.querySelectorAll('[data-cls]').forEach(b => b.onclick = () => { SV.cls = b.dataset.cls; VIEWS.suivi(); });
+  const on = (id, f) => { const e = $(id); if (e) e.onclick = f; };
+  const imp = $('#sv_imp'); if (imp) imp.onchange = async e => {
+    const msgs = [];
+    for (const f of e.target.files) { try { const wb = XLSX.read(await f.arrayBuffer()); const r = parseSuiviWorkbook(wb, f.name, S); const old = S.classes[r.name]; if (old && !confirm('La classe « ' + r.name + ' » existe déjà. La remplacer par le fichier ' + f.name + ' ?')) continue; S.classes[r.name] = { rows: r.rows, afc: r.afc, at: Date.now() }; SV.cls = r.name; msgs.push(r.name + ' : ' + r.rows.length + ' élèves'); } catch (er) { msgs.push(er.message); } }
+    saveSuivi(S); alertMsg(msgs.join(' · ') || 'Rien importé.'); VIEWS.suivi();
+  };
+  on('#sv_new', () => { const n = prompt('Nom de la classe (ex. CM2 A) :'); if (!n) return; S.classes[n.trim()] = S.classes[n.trim()] || { rows: [], afc: {} }; SV.cls = n.trim(); saveSuivi(S); VIEWS.suivi(); });
+  on('#sv_add', () => { const n = prompt('Nom et prénom de l’élève :'); if (!n) return; const [nom, ...p] = n.trim().split(/\s+/); C.rows.push({ nom, prenom: p.join(' '), sexe: '', abs: '', rem: '', v: {} }); saveSuivi(S); VIEWS.suivi(); });
+  on('#sv_del', () => { if (!confirm('Supprimer la classe ' + SV.cls + ' et ses résultats de cet appareil ?')) return; delete S.classes[SV.cls]; SV.cls = null; saveSuivi(S); VIEWS.suivi(); });
+  on('#sv_tpl', () => {
+    const E = S.epreuves.filter(e => !e.off);
+    const aoa = [['NOM DE LA CLASSE · Élèves et épreuves · date des tests :'], ['N°', 'Nom', 'Prénom', 'F / G', 'Absent ou dispensé', ...E.map(e => e.t + ' (' + e.u + ')'), 'Remarque']];
+    for (let i = 1; i <= 30; i++) aoa.push([i]);
+    const ws = XLSX.utils.aoa_to_sheet(aoa); ws['!cols'] = [5, 18, 16, 7, 12, ...E.map(() => 13), 30].map(w => ({ wch: w }));
+    const wb = XLSX.utils.book_new(); XLSX.utils.book_append_sheet(wb, ws, 'Élèves et épreuves'); XLSX.writeFile(wb, 'Suivi EPS - fichier de classe.xlsx');
+  });
+  on('#sv_xls', () => {
+    const wb = XLSX.utils.book_new();
+    for (const n of [SV.cls]) {
+      const c = S.classes[n], aoa = [[n + ' · résultats et défis pour la 6e et la 5e'], ['Nom', 'Prénom', 'F/G', ...EP.flatMap(e => [e.t + ' (' + e.u + ')', 'Groupe', 'Cible 6e', 'Cible 5e', ...(e.vma ? ['Distance 6e (m, ' + S.cl.duree + ' min)'] : [])])]];
+      for (const r of c.rows) aoa.push([r.nom, r.prenom, r.sexe, ...EP.flatMap(e => { const v = r.v[e.k], g = grpOf(S, e, v), x = cible(S, e, v, g) || {}; return [v ?? '', g ? GRP[g][0] : '', x.c6 ?? '', x.c5 ?? '', ...(e.vma ? [x.d6 ?? ''] : [])]; })]);
+      const ws = XLSX.utils.aoa_to_sheet(aoa); ws['!cols'] = [18, 14, 5, ...EP.flatMap(e => [12, 11, 9, 9, ...(e.vma ? [12] : [])])].map(w => ({ wch: w }));
+      XLSX.utils.book_append_sheet(wb, ws, n.slice(0, 31).replace(/[\\/?*[\]:]/g, ' '));
+    }
+    XLSX.writeFile(wb, 'Suivi EPS - ' + SV.cls + ' - cibles 6e et 5e.xlsx');
+  });
+  A.querySelectorAll('.svin').forEach(i => i.onchange = () => { const r = C.rows[+i.dataset.r], v = num(i.value); if (v == null) delete r.v[i.dataset.k]; else r.v[i.dataset.k] = v; saveSuivi(S); VIEWS.suivi(); });
+  A.querySelectorAll('[data-fp]').forEach(b => b.onclick = () => printFiches(S, b.dataset.fp));
+  A.querySelectorAll('[data-ep]').forEach(i => i.onchange = () => {
+    const e = S.epreuves[+i.dataset.ep], f = i.dataset.f;
+    if (f === 'on') e.off = !i.checked; else if (f === 'sens') e.sens = +i.value; else if (f === 'b1' || f === 'b2') e[f] = num(i.value); else e[f] = i.value.trim();
+    saveSuivi(S);
+  });
+  A.querySelectorAll('[data-epdel]').forEach(b => b.onclick = () => { if (!confirm('Supprimer cette épreuve ? Les résultats déjà saisis sont gardés mais ne s’affichent plus.')) return; S.epreuves.splice(+b.dataset.epdel, 1); saveSuivi(S); VIEWS.suivi(); });
+  on('#ep_add', () => { S.epreuves.push({ k: 'e' + Date.now().toString(36), t: 'Nouvelle épreuve', u: '', sens: 1 }); saveSuivi(S); VIEWS.suivi(); });
+  on('#ep_reset', () => { if (!confirm('Revenir aux épreuves conseillées ?')) return; S.epreuves = JSON.parse(JSON.stringify(SUIVI_DEF.epreuves)); saveSuivi(S); VIEWS.suivi(); });
+  A.querySelectorAll('[data-pg]').forEach(i => i.onchange = () => { S.prog[i.dataset.pg] = num(i.value) ?? 0; saveSuivi(S); });
+  A.querySelectorAll('[data-cl]').forEach(i => i.onchange = () => { S.cl[i.dataset.cl] = num(i.value) ?? SUIVI_DEF.cl[i.dataset.cl]; saveSuivi(S); });
+};
+function printFiches(S, n) {
+  const c = S.classes[n], EP = S.epreuves.filter(e => !e.off);
+  const w = window.open('', '_blank'); if (!w) { alertMsg('Autorise les fenêtres pour imprimer.'); return; }
+  w.document.write(`<!doctype html><html lang="fr"><head><meta charset="utf-8"><title>Ma forme · ${esc(n)}</title><style>
+    @page{size:A4;margin:12mm}body{font:11pt/1.35 Calibri,Carlito,system-ui,sans-serif;color:#1B2330;margin:0}
+    .f{border:1.5px solid #1E3F94;border-radius:3mm;padding:4mm 5mm;margin-bottom:5mm;break-inside:avoid}.f h2{margin:0 0 1mm;font-size:14pt;color:#1E3F94}.s{color:#5A6578;margin:0 0 2mm}
+    table{border-collapse:collapse;width:100%}td,th{border-bottom:1px solid #E1E5EC;padding:1.2mm 2mm;text-align:left;font-size:10.5pt}th{font-size:9pt;color:#5A6578}
+    .g{font-weight:700}.m{margin-top:2mm;font-style:italic;color:#1F4FA8}</style></head><body>
+    ${c.rows.map(r => `<section class="f"><h2>${esc(r.prenom || r.nom)} · ma forme</h2><p class="s">${esc(n)} · bouger, c’est bon pour le corps, la tête et le moral.</p>
+      <table><tr><th>Épreuve</th><th>Aujourd’hui</th><th>Où j’en suis</th><th>Mon prochain défi (6e)</th></tr>${EP.map(e => { const v = r.v[e.k], g = grpOf(S, e, v), x = cible(S, e, v, g); return `<tr><td>${esc(e.t)}</td><td>${v == null ? '—' : fmtv(v, e.u) + ' ' + esc(e.u)}</td><td class="g">${g ? GRP[g][0] : ''}</td><td>${x ? fmtv(x.c6, e.u) + ' ' + esc(e.u) + (x.d6 ? ' · ' + x.d6 + ' m en ' + S.cl.duree + ' min' : '') : ''}</td></tr>`; }).join('')}</table>
+      <p class="m">Ce qui compte, c’est ta progression. Chaque séance te rapproche de ton défi.</p></section>`).join('')}
+    <script>window.onload=()=>setTimeout(()=>window.print(),300)<\/script></body></html>`);
+  w.document.close();
+}
+
+/* ================= v0.9 : AS — rencontres, contacts, messages FR/EN/中文, check-list ================= */
+const MSTAT = ['idée', 'proposé', 'confirmé', 'joué', 'annulé'];
+const MST_CL = { 'idée': 'ca0', 'proposé': 'st-acs', 'confirmé': 'ca4', 'joué': 'ca2', 'annulé': 'ca1' };
+const CHK_DEF = ['Date et horaire confirmés par écrit avec l’autre établissement', 'Autorisation de la direction', 'Information de la vie scolaire et des familles', 'Autorisations parentales et fiches d’urgence', 'Licences UNSS à jour dans OPUSS', 'Transport réservé (si déplacement)', 'Installation réservée (si à domicile)', 'Arbitres et table de marque', 'Trousse de secours, eau, chasubles, ballons', 'Qualité de l’air vérifiée le jour même (protocole)', 'Résultat et remerciements envoyés', 'Photos transmises dans l’espace médias (règles RGPD)'];
+const REN = () => Object.assign({ contacts: [], matchs: [], chk: CHK_DEF.slice() }, LS.get('rencontres', {}));
+const saveRen = R => LS.set('rencontres', R);
+const RV = { tab: 'calendrier', edit: null, cedit: null, tpl: 'propose', lang: 'fr', mid: '', cid: '' };
+const uid = () => Date.now().toString(36) + Math.random().toString(36).slice(2, 6);
+function advName(m) { const c = (REN().contacts || []).find(x => x.id === m.adv); return c ? c.etab : (m.advTxt || 'adversaire à définir'); }
+const SPORT_ZH = { football: '足球', foot: '足球', basket: '篮球', basketball: '篮球', volley: '排球', 'volley-ball': '排球', handball: '手球', badminton: '羽毛球', 'tennis de table': '乒乓球', athlétisme: '田径', natation: '游泳', rugby: '橄榄球', cross: '越野跑' };
+const SPORT_EN = { football: 'football (soccer)', foot: 'football (soccer)', basket: 'basketball', 'tennis de table': 'table tennis', athlétisme: 'athletics', natation: 'swimming', 'volley-ball': 'volleyball', volley: 'volleyball' };
+const sportIn = (s, l) => { const k = String(s || '').toLowerCase().trim(); return l === 'zh' ? (SPORT_ZH[k] || s) : l === 'en' ? (SPORT_EN[k] || s) : s; };
+const dateIn = (ds, l) => { if (!ds) return l === 'zh' ? '（日期待定）' : l === 'en' ? '(date to be confirmed)' : '(date à préciser)'; const d = fromIso(ds); return l === 'zh' ? `${d.getFullYear()}年${d.getMonth() + 1}月${d.getDate()}日（星期${'日一二三四五六'[d.getDay()]}）` : l === 'en' ? d.toLocaleDateString('en-GB', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' }) : d.toLocaleDateString('fr-FR', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' }); };
+const hIn = (h, l) => !h ? '' : l === 'zh' ? h : l === 'en' ? h : hh(h);
+const TPL = {
+  propose: { t: 'Proposer un match', f: {
+    fr: v => `Objet : Proposition de rencontre ${v.sport}${v.cat ? ' ' + v.cat : ''}\n\nBonjour ${v.contact},\n\nJe suis ${v.moi}, et je m’occupe de l’association sportive du ${v.etab}. Nos élèves${v.cat ? ' (' + v.cat + ')' : ''} aimeraient beaucoup rencontrer votre équipe de ${v.sport}.\n\nNous vous proposons le ${v.date}${v.h ? ' à ' + v.h : ''}, ${v.lieuTxt}. Cette date est bien sûr modulable selon vos disponibilités.\n\nL’esprit de la rencontre : du plaisir, du fair-play et l’occasion pour nos élèves de rencontrer d’autres jeunes de Pékin. Un goûter partagé après le match serait le bienvenu.\n\nPouvez-vous me dire si cela vous convient ? Je reste disponible par e-mail ou WeChat.\n\nBien cordialement,\n${v.moi}\n${v.etab}`,
+    en: v => `Subject: ${v.sport} friendly match proposal\n\nDear ${v.contact},\n\nMy name is ${v.moi} and I coordinate the school sports club at ${v.etab}. Our students${v.cat ? ' (' + v.cat + ')' : ''} would be delighted to play a friendly ${v.sport} match against your team.\n\nWe would like to suggest ${v.date}${v.h ? ' at ' + v.h : ''}, ${v.lieuTxt}. We are of course happy to adjust the date to suit your schedule.\n\nOur aim is simple: fun, fair play, and a chance for our students to meet other young people in Beijing. A shared snack after the game would be very welcome.\n\nCould you let me know if this works for you? I can be reached by email or WeChat.\n\nKind regards,\n${v.moi}\n${v.etab}`,
+    zh: v => `主题：${v.sport}友谊赛邀请\n\n${v.contact}您好！\n\n我是${v.etab}的体育老师${v.moi}，负责学校体育俱乐部。我们的学生${v.cat ? '（' + v.cat + '）' : ''}非常希望与贵校的${v.sport}队进行一场友谊赛。\n\n我们建议的时间是${v.date}${v.h ? ' ' + v.h : ''}，${v.lieuTxt}。如果这个时间不方便，我们可以根据贵校的安排调整。\n\n这场比赛的目的很简单：快乐运动、公平竞赛，并让学生们认识北京的其他青少年。赛后如果能一起吃点小点心，那就更好了。\n\n请问这个安排是否可行？您可以通过邮件或微信与我联系。\n\n此致\n敬礼！\n${v.moi}\n${v.etab}` } },
+  confirme: { t: 'Confirmer le match', f: {
+    fr: v => `Objet : Confirmation de la rencontre ${v.sport} du ${v.date}\n\nBonjour ${v.contact},\n\nMerci pour votre réponse. Je vous confirme notre rencontre de ${v.sport}${v.cat ? ' (' + v.cat + ')' : ''} le ${v.date}${v.h ? ' à ' + v.h : ''}, ${v.lieuTxt}.\n\n${v.lieu === 'dom' ? 'Adresse : ' + (v.adresse || '[adresse]') + '\nMerci de m’indiquer le nombre d’élèves et d’accompagnateurs ainsi que les noms des adultes (pour l’accès au lycée).' : 'Pouvez-vous m’indiquer l’adresse exacte, l’entrée à utiliser et la personne à contacter à notre arrivée ?'}\n\nEn cas de forte pollution le jour même, nous appliquerons le protocole de nos établissements et nous nous préviendrons le plus tôt possible.\n\nÀ très bientôt,\n${v.moi}`,
+    en: v => `Subject: Confirmation – ${v.sport} match on ${v.date}\n\nDear ${v.contact},\n\nThank you for your reply. I am pleased to confirm our ${v.sport} match${v.cat ? ' (' + v.cat + ')' : ''} on ${v.date}${v.h ? ' at ' + v.h : ''}, ${v.lieuTxt}.\n\n${v.lieu === 'dom' ? 'Address: ' + (v.adresse || '[address]') + '\nCould you please send me the number of students and staff, as well as the names of the adults (for school access)?' : 'Could you please send me the exact address, the entrance to use and the person to contact when we arrive?'}\n\nIf air pollution is high on the day, we will follow our schools’ protocols and let each other know as early as possible.\n\nSee you soon,\n${v.moi}`,
+    zh: v => `主题：确认${v.date}${v.sport}友谊赛\n\n${v.contact}您好！\n\n感谢您的回复。现确认我们的${v.sport}友谊赛${v.cat ? '（' + v.cat + '）' : ''}将于${v.date}${v.h ? ' ' + v.h : ''}举行，${v.lieuTxt}。\n\n${v.lieu === 'dom' ? '地址：' + (v.adresse || '[地址]') + '\n请告知参赛学生和带队老师的人数，以及带队老师的姓名（以便办理入校手续）。' : '请告知具体地址、入口以及我们到达时的联系人。'}\n\n如比赛当天空气污染严重，我们将按照各自学校的规定处理，并尽早相互通知。\n\n期待见面！\n${v.moi}` } },
+  rappel: { t: 'Rappel la veille', f: {
+    fr: v => `Bonjour ${v.contact},\n\nPetit rappel : notre match de ${v.sport} a lieu demain, ${v.date}${v.h ? ' à ' + v.h : ''}, ${v.lieuTxt}. Tout est prêt de notre côté. Je vous confirme le matin même en fonction de la qualité de l’air.\n\nÀ demain !\n${v.moi}`,
+    en: v => `Dear ${v.contact},\n\nJust a quick reminder: our ${v.sport} match is tomorrow, ${v.date}${v.h ? ' at ' + v.h : ''}, ${v.lieuTxt}. Everything is ready on our side. I will confirm in the morning depending on the air quality.\n\nSee you tomorrow!\n${v.moi}`,
+    zh: v => `${v.contact}您好！\n\n温馨提醒：我们的${v.sport}友谊赛将于明天${v.date}${v.h ? ' ' + v.h : ''}举行，${v.lieuTxt}。我们这边一切准备就绪。明天上午我会根据空气质量情况再与您确认。\n\n明天见！\n${v.moi}` } },
+  pollution: { t: 'Reporter (pollution, météo)', f: {
+    fr: v => `Bonjour ${v.contact},\n\nLa qualité de l’air ne permet pas de jouer aujourd’hui dans de bonnes conditions (protocole de notre établissement). Nous devons malheureusement reporter le match de ${v.sport} prévu le ${v.date}.\n\nNos élèves sont déçus mais très motivés pour jouer bientôt : pourriez-vous me proposer une ou deux nouvelles dates ?\n\nMerci de votre compréhension,\n${v.moi}`,
+    en: v => `Dear ${v.contact},\n\nUnfortunately the air quality does not allow us to play safely today (our school’s protocol), so we have to postpone the ${v.sport} match planned for ${v.date}.\n\nOur students are disappointed but keen to play soon: could you suggest one or two new dates?\n\nThank you for your understanding,\n${v.moi}`,
+    zh: v => `${v.contact}您好！\n\n由于今天的空气质量不适合进行户外运动（根据我校规定），原定于${v.date}的${v.sport}友谊赛很遗憾需要延期。\n\n学生们有些失望，但都很期待尽快比赛：您能否提出一两个新的日期？\n\n感谢您的理解！\n${v.moi}` } },
+  merci: { t: 'Remercier après le match', f: {
+    fr: v => `Bonjour ${v.contact},\n\nUn grand merci pour la rencontre de ${v.sport} du ${v.date}${v.score ? ' (' + v.score + ')' : ''}. Nos élèves ont passé un excellent moment et ont apprécié le fair-play de votre équipe.\n\nNous serions ravis de vous accueillir (ou de revenir) pour un match retour. N’hésitez pas à me proposer une date.\n\nBien cordialement,\n${v.moi}`,
+    en: v => `Dear ${v.contact},\n\nThank you very much for the ${v.sport} match on ${v.date}${v.score ? ' (' + v.score + ')' : ''}. Our students had a great time and really appreciated your team’s fair play.\n\nWe would be delighted to organise a return match. Please feel free to suggest a date.\n\nKind regards,\n${v.moi}`,
+    zh: v => `${v.contact}您好！\n\n非常感谢${v.date}的${v.sport}友谊赛${v.score ? '（比分' + v.score + '）' : ''}。我们的学生度过了非常愉快的时光，也很欣赏贵队的体育精神。\n\n我们非常期待安排一场回访比赛，欢迎您提出合适的日期。\n\n此致\n敬礼！\n${v.moi}` } }
+};
+function tplVars(m, c, l) {
+  const E = etab(), me = LS.get('rencMoi', '');
+  const lieu = m ? m.lieu : 'dom';
+  const lieuTxt = l === 'zh' ? (lieu === 'ext' ? '在贵校' : lieu === 'neutre' ? '在' + (m && m.adresse || '[场地]') : '在我校') : l === 'en' ? (lieu === 'ext' ? 'at your school' : lieu === 'neutre' ? 'at ' + (m && m.adresse || '[venue]') : 'at our school') : (lieu === 'ext' ? 'dans votre établissement' : lieu === 'neutre' ? 'à ' + (m && m.adresse || '[lieu]') : 'dans notre établissement');
+  return { sport: sportIn(m ? m.sport : '[sport]', l), cat: m ? m.cat : '', date: dateIn(m && m.date, l), h: hIn(m && m.h, l), lieu, lieuTxt, adresse: m && m.adresse, score: m && m.score, contact: c ? c.nom : (l === 'zh' ? '老师' : l === 'en' ? 'Sir or Madam' : 'Madame, Monsieur'), moi: me || (l === 'zh' ? '[您的名字]' : l === 'en' ? '[your name]' : '[ton nom]'), etab: E.nom };
+}
+VIEWS.rencontres = function () {
+  const R = REN(), E = etab(), today = iso(new Date());
+  const tabs = [['calendrier', 'Calendrier des matchs'], ['contacts', 'Contacts'], ['messages', 'Messages FR · EN · 中文'], ['checklist', 'Check-list']];
+  const cOpt = sel => `<option value="">— autre ou à définir —</option>` + R.contacts.map(c => `<option value="${c.id}" ${c.id === sel ? 'selected' : ''}>${esc(c.etab)}${c.nom ? ' · ' + esc(c.nom) : ''}</option>`).join('');
+  let body = '';
+  if (RV.tab === 'calendrier') {
+    const ms = R.matchs.slice().sort((a, b) => (a.date + (a.h || '')).localeCompare(b.date + (b.h || '')));
+    const fut = ms.filter(m => !m.date || m.date >= today), past = ms.filter(m => m.date && m.date < today).reverse();
+    const ed = RV.edit && (RV.edit === 'new' ? { id: '', date: '', h: '', sport: 'Football', cat: '', adv: '', advTxt: '', lieu: 'dom', adresse: '', statut: 'idée', score: '', transport: '', notes: '', chk: {} } : R.matchs.find(m => m.id === RV.edit));
+    const line = m => { const n = R.chk.filter((_, i) => m.chk && m.chk[i]).length; return `<tr><td><strong>${m.date ? frd(m.date) : 'à fixer'}</strong>${m.h ? '<br>' + hh(m.h) : ''}</td><td>${esc(m.sport)} ${esc(m.cat || '')}</td><td>${m.lieu === 'ext' ? 'Chez ' : m.lieu === 'neutre' ? 'Terrain neutre · ' : 'À domicile · '}${esc(advName(m))}</td><td><span class="chip ${MST_CL[m.statut]}">${esc(m.statut)}</span>${m.score ? '<br><strong>' + esc(m.score) + '</strong>' : ''}</td><td>${n}/${R.chk.length}</td><td><button class="btn" data-medit="${m.id}">Ouvrir</button></td></tr>`; };
+    body = `${ed ? `<div class="card" id="medit"><h2>${ed.id ? 'Match' : 'Nouveau match'}</h2>
+        <div class="row"><label class="f">Date<input type="date" id="m_date" value="${esc(ed.date)}"></label><label class="f">Heure<input type="text" id="m_h" value="${esc(ed.h)}" placeholder="15:30" style="width:90px"></label>
+        <label class="f">Sport<input type="text" id="m_sport" value="${esc(ed.sport)}" list="sportl" style="width:150px"></label><label class="f">Catégorie<input type="text" id="m_cat" value="${esc(ed.cat)}" placeholder="filles U13, mixte…" style="width:150px"></label>
+        <label class="f">Statut<select id="m_st">${MSTAT.map(s => `<option ${s === ed.statut ? 'selected' : ''}>${s}</option>`).join('')}</select></label></div>
+        <div class="row"><label class="f">Adversaire (contact)<select id="m_adv">${cOpt(ed.adv)}</select></label><label class="f">ou nom de l’établissement<input type="text" id="m_advt" value="${esc(ed.advTxt)}"></label>
+        <label class="f">Lieu<select id="m_lieu"><option value="dom" ${ed.lieu === 'dom' ? 'selected' : ''}>À domicile</option><option value="ext" ${ed.lieu === 'ext' ? 'selected' : ''}>Chez l’adversaire</option><option value="neutre" ${ed.lieu === 'neutre' ? 'selected' : ''}>Terrain neutre</option></select></label>
+        <label class="f" style="flex:1 1 220px">Adresse ou installation<input type="text" id="m_adr" value="${esc(ed.adresse)}"></label></div>
+        <div class="row"><label class="f">Score<input type="text" id="m_score" value="${esc(ed.score)}" placeholder="2-1" style="width:90px"></label><label class="f" style="flex:1 1 220px">Transport<input type="text" id="m_tr" value="${esc(ed.transport)}" placeholder="bus du lycée, 14h départ…"></label><label class="f" style="flex:1 1 260px">Notes<input type="text" id="m_notes" value="${esc(ed.notes)}"></label></div>
+        <details open><summary style="cursor:pointer;font-weight:600">Check-list du match</summary><div class="ckl">${R.chk.map((t, i) => `<label class="chk"><input type="checkbox" data-mck="${i}" ${ed.chk && ed.chk[i] ? 'checked' : ''}> ${esc(t)}</label>`).join('')}</div></details>
+        <div class="row"><button class="btn go" id="m_save">Enregistrer</button><button class="btn" id="m_msg">Écrire un message pour ce match</button>${ed.id ? '<button class="btn" id="m_del">Supprimer</button>' : ''}<button class="btn" id="m_cancel">Fermer</button></div></div>` : ''}
+      <div class="card"><div class="row" style="justify-content:space-between"><h2>À venir</h2><div class="row"><button class="btn blue" id="m_new">Nouveau match</button><button class="btn" id="m_xls">Exporter en Excel</button></div></div>
+        ${fut.length ? `<div class="scroll"><table class="t" style="min-width:680px"><tr><th>Date</th><th>Sport</th><th>Adversaire</th><th>Statut</th><th>Check-list</th><th></th></tr>${fut.map(line).join('')}</table></div>` : '<span class="muted">Aucun match prévu. Commence par « Nouveau match », même sans date : statut « idée ».</span>'}</div>
+      ${past.length ? `<details class="card"><summary style="cursor:pointer;font-weight:700">Matchs passés · ${past.length}</summary><div class="scroll"><table class="t" style="min-width:680px">${past.map(line).join('')}</table></div></details>` : ''}
+      <datalist id="sportl">${['Football', 'Basket', 'Volley-ball', 'Handball', 'Badminton', 'Tennis de table', 'Athlétisme', 'Natation', 'Cross', 'Rugby'].map(s => `<option value="${s}">`).join('')}</datalist>`;
+  } else if (RV.tab === 'contacts') {
+    const ed = RV.cedit && (RV.cedit === 'new' ? { id: '', etab: '', nom: '', role: '', email: '', tel: '', wechat: '', langue: 'en', sports: '', notes: '' } : R.contacts.find(c => c.id === RV.cedit));
+    body = `${ed ? `<div class="card"><h2>${ed.id ? 'Contact' : 'Nouveau contact'}</h2>
+      <div class="row"><label class="f" style="flex:1 1 260px">Établissement<input type="text" id="c_etab" value="${esc(ed.etab)}"></label><label class="f" style="flex:1 1 200px">Personne à contacter<input type="text" id="c_nom" value="${esc(ed.nom)}"></label><label class="f">Fonction<input type="text" id="c_role" value="${esc(ed.role)}" placeholder="PE Teacher, Athletic Director…"></label></div>
+      <div class="row"><label class="f" style="flex:1 1 220px">E-mail<input type="email" id="c_email" value="${esc(ed.email)}"></label><label class="f">Téléphone<input type="text" id="c_tel" value="${esc(ed.tel)}"></label><label class="f">WeChat<input type="text" id="c_wx" value="${esc(ed.wechat)}"></label>
+      <label class="f">Langue des messages<select id="c_lang"><option value="fr" ${ed.langue === 'fr' ? 'selected' : ''}>Français</option><option value="en" ${ed.langue === 'en' ? 'selected' : ''}>English</option><option value="zh" ${ed.langue === 'zh' ? 'selected' : ''}>中文</option></select></label></div>
+      <div class="row"><label class="f" style="flex:1 1 220px">Sports et catégories<input type="text" id="c_sp" value="${esc(ed.sports)}" placeholder="foot filles U13, basket…"></label><label class="f" style="flex:1 1 300px">Notes<input type="text" id="c_notes" value="${esc(ed.notes)}" placeholder="terrain synthétique, accès par la porte nord…"></label></div>
+      <span class="muted">Contacts professionnels uniquement. Ils sont synchronisés avec tes autres appareils.</span>
+      <div class="row"><button class="btn go" id="c_save">Enregistrer</button>${ed.id ? '<button class="btn" id="c_del">Supprimer</button>' : ''}<button class="btn" id="c_cancel">Fermer</button></div></div>` : ''}
+      <div class="card"><div class="row" style="justify-content:space-between"><h2>Établissements partenaires · ${R.contacts.length}</h2><button class="btn blue" id="c_new">Nouveau contact</button></div>
+      ${R.contacts.length ? `<div class="scroll"><table class="t" style="min-width:640px"><tr><th>Établissement</th><th>Contact</th><th>Joindre</th><th>Langue</th><th>Matchs</th><th></th></tr>${R.contacts.slice().sort((a, b) => a.etab.localeCompare(b.etab)).map(c => `<tr><td><strong>${esc(c.etab)}</strong><br><span class="muted">${esc(c.sports)}</span></td><td>${esc(c.nom)}<br><span class="muted">${esc(c.role)}</span></td><td>${c.email ? `<a href="mailto:${esc(c.email)}">${esc(c.email)}</a><br>` : ''}${c.wechat ? 'WeChat : ' + esc(c.wechat) : ''}${c.tel ? '<br>' + esc(c.tel) : ''}</td><td>${{ fr: 'FR', en: 'EN', zh: '中文' }[c.langue] || ''}</td><td>${R.matchs.filter(m => m.adv === c.id).length}</td><td><button class="btn" data-cedit="${c.id}">Ouvrir</button></td></tr>`).join('')}</table></div>` : '<span class="muted">Ajoute les établissements avec qui l’AS joue ou aimerait jouer.</span>'}</div>`;
+  } else if (RV.tab === 'messages') {
+    const m = R.matchs.find(x => x.id === RV.mid), c = R.contacts.find(x => x.id === (RV.cid || (m && m.adv)));
+    const txt = TPL[RV.tpl].f[RV.lang](tplVars(m, c, RV.lang));
+    const gem = LS.get('gemini', {});
+    body = `<div class="card"><h2>Écrire un message</h2>
+      <div class="row"><label class="f">Message<select id="t_tpl">${Object.entries(TPL).map(([k, x]) => `<option value="${k}" ${k === RV.tpl ? 'selected' : ''}>${x.t}</option>`).join('')}</select></label>
+      <label class="f">Match<select id="t_m"><option value="">— aucun —</option>${R.matchs.filter(x => x.statut !== 'joué' || RV.tpl === 'merci').map(x => `<option value="${x.id}" ${x.id === RV.mid ? 'selected' : ''}>${x.date ? frd(x.date) : 'à fixer'} · ${esc(x.sport)} · ${esc(advName(x))}</option>`).join('')}</select></label>
+      <label class="f">Destinataire<select id="t_c">${cOpt(c && c.id)}</select></label>
+      <label class="f">Langue<select id="t_l"><option value="fr" ${RV.lang === 'fr' ? 'selected' : ''}>Français</option><option value="en" ${RV.lang === 'en' ? 'selected' : ''}>English</option><option value="zh" ${RV.lang === 'zh' ? 'selected' : ''}>中文</option></select></label>
+      <label class="f">Signé<input type="text" id="t_moi" value="${esc(LS.get('rencMoi', ''))}" placeholder="ton nom"></label></div>
+      <textarea id="t_txt" rows="16" style="font-size:15px;line-height:1.5">${esc(txt)}</textarea>
+      <div class="row"><button class="btn go" id="t_copy">Copier</button>${c && c.email ? `<a class="btn" style="display:inline-flex;align-items:center;text-decoration:none" id="t_mail" href="#">Ouvrir dans la messagerie</a>` : ''}
+        ${gem.key ? '<button class="btn blue" id="t_ai">Adapter avec Gemini</button>' : ''}</div>
+      <span class="muted">Le texte est modifiable avant de copier. Les modèles en anglais et en chinois sont relus, mais une relecture par un collègue natif reste une bonne idée pour un premier contact.</span>
+      ${gem.key ? '<label class="f">Consigne pour Gemini<input type="text" id="t_aiq" placeholder="ex. plus court, ton plus formel, ajouter que le match est réservé aux filles"></label>' : ''}
+    </div>
+    <details class="card"><summary style="cursor:pointer;font-weight:700">Gemini (facultatif)</summary>
+      <span class="muted">Avec une clé Gemini (Google AI Studio), l’app peut adapter ou traduire un message. La clé reste sur cet appareil, n’est jamais synchronisée ni mise dans le code. Le message envoyé à Gemini ne doit contenir aucun nom d’élève. Attention : les services Google ne sont pas joignables en Chine sans VPN.</span>
+      <div class="row"><label class="f" style="flex:1 1 280px">Clé API<input type="password" id="g_key" value="${esc(gem.key || '')}" autocomplete="off"></label><label class="f">Modèle<input type="text" id="g_mod" value="${esc(gem.model || 'gemini-2.5-flash')}" style="width:200px"></label><button class="btn" id="g_save" style="align-self:flex-end">Enregistrer</button></div>
+    </details>`;
+  } else {
+    body = `<div class="card"><h2>Check-list d’un match</h2><span class="muted">Elle s’applique à chaque match (onglet Calendrier). Modifie-la pour ton établissement : une ligne par étape.</span>
+      <textarea id="ck_txt" rows="14">${esc(R.chk.join('\n'))}</textarea>
+      <div class="row"><button class="btn go" id="ck_save">Enregistrer</button><button class="btn" id="ck_reset">Revenir à la liste conseillée</button>${E.opuss ? `<a class="btn" style="display:inline-flex;align-items:center;text-decoration:none" href="${esc(E.opuss)}" target="_blank" rel="noopener">Ouvrir OPUSS</a>` : ''}</div></div>`;
+  }
+  $('#app').innerHTML = `<main><div class="row" style="justify-content:space-between"><h1>Rencontres de l’AS</h1>${E.opuss ? `<a class="btn" style="display:inline-flex;align-items:center;text-decoration:none" href="${esc(E.opuss)}" target="_blank" rel="noopener">OPUSS · licences UNSS</a>` : ''}</div>
+    <div class="row noprint">${tabs.map(([k, t]) => `<button class="btn ${RV.tab === k ? 'on' : ''}" data-rt="${k}">${t}</button>`).join('')}</div>${body}</main>`;
+  const A = $('#app'), on = (id, f, ev = 'onclick') => { const e = $(id); if (e) e[ev] = f; }, val = id => ($(id) || {}).value || '';
+  A.querySelectorAll('[data-rt]').forEach(b => b.onclick = () => { RV.tab = b.dataset.rt; VIEWS.rencontres(); });
+  A.querySelectorAll('[data-medit]').forEach(b => b.onclick = () => { RV.edit = b.dataset.medit; VIEWS.rencontres(); setTimeout(() => $('#medit') && $('#medit').scrollIntoView({ behavior: 'smooth' }), 50); });
+  on('#m_new', () => { RV.edit = 'new'; VIEWS.rencontres(); });
+  on('#m_cancel', () => { RV.edit = null; VIEWS.rencontres(); });
+  const readM = () => { const o = { date: val('#m_date'), h: val('#m_h').replace('h', ':').trim(), sport: val('#m_sport').trim(), cat: val('#m_cat').trim(), statut: val('#m_st'), adv: val('#m_adv'), advTxt: val('#m_advt').trim(), lieu: val('#m_lieu'), adresse: val('#m_adr').trim(), score: val('#m_score').trim(), transport: val('#m_tr').trim(), notes: val('#m_notes').trim(), chk: {} }; A.querySelectorAll('[data-mck]').forEach(c => { if (c.checked) o.chk[c.dataset.mck] = true; }); if (/^\d{1,2}:?$/.test(o.h)) o.h = pad(parseInt(o.h)) + ':00'; return o; };
+  const saveM = () => { const o = readM(); if (RV.edit === 'new') { o.id = uid(); R.matchs.push(o); RV.edit = o.id; } else Object.assign(R.matchs.find(m => m.id === RV.edit), o); saveRen(R); return RV.edit; };
+  on('#m_save', () => { saveM(); RV.edit = null; alertMsg('Match enregistré.'); VIEWS.rencontres(); });
+  on('#m_msg', () => { const id = saveM(); const m = R.matchs.find(x => x.id === id); RV.mid = id; RV.cid = m.adv || ''; const c = R.contacts.find(x => x.id === m.adv); if (c) RV.lang = c.langue || 'fr'; RV.tpl = m.statut === 'joué' ? 'merci' : m.statut === 'confirmé' ? 'rappel' : m.statut === 'proposé' ? 'confirme' : 'propose'; RV.tab = 'messages'; RV.edit = null; VIEWS.rencontres(); });
+  on('#m_del', () => { if (!confirm('Supprimer ce match ?')) return; R.matchs = R.matchs.filter(m => m.id !== RV.edit); RV.edit = null; saveRen(R); VIEWS.rencontres(); });
+  on('#m_xls', () => {
+    const aoa = [['Date', 'Heure', 'Sport', 'Catégorie', 'Adversaire', 'Lieu', 'Adresse', 'Statut', 'Score', 'Transport', 'Check-list', 'Notes']];
+    for (const m of R.matchs.slice().sort((a, b) => (a.date || '9').localeCompare(b.date || '9'))) aoa.push([m.date ? frd(m.date) : '', m.h || '', m.sport, m.cat, advName(m), { dom: 'à domicile', ext: 'extérieur', neutre: 'neutre' }[m.lieu], m.adresse, m.statut, m.score, m.transport, R.chk.filter((_, i) => m.chk && m.chk[i]).length + '/' + R.chk.length, m.notes]);
+    const ws = XLSX.utils.aoa_to_sheet(aoa); ws['!cols'] = [11, 7, 14, 14, 26, 11, 24, 10, 7, 20, 9, 30].map(w => ({ wch: w }));
+    const wb = XLSX.utils.book_new(); XLSX.utils.book_append_sheet(wb, ws, 'Matchs AS'); XLSX.writeFile(wb, 'AS - calendrier des matchs.xlsx');
+  });
+  A.querySelectorAll('[data-cedit]').forEach(b => b.onclick = () => { RV.cedit = b.dataset.cedit; VIEWS.rencontres(); window.scrollTo(0, 0); });
+  on('#c_new', () => { RV.cedit = 'new'; VIEWS.rencontres(); });
+  on('#c_cancel', () => { RV.cedit = null; VIEWS.rencontres(); });
+  on('#c_save', () => { const o = { etab: val('#c_etab').trim(), nom: val('#c_nom').trim(), role: val('#c_role').trim(), email: val('#c_email').trim(), tel: val('#c_tel').trim(), wechat: val('#c_wx').trim(), langue: val('#c_lang'), sports: val('#c_sp').trim(), notes: val('#c_notes').trim() }; if (!o.etab) return alertMsg('Indique au moins l’établissement.'); if (RV.cedit === 'new') R.contacts.push({ id: uid(), ...o }); else Object.assign(R.contacts.find(c => c.id === RV.cedit), o); saveRen(R); RV.cedit = null; VIEWS.rencontres(); });
+  on('#c_del', () => { if (!confirm('Supprimer ce contact ?')) return; R.contacts = R.contacts.filter(c => c.id !== RV.cedit); RV.cedit = null; saveRen(R); VIEWS.rencontres(); });
+  on('#t_tpl', e => { RV.tpl = e.target.value; VIEWS.rencontres(); }, 'onchange');
+  on('#t_m', e => { RV.mid = e.target.value; const m = R.matchs.find(x => x.id === RV.mid); if (m && m.adv) { RV.cid = m.adv; const c = R.contacts.find(x => x.id === m.adv); if (c) RV.lang = c.langue || RV.lang; } VIEWS.rencontres(); }, 'onchange');
+  on('#t_c', e => { RV.cid = e.target.value; const c = R.contacts.find(x => x.id === RV.cid); if (c) RV.lang = c.langue || RV.lang; VIEWS.rencontres(); }, 'onchange');
+  on('#t_l', e => { RV.lang = e.target.value; VIEWS.rencontres(); }, 'onchange');
+  on('#t_moi', e => { LS.set('rencMoi', e.target.value.trim()); VIEWS.rencontres(); }, 'onchange');
+  on('#t_copy', async () => { const t = $('#t_txt').value; try { await navigator.clipboard.writeText(t); alertMsg('Message copié.'); } catch (e) { $('#t_txt').select(); document.execCommand('copy'); alertMsg('Message copié.'); } });
+  on('#t_mail', e => { e.preventDefault(); const c = R.contacts.find(x => x.id === RV.cid) || R.contacts.find(x => x.id === (R.matchs.find(m => m.id === RV.mid) || {}).adv); const t = $('#t_txt').value; const sm = t.match(/^(Objet|Subject|主题)\s*[:：]\s*(.*)\n+/); location.href = 'mailto:' + encodeURIComponent(c.email) + '?subject=' + encodeURIComponent(sm ? sm[2] : '') + '&body=' + encodeURIComponent(sm ? t.slice(sm[0].length) : t); });
+  on('#g_save', () => { LS.set('gemini', { key: val('#g_key').trim(), model: val('#g_mod').trim() || 'gemini-2.5-flash' }); alertMsg('Réglage Gemini enregistré sur cet appareil.'); VIEWS.rencontres(); });
+  on('#t_ai', async () => {
+    const g = LS.get('gemini', {}), b = $('#t_ai'); b.disabled = true; b.textContent = 'Gemini réfléchit…';
+    const lang = { fr: 'français', en: 'anglais', zh: 'chinois simplifié' }[RV.lang];
+    const prompt = `Tu aides un professeur d’EPS d’un lycée français de Pékin à écrire à un autre établissement scolaire. Réécris le message ci-dessous en ${lang}, ton cordial et professionnel, en gardant toutes les informations pratiques (dates, heures, lieux). Consigne : ${val('#t_aiq') || 'améliore la formulation'}. Réponds uniquement avec le message.\n\n${$('#t_txt').value}`;
+    try { const r = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(g.model || 'gemini-2.5-flash')}:generateContent?key=${encodeURIComponent(g.key)}`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ contents: [{ parts: [{ text: prompt }] }] }) }); const j = await r.json(); if (!r.ok) throw new Error((j.error && j.error.message) || r.status); const t = j.candidates[0].content.parts.map(p => p.text).join('').trim(); $('#t_txt').value = t; }
+    catch (e) { alertMsg('Gemini injoignable : ' + e.message); }
+    b.disabled = false; b.textContent = 'Adapter avec Gemini';
+  });
+  on('#ck_save', () => { R.chk = val('#ck_txt').split('\n').map(s => s.trim()).filter(Boolean); saveRen(R); alertMsg('Check-list enregistrée.'); });
+  on('#ck_reset', () => { R.chk = CHK_DEF.slice(); saveRen(R); VIEWS.rencontres(); });
+};
+
+/* ================= v0.9 : AS — espace participatif (photos, vidéos, articles) et RGPD ================= */
+const MED_COLS = [['propose', 'Proposé', 'élèves du pôle Com’'], ['verif', 'À vérifier', 'coach'], ['valide', 'Validé', 'coach'], ['transmis', 'Transmis', 'conseiller com’'], ['publie', 'Publié', 'conseiller com’']];
+const MED_RULES = [
+  ['Dépôt par les outils du lycée', 'Photos et vidéos sont déposées dans le dossier de l’AS de l’espace Microsoft du lycée (compte élève). Jamais par une messagerie personnelle. L’app ne garde que le titre, le lien et le suivi.'],
+  ['Droit à l’image vérifié', 'Toute personne reconnaissable doit avoir une autorisation à jour auprès du lycée. Sinon : on floute, on recadre ou on ne publie pas.'],
+  ['Pas d’informations qui identifient', 'Pas de nom de famille ni de classe dans les légendes ; un prénom seulement avec accord. Pas de lieu ni d’horaire publié pendant un déplacement.'],
+  ['Photos nettoyées', 'Avant publication, la localisation GPS et les données de l’appareil sont retirées (export ou capture d’écran).'],
+  ['Deux validations', 'Le pôle Com’ propose ; un coach valide ; seul le conseiller communication publie sur les canaux officiels du lycée.'],
+  ['Rien sur le site public de l’app', 'L’app en ligne ne contient aucune photo ni vidéo d’élève.'],
+  ['Retrait sur demande', 'Un élève ou une famille peut demander le retrait d’un contenu à tout moment : il est retiré et le conseiller com’ est prévenu.'],
+  ['Durée limitée', 'Les contenus non publiés sont supprimés en fin d’année scolaire ; l’app le rappelle en juin.']
+];
+const MED_CHK = ['Toutes les personnes reconnaissables ont une autorisation à jour', 'Pas de nom de famille ni de classe dans les légendes', 'Aucun lieu ni horaire de déplacement visible', 'Pas de situation gênante (vestiaire, blessure, chute)', 'Texte bienveillant : on parle du collectif, sans moquerie', 'Données de localisation retirées des photos'];
+const MDV = { edit: null };
+VIEWS.medias = function () {
+  const L = LS.get('medias', []), E = etab(), mo = new Date().getMonth() + 1;
+  const ed = MDV.edit && (MDV.edit === 'new' ? { id: '', type: 'photo', titre: '', desc: '', lien: E.dossierMedias || '', legende: '', pole: 'pôle Com’', statut: 'propose', chk: {}, com: '' } : L.find(x => x.id === MDV.edit));
+  const allOk = x => MED_CHK.every((_, i) => x.chk && x.chk[i]);
+  const tchip = t => `<span class="chip ${t === 'photo' ? 'ca4' : t === 'video' ? 'ca3' : 'ca1'}">${{ photo: 'photo', video: 'vidéo', article: 'article' }[t]}</span>`;
+  const msg = x => `Bonjour,\n\nVoici un contenu de l’${E.asNom} validé par les coachs :\n« ${x.titre} » (${{ photo: 'photos', video: 'vidéo', article: 'article' }[x.type]})${x.desc ? '\n' + x.desc : ''}${x.legende ? '\nLégende proposée : ' + x.legende : ''}\n\nAutorisations à l’image vérifiées, légendes sans nom de famille ni classe, données de localisation retirées.\nDossier : ${x.lien || '[lien du dossier]'}\n\nMerci !`;
+  $('#app').innerHTML = `<main>
+    <div class="row" style="justify-content:space-between"><div><h1>L’AS raconte sa saison</h1><p class="muted" style="margin:4px 0 0">Les élèves du pôle Com’ proposent, les coachs valident, le ${esc(E.comNom)} publie.</p></div><div class="row"><button class="btn" id="md_kit">Kit du community manager</button><button class="btn blue" id="md_new">Nouveau contenu</button></div></div>
+    ${(mo === 6 || mo === 7) && L.some(x => x.statut !== 'publie') ? `<div class="banner"><strong>Fin d’année :</strong> ${L.filter(x => x.statut !== 'publie').length} contenu(s) non publié(s). La règle prévoit de les supprimer du dossier de l’AS et de l’app. <button class="btn" id="md_purge">Les retirer de l’app</button></div>` : ''}
+    <details class="card" ${L.length ? '' : 'open'}><summary style="cursor:pointer;font-weight:700">Les règles de l’espace · RGPD et droit à l’image <span class="chip st-acs" style="white-space:normal">à valider par la direction et le délégué à la protection des données</span></summary>
+      <div class="rules">${MED_RULES.map(([t, d], i) => `<div><strong>${i + 1}. ${t}</strong><span>${d}</span></div>`).join('')}</div></details>
+    ${ed ? `<div class="card" id="mdedit"><h2>${ed.id ? 'Contenu' : 'Nouveau contenu'}</h2>
+      <div class="row"><label class="f">Type<select id="md_t"><option value="photo" ${ed.type === 'photo' ? 'selected' : ''}>Photos</option><option value="video" ${ed.type === 'video' ? 'selected' : ''}>Vidéo</option><option value="article" ${ed.type === 'article' ? 'selected' : ''}>Article</option></select></label><label class="f" style="flex:1 1 280px">Titre<input type="text" id="md_ti" value="${esc(ed.titre)}" placeholder="Match contre…, Notre premier tournoi…"></label><label class="f">Proposé par<input type="text" id="md_po" value="${esc(ed.pole)}" placeholder="pôle Com’"></label></div>
+      <label class="f">Description ou texte de l’article<textarea id="md_de" rows="5">${esc(ed.desc)}</textarea></label>
+      <div class="row"><label class="f" style="flex:1 1 300px">Lien vers le dossier (espace Microsoft du lycée)<input type="text" id="md_li" value="${esc(ed.lien)}" placeholder="https://…"></label><label class="f" style="flex:1 1 300px">Légende proposée (prénoms seulement, avec accord)<input type="text" id="md_le" value="${esc(ed.legende)}"></label></div>
+      <div class="card" style="background:#F7F9FC"><strong>Avant de valider · contrôle du coach</strong>${MED_CHK.map((t, i) => `<label class="chk"><input type="checkbox" data-mdc="${i}" ${ed.chk && ed.chk[i] ? 'checked' : ''}> ${t}</label>`).join('')}</div>
+      <label class="f">Commentaire pour l’élève<input type="text" id="md_co" value="${esc(ed.com)}"></label>
+      <div class="row"><button class="btn go" id="md_save">Enregistrer</button>
+        ${MED_COLS.map(([k, t]) => k === ed.statut ? '' : `<button class="btn" data-mdst="${k}">${k === 'valide' ? 'Valider' : k === 'verif' && ed.statut === 'valide' ? 'Renvoyer à vérifier' : k === 'propose' ? 'Renvoyer à l’élève' : 'Passer à « ' + t + ' »'}</button>`).join('')}
+        ${ed.id ? '<button class="btn warn" id="md_del">Retirer et supprimer</button>' : ''}<button class="btn" id="md_cancel">Fermer</button></div>
+      ${['valide', 'transmis'].includes(ed.statut) ? `<div class="card" style="background:#F7F9FC"><strong>Message pour le ${esc(E.comNom)}</strong><textarea id="md_msg" rows="9">${esc(msg(ed))}</textarea><div class="row"><button class="btn go" id="md_copy">Copier</button>${E.comEmail ? `<a class="btn" style="display:inline-flex;align-items:center;text-decoration:none" href="mailto:${esc(E.comEmail)}?subject=${encodeURIComponent('AS · ' + ed.titre)}&body=${encodeURIComponent(msg(ed))}">Ouvrir dans la messagerie</a>` : '<span class="muted">Ajoute son adresse dans Établissement pour l’envoyer en un clic.</span>'}</div></div>` : ''}
+    </div>` : ''}
+    <div class="kan">${MED_COLS.map(([k, t, who]) => `<section><div class="row" style="justify-content:space-between"><strong>${t}</strong><span class="muted">${who}</span></div>
+      ${L.filter(x => x.statut === k).map(x => `<button class="kc" data-mded="${x.id}"><span class="row" style="gap:6px">${tchip(x.type)}<strong>${esc(x.titre || 'sans titre')}</strong></span><span class="muted">${esc(x.pole || '')}${x.com ? ' · ' + esc(x.com) : ''}</span><span style="font-size:12px;color:${allOk(x) ? '#1F5C2A' : '#7A3E00'};font-weight:600">${allOk(x) ? '✓ contrôles faits' : '! ' + (MED_CHK.length - MED_CHK.filter((_, i) => x.chk && x.chk[i]).length) + ' contrôle(s) à faire'}</span></button>`).join('') || '<span class="muted" style="padding:6px 0">—</span>'}</section>`).join('')}</div>
+  </main>`;
+  const on = (id, f) => { const e = $(id); if (e) e.onclick = f; }, val = id => ($(id) || {}).value || '';
+  const read = () => { const o = { type: val('#md_t'), titre: val('#md_ti').trim(), pole: val('#md_po').trim(), desc: val('#md_de').trim(), lien: val('#md_li').trim(), legende: val('#md_le').trim(), com: val('#md_co').trim(), chk: {} }; $('#app').querySelectorAll('[data-mdc]').forEach(c => { if (c.checked) o.chk[c.dataset.mdc] = true; }); return o; };
+  const save = st => { const o = read(); if (st) o.statut = st; if (MDV.edit === 'new') { o.id = uid(); o.statut = o.statut || 'propose'; o.at = Date.now(); L.push(o); MDV.edit = o.id; } else Object.assign(L.find(x => x.id === MDV.edit), o); LS.set('medias', L); };
+  on('#md_new', () => { MDV.edit = 'new'; VIEWS.medias(); });
+  on('#md_cancel', () => { MDV.edit = null; VIEWS.medias(); });
+  on('#md_save', () => { save(); MDV.edit = null; VIEWS.medias(); });
+  $('#app').querySelectorAll('[data-mdst]').forEach(b => b.onclick = () => {
+    const st = b.dataset.mdst, o = read();
+    if (['valide', 'transmis', 'publie'].includes(st) && !MED_CHK.every((_, i) => o.chk[i])) return alertMsg('Coche d’abord tous les contrôles du coach : un contenu n’est validé que si tout est vérifié.');
+    save(st); VIEWS.medias();
+  });
+  $('#app').querySelectorAll('[data-mded]').forEach(b => b.onclick = () => { MDV.edit = b.dataset.mded; VIEWS.medias(); setTimeout(() => $('#mdedit') && $('#mdedit').scrollIntoView({ behavior: 'smooth' }), 50); });
+  on('#md_del', () => { if (!confirm('Retirer ce contenu ? Pense à le supprimer aussi du dossier de l’AS et à prévenir le conseiller com’ s’il était transmis.')) return; LS.set('medias', L.filter(x => x.id !== MDV.edit)); MDV.edit = null; VIEWS.medias(); });
+  on('#md_copy', async () => { const t = $('#md_msg').value; try { await navigator.clipboard.writeText(t); } catch (e) { $('#md_msg').select(); document.execCommand('copy'); } alertMsg('Message copié.'); });
+  on('#md_purge', () => { if (!confirm('Retirer de l’app tous les contenus non publiés ?')) return; LS.set('medias', L.filter(x => x.statut === 'publie')); VIEWS.medias(); });
+  on('#md_kit', () => printKit());
+};
+function printKit() {
+  const E = etab(), w = window.open('', '_blank'); if (!w) { alertMsg('Autorise les fenêtres pour imprimer.'); return; }
+  w.document.write(`<!doctype html><html lang="fr"><head><meta charset="utf-8"><title>Kit du community manager</title><style>@page{size:A4;margin:14mm}body{font:11pt/1.4 Calibri,Carlito,system-ui,sans-serif;color:#1B2330}h1{font-size:18pt;color:#1E3F94;margin:0 0 2mm}h2{font-size:13pt;color:#1E3F94;margin:5mm 0 2mm}li{margin-bottom:1.5mm}.b{border:1.5px solid #1E3F94;border-radius:3mm;padding:3mm 4mm}</style></head><body>
+    <h1>Kit du community manager · ${esc(E.asNom)} ${esc(E.court)}</h1><p>Ton rôle : raconter la vie de l’AS, mettre en valeur le collectif et le fair-play, en protégeant chacun.</p>
+    <h2>Les 8 règles</h2><ol>${MED_RULES.map(([t, d]) => `<li><strong>${t}.</strong> ${d}</li>`).join('')}</ol>
+    <h2>Avant de proposer un contenu</h2><ul>${MED_CHK.map(t => `<li>☐ ${t}</li>`).join('')}</ul>
+    <h2>Écrire un bon article (5 à 8 lignes)</h2><div class="b"><strong>Quoi ?</strong> le match, l’entraînement, l’événement. <strong>Qui ?</strong> l’équipe (prénoms seulement, avec accord). <strong>Un moment fort</strong> : une action, une émotion, un geste de fair-play. <strong>Une citation</strong> d’un joueur ou d’un coach. <strong>Et après ?</strong> le prochain rendez-vous.</div>
+    <h2>Le circuit</h2><p>Proposé (toi) → À vérifier (coach) → Validé (coach) → Transmis (${esc(E.comNom)}) → Publié (${esc(E.comNom)}).</p>
+    <script>window.onload=()=>setTimeout(()=>window.print(),300)<\/script></body></html>`);
+  w.document.close();
+}
+
+Object.values(PROFILS).forEach(p => { if (p.views !== '*') p.views.push('tout'); });
+(function () {
+  const _r = VIEWS.reglages;
+  VIEWS.reglages = function () { _r(); const s = $('#synccard'); if (s) s.insertAdjacentHTML('beforebegin', allowed('etab') ? '<div class="card"><div class="row" style="justify-content:space-between"><h2>Établissement</h2><a class="btn" href="#etab" style="display:inline-flex;align-items:center;text-decoration:none">Ouvrir les réglages de l’établissement</a></div><span class="muted">Nom, position, seuils de pollution et protocole, installations extérieures, OPUSS, calendrier, modèle pour un autre lycée.</span></div>' : ''); };
 })();
 
 /* ---------- nouvelle version ---------- */
