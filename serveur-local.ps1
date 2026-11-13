@@ -43,6 +43,7 @@ try {
             $ext = [System.IO.Path]::GetExtension($filePath).ToLower()
             $mime = if ($mimeTypes.ContainsKey($ext)) { $mimeTypes[$ext] } else { "application/octet-stream" }
             $response.ContentType = $mime
+            $response.Headers.Add("Cache-Control", "no-store, no-cache, must-revalidate")
             $bytes = [System.IO.File]::ReadAllBytes($filePath)
             $response.ContentLength64 = $bytes.Length
             $response.OutputStream.Write($bytes, 0, $bytes.Length)
