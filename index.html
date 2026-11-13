@@ -50,6 +50,32 @@ table.t{border-collapse:collapse;width:100%;font-size:14px}
 table.t th{text-align:left;font-size:12px;color:var(--mute);font-weight:600;padding:8px;border-bottom:1px solid var(--line)}
 table.t td{padding:8px;border-bottom:1px solid #EEF0F4;vertical-align:top}
 .scroll{overflow-x:auto}
+/* consultation seule (vision seule) */
+body.view-only .rw-only,
+body.view-only [data-rw],
+body.view-only .card.rw-only,
+body.view-only form.rw-only {
+  display: none !important;
+}
+body.view-only input.rw-input,
+body.view-only select.rw-input,
+body.view-only textarea.rw-input {
+  pointer-events: none !important;
+  background: #f8fafc !important;
+  opacity: 0.8 !important;
+}
+.ro-banner {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #EFF6FF;
+  border: 1px solid #BFDBFE;
+  color: #1E40AF;
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-size: 13px;
+  margin-bottom: 12px;
+}
 /* planning grid */
 .pg{display:grid;min-width:980px;font-size:12px}
 .pg .h{font-size:11px;color:var(--mute);padding:4px 2px;border-bottom:1px solid var(--line)}
@@ -230,7 +256,7 @@ window.__CS = {};
 </script>
 <script type="text/plain" id="appmain">
 "use strict";
-const VERSION = '0.9.0';
+const VERSION = '0.9.2';
 const CAL = (window.__CS && window.__CS.calendrier) || {"classes":[{"c":"6A","d":"lun","s":"08:00","e":"10:00","qz":false},{"c":"4A","d":"lun","s":"10:30","e":"12:30","qz":false},{"c":"5C","d":"lun","s":"10:30","e":"12:30","qz":false},{"c":"5A","d":"lun","s":"13:30","e":"15:30","qz":false},{"c":"6C","d":"mar","s":"08:00","e":"10:00","qz":false},{"c":"3A","d":"mar","s":"10:30","e":"12:30","qz":false},{"c":"3B","d":"mar","s":"10:30","e":"12:30","qz":false},{"c":"5B","d":"mar","s":"13:30","e":"15:30","qz":false},{"c":"6B","d":"mer","s":"10:30","e":"12:30","qz":false},{"c":"3C","d":"mer","s":"10:30","e":"12:30","qz":true},{"c":"4B","d":"mer","s":"10:30","e":"12:30","qz":true},{"c":"6A","d":"jeu","s":"08:00","e":"10:00","qz":false},{"c":"5B","d":"jeu","s":"10:00","e":"12:00","qz":true},{"c":"5A","d":"jeu","s":"10:00","e":"12:00","qz":true},{"c":"4A","d":"jeu","s":"10:00","e":"12:00","qz":true},{"c":"3A","d":"jeu","s":"10:00","e":"12:00","qz":true},{"c":"5C","d":"jeu","s":"13:30","e":"15:30","qz":true},{"c":"3B","d":"jeu","s":"13:30","e":"15:30","qz":true},{"c":"1B","d":"jeu","s":"15:30","e":"17:30","qz":false},{"c":"1A","d":"jeu","s":"15:30","e":"17:30","qz":false},{"c":"2A","d":"jeu","s":"15:30","e":"17:30","qz":false},{"c":"6C","d":"ven","s":"08:00","e":"10:00","qz":false},{"c":"3C","d":"ven","s":"10:30","e":"12:30","qz":false},{"c":"4B","d":"ven","s":"10:30","e":"12:30","qz":false},{"c":"6B","d":"ven","s":"13:30","e":"15:30","qz":false},{"c":"2B","d":"ven","s":"15:30","e":"17:30","qz":false},{"c":"Term","d":"ven","s":"15:30","e":"17:30","qz":false},{"c":"Term","d":"ven","s":"15:30","e":"17:30","qz":false}],"cal":{"2026-09-01":[[4,"DF"],[5,"Bad"],[6,"combiné"],[7,"Combiné"]],"2026-09-02":[[8,"DF"],[9,"combiné"]],"2026-09-03":[[11,"Gym"],[13,"Combiné"],[15,"Bad"],[16,"Bad"],[18,"Gym"],[19,"Bad"],[20,"DF"]],"2026-09-04":[[21,"jeux collectifs"],[22,"combiné"],[23,"VB"],[24,"jeux collectifs"],[25,"Danse"],[26,"VB"],[27,"DF"]],"2026-09-07":[[0,"DF"],[1,"DF"],[2,"Bad"],[3,"Combiné"]],"2026-09-08":[[4,"DF"],[5,"Bad"],[6,"combiné"],[7,"Combiné"]],"2026-09-09":[[8,"DF"],[10,"VB"]],"2026-09-10":[[11,"Gym"],[12,"Combiné"],[14,"DF"],[17,"combiné"],[18,"Gym"],[19,"Bad"],[20,"DF"]],"2026-09-11":[[21,"jeux collectifs"],[22,"combiné"],[23,"VB"],[24,"jeux collectifs"],[25,"Danse"],[26,"VB"],[27,"DF"]],"2026-09-14":[[0,"DF"],[1,"DF"],[2,"Bad"],[3,"Combiné"]],"2026-09-15":[[4,"DF"],[5,"Bad"],[6,"combiné"],[7,"Combiné"]],"2026-09-16":[[8,"DF"],[9,"combiné"]],"2026-09-17":[[11,"Gym"],[13,"Combiné"],[15,"Bad"],[16,"Bad"],[18,"Gym"],[19,"Bad"],[20,"DF"]],"2026-09-18":[[21,"jeux collectifs"],[22,"combiné"],[23,"VB"],[24,"jeux collectifs"],[25,"Danse"],[26,"VB"],[27,"DF"]],"2026-09-21":[[0,"DF"],[1,"DF"],[2,"Bad"],[3,"Combiné"]],"2026-09-22":[[4,"DF"],[5,"Bad"],[6,"combiné"],[7,"Combiné"]],"2026-09-23":[[8,"DF"],[10,"VB"]],"2026-09-24":[[11,"Gym"],[12,"Combiné"],[14,"DF"],[17,"combiné"],[18,"Gym"],[19,"Bad"],[20,"DF"]],"2026-09-28":[[0,"DF"],[1,"DF"],[2,"Bad"],[3,"Combiné"]],"2026-09-29":[[4,"DF"],[5,"Bad"],[6,"combiné"],[7,"Combiné"]],"2026-09-30":[[8,"DF"],[9,"combiné"]],"2026-10-08":[[11,"Gym"],[12,"Combiné"],[14,"DF"],[17,"combiné"],[18,"Gym"],[19,"Bad"],[20,"DF"]],"2026-10-09":[[21,"jeux collectifs"],[22,"combiné"],[23,"VB"],[24,"jeux collectifs"],[25,"Danse"],[26,"VB"],[27,"DF"]],"2026-10-12":[[0,"DF"],[1,"DF"],[2,"Bad"],[3,"Combiné"]],"2026-10-13":[[4,"DF"],[5,"Bad"],[6,"combiné"],[7,"Combiné"]],"2026-10-14":[[8,"DF"],[9,"combiné"]],"2026-10-15":[[11,"Gym"],[13,"Combiné"],[15,"Bad"],[16,"Bad"],[18,"Gym"],[19,"Bad"],[20,"DF"]],"2026-10-16":[[21,"jeux collectifs"],[22,"combiné"],[23,"VB"],[24,"jeux collectifs"],[25,"Danse"],[26,"VB"],[27,"DF"]],"2026-10-19":[[0,"DF"],[1,"DF"],[2,"Bad"],[3,"Combiné"]],"2026-10-20":[[4,"DF"],[5,"Bad"],[6,"combiné"],[7,"Combiné"]],"2026-10-21":[[8,"DF"],[10,"VB"]],"2026-10-22":[[11,"Gym"],[12,"Combiné"],[14,"DF"],[17,"combiné"],[18,"Gym"],[19,"Bad"],[20,"DF"]],"2026-10-23":[[21,"jeux collectifs"],[22,"combiné"],[23,"VB"],[24,"jeux collectifs"],[25,"Danse"],[26,"VB"],[27,"DF"]],"2026-10-26":[[0,"DF"],[1,"DF"],[2,"Bad"],[3,"Combiné"]],"2026-10-27":[[4,"DF"],[5,"Bad"],[6,"combiné"],[7,"Combiné"]],"2026-10-28":[[8,"DF"],[9,"combiné"]],"2026-10-29":[[11,"Gym"],[13,"Combiné"],[15,"Bad"],[16,"Bad"],[18,"Gym"],[19,"Bad"],[20,"DF"]],"2026-10-30":[[21,"jeux collectifs"],[22,"combiné"],[23,"VB"],[24,"jeux collectifs"],[25,"Danse"],[26,"VB"],[27,"DF"]],"2026-11-02":[[0,"DF"],[1,"Boxe"],[2,"Handball"],[3,"Gym"]],"2026-11-03":[[4,"DF"],[5,"Handball"],[6,"cross training"],[7,"Handball"]],"2026-11-04":[[8,"DF"],[10,"Boxe"]],"2026-11-05":[[11,"Gym"],[12,"Handball"],[14,"Boxe"],[17,"cross training"],[18,"Gym"],[19,"Bad"],[20,"DF"]],"2026-11-06":[[21,"jeux collectifs"],[22,"Handball"],[23,"Boxe"],[24,"jeux collectifs"],[25,"Danse"],[26,"VB"],[27,"DF"]],"2026-11-16":[[0,"DF"],[1,"Boxe"],[2,"Handball"],[3,"Gym"]],"2026-11-17":[[4,"DF"],[5,"Handball"],[6,"cross training"],[7,"Handball"]],"2026-11-18":[[8,"DF"],[9,"Handball"]],"2026-11-19":[[11,"Gym"],[13,"Gym"],[15,"Handball"],[16,"Handball"],[18,"Gym"],[19,"Bad"],[20,"DF"]],"2026-11-20":[[21,"jeux collectifs"],[22,"Handball"],[23,"Boxe"],[24,"jeux collectifs"],[25,"Danse"],[26,"VB"],[27,"DF"]],"2026-11-23":[[0,"DF"],[1,"Boxe"],[2,"Handball"],[3,"Gym"]],"2026-11-24":[[4,"DF"],[5,"Handball"],[6,"cross training"],[7,"Handball"]],"2026-11-25":[[8,"DF"],[10,"Boxe"]],"2026-11-26":[[11,"Gym"],[12,"Handball"],[14,"Boxe"],[17,"cross training"],[18,"Gym"],[19,"Bad"],[20,"DF"]],"2026-11-27":[[21,"jeux collectifs"],[22,"Handball"],[23,"Boxe"],[24,"jeux collectifs"],[25,"Danse"],[26,"VB"],[27,"Eval DF"]],"2026-11-30":[[0,"Danse"],[1,"Boxe"],[2,"Handball"],[3,"Gym"]],"2026-12-01":[[4,"Danse"],[5,"Handball"],[6,"cross training"],[7,"Handball"]],"2026-12-02":[[8,"Danse"],[9,"Handball"]],"2026-12-03":[[11,"jeux collectifs"],[13,"Gym"],[15,"Handball"],[16,"Handball"],[18,"Bad"],[19,"cross training"],[20,"Danse"]],"2026-12-04":[[21,"Gym"],[22,"Handball"],[23,"Boxe"],[24,"Basket"],[25,"VB"],[26,"Eval VB"],[27,"Danse"]],"2026-12-07":[[0,"Danse"],[1,"Boxe"],[2,"Handball"],[3,"Gym"]],"2026-12-08":[[4,"Danse"],[5,"Handball"],[6,"cross training"],[7,"Handball"]],"2026-12-09":[[8,"Danse"],[10,"Boxe"]],"2026-12-10":[[11,"jeux collectifs"],[12,"Handball"],[14,"Boxe"],[17,"cross training"],[18,"Bad"],[19,"cross training"],[20,"Danse"]],"2026-12-11":[[21,"Gym"],[22,"Handball"],[23,"Boxe"],[24,"Basket"],[25,"VB"],[26,"cross training"],[27,"Danse"]],"2026-12-14":[[0,"Danse"],[1,"Boxe"],[2,"Handball"],[3,"Gym"]],"2026-12-15":[[4,"Danse"],[5,"Handball"],[6,"cross training"],[7,"Handball"]],"2026-12-16":[[8,"Danse"],[9,"Handball"]],"2026-12-17":[[11,"jeux collectifs"],[13,"Gym"],[15,"Handball"],[16,"Handball"],[18,"Bad"],[19,"cross training"],[20,"Danse"]],"2026-12-18":[[21,"Gym"],[22,"Handball"],[23,"Boxe"],[24,"Basket"],[25,"VB"],[26,"cross training"],[27,"Danse"]],"2027-01-04":[[0,"Danse"],[1,"Boxe"],[2,"Handball"],[3,"Gym"]],"2027-01-05":[[4,"Danse"],[5,"Handball"],[6,"cross training"],[7,"Handball"]],"2027-01-06":[[8,"Danse"],[10,"Boxe"]],"2027-01-07":[[11,"jeux collectifs"],[12,"Handball"],[14,"Boxe"],[17,"cross training"],[18,"Bad"],[19,"cross training"],[20,"Danse"]],"2027-01-08":[[21,"Gym"],[22,"Handball"],[23,"Boxe"],[24,"Basket"],[25,"VB"],[26,"cross training"],[27,"Danse"]],"2027-01-11":[[0,"Danse"],[1,"Boxe"],[2,"Handball"],[3,"Gym"]],"2027-01-12":[[4,"Danse"],[5,"Handball"],[6,"cross training"],[7,"Handball"]],"2027-01-13":[[8,"Danse"],[9,"Handball"]],"2027-01-14":[[11,"jeux collectifs"],[13,"Gym"],[15,"Handball"],[16,"Handball"],[18,"Bad"],[19,"cross training"],[20,"Danse"]],"2027-01-15":[[21,"Gym"],[22,"Handball"],[23,"Boxe"],[24,"Basket"],[25,"VB"],[26,"cross training"],[27,"Danse"]],"2027-01-18":[[0,"Danse"],[1,"VB"],[2,"Gym"],[3,"Handball"]],"2027-01-19":[[4,"Danse"],[5,"cross training"],[6,"Handball"],[7,"Gym"]],"2027-01-20":[[8,"Danse"],[10,"Danse"]],"2027-01-21":[[11,"jeux collectifs"],[12,"Gym"],[14,"VB"],[17,"Handball"],[18,"Bad"],[19,"cross training"],[20,"Danse"]],"2027-01-22":[[21,"Gym"],[22,"cross training"],[23,"Danse"],[24,"Basket"],[25,"VB"],[26,"cross training"],[27,"Danse"]],"2027-01-25":[[0,"Danse"],[1,"VB"],[2,"Gym"],[3,"Handball"]],"2027-01-26":[[4,"Danse"],[5,"cross training"],[6,"Handball"],[7,"Gym"]],"2027-01-27":[[8,"Danse"],[9,"cross training"]],"2027-01-28":[[11,"jeux collectifs"],[13,"Handball"],[15,"cross training"],[16,"Gym"],[18,"Bad"],[19,"cross training"],[20,"Danse"]],"2027-01-29":[[21,"Gym"],[22,"cross training"],[23,"Danse"],[24,"Basket"],[25,"VB"],[26,"cross training"],[27,"Danse"]],"2027-02-01":[[0,"Danse"],[1,"VB"],[2,"Gym"],[3,"Handball"]],"2027-02-02":[[4,"Danse"],[5,"cross training"],[6,"Handball"],[7,"Gym"]],"2027-02-03":[[8,"Danse"],[10,"Danse"]],"2027-02-04":[[11,"jeux collectifs"],[12,"Gym"],[14,"VB"],[17,"Handball"],[18,"Bad"],[19,"cross training"],[20,"Danse"]],"2027-02-22":[[0,"Danse"],[1,"VB"],[2,"Gym"],[3,"Handball"]],"2027-02-23":[[4,"Danse"],[5,"cross training"],[6,"Handball"],[7,"Gym"]],"2027-02-24":[[8,"Danse"],[9,"cross training"]],"2027-02-25":[[11,"jeux collectifs"],[13,"Handball"],[15,"cross training"],[16,"Gym"],[18,"Bad"],[19,"cross training"],[20,"Danse"]],"2027-02-26":[[21,"Gym"],[22,"cross training"],[23,"Danse"],[24,"Basket"],[25,"VB"],[26,"cross training"],[27,"Danse"]],"2027-03-01":[[0,"Danse"],[1,"VB"],[2,"Gym"],[3,"Handball"]],"2027-03-02":[[4,"Danse"],[5,"cross training"],[6,"Handball"],[7,"Gym"]],"2027-03-03":[[8,"Danse"],[10,"Danse"]],"2027-03-04":[[11,"jeux collectifs"],[12,"Gym"],[14,"VB"],[17,"Handball"],[18,"Bad"],[19,"cross training"],[20,"Danse"]],"2027-03-05":[[21,"Gym"],[22,"cross training"],[23,"Danse"],[24,"Basket"],[25,"VB"],[26,"Eval Cross training"],[27,"Eval Danse"]],"2027-03-08":[[0,"Basket"],[1,"VB"],[2,"Gym"],[3,"Handball"]],"2027-03-09":[[4,"Basket"],[5,"cross training"],[6,"Handball"],[7,"Gym"]],"2027-03-10":[[8,"Gym"],[9,"cross training"]],"2027-03-11":[[11,"Natation"],[13,"Handball"],[15,"cross training"],[16,"Gym"],[18,"cross training"],[19,"Gym"],[20,"VB"]],"2027-03-12":[[21,"Natation"],[22,"cross training"],[23,"Danse"],[24,"Natation"],[25,"DF"],[26,"combiné"],[27,"Bad"]],"2027-03-15":[[0,"Basket"],[1,"VB"],[2,"Gym"],[3,"Handball"]],"2027-03-16":[[4,"Basket"],[5,"cross training"],[6,"Handball"],[7,"Gym"]],"2027-03-17":[[8,"Gym"],[10,"Danse"]],"2027-03-18":[[11,"Natation"],[12,"Gym"],[14,"VB"],[17,"Handball"],[18,"cross training"],[19,"Gym"],[20,"VB"]],"2027-03-19":[[21,"Natation"],[22,"cross training"],[23,"Danse"],[24,"Natation"],[25,"DF"],[26,"combiné"],[27,"Bad"]],"2027-03-22":[[0,"Basket"],[1,"VB"],[2,"Gym"],[3,"Handball"]],"2027-03-23":[[4,"Basket"],[5,"cross training"],[6,"Handball"],[7,"Gym"]],"2027-03-24":[[8,"Gym"],[9,"cross training"]],"2027-03-25":[[11,"Natation"],[13,"Handball"],[15,"cross training"],[16,"Gym"],[18,"cross training"],[19,"Gym"],[20,"VB"]],"2027-03-26":[[21,"Natation"],[22,"cross training"],[23,"Danse"],[24,"Natation"],[25,"DF"],[26,"combiné"],[27,"Bad"]],"2027-03-29":[[0,"Basket"],[1,"Danse"],[2,"Combiné"],[3,"Bad"]],"2027-03-30":[[4,"Basket"],[5,"combiné"],[6,"Bad"],[7,"Bad"]],"2027-03-31":[[8,"Gym"],[10,"DF"]],"2027-04-01":[[11,"Natation"],[12,"Bad"],[14,"Danse"],[17,"Bad"],[18,"cross training"],[19,"Gym"],[20,"VB"]],"2027-04-06":[[4,"Basket"],[5,"combiné"],[6,"Bad"],[7,"Bad"]],"2027-04-07":[[8,"Gym"],[9,"Bad"]],"2027-04-08":[[11,"Natation"],[13,"Bad"],[15,"combiné"],[16,"Combiné"],[18,"cross training"],[19,"Gym"],[20,"VB"]],"2027-04-09":[[21,"Natation"],[22,"Bad"],[23,"DF"],[24,"Natation"],[25,"DF"],[26,"combiné"],[27,"Bad"]],"2027-04-12":[[0,"Basket"],[1,"Danse"],[2,"Combiné"],[3,"Bad"]],"2027-04-13":[[4,"Basket"],[5,"combiné"],[6,"Bad"],[7,"Bad"]],"2027-04-14":[[8,"Gym"],[10,"DF"]],"2027-04-15":[[11,"Natation"],[12,"Bad"],[14,"Danse"],[17,"Bad"],[18,"cross training"],[19,"Gym"],[20,"VB"]],"2027-04-16":[[21,"Natation"],[22,"Bad"],[23,"DF"],[24,"Natation"],[25,"DF"],[26,"combiné"],[27,"Bad"]],"2027-04-19":[[0,"Basket"],[1,"Danse"],[2,"Combiné"],[3,"Bad"]],"2027-04-20":[[4,"Basket"],[5,"combiné"],[6,"Bad"],[7,"Bad"]],"2027-04-21":[[8,"Gym"],[9,"Bad"]],"2027-04-22":[[11,"Natation"],[13,"Bad"],[15,"combiné"],[16,"Combiné"],[18,"cross training"],[19,"Gym"],[20,"VB"]],"2027-04-23":[[21,"Natation"],[22,"Bad"],[23,"DF"],[24,"Natation"],[25,"DF"],[26,"combiné"],[27,"Bad"]],"2027-05-10":[[0,"Basket"],[1,"Danse"],[2,"Combiné"],[3,"Bad"]],"2027-05-11":[[4,"Basket"],[5,"combiné"],[6,"Bad"],[7,"Bad"]],"2027-05-12":[[8,"Gym"],[10,"DF"]],"2027-05-13":[[11,"Natation"],[12,"Bad"],[14,"Danse"],[17,"Bad"],[18,"cross training"],[19,"Gym"],[20,"VB"]],"2027-05-14":[[21,"Natation"],[22,"Bad"],[23,"DF"],[24,"Natation"],[25,"DF"],[26,"combiné"],[27,"Bad"]],"2027-05-17":[[0,"Basket"],[1,"Danse"],[2,"Combiné"],[3,"Bad"]],"2027-05-18":[[4,"Basket"],[5,"combiné"],[6,"Bad"],[7,"Bad"]],"2027-05-19":[[8,"Gym"],[9,"Bad"]],"2027-05-20":[[11,"Natation"],[13,"Bad"],[15,"combiné"],[16,"Combiné"],[18,"cross training"],[19,"Gym"],[20,"VB"]],"2027-05-21":[[21,"Natation"],[22,"Bad"],[23,"DF"],[24,"Natation"],[25,"DF"],[26,"combiné"],[27,"Bad"]],"2027-05-24":[[0,"Basket"],[1,"Danse"],[2,"Combiné"],[3,"Bad"]],"2027-05-25":[[4,"Basket"],[5,"combiné"],[6,"Bad"],[7,"Bad"]],"2027-05-26":[[8,"Gym"],[10,"DF"]],"2027-05-27":[[11,"Natation"],[12,"Bad"],[14,"Danse"],[17,"Bad"],[18,"cross training"],[19,"Gym"],[20,"VB"]],"2027-05-28":[[21,"Natation"],[22,"Bad"],[23,"DF"],[24,"Natation"],[25,"DF"],[26,"Eval Combiné"],[27,"Eval Bad"]],"2027-05-31":[[0,"Basket"],[1,"Danse"],[2,"Combiné"],[3,"Bad"]],"2027-06-01":[[4,"Basket"],[5,"combiné"],[6,"Bad"],[7,"Bad"]],"2027-06-02":[[8,"Gym"],[9,"Bad"]],"2027-06-03":[[11,"jeux collectifs"],[13,"Bad"],[15,"combiné"],[16,"Combiné"],[18,"cross training"],[19,"Gym"],[20,"VB"]],"2027-06-04":[[21,"Natation"],[22,"Bad"],[23,"DF"],[24,"jeux collectifs"],[25,"DF"]]},"feries":["2026-09-25","2027-04-02","2027-04-05","2027-06-09"],"weeks":{"2026-08-31":1,"2026-09-07":2,"2026-09-14":1,"2026-09-21":2,"2026-09-28":1,"2026-10-05":2,"2026-10-12":1,"2026-10-19":2,"2026-10-26":1,"2026-11-02":2,"2026-11-16":1,"2026-11-23":2,"2026-11-30":1,"2026-12-07":2,"2026-12-14":1,"2027-01-04":2,"2027-01-11":1,"2027-01-18":2,"2027-01-25":1,"2027-02-01":2,"2027-02-22":1,"2027-03-01":2,"2027-03-08":1,"2027-03-15":2,"2027-03-22":1,"2027-03-29":2,"2027-04-05":1,"2027-04-12":2,"2027-04-19":1,"2027-05-10":2,"2027-05-17":1,"2027-05-24":2,"2027-05-31":1,"2027-06-07":2,"2027-06-14":1,"2027-06-21":2,"2027-06-28":1}};
 const $ = (s, el = document) => el.querySelector(s);
 const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
@@ -446,14 +472,42 @@ function route() {
   const v = (location.hash || '#accueil').slice(1).split('?')[0];
   current = VIEWS[v] ? v : 'accueil';
   if (current !== 'ecran' && !profil() && current !== 'profil') { current = 'profil'; }
+  const curProf = profil();
+  if (current !== 'ecran' && current !== 'profil' && curProf && !isProfileUnlocked(curProf)) {
+    renderNav(current); openDrawer(false);
+    clearInterval(timer); timer = null;
+    document.body.classList.remove('tv');
+    document.body.classList.remove('view-only');
+    $('#wkbadge').textContent = weekLabel(new Date());
+    renderProfileLock(curProf, current);
+    return;
+  }
   if (!allowed(current)) current = 'accueil';
+  const ro = !canModify(current) && current !== 'profil' && current !== 'accueil' && current !== 'ecran' && current !== 'tout';
+  document.body.classList.toggle('view-only', ro);
   renderNav(current); openDrawer(false);
   clearInterval(timer); timer = null;
   document.body.classList.toggle('tv', current === 'ecran');
   $('#wkbadge').textContent = weekLabel(new Date());
   VIEWS[current]();
+  if (ro) {
+    const m = $('#app main');
+    if (m && !m.querySelector('.ro-banner')) {
+      m.insertAdjacentHTML('afterbegin', `<div class="banner ro-banner"><span style="font-size:20px;line-height:1">👁</span><div style="flex:1"><strong>Mode consultation seule (Vision seule)</strong> · Connecté avec le profil <em>${esc((PROFILS[curProf] || {}).t || 'visiteur')}</em>. Tu peux consulter les informations de cette rubrique, mais la modification est désactivée.</div></div>`);
+    }
+  }
 }
 window.addEventListener('hashchange', route);
+document.addEventListener('click', e => {
+  if (!document.body.classList.contains('view-only')) return;
+  const t = e.target.closest('button, a, input[type=submit]');
+  if (!t) return;
+  if (t.matches('.rw-only, [data-rw], [data-adel], [data-mdel], [data-tdel], [data-rdel], [data-bdel], [data-tx], #minv, #pg_go, #an_add, #sv_new, #sv_add, #sv_del, #m_new, #c_new, #md_new, #radd, #padd, #rdel')) {
+    e.preventDefault();
+    e.stopPropagation();
+    alertMsg('Action non autorisée en mode consultation seule (vision seule).');
+  }
+}, true);
 if ('serviceWorker' in navigator && /^https?:/.test(location.protocol)) navigator.serviceWorker.register('sw.js').catch(() => {});
 
 function needPlanning() {
@@ -613,7 +667,7 @@ VIEWS.incidents = function () {
   const lieux = insts.length ? insts : ['Grand gymnase', 'Salle de gym', 'Dojo', 'Terrain de foot', 'Piste', 'Sautoir', 'Terrain basket ext'];
   app.innerHTML = `<main>
     <h1>Incidents</h1>
-    <form class="card" id="incf">
+    <form class="card rw-only" id="incf">
       <h2>Signaler</h2>
       <div class="row" role="group" aria-label="Type">
         ${['Matériel abîmé', 'Défaut de rangement', 'Sécurité'].map((t, i) => `<label class="btn" style="display:flex;align-items:center;gap:6px"><input type="radio" name="type" value="${t}" ${i ? '' : 'checked'}> ${t}</label>`).join('')}
@@ -1158,7 +1212,7 @@ VIEWS.materiel = function () {
     <div class="row" style="justify-content:space-between"><h1>Matériel et commandes</h1>
       <div class="row" role="tablist">${[['commandes', 'Commandes'], ['inventaire', 'Inventaire et usure']].map(([k, t]) => `<button class="btn ${MATV.tab === k ? 'on' : ''}" data-tab="${k}">${t}</button>`).join('')}</div></div>
     ${!MAT.length ? `<div class="card"><h2>Commencer</h2><p class="muted" style="margin:0">Importe ton fichier « Inventaire et Commande Matériel EPS » : l’onglet AS va dans la trésorerie AS, l’autre dans la trésorerie EPS. Les totaux sont recalculés correctement (prix écrits en texte compris).</p>
-      <div class="row"><label class="btn blue" style="display:flex;align-items:center;gap:8px">Importer l’Excel <input type="file" id="minv" accept=".xlsx,.xls" style="max-width:220px"></label><button class="btn" data-new="1">Ou ajouter une demande à la main</button></div></div>` : ''}
+      <div class="row rw-only"><label class="btn blue" style="display:flex;align-items:center;gap:8px">Importer l’Excel <input type="file" id="minv" accept=".xlsx,.xls" style="max-width:220px"></label><button class="btn" data-new="1">Ou ajouter une demande à la main</button></div></div>` : ''}
     ${MAT.length ? `<div class="row" role="group" aria-label="Trésorerie">${['EPS', 'AS', 'Toutes'].map(t => `<button class="btn ${MATV.tres === t ? 'on' : ''}" data-tres="${t}">${t === 'Toutes' ? 'Les deux trésoreries' : 'Trésorerie ' + t}</button>`).join('')}</div>` : ''}
     ${MAT.length && MATV.tab === 'commandes' ? `
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px">
@@ -1169,7 +1223,7 @@ VIEWS.materiel = function () {
       <div class="row" style="justify-content:space-between">
         <label class="f">Statut<select id="mfil"><option value="tous">Tous</option>${STATUTS.map(s => `<option ${MATV.filtre === s ? 'selected' : ''}>${s}</option>`).join('')}</select></label>
         <div class="row" style="align-self:flex-end">
-          <button class="btn blue" data-new="1">Nouvelle demande</button>
+          <button class="btn blue rw-only" data-new="1">Nouvelle demande</button>
           <button class="btn go" id="mdaf">Demande à la DAF (Excel)</button>
           <button class="btn" id="machat">Fiche pour la responsable des achats</button>
         </div>
@@ -1177,8 +1231,8 @@ VIEWS.materiel = function () {
       <div class="scroll"><table class="t" style="min-width:900px"><tr><th>Article</th><th>Demandeur</th><th>Qté</th><th>P.U.</th><th>Total</th><th>Prio.</th><th>Statut</th><th></th></tr>
       ${shown.map(i => `<tr><td><strong>${esc(i.des)}</strong>${i.spec ? `<br><span class="muted">${esc(i.spec)}</span>` : ''}<br><span class="chip ca${caOf(i.apsa)}">${esc(i.apsa || i.cat || '—')}</span> ${MATV.tres === 'Toutes' ? `<span class="chip ca0">${i.tres}</span>` : ''} ${i.variante ? '<span class="chip ca2">variante notée</span>' : (i.statut === 'Validé' ? '<span class="chip ca1">variante à préciser</span>' : '')} ${i.img ? '<span class="chip ca0">capture</span>' : ''}</td>
         <td>${esc(i.demandeur || '')}</td><td>${i.qte ?? '—'}</td><td>${yuan(num(i.pu))}</td><td><strong>${yuan(lineTotal(i))}</strong></td><td>${i.prio ?? ''}</td>
-        <td><select data-st="${i.id}" aria-label="Statut">${STATUTS.map(s => `<option ${s === i.statut ? 'selected' : ''}>${s}</option>`).join('')}</select></td>
-        <td><button class="btn" data-ed="${i.id}">Modifier</button></td></tr>`).join('') || '<tr><td colspan="8" class="empty">Aucune ligne.</td></tr>'}
+        <td><select data-st="${i.id}" class="rw-only" aria-label="Statut">${STATUTS.map(s => `<option ${s === i.statut ? 'selected' : ''}>${s}</option>`).join('')}</select></td>
+        <td><button class="btn rw-only" data-ed="${i.id}">Modifier</button></td></tr>`).join('') || '<tr><td colspan="8" class="empty">Aucune ligne.</td></tr>'}
       </table></div>
     </div>` : ''}
     ${MAT.length && MATV.tab === 'inventaire' ? `
@@ -1189,13 +1243,13 @@ VIEWS.materiel = function () {
       </div>
       <div class="scroll"><table class="t" style="min-width:820px"><tr><th>Article</th><th>Lieu</th><th>Bon état</th><th>Usé</th><th>HS</th><th>Total</th></tr>
       ${list.filter(i => MATV.lieu === 'tous' || (i.lieu || '') === MATV.lieu).map(i => `<tr><td><strong>${esc(i.des)}</strong><br><span class="muted">${esc(i.apsa || '')}</span></td>
-        <td><input type="text" data-inv="${i.id}" data-k="lieu" value="${esc(i.lieu || '')}" list="lieux" style="width:160px"></td>
-        ${['bon', 'use', 'hs'].map(k => `<td><input type="number" min="0" data-inv="${i.id}" data-k="${k}" value="${i[k] ?? ''}" style="width:80px;min-height:40px;border:1px solid #CDD3DD;border-radius:8px;padding:0 6px"></td>`).join('')}
+        <td><input type="text" class="rw-input" data-inv="${i.id}" data-k="lieu" value="${esc(i.lieu || '')}" list="lieux" style="width:160px"></td>
+        ${['bon', 'use', 'hs'].map(k => `<td><input type="number" class="rw-input" min="0" data-inv="${i.id}" data-k="${k}" value="${i[k] ?? ''}" style="width:80px;min-height:40px;border:1px solid #CDD3DD;border-radius:8px;padding:0 6px"></td>`).join('')}
         <td><strong>${(num(i.bon) || 0) + (num(i.use) || 0) + (num(i.hs) || 0)}</strong></td></tr>`).join('')}
       </table><datalist id="lieux">${lieux.map(l => `<option value="${esc(l)}">`).join('')}</datalist></div>
       <span class="muted">Quand une commande passe en « Reçu », la quantité s’ajoute au stock en bon état.</span>
     </div>` : ''}
-    ${ed ? `<div class="card" id="medit" style="border:2px solid var(--accent)">
+    ${ed ? `<div class="card rw-only" id="medit" style="border:2px solid var(--accent)">
       <h2>${ed.nouveau ? 'Nouvelle demande' : 'Modifier la demande'}</h2>
       <div class="row">
         <label class="f">Trésorerie<select id="e_tres">${['EPS', 'AS'].map(t => `<option ${ed.tres === t ? 'selected' : ''}>${t}</option>`).join('')}</select></label>
@@ -1334,7 +1388,7 @@ VIEWS.travaux = function () {
   const app = $('#app');
   app.innerHTML = `<main>
     <h1>Demandes de travaux</h1>
-    <form class="card" id="trf">
+    <form class="card rw-only" id="trf">
       <h2>Nouvelle demande</h2>
       <div class="row">
         <label class="f" style="flex:1 1 180px">Où ?<select name="lieu">${lieuxList().map(l => `<option>${esc(l)}</option>`).join('')}<option>Vestiaires</option><option>Local matériel</option><option>Autre</option></select></label>
@@ -1381,7 +1435,7 @@ async function renderTrav() {
       <span class="muted">${new Date(t.date).toLocaleDateString('fr-FR')} · ${esc(t.dem)}${t.nom ? ' (' + esc(t.nom) + ')' : ''}</span>
     </div>
     <div data-tph="${t.photo ? t.id : ''}"></div>
-    <div class="row"><select data-tst="${t.id}" aria-label="Statut">${TSTAT.map(s => `<option ${s === t.statut ? 'selected' : ''}>${s}</option>`).join('')}</select><button class="btn" data-tdel="${t.id}">Supprimer</button></div>
+    <div class="row rw-only"><select data-tst="${t.id}" aria-label="Statut">${TSTAT.map(s => `<option ${s === t.statut ? 'selected' : ''}>${s}</option>`).join('')}</select><button class="btn" data-tdel="${t.id}">Supprimer</button></div>
   </div>`).join('');
   el.querySelectorAll('[data-tst]').forEach(s => s.onchange = () => { TRAV.find(t => t.id === s.dataset.tst).statut = s.value; saveTrav(); renderTrav(); });
   el.querySelectorAll('[data-tdel]').forEach(b => b.onclick = () => { if (confirm('Supprimer cette demande ?')) { TRAV = TRAV.filter(t => t.id !== b.dataset.tdel); saveTrav(); renderTrav(); } });
@@ -1747,19 +1801,19 @@ VIEWS.reunions = function () {
   app.innerHTML = `<main>
     <div class="row" style="justify-content:space-between"><h1>Réunions</h1>
       <div class="row">${REU.length ? `<select id="rsel">${[...REU].sort((a, b) => b.date.localeCompare(a.date)).map(x => `<option value="${x.id}" ${x.id === REUV.id ? 'selected' : ''}>${frd(x.date)} · ${esc(x.titre)}</option>`).join('')}</select>` : ''}</div></div>
-    <div class="card"><h2>Nouvelle réunion</h2><div class="row">
+    <div class="card rw-only"><h2>Nouvelle réunion</h2><div class="row">
       <label class="f">Titre<select id="rt"><option>Réunion d’équipe EPS</option><option>Liaison cycle 3 (avec le primaire)</option><option>Commission matériel</option><option>Conseil pédagogique</option></select></label>
       <label class="f">Date<input type="date" id="rd"></label><label class="f">Heure<input type="text" id="rh" placeholder="12h30" style="width:90px"></label><label class="f">Lieu<input type="text" id="rl" style="width:140px"></label>
       <button class="btn blue" id="radd" style="align-self:flex-end">Créer</button></div></div>
     ${r ? `<div class="card">
       <div class="row" style="justify-content:space-between"><div><h2>${esc(r.titre)} · ${frd(r.date)}${r.heure ? ' · ' + esc(r.heure) : ''}${r.lieu ? ' · ' + esc(r.lieu) : ''}</h2><span class="muted">${pts.length} point(s) · ${tot} min prévues</span></div>
-        <div class="row"><button class="btn go" id="rodj">Ordre du jour (Excel)</button><button class="btn" id="rcr">Compte rendu (Excel)</button><button class="btn" id="rdel">Supprimer la réunion</button></div></div>
+        <div class="row"><button class="btn go" id="rodj">Ordre du jour (Excel)</button><button class="btn" id="rcr">Compte rendu (Excel)</button><button class="btn rw-only" id="rdel">Supprimer la réunion</button></div></div>
       ${pts.map(p => `<div class="row" style="border:1px solid #E1E5EC;border-radius:12px;padding:10px">
         <button class="btn" data-vote="${p.id}" aria-label="Soutenir ce point" style="min-width:56px">▲ ${p.votes || 0}</button>
         <div style="flex:1 1 260px"><strong>${esc(p.t)}</strong><br><span class="muted">${esc([p.qui, (p.min || '?') + ' min', p.type].filter(Boolean).join(' · '))}</span></div>
-        <input type="text" data-dec="${p.id}" value="${esc(p.dec || '')}" placeholder="Décision / suite donnée" style="flex:1 1 220px">
-        <button class="btn" data-pdel="${p.id}" aria-label="Retirer">✕</button></div>`).join('') || '<div class="empty">Pas encore de point.</div>'}
-      <div class="row" style="border-top:1px solid #EEF0F4;padding-top:10px">
+        <input type="text" class="rw-input" data-dec="${p.id}" value="${esc(p.dec || '')}" placeholder="Décision / suite donnée" style="flex:1 1 220px">
+        <button class="btn rw-only" data-pdel="${p.id}" aria-label="Retirer">✕</button></div>`).join('') || '<div class="empty">Pas encore de point.</div>'}
+      <div class="row rw-only" style="border-top:1px solid #EEF0F4;padding-top:10px">
         <label class="f" style="flex:2 1 260px">Proposer un point<input type="text" id="pt"></label>
         <label class="f">Par<input type="text" id="pq" style="width:120px"></label>
         <label class="f">Durée<select id="pm"><option>5</option><option selected>10</option><option>15</option><option>20</option></select></label>
@@ -1872,13 +1926,13 @@ VIEWS.ressources = function () {
   const l = RES.filter(r => !q || (r.t + ' ' + r.apsa + ' ' + r.type).toLowerCase().includes(q)).sort((a, b) => (a.apsa || '').localeCompare(b.apsa || '') || a.t.localeCompare(b.t));
   app.innerHTML = `<main>
     <h1>Ressources de l’équipe</h1>
-    <div class="card"><div class="row">
+    <div class="card rw-only"><div class="row">
       <label class="f" style="flex:2 1 220px">Titre<input type="text" id="rs_t"></label><label class="f" style="flex:2 1 220px">Lien<input type="text" id="rs_u" placeholder="https://…"></label>
       <label class="f">APSA<input type="text" id="rs_a" style="width:140px"></label><label class="f">Type<select id="rs_y"><option>FPS / situation</option><option>Fiche élève</option><option>Référentiel / barème</option><option>Vidéo</option><option>Projet EPS / texte officiel</option><option>Autre</option></select></label>
       <button class="btn blue" id="rs_add" style="align-self:flex-end">Ajouter</button></div>
       <span class="muted">Liens vers OneDrive / Teams pour les collègues, ou vers ton Drive pour toi.</span></div>
     <div class="card"><label class="f">Chercher<input type="text" id="rs_f" value="${esc(RESV.f)}" placeholder="APSA, titre, type…"></label>
-      <table class="t"><tr><th>APSA</th><th>Titre</th><th>Type</th><th></th></tr>${l.map(r => `<tr><td><span class="chip ca${caOf(r.apsa)}">${esc(r.apsa || '—')}</span></td><td><a href="${esc(r.u)}" target="_blank" rel="noopener">${esc(r.t)}</a></td><td>${esc(r.type)}</td><td><button class="btn" data-rsd="${r.id}">Retirer</button></td></tr>`).join('') || '<tr><td colspan="4" class="empty">Aucune ressource.</td></tr>'}</table></div>
+      <table class="t"><tr><th>APSA</th><th>Titre</th><th>Type</th><th></th></tr>${l.map(r => `<tr><td><span class="chip ca${caOf(r.apsa)}">${esc(r.apsa || '—')}</span></td><td><a href="${esc(r.u)}" target="_blank" rel="noopener">${esc(r.t)}</a></td><td>${esc(r.type)}</td><td><button class="btn rw-only" data-rsd="${r.id}">Retirer</button></td></tr>`).join('') || '<tr><td colspan="4" class="empty">Aucune ressource.</td></tr>'}</table></div>
   </main>`;
   $('#rs_add').onclick = () => { const t = $('#rs_t').value.trim(), u = $('#rs_u').value.trim(); if (!t || !/^https?:\/\//i.test(u)) { alertMsg('Titre et lien (https://…) obligatoires.'); return; } RES.push({ id: 'z' + Date.now(), t, u, apsa: $('#rs_a').value.trim(), type: $('#rs_y').value }); saveRes(); VIEWS.ressources(); };
   $('#rs_f').oninput = e => { RESV.f = e.target.value; clearTimeout(RESV.tm); RESV.tm = setTimeout(() => { VIEWS.ressources(); const i = $('#rs_f'); i.focus(); i.setSelectionRange(i.value.length, i.value.length); }, 250); };
@@ -1912,15 +1966,79 @@ VIEWS.accueil = function () {
 
 /* ================= v0.6 : navigation, profils, équipe et service, médias, projets cycle 3 ================= */
 
-/* --- Profils d'appareil et rubriques --- */
+/* --- Profils d'appareil, rubriques et autorisations --- */
+var ORDER = ['accueil', 'ecran', 'planning', 'generateur', 'programmation', 'evaluations', 'suivi', 'bac', 'cycle3', 'ressources', 'as', 'rencontres', 'poles', 'medias', 'materiel', 'incidents', 'travaux', 'reunions', 'equipe', 'partage', 'etab', 'reglages'];
 const PROFILS = {
   coord: { t: 'Coordination EPS', views: '*' },
-  eps: { t: 'Professeur d’EPS', views: ['accueil', 'ecran', 'planning', 'programmation', 'evaluations', 'bac', 'cycle3', 'ressources', 'materiel', 'incidents', 'travaux', 'reunions', 'equipe'] },
-  primaire: { t: 'Enseignant du primaire', views: ['accueil', 'ecran', 'planning', 'cycle3', 'ressources', 'materiel', 'incidents', 'travaux', 'reunions'] },
-  as: { t: 'Responsable AS', views: ['accueil', 'ecran', 'planning', 'as', 'materiel', 'incidents', 'travaux', 'reunions'] },
+  eps: { t: 'Professeur d’EPS', views: ['accueil', 'ecran', 'planning', 'programmation', 'evaluations', 'suivi', 'bac', 'cycle3', 'ressources', 'as', 'rencontres', 'poles', 'medias', 'materiel', 'incidents', 'travaux', 'reunions', 'equipe'] },
+  primaire: { t: 'Enseignant du primaire', views: ['accueil', 'ecran', 'planning', 'suivi', 'cycle3', 'ressources', 'incidents', 'travaux', 'reunions'] },
+  as: { t: 'Responsable AS', views: ['accueil', 'ecran', 'planning', 'as', 'rencontres', 'poles', 'medias', 'materiel', 'incidents', 'reunions'] },
   acs: { t: 'Intervenant ACS', views: ['accueil', 'ecran', 'planning', 'incidents', 'travaux'] },
-  secr: { t: 'Secrétariat', views: ['accueil', 'ecran', 'as'] }
+  secr: { t: 'Secrétariat', views: ['accueil', 'ecran', 'planning', 'as', 'rencontres'] },
+  eleve: { t: 'Élève', views: ['accueil', 'ecran', 'planning', 'poles', 'rencontres', 'medias'] }
 };
+const DEFAULT_RIGHTS = {
+  coord: {},
+  eps: {
+    accueil: 'ro', ecran: 'ro', planning: 'rw', generateur: 'none', programmation: 'rw',
+    evaluations: 'rw', suivi: 'rw', bac: 'rw', cycle3: 'rw', ressources: 'rw',
+    as: 'rw', rencontres: 'rw', poles: 'rw', medias: 'rw', materiel: 'rw',
+    incidents: 'rw', travaux: 'ro', reunions: 'rw', equipe: 'ro', partage: 'none', etab: 'none', reglages: 'none'
+  },
+  primaire: {
+    accueil: 'ro', ecran: 'ro', planning: 'ro', generateur: 'none', programmation: 'none',
+    evaluations: 'none', suivi: 'ro', bac: 'none', cycle3: 'rw', ressources: 'ro',
+    as: 'none', rencontres: 'none', poles: 'none', medias: 'none', materiel: 'none',
+    incidents: 'rw', travaux: 'ro', reunions: 'ro', equipe: 'none', partage: 'none', etab: 'none', reglages: 'none'
+  },
+  as: {
+    accueil: 'ro', ecran: 'ro', planning: 'ro', generateur: 'none', programmation: 'none',
+    evaluations: 'none', suivi: 'none', bac: 'none', cycle3: 'none', ressources: 'none',
+    as: 'rw', rencontres: 'rw', poles: 'rw', medias: 'rw', materiel: 'rw',
+    incidents: 'rw', travaux: 'none', reunions: 'ro', equipe: 'none', partage: 'none', etab: 'none', reglages: 'none'
+  },
+  acs: {
+    accueil: 'ro', ecran: 'ro', planning: 'ro', generateur: 'none', programmation: 'none',
+    evaluations: 'none', suivi: 'none', bac: 'none', cycle3: 'none', ressources: 'none',
+    as: 'none', rencontres: 'none', poles: 'none', medias: 'none', materiel: 'none',
+    incidents: 'rw', travaux: 'ro', reunions: 'none', equipe: 'none', partage: 'none', etab: 'none', reglages: 'none'
+  },
+  secr: {
+    accueil: 'ro', ecran: 'ro', planning: 'ro', generateur: 'none', programmation: 'none',
+    evaluations: 'none', suivi: 'none', bac: 'none', cycle3: 'none', ressources: 'none',
+    as: 'ro', rencontres: 'ro', poles: 'none', medias: 'none', materiel: 'none',
+    incidents: 'none', travaux: 'none', reunions: 'none', equipe: 'none', partage: 'none', etab: 'none', reglages: 'none'
+  },
+  eleve: {
+    accueil: 'ro', ecran: 'ro', planning: 'ro', generateur: 'none', programmation: 'none',
+    evaluations: 'none', suivi: 'none', bac: 'none', cycle3: 'none', ressources: 'none',
+    as: 'none', rencontres: 'ro', poles: 'ro', medias: 'ro', materiel: 'none',
+    incidents: 'none', travaux: 'none', reunions: 'none', equipe: 'none', partage: 'none', etab: 'none', reglages: 'none'
+  }
+};
+function profilRights(k) {
+  if (k === 'coord' || !k) {
+    const o = {}; ORDER.forEach(v => o[v] = 'rw'); o.tout = 'rw'; o.profil = 'rw'; return o;
+  }
+  const custom = (LS.get('profil_rights', {}) || {})[k] || {};
+  const def = DEFAULT_RIGHTS[k] || {};
+  const o = {};
+  ORDER.forEach(v => {
+    o[v] = custom[v] !== undefined ? custom[v] : (def[v] || 'none');
+  });
+  o.tout = 'ro'; o.profil = 'rw';
+  return o;
+}
+function saveProfilRights(k, r) {
+  const all = LS.get('profil_rights', {}) || {};
+  all[k] = r;
+  LS.set('profil_rights', all);
+}
+function profileActiveViews(k) {
+  if (k === 'coord' || !k) return '*';
+  const r = profilRights(k);
+  return ORDER.filter(v => r[v] === 'ro' || r[v] === 'rw');
+}
 const SECTIONS = [
   { k: 'accueil', t: 'Accueil', views: ['accueil'], ic: '<path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/>' },
   { k: 'inst', t: 'Installations', views: ['ecran', 'planning', 'generateur'], ic: '<rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/>' },
@@ -1928,12 +2046,87 @@ const SECTIONS = [
   { k: 'mat', t: 'Matériel', views: ['materiel', 'incidents', 'travaux'], ic: '<path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.5-.5-.5-2.5z"/>' },
   { k: 'eq', t: 'Équipe', views: ['reunions', 'as', 'equipe', 'partage', 'reglages'], ic: '<circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><circle cx="17" cy="9" r="2.5"/><path d="M16 14a5 5 0 0 1 6 5"/>' }
 ];
-const VLAB = { accueil: 'Accueil', ecran: 'Grand écran', planning: 'Planning', generateur: 'Générateur d’EDT', programmation: 'Programmation', evaluations: 'Évaluations', bac: 'Protocole bac', cycle3: 'Liaison cycle 3', ressources: 'Ressources', materiel: 'Matériel et commandes', incidents: 'Incidents', travaux: 'Travaux', reunions: 'Réunions', as: 'AS', equipe: 'Équipe et service', partage: 'Partage Excel', reglages: 'Réglages' };
+const VLAB = { accueil: 'Accueil', ecran: 'Grand écran', planning: 'Planning', generateur: 'Générateur d’EDT', programmation: 'Programmation', evaluations: 'Évaluations', bac: 'Protocole bac', cycle3: 'Liaison cycle 3', ressources: 'Ressources', materiel: 'Matériel et commandes', incidents: 'Incidents', travaux: 'Travaux', reunions: 'Réunions', as: 'AS', equipe: 'Équipe et service', partage: 'Partage Excel', reglages: 'Réglages', poles: 'Pôles de l’AS' };
 const profil = () => LS.get('profil', null);
 function allowed(v) {
-  if (v === 'profil') return true;
-  const p = PROFILS[profil()] || PROFILS.coord;
-  return p.views === '*' || p.views.includes(v);
+  if (v === 'profil' || v === 'tout') return true;
+  const p = profil();
+  if (p === 'coord' || !p) return true;
+  const r = profilRights(p);
+  return r[v] === 'ro' || r[v] === 'rw';
+}
+function canModify(v) {
+  const curV = v || current;
+  if (!curV || curV === 'profil' || curV === 'accueil' || curV === 'ecran' || curV === 'tout') return true;
+  const p = profil();
+  if (p === 'coord' || !p) return true;
+  const r = profilRights(p);
+  return r[curV] === 'rw';
+}
+
+/* --- Mots de passe des profils (contrôle des accès) --- */
+const profilPasswords = () => LS.get('profil_passwords', {});
+const saveProfilPasswords = p => LS.set('profil_passwords', p);
+function profHash(entry) {
+  if (!entry) return null;
+  return typeof entry === 'object' && entry !== null ? entry.hash : String(entry);
+}
+function deviceProfileTokens() {
+  try { return JSON.parse(localStorage.getItem('coordo.profil_tokens') || '{}'); } catch (e) { return {}; }
+}
+function setDeviceProfileToken(k, tokenHash) {
+  const t = deviceProfileTokens();
+  if (tokenHash) t[k] = tokenHash; else delete t[k];
+  try { localStorage.setItem('coordo.profil_tokens', JSON.stringify(t)); } catch (e) {}
+}
+function isProfileUnlocked(k) {
+  if (!k) return false;
+  const pwds = profilPasswords();
+  const req = profHash(pwds[k]);
+  if (!req) return true;
+  const tokens = deviceProfileTokens();
+  return tokens[k] === req;
+}
+function renderProfileLock(pKey, targetView) {
+  const p = PROFILS[pKey] || { t: pKey };
+  const app = $('#app');
+  const sn = $('#subnav'); if (sn) sn.style.display = 'none';
+  app.innerHTML = `<main>
+    <div class="card" style="max-width:440px;margin:40px auto;text-align:center">
+      <div style="font-size:38px;line-height:1;margin-bottom:8px">🔒</div>
+      <h1 style="font-size:22px;margin:0 0 6px">Accès protégé</h1>
+      <div style="font-size:16px;font-weight:700;color:var(--accent);margin-bottom:12px">${esc(p.t)}</div>
+      <p class="muted" style="margin:0 0 18px;text-align:left;font-size:14px">Un mot de passe est défini pour ce profil. Entre le mot de passe transmis par la coordination EPS pour débloquer l’accès à tes rubriques.</p>
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div class="row" style="gap:6px;width:100%">
+          <input type="password" id="p_unlock_in" placeholder="Mot de passe du profil" autocomplete="current-password" autofocus style="flex:1;min-height:44px;font-size:15px;text-align:center">
+          <button class="btn" id="p_unlock_eye" type="button" title="Afficher / masquer" style="min-height:44px;padding:0 12px">👁</button>
+        </div>
+        <button class="btn blue" id="p_unlock_btn" style="min-height:44px;font-weight:700">Valider l’accès</button>
+        <button class="btn" id="p_unlock_switch" style="min-height:44px">Changer de profil</button>
+      </div>
+    </div>
+  </main>`;
+  const inp = $('#p_unlock_in');
+  const go = async () => {
+    const val = (inp.value || '').trim();
+    if (!val) { alertMsg('Merci de saisir le mot de passe.'); inp.focus(); return; }
+    const h = await sha(val);
+    const req = profHash(profilPasswords()[pKey]);
+    if (h === req) {
+      setDeviceProfileToken(pKey, h);
+      alertMsg('Accès déverrouillé pour le profil « ' + p.t + ' ».');
+      route();
+    } else {
+      alertMsg('Mot de passe incorrect pour le profil « ' + p.t + ' ».');
+      inp.value = '';
+      inp.focus();
+    }
+  };
+  $('#p_unlock_btn').onclick = go;
+  inp.onkeydown = e => { if (e.key === 'Enter') go(); };
+  $('#p_unlock_eye').onclick = () => { inp.type = inp.type === 'password' ? 'text' : 'password'; };
+  $('#p_unlock_switch').onclick = () => { location.hash = '#profil'; route(); };
 }
 const svgIc = d => `<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${d}</svg>`;
 function renderNav(cur) {
@@ -1959,17 +2152,28 @@ document.addEventListener('click', e => {
 document.addEventListener('keydown', e => { if (e.key === 'Escape') openDrawer(false); });
 
 VIEWS.profil = function () {
-  const cur = profil();
+  const cur = profil(), pwds = profilPasswords();
   $('#app').innerHTML = `<main>
     <h1>Qui utilise cet appareil ?</h1>
-    <p class="muted" style="margin:0">L’app n’affiche que les rubriques utiles à chacun. Ce choix reste enregistré sur cet appareil. Il simplifie l’affichage mais ne remplace pas un vrai contrôle d’accès : les données privées (AS, inaptitudes) restent protégées par le code de l’appareil.</p>
-    <div class="pgrid">${Object.entries(PROFILS).map(([k, p]) => `<button class="pcard ${k === cur ? 'on' : ''}" data-prof="${k}"><strong>${p.t}</strong><span class="muted">${p.views === '*' ? 'Toutes les rubriques' : p.views.filter(v => v !== 'accueil').map(v => VLAB[v]).join(' · ')}</span></button>`).join('')}</div>
+    <p class="muted" style="margin:0">L’app n’affiche que les rubriques utiles à chacun. Les profils protégés nécessitent le mot de passe défini par la coordination EPS.</p>
+    <div class="pgrid">${Object.entries(PROFILS).map(([k, p]) => {
+      const isProt = !!profHash(pwds[k]);
+      const isUnl = isProfileUnlocked(k);
+      const badge = isProt ? (isUnl ? '<span class="chip ca2" style="font-size:11px">✓ Déverrouillé</span>' : '<span class="chip ca1" style="font-size:11px">🔒 Protégé</span>') : '<span class="chip ca0" style="font-size:11px">Accès libre</span>';
+      const r = profilRights(k);
+      const actViews = ORDER.filter(v => r[v] === 'ro' || r[v] === 'rw');
+      const vDesc = k === 'coord' ? 'Toutes les rubriques (coordination complète)' : (actViews.filter(v => v !== 'accueil' && v !== 'tout').map(v => (r[v] === 'ro' ? '👁 ' : '') + (VLAB[v] || v)).join(' · ') || 'Aucune rubrique autorisée');
+      return `<button class="pcard ${k === cur ? 'on' : ''}" data-prof="${k}">
+        <div class="row" style="justify-content:space-between;width:100%;align-items:flex-start"><strong>${esc(p.t)}</strong>${badge}</div>
+        <span class="muted">${vDesc}</span>
+      </button>`;
+    }).join('')}</div>
   </main>`;
   $('#app').querySelectorAll('[data-prof]').forEach(b => b.onclick = async () => {
     const k = b.dataset.prof, lock = LS.get('lock', null);
     if (cur && k !== cur && lock && !SESSION_OK.v) {
       const c = prompt('Code de l’appareil pour changer de profil :'); if (c == null) return;
-      if (await sha(c) !== lock) { alertMsg('Code incorrect.'); return; }
+      if (await sha(c) !== lock) { alertMsg('Code de l’appareil incorrect.'); return; }
       SESSION_OK.v = true;
     }
     LS.set('profil', k); location.hash = '#accueil'; route();
@@ -2072,11 +2276,107 @@ VIEWS.equipe = function () {
       <div class="scroll"><table class="t" style="min-width:520px"><tr><th>Classe</th><th>Créneau</th><th>Prof</th></tr>${CAL.classes.map((c, ci) => `<tr><td><strong>${esc(c.c)}</strong></td><td class="muted">${c.d} ${hh(c.s)}-${hh(c.e)}${c.qz ? ' · quinzaine' : ''}</td><td><select data-af="${ci}"><option value="">—</option>${T.map(t => `<option ${aff[ci] === t.n ? 'selected' : ''}>${esc(t.n)}</option>`).join('')}</select></td></tr>`).join('')}</table></div></div>`;
   } else {
     const lock = LS.get('lock', null);
+    const editK = EQV.editingRights || 'primaire';
+    const ep = PROFILS[editK] || PROFILS.primaire;
+    const rk = profilRights(editK);
     body = `<div class="card"><h2>Ordre de priorité sur les installations</h2>
       ${PRIO.map((p, k) => `<div class="row" style="border:1px solid #E1E5EC;border-radius:10px;padding:8px"><strong style="width:28px">${k + 1}</strong><span style="flex:1">${esc(p)}</span><button class="btn" data-pu="${k}" aria-label="Monter">▲</button><button class="btn" data-pd="${k}" aria-label="Descendre">▼</button></div>`).join('')}
       <span class="muted">Utilisé par le générateur et à l’import des réservations : en cas de conflit, la catégorie la mieux placée garde le créneau.</span></div>
-      <div class="card"><h2>Ce que voit chaque profil</h2><div class="scroll"><table class="t" style="min-width:640px"><tr><th>Profil</th><th>Rubriques visibles</th></tr>${Object.values(PROFILS).map(p => `<tr><td><strong>${p.t}</strong></td><td class="muted">${p.views === '*' ? 'Tout' : p.views.map(v => VLAB[v]).join(' · ')}</td></tr>`).join('')}</table></div>
-      <div class="row"><a class="btn" href="#profil" style="display:inline-flex;align-items:center;text-decoration:none">Changer le profil de cet appareil</a></div></div>
+      <div class="card"><h2>Mots de passe des profils et sécurité des accès</h2>
+        <span class="muted">Définis un mot de passe pour chaque niveau (primaire, intervenants ACS, profs d’EPS, AS, élève…). En leur donnant ce mot de passe, ils accèdent uniquement à leur profil. Modifie ou supprime un mot de passe à tout moment pour fermer ou ouvrir les accès.</span>
+        <div class="scroll"><table class="t" style="min-width:780px"><tr><th>Profil</th><th>Droits & rubriques</th><th>Statut de l’accès</th><th>Mot de passe</th><th>Actions</th></tr>
+        ${Object.entries(PROFILS).map(([k, p]) => {
+          const pw = profilPasswords()[k];
+          const req = profHash(pw);
+          const isProt = !!req;
+          const isLocked = pw && pw.locked;
+          const dateStr = pw && pw.at ? ' · ' + new Date(pw.at).toLocaleDateString('fr-FR') : '';
+          const badge = isLocked ? '<span class="chip ca1">🔒 Accès fermé' + dateStr + '</span>' : (isProt ? '<span class="chip ca2">🔒 Protégé' + dateStr + '</span>' : '<span class="chip ca0">🔓 Accès libre</span>');
+          const r = profilRights(k);
+          let descRights = '';
+          if (k === 'coord') {
+            descRights = '<span class="chip ca2">Accès total (coordination)</span>';
+          } else {
+            const rwC = ORDER.filter(v => r[v] === 'rw').length;
+            const roC = ORDER.filter(v => r[v] === 'ro').length;
+            const noC = ORDER.filter(v => r[v] === 'none').length;
+            descRights = `<div class="row" style="gap:4px">
+              <span class="chip ca2" title="Rubriques en modification">${rwC} modif.</span>
+              <span class="chip ca4" title="Rubriques en vision seule">${roC} vision seule</span>
+              <span class="chip ca0" title="Rubriques masquées">${noC} masquée(s)</span>
+            </div>`;
+          }
+          return `<tr><td><strong>${esc(p.t)}</strong>${k === 'coord' ? '<br><span class="muted" style="font-size:11px">Profil coordinateur</span>' : ''}</td>
+            <td>${descRights}</td>
+            <td>${badge}</td>
+            <td><div class="row" style="gap:4px"><input type="password" data-pkin="${k}" placeholder="${isProt ? 'Nouveau mot de passe' : 'Définir un mot de passe'}" style="min-height:38px;width:150px"><button class="btn" data-peye="${k}" type="button" title="Afficher / masquer" style="min-height:38px;padding:0 8px">👁</button></div></td>
+            <td><div class="row" style="gap:4px">
+              <button class="btn blue" data-psave="${k}" style="min-height:38px">${isProt ? 'Modifier' : 'Activer'}</button>
+              ${isProt ? `<button class="btn warn" data-prevoke="${k}" style="min-height:38px" title="Fermer immédiatement l’accès sur tous les appareils">Fermer accès</button><button class="btn" data-pdel="${k}" style="min-height:38px" title="Supprimer le mot de passe et remettre en accès libre">Retirer</button>` : ''}
+              ${k !== 'coord' ? `<button class="btn ${editK === k ? 'on' : ''}" data-pedt="${k}" style="min-height:38px;white-space:nowrap" title="Configurer ce que ce profil peut voir et modifier">⚙️ Droits</button>` : ''}
+            </div></td></tr>`;
+        }).join('')}</table></div>
+        ${!profHash(profilPasswords().coord) ? '<div class="banner"><strong>Conseil :</strong> Définis également un mot de passe pour le profil <em>Coordination EPS</em> afin d’empêcher les autres utilisateurs d’accéder à cette page et de modifier les mots de passe.</div>' : ''}
+        <div class="row" style="margin-top:4px"><a class="btn" href="#profil" style="display:inline-flex;align-items:center;text-decoration:none">Changer le profil de cet appareil</a></div></div>
+
+      <div class="card" id="card_rights_editor">
+        <div class="row" style="justify-content:space-between;align-items:center;border-bottom:1px solid #EEF0F4;padding-bottom:10px">
+          <div>
+            <h2 style="margin:0 0 4px">Droits d’accès & rubriques : ${esc(ep.t)}</h2>
+            <span class="muted">Choisis ce que ce profil a le droit de voir et de faire. <strong>Masqué</strong> (la rubrique disparaît), <strong>Vision seule</strong> (consultation sans modification), ou <strong>Modification</strong> (accès complet).</span>
+          </div>
+          <div class="row" style="gap:4px">
+            ${Object.entries(PROFILS).filter(([k]) => k !== 'coord').map(([k, p]) =>
+              `<button class="btn ${k === editK ? 'on' : ''}" data-psel="${k}" style="font-size:13px">${esc(p.t)}</button>`
+            ).join('')}
+          </div>
+        </div>
+        <div class="row" style="justify-content:space-between;align-items:center;margin:6px 0">
+          <span class="muted" style="font-weight:600">Actions rapides pour « ${esc(ep.t)} » :</span>
+          <div class="row" style="gap:6px">
+            <button class="btn" id="r_all_rw">Tout en modification</button>
+            <button class="btn" id="r_all_ro">Tout en vision seule</button>
+            <button class="btn" id="r_all_none">Tout masquer</button>
+            <button class="btn" id="r_reset_def">Rétablir les droits par défaut</button>
+          </div>
+        </div>
+        <div class="scroll">
+          <table class="t" style="min-width:680px">
+            <thead><tr><th style="width:200px">Rubrique</th><th>Description</th><th style="text-align:right;width:340px">Autorisation accordée</th></tr></thead>
+            <tbody>
+            ${ORDER.map(v => {
+              const curR = rk[v] || 'none';
+              return `<tr>
+                <td style="white-space:nowrap">
+                  <div style="display:flex;align-items:center;gap:8px">
+                    ${svgIc(IC[v] || IC.tout)}
+                    <strong>${esc(VLAB[v] || v)}</strong>
+                  </div>
+                </td>
+                <td class="muted" style="font-size:12px">${esc(VDESC[v] || '')}</td>
+                <td style="text-align:right">
+                  <div class="row" style="justify-content:flex-end;gap:4px">
+                    <label class="btn" style="cursor:pointer;padding:4px 9px;font-size:12px;display:inline-flex;align-items:center;gap:4px;${curR === 'none' ? 'background:#FEE2E2;border-color:#FCA5A5;color:#991B1B;font-weight:700' : ''}">
+                      <input type="radio" name="r_${v}" value="none" ${curR === 'none' ? 'checked' : ''} style="margin:0;width:auto;min-height:auto"> ❌ Masqué
+                    </label>
+                    <label class="btn" style="cursor:pointer;padding:4px 9px;font-size:12px;display:inline-flex;align-items:center;gap:4px;${curR === 'ro' ? 'background:#EFF6FF;border-color:#93C5FD;color:#1E40AF;font-weight:700' : ''}">
+                      <input type="radio" name="r_${v}" value="ro" ${curR === 'ro' ? 'checked' : ''} style="margin:0;width:auto;min-height:auto"> 👁 Vision seule
+                    </label>
+                    <label class="btn" style="cursor:pointer;padding:4px 9px;font-size:12px;display:inline-flex;align-items:center;gap:4px;${curR === 'rw' ? 'background:#DCFCE7;border-color:#86EFAC;color:#166534;font-weight:700' : ''}">
+                      <input type="radio" name="r_${v}" value="rw" ${curR === 'rw' ? 'checked' : ''} style="margin:0;width:auto;min-height:auto"> ✏️ Modification
+                    </label>
+                  </div>
+                </td>
+              </tr>`;
+            }).join('')}
+            </tbody>
+          </table>
+        </div>
+        <div class="row" style="margin-top:12px">
+          <button class="btn blue big" id="pr_save_btn">Enregistrer les autorisations pour « ${esc(ep.t)} »</button>
+        </div>
+      </div>
+
       <div class="card"><h2>Code de cet appareil</h2><span class="muted">Protège l’AS, les inaptitudes et le changement de profil sur un appareil partagé (tablette, TV du gymnase, ordinateur d’un collègue).</span>
       <div class="row"><label class="f">${lock ? 'Nouveau code' : 'Code'}<input type="password" id="lc" autocomplete="new-password" style="width:160px"></label><button class="btn blue" id="lcs" style="align-self:flex-end">${lock ? 'Changer' : 'Activer'}</button>${lock ? '<button class="btn" id="lcr" style="align-self:flex-end">Retirer le code</button>' : ''}</div></div>`;
   }
@@ -2101,6 +2401,107 @@ VIEWS.equipe = function () {
   const mv = (k, d) => { const j = k + d; if (j < 0 || j >= PRIO.length) return; [PRIO[k], PRIO[j]] = [PRIO[j], PRIO[k]]; LS.set('priorites', PRIO); VIEWS.equipe(); };
   app.querySelectorAll('[data-pu]').forEach(b => b.onclick = () => mv(+b.dataset.pu, -1));
   app.querySelectorAll('[data-pd]').forEach(b => b.onclick = () => mv(+b.dataset.pd, 1));
+  app.querySelectorAll('[data-pedt]').forEach(b => {
+    b.onclick = () => {
+      EQV.editingRights = b.dataset.pedt;
+      VIEWS.equipe();
+      const ed = $('#card_rights_editor');
+      if (ed) ed.scrollIntoView({ behavior: 'smooth' });
+    };
+  });
+  app.querySelectorAll('[data-psel]').forEach(b => {
+    b.onclick = () => {
+      EQV.editingRights = b.dataset.psel;
+      VIEWS.equipe();
+    };
+  });
+  const updateRadioStyles = () => {
+    app.querySelectorAll('#card_rights_editor td').forEach(td => {
+      td.querySelectorAll('label').forEach(lbl => {
+        const inp = lbl.querySelector('input');
+        if (!inp) return;
+        lbl.style.background = ''; lbl.style.borderColor = ''; lbl.style.color = ''; lbl.style.fontWeight = '';
+        if (inp.checked) {
+          if (inp.value === 'none') { lbl.style.background = '#FEE2E2'; lbl.style.borderColor = '#FCA5A5'; lbl.style.color = '#991B1B'; lbl.style.fontWeight = '700'; }
+          else if (inp.value === 'ro') { lbl.style.background = '#EFF6FF'; lbl.style.borderColor = '#93C5FD'; lbl.style.color = '#1E40AF'; lbl.style.fontWeight = '700'; }
+          else if (inp.value === 'rw') { lbl.style.background = '#DCFCE7'; lbl.style.borderColor = '#86EFAC'; lbl.style.color = '#166534'; lbl.style.fontWeight = '700'; }
+        }
+      });
+    });
+  };
+  app.querySelectorAll('#card_rights_editor input[type=radio]').forEach(inp => inp.onchange = updateRadioStyles);
+  on('#r_all_rw', () => {
+    ORDER.forEach(v => { const r = app.querySelector(`input[name="r_${v}"][value="rw"]`); if (r) r.checked = true; });
+    updateRadioStyles();
+  });
+  on('#r_all_ro', () => {
+    ORDER.forEach(v => { const r = app.querySelector(`input[name="r_${v}"][value="ro"]`); if (r) r.checked = true; });
+    updateRadioStyles();
+  });
+  on('#r_all_none', () => {
+    ORDER.forEach(v => { const r = app.querySelector(`input[name="r_${v}"][value="none"]`); if (r) r.checked = true; });
+    const acc = app.querySelector(`input[name="r_accueil"][value="ro"]`); if (acc) acc.checked = true;
+    updateRadioStyles();
+  });
+  on('#r_reset_def', () => {
+    const editK = EQV.editingRights || 'primaire';
+    const all = LS.get('profil_rights', {}) || {};
+    delete all[editK];
+    LS.set('profil_rights', all);
+    alertMsg('Droits par défaut rétablis pour « ' + (PROFILS[editK] || {}).t + ' ».');
+    VIEWS.equipe();
+  });
+  on('#pr_save_btn', () => {
+    const editK = EQV.editingRights || 'primaire';
+    const ep = PROFILS[editK] || {};
+    const newRights = {};
+    ORDER.forEach(v => {
+      const sel = app.querySelector(`input[name="r_${v}"]:checked`);
+      if (sel) newRights[v] = sel.value;
+    });
+    saveProfilRights(editK, newRights);
+    alertMsg('Autorisations enregistrées pour « ' + ep.t + ' ».');
+    VIEWS.equipe();
+  });
+  app.querySelectorAll('[data-peye]').forEach(b => b.onclick = () => {
+    const inp = app.querySelector(`[data-pkin="${b.dataset.peye}"]`);
+    if (inp) inp.type = inp.type === 'password' ? 'text' : 'password';
+  });
+  app.querySelectorAll('[data-psave]').forEach(b => b.onclick = async () => {
+    const k = b.dataset.psave;
+    const inp = app.querySelector(`[data-pkin="${k}"]`);
+    const val = (inp && inp.value || '').trim();
+    if (!val) { alertMsg('Saisis un mot de passe dans le champ avant d’enregistrer.'); if (inp) inp.focus(); return; }
+    if (val.length < 3) { alertMsg('Le mot de passe doit comporter au moins 3 caractères.'); return; }
+    const h = await sha(val);
+    const pwds = profilPasswords();
+    pwds[k] = { hash: h, at: Date.now() };
+    saveProfilPasswords(pwds);
+    if (profil() === k || k === 'coord') { setDeviceProfileToken(k, h); }
+    alertMsg('Mot de passe enregistré pour « ' + (PROFILS[k] || {}).t + ' ». Les anciens accès sont fermés.');
+    VIEWS.equipe();
+  });
+  app.querySelectorAll('[data-prevoke]').forEach(b => b.onclick = async () => {
+    const k = b.dataset.prevoke;
+    if (!confirm('Fermer immédiatement les accès pour le profil « ' + (PROFILS[k] || {}).t + ' » ?\nTous les appareils seront déconnectés et devront saisir un nouveau mot de passe.')) return;
+    const pwds = profilPasswords();
+    const rnd = Math.random().toString(36).slice(2) + Date.now().toString(36);
+    pwds[k] = { hash: await sha(rnd), at: Date.now(), locked: true };
+    saveProfilPasswords(pwds);
+    setDeviceProfileToken(k, null);
+    alertMsg('Accès fermés pour « ' + (PROFILS[k] || {}).t + ' ». Définis un nouveau mot de passe pour rouvrir.');
+    VIEWS.equipe();
+  });
+  app.querySelectorAll('[data-pdel]').forEach(b => b.onclick = () => {
+    const k = b.dataset.pdel;
+    if (!confirm('Retirer le mot de passe pour le profil « ' + (PROFILS[k] || {}).t + ' » ?\nCe profil sera de nouveau en accès libre.')) return;
+    const pwds = profilPasswords();
+    delete pwds[k];
+    saveProfilPasswords(pwds);
+    setDeviceProfileToken(k, null);
+    alertMsg('Mot de passe retiré pour « ' + (PROFILS[k] || {}).t + ' ».');
+    VIEWS.equipe();
+  });
   on('#lcs', async () => { const v = $('#lc').value; if (v.length < 4) { alertMsg('4 caractères minimum.'); return; } LS.set('lock', await sha(v)); SESSION_OK.v = true; alertMsg('Code enregistré sur cet appareil.'); VIEWS.equipe(); });
   on('#lcr', () => { if (confirm('Retirer le code ?')) { LS.del('lock'); VIEWS.equipe(); } });
 };
@@ -2229,7 +2630,7 @@ VIEWS.cycle3 = function () {
   if (P) { renderProjet(P, head); return; }
   const F = Object.assign({ theme: 'relais', format: 'rencontre', amb: 'ambitieux', niveaux: ['CM1', 'CM2', '6e'], parNiveau: 3, fils: ['francais', 'maths', 'emc'], date: '', titre: '', inst: '' }, C3V.form || {});
   app.innerHTML = `<main>${head}
-    <div class="card"><h2>Générateur de projet</h2>
+    <div class="card rw-only"><h2>Générateur de projet</h2>
       <span class="muted">Quatre choix suffisent. La fiche produite suit la trame d’une présentation de projet : une phrase d’accroche, le pourquoi, trois objectifs, le déroulé, les rôles, des indicateurs chiffrés et le calendrier. Tout reste modifiable ensuite.</span>
       <div class="gstep"><span class="num">1</span><div style="flex:1"><strong>L’activité</strong><div class="chips">${Object.entries(PTHEMES).map(([k, t]) => `<button class="chipbtn ${F.theme === k ? 'on' : ''}" data-pf="theme" data-v="${k}"><span class="dot ca${t.ca}"></span>${t.t}</button>`).join('')}</div></div></div>
       <div class="gstep"><span class="num">2</span><div style="flex:1"><strong>La forme</strong><div class="chips">${Object.entries(PFORMATS).map(([k, f]) => `<button class="chipbtn ${F.format === k ? 'on' : ''}" data-pf="format" data-v="${k}">${f.t}</button>`).join('')}</div></div></div>
@@ -2255,15 +2656,15 @@ function renderProjet(P, head) {
   const app = $('#app'), T = PTHEMES[P.theme] || {};
   const srcs = (P.src || []).map(id => BANQUE.find(b => b.id === id) || SOURCES_PRESET[id]).filter(b => b && b.lien);
   app.innerHTML = `<main>${head}
-    <div class="row noprint"><button class="btn" id="pj_back">← Mes projets</button><button class="btn go" id="pj_pr">Imprimer / PDF (A4)</button><button class="btn" id="pj_x">Excel (fiche, calendrier, équipes)</button><button class="btn" id="pj_reu">Inscrire à la prochaine réunion</button><button class="btn" id="pj_bk">Mettre en banque</button><button class="btn" id="pj_del">Supprimer</button></div>
+    <div class="row noprint"><button class="btn" id="pj_back">← Mes projets</button><button class="btn go" id="pj_pr">Imprimer / PDF (A4)</button><button class="btn" id="pj_x">Excel (fiche, calendrier, équipes)</button><button class="btn rw-only" id="pj_reu">Inscrire à la prochaine réunion</button><button class="btn rw-only" id="pj_bk">Mettre en banque</button><button class="btn rw-only" id="pj_del">Supprimer</button></div>
     <div class="card phero"><span class="chip ca${T.ca || 0}">${esc(T.t || '')}${T.ca ? ' · CA' + T.ca : ''}</span>
-      <input type="text" class="ptitle" id="pj_t" value="${esc(P.titre)}" aria-label="Titre du projet">
+      <input type="text" class="ptitle rw-input" id="pj_t" value="${esc(P.titre)}" aria-label="Titre du projet">
       <div class="row muted">${esc(P.niveaux.join(' · '))} · ${esc(PFORMATS[P.format]?.t || '')} · ambition ${esc(PAMB[P.amb]?.t || '')}${P.date ? ' · temps fort le ' + frd(P.date) : ''}</div></div>
-    <div class="pgrid2">${PSECT.map(([k, t]) => `<div class="card psec ${k === 'accroche' ? 'wide' : ''}"><h2>${t}</h2><textarea data-ps="${k}" rows="2">${esc(P.s[k] || '')}</textarea></div>`).join('')}</div>
+    <div class="pgrid2">${PSECT.map(([k, t]) => `<div class="card psec ${k === 'accroche' ? 'wide' : ''}"><h2>${t}</h2><textarea class="rw-input" data-ps="${k}" rows="2">${esc(P.s[k] || '')}</textarea></div>`).join('')}</div>
     <div class="card"><h2>Calendrier et to-do</h2>
-      ${P.todo.map((t, k) => `<div class="row todo ${t.ok ? 'ok' : ''}"><input type="checkbox" data-tk="${k}" ${t.ok ? 'checked' : ''} aria-label="Fait"><input type="date" data-td="${k}" value="${t.d || ''}"><input type="text" data-tt="${k}" value="${esc(t.t)}" style="flex:2 1 240px"><input type="text" data-tq="${k}" value="${esc(t.qui)}" style="flex:1 1 140px" list="annl"><button class="btn" data-tx="${k}" aria-label="Retirer">✕</button></div>`).join('')}
+      ${P.todo.map((t, k) => `<div class="row todo ${t.ok ? 'ok' : ''}"><input type="checkbox" data-tk="${k}" ${t.ok ? 'checked' : ''} aria-label="Fait"><input type="date" class="rw-input" data-td="${k}" value="${t.d || ''}"><input type="text" class="rw-input" data-tt="${k}" value="${esc(t.t)}" style="flex:2 1 240px"><input type="text" class="rw-input" data-tq="${k}" value="${esc(t.qui)}" style="flex:1 1 140px" list="annl"><button class="btn rw-only" data-tx="${k}" aria-label="Retirer">✕</button></div>`).join('')}
       <datalist id="annl">${[...new Set([...ANN.map(a => a.n), 'Coordination EPS', 'Profs d’EPS', 'Enseignants des classes', 'Direction', 'Tous'])].map(n => `<option value="${esc(n)}">`).join('')}</datalist>
-      <div class="row"><button class="btn" id="tk_add">Ajouter une étape</button></div></div>
+      <div class="row rw-only"><button class="btn" id="tk_add">Ajouter une étape</button></div></div>
     ${srcs.length ? `<div class="card"><h2>Pour aller plus loin</h2>${srcs.map(b => `<div><a href="${esc(b.lien)}" target="_blank" rel="noopener">${esc(b.titre)}</a> <span class="muted">· ${esc(b.origine)}</span></div>`).join('')}</div>` : ''}
   </main>`;
   bindC3Tabs();
@@ -2502,13 +2903,13 @@ VIEWS.poles = function () {
   const app = $('#app');
   app.innerHTML = `<main>
     <div class="row" style="justify-content:space-between"><div><h1>Pôles de l’AS foot</h1><span class="muted">Une fiche par responsabilité, tirée du projet AS foot 2026-2027, avec ce qu’il faut savoir côté foot.</span></div>
-      <div class="row"><button class="btn go" id="pl_all">Imprimer les 8 fiches (A4)</button><button class="btn ${POLV.edit ? 'on' : ''}" id="pl_ed">${POLV.edit ? 'Terminer les modifications' : 'Modifier les textes'}</button></div></div>
+      <div class="row"><button class="btn go" id="pl_all">Imprimer les 8 fiches (A4)</button><button class="btn rw-only ${POLV.edit ? 'on' : ''}" id="pl_ed">${POLV.edit ? 'Terminer les modifications' : 'Modifier les textes'}</button></div></div>
     <div class="pgrid">${POLES_INTRO.map(([t, d]) => `<div class="card"><strong>${esc(t)}</strong><span class="muted">${esc(d)}</span></div>`).join('')}</div>
     ${POLV.edit ? '<div class="banner">Clique dans une fiche pour modifier son texte ; c’est enregistré sur cet appareil quand tu quittes la fiche. « Texte d’origine » annule tes changements.</div>' : ''}
     <div class="plist">${POLES_AS.map(p => `<article class="card pole ${POLV.open === p.id ? 'open' : ''}">
       <button class="phead" data-pl="${p.id}" aria-expanded="${POLV.open === p.id}"><span class="pnum">${p.n}</span><span style="flex:1;text-align:left"><strong style="font-size:18px">${esc(p.t)}</strong><br><span class="muted">${esc(p.tag)}</span></span><span aria-hidden="true">${POLV.open === p.id ? '▲' : '▼'}</span></button>
       ${POLV.open === p.id ? `<div class="pbody" data-pb="${p.id}" ${POLV.edit ? 'contenteditable="true"' : ''}>${poleHTML(p)}</div>
-      <div class="row noprint"><button class="btn go" data-plp="${p.id}">Imprimer cette fiche</button>${polesEdits()[p.id] ? `<button class="btn" data-plr="${p.id}">Texte d’origine</button>` : ''}</div>` : ''}
+      <div class="row noprint"><button class="btn go" data-plp="${p.id}">Imprimer cette fiche</button>${polesEdits()[p.id] ? `<button class="btn rw-only" data-plr="${p.id}">Texte d’origine</button>` : ''}</div>` : ''}
     </article>`).join('')}</div>
   </main>`;
   app.querySelectorAll('[data-pl]').forEach(b => b.onclick = () => { POLV.open = POLV.open === b.dataset.pl ? null : b.dataset.pl; VIEWS.poles(); });
@@ -2748,18 +3149,15 @@ const VDESC = {
   etab: 'Nom, lieu, seuils de pollution, installations extérieures : tout se règle ici.',
   reglages: 'Import du planning, sauvegarde, synchronisation entre appareils.'
 };
-const ORDER = ['accueil', 'ecran', 'planning', 'generateur', 'programmation', 'evaluations', 'suivi', 'bac', 'cycle3', 'ressources', 'as', 'rencontres', 'poles', 'medias', 'materiel', 'incidents', 'travaux', 'reunions', 'equipe', 'partage', 'etab', 'reglages'];
-PROFILS.eps.views.push('suivi', 'rencontres', 'medias');
-PROFILS.primaire.views.push('suivi');
-PROFILS.as.views.push('rencontres', 'medias');
-PROFILS.secr.views.push('rencontres');
+// ORDER et profils sont définis plus haut
 const FAV_DEF = {
   coord: ['ecran', 'planning', 'materiel', 'reunions', 'rencontres', 'suivi'],
   eps: ['planning', 'evaluations', 'suivi', 'materiel', 'incidents'],
   primaire: ['planning', 'suivi', 'cycle3', 'incidents'],
   as: ['rencontres', 'as', 'poles', 'planning', 'medias'],
   acs: ['planning', 'incidents', 'travaux'],
-  secr: ['rencontres', 'as']
+  secr: ['rencontres', 'as'],
+  eleve: ['planning', 'rencontres', 'poles', 'medias']
 };
 const favs = () => (LS.get('favs', null) || FAV_DEF[profil()] || FAV_DEF.coord).filter(v => VIEWS[v] && allowed(v) && v !== 'accueil');
 const nIc = v => svgIc(IC[v] || IC.tout);
@@ -2774,7 +3172,7 @@ renderNav = function (cur) {
     + `<a href="#tout" class="${!bar.includes(cur) ? 'on' : ''}">${nIc('tout')}<span>${!bar.includes(cur) && cur !== 'tout' ? esc(VSHORT[cur] || VLAB[cur] || 'Tout') : 'Tout'}</span></a>`;
   const sn = $('#subnav'); sn.innerHTML = ''; sn.style.display = 'none';
   const all = ORDER.filter(v => VIEWS[v] && allowed(v));
-  const link = v => `<a href="#${v}" class="${v === cur ? 'on' : ''}" style="display:flex;align-items:center;gap:12px;padding-left:18px">${nIc(v)}${esc(VLAB[v])}</a>`;
+  const link = v => `<a href="#${v}" class="${v === cur ? 'on' : ''}" style="display:flex;align-items:center;gap:12px;padding-left:18px">${nIc(v)}${esc(VLAB[v])}${!canModify(v) && v !== 'accueil' && v !== 'tout' && v !== 'ecran' ? '<span class="chip ca4" style="margin-left:auto;font-size:10px;padding:2px 6px">👁 Vision seule</span>' : ''}</a>`;
   $('#drawer .dlist').innerHTML = `<div class="dsec">Mes favoris</div>${['accueil', ...f].map(link).join('')}
     <div class="dsec">Toutes les rubriques</div>${all.filter(v => v !== 'accueil' && !f.includes(v)).map(link).join('')}
     <div class="dsec">Cet appareil</div><a href="#profil">Profil : ${esc((PROFILS[profil()] || PROFILS.coord).t)} · changer</a><a href="#tout">Choisir mes favoris · installer l’app</a>`;
@@ -3120,12 +3518,12 @@ VIEWS.suivi = function () {
   let body = '';
   if (SV.tab === 'classes') {
     body = `<div class="card"><div class="row">${names.map(n => `<button class="btn ${n === SV.cls ? 'on' : ''}" data-cls="${esc(n)}">${esc(n)} · ${S.classes[n].rows.length}</button>`).join('')}
-        <label class="btn blue" style="display:inline-flex;align-items:center">Importer des fichiers de classe<input type="file" id="sv_imp" accept=".xlsx,.xls" multiple hidden></label>
-        <button class="btn" id="sv_new">Nouvelle classe</button><button class="btn" id="sv_tpl">Fichier vierge à remplir</button></div>
+        <label class="btn blue rw-only" style="display:inline-flex;align-items:center">Importer des fichiers de classe<input type="file" id="sv_imp" accept=".xlsx,.xls" multiple hidden></label>
+        <button class="btn rw-only" id="sv_new">Nouvelle classe</button><button class="btn" id="sv_tpl">Fichier vierge à remplir</button></div>
       <span class="muted">Chaque enseignant remplit le fichier Excel de sa classe (feuille « Élèves et épreuves ») et te l’envoie ; tu les importes ici, plusieurs à la fois. Les noms des élèves restent sur cet appareil : ils ne sont synchronisés que si tu l’autorises dans Réglages.</span></div>
-      ${C ? `<div class="card"><div class="row" style="justify-content:space-between"><h2>${esc(SV.cls)}</h2><div class="row"><button class="btn" id="sv_add">Ajouter un élève</button><button class="btn" id="sv_xls">Exporter avec les cibles</button><button class="btn" id="sv_del">Supprimer la classe</button></div></div>
+      ${C ? `<div class="card"><div class="row" style="justify-content:space-between"><h2>${esc(SV.cls)}</h2><div class="row"><button class="btn rw-only" id="sv_add">Ajouter un élève</button><button class="btn" id="sv_xls">Exporter avec les cibles</button><button class="btn rw-only" id="sv_del">Supprimer la classe</button></div></div>
         <div class="scroll"><table class="t sv" style="min-width:${300 + EP.length * 150}px"><tr><th>Élève</th><th>F/G</th>${EP.map(e => `<th>${esc(e.t)} <span class="muted">(${esc(e.u)})</span></th>`).join('')}</tr>
-        ${C.rows.map((r, ri) => `<tr><td><strong>${esc(r.nom)}</strong> ${esc(r.prenom)}${r.abs ? `<br><span class="chip ca0">${esc(r.abs)}</span>` : ''}</td><td>${esc(r.sexe)}</td>${EP.map(e => { const v = r.v[e.k], g = grpOf(S, e, v), c = cible(S, e, v, g); return `<td><input type="text" inputmode="decimal" class="svin" data-r="${ri}" data-k="${e.k}" value="${esc(fmtv(v, e.u))}" aria-label="${esc(e.t + ' ' + r.nom)}">${g ? ` <span class="chip ${GRP[g][1]}">${GRP[g][0]}</span>` : ''}${c ? `<div class="muted">6e : ${fmtv(c.c6, e.u)} · 5e : ${fmtv(c.c5, e.u)}${c.d6 ? `<br>6e : ${c.d6} m en ${S.cl.duree} min` : ''}</div>` : ''}</td>`; }).join('')}</tr>`).join('')}
+        ${C.rows.map((r, ri) => `<tr><td><strong>${esc(r.nom)}</strong> ${esc(r.prenom)}${r.abs ? `<br><span class="chip ca0">${esc(r.abs)}</span>` : ''}</td><td>${esc(r.sexe)}</td>${EP.map(e => { const v = r.v[e.k], g = grpOf(S, e, v), c = cible(S, e, v, g); return `<td><input type="text" inputmode="decimal" class="svin rw-input" data-r="${ri}" data-k="${e.k}" value="${esc(fmtv(v, e.u))}" aria-label="${esc(e.t + ' ' + r.nom)}">${g ? ` <span class="chip ${GRP[g][1]}">${GRP[g][0]}</span>` : ''}${c ? `<div class="muted">6e : ${fmtv(c.c6, e.u)} · 5e : ${fmtv(c.c5, e.u)}${c.d6 ? `<br>6e : ${c.d6} m en ${S.cl.duree} min` : ''}</div>` : ''}</td>`; }).join('')}</tr>`).join('')}
         </table></div>
         <span class="muted">Sous chaque résultat : le groupe de départ (en route, en progrès, à l’aise) et le défi visé en 6e puis en 5e. Réglages dans « Épreuves et cibles ».</span></div>` : '<div class="card empty">Aucune classe pour l’instant. Importe les fichiers des enseignants ou crée une classe.</div>'}`;
   } else if (SV.tab === 'synthese') {
@@ -3144,7 +3542,7 @@ VIEWS.suivi = function () {
       <span class="muted">Une fiche par élève, sans classement ni comparaison : ce que l’élève sait faire aujourd’hui et son prochain défi. Le vocabulaire reste positif : en route, en progrès, à l’aise.</span>
       <div class="row">${names.map(n => `<button class="btn" data-fp="${esc(n)}">Imprimer ${esc(n)}</button>`).join('') || '<span class="muted">Importe d’abord une classe.</span>'}</div></div>`;
   } else {
-    body = `<div class="card"><h2>Épreuves</h2><span class="muted">Tout est modifiable : nom, unité, sens (plus c’est grand, mieux c’est, ou l’inverse), seuils de départ. Sans seuils, le groupe vient du tiers de l’ensemble des élèves saisis. Décoche « affichée » pour masquer une épreuve.</span>
+    body = `<div class="card rw-only"><h2>Épreuves</h2><span class="muted">Tout est modifiable : nom, unité, sens (plus c’est grand, mieux c’est, ou l’inverse), seuils de départ. Sans seuils, le groupe vient du tiers de l’ensemble des élèves saisis. Décoche « affichée » pour masquer une épreuve.</span>
       <div class="scroll"><table class="t" style="min-width:820px"><tr><th>Affichée</th><th>Épreuve</th><th>Unité</th><th>Meilleur résultat</th><th>Seuil « en route »</th><th>Seuil « à l’aise »</th><th></th></tr>
       ${S.epreuves.map((e, i) => `<tr><td><input type="checkbox" data-ep="${i}" data-f="on" ${e.off ? '' : 'checked'} style="width:22px;height:22px"></td><td><input type="text" data-ep="${i}" data-f="t" value="${esc(e.t)}"></td><td><input type="text" data-ep="${i}" data-f="u" value="${esc(e.u)}" style="width:80px"></td>
         <td><select data-ep="${i}" data-f="sens"><option value="1" ${e.sens > 0 ? 'selected' : ''}>le plus grand</option><option value="-1" ${e.sens < 0 ? 'selected' : ''}>le plus petit (temps)</option></select></td>
@@ -3152,7 +3550,7 @@ VIEWS.suivi = function () {
         <td><button class="btn" data-epdel="${i}">Supprimer</button></td></tr>`).join('')}</table></div>
       <div class="row"><button class="btn" id="ep_add">Ajouter une épreuve</button><button class="btn" id="ep_reset">Revenir aux épreuves conseillées</button></div>
       <span class="muted">Seuils conseillés en 6e (DEPP, note d’information 26.17) : navette 0-1 palier en route, 4 et plus à l’aise ; saut sans élan 110 cm et moins en route, plus de 140 cm à l’aise ; 30 m 6,8 s et plus en route, moins de 6,0 s à l’aise. « En route » = élève au seuil ou en deçà ; « à l’aise » = au-delà du second seuil.</span></div>
-      <div class="card"><h2>Progrès visé par an</h2><span class="muted">Pour un temps on enlève ce pourcentage, pour une distance on l’ajoute. Cible 6e = résultat de CM2 avec ce progrès ; cible 5e = cible 6e avec ce progrès.</span>
+      <div class="card rw-only"><h2>Progrès visé par an</h2><span class="muted">Pour un temps on enlève ce pourcentage, pour une distance on l’ajoute. Cible 6e = résultat de CM2 avec ce progrès ; cible 5e = cible 6e avec ce progrès.</span>
       <div class="row">${Object.keys(GRP).map(g => `<label class="f">${GRP[g][0]} (%)<input type="text" inputmode="decimal" data-pg="${g}" value="${esc(S.prog[g])}" style="width:100px"></label>`).join('')}
       <label class="f">Durée de la course longue en 6e (min)<input type="text" inputmode="decimal" data-cl="duree" value="${esc(S.cl.duree)}" style="width:120px"></label><label class="f">Allure en % de la VMA<input type="text" inputmode="decimal" data-cl="pct" value="${esc(S.cl.pct)}" style="width:120px"></label></div></div>`;
   }
@@ -3269,29 +3667,30 @@ VIEWS.rencontres = function () {
     const ed = RV.edit && (RV.edit === 'new' ? { id: '', date: '', h: '', sport: 'Football', cat: '', adv: '', advTxt: '', lieu: 'dom', adresse: '', statut: 'idée', score: '', transport: '', notes: '', chk: {} } : R.matchs.find(m => m.id === RV.edit));
     const line = m => { const n = R.chk.filter((_, i) => m.chk && m.chk[i]).length; return `<tr><td><strong>${m.date ? frd(m.date) : 'à fixer'}</strong>${m.h ? '<br>' + hh(m.h) : ''}</td><td>${esc(m.sport)} ${esc(m.cat || '')}</td><td>${m.lieu === 'ext' ? 'Chez ' : m.lieu === 'neutre' ? 'Terrain neutre · ' : 'À domicile · '}${esc(advName(m))}</td><td><span class="chip ${MST_CL[m.statut]}">${esc(m.statut)}</span>${m.score ? '<br><strong>' + esc(m.score) + '</strong>' : ''}</td><td>${n}/${R.chk.length}</td><td><button class="btn" data-medit="${m.id}">Ouvrir</button></td></tr>`; };
     body = `${ed ? `<div class="card" id="medit"><h2>${ed.id ? 'Match' : 'Nouveau match'}</h2>
-        <div class="row"><label class="f">Date<input type="date" id="m_date" value="${esc(ed.date)}"></label><label class="f">Heure<input type="text" id="m_h" value="${esc(ed.h)}" placeholder="15:30" style="width:90px"></label>
-        <label class="f">Sport<input type="text" id="m_sport" value="${esc(ed.sport)}" list="sportl" style="width:150px"></label><label class="f">Catégorie<input type="text" id="m_cat" value="${esc(ed.cat)}" placeholder="filles U13, mixte…" style="width:150px"></label>
-        <label class="f">Statut<select id="m_st">${MSTAT.map(s => `<option ${s === ed.statut ? 'selected' : ''}>${s}</option>`).join('')}</select></label></div>
-        <div class="row"><label class="f">Adversaire (contact)<select id="m_adv">${cOpt(ed.adv)}</select></label><label class="f">ou nom de l’établissement<input type="text" id="m_advt" value="${esc(ed.advTxt)}"></label>
-        <label class="f">Lieu<select id="m_lieu"><option value="dom" ${ed.lieu === 'dom' ? 'selected' : ''}>À domicile</option><option value="ext" ${ed.lieu === 'ext' ? 'selected' : ''}>Chez l’adversaire</option><option value="neutre" ${ed.lieu === 'neutre' ? 'selected' : ''}>Terrain neutre</option></select></label>
-        <label class="f" style="flex:1 1 220px">Adresse ou installation<input type="text" id="m_adr" value="${esc(ed.adresse)}"></label></div>
-        <div class="row"><label class="f">Score<input type="text" id="m_score" value="${esc(ed.score)}" placeholder="2-1" style="width:90px"></label><label class="f" style="flex:1 1 220px">Transport<input type="text" id="m_tr" value="${esc(ed.transport)}" placeholder="bus du lycée, 14h départ…"></label><label class="f" style="flex:1 1 260px">Notes<input type="text" id="m_notes" value="${esc(ed.notes)}"></label></div>
-        <details open><summary style="cursor:pointer;font-weight:600">Check-list du match</summary><div class="ckl">${R.chk.map((t, i) => `<label class="chk"><input type="checkbox" data-mck="${i}" ${ed.chk && ed.chk[i] ? 'checked' : ''}> ${esc(t)}</label>`).join('')}</div></details>
-        <div class="row"><button class="btn go" id="m_save">Enregistrer</button><button class="btn" id="m_msg">Écrire un message pour ce match</button>${ed.id ? '<button class="btn" id="m_del">Supprimer</button>' : ''}<button class="btn" id="m_cancel">Fermer</button></div></div>` : ''}
-      <div class="card"><div class="row" style="justify-content:space-between"><h2>À venir</h2><div class="row"><button class="btn blue" id="m_new">Nouveau match</button><button class="btn" id="m_xls">Exporter en Excel</button></div></div>
+        <div class="row"><label class="f">Date<input type="date" id="m_date" value="${esc(ed.date)}" class="rw-input"></label><label class="f">Heure<input type="text" id="m_h" value="${esc(ed.h)}" placeholder="15:30" style="width:90px" class="rw-input"></label>
+        <label class="f">Sport<input type="text" id="m_sport" value="${esc(ed.sport)}" list="sportl" style="width:150px" class="rw-input"></label><label class="f">Catégorie<input type="text" id="m_cat" value="${esc(ed.cat)}" placeholder="filles U13, mixte…" style="width:150px" class="rw-input"></label>
+        <label class="f">Statut<select id="m_st" class="rw-input">${MSTAT.map(s => `<option ${s === ed.statut ? 'selected' : ''}>${s}</option>`).join('')}</select></label></div>
+        <div class="row"><label class="f">Adversaire (contact)<select id="m_adv" class="rw-input">${cOpt(ed.adv)}</select></label><label class="f">ou nom de l’établissement<input type="text" id="m_advt" value="${esc(ed.advTxt)}" class="rw-input"></label>
+        <label class="f">Lieu<select id="m_lieu" class="rw-input"><option value="dom" ${ed.lieu === 'dom' ? 'selected' : ''}>À domicile</option><option value="ext" ${ed.lieu === 'ext' ? 'selected' : ''}>Chez l’adversaire</option><option value="neutre" ${ed.lieu === 'neutre' ? 'selected' : ''}>Terrain neutre</option></select></label>
+        <label class="f" style="flex:1 1 220px">Adresse ou installation<input type="text" id="m_adr" value="${esc(ed.adresse)}" class="rw-input"></label></div>
+        <div class="row"><label class="f">Score<input type="text" id="m_score" value="${esc(ed.score)}" placeholder="2-1" style="width:90px" class="rw-input"></label><label class="f" style="flex:1 1 220px">Transport<input type="text" id="m_tr" value="${esc(ed.transport)}" placeholder="bus du lycée, 14h départ…" class="rw-input"></label><label class="f" style="flex:1 1 260px">Notes<input type="text" id="m_notes" value="${esc(ed.notes)}" class="rw-input"></label></div>
+        <details open><summary style="cursor:pointer;font-weight:600">Check-list du match</summary><div class="ckl">${R.chk.map((t, i) => `<label class="chk"><input type="checkbox" data-mck="${i}" ${ed.chk && ed.chk[i] ? 'checked' : ''} class="rw-input"> ${esc(t)}</label>`).join('')}</div></details>
+        <div class="row"><button class="btn go rw-only" id="m_save">Enregistrer</button><button class="btn" id="m_msg">Écrire un message pour ce match</button>${ed.id ? '<button class="btn rw-only" id="m_del">Supprimer</button>' : ''}<button class="btn" id="m_cancel">Fermer</button></div></div>` : ''}
+      <div class="card"><div class="row" style="justify-content:space-between"><h2>À venir</h2><div class="row"><button class="btn blue rw-only" id="m_new">Nouveau match</button><button class="btn" id="m_xls">Exporter en Excel</button></div></div>
         ${fut.length ? `<div class="scroll"><table class="t" style="min-width:680px"><tr><th>Date</th><th>Sport</th><th>Adversaire</th><th>Statut</th><th>Check-list</th><th></th></tr>${fut.map(line).join('')}</table></div>` : '<span class="muted">Aucun match prévu. Commence par « Nouveau match », même sans date : statut « idée ».</span>'}</div>
       ${past.length ? `<details class="card"><summary style="cursor:pointer;font-weight:700">Matchs passés · ${past.length}</summary><div class="scroll"><table class="t" style="min-width:680px">${past.map(line).join('')}</table></div></details>` : ''}
       <datalist id="sportl">${['Football', 'Basket', 'Volley-ball', 'Handball', 'Badminton', 'Tennis de table', 'Athlétisme', 'Natation', 'Cross', 'Rugby'].map(s => `<option value="${s}">`).join('')}</datalist>`;
   } else if (RV.tab === 'contacts') {
     const ed = RV.cedit && (RV.cedit === 'new' ? { id: '', etab: '', nom: '', role: '', email: '', tel: '', wechat: '', langue: 'en', sports: '', notes: '' } : R.contacts.find(c => c.id === RV.cedit));
     body = `${ed ? `<div class="card"><h2>${ed.id ? 'Contact' : 'Nouveau contact'}</h2>
-      <div class="row"><label class="f" style="flex:1 1 260px">Établissement<input type="text" id="c_etab" value="${esc(ed.etab)}"></label><label class="f" style="flex:1 1 200px">Personne à contacter<input type="text" id="c_nom" value="${esc(ed.nom)}"></label><label class="f">Fonction<input type="text" id="c_role" value="${esc(ed.role)}" placeholder="PE Teacher, Athletic Director…"></label></div>
-      <div class="row"><label class="f" style="flex:1 1 220px">E-mail<input type="email" id="c_email" value="${esc(ed.email)}"></label><label class="f">Téléphone<input type="text" id="c_tel" value="${esc(ed.tel)}"></label><label class="f">WeChat<input type="text" id="c_wx" value="${esc(ed.wechat)}"></label>
-      <label class="f">Langue des messages<select id="c_lang"><option value="fr" ${ed.langue === 'fr' ? 'selected' : ''}>Français</option><option value="en" ${ed.langue === 'en' ? 'selected' : ''}>English</option><option value="zh" ${ed.langue === 'zh' ? 'selected' : ''}>中文</option></select></label></div>
-      <div class="row"><label class="f" style="flex:1 1 220px">Sports et catégories<input type="text" id="c_sp" value="${esc(ed.sports)}" placeholder="foot filles U13, basket…"></label><label class="f" style="flex:1 1 300px">Notes<input type="text" id="c_notes" value="${esc(ed.notes)}" placeholder="terrain synthétique, accès par la porte nord…"></label></div>
+      <div class="row"><label class="f" style="flex:1 1 260px">Établissement<input type="text" id="c_etab" value="${esc(ed.etab)}" class="rw-input"></label><label class="f" style="flex:1 1 200px">Personne à contacter<input type="text" id="c_nom" value="${esc(ed.nom)}" class="rw-input"></label><label class="f">Fonction<input type="text" id="c_role" value="${esc(ed.role)}" placeholder="PE Teacher, Athletic Director…" class="rw-input"></label></div>
+      <div class="row"><label class="f" style="flex:1 1 220px">E-mail<input type="email" id="c_email" value="${esc(ed.email)}" class="rw-input"></label><label class="f">Téléphone<input type="text" id="c_tel" value="${esc(ed.tel)}" class="rw-input"></label><label class="f">WeChat<input type="text" id="c_wx" value="${esc(ed.wechat)}" class="rw-input"></label>
+      <label class="f">Langue des messages<select id="c_lang" class="rw-input"><option value="fr" ${ed.langue === 'fr' ? 'selected' : ''}>Français</option><option value="en" ${ed.langue === 'en' ? 'selected' : ''}>English</option><option value="zh" ${ed.langue === 'zh' ? 'selected' : ''}>中文</option></select></label></div>
+      <div class="row"><label class="f" style="flex:1 1 220px">Sports et catégories<input type="text" id="c_sp" value="${esc(ed.sports)}" placeholder="foot filles U13, basket…" class="rw-input"></label><label class="f" style="flex:1 1 300px">Notes<input type="text" id="c_notes" value="${esc(ed.notes)}" placeholder="terrain synthétique, accès par la porte nord…" class="rw-input"></label></div>
       <span class="muted">Contacts professionnels uniquement. Ils sont synchronisés avec tes autres appareils.</span>
-      <div class="row"><button class="btn go" id="c_save">Enregistrer</button>${ed.id ? '<button class="btn" id="c_del">Supprimer</button>' : ''}<button class="btn" id="c_cancel">Fermer</button></div></div>` : ''}
-      <div class="card"><div class="row" style="justify-content:space-between"><h2>Établissements partenaires · ${R.contacts.length}</h2><button class="btn blue" id="c_new">Nouveau contact</button></div>
+      <div class="row"><button class="btn go rw-only" id="c_save">Enregistrer</button>${ed.id ? '<button class="btn rw-only" id="c_del">Supprimer</button>' : ''}<button class="btn" id="c_cancel">Fermer</button></div></div>` : ''}
+      <div class="card"><div class="row" style="justify-content:space-between"><h2>Établissements partenaires · ${R.contacts.length}</h2><button class="btn blue rw-only" id="c_new">Nouveau contact</button></div>
+      ${R.contacts.length ? `<div class="scroll"><table class="t" style="min-width:640px"><tr><th>Établissement</th><th>Contact</th><th>Joindre</th><th>Langue</th><th>Matchs</th><th></th></tr>${R.contacts.slice().sort((a, b) => a.etab.localeCompare(b.etab)).map(c => `<tr><td><strong>${esc(c.etab)}</strong><br><span class="muted">${esc(c.sports)}</span></td><td>${esc(c.nom)}<br><span class="muted">${esc(c.role)}</span></td><td>${c.email ? `<a href="mailto:${esc(c.email)}">${esc(c.email)}</a><br>` : ''}${c.wechat ? 'WeChat : ' + esc(c.wechat) : ''}${c.tel ? '<br>' + esc(c.tel) : ''}</td><td>${{ fr: 'FR', en: 'EN', zh: '中文' }[c.langue] || ''}</td><td>${R.matchs.filter(m => m.adv === c.id).length}</td><td><button class="btn" data-cedit="${c.id}">Ouvrir</button></td></tr>`).join('')}</table></div>` : '<span class="muted">Ajoute les établissements avec qui l’AS joue ou aimerait jouer.</span>'}</div>`;
       ${R.contacts.length ? `<div class="scroll"><table class="t" style="min-width:640px"><tr><th>Établissement</th><th>Contact</th><th>Joindre</th><th>Langue</th><th>Matchs</th><th></th></tr>${R.contacts.slice().sort((a, b) => a.etab.localeCompare(b.etab)).map(c => `<tr><td><strong>${esc(c.etab)}</strong><br><span class="muted">${esc(c.sports)}</span></td><td>${esc(c.nom)}<br><span class="muted">${esc(c.role)}</span></td><td>${c.email ? `<a href="mailto:${esc(c.email)}">${esc(c.email)}</a><br>` : ''}${c.wechat ? 'WeChat : ' + esc(c.wechat) : ''}${c.tel ? '<br>' + esc(c.tel) : ''}</td><td>${{ fr: 'FR', en: 'EN', zh: '中文' }[c.langue] || ''}</td><td>${R.matchs.filter(m => m.adv === c.id).length}</td><td><button class="btn" data-cedit="${c.id}">Ouvrir</button></td></tr>`).join('')}</table></div>` : '<span class="muted">Ajoute les établissements avec qui l’AS joue ou aimerait jouer.</span>'}</div>`;
   } else if (RV.tab === 'messages') {
     const m = R.matchs.find(x => x.id === RV.mid), c = R.contacts.find(x => x.id === (RV.cid || (m && m.adv)));
@@ -3311,12 +3710,12 @@ VIEWS.rencontres = function () {
     </div>
     <details class="card"><summary style="cursor:pointer;font-weight:700">Gemini (facultatif)</summary>
       <span class="muted">Avec une clé Gemini (Google AI Studio), l’app peut adapter ou traduire un message. La clé reste sur cet appareil, n’est jamais synchronisée ni mise dans le code. Le message envoyé à Gemini ne doit contenir aucun nom d’élève. Attention : les services Google ne sont pas joignables en Chine sans VPN.</span>
-      <div class="row"><label class="f" style="flex:1 1 280px">Clé API<input type="password" id="g_key" value="${esc(gem.key || '')}" autocomplete="off"></label><label class="f">Modèle<input type="text" id="g_mod" value="${esc(gem.model || 'gemini-2.5-flash')}" style="width:200px"></label><button class="btn" id="g_save" style="align-self:flex-end">Enregistrer</button></div>
+      <div class="row"><label class="f" style="flex:1 1 280px">Clé API<input type="password" id="g_key" value="${esc(gem.key || '')}" autocomplete="off" class="rw-input"></label><label class="f">Modèle<input type="text" id="g_mod" value="${esc(gem.model || 'gemini-2.5-flash')}" style="width:200px" class="rw-input"></label><button class="btn rw-only" id="g_save" style="align-self:flex-end">Enregistrer</button></div>
     </details>`;
   } else {
     body = `<div class="card"><h2>Check-list d’un match</h2><span class="muted">Elle s’applique à chaque match (onglet Calendrier). Modifie-la pour ton établissement : une ligne par étape.</span>
-      <textarea id="ck_txt" rows="14">${esc(R.chk.join('\n'))}</textarea>
-      <div class="row"><button class="btn go" id="ck_save">Enregistrer</button><button class="btn" id="ck_reset">Revenir à la liste conseillée</button>${E.opuss ? `<a class="btn" style="display:inline-flex;align-items:center;text-decoration:none" href="${esc(E.opuss)}" target="_blank" rel="noopener">Ouvrir OPUSS</a>` : ''}</div></div>`;
+      <textarea id="ck_txt" rows="14" class="rw-input">${esc(R.chk.join('\n'))}</textarea>
+      <div class="row"><button class="btn go rw-only" id="ck_save">Enregistrer</button><button class="btn rw-only" id="ck_reset">Revenir à la liste conseillée</button>${E.opuss ? `<a class="btn" style="display:inline-flex;align-items:center;text-decoration:none" href="${esc(E.opuss)}" target="_blank" rel="noopener">Ouvrir OPUSS</a>` : ''}</div></div>`;
   }
   $('#app').innerHTML = `<main><div class="row" style="justify-content:space-between"><h1>Rencontres de l’AS</h1>${E.opuss ? `<a class="btn" style="display:inline-flex;align-items:center;text-decoration:none" href="${esc(E.opuss)}" target="_blank" rel="noopener">OPUSS · licences UNSS</a>` : ''}</div>
     <div class="row noprint">${tabs.map(([k, t]) => `<button class="btn ${RV.tab === k ? 'on' : ''}" data-rt="${k}">${t}</button>`).join('')}</div>${body}</main>`;
@@ -3382,19 +3781,19 @@ VIEWS.medias = function () {
   const tchip = t => `<span class="chip ${t === 'photo' ? 'ca4' : t === 'video' ? 'ca3' : 'ca1'}">${{ photo: 'photo', video: 'vidéo', article: 'article' }[t]}</span>`;
   const msg = x => `Bonjour,\n\nVoici un contenu de l’${E.asNom} validé par les coachs :\n« ${x.titre} » (${{ photo: 'photos', video: 'vidéo', article: 'article' }[x.type]})${x.desc ? '\n' + x.desc : ''}${x.legende ? '\nLégende proposée : ' + x.legende : ''}\n\nAutorisations à l’image vérifiées, légendes sans nom de famille ni classe, données de localisation retirées.\nDossier : ${x.lien || '[lien du dossier]'}\n\nMerci !`;
   $('#app').innerHTML = `<main>
-    <div class="row" style="justify-content:space-between"><div><h1>L’AS raconte sa saison</h1><p class="muted" style="margin:4px 0 0">Les élèves du pôle Com’ proposent, les coachs valident, le ${esc(E.comNom)} publie.</p></div><div class="row"><button class="btn" id="md_kit">Kit du community manager</button><button class="btn blue" id="md_new">Nouveau contenu</button></div></div>
-    ${(mo === 6 || mo === 7) && L.some(x => x.statut !== 'publie') ? `<div class="banner"><strong>Fin d’année :</strong> ${L.filter(x => x.statut !== 'publie').length} contenu(s) non publié(s). La règle prévoit de les supprimer du dossier de l’AS et de l’app. <button class="btn" id="md_purge">Les retirer de l’app</button></div>` : ''}
+    <div class="row" style="justify-content:space-between"><div><h1>L’AS raconte sa saison</h1><p class="muted" style="margin:4px 0 0">Les élèves du pôle Com’ proposent, les coachs valident, le ${esc(E.comNom)} publie.</p></div><div class="row"><button class="btn" id="md_kit">Kit du community manager</button><button class="btn blue rw-only" id="md_new">Nouveau contenu</button></div></div>
+    ${(mo === 6 || mo === 7) && L.some(x => x.statut !== 'publie') ? `<div class="banner"><strong>Fin d’année :</strong> ${L.filter(x => x.statut !== 'publie').length} contenu(s) non publié(s). La règle prévoit de les supprimer du dossier de l’AS et de l’app. <button class="btn rw-only" id="md_purge">Les retirer de l’app</button></div>` : ''}
     <details class="card" ${L.length ? '' : 'open'}><summary style="cursor:pointer;font-weight:700">Les règles de l’espace · RGPD et droit à l’image <span class="chip st-acs" style="white-space:normal">à valider par la direction et le délégué à la protection des données</span></summary>
       <div class="rules">${MED_RULES.map(([t, d], i) => `<div><strong>${i + 1}. ${t}</strong><span>${d}</span></div>`).join('')}</div></details>
     ${ed ? `<div class="card" id="mdedit"><h2>${ed.id ? 'Contenu' : 'Nouveau contenu'}</h2>
-      <div class="row"><label class="f">Type<select id="md_t"><option value="photo" ${ed.type === 'photo' ? 'selected' : ''}>Photos</option><option value="video" ${ed.type === 'video' ? 'selected' : ''}>Vidéo</option><option value="article" ${ed.type === 'article' ? 'selected' : ''}>Article</option></select></label><label class="f" style="flex:1 1 280px">Titre<input type="text" id="md_ti" value="${esc(ed.titre)}" placeholder="Match contre…, Notre premier tournoi…"></label><label class="f">Proposé par<input type="text" id="md_po" value="${esc(ed.pole)}" placeholder="pôle Com’"></label></div>
-      <label class="f">Description ou texte de l’article<textarea id="md_de" rows="5">${esc(ed.desc)}</textarea></label>
-      <div class="row"><label class="f" style="flex:1 1 300px">Lien vers le dossier (espace Microsoft du lycée)<input type="text" id="md_li" value="${esc(ed.lien)}" placeholder="https://…"></label><label class="f" style="flex:1 1 300px">Légende proposée (prénoms seulement, avec accord)<input type="text" id="md_le" value="${esc(ed.legende)}"></label></div>
-      <div class="card" style="background:#F7F9FC"><strong>Avant de valider · contrôle du coach</strong>${MED_CHK.map((t, i) => `<label class="chk"><input type="checkbox" data-mdc="${i}" ${ed.chk && ed.chk[i] ? 'checked' : ''}> ${t}</label>`).join('')}</div>
-      <label class="f">Commentaire pour l’élève<input type="text" id="md_co" value="${esc(ed.com)}"></label>
-      <div class="row"><button class="btn go" id="md_save">Enregistrer</button>
-        ${MED_COLS.map(([k, t]) => k === ed.statut ? '' : `<button class="btn" data-mdst="${k}">${k === 'valide' ? 'Valider' : k === 'verif' && ed.statut === 'valide' ? 'Renvoyer à vérifier' : k === 'propose' ? 'Renvoyer à l’élève' : 'Passer à « ' + t + ' »'}</button>`).join('')}
-        ${ed.id ? '<button class="btn warn" id="md_del">Retirer et supprimer</button>' : ''}<button class="btn" id="md_cancel">Fermer</button></div>
+      <div class="row"><label class="f">Type<select id="md_t" class="rw-input"><option value="photo" ${ed.type === 'photo' ? 'selected' : ''}>Photos</option><option value="video" ${ed.type === 'video' ? 'selected' : ''}>Vidéo</option><option value="article" ${ed.type === 'article' ? 'selected' : ''}>Article</option></select></label><label class="f" style="flex:1 1 280px">Titre<input type="text" id="md_ti" value="${esc(ed.titre)}" placeholder="Match contre…, Notre premier tournoi…" class="rw-input"></label><label class="f">Proposé par<input type="text" id="md_po" value="${esc(ed.pole)}" placeholder="pôle Com’" class="rw-input"></label></div>
+      <label class="f">Description ou texte de l’article<textarea id="md_de" rows="5" class="rw-input">${esc(ed.desc)}</textarea></label>
+      <div class="row"><label class="f" style="flex:1 1 300px">Lien vers le dossier (espace Microsoft du lycée)<input type="text" id="md_li" value="${esc(ed.lien)}" placeholder="https://…" class="rw-input"></label><label class="f" style="flex:1 1 300px">Légende proposée (prénoms seulement, avec accord)<input type="text" id="md_le" value="${esc(ed.legende)}" class="rw-input"></label></div>
+      <div class="card" style="background:#F7F9FC"><strong>Avant de valider · contrôle du coach</strong>${MED_CHK.map((t, i) => `<label class="chk"><input type="checkbox" data-mdc="${i}" ${ed.chk && ed.chk[i] ? 'checked' : ''} class="rw-input"> ${t}</label>`).join('')}</div>
+      <label class="f">Commentaire pour l’élève<input type="text" id="md_co" value="${esc(ed.com)}" class="rw-input"></label>
+      <div class="row"><button class="btn go rw-only" id="md_save">Enregistrer</button>
+        ${MED_COLS.map(([k, t]) => k === ed.statut ? '' : `<button class="btn rw-only" data-mdst="${k}">${k === 'valide' ? 'Valider' : k === 'verif' && ed.statut === 'valide' ? 'Renvoyer à vérifier' : k === 'propose' ? 'Renvoyer à l’élève' : 'Passer à « ' + t + ' »'}</button>`).join('')}
+        ${ed.id ? '<button class="btn warn rw-only" id="md_del">Retirer et supprimer</button>' : ''}<button class="btn" id="md_cancel">Fermer</button></div>
       ${['valide', 'transmis'].includes(ed.statut) ? `<div class="card" style="background:#F7F9FC"><strong>Message pour le ${esc(E.comNom)}</strong><textarea id="md_msg" rows="9">${esc(msg(ed))}</textarea><div class="row"><button class="btn go" id="md_copy">Copier</button>${E.comEmail ? `<a class="btn" style="display:inline-flex;align-items:center;text-decoration:none" href="mailto:${esc(E.comEmail)}?subject=${encodeURIComponent('AS · ' + ed.titre)}&body=${encodeURIComponent(msg(ed))}">Ouvrir dans la messagerie</a>` : '<span class="muted">Ajoute son adresse dans Établissement pour l’envoyer en un clic.</span>'}</div></div>` : ''}
     </div>` : ''}
     <div class="kan">${MED_COLS.map(([k, t, who]) => `<section><div class="row" style="justify-content:space-between"><strong>${t}</strong><span class="muted">${who}</span></div>
@@ -3432,7 +3831,15 @@ function printKit() {
 Object.values(PROFILS).forEach(p => { if (p.views !== '*') p.views.push('tout'); });
 (function () {
   const _r = VIEWS.reglages;
-  VIEWS.reglages = function () { _r(); const s = $('#synccard'); if (s) s.insertAdjacentHTML('beforebegin', allowed('etab') ? '<div class="card"><div class="row" style="justify-content:space-between"><h2>Établissement</h2><a class="btn" href="#etab" style="display:inline-flex;align-items:center;text-decoration:none">Ouvrir les réglages de l’établissement</a></div><span class="muted">Nom, position, seuils de pollution et protocole, installations extérieures, OPUSS, calendrier, modèle pour un autre lycée.</span></div>' : ''); };
+  VIEWS.reglages = function () {
+    _r();
+    const s = $('#synccard');
+    if (s && (profil() === 'coord' || !profil())) {
+      s.insertAdjacentHTML('beforebegin', '<div class="card"><div class="row" style="justify-content:space-between"><h2>Mots de passe des profils</h2><a class="btn" href="#equipe" id="rg_pwd_link" style="display:inline-flex;align-items:center;text-decoration:none">Gérer les accès</a></div><span class="muted">Définir un mot de passe pour chaque niveau (primaire, ACS, EPS…) et fermer les accès quand tu veux.</span></div>');
+      const lk = $('#rg_pwd_link'); if (lk) lk.onclick = () => { EQV.tab = 'acces'; };
+    }
+    if (s) s.insertAdjacentHTML('beforebegin', allowed('etab') ? '<div class="card"><div class="row" style="justify-content:space-between"><h2>Établissement</h2><a class="btn" href="#etab" style="display:inline-flex;align-items:center;text-decoration:none">Ouvrir les réglages de l’établissement</a></div><span class="muted">Nom, position, seuils de pollution et protocole, installations extérieures, OPUSS, calendrier, modèle pour un autre lycée.</span></div>' : '');
+  };
 })();
 
 /* ---------- nouvelle version ---------- */
