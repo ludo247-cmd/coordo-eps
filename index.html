@@ -278,8 +278,16 @@ window.__CS = {};
 </script>
 <script type="text/plain" id="appmain">
 "use strict";
-const VERSION = '0.9.5';
-const CAL = (window.__CS && window.__CS.calendrier) || {"classes":[{"c":"6A","d":"lun","s":"08:00","e":"10:00","qz":false},{"c":"4A","d":"lun","s":"10:30","e":"12:30","qz":false},{"c":"5C","d":"lun","s":"10:30","e":"12:30","qz":false},{"c":"5A","d":"lun","s":"13:30","e":"15:30","qz":false},{"c":"6C","d":"mar","s":"08:00","e":"10:00","qz":false},{"c":"3A","d":"mar","s":"10:30","e":"12:30","qz":false},{"c":"3B","d":"mar","s":"10:30","e":"12:30","qz":false},{"c":"5B","d":"mar","s":"13:30","e":"15:30","qz":false},{"c":"6B","d":"mer","s":"10:30","e":"12:30","qz":false},{"c":"3C","d":"mer","s":"10:30","e":"12:30","qz":true},{"c":"4B","d":"mer","s":"10:30","e":"12:30","qz":true},{"c":"6A","d":"jeu","s":"08:00","e":"10:00","qz":false},{"c":"5B","d":"jeu","s":"10:00","e":"12:00","qz":true},{"c":"5A","d":"jeu","s":"10:00","e":"12:00","qz":true},{"c":"4A","d":"jeu","s":"10:00","e":"12:00","qz":true},{"c":"3A","d":"jeu","s":"10:00","e":"12:00","qz":true},{"c":"5C","d":"jeu","s":"13:30","e":"15:30","qz":true},{"c":"3B","d":"jeu","s":"13:30","e":"15:30","qz":true},{"c":"1B","d":"jeu","s":"15:30","e":"17:30","qz":false},{"c":"1A","d":"jeu","s":"15:30","e":"17:30","qz":false},{"c":"2A","d":"jeu","s":"15:30","e":"17:30","qz":false},{"c":"6C","d":"ven","s":"08:00","e":"10:00","qz":false},{"c":"3C","d":"ven","s":"10:30","e":"12:30","qz":false},{"c":"4B","d":"ven","s":"10:30","e":"12:30","qz":false},{"c":"6B","d":"ven","s":"13:30","e":"15:30","qz":false},{"c":"2B","d":"ven","s":"15:30","e":"17:30","qz":false},{"c":"Term","d":"ven","s":"15:30","e":"17:30","qz":false},{"c":"Term","d":"ven","s":"15:30","e":"17:30","qz":false}],"cal":{"2026-09-01":[[4,"DF"],[5,"Bad"],[6,"combiné"],[7,"Combiné"]],"2026-09-02":[[8,"DF"],[9,"combiné"]],"2026-09-03":[[11,"Gym"],[13,"Combiné"],[15,"Bad"],[16,"Bad"],[18,"Gym"],[19,"Bad"],[20,"DF"]],"2026-09-04":[[21,"jeux collectifs"],[22,"combiné"],[23,"VB"],[24,"jeux collectifs"],[25,"Danse"],[26,"VB"],[27,"DF"]],"2026-09-07":[[0,"DF"],[1,"DF"],[2,"Bad"],[3,"Combiné"]],"2026-09-08":[[4,"DF"],[5,"Bad"],[6,"combiné"],[7,"Combiné"]],"2026-09-09":[[8,"DF"],[10,"VB"]],"2026-09-10":[[11,"Gym"],[12,"Combiné"],[14,"DF"],[17,"combiné"],[18,"Gym"],[19,"Bad"],[20,"DF"]],"2026-09-11":[[21,"jeux collectifs"],[22,"combiné"],[23,"VB"],[24,"jeux collectifs"],[25,"Danse"],[26,"VB"],[27,"DF"]],"2026-09-14":[[0,"DF"],[1,"DF"],[2,"Bad"],[3,"Combiné"]],"2026-09-15":[[4,"DF"],[5,"Bad"],[6,"combiné"],[7,"Combiné"]],"2026-09-16":[[8,"DF"],[9,"combiné"]],"2026-09-17":[[11,"Gym"],[13,"Combiné"],[15,"Bad"],[16,"Bad"],[18,"Gym"],[19,"Bad"],[20,"DF"]],"2026-09-18":[[21,"jeux collectifs"],[22,"combiné"],[23,"VB"],[24,"jeux collectifs"],[25,"Danse"],[26,"VB"],[27,"DF"]],"2026-09-21":[[0,"DF"],[1,"DF"],[2,"Bad"],[3,"Combiné"]],"2026-09-22":[[4,"DF"],[5,"Bad"],[6,"combiné"],[7,"Combiné"]],"2026-09-23":[[8,"DF"],[10,"VB"]],"2026-09-24":[[11,"Gym"],[12,"Combiné"],[14,"DF"],[17,"combiné"],[18,"Gym"],[19,"Bad"],[20,"DF"]],"2026-09-28":[[0,"DF"],[1,"DF"],[2,"Bad"],[3,"Combiné"]],"2026-09-29":[[4,"DF"],[5,"Bad"],[6,"combiné"],[7,"Combiné"]],"2026-09-30":[[8,"DF"],[9,"combiné"]],"2026-10-08":[[11,"Gym"],[12,"Combiné"],[14,"DF"],[17,"combiné"],[18,"Gym"],[19,"Bad"],[20,"DF"]],"2026-10-09":[[21,"jeux collectifs"],[22,"combiné"],[23,"VB"],[24,"jeux collectifs"],[25,"Danse"],[26,"VB"],[27,"DF"]],"2026-10-12":[[0,"DF"],[1,"DF"],[2,"Bad"],[3,"Combiné"]],"2026-10-13":[[4,"DF"],[5,"Bad"],[6,"combiné"],[7,"Combiné"]],"2026-10-14":[[8,"DF"],[9,"combiné"]],"2026-10-15":[[11,"Gym"],[13,"Combiné"],[15,"Bad"],[16,"Bad"],[18,"Gym"],[19,"Bad"],[20,"DF"]],"2026-10-16":[[21,"jeux collectifs"],[22,"combiné"],[23,"VB"],[24,"jeux collectifs"],[25,"Danse"],[26,"VB"],[27,"DF"]],"2026-10-19":[[0,"DF"],[1,"DF"],[2,"Bad"],[3,"Combiné"]],"2026-10-20":[[4,"DF"],[5,"Bad"],[6,"combiné"],[7,"Combiné"]],"2026-10-21":[[8,"DF"],[10,"VB"]],"2026-10-22":[[11,"Gym"],[12,"Combiné"],[14,"DF"],[17,"combiné"],[18,"Gym"],[19,"Bad"],[20,"DF"]],"2026-10-23":[[21,"jeux collectifs"],[22,"combiné"],[23,"VB"],[24,"jeux collectifs"],[25,"Danse"],[26,"VB"],[27,"DF"]],"2026-10-26":[[0,"DF"],[1,"DF"],[2,"Bad"],[3,"Combiné"]],"2026-10-27":[[4,"DF"],[5,"Bad"],[6,"combiné"],[7,"Combiné"]],"2026-10-28":[[8,"DF"],[9,"combiné"]],"2026-10-29":[[11,"Gym"],[13,"Combiné"],[15,"Bad"],[16,"Bad"],[18,"Gym"],[19,"Bad"],[20,"DF"]],"2026-10-30":[[21,"jeux collectifs"],[22,"combiné"],[23,"VB"],[24,"jeux collectifs"],[25,"Danse"],[26,"VB"],[27,"DF"]],"2026-11-02":[[0,"DF"],[1,"Boxe"],[2,"Handball"],[3,"Gym"]],"2026-11-03":[[4,"DF"],[5,"Handball"],[6,"cross training"],[7,"Handball"]],"2026-11-04":[[8,"DF"],[10,"Boxe"]],"2026-11-05":[[11,"Gym"],[12,"Handball"],[14,"Boxe"],[17,"cross training"],[18,"Gym"],[19,"Bad"],[20,"DF"]],"2026-11-06":[[21,"jeux collectifs"],[22,"Handball"],[23,"Boxe"],[24,"jeux collectifs"],[25,"Danse"],[26,"VB"],[27,"DF"]],"2026-11-16":[[0,"DF"],[1,"Boxe"],[2,"Handball"],[3,"Gym"]],"2026-11-17":[[4,"DF"],[5,"Handball"],[6,"cross training"],[7,"Handball"]],"2026-11-18":[[8,"DF"],[9,"Handball"]],"2026-11-19":[[11,"Gym"],[13,"Gym"],[15,"Handball"],[16,"Handball"],[18,"Gym"],[19,"Bad"],[20,"DF"]],"2026-11-20":[[21,"jeux collectifs"],[22,"Handball"],[23,"Boxe"],[24,"jeux collectifs"],[25,"Danse"],[26,"VB"],[27,"DF"]],"2026-11-23":[[0,"DF"],[1,"Boxe"],[2,"Handball"],[3,"Gym"]],"2026-11-24":[[4,"DF"],[5,"Handball"],[6,"cross training"],[7,"Handball"]],"2026-11-25":[[8,"DF"],[10,"Boxe"]],"2026-11-26":[[11,"Gym"],[12,"Handball"],[14,"Boxe"],[17,"cross training"],[18,"Gym"],[19,"Bad"],[20,"DF"]],"2026-11-27":[[21,"jeux collectifs"],[22,"Handball"],[23,"Boxe"],[24,"jeux collectifs"],[25,"Danse"],[26,"VB"],[27,"Eval DF"]],"2026-11-30":[[0,"Danse"],[1,"Boxe"],[2,"Handball"],[3,"Gym"]],"2026-12-01":[[4,"Danse"],[5,"Handball"],[6,"cross training"],[7,"Handball"]],"2026-12-02":[[8,"Danse"],[9,"Handball"]],"2026-12-03":[[11,"jeux collectifs"],[13,"Gym"],[15,"Handball"],[16,"Handball"],[18,"Bad"],[19,"cross training"],[20,"Danse"]],"2026-12-04":[[21,"Gym"],[22,"Handball"],[23,"Boxe"],[24,"Basket"],[25,"VB"],[26,"Eval VB"],[27,"Danse"]],"2026-12-07":[[0,"Danse"],[1,"Boxe"],[2,"Handball"],[3,"Gym"]],"2026-12-08":[[4,"Danse"],[5,"Handball"],[6,"cross training"],[7,"Handball"]],"2026-12-09":[[8,"Danse"],[10,"Boxe"]],"2026-12-10":[[11,"jeux collectifs"],[12,"Handball"],[14,"Boxe"],[17,"cross training"],[18,"Bad"],[19,"cross training"],[20,"Danse"]],"2026-12-11":[[21,"Gym"],[22,"Handball"],[23,"Boxe"],[24,"Basket"],[25,"VB"],[26,"cross training"],[27,"Danse"]],"2026-12-14":[[0,"Danse"],[1,"Boxe"],[2,"Handball"],[3,"Gym"]],"2026-12-15":[[4,"Danse"],[5,"Handball"],[6,"cross training"],[7,"Handball"]],"2026-12-16":[[8,"Danse"],[9,"Handball"]],"2026-12-17":[[11,"jeux collectifs"],[13,"Gym"],[15,"Handball"],[16,"Handball"],[18,"Bad"],[19,"cross training"],[20,"Danse"]],"2026-12-18":[[21,"Gym"],[22,"Handball"],[23,"Boxe"],[24,"Basket"],[25,"VB"],[26,"cross training"],[27,"Danse"]],"2027-01-04":[[0,"Danse"],[1,"Boxe"],[2,"Handball"],[3,"Gym"]],"2027-01-05":[[4,"Danse"],[5,"Handball"],[6,"cross training"],[7,"Handball"]],"2027-01-06":[[8,"Danse"],[10,"Boxe"]],"2027-01-07":[[11,"jeux collectifs"],[12,"Handball"],[14,"Boxe"],[17,"cross training"],[18,"Bad"],[19,"cross training"],[20,"Danse"]],"2027-01-08":[[21,"Gym"],[22,"Handball"],[23,"Boxe"],[24,"Basket"],[25,"VB"],[26,"cross training"],[27,"Danse"]],"2027-01-11":[[0,"Danse"],[1,"Boxe"],[2,"Handball"],[3,"Gym"]],"2027-01-12":[[4,"Danse"],[5,"Handball"],[6,"cross training"],[7,"Handball"]],"2027-01-13":[[8,"Danse"],[9,"Handball"]],"2027-01-14":[[11,"jeux collectifs"],[13,"Gym"],[15,"Handball"],[16,"Handball"],[18,"Bad"],[19,"cross training"],[20,"Danse"]],"2027-01-15":[[21,"Gym"],[22,"Handball"],[23,"Boxe"],[24,"Basket"],[25,"VB"],[26,"cross training"],[27,"Danse"]],"2027-01-18":[[0,"Danse"],[1,"VB"],[2,"Gym"],[3,"Handball"]],"2027-01-19":[[4,"Danse"],[5,"cross training"],[6,"Handball"],[7,"Gym"]],"2027-01-20":[[8,"Danse"],[10,"Danse"]],"2027-01-21":[[11,"jeux collectifs"],[12,"Gym"],[14,"VB"],[17,"Handball"],[18,"Bad"],[19,"cross training"],[20,"Danse"]],"2027-01-22":[[21,"Gym"],[22,"cross training"],[23,"Danse"],[24,"Basket"],[25,"VB"],[26,"cross training"],[27,"Danse"]],"2027-01-25":[[0,"Danse"],[1,"VB"],[2,"Gym"],[3,"Handball"]],"2027-01-26":[[4,"Danse"],[5,"cross training"],[6,"Handball"],[7,"Gym"]],"2027-01-27":[[8,"Danse"],[9,"cross training"]],"2027-01-28":[[11,"jeux collectifs"],[13,"Handball"],[15,"cross training"],[16,"Gym"],[18,"Bad"],[19,"cross training"],[20,"Danse"]],"2027-01-29":[[21,"Gym"],[22,"cross training"],[23,"Danse"],[24,"Basket"],[25,"VB"],[26,"cross training"],[27,"Danse"]],"2027-02-01":[[0,"Danse"],[1,"VB"],[2,"Gym"],[3,"Handball"]],"2027-02-02":[[4,"Danse"],[5,"cross training"],[6,"Handball"],[7,"Gym"]],"2027-02-03":[[8,"Danse"],[10,"Danse"]],"2027-02-04":[[11,"jeux collectifs"],[12,"Gym"],[14,"VB"],[17,"Handball"],[18,"Bad"],[19,"cross training"],[20,"Danse"]],"2027-02-22":[[0,"Danse"],[1,"VB"],[2,"Gym"],[3,"Handball"]],"2027-02-23":[[4,"Danse"],[5,"cross training"],[6,"Handball"],[7,"Gym"]],"2027-02-24":[[8,"Danse"],[9,"cross training"]],"2027-02-25":[[11,"jeux collectifs"],[13,"Handball"],[15,"cross training"],[16,"Gym"],[18,"Bad"],[19,"cross training"],[20,"Danse"]],"2027-02-26":[[21,"Gym"],[22,"cross training"],[23,"Danse"],[24,"Basket"],[25,"VB"],[26,"cross training"],[27,"Danse"]],"2027-03-01":[[0,"Danse"],[1,"VB"],[2,"Gym"],[3,"Handball"]],"2027-03-02":[[4,"Danse"],[5,"cross training"],[6,"Handball"],[7,"Gym"]],"2027-03-03":[[8,"Danse"],[10,"Danse"]],"2027-03-04":[[11,"jeux collectifs"],[12,"Gym"],[14,"VB"],[17,"Handball"],[18,"Bad"],[19,"cross training"],[20,"Danse"]],"2027-03-05":[[21,"Gym"],[22,"cross training"],[23,"Danse"],[24,"Basket"],[25,"VB"],[26,"Eval Cross training"],[27,"Eval Danse"]],"2027-03-08":[[0,"Basket"],[1,"VB"],[2,"Gym"],[3,"Handball"]],"2027-03-09":[[4,"Basket"],[5,"cross training"],[6,"Handball"],[7,"Gym"]],"2027-03-10":[[8,"Gym"],[9,"cross training"]],"2027-03-11":[[11,"Natation"],[13,"Handball"],[15,"cross training"],[16,"Gym"],[18,"cross training"],[19,"Gym"],[20,"VB"]],"2027-03-12":[[21,"Natation"],[22,"cross training"],[23,"Danse"],[24,"Natation"],[25,"DF"],[26,"combiné"],[27,"Bad"]],"2027-03-15":[[0,"Basket"],[1,"VB"],[2,"Gym"],[3,"Handball"]],"2027-03-16":[[4,"Basket"],[5,"cross training"],[6,"Handball"],[7,"Gym"]],"2027-03-17":[[8,"Gym"],[10,"Danse"]],"2027-03-18":[[11,"Natation"],[12,"Gym"],[14,"VB"],[17,"Handball"],[18,"cross training"],[19,"Gym"],[20,"VB"]],"2027-03-19":[[21,"Natation"],[22,"cross training"],[23,"Danse"],[24,"Natation"],[25,"DF"],[26,"combiné"],[27,"Bad"]],"2027-03-22":[[0,"Basket"],[1,"VB"],[2,"Gym"],[3,"Handball"]],"2027-03-23":[[4,"Basket"],[5,"cross training"],[6,"Handball"],[7,"Gym"]],"2027-03-24":[[8,"Gym"],[9,"cross training"]],"2027-03-25":[[11,"Natation"],[13,"Handball"],[15,"cross training"],[16,"Gym"],[18,"cross training"],[19,"Gym"],[20,"VB"]],"2027-03-26":[[21,"Natation"],[22,"cross training"],[23,"Danse"],[24,"Natation"],[25,"DF"],[26,"combiné"],[27,"Bad"]],"2027-03-29":[[0,"Basket"],[1,"Danse"],[2,"Combiné"],[3,"Bad"]],"2027-03-30":[[4,"Basket"],[5,"combiné"],[6,"Bad"],[7,"Bad"]],"2027-03-31":[[8,"Gym"],[10,"DF"]],"2027-04-01":[[11,"Natation"],[12,"Bad"],[14,"Danse"],[17,"Bad"],[18,"cross training"],[19,"Gym"],[20,"VB"]],"2027-04-06":[[4,"Basket"],[5,"combiné"],[6,"Bad"],[7,"Bad"]],"2027-04-07":[[8,"Gym"],[9,"Bad"]],"2027-04-08":[[11,"Natation"],[13,"Bad"],[15,"combiné"],[16,"Combiné"],[18,"cross training"],[19,"Gym"],[20,"VB"]],"2027-04-09":[[21,"Natation"],[22,"Bad"],[23,"DF"],[24,"Natation"],[25,"DF"],[26,"combiné"],[27,"Bad"]],"2027-04-12":[[0,"Basket"],[1,"Danse"],[2,"Combiné"],[3,"Bad"]],"2027-04-13":[[4,"Basket"],[5,"combiné"],[6,"Bad"],[7,"Bad"]],"2027-04-14":[[8,"Gym"],[10,"DF"]],"2027-04-15":[[11,"Natation"],[12,"Bad"],[14,"Danse"],[17,"Bad"],[18,"cross training"],[19,"Gym"],[20,"VB"]],"2027-04-16":[[21,"Natation"],[22,"Bad"],[23,"DF"],[24,"Natation"],[25,"DF"],[26,"combiné"],[27,"Bad"]],"2027-04-19":[[0,"Basket"],[1,"Danse"],[2,"Combiné"],[3,"Bad"]],"2027-04-20":[[4,"Basket"],[5,"combiné"],[6,"Bad"],[7,"Bad"]],"2027-04-21":[[8,"Gym"],[9,"Bad"]],"2027-04-22":[[11,"Natation"],[13,"Bad"],[15,"combiné"],[16,"Combiné"],[18,"cross training"],[19,"Gym"],[20,"VB"]],"2027-04-23":[[21,"Natation"],[22,"Bad"],[23,"DF"],[24,"Natation"],[25,"DF"],[26,"combiné"],[27,"Bad"]],"2027-05-10":[[0,"Basket"],[1,"Danse"],[2,"Combiné"],[3,"Bad"]],"2027-05-11":[[4,"Basket"],[5,"combiné"],[6,"Bad"],[7,"Bad"]],"2027-05-12":[[8,"Gym"],[10,"DF"]],"2027-05-13":[[11,"Natation"],[12,"Bad"],[14,"Danse"],[17,"Bad"],[18,"cross training"],[19,"Gym"],[20,"VB"]],"2027-05-14":[[21,"Natation"],[22,"Bad"],[23,"DF"],[24,"Natation"],[25,"DF"],[26,"combiné"],[27,"Bad"]],"2027-05-17":[[0,"Basket"],[1,"Danse"],[2,"Combiné"],[3,"Bad"]],"2027-05-18":[[4,"Basket"],[5,"combiné"],[6,"Bad"],[7,"Bad"]],"2027-05-19":[[8,"Gym"],[9,"Bad"]],"2027-05-20":[[11,"Natation"],[13,"Bad"],[15,"combiné"],[16,"Combiné"],[18,"cross training"],[19,"Gym"],[20,"VB"]],"2027-05-21":[[21,"Natation"],[22,"Bad"],[23,"DF"],[24,"Natation"],[25,"DF"],[26,"combiné"],[27,"Bad"]],"2027-05-24":[[0,"Basket"],[1,"Danse"],[2,"Combiné"],[3,"Bad"]],"2027-05-25":[[4,"Basket"],[5,"combiné"],[6,"Bad"],[7,"Bad"]],"2027-05-26":[[8,"Gym"],[10,"DF"]],"2027-05-27":[[11,"Natation"],[12,"Bad"],[14,"Danse"],[17,"Bad"],[18,"cross training"],[19,"Gym"],[20,"VB"]],"2027-05-28":[[21,"Natation"],[22,"Bad"],[23,"DF"],[24,"Natation"],[25,"DF"],[26,"Eval Combiné"],[27,"Eval Bad"]],"2027-05-31":[[0,"Basket"],[1,"Danse"],[2,"Combiné"],[3,"Bad"]],"2027-06-01":[[4,"Basket"],[5,"combiné"],[6,"Bad"],[7,"Bad"]],"2027-06-02":[[8,"Gym"],[9,"Bad"]],"2027-06-03":[[11,"jeux collectifs"],[13,"Bad"],[15,"combiné"],[16,"Combiné"],[18,"cross training"],[19,"Gym"],[20,"VB"]],"2027-06-04":[[21,"Natation"],[22,"Bad"],[23,"DF"],[24,"jeux collectifs"],[25,"DF"]]},"feries":["2026-09-25","2027-04-02","2027-04-05","2027-06-09"],"weeks":{"2026-08-31":1,"2026-09-07":2,"2026-09-14":1,"2026-09-21":2,"2026-09-28":1,"2026-10-05":2,"2026-10-12":1,"2026-10-19":2,"2026-10-26":1,"2026-11-02":2,"2026-11-16":1,"2026-11-23":2,"2026-11-30":1,"2026-12-07":2,"2026-12-14":1,"2027-01-04":2,"2027-01-11":1,"2027-01-18":2,"2027-01-25":1,"2027-02-01":2,"2027-02-22":1,"2027-03-01":2,"2027-03-08":1,"2027-03-15":2,"2027-03-22":1,"2027-03-29":2,"2027-04-05":1,"2027-04-12":2,"2027-04-19":1,"2027-05-10":2,"2027-05-17":1,"2027-05-24":2,"2027-05-31":1,"2027-06-07":2,"2027-06-14":1,"2027-06-21":2,"2027-06-28":1}};
+const VERSION = '0.9.6';
+const DEFAULT_CAL_2627 = {"classes":[{"c":"6A","d":"lun","s":"08:30","e":"10:30","qz":false},{"c":"4A","d":"lun","s":"10:30","e":"12:30","qz":false},{"c":"5C","d":"lun","s":"10:30","e":"12:30","qz":false},{"c":"5A","d":"lun","s":"13:30","e":"15:30","qz":false},{"c":"6C","d":"mar","s":"08:30","e":"10:30","qz":false},{"c":"3A","d":"mar","s":"10:30","e":"12:30","qz":false},{"c":"3B","d":"mar","s":"10:30","e":"12:30","qz":false},{"c":"5B","d":"mar","s":"13:30","e":"15:30","qz":false},{"c":"6B","d":"mer","s":"10:30","e":"12:30","qz":false},{"c":"3C","d":"mer","s":"10:30","e":"12:30","qz":true},{"c":"4B","d":"mer","s":"10:30","e":"12:30","qz":true},{"c":"6A","d":"jeu","s":"08:30","e":"10:30","qz":false},{"c":"5B","d":"jeu","s":"10:30","e":"12:30","qz":true},{"c":"5A","d":"jeu","s":"10:30","e":"12:30","qz":true},{"c":"4A","d":"jeu","s":"10:30","e":"12:30","qz":true},{"c":"3A","d":"jeu","s":"10:30","e":"12:30","qz":true},{"c":"5C","d":"jeu","s":"13:30","e":"15:30","qz":true},{"c":"3B","d":"jeu","s":"13:30","e":"15:30","qz":true},{"c":"1B","d":"jeu","s":"15:30","e":"17:30","qz":false},{"c":"1A","d":"jeu","s":"15:30","e":"17:30","qz":false},{"c":"2A","d":"jeu","s":"15:30","e":"17:30","qz":false},{"c":"6C","d":"ven","s":"08:30","e":"10:30","qz":false},{"c":"3C","d":"ven","s":"10:30","e":"12:30","qz":false},{"c":"4B","d":"ven","s":"10:30","e":"12:30","qz":false},{"c":"6B","d":"ven","s":"13:30","e":"15:30","qz":false},{"c":"2B","d":"ven","s":"15:30","e":"17:30","qz":false},{"c":"Term","d":"ven","s":"15:30","e":"17:30","qz":false},{"c":"Term","d":"ven","s":"15:30","e":"17:30","qz":false}],"cal":{"2026-09-01":[[4,"DF"],[5,"Bad"],[6,"combiné"],[7,"Combiné"]],"2026-09-02":[[8,"DF"],[9,"combiné"]],"2026-09-03":[[11,"Gym"],[13,"Combiné"],[15,"Bad"],[16,"Bad"],[18,"Gym"],[19,"Bad"],[20,"DF"]],"2026-09-04":[[21,"jeux collectifs"],[22,"combiné"],[23,"VB"],[24,"jeux collectifs"],[25,"Danse"],[26,"VB"],[27,"DF"]],"2026-09-07":[[0,"DF"],[1,"DF"],[2,"Bad"],[3,"Combiné"]],"2026-09-08":[[4,"DF"],[5,"Bad"],[6,"combiné"],[7,"Combiné"]],"2026-09-09":[[8,"DF"],[10,"VB"]],"2026-09-10":[[11,"Gym"],[12,"Combiné"],[14,"DF"],[17,"combiné"],[18,"Gym"],[19,"Bad"],[20,"DF"]],"2026-09-11":[[21,"jeux collectifs"],[22,"combiné"],[23,"VB"],[24,"jeux collectifs"],[25,"Danse"],[26,"VB"],[27,"DF"]],"2026-09-14":[[0,"DF"],[1,"DF"],[2,"Bad"],[3,"Combiné"]],"2026-09-15":[[4,"DF"],[5,"Bad"],[6,"combiné"],[7,"Combiné"]],"2026-09-16":[[8,"DF"],[9,"combiné"]],"2026-09-17":[[11,"Gym"],[13,"Combiné"],[15,"Bad"],[16,"Bad"],[18,"Gym"],[19,"Bad"],[20,"DF"]],"2026-09-18":[[21,"jeux collectifs"],[22,"combiné"],[23,"VB"],[24,"jeux collectifs"],[25,"Danse"],[26,"VB"],[27,"DF"]],"2026-09-21":[[0,"DF"],[1,"DF"],[2,"Bad"],[3,"Combiné"]],"2026-09-22":[[4,"DF"],[5,"Bad"],[6,"combiné"],[7,"Combiné"]],"2026-09-23":[[8,"DF"],[10,"VB"]],"2026-09-24":[[11,"Gym"],[12,"Combiné"],[14,"DF"],[17,"combiné"],[18,"Gym"],[19,"Bad"],[20,"DF"]],"2026-09-28":[[0,"DF"],[1,"DF"],[2,"Bad"],[3,"Combiné"]],"2026-09-29":[[4,"DF"],[5,"Bad"],[6,"combiné"],[7,"Combiné"]],"2026-09-30":[[8,"DF"],[9,"combiné"]],"2026-10-08":[[11,"Gym"],[12,"Combiné"],[14,"DF"],[17,"combiné"],[18,"Gym"],[19,"Bad"],[20,"DF"]],"2026-10-09":[[21,"jeux collectifs"],[22,"combiné"],[23,"VB"],[24,"jeux collectifs"],[25,"Danse"],[26,"VB"],[27,"DF"]],"2026-10-12":[[0,"DF"],[1,"DF"],[2,"Bad"],[3,"Combiné"]],"2026-10-13":[[4,"DF"],[5,"Bad"],[6,"combiné"],[7,"Combiné"]],"2026-10-14":[[8,"DF"],[9,"combiné"]],"2026-10-15":[[11,"Gym"],[13,"Combiné"],[15,"Bad"],[16,"Bad"],[18,"Gym"],[19,"Bad"],[20,"DF"]],"2026-10-16":[[21,"jeux collectifs"],[22,"combiné"],[23,"VB"],[24,"jeux collectifs"],[25,"Danse"],[26,"VB"],[27,"DF"]],"2026-10-19":[[0,"DF"],[1,"DF"],[2,"Bad"],[3,"Combiné"]],"2026-10-20":[[4,"DF"],[5,"Bad"],[6,"combiné"],[7,"Combiné"]],"2026-10-21":[[8,"DF"],[10,"VB"]],"2026-10-22":[[11,"Gym"],[12,"Combiné"],[14,"DF"],[17,"combiné"],[18,"Gym"],[19,"Bad"],[20,"DF"]],"2026-10-23":[[21,"jeux collectifs"],[22,"combiné"],[23,"VB"],[24,"jeux collectifs"],[25,"Danse"],[26,"VB"],[27,"DF"]],"2026-10-26":[[0,"DF"],[1,"DF"],[2,"Bad"],[3,"Combiné"]],"2026-10-27":[[4,"DF"],[5,"Bad"],[6,"combiné"],[7,"Combiné"]],"2026-10-28":[[8,"DF"],[9,"combiné"]],"2026-10-29":[[11,"Gym"],[13,"Combiné"],[15,"Bad"],[16,"Bad"],[18,"Gym"],[19,"Bad"],[20,"DF"]],"2026-10-30":[[21,"jeux collectifs"],[22,"combiné"],[23,"VB"],[24,"jeux collectifs"],[25,"Danse"],[26,"VB"],[27,"DF"]],"2026-11-02":[[0,"DF"],[1,"Boxe"],[2,"Handball"],[3,"Gym"]],"2026-11-03":[[4,"DF"],[5,"Handball"],[6,"cross training"],[7,"Handball"]],"2026-11-04":[[8,"DF"],[10,"Boxe"]],"2026-11-05":[[11,"Gym"],[12,"Handball"],[14,"Boxe"],[17,"cross training"],[18,"Gym"],[19,"Bad"],[20,"DF"]],"2026-11-06":[[21,"jeux collectifs"],[22,"Handball"],[23,"Boxe"],[24,"jeux collectifs"],[25,"Danse"],[26,"VB"],[27,"DF"]],"2026-11-16":[[0,"DF"],[1,"Boxe"],[2,"Handball"],[3,"Gym"]],"2026-11-17":[[4,"DF"],[5,"Handball"],[6,"cross training"],[7,"Handball"]],"2026-11-18":[[8,"DF"],[9,"Handball"]],"2026-11-19":[[11,"Gym"],[13,"Gym"],[15,"Handball"],[16,"Handball"],[18,"Gym"],[19,"Bad"],[20,"DF"]],"2026-11-20":[[21,"jeux collectifs"],[22,"Handball"],[23,"Boxe"],[24,"jeux collectifs"],[25,"Danse"],[26,"VB"],[27,"DF"]],"2026-11-23":[[0,"DF"],[1,"Boxe"],[2,"Handball"],[3,"Gym"]],"2026-11-24":[[4,"DF"],[5,"Handball"],[6,"cross training"],[7,"Handball"]],"2026-11-25":[[8,"DF"],[10,"Boxe"]],"2026-11-26":[[11,"Gym"],[12,"Handball"],[14,"Boxe"],[17,"cross training"],[18,"Gym"],[19,"Bad"],[20,"DF"]],"2026-11-27":[[21,"jeux collectifs"],[22,"Handball"],[23,"Boxe"],[24,"jeux collectifs"],[25,"Danse"],[26,"VB"],[27,"Eval DF"]],"2026-11-30":[[0,"Danse"],[1,"Boxe"],[2,"Handball"],[3,"Gym"]],"2026-12-01":[[4,"Danse"],[5,"Handball"],[6,"cross training"],[7,"Handball"]],"2026-12-02":[[8,"Danse"],[9,"Handball"]],"2026-12-03":[[11,"jeux collectifs"],[13,"Gym"],[15,"Handball"],[16,"Handball"],[18,"Bad"],[19,"cross training"],[20,"Danse"]],"2026-12-04":[[21,"Gym"],[22,"Handball"],[23,"Boxe"],[24,"Basket"],[25,"VB"],[26,"Eval VB"],[27,"Danse"]],"2026-12-07":[[0,"Danse"],[1,"Boxe"],[2,"Handball"],[3,"Gym"]],"2026-12-08":[[4,"Danse"],[5,"Handball"],[6,"cross training"],[7,"Handball"]],"2026-12-09":[[8,"Danse"],[10,"Boxe"]],"2026-12-10":[[11,"jeux collectifs"],[12,"Handball"],[14,"Boxe"],[17,"cross training"],[18,"Bad"],[19,"cross training"],[20,"Danse"]],"2026-12-11":[[21,"Gym"],[22,"Handball"],[23,"Boxe"],[24,"Basket"],[25,"VB"],[26,"cross training"],[27,"Danse"]],"2026-12-14":[[0,"Danse"],[1,"Boxe"],[2,"Handball"],[3,"Gym"]],"2026-12-15":[[4,"Danse"],[5,"Handball"],[6,"cross training"],[7,"Handball"]],"2026-12-16":[[8,"Danse"],[9,"Handball"]],"2026-12-17":[[11,"jeux collectifs"],[13,"Gym"],[15,"Handball"],[16,"Handball"],[18,"Bad"],[19,"cross training"],[20,"Danse"]],"2026-12-18":[[21,"Gym"],[22,"Handball"],[23,"Boxe"],[24,"Basket"],[25,"VB"],[26,"cross training"],[27,"Danse"]],"2027-01-04":[[0,"Danse"],[1,"Boxe"],[2,"Handball"],[3,"Gym"]],"2027-01-05":[[4,"Danse"],[5,"Handball"],[6,"cross training"],[7,"Handball"]],"2027-01-06":[[8,"Danse"],[10,"Boxe"]],"2027-01-07":[[11,"jeux collectifs"],[12,"Handball"],[14,"Boxe"],[17,"cross training"],[18,"Bad"],[19,"cross training"],[20,"Danse"]],"2027-01-08":[[21,"Gym"],[22,"Handball"],[23,"Boxe"],[24,"Basket"],[25,"VB"],[26,"cross training"],[27,"Danse"]],"2027-01-11":[[0,"Danse"],[1,"Boxe"],[2,"Handball"],[3,"Gym"]],"2027-01-12":[[4,"Danse"],[5,"Handball"],[6,"cross training"],[7,"Handball"]],"2027-01-13":[[8,"Danse"],[9,"Handball"]],"2027-01-14":[[11,"jeux collectifs"],[13,"Gym"],[15,"Handball"],[16,"Handball"],[18,"Bad"],[19,"cross training"],[20,"Danse"]],"2027-01-15":[[21,"Gym"],[22,"Handball"],[23,"Boxe"],[24,"Basket"],[25,"VB"],[26,"cross training"],[27,"Danse"]],"2027-01-18":[[0,"Danse"],[1,"VB"],[2,"Gym"],[3,"Handball"]],"2027-01-19":[[4,"Danse"],[5,"cross training"],[6,"Handball"],[7,"Gym"]],"2027-01-20":[[8,"Danse"],[10,"Danse"]],"2027-01-21":[[11,"jeux collectifs"],[12,"Gym"],[14,"VB"],[17,"Handball"],[18,"Bad"],[19,"cross training"],[20,"Danse"]],"2027-01-22":[[21,"Gym"],[22,"cross training"],[23,"Danse"],[24,"Basket"],[25,"VB"],[26,"cross training"],[27,"Danse"]],"2027-01-25":[[0,"Danse"],[1,"VB"],[2,"Gym"],[3,"Handball"]],"2027-01-26":[[4,"Danse"],[5,"cross training"],[6,"Handball"],[7,"Gym"]],"2027-01-27":[[8,"Danse"],[9,"cross training"]],"2027-01-28":[[11,"jeux collectifs"],[13,"Handball"],[15,"cross training"],[16,"Gym"],[18,"Bad"],[19,"cross training"],[20,"Danse"]],"2027-01-29":[[21,"Gym"],[22,"cross training"],[23,"Danse"],[24,"Basket"],[25,"VB"],[26,"cross training"],[27,"Danse"]],"2027-02-01":[[0,"Danse"],[1,"VB"],[2,"Gym"],[3,"Handball"]],"2027-02-02":[[4,"Danse"],[5,"cross training"],[6,"Handball"],[7,"Gym"]],"2027-02-03":[[8,"Danse"],[10,"Danse"]],"2027-02-04":[[11,"jeux collectifs"],[12,"Gym"],[14,"VB"],[17,"Handball"],[18,"Bad"],[19,"cross training"],[20,"Danse"]],"2027-02-22":[[0,"Danse"],[1,"VB"],[2,"Gym"],[3,"Handball"]],"2027-02-23":[[4,"Danse"],[5,"cross training"],[6,"Handball"],[7,"Gym"]],"2027-02-24":[[8,"Danse"],[9,"cross training"]],"2027-02-25":[[11,"jeux collectifs"],[13,"Handball"],[15,"cross training"],[16,"Gym"],[18,"Bad"],[19,"cross training"],[20,"Danse"]],"2027-02-26":[[21,"Gym"],[22,"cross training"],[23,"Danse"],[24,"Basket"],[25,"VB"],[26,"cross training"],[27,"Danse"]],"2027-03-01":[[0,"Danse"],[1,"VB"],[2,"Gym"],[3,"Handball"]],"2027-03-02":[[4,"Danse"],[5,"cross training"],[6,"Handball"],[7,"Gym"]],"2027-03-03":[[8,"Danse"],[10,"Danse"]],"2027-03-04":[[11,"jeux collectifs"],[12,"Gym"],[14,"VB"],[17,"Handball"],[18,"Bad"],[19,"cross training"],[20,"Danse"]],"2027-03-05":[[21,"Gym"],[22,"cross training"],[23,"Danse"],[24,"Basket"],[25,"VB"],[26,"Eval Cross training"],[27,"Eval Danse"]],"2027-03-08":[[0,"Basket"],[1,"VB"],[2,"Gym"],[3,"Handball"]],"2027-03-09":[[4,"Basket"],[5,"cross training"],[6,"Handball"],[7,"Gym"]],"2027-03-10":[[8,"Gym"],[9,"cross training"]],"2027-03-11":[[11,"Natation"],[13,"Handball"],[15,"cross training"],[16,"Gym"],[18,"cross training"],[19,"Gym"],[20,"VB"]],"2027-03-12":[[21,"Natation"],[22,"cross training"],[23,"Danse"],[24,"Natation"],[25,"DF"],[26,"combiné"],[27,"Bad"]],"2027-03-15":[[0,"Basket"],[1,"VB"],[2,"Gym"],[3,"Handball"]],"2027-03-16":[[4,"Basket"],[5,"cross training"],[6,"Handball"],[7,"Gym"]],"2027-03-17":[[8,"Gym"],[10,"Danse"]],"2027-03-18":[[11,"Natation"],[12,"Gym"],[14,"VB"],[17,"Handball"],[18,"cross training"],[19,"Gym"],[20,"VB"]],"2027-03-19":[[21,"Natation"],[22,"cross training"],[23,"Danse"],[24,"Natation"],[25,"DF"],[26,"combiné"],[27,"Bad"]],"2027-03-22":[[0,"Basket"],[1,"VB"],[2,"Gym"],[3,"Handball"]],"2027-03-23":[[4,"Basket"],[5,"cross training"],[6,"Handball"],[7,"Gym"]],"2027-03-24":[[8,"Gym"],[9,"cross training"]],"2027-03-25":[[11,"Natation"],[13,"Handball"],[15,"cross training"],[16,"Gym"],[18,"cross training"],[19,"Gym"],[20,"VB"]],"2027-03-26":[[21,"Natation"],[22,"cross training"],[23,"Danse"],[24,"Natation"],[25,"DF"],[26,"combiné"],[27,"Bad"]],"2027-03-29":[[0,"Basket"],[1,"Danse"],[2,"Combiné"],[3,"Bad"]],"2027-03-30":[[4,"Basket"],[5,"combiné"],[6,"Bad"],[7,"Bad"]],"2027-03-31":[[8,"Gym"],[10,"DF"]],"2027-04-01":[[11,"Natation"],[12,"Bad"],[14,"Danse"],[17,"Bad"],[18,"cross training"],[19,"Gym"],[20,"VB"]],"2027-04-06":[[4,"Basket"],[5,"combiné"],[6,"Bad"],[7,"Bad"]],"2027-04-07":[[8,"Gym"],[9,"Bad"]],"2027-04-08":[[11,"Natation"],[13,"Bad"],[15,"combiné"],[16,"Combiné"],[18,"cross training"],[19,"Gym"],[20,"VB"]],"2027-04-09":[[21,"Natation"],[22,"Bad"],[23,"DF"],[24,"Natation"],[25,"DF"],[26,"combiné"],[27,"Bad"]],"2027-04-12":[[0,"Basket"],[1,"Danse"],[2,"Combiné"],[3,"Bad"]],"2027-04-13":[[4,"Basket"],[5,"combiné"],[6,"Bad"],[7,"Bad"]],"2027-04-14":[[8,"Gym"],[10,"DF"]],"2027-04-15":[[11,"Natation"],[12,"Bad"],[14,"Danse"],[17,"Bad"],[18,"cross training"],[19,"Gym"],[20,"VB"]],"2027-04-16":[[21,"Natation"],[22,"Bad"],[23,"DF"],[24,"Natation"],[25,"DF"],[26,"combiné"],[27,"Bad"]],"2027-04-19":[[0,"Basket"],[1,"Danse"],[2,"Combiné"],[3,"Bad"]],"2027-04-20":[[4,"Basket"],[5,"combiné"],[6,"Bad"],[7,"Bad"]],"2027-04-21":[[8,"Gym"],[9,"Bad"]],"2027-04-22":[[11,"Natation"],[13,"Bad"],[15,"combiné"],[16,"Combiné"],[18,"cross training"],[19,"Gym"],[20,"VB"]],"2027-04-23":[[21,"Natation"],[22,"Bad"],[23,"DF"],[24,"Natation"],[25,"DF"],[26,"combiné"],[27,"Bad"]],"2027-05-10":[[0,"Basket"],[1,"Danse"],[2,"Combiné"],[3,"Bad"]],"2027-05-11":[[4,"Basket"],[5,"combiné"],[6,"Bad"],[7,"Bad"]],"2027-05-12":[[8,"Gym"],[10,"DF"]],"2027-05-13":[[11,"Natation"],[12,"Bad"],[14,"Danse"],[17,"Bad"],[18,"cross training"],[19,"Gym"],[20,"VB"]],"2027-05-14":[[21,"Natation"],[22,"Bad"],[23,"DF"],[24,"Natation"],[25,"DF"],[26,"combiné"],[27,"Bad"]],"2027-05-17":[[0,"Basket"],[1,"Danse"],[2,"Combiné"],[3,"Bad"]],"2027-05-18":[[4,"Basket"],[5,"combiné"],[6,"Bad"],[7,"Bad"]],"2027-05-19":[[8,"Gym"],[9,"Bad"]],"2027-05-20":[[11,"Natation"],[13,"Bad"],[15,"combiné"],[16,"Combiné"],[18,"cross training"],[19,"Gym"],[20,"VB"]],"2027-05-21":[[21,"Natation"],[22,"Bad"],[23,"DF"],[24,"Natation"],[25,"DF"],[26,"combiné"],[27,"Bad"]],"2027-05-24":[[0,"Basket"],[1,"Danse"],[2,"Combiné"],[3,"Bad"]],"2027-05-25":[[4,"Basket"],[5,"combiné"],[6,"Bad"],[7,"Bad"]],"2027-05-26":[[8,"Gym"],[10,"DF"]],"2027-05-27":[[11,"Natation"],[12,"Bad"],[14,"Danse"],[17,"Bad"],[18,"cross training"],[19,"Gym"],[20,"VB"]],"2027-05-28":[[21,"Natation"],[22,"Bad"],[23,"DF"],[24,"Natation"],[25,"DF"],[26,"Eval Combiné"],[27,"Eval Bad"]],"2027-05-31":[[0,"Basket"],[1,"Danse"],[2,"Combiné"],[3,"Bad"]],"2027-06-01":[[4,"Basket"],[5,"combiné"],[6,"Bad"],[7,"Bad"]],"2027-06-02":[[8,"Gym"],[9,"Bad"]],"2027-06-03":[[11,"jeux collectifs"],[13,"Bad"],[15,"combiné"],[16,"Combiné"],[18,"cross training"],[19,"Gym"],[20,"VB"]],"2027-06-04":[[21,"Natation"],[22,"Bad"],[23,"DF"],[24,"jeux collectifs"],[25,"DF"]]},"feries":["2026-09-25","2027-04-02","2027-04-05","2027-06-09"],"weeks":{"2026-08-31":1,"2026-09-07":2,"2026-09-14":1,"2026-09-21":2,"2026-09-28":1,"2026-10-05":2,"2026-10-12":1,"2026-10-19":2,"2026-10-26":1,"2026-11-02":2,"2026-11-16":1,"2026-11-23":2,"2026-11-30":1,"2026-12-07":2,"2026-12-14":1,"2027-01-04":2,"2027-01-11":1,"2027-01-18":2,"2027-01-25":1,"2027-02-01":2,"2027-02-22":1,"2027-03-01":2,"2027-03-08":1,"2027-03-15":2,"2027-03-22":1,"2027-03-29":2,"2027-04-05":1,"2027-04-12":2,"2027-04-19":1,"2027-05-10":2,"2027-05-17":1,"2027-05-24":2,"2027-05-31":1,"2027-06-07":2,"2027-06-14":1,"2027-06-21":2,"2027-06-28":1}};
+let CAL = (window.__CS && window.__CS.calendrier) || JSON.parse(JSON.stringify(DEFAULT_CAL_2627));
+// Normaliser les créneaux 08:00-10:00 et 10:00-12:00 hérités sur les créneaux LFIP en :30
+if (CAL && Array.isArray(CAL.classes)) {
+  CAL.classes.forEach(c => {
+    if (c.s === '08:00' && c.e === '10:00') { c.s = '08:30'; c.e = '10:30'; }
+    if (c.s === '10:00' && c.e === '12:00') { c.s = '10:30'; c.e = '12:30'; }
+  });
+}
 const $ = (s, el = document) => el.querySelector(s);
 const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const _clone = v => v == null ? v : JSON.parse(JSON.stringify(v));
@@ -496,13 +504,232 @@ function mergeHalves(list) {
   return out.sort((a, b) => a.s.localeCompare(b.s));
 }
 const hh = t => t.replace(/^0/, '').replace(':', 'h').replace(/h00$/, 'h');
+const DEFAULT_INST_CFG = [
+  { base: 'Grand gymnase', halves: true, outdoor: false },
+  { base: 'Salle de gym', halves: false, outdoor: false },
+  { base: 'Dojo', halves: false, outdoor: false },
+  { base: 'Terrain de foot', halves: true, outdoor: true },
+  { base: 'Piste', halves: false, outdoor: true },
+  { base: 'Sautoir', halves: false, outdoor: true },
+  { base: 'Terrain Basket ext', halves: false, outdoor: true },
+  { base: 'Piscine', halves: false, outdoor: false }
+];
+function getInstConfig() {
+  const saved = LS.get('inst_config', null);
+  if (Array.isArray(saved) && saved.length) return saved;
+  const bases = new Map();
+  DEFAULT_INST_CFG.forEach(c => bases.set(c.base, { ...c }));
+  if (PLAN && PLAN.periods) {
+    for (const p of PLAN.periods) for (const i of p.items) {
+      if (!i.base || /^autre/i.test(i.base)) continue;
+      const hasHalf = /moiti[ée]/i.test(i.inst);
+      if (!bases.has(i.base)) bases.set(i.base, { base: i.base, halves: hasHalf, outdoor: /terrain|piste|sautoir|ext/i.test(i.base) });
+      else if (hasHalf) bases.get(i.base).halves = true;
+    }
+  }
+  return [...bases.values()];
+}
+function saveInstConfig(list) {
+  LS.set('inst_config', list);
+}
+function installationRows() {
+  const cfg = getInstConfig();
+  const out = [];
+  for (const c of cfg) {
+    if (c.halves) {
+      out.push(c.base + ' · moitié 1');
+      out.push(c.base + ' · moitié 2');
+    } else {
+      out.push(c.base);
+    }
+  }
+  if (PLAN && PLAN.periods) {
+    for (const p of PLAN.periods) for (const i of p.items) {
+      if (i.inst && !out.includes(i.inst) && !/^autre/i.test(i.inst)) out.push(i.inst);
+    }
+  }
+  for (const r of (typeof RESA !== 'undefined' ? RESA : [])) {
+    if (r.inst && !out.includes(r.inst) && !/^autre/i.test(r.inst)) out.push(r.inst);
+  }
+  return out;
+}
 function installations() {
-  if (!PLAN) return [];
-  const set = new Map();
-  for (const p of PLAN.periods) for (const i of p.items) if (!set.has(i.base)) set.set(i.base, new Set());
-  for (const p of PLAN.periods) for (const i of p.items) set.get(i.base).add(i.inst);
-  for (const r of (typeof RESA !== 'undefined' ? RESA : [])) { const b = prettyInst(r.inst).base; if (!set.has(b)) set.set(b, new Set([r.inst])); }
-  return [...set.keys()].sort((x, y) => (/^autre/i.test(x) - /^autre/i.test(y)) || x.localeCompare(y));
+  const cfg = getInstConfig().map(c => c.base);
+  const set = new Set(cfg);
+  if (PLAN && PLAN.periods) {
+    for (const p of PLAN.periods) for (const i of p.items) if (i.base && !/^autre/i.test(i.base)) set.add(i.base);
+  }
+  for (const r of (typeof RESA !== 'undefined' ? RESA : [])) {
+    const b = prettyInst(r.inst).base;
+    if (b && !/^autre/i.test(b)) set.add(b);
+  }
+  return [...set];
+}
+
+/* ---------- Gestion multi-années scolaires ---------- */
+function curSchoolYear() {
+  return LS.get('school_year_cur', (CAL && CAL.year) || '2026-2027');
+}
+function listSchoolYears() {
+  const idx = LS.get('school_years_list', ['2025-2026', '2026-2027', '2027-2028']);
+  const cur = curSchoolYear();
+  if (!idx.includes(cur)) idx.push(cur);
+  return idx.sort();
+}
+function shiftIsoYear(isoStr, deltaYears) {
+  if (!isoStr || typeof isoStr !== 'string' || !/^\d{4}-\d{2}-\d{2}$/.test(isoStr)) return isoStr;
+  const d = fromIso(isoStr);
+  d.setFullYear(d.getFullYear() + deltaYears);
+  return iso(d);
+}
+function saveCurrentSchoolYearSnapshot() {
+  const y = curSchoolYear();
+  const snap = {
+    year: y,
+    calendrier: CAL,
+    planning: PLAN,
+    resa: typeof RESA !== 'undefined' ? RESA : [],
+    rythmes: LS.get('rythmes_custom', null),
+    prog_inst: LS.get('prog_inst', {}),
+    eval_notes: LS.get('eval_notes', {})
+  };
+  LS.set('year_data_' + y, snap);
+}
+function switchSchoolYear(targetYear) {
+  const cur = curSchoolYear();
+  if (targetYear === cur) return;
+  saveCurrentSchoolYearSnapshot();
+  const list = listSchoolYears();
+  if (!list.includes(targetYear)) { list.push(targetYear); LS.set('school_years_list', list.sort()); }
+  const snap = LS.get('year_data_' + targetYear, null);
+  LS.set('school_year_cur', targetYear);
+  if (snap) {
+    CAL = snap.calendrier || JSON.parse(JSON.stringify(DEFAULT_CAL_2627));
+    CAL.year = targetYear;
+    PLAN = snap.planning || { periods: [] };
+    if (typeof RESA !== 'undefined') RESA = snap.resa || [];
+    LS.set('calendrier', CAL);
+    LS.set('planning', PLAN);
+    LS.set('resa', typeof RESA !== 'undefined' ? RESA : []);
+    if (snap.rythmes) LS.set('rythmes_custom', snap.rythmes);
+    if (snap.prog_inst) LS.set('prog_inst', snap.prog_inst);
+    if (snap.eval_notes) LS.set('eval_notes', snap.eval_notes);
+  } else {
+    createSchoolYearData(targetYear, cur, true);
+  }
+  const firstStart = (CAL.semaines && CAL.semaines[0] && CAL.semaines[0].debut) || (targetYear.split('-')[0] + '-09-01');
+  if (typeof PL !== 'undefined') PL.date = firstStart;
+}
+function createSchoolYearData(newYear, fromYear, copyProg) {
+  saveCurrentSchoolYearSnapshot();
+  const list = listSchoolYears();
+  if (!list.includes(newYear)) { list.push(newYear); LS.set('school_years_list', list.sort()); }
+  const y0 = parseInt((fromYear || curSchoolYear()).split('-')[0], 10) || 2026;
+  const y1 = parseInt(newYear.split('-')[0], 10) || (y0 + 1);
+  const delta = y1 - y0;
+  const srcCal = JSON.parse(JSON.stringify(CAL || DEFAULT_CAL_2627));
+  const newCal = {
+    year: newYear,
+    classes: srcCal.classes || [],
+    vacances: (srcCal.vacances || []).map(([s, e, lbl]) => [shiftIsoYear(s, delta), shiftIsoYear(e, delta), lbl]),
+    feries: (srcCal.feries || []).map(([s, lbl]) => [shiftIsoYear(s, delta), lbl]),
+    semaines: (srcCal.semaines || []).map(w => ({ ...w, debut: shiftIsoYear(w.debut, delta), fin: shiftIsoYear(w.fin, delta) })),
+    cal: {}
+  };
+  if (copyProg && srcCal.cal) {
+    for (const [dt, arr] of Object.entries(srcCal.cal)) {
+      newCal.cal[shiftIsoYear(dt, delta)] = JSON.parse(JSON.stringify(arr));
+    }
+  }
+  let newPlan = { version: 2, generatedAt: new Date().toISOString(), periods: [] };
+  if (copyProg && PLAN && PLAN.periods) {
+    newPlan.periods = PLAN.periods.map(p => ({
+      ...JSON.parse(JSON.stringify(p)),
+      from: shiftIsoYear(p.from, delta),
+      to: shiftIsoYear(p.to, delta)
+    }));
+  } else {
+    const baseRythmes = getRythmesForYear(newYear);
+    newPlan.periods = Object.entries(baseRythmes).map(([k, r]) => ({
+      sheet: k + ' ' + newYear, name: r.label, from: r.from, to: r.to, items: []
+    }));
+  }
+  const baseRythmes = getRythmesForYear(newYear);
+  LS.set('school_year_cur', newYear);
+  CAL = newCal;
+  PLAN = newPlan;
+  if (typeof RESA !== 'undefined') RESA = [];
+  LS.set('calendrier', CAL);
+  LS.set('planning', PLAN);
+  LS.set('resa', []);
+  LS.set('rythmes_custom', baseRythmes);
+  saveCurrentSchoolYearSnapshot();
+  if (typeof PL !== 'undefined') PL.date = (newCal.semaines[0] && newCal.semaines[0].debut) || (y1 + '-09-01');
+}
+function getRythmesForYear(yr) {
+  const y = yr || curSchoolYear();
+  const saved = LS.get('rythmes_custom', null);
+  const yStart = parseInt(y.split('-')[0], 10) || 2026;
+  const yEnd = yStart + 1;
+  const def = {
+    P1: { label: 'Période 1', from: `${yStart}-09-01`, to: `${yStart}-10-16`, note: 'Septembre → Vacances d’automne' },
+    P2: { label: 'Période 2', from: `${yStart}-11-02`, to: `${yStart}-12-18`, note: 'Novembre → Vacances de Noël' },
+    P3: { label: 'Période 3', from: `${yEnd}-01-04`, to: `${yEnd}-04-16`, note: 'Janvier → Vacances de printemps' },
+    P4: { label: 'Période 4', from: `${yEnd}-05-03`, to: `${yEnd}-07-02`, note: 'Mai → Fin d’année' },
+    S1: { label: 'Semestre 1', from: `${yStart}-09-01`, to: `${yEnd}-01-29`, note: 'Septembre → Fin janvier' },
+    S2: { label: 'Semestre 2', from: `${yEnd}-02-01`, to: `${yEnd}-07-02`, note: 'Février → Fin d’année' }
+  };
+  if (saved && saved.P1 && saved.P1.from && saved.P1.from.startsWith(String(yStart))) return saved;
+  return def;
+}
+function schoolYearBarHTML() {
+  const cur = curSchoolYear();
+  const list = listSchoolYears();
+  const isCoord = (profil() || 'coord') === 'coord';
+  return `<div class="row noprint" style="background:#EFF6FF;border:1px solid #BFDBFE;border-radius:10px;padding:8px 12px;justify-content:space-between;align-items:center">
+    <div class="row" style="gap:8px;align-items:center">
+      <span style="font-weight:800;color:#1E3A8A;font-size:13px">📅 Année scolaire :</span>
+      <select id="sy_select" style="min-height:34px;padding:4px 10px;font-weight:800;border-color:#93C5FD;background:#fff;color:#1E3A8A">
+        ${list.map(y => `<option value="${esc(y)}" ${y === cur ? 'selected' : ''}>${esc(y)}</option>`).join('')}
+      </select>
+      <span class="muted" style="font-size:12px">Créneaux LFIP calés sur <b>8h30 · 9h30 · 10h30…</b></span>
+    </div>
+    ${isCoord ? `<div class="row" style="gap:6px">
+      <button type="button" class="btn" id="sy_copy_btn" style="min-height:32px;padding:4px 10px;font-size:12px" title="Créer une nouvelle année scolaire en copiant les classes et la programmation de ${esc(cur)}">📋 Copier vers une nouvelle année</button>
+      <button type="button" class="btn" id="sy_new_btn" style="min-height:32px;padding:4px 10px;font-size:12px" title="Créer une nouvelle année scolaire vierge (garde uniquement les classes et installations)">➕ Nouvelle année vierge</button>
+      <a class="btn" href="#etab" style="min-height:32px;padding:4px 10px;font-size:12px;text-decoration:none">🏟️ Installations & Calendrier PDF</a>
+    </div>` : ''}
+  </div>`;
+}
+function bindSchoolYearBar(rerenderFn) {
+  const sel = $('#sy_select');
+  if (sel) sel.onchange = () => {
+    switchSchoolYear(sel.value);
+    alertMsg('Année scolaire basculée sur ' + sel.value + '.');
+    rerenderFn();
+  };
+  const copyBtn = $('#sy_copy_btn');
+  if (copyBtn) copyBtn.onclick = () => {
+    const cur = curSchoolYear();
+    const y0 = parseInt(cur.split('-')[0], 10) || 2026;
+    const defNext = (y0 + 1) + '-' + (y0 + 2);
+    const ny = prompt(`Nom de la nouvelle année scolaire à générer en copiant ${cur} (classes, créneaux, programmation, périodes décalées d'1 an) :`, defNext);
+    if (!ny || !/^\d{4}-\d{4}$/.test(ny.trim())) { if (ny) alertMsg('Format attendu : AAAA-AAAA (ex. 2027-2028)'); return; }
+    createSchoolYearData(ny.trim(), cur, true);
+    alertMsg(`Année ${ny.trim()} créée avec copie de ${cur} !`);
+    rerenderFn();
+  };
+  const newBtn = $('#sy_new_btn');
+  if (newBtn) newBtn.onclick = () => {
+    const cur = curSchoolYear();
+    const y0 = parseInt(cur.split('-')[0], 10) || 2026;
+    const defNext = (y0 + 1) + '-' + (y0 + 2);
+    const ny = prompt(`Nom de la nouvelle année scolaire vierge (conserve les classes et installations de ${cur}) :`, defNext);
+    if (!ny || !/^\d{4}-\d{4}$/.test(ny.trim())) { if (ny) alertMsg('Format attendu : AAAA-AAAA (ex. 2027-2028)'); return; }
+    createSchoolYearData(ny.trim(), cur, false);
+    alertMsg(`Année vierge ${ny.trim()} créée !`);
+    rerenderFn();
+  };
 }
 function blockLabel(b) {
   const cl = b.classes && b.classes.length ? b.classes.join(' · ') : (b.st === 'eps' ? 'Cours EPS' : b.stl || b.st);
@@ -702,7 +929,7 @@ function canUserEditBlock(b, perName) {
   if (p === 'acs') return b.st === 'acs';
   return false;
 }
-const PL = { date: iso(new Date()), modal: null };
+const PL = { date: iso(new Date()), modal: null, printBy: 'inst', printTarget: 'ALL', printWk: 'this' };
 VIEWS.planning = function () {
   const app = $('#app');
   if (!PLAN) { app.innerHTML = '<main>' + needPlanning() + '</main>'; return; }
@@ -713,10 +940,14 @@ VIEWS.planning = function () {
   const isCoord = pKey === 'coord';
   const periodLocked = curPer && perms.lockedPeriods[curPer.name];
   const userCanBook = st === 'cours' && canBookPlanning() && (isCoord || !periodLocked);
-  const H0 = 8 * 60, H1 = 19 * 60 + 30, STEP = 30, ncol = (H1 - H0) / STEP;
-  const rows = [...new Set(PLAN.periods.flatMap(p => p.items.map(i => i.inst)))].sort().filter(r => !/^autre/i.test(r) || bl.some(b => b.inst === r));
+  const slotOffset = Number((typeof etab === 'function' && etab().slotOffset !== undefined) ? etab().slotOffset : 30);
+  const H0 = 7 * 60 + (slotOffset === 0 ? 60 : 30), H1 = 18 * 60 + 30, STEP = 30, ncol = Math.round((H1 - H0) / STEP);
+  const rows = installationRows();
   let grid = `<div class="pg" style="grid-template-columns:170px repeat(${ncol},minmax(0,1fr))"><div class="h">Installation</div>`;
-  for (let c = 0; c < ncol; c++) grid += `<div class="h">${(H0 + c * STEP) % 60 === 0 ? hm(H0 + c * STEP) : ''}</div>`;
+  for (let c = 0; c < ncol; c++) {
+    const mins = H0 + c * STEP;
+    grid += `<div class="h">${c % 2 === 0 ? hm(mins) : ''}</div>`;
+  }
   rows.forEach((inst, r) => {
     const gr = r + 2;
     grid += `<div class="inst" style="grid-row:${gr};grid-column:1">${esc(inst)}</div>`;
@@ -734,7 +965,7 @@ VIEWS.planning = function () {
       const prot = isBlockProtected(b, curPer && curPer.name);
       const editable = canUserEditBlock(b, curPer && curPer.name);
       const bIdx = bl.indexOf(b);
-      grid += `<div class="blk ${chipClass(b)} ${editable ? 'can-edit' : 'is-locked'}" data-bidx="${bIdx}" style="grid-row:${gr};grid-column:${c0 + 2} / ${c1 + 2}" title="${esc(b.s + '–' + b.e + ' ' + blockLabel(b) + ' ' + b.apsa + ' ' + b.who + (prot ? ' (🔒 Créneau protégé)' : ' (Cliquer pour modifier)'))}">
+      grid += `<div class="blk ${chipClass(b)} ${editable ? 'can-edit' : 'is-locked'}" data-bidx="${bIdx}" style="grid-row:${gr};grid-column:${c0 + 2} / ${Math.max(c0 + 3, c1 + 2)}" title="${esc(b.s + '–' + b.e + ' ' + blockLabel(b) + ' ' + b.apsa + ' ' + b.who + (prot ? ' (🔒 Créneau protégé)' : ' (Cliquer pour modifier)'))}">
         ${prot ? '<span class="lk-ic" title="Créneau protégé (verrouillé)">🔒</span>' : (editable ? '<span class="lk-ic" title="Modifiable">✏️</span>' : '')}
         <b>${esc(blockLabel(b))}${b.ponctuel ? ' <small style="font-weight:400">(ponctuel)</small>' : ''}</b>
         <span>${esc(b.apsa)}${b.who ? ' · ' + esc(b.who) : ''}</span>
@@ -757,15 +988,15 @@ VIEWS.planning = function () {
       <div class="row" style="justify-content:space-between">
         <h2>${isEdit ? '✏️ Modifier le créneau réservé' : '➕ Réserver un créneau libre'} · ${esc(md.inst)}</h2>
         <div class="row" style="gap:6px">
-          <a class="btn" href="#programmation" style="text-decoration:none;min-height:34px;padding:4px 10px;font-size:12px">📋 Programmation</a>
-          <a class="btn" href="#ressources" style="text-decoration:none;min-height:34px;padding:4px 10px;font-size:12px">🎯 Catalogue APSA</a>
+          ${isCoord ? `<a class="btn" href="#programmation" style="text-decoration:none;min-height:34px;padding:4px 10px;font-size:12px">📋 Programmation</a>
+          <a class="btn" href="#ressources" style="text-decoration:none;min-height:34px;padding:4px 10px;font-size:12px">🎯 Catalogue APSA</a>` : ''}
           <button class="btn" id="plm_close">✕ Fermer</button>
         </div>
       </div>
       <div class="row">
         <label class="f">Installation<select id="plm_inst">${rows.map(r => `<option ${r === md.inst ? 'selected' : ''}>${esc(r)}</option>`).join('')}</select></label>
-        <label class="f">Début<input type="text" id="plm_s" value="${esc(md.s)}" placeholder="10:00" style="width:95px"></label>
-        <label class="f">Fin<input type="text" id="plm_e" value="${esc(md.e)}" placeholder="11:00" style="width:95px"></label>
+        <label class="f">Début<input type="text" id="plm_s" value="${esc(md.s)}" placeholder="08:30" style="width:95px"></label>
+        <label class="f">Fin<input type="text" id="plm_e" value="${esc(md.e)}" placeholder="09:30" style="width:95px"></label>
         <label class="f">Portée de la réservation<select id="plm_scope" ${isEdit ? 'disabled' : ''}>
           ${curPer ? `<option value="periode" ${md.scope === 'periode' ? 'selected' : ''}>Toute la ${esc(curPer.name)} (chaque ${JOURS[d.getDay()]})</option>` : ''}
           <option value="jour" ${md.scope === 'jour' || !curPer ? 'selected' : ''}>Uniquement le ${frDate(d)} (ponctuel)</option>
@@ -802,26 +1033,30 @@ VIEWS.planning = function () {
     </div>`;
   }
 
+  // Collect options for print/export target filter
+  const printTargets = getPlanningFilterTargets(PL.printBy, PL.printWk, d);
+
   app.innerHTML = `<main>
+    ${schoolYearBarHTML()}
     <div class="row" style="justify-content:space-between">
       <div class="row"><button class="btn" id="prev" aria-label="Jour précédent">‹</button><h1>${esc(frDate(d))}</h1><span class="chip ${weekType(d) === 'Q1' ? 'ca2' : weekType(d) === 'Q2' ? 'ca4' : 'st-acs'}">${esc(weekLabel(d))}${curPer ? ' · ' + esc(curPer.name) : ''}</span><button class="btn" id="next" aria-label="Jour suivant">›</button></div>
       <div class="row" style="gap:6px">
         ${userCanBook ? `<button class="btn blue" id="pl_new_btn">+ Réserver un créneau</button>` : ''}
-        ${isCoord ? `<a class="btn" href="#programmation" style="text-decoration:none">📋 Programmation</a><a class="btn" href="#generateur" style="text-decoration:none">⚡ Générateur</a><a class="btn" href="#ressources" style="text-decoration:none">🎯 APSA</a>` : ''}
+        ${isCoord ? `<a class="btn" href="#programmation" style="text-decoration:none" title="Visible uniquement par le coordonnateur">📋 Programmation</a><a class="btn" href="#generateur" style="text-decoration:none" title="Visible uniquement par le coordonnateur">⚡ Générateur</a><a class="btn" href="#ressources" style="text-decoration:none" title="Visible uniquement par le coordonnateur">🎯 APSA</a>` : ''}
         <input type="date" id="pdate" value="${PL.date}"><button class="btn" id="today">Aujourd’hui</button>
       </div>
     </div>
     ${!isCoord && userCanBook ? `<div class="banner" style="background:#ECFDF5;border-color:#A7F3D0;color:#065F46;display:flex;align-items:center;gap:10px">
       <span style="font-size:20px">🔓</span>
-      <div><strong>Réservation ouverte pour ton profil (${esc((PROFILS[pKey] || {}).t)})</strong> · Les créneaux EPS sont protégés (🔒). Clique directement sur une case vide du planning pour réserver ton créneau, ou sur l’un de tes créneaux pour le modifier.</div>
+      <div><strong>Réservation ouverte pour ton profil (${esc((PROFILS[pKey] || {}).t)})</strong> · Les créneaux EPS sont protégés (🔒). Clique directement sur une case vide du planning pour réserver ton créneau (8h30–9h30, 9h30–10h30…), ou sur l’un de tes créneaux pour le modifier.</div>
     </div>` : ''}
     ${!isCoord && periodLocked ? `<div class="banner">🔒 Les réservations sur la <strong>${esc(curPer.name)}</strong> sont actuellement clôturées par la coordination EPS.</div>` : ''}
     ${modalHTML}
     <div class="card" style="padding:0"><div class="scroll">${st === 'cours' ? grid : `<div class="empty">${st === 'weekend' ? 'Week-end' : st === 'ferie' ? 'Jour férié' : 'Vacances scolaires'}</div>`}</div></div>
-    <div class="row muted"><span class="chip ca4">🔒 Cours EPS (protégés)</span><span class="chip st-pr">Primaire</span><span class="chip st-as">AS</span><span class="chip st-acs">ACS</span><span>Astuce : clique sur une case libre pour réserver ou sur un créneau pour voir ses détails.</span></div>
+    <div class="row muted"><span class="chip ca4">🔒 Cours EPS (protégés)</span><span class="chip st-pr">Primaire</span><span class="chip st-as">AS</span><span class="chip st-acs">ACS</span><span>Astuce : clique sur une case libre (8h30, 9h30, 10h30…) pour réserver ou sur un créneau pour voir ses détails.</span></div>
     ${isCoord ? `<details class="card noprint">
-      <summary style="cursor:pointer;font-weight:700">🔒 Protection des créneaux EPS & Ouverture des réservations (style Excel)</summary>
-      <span class="muted">Reproduit le fonctionnement de ton fichier Excel protégé par mot de passe : tu bloques tous les créneaux EPS, et tu ouvres le planning aux enseignants du primaire (ou AS/ACS) pour qu’ils réservent uniquement les créneaux libres sans pouvoir toucher aux cours EPS.</span>
+      <summary style="cursor:pointer;font-weight:700">🔒 Protection des créneaux EPS & Ouverture des réservations <span class="badge" style="background:#DBEAFE;color:#1E3A8A;margin-left:6px">Accès Coordonnateur uniquement</span></summary>
+      <span class="muted">Tu bloques ici tous les créneaux EPS et tu ouvres le planning aux enseignants du primaire (ou AS/ACS) pour qu’ils réservent uniquement les créneaux libres sans pouvoir toucher aux cours EPS. Ce bloc de réglage est strictement réservé au coordonnateur.</span>
       <div class="row" style="margin-top:6px">
         <label class="chk"><input type="checkbox" id="pp_lock_eps" ${perms.lockEPS ? 'checked' : ''}> <strong>Protéger automatiquement tous les créneaux Cours EPS (🔒)</strong></label>
       </div>
@@ -840,24 +1075,43 @@ VIEWS.planning = function () {
         </div>
       </div>` : ''}
     </details>` : ''}
-    <div class="card noprint"><h2>Fichiers Excel papier</h2>
+    <div class="card noprint">
+      <h2>🖨️ Imprimer & Télécharger les plannings (par installation, enseignant ou classe)</h2>
       <div class="row">
-        <label class="f">Une feuille par<select id="xby"><option value="inst">Installation</option><option value="who">Intervenant</option><option value="cls">Classe (cours EPS)</option></select></label>
-        <label class="f">Semaine<select id="xwk"><option value="this">Semaine affichée</option><option value="Q1">Semaine Q1 type</option><option value="Q2">Semaine Q2 type</option></select></label>
-        <button class="btn go" id="xgo" style="align-self:flex-end">Télécharger l’Excel</button>
+        <label class="f">Type de planning<select id="xby">
+          <option value="inst" ${PL.printBy === 'inst' ? 'selected' : ''}>🏟️ Par Installation</option>
+          <option value="who" ${PL.printBy === 'who' ? 'selected' : ''}>👤 Par Enseignant / Intervenant</option>
+          <option value="cls" ${PL.printBy === 'cls' ? 'selected' : ''}>🎓 Par Classe</option>
+        </select></label>
+        <label class="f" style="min-width:210px">Cible à imprimer / exporter<select id="xtarget">
+          <option value="ALL" ${PL.printTarget === 'ALL' ? 'selected' : ''}>📋 Toutes / Tous (${printTargets.length})</option>
+          ${printTargets.map(t => `<option value="${esc(t)}" ${PL.printTarget === t ? 'selected' : ''}>${esc(t)}</option>`).join('')}
+        </select></label>
+        <label class="f">Semaine<select id="xwk">
+          <option value="this" ${PL.printWk === 'this' ? 'selected' : ''}>Semaine affichée (${frDate(monday(d))})</option>
+          <option value="Q1" ${PL.printWk === 'Q1' ? 'selected' : ''}>Semaine Q1 type</option>
+          <option value="Q2" ${PL.printWk === 'Q2' ? 'selected' : ''}>Semaine Q2 type</option>
+        </select></label>
+        <button class="btn blue" id="xprint" style="align-self:flex-end">🖨️ Imprimer le planning (A4)</button>
+        <button class="btn go" id="xgo" style="align-self:flex-end">📥 Télécharger Excel (.xlsx)</button>
       </div>
-      <span class="muted">Dans Excel : Mise en page → A4, Ajuster à 1 page en largeur, avant d’imprimer.</span>
+      <span class="muted">Choisis « Par Installation », « Par Enseignant » ou « Par Classe », sélectionne une cible précise (ou « Toutes / Tous » pour imprimer une page par fiche), puis clique sur <b>🖨️ Imprimer le planning (A4)</b> ou <b>📥 Télécharger Excel</b>.</span>
     </div>
   </main>`;
+  bindSchoolYearBar(() => VIEWS.planning());
   $('#prev').onclick = () => { PL.date = iso(addDays(d, -1)); PL.modal = null; VIEWS.planning(); };
   $('#next').onclick = () => { PL.date = iso(addDays(d, 1)); PL.modal = null; VIEWS.planning(); };
   $('#today').onclick = () => { PL.date = iso(new Date()); PL.modal = null; VIEWS.planning(); };
   $('#pdate').onchange = e => { if (e.target.value) { PL.date = e.target.value; PL.modal = null; VIEWS.planning(); } };
-  $('#xgo').onclick = () => exportPlanning($('#xby').value, $('#xwk').value, d);
+  $('#xby').onchange = e => { PL.printBy = e.target.value; PL.printTarget = 'ALL'; VIEWS.planning(); };
+  $('#xwk').onchange = e => { PL.printWk = e.target.value; VIEWS.planning(); };
+  $('#xtarget').onchange = e => { PL.printTarget = e.target.value; };
+  $('#xgo').onclick = () => exportPlanning($('#xby').value, $('#xwk').value, d, $('#xtarget').value);
+  $('#xprint').onclick = () => printPlanningA4($('#xby').value, $('#xwk').value, d, $('#xtarget').value);
 
   const nb = $('#pl_new_btn');
   if (nb) nb.onclick = () => {
-    PL.modal = { mode: 'new', inst: rows[0] || 'Grand gymnase', s: '10:00', e: '11:00', scope: curPer ? 'periode' : 'jour', qz: '', who: '', apsa: '' };
+    PL.modal = { mode: 'new', inst: rows[0] || 'Grand gymnase', s: '08:30', e: '09:30', scope: curPer ? 'periode' : 'jour', qz: '', who: '', apsa: '' };
     VIEWS.planning();
   };
   app.querySelectorAll('.cell-free.can-book').forEach(cell => {
@@ -907,7 +1161,7 @@ VIEWS.planning = function () {
     if ($('#plm_save')) $('#plm_save').onclick = () => {
       const inst = $('#plm_inst').value;
       const s = parseHeure($('#plm_s').value), e = parseHeure($('#plm_e').value);
-      if (!s || !e || toMin(e) <= toMin(s)) { alertMsg('Indique un horaire de début et de fin valide (ex. 10:00 et 11:00).'); return; }
+      if (!s || !e || toMin(e) <= toMin(s)) { alertMsg('Indique un horaire de début et de fin valide (ex. 08:30 et 09:30).'); return; }
       const scope = $('#plm_scope').value;
       const qz = $('#plm_qz').value || null;
       const stVal = $('#plm_st').value;
@@ -961,7 +1215,6 @@ VIEWS.planning = function () {
         LS.set('planning', PLAN);
       }
 
-      // Si l'utilisateur a coché "Mettre aussi à jour la programmation de cette classe", on met à jour CAL.cal sans qu'il ait besoin de changer de rubrique
       if (syncProg && cls && apsa) {
         const dk = JK[d.getDay()];
         const targetClasses = cls.split(/[,·]/).map(x => x.trim()).filter(Boolean);
@@ -1009,7 +1262,7 @@ function sheetName(s, used) {
   let k = n, i = 2; while (used.has(k.toLowerCase())) k = n.slice(0, 26) + ' ' + i++;
   used.add(k.toLowerCase()); return k;
 }
-function exportPlanning(by, wk, d) {
+function buildPlanningGroups(by, wk, d, targetFilter) {
   const mon = wk === 'this' ? monday(d) : findWeek(wk, d);
   const rows = [];
   for (let i = 0; i < 5; i++) {
@@ -1018,10 +1271,30 @@ function exportPlanning(by, wk, d) {
   }
   const groups = new Map();
   for (const r of rows) {
-    const keys = by === 'inst' ? [r.inst.split(' · ')[0]] : by === 'who' ? [r.who || 'Sans intervenant'] : (r.clsList.length ? r.clsList : []);
-    for (const k of keys) { if (!groups.has(k)) groups.set(k, []); groups.get(k).push(r); }
+    const keys = by === 'inst' ? [r.inst.split(' · ')[0]] : by === 'who' ? (r.who ? r.who.split(/[,+·]/).map(x => x.trim()).filter(Boolean) : ['Sans intervenant']) : (r.clsList.length ? r.clsList : (r.cls ? [r.cls] : []));
+    for (const k of keys) {
+      if (targetFilter && targetFilter !== 'ALL' && k !== targetFilter) continue;
+      if (!groups.has(k)) groups.set(k, []);
+      groups.get(k).push(r);
+    }
   }
-  if (!groups.size) { alertMsg('Rien à exporter pour cette semaine.'); return; }
+  return { mon, groups };
+}
+function getPlanningFilterTargets(by, wk, d) {
+  const { groups } = buildPlanningGroups(by, wk, d, 'ALL');
+  if (by === 'inst') {
+    const allInst = new Set([...installations(), ...groups.keys()]);
+    return [...allInst].sort();
+  }
+  if (by === 'cls') {
+    const allCls = new Set([...CAL.classes.map(c => c.c), ...groups.keys()]);
+    return [...allCls].sort();
+  }
+  return [...groups.keys()].sort();
+}
+function exportPlanning(by, wk, d, targetFilter) {
+  const { mon, groups } = buildPlanningGroups(by, wk, d, targetFilter);
+  if (!groups.size) { alertMsg('Rien à exporter pour cette sélection.'); return; }
   const wb = XLSX.utils.book_new(), used = new Set();
   const label = 'Semaine du ' + mon.getDate() + ' ' + MOIS[mon.getMonth()] + ' (' + weekLabel(mon) + ')';
   for (const k of [...groups.keys()].sort()) {
@@ -1032,7 +1305,66 @@ function exportPlanning(by, wk, d) {
     ws['!cols'] = [10, 12, 8, 8, 26, 12, 16, 26, 14].map(w => ({ wch: w }));
     XLSX.utils.book_append_sheet(wb, ws, sheetName(k, used));
   }
-  XLSX.writeFile(wb, 'Planning EPS - ' + iso(mon) + ' - par ' + ({ inst: 'installation', who: 'intervenant', cls: 'classe' }[by]) + '.xlsx');
+  const suffix = targetFilter && targetFilter !== 'ALL' ? ' - ' + targetFilter : '';
+  XLSX.writeFile(wb, 'Planning EPS - ' + iso(mon) + ' - par ' + ({ inst: 'installation', who: 'intervenant', cls: 'classe' }[by]) + suffix + '.xlsx');
+}
+function printPlanningA4(by, wk, d, targetFilter) {
+  const { mon, groups } = buildPlanningGroups(by, wk, d, targetFilter);
+  if (!groups.size) { alertMsg('Aucun créneau à imprimer pour cette sélection.'); return; }
+  const byLabel = { inst: 'Installation', who: 'Enseignant / Intervenant', cls: 'Classe' }[by] || 'Planning';
+  const wkLbl = 'Semaine du ' + frDate(mon) + ' (' + weekLabel(mon) + ') · Année ' + curSchoolYear();
+  const pages = [...groups.keys()].sort().map(k => {
+    const list = groups.get(k).sort((a, b) => a.date - b.date || a.s.localeCompare(b.s));
+    const rowsHtml = list.map(r => `<tr>
+      <td><b>${esc(r.jour)}</b><br><small>${esc(frDate(r.date))}</small></td>
+      <td style="white-space:nowrap;font-weight:700">${esc(hh(r.s))} – ${esc(hh(r.e))}</td>
+      <td>${esc(r.inst)}</td>
+      <td>${esc(r.cls || '—')}</td>
+      <td><b>${esc(r.apsa || '—')}</b></td>
+      <td>${esc(r.who || '—')}</td>
+      <td>${esc(r.st || '')}</td>
+    </tr>`).join('');
+    return `<section class="page">
+      <div class="hdr">
+        <div>
+          <div class="sub">${esc((typeof etab === 'function' ? etab().nom : 'LFIP') + ' · Planning EPS par ' + byLabel)}</div>
+          <h1>${esc(k)}</h1>
+        </div>
+        <div style="text-align:right;font-size:12px;color:#475569">
+          <div><b>${esc(wkLbl)}</b></div>
+          <div>Créneaux horaires : 8h30 · 9h30 · 10h30…</div>
+        </div>
+      </div>
+      <table>
+        <thead><tr><th>Jour</th><th>Horaire</th><th>Installation</th><th>Classe(s)</th><th>APSA / Activité</th><th>Enseignant / Intervenant</th><th>Structure</th></tr></thead>
+        <tbody>${rowsHtml}</tbody>
+      </table>
+    </section>`;
+  }).join('');
+  const w = window.open('', '_blank');
+  if (!w) { alertMsg('Autorise les pop-ups pour lancer l’impression A4.'); return; }
+  w.document.write(`<!doctype html><html lang="fr"><head><meta charset="utf-8"><title>Planning EPS - ${esc(byLabel)}</title>
+  <style>
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;margin:0;padding:16px;color:#0F172A;background:#fff}
+    .toolbar{display:flex;gap:10px;align-items:center;justify-content:space-between;background:#EFF6FF;border:1px solid #BFDBFE;padding:10px 14px;border-radius:8px;margin-bottom:16px}
+    .btn{background:#1D4ED8;color:#fff;border:0;padding:8px 14px;border-radius:6px;font-weight:700;cursor:pointer}
+    .page{page-break-after:always;margin-bottom:24px}
+    .page:last-child{page-break-after:auto}
+    .hdr{display:flex;justify-content:space-between;align-items:flex-end;border-bottom:2px solid #0F172A;padding-bottom:8px;margin-bottom:12px}
+    .hdr h1{margin:2px 0 0;font-size:22px}
+    .sub{font-size:12px;font-weight:700;text-transform:uppercase;color:#1D4ED8}
+    table{width:100%;border-collapse:collapse;font-size:12px}
+    th,td{border:1px solid #CBD5E1;padding:7px 8px;text-align:left;vertical-align:top}
+    th{background:#F1F5F9;font-weight:700}
+    @media print{.toolbar{display:none}body{padding:0}}
+  </style></head><body>
+    <div class="toolbar">
+      <div><strong>Aperçu avant impression (${groups.size} fiche${groups.size > 1 ? 's' : ''})</strong> · Format A4</div>
+      <button class="btn" onclick="window.print()">🖨️ Lancer l’impression / Enregistrer en PDF</button>
+    </div>
+    ${pages}
+  </body></html>`);
+  w.document.close();
 }
 
 /* --- Incidents --- */
@@ -1176,11 +1508,23 @@ VIEWS.as = function () {
   const withSexe = AS.rows ? AS.rows.filter(r => r.sexe).length : 0;
   const families = [...new Set(groups.map(apsaOfGroup))];
   const days = [...new Set(groups.map(g => g.split(' ')[0]))];
+  const e = typeof etab === 'function' ? etab() : { opussUrl: 'https://opuss.unss.org' };
+  const opussUrl = e.opussUrl || 'https://opuss.unss.org';
   app.innerHTML = `<main>
-    <h1>AS · espace privé</h1>
+    <div class="row" style="justify-content:space-between;align-items:center">
+      <h1>AS · Licenciés, groupes & liaison OPUSS</h1>
+      <div class="row" style="gap:8px">
+        <a class="btn blue" href="${esc(opussUrl)}" target="_blank" rel="noopener" style="text-decoration:none">🔗 Ouvrir OPUSS (licences UNSS) ↗</a>
+        <button class="btn" type="button" id="as_opuss_cfg" title="Modifier l’adresse OPUSS">⚙️ Lien OPUSS</button>
+        <a class="btn" href="#as_compet" style="text-decoration:none">🏆 Compétitions & Calendrier AS</a>
+      </div>
+    </div>
     <div class="banner">Les fichiers Eduka sont lus sur cet appareil et ne sont enregistrés nulle part : en fermant la page, tout disparaît. Seuls les fichiers Excel que tu télécharges restent, chez toi.</div>
     <div class="card">
-      <h2>1 · Fichiers Eduka</h2>
+      <div class="row" style="justify-content:space-between;align-items:center">
+        <h2>1 · Liste des élèves AS (Fichiers Eduka) & Liaison OPUSS</h2>
+        <a class="btn go" href="${esc(opussUrl)}" target="_blank" rel="noopener" style="text-decoration:none;min-height:36px;padding:6px 12px;font-size:13px">🔗 Saisir / vérifier les licences sur OPUSS ↗</a>
+      </div>
       <div class="row">
         <label class="btn blue" style="display:flex;align-items:center;gap:8px">Export inscriptions AS <input type="file" id="fas" accept=".xlsx,.xls,.csv" style="max-width:200px"></label>
         <span class="muted">${AS.rows ? esc(AS.file) + ' · ' + AS.rows.filter(r => r.groups.length).length + ' élèves avec au moins un groupe' : 'Aucun fichier'}</span>
@@ -1212,6 +1556,16 @@ VIEWS.as = function () {
       <div id="asout"></div>
     </div>` : ''}
   </main>`;
+  const opCfg = $('#as_opuss_cfg');
+  if (opCfg) opCfg.onclick = () => {
+    const u = prompt('Adresse (URL) de la plateforme OPUSS / UNSS :', opussUrl);
+    if (u && u.trim()) {
+      const curE = typeof etab === 'function' ? etab() : {};
+      curE.opussUrl = u.trim();
+      LS.set('etab', curE);
+      VIEWS.as();
+    }
+  };
   $('#fas').onchange = async e => {
     const f = e.target.files[0]; if (!f) return;
     try { const p = parseEduka(readSheetRows(await f.arrayBuffer())); AS.rows = p.rows; AS.file = f.name; AS.sel = {}; applyRef(); VIEWS.as(); }
@@ -1388,7 +1742,7 @@ const qzOk = (a, b) => !a.qz || !b.qz || a.qz === b.qz;
 function genRun(per, rules, compat) {
   const R = {}; rules.forEach(r => R[r.k] = W(r.l)); if (GEN.scratch) R.stable = 0;
   const sessions = genSessions(per);
-  const allInst = [...new Set(per.items.map(i => i.inst).concat(PLAN.periods.flatMap(p => p.items.map(i => i.inst))))].filter(i => !/^autre/i.test(i));
+  const allInst = [...new Set([...installationRows(), ...per.items.map(i => i.inst), ...PLAN.periods.flatMap(p => p.items.map(i => i.inst))])].filter(i => !/^autre/i.test(i));
   const baseOf = inst => inst.split(' · ')[0];
   const matched = new Set(sessions.flatMap(s => s.curItems));
   const others = per.items.filter(i => i.st !== 'eps' || !matched.has(i));
@@ -1471,11 +1825,13 @@ VIEWS.generateur = function () {
   const res = GEN.results;
   const prop = res && res.props[GEN.pick];
   app.innerHTML = `<main>
+    ${schoolYearBarHTML()}
     <div class="row" style="justify-content:space-between">
       <h1>Générateur d’emploi du temps EPS</h1>
       <div class="row" style="gap:6px">
         <a class="btn" href="#programmation" style="text-decoration:none">📋 Programmation des classes</a>
         <a class="btn" href="#ressources" style="text-decoration:none">🎯 Catalogue APSA</a>
+        <a class="btn" href="#etab" style="text-decoration:none">🏟️ Gérer les installations</a>
         <a class="btn" href="#planning" style="text-decoration:none">📅 Voir le planning</a>
       </div>
     </div>
@@ -1517,6 +1873,7 @@ VIEWS.generateur = function () {
         <span class="muted">Appliquer met à jour le planning de l’app (une sauvegarde est gardée pour annuler).</span></div>` : ''}
     </div>` : ''}
   </main>`;
+  bindSchoolYearBar(() => VIEWS.generateur());
   $('#gscratch').onchange = e => { GEN.scratch = e.target.checked; GEN.results = null; };
   $('#gper').onchange = e => { GEN.per = e.target.value; GEN.results = null; VIEWS.generateur(); };
   app.querySelectorAll('[data-rule]').forEach(s => s.onchange = () => {
@@ -1578,7 +1935,17 @@ const MAT_TYPES = {
   prestation: ['🧾 Prestation / Autre dépense', 'ca3']
 };
 let MAT = LS.get('materiel', []);
-const MATV = { tab: 'commandes', tres: 'EPS', filtre: 'tous', typeFiltre: 'tous', edit: null, newType: 'materiel', lieu: 'tous' };
+const MATV = { tab: 'commandes', tres: 'EPS', filtre: 'tous', typeFiltre: 'tous', apsaFiltre: 'tous', sortBy: 'apsa', edit: null, newType: 'materiel', lieu: 'tous', invApsa: 'tous', invSort: 'apsa' };
+const DEFAULT_MAT_LIEUX = ['Local Grand Gymnase', 'Local Salle de Gym', 'Local Dojo', 'Local Stade / Piste', 'Armoire Piscine', 'Bureau EPS'];
+function getMatLieux() {
+  const saved = LS.get('mat_lieux', null);
+  const fromItems = MAT.filter(i => (i.type || 'materiel') === 'materiel').map(i => i.lieu).filter(Boolean);
+  const base = Array.isArray(saved) ? saved : DEFAULT_MAT_LIEUX;
+  return [...new Set([...base, ...fromItems])].sort();
+}
+function saveMatLieux(list) {
+  LS.set('mat_lieux', list);
+}
 const num = v => { if (v == null || v === '') return null; if (typeof v === 'number') return v; const m = String(v).replace(/\s/g, '').replace(',', '.').match(/-?\d+(\.\d+)?/); return m ? parseFloat(m[0]) : null; };
 const yuan = n => n == null ? '—' : (Math.round(n * 100) / 100).toLocaleString('fr-FR', { maximumFractionDigits: 2 }) + ' ¥';
 const lineTotal = i => (num(i.qte) != null && num(i.pu) != null) ? num(i.qte) * num(i.pu) : null;
@@ -1587,7 +1954,7 @@ const saveMat = () => LS.set('materiel', MAT);
 /* Appel Gemini ultra-économe (Flash-Lite par défaut pour économiser la consommation) */
 async function askGeminiLite(prompt, sysInstruction) {
   const g = LS.get('gemini', {}) || {};
-  if (!g.key) throw new Error('Clé API Gemini non renseignée (ouvre le panneau « Clé Gemini » ci-dessous pour l’enregistrer).');
+  if (!g.key) throw new Error('Clé API Gemini non renseignée (ouvre le panneau « Clé Gemini » dans Établissement ou Matériel pour l’enregistrer).');
   const modelsToTry = [g.model || 'gemini-2.5-flash-lite', 'gemini-2.5-flash-lite', 'gemini-2.0-flash-lite', 'gemini-2.5-flash'];
   const uniqueModels = [...new Set(modelsToTry)];
   let lastErr = null;
@@ -1616,6 +1983,54 @@ async function askGeminiLite(prompt, sysInstruction) {
     }
   }
   throw lastErr || new Error('Réponse vide de Gemini.');
+}
+
+/* Appel Gemini Multimodal (lecture de PDF et d'images : dispenses médicales, calendrier scolaire PDF, emplois du temps) */
+async function askGeminiMultimodal(prompt, file) {
+  const g = LS.get('gemini', {}) || {};
+  if (!g.key) throw new Error('Clé API Gemini non renseignée. Ajoute ta clé API Gemini dans « Établissement » ou dans le bloc ci-dessous.');
+  const b64 = await new Promise((res, rej) => {
+    const fr = new FileReader();
+    fr.onload = () => {
+      const s = String(fr.result || '');
+      res(s.includes(',') ? s.split(',')[1] : s);
+    };
+    fr.onerror = () => rej(fr.error);
+    fr.readAsDataURL(file);
+  });
+  const mimeType = file.type || (file.name && file.name.toLowerCase().endsWith('.pdf') ? 'application/pdf' : 'image/jpeg');
+  const modelsToTry = ['gemini-2.5-flash', g.model || 'gemini-2.5-flash-lite', 'gemini-2.0-flash'];
+  const uniqueModels = [...new Set(modelsToTry)];
+  let lastErr = null;
+  for (const mod of uniqueModels) {
+    try {
+      const payload = {
+        contents: [{
+          parts: [
+            { text: prompt },
+            { inline_data: { mime_type: mimeType, data: b64 } }
+          ]
+        }],
+        generationConfig: { temperature: 0.1, maxOutputTokens: 4096 }
+      };
+      const r = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(mod)}:generateContent?key=${encodeURIComponent(g.key)}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+      const j = await r.json();
+      if (!r.ok) {
+        lastErr = new Error((j.error && j.error.message) || ('Erreur HTTP ' + r.status));
+        if (r.status === 404 || r.status === 400) continue;
+        throw lastErr;
+      }
+      const txt = (((j.candidates || [])[0] || {}).content || {}).parts ? j.candidates[0].content.parts.map(p => p.text || '').join('').trim() : '';
+      if (txt) return txt;
+    } catch (e) {
+      lastErr = e;
+    }
+  }
+  throw lastErr || new Error('Impossible d’analyser ce document avec Gemini.');
 }
 
 /* glossaire français → chinois (termes EPS, sport, logistique, sorties), complété par les corrections de l'équipe */
@@ -1668,11 +2083,25 @@ function toChinese(fr, spec) {
   if (model && !out.join(' ').includes(model[0].toUpperCase())) out.push(model[0].toUpperCase());
   return [...new Set(out)].join(' ');
 }
-const SHOPS = [
-  ['Taobao', '#FF5000', q => 'https://s.taobao.com/search?q=' + encodeURIComponent(q)],
-  ['JD.com', '#C8102E', q => 'https://search.jd.com/Search?keyword=' + encodeURIComponent(q) + '&enc=utf-8'],
-  ['Decathlon (Tmall/Taobao)', '#0055A0', q => 'https://s.taobao.com/search?q=' + encodeURIComponent('迪卡侬 ' + q)]
+const DEFAULT_SHOPS = [
+  { name: 'Taobao', color: '#FF5000', urlTpl: 'https://s.taobao.com/search?q={q}', builtin: true },
+  { name: 'JD.com', color: '#C8102E', urlTpl: 'https://search.jd.com/Search?keyword={q}&enc=utf-8', builtin: true },
+  { name: 'Decathlon Chine', color: '#0055A0', urlTpl: 'https://www.decathlon.com.cn/zh/search?Ntt={q}', builtin: true }
 ];
+function getShops() {
+  const custom = LS.get('custom_shops', []) || [];
+  return [...DEFAULT_SHOPS, ...custom];
+}
+function openShopSearch(shop, q) {
+  const tpl = shop.urlTpl || '';
+  if (tpl.includes('{q}')) {
+    window.open(tpl.replace(/\{q\}/g, encodeURIComponent(q || '')), '_blank', 'noopener');
+  } else if (q && /[?=]$/.test(tpl)) {
+    window.open(tpl + encodeURIComponent(q), '_blank', 'noopener');
+  } else {
+    window.open(tpl, '_blank', 'noopener');
+  }
+}
 function importInventaire(wb) {
   const out = [];
   for (const name of wb.SheetNames) {
@@ -1703,13 +2132,39 @@ function importInventaire(wb) {
 VIEWS.materiel = function () {
   const app = $('#app');
   const list = MAT.filter(i => MATV.tres === 'Toutes' || i.tres === MATV.tres);
-  const shown = list.filter(i => (MATV.filtre === 'tous' || i.statut === MATV.filtre) && (MATV.typeFiltre === 'tous' || (i.type || 'materiel') === MATV.typeFiltre));
+  const allApsasCmd = [...new Set(list.map(i => (i.apsa || i.cat || '').trim()).filter(Boolean))].sort((a, b) => a.localeCompare(b, 'fr'));
+  const shown = list.filter(i =>
+    (MATV.filtre === 'tous' || i.statut === MATV.filtre) &&
+    (MATV.typeFiltre === 'tous' || (i.type || 'materiel') === MATV.typeFiltre) &&
+    (MATV.apsaFiltre === 'tous' || (i.apsa || i.cat || '').trim() === MATV.apsaFiltre)
+  ).slice().sort((a, b) => {
+    const sb = MATV.sortBy || 'apsa';
+    if (sb === 'apsa') return (a.apsa || a.cat || 'zzz').localeCompare(b.apsa || b.cat || 'zzz', 'fr') || (a.des || '').localeCompare(b.des || '', 'fr');
+    if (sb === 'prio') return (num(a.prio) ?? 99) - (num(b.prio) ?? 99) || (a.apsa || '').localeCompare(b.apsa || '', 'fr');
+    if (sb === 'statut') return STATUTS.indexOf(a.statut) - STATUTS.indexOf(b.statut) || (a.apsa || '').localeCompare(b.apsa || '', 'fr');
+    if (sb === 'total') return (lineTotal(b) || 0) - (lineTotal(a) || 0);
+    if (sb === 'dem') return (a.demandeur || '').localeCompare(b.demandeur || '', 'fr') || (a.apsa || '').localeCompare(b.apsa || '', 'fr');
+    return 0;
+  });
   const tot = st => list.filter(i => st.includes(i.statut)).reduce((a, i) => a + (lineTotal(i) || 0), 0);
   const sansPrix = list.filter(i => !['Refusé', 'Reçu'].includes(i.statut) && num(i.pu) == null).length;
   const ed = MATV.edit ? MAT.find(i => i.id === MATV.edit) || { id: MATV.edit, nouveau: true, type: MATV.newType || 'materiel', tres: MATV.tres === 'Toutes' ? 'EPS' : MATV.tres, statut: 'Demandé', demandeur: 'EPS', des: '', spec: '', zh: '' } : null;
   const edType = ed ? (ed.type || 'materiel') : 'materiel';
   const invList = list.filter(i => (i.type || 'materiel') === 'materiel');
-  const lieux = [...new Set(invList.map(i => i.lieu).filter(Boolean))].sort();
+  const lieux = getMatLieux();
+  const invApsas = [...new Set(invList.map(i => (i.apsa || i.cat || '').trim()).filter(Boolean))].sort((a, b) => a.localeCompare(b, 'fr'));
+  const invShown = invList.filter(i =>
+    (MATV.lieu === 'tous' || (i.lieu || '') === MATV.lieu) &&
+    (MATV.invApsa === 'tous' || (i.apsa || i.cat || '').trim() === MATV.invApsa)
+  ).slice().sort((a, b) => {
+    const s = MATV.invSort || 'apsa';
+    if (s === 'apsa') return (a.apsa || a.cat || 'zzz').localeCompare(b.apsa || b.cat || 'zzz', 'fr') || (a.des || '').localeCompare(b.des || '', 'fr');
+    if (s === 'lieu') return (a.lieu || 'zzz').localeCompare(b.lieu || 'zzz', 'fr') || (a.apsa || '').localeCompare(b.apsa || '', 'fr');
+    if (s === 'des') return (a.des || '').localeCompare(b.des || '', 'fr');
+    if (s === 'hs') return ((num(b.hs) || 0) + (num(b.use) || 0)) - ((num(a.hs) || 0) + (num(a.use) || 0));
+    return 0;
+  });
+  const shops = getShops();
   const gem = LS.get('gemini', {}) || {};
   app.innerHTML = `<main>
     <div class="row" style="justify-content:space-between"><h1>Commandes, budget et matériel</h1>
@@ -1725,8 +2180,16 @@ VIEWS.materiel = function () {
     <div class="card">
       <div class="row" style="justify-content:space-between">
         <div class="row">
+          <label class="f">Filtrer par APSA<select id="mapsa"><option value="tous">Toutes les APSA (${allApsasCmd.length})</option>${allApsasCmd.map(a => `<option value="${esc(a)}" ${MATV.apsaFiltre === a ? 'selected' : ''}>${esc(a)}</option>`).join('')}</select></label>
+          <label class="f">Trier par<select id="msort">
+            <option value="apsa" ${MATV.sortBy === 'apsa' ? 'selected' : ''}>🎯 Par APSA (A → Z)</option>
+            <option value="prio" ${MATV.sortBy === 'prio' ? 'selected' : ''}>⭐ Par Priorité (1 → 5)</option>
+            <option value="statut" ${MATV.sortBy === 'statut' ? 'selected' : ''}>📌 Par Statut</option>
+            <option value="total" ${MATV.sortBy === 'total' ? 'selected' : ''}>💴 Par Montant (décroissant)</option>
+            <option value="dem" ${MATV.sortBy === 'dem' ? 'selected' : ''}>👤 Par Demandeur</option>
+          </select></label>
           <label class="f">Statut<select id="mfil"><option value="tous">Tous</option>${STATUTS.map(s => `<option ${MATV.filtre === s ? 'selected' : ''}>${s}</option>`).join('')}</select></label>
-          <label class="f">Nature de la dépense<select id="mtfil"><option value="tous">Toutes (Matériel + Sorties + Événements)</option>${Object.entries(MAT_TYPES).map(([k, [lbl]]) => `<option value="${k}" ${MATV.typeFiltre === k ? 'selected' : ''}>${lbl}</option>`).join('')}</select></label>
+          <label class="f">Nature<select id="mtfil"><option value="tous">Toutes (Matériel + Sorties)</option>${Object.entries(MAT_TYPES).map(([k, [lbl]]) => `<option value="${k}" ${MATV.typeFiltre === k ? 'selected' : ''}>${lbl}</option>`).join('')}</select></label>
         </div>
         <div class="row" style="align-self:flex-end">
           <button class="btn blue rw-only" data-new="materiel">+ Matériel</button>
@@ -1736,15 +2199,21 @@ VIEWS.materiel = function () {
           <button class="btn" id="machat">Fiche achats / réservations</button>
         </div>
       </div>
-      <div class="scroll"><table class="t" style="min-width:940px"><tr><th>Article / Dépense</th><th>Traduction 中文</th><th>Demandeur</th><th>Qté</th><th>P.U.</th><th>Total</th><th>Prio.</th><th>Statut</th><th></th></tr>
+      <div class="row" style="align-items:center;background:#F8FAFC;padding:8px 12px;border-radius:10px;border:1px solid #E2E8F0">
+        <span style="font-size:12px;font-weight:700;color:var(--muted)">🛒 Liens d’achat rapide :</span>
+        ${shops.map((s, idx) => `<span class="row" style="gap:2px"><button class="btn" type="button" data-qshop="${idx}" style="background:${esc(s.color || '#1D4ED8')};color:#fff;border-color:${esc(s.color || '#1D4ED8')};min-height:30px;padding:3px 10px;font-size:12px;font-weight:700">${esc(s.name)} ↗</button>${!s.builtin ? `<button class="btn" type="button" data-delshop="${idx}" title="Supprimer ce bouton" style="min-height:30px;padding:2px 6px;font-size:11px">✕</button>` : ''}</span>`).join('')}
+        <button class="btn rw-only" type="button" id="m_add_shop" style="min-height:30px;padding:3px 10px;font-size:12px">+ Ajouter un site / bouton</button>
+      </div>
+      <div class="scroll"><table class="t" style="min-width:940px"><tr><th>APSA</th><th>Article / Dépense</th><th>Traduction 中文</th><th>Demandeur</th><th>Qté</th><th>P.U.</th><th>Total</th><th>Prio.</th><th>Statut</th><th></th></tr>
       ${shown.map(i => {
         const tp = i.type || 'materiel';
         const [tpLbl, tpCl] = MAT_TYPES[tp] || MAT_TYPES.materiel;
         const zhTxt = i.zh || toChinese(i.des, i.spec);
-        return `<tr><td>
+        return `<tr>
+        <td><span class="chip ca${caOf(i.apsa)}">${esc(i.apsa || i.cat || '—')}</span></td>
+        <td>
           ${tp !== 'materiel' ? `<span class="chip ${tpCl}" style="margin-bottom:3px">${esc(tpLbl)}</span><br>` : ''}
           <strong>${esc(i.des)}</strong>${i.spec ? `<br><span class="muted">${esc(i.spec)}</span>` : ''}<br>
-          <span class="chip ca${caOf(i.apsa)}">${esc(i.apsa || i.cat || '—')}</span>
           ${MATV.tres === 'Toutes' ? `<span class="chip ca0">${i.tres}</span>` : ''}
           ${i.variante ? '<span class="chip ca2">variante notée</span>' : (i.statut === 'Validé' && tp === 'materiel' ? '<span class="chip ca1">variante à préciser</span>' : '')}
           ${i.img ? '<span class="chip ca0">capture</span>' : ''}
@@ -1753,22 +2222,44 @@ VIEWS.materiel = function () {
         <td>${esc(i.demandeur || '')}</td><td>${i.qte ?? '—'}</td><td>${yuan(num(i.pu))}</td><td><strong>${yuan(lineTotal(i))}</strong></td><td>${i.prio ?? ''}</td>
         <td><select data-st="${i.id}" class="rw-only" aria-label="Statut">${STATUTS.map(s => `<option ${s === i.statut ? 'selected' : ''}>${s}</option>`).join('')}</select></td>
         <td><button class="btn rw-only" data-ed="${i.id}">Modifier</button></td></tr>`;
-      }).join('') || '<tr><td colspan="9" class="empty">Aucune ligne.</td></tr>'}
+      }).join('') || '<tr><td colspan="10" class="empty">Aucune ligne pour ce filtre.</td></tr>'}
       </table></div>
     </div>` : ''}
     ${MAT.length && MATV.tab === 'inventaire' ? `
     <div class="card">
       <div class="row" style="justify-content:space-between">
-        <label class="f">Lieu de rangement<select id="mlieu"><option value="tous">Tous</option>${lieux.map(l => `<option ${MATV.lieu === l ? 'selected' : ''}>${esc(l)}</option>`).join('')}<option value="">(non renseigné)</option></select></label>
-        <button class="btn go" id="minvx" style="align-self:flex-end">Fiche d’inventaire par lieu (Excel)</button>
+        <div class="row">
+          <label class="f">Espace de rangement<select id="mlieu"><option value="tous">Tous les espaces (${lieux.length})</option>${lieux.map(l => `<option value="${esc(l)}" ${MATV.lieu === l ? 'selected' : ''}>${esc(l)}</option>`).join('')}<option value="" ${MATV.lieu === '' ? 'selected' : ''}>(non renseigné)</option></select></label>
+          <label class="f">Filtrer par APSA<select id="minv_apsa"><option value="tous">Toutes les APSA (${invApsas.length})</option>${invApsas.map(a => `<option value="${esc(a)}" ${MATV.invApsa === a ? 'selected' : ''}>${esc(a)}</option>`).join('')}</select></label>
+          <label class="f">Trier l’inventaire par<select id="minv_sort">
+            <option value="apsa" ${MATV.invSort === 'apsa' ? 'selected' : ''}>🎯 Par APSA (A → Z)</option>
+            <option value="lieu" ${MATV.invSort === 'lieu' ? 'selected' : ''}>📦 Par Espace de rangement</option>
+            <option value="des" ${MATV.invSort === 'des' ? 'selected' : ''}>🔤 Par Article (A → Z)</option>
+            <option value="hs" ${MATV.invSort === 'hs' ? 'selected' : ''}>⚠️ Par Matériel usé / HS</option>
+          </select></label>
+        </div>
+        <div class="row" style="align-self:flex-end">
+          <button class="btn blue rw-only" type="button" id="m_add_lieu">+ Ajouter un espace de rangement</button>
+          <button class="btn go" id="minvx">Fiche d’inventaire par lieu (Excel)</button>
+        </div>
       </div>
-      <div class="scroll"><table class="t" style="min-width:820px"><tr><th>Article</th><th>Lieu</th><th>Bon état</th><th>Usé</th><th>HS</th><th>Total</th></tr>
-      ${invList.filter(i => MATV.lieu === 'tous' || (i.lieu || '') === MATV.lieu).map(i => `<tr><td><strong>${esc(i.des)}</strong><br><span class="muted">${esc(i.apsa || '')}</span></td>
-        <td><input type="text" class="rw-input" data-inv="${i.id}" data-k="lieu" value="${esc(i.lieu || '')}" list="lieux" style="width:160px"></td>
+      <div class="row" style="background:#F8FAFC;padding:8px 12px;border-radius:10px;border:1px solid #E2E8F0;align-items:center">
+        <span style="font-size:12px;font-weight:700;color:var(--muted)">📦 Espaces de rangement enregistrés :</span>
+        ${lieux.map(l => `<span class="chip ca0" style="gap:6px">${esc(l)} <button type="button" class="rw-only" data-dellieu="${esc(l)}" style="border:0;background:transparent;cursor:pointer;font-weight:900;color:#64748B" title="Retirer de la liste">✕</button></span>`).join('')}
+      </div>
+      <div class="scroll"><table class="t" style="min-width:860px"><tr><th>APSA</th><th>Article</th><th>Espace de rangement</th><th>Bon état</th><th>Usé</th><th>HS</th><th>Total</th></tr>
+      ${invShown.map(i => `<tr>
+        <td><span class="chip ca${caOf(i.apsa)}">${esc(i.apsa || i.cat || '—')}</span></td>
+        <td><strong>${esc(i.des)}</strong>${i.spec ? `<br><span class="muted">${esc(i.spec)}</span>` : ''}</td>
+        <td>
+          <div class="row" style="gap:4px;flex-wrap:nowrap">
+            <input type="text" class="rw-input" data-inv="${i.id}" data-k="lieu" value="${esc(i.lieu || '')}" list="lieux" placeholder="Choisir ou saisir…" style="width:175px">
+          </div>
+        </td>
         ${['bon', 'use', 'hs'].map(k => `<td><input type="number" class="rw-input" min="0" data-inv="${i.id}" data-k="${k}" value="${i[k] ?? ''}" style="width:80px;min-height:40px;border:1px solid #CDD3DD;border-radius:8px;padding:0 6px"></td>`).join('')}
-        <td><strong>${(num(i.bon) || 0) + (num(i.use) || 0) + (num(i.hs) || 0)}</strong></td></tr>`).join('')}
+        <td><strong>${(num(i.bon) || 0) + (num(i.use) || 0) + (num(i.hs) || 0)}</strong></td></tr>`).join('') || '<tr><td colspan="7" class="empty">Aucun matériel pour ce filtre.</td></tr>'}
       </table><datalist id="lieux">${lieux.map(l => `<option value="${esc(l)}">`).join('')}</datalist></div>
-      <span class="muted">Quand une commande de matériel passe en « Reçu », la quantité s’ajoute au stock en bon état. Les sorties et prestations hors matériel n’encombrent pas l’inventaire physique.</span>
+      <span class="muted">Quand une commande de matériel passe en « Reçu », la quantité s’ajoute au stock en bon état. Clique sur « + Ajouter un espace de rangement » pour créer tes locaux/armoires.</span>
     </div>` : ''}
     ${ed ? `<div class="card rw-only" id="medit" style="border:2px solid var(--accent)">
       <h2>${ed.nouveau ? 'Nouvelle demande (Matériel, Sortie, Événement…)' : 'Modifier la demande'}</h2>
@@ -1776,7 +2267,7 @@ VIEWS.materiel = function () {
         <label class="f">Nature de la dépense<select id="e_type">${Object.entries(MAT_TYPES).map(([k, [lbl]]) => `<option value="${k}" ${edType === k ? 'selected' : ''}>${lbl}</option>`).join('')}</select></label>
         <label class="f">Trésorerie<select id="e_tres">${['EPS', 'AS'].map(t => `<option ${ed.tres === t ? 'selected' : ''}>${t}</option>`).join('')}</select></label>
         <label class="f">Demandeur<select id="e_dem">${['EPS', 'Primaire', 'AS', 'ACS'].map(t => `<option ${ed.demandeur === t ? 'selected' : ''}>${t}</option>`).join('')}</select></label>
-        <label class="f" style="flex:1 1 160px">${edType === 'materiel' ? 'APSA' : 'Activité / Projet (ex. Sortie ski, Tournoi…)'}<input type="text" id="e_apsa" value="${esc(ed.apsa || '')}"></label>
+        <label class="f" style="flex:1 1 160px">${edType === 'materiel' ? 'APSA' : 'Activité / Projet (ex. Sortie ski, Tournoi…)'}<input type="text" id="e_apsa" list="apsa_dl" value="${esc(ed.apsa || '')}"></label>
         <label class="f">Priorité (1 à 5)<input type="text" id="e_prio" value="${ed.prio ?? ''}" style="width:90px"></label>
       </div>
       <div class="row">
@@ -1786,7 +2277,8 @@ VIEWS.materiel = function () {
       <div class="row">
         <label class="f">${edType === 'materiel' ? 'Qté' : 'Quantité / Nb unités (bus, élèves, jours…)'}<input type="text" id="e_qte" value="${ed.qte ?? 1}" style="width:120px"></label>
         <label class="f">Prix unitaire (¥)<input type="text" id="e_pu" value="${ed.pu ?? ''}" style="width:120px"></label>
-        ${edType === 'materiel' ? `<label class="f">Stock actuel<input type="text" id="e_stock" value="${ed.stock ?? ''}" style="width:100px"></label>` : '<input type="hidden" id="e_stock" value="">'}
+        ${edType === 'materiel' ? `<label class="f">Stock actuel<input type="text" id="e_stock" value="${ed.stock ?? ''}" style="width:100px"></label>
+        <label class="f">Espace de rangement<input type="text" id="e_lieu" list="lieux" value="${esc(ed.lieu || '')}" placeholder="Ex. Local Grand Gymnase" style="width:180px"></label>` : '<input type="hidden" id="e_stock" value="">'}
       </div>
       <div class="card" style="background:#F4F7FC">
         <h2>${edType === 'materiel' ? 'Traduction en chinois & recherche du produit' : 'Traduction en chinois (pour la DAF / les achats / prestataires)'}</h2>
@@ -1795,7 +2287,8 @@ VIEWS.materiel = function () {
           <div class="row" style="align-self:flex-end">
             <button class="btn blue" type="button" id="e_zh_ai" title="Traduction précise et économe via Gemini Flash-Lite">✨ Traduire (Gemini Lite)</button>
             <button class="btn" type="button" id="e_zh_dict" title="Recalculer depuis le glossaire hors-ligne">🔄 Dictionnaire</button>
-            ${edType === 'materiel' ? SHOPS.map(([n, c], k) => `<button class="btn" type="button" data-shop="${k}" style="background:${c};color:#fff;border-color:${c};font-weight:700">${n}</button>`).join('') : ''}
+            ${edType === 'materiel' ? shops.map((s, k) => `<button class="btn" type="button" data-shop="${k}" style="background:${esc(s.color || '#1D4ED8')};color:#fff;border-color:${esc(s.color || '#1D4ED8')};font-weight:700">${esc(s.name)} ↗</button>`).join('') : ''}
+            ${edType === 'materiel' ? `<button class="btn" type="button" id="e_add_shop">+ Site</button>` : ''}
           </div>
         </div>
         <div class="row">
@@ -1808,17 +2301,18 @@ VIEWS.materiel = function () {
       <label class="f">Notes<input type="text" id="e_notes" value="${esc(ed.notes || '')}"></label>
       <div class="row"><button class="btn go" id="e_save">Enregistrer</button><button class="btn" id="e_cancel">Fermer</button>${ed.nouveau ? '' : '<button class="btn" id="e_del" style="margin-left:auto">Supprimer la ligne</button>'}</div>
     </div>` : ''}
-    <details class="card rw-only"><summary style="cursor:pointer;font-weight:700">✨ Clé API Gemini Lite (pour la traduction automatique en chinois et les e-mails)</summary>
-      <span class="muted">Utilise par défaut le modèle léger <strong>gemini-2.5-flash-lite</strong> pour économiser au maximum ta consommation de jetons. La clé reste uniquement sur cet appareil.</span>
+    <details class="card rw-only"><summary style="cursor:pointer;font-weight:700">✨ Clé API Gemini (pour la traduction en chinois, la lecture des dispenses et du calendrier PDF)</summary>
+      <span class="muted">Utilise par défaut le modèle léger <strong>gemini-2.5-flash-lite</strong> (et <strong>gemini-2.5-flash</strong> pour lire les PDF/images). La clé reste uniquement sur cet appareil.</span>
       <div class="row">
         <label class="f" style="flex:1 1 280px">Clé API Gemini (Google AI Studio)<input type="password" id="mat_gkey" value="${esc(gem.key || '')}" placeholder="AIzaSy…" autocomplete="off"></label>
-        <label class="f">Modèle économe<input type="text" id="mat_gmod" value="${esc(gem.model || 'gemini-2.5-flash-lite')}" style="width:210px"></label>
+        <label class="f">Modèle par défaut<input type="text" id="mat_gmod" value="${esc(gem.model || 'gemini-2.5-flash-lite')}" style="width:210px"></label>
         <button class="btn blue" id="mat_gsave" style="align-self:flex-end">Enregistrer la clé</button>
       </div>
     </details>
     <div class="card" style="border-style:dashed"><h2>Demandes de travaux</h2><span class="muted">Elles ont maintenant leur onglet : <a href="#travaux">Travaux</a>.</span></div>
     ${MAT.length ? `<div class="row"><label class="btn" style="display:flex;align-items:center;gap:8px">Réimporter l’Excel (remplace tout) <input type="file" id="minv" accept=".xlsx,.xls" style="max-width:200px"></label></div>` : ''}
   </main>`;
+  refreshApsaDatalist();
   app.querySelectorAll('[data-tab]').forEach(b => b.onclick = () => { MATV.tab = b.dataset.tab; VIEWS.materiel(); });
   app.querySelectorAll('[data-tres]').forEach(b => b.onclick = () => { MATV.tres = b.dataset.tres; VIEWS.materiel(); });
   app.querySelectorAll('[data-new]').forEach(b => b.onclick = () => { MATV.newType = b.dataset.new || 'materiel'; MATV.edit = 'm' + Date.now().toString(36); VIEWS.materiel(); $('#medit').scrollIntoView({ behavior: 'smooth' }); });
@@ -1831,10 +2325,57 @@ VIEWS.materiel = function () {
   };
   const mf = $('#mfil'); if (mf) mf.onchange = e => { MATV.filtre = e.target.value; VIEWS.materiel(); };
   const mtf = $('#mtfil'); if (mtf) mtf.onchange = e => { MATV.typeFiltre = e.target.value; VIEWS.materiel(); };
+  const mapsa = $('#mapsa'); if (mapsa) mapsa.onchange = e => { MATV.apsaFiltre = e.target.value; VIEWS.materiel(); };
+  const msort = $('#msort'); if (msort) msort.onchange = e => { MATV.sortBy = e.target.value; VIEWS.materiel(); };
   const ml = $('#mlieu'); if (ml) ml.onchange = e => { MATV.lieu = e.target.value; VIEWS.materiel(); };
+  const minvApsa = $('#minv_apsa'); if (minvApsa) minvApsa.onchange = e => { MATV.invApsa = e.target.value; VIEWS.materiel(); };
+  const minvSort = $('#minv_sort'); if (minvSort) minvSort.onchange = e => { MATV.invSort = e.target.value; VIEWS.materiel(); };
+
+  const promptAddShop = () => {
+    const name = prompt('Nom du bouton / site marchand (ex. Decathlon Pro, Casal Sport, Pinduoduo, 1688…) :');
+    if (!name || !name.trim()) return;
+    const urlTpl = prompt('Adresse (URL) du site ou de recherche (astuce : mets {q} là où le mot-clé doit s’insérer, ou colle simplement le lien direct du site) :', 'https://www.decathlon.com.cn/zh/search?Ntt={q}');
+    if (!urlTpl || !urlTpl.trim()) return;
+    const custom = LS.get('custom_shops', []) || [];
+    custom.push({ name: name.trim(), color: '#0F5A55', urlTpl: urlTpl.trim() });
+    LS.set('custom_shops', custom);
+    VIEWS.materiel();
+  };
+  if ($('#m_add_shop')) $('#m_add_shop').onclick = promptAddShop;
+  if ($('#e_add_shop')) $('#e_add_shop').onclick = promptAddShop;
+  app.querySelectorAll('[data-qshop]').forEach(b => b.onclick = () => {
+    const s = shops[+b.dataset.qshop];
+    if (!s) return;
+    const q = prompt(`Rechercher sur ${s.name} (laisse vide pour ouvrir la page d’accueil) :`, '') || '';
+    openShopSearch(s, q.trim());
+  });
+  app.querySelectorAll('[data-delshop]').forEach(b => b.onclick = () => {
+    const idx = +b.dataset.delshop - DEFAULT_SHOPS.length;
+    const custom = LS.get('custom_shops', []) || [];
+    if (idx >= 0 && idx < custom.length && confirm(`Supprimer le bouton « ${custom[idx].name} » ?`)) {
+      custom.splice(idx, 1);
+      LS.set('custom_shops', custom);
+      VIEWS.materiel();
+    }
+  });
+  if ($('#m_add_lieu')) $('#m_add_lieu').onclick = () => {
+    const nl = prompt('Nom du nouvel espace de rangement (ex. Réserve Gymnase, Armoire Dojo, Caisse Piste…) :');
+    if (!nl || !nl.trim()) return;
+    const cur = getMatLieux();
+    if (!cur.includes(nl.trim())) { cur.push(nl.trim()); saveMatLieux(cur.sort()); }
+    alertMsg(`Espace de rangement « ${nl.trim()} » ajouté.`);
+    VIEWS.materiel();
+  };
+  app.querySelectorAll('[data-dellieu]').forEach(b => b.onclick = () => {
+    const l = b.dataset.dellieu;
+    if (!confirm(`Retirer « ${l} » de la liste des espaces de rangement ?`)) return;
+    saveMatLieux(getMatLieux().filter(x => x !== l));
+    VIEWS.materiel();
+  });
+
   const mgs = $('#mat_gsave'); if (mgs) mgs.onclick = () => {
     LS.set('gemini', { key: $('#mat_gkey').value.trim(), model: $('#mat_gmod').value.trim() || 'gemini-2.5-flash-lite' });
-    alertMsg('Clé Gemini Lite enregistrée.');
+    alertMsg('Clé Gemini enregistrée.');
     VIEWS.materiel();
   };
   const zhAllBtn = $('#m_zh_all');
@@ -1877,7 +2418,19 @@ VIEWS.materiel = function () {
     if ((i.type || 'materiel') === 'materiel' && s.value === 'Reçu' && old !== 'Reçu' && num(i.qte) && confirm('Ajouter ' + num(i.qte) + ' au stock en bon état ?')) { i.bon = (num(i.bon) || 0) + num(i.qte); i.stock = (num(i.stock) || 0) + num(i.qte); }
     saveMat(); VIEWS.materiel();
   });
-  app.querySelectorAll('[data-inv]').forEach(inp => inp.onchange = () => { const i = MAT.find(x => x.id === inp.dataset.inv); i[inp.dataset.k] = inp.dataset.k === 'lieu' ? inp.value.trim() : num(inp.value); saveMat(); if (inp.dataset.k === 'lieu') return; VIEWS.materiel(); });
+  app.querySelectorAll('[data-inv]').forEach(inp => inp.onchange = () => {
+    const i = MAT.find(x => x.id === inp.dataset.inv);
+    if (inp.dataset.k === 'lieu') {
+      const val = inp.value.trim();
+      i.lieu = val;
+      if (val) { const cur = getMatLieux(); if (!cur.includes(val)) { cur.push(val); saveMatLieux(cur.sort()); } }
+      saveMat();
+      return;
+    }
+    i[inp.dataset.k] = num(inp.value);
+    saveMat();
+    VIEWS.materiel();
+  });
   const mdaf = $('#mdaf'); if (mdaf) mdaf.onclick = exportDAF;
   const ma = $('#machat'); if (ma) ma.onclick = ficheAchats;
   const mix = $('#minvx'); if (mix) mix.onclick = exportInventaire;
@@ -1914,7 +2467,12 @@ VIEWS.materiel = function () {
       }
       b.disabled = false; b.textContent = '✨ Traduire (Gemini Lite)';
     };
-    app.querySelectorAll('[data-shop]').forEach(b => b.onclick = () => { const q = zhI.value.trim() || toChinese(desI.value, specI.value) || desI.value.trim(); if (!q) return; window.open(SHOPS[+b.dataset.shop][2](q), '_blank', 'noopener'); });
+    app.querySelectorAll('[data-shop]').forEach(b => b.onclick = () => {
+      const s = shops[+b.dataset.shop];
+      if (!s) return;
+      const q = zhI.value.trim() || toChinese(desI.value, specI.value) || desI.value.trim();
+      openShopSearch(s, q);
+    });
     let newImg = null;
     $('#e_img').onchange = async e => { const f = e.target.files[0]; if (!f) return; newImg = await compressImage(f); $('#e_imgv').textContent = 'Image prête à enregistrer'; };
     $('#e_cancel').onclick = () => { MATV.edit = null; VIEWS.materiel(); };
@@ -1925,7 +2483,9 @@ VIEWS.materiel = function () {
       let it = MAT.find(x => x.id === ed.id);
       if (!it) { it = { id: ed.id, statut: 'Demandé', bon: null, use: 0, hs: 0, lieu: '', img: false, cat: '' }; MAT.push(it); }
       const finalZh = v('e_zh') || toChinese(v('e_des'), v('e_spec'));
-      Object.assign(it, { type: v('e_type') || 'materiel', tres: v('e_tres'), demandeur: v('e_dem'), apsa: v('e_apsa'), prio: num(v('e_prio')), des: v('e_des'), spec: v('e_spec'), qte: num(v('e_qte')), pu: num(v('e_pu')), stock: num(v('e_stock')), zh: finalZh, lien: v('e_lien'), boutique: v('e_bout'), variante: v('e_var'), notes: v('e_notes') });
+      const newLieu = v('e_lieu') || it.lieu || '';
+      if (newLieu) { const curL = getMatLieux(); if (!curL.includes(newLieu)) { curL.push(newLieu); saveMatLieux(curL.sort()); } }
+      Object.assign(it, { type: v('e_type') || 'materiel', tres: v('e_tres'), demandeur: v('e_dem'), apsa: v('e_apsa'), prio: num(v('e_prio')), des: v('e_des'), spec: v('e_spec'), qte: num(v('e_qte')), pu: num(v('e_pu')), stock: num(v('e_stock')), lieu: newLieu, zh: finalZh, lien: v('e_lien'), boutique: v('e_bout'), variante: v('e_var'), notes: v('e_notes') });
       if (it.zh && it.zh !== toChinese(it.des)) { const g = LS.get('glossaire', {}); g[it.des.toLowerCase()] = it.zh; LS.set('glossaire', g); }
       if (newImg) { try { await mediaPut('mat_' + it.id, newImg); it.img = true; } catch (err) { alertMsg('Image non enregistrée : ' + err.message); } }
       saveMat(); MATV.edit = null; VIEWS.materiel();
@@ -2196,11 +2756,20 @@ VIEWS.partage = function () {
 };
 
 /* --- Programmation interactive & Liaison directe avec le Catalogue APSA et le Planning --- */
-const PROG = { r: 'college', editCell: null };
-const RYTHMES = {
-  college: { t: '5e · 4e · 3e (3 h)', cls: ['5A', '5B', '5C', '4A', '4B', '3A', '3B', '3C'], per: [['P1', '2026-08-31', '2026-10-30'], ['P2', '2026-11-02', '2027-01-15'], ['P3', '2027-01-18', '2027-03-26'], ['P4', '2027-03-29', '2027-06-04']] },
-  lycee: { t: '6e (4 h) et lycée (2 h)', cls: ['6A', '6B', '6C', '2A', '2B', '1A', '1B', 'Term'], per: [['P1', '2026-08-31', '2026-11-27'], ['P2', '2026-11-30', '2027-03-05'], ['P3', '2027-03-08', '2027-05-28']] }
-};
+const PROG = { r: 'college', editCell: null, editSlots: false, editPeriods: false };
+function getProgRythmes() {
+  const saved = LS.get('prog_rythmes_' + curSchoolYear(), null);
+  if (saved && saved.college && saved.lycee) return saved;
+  const y0 = parseInt(curSchoolYear().split('-')[0], 10) || 2026;
+  const y1 = y0 + 1;
+  return {
+    college: { t: '5e · 4e · 3e (3 h)', cls: ['5A', '5B', '5C', '4A', '4B', '3A', '3B', '3C'], per: [['P1', `${y0}-08-31`, `${y0}-10-30`], ['P2', `${y0}-11-02`, `${y1}-01-15`], ['P3', `${y1}-01-18`, `${y1}-03-26`], ['P4', `${y1}-03-29`, `${y1}-06-04`]] },
+    lycee: { t: '6e (4 h) et lycée (2 h)', cls: ['6A', '6B', '6C', '2A', '2B', '1A', '1B', 'Term'], per: [['P1', `${y0}-08-31`, `${y0}-11-27`], ['P2', `${y0}-11-30`, `${y1}-03-05`], ['P3', `${y1}-03-08`, `${y1}-05-28`]] }
+  };
+}
+function saveProgRythmes(obj) {
+  LS.set('prog_rythmes_' + curSchoolYear(), obj);
+}
 function setClassPeriodApsa(ci, fromDate, toDate, newApsa, updatePlan = true) {
   const c = CAL.classes[ci];
   if (!c) return 0;
@@ -2259,6 +2828,7 @@ function setClassPeriodApsa(ci, fromDate, toDate, newApsa, updatePlan = true) {
   return count;
 }
 function progData(r) {
+  const RYTHMES = getProgRythmes();
   const R = RYTHMES[r], out = [];
   for (const cl of R.cls) {
     const idx = CAL.classes.map((c, i) => [c, i]).filter(([c]) => c.c === cl);
@@ -2278,6 +2848,7 @@ function progData(r) {
 }
 VIEWS.programmation = function () {
   refreshApsaDatalist();
+  const RYTHMES = getProgRythmes();
   const app = $('#app'), R = RYTHMES[PROG.r], rows = progData(PROG.r);
   const cat = apsaCatalog();
   const cov = cl => { const s = new Set(); rows.filter(x => x.cl === cl).forEach(x => x.cells.forEach(c => c && c.apsa && s.add(caOf(c.apsa)))); return s; };
@@ -2287,24 +2858,67 @@ VIEWS.programmation = function () {
   const edCurApsa = edRow && edRow.cells[ed.pIdx] ? edRow.cells[ed.pIdx].apsa : '';
 
   app.innerHTML = `<main>
+    ${schoolYearBarHTML()}
     <div class="row" style="justify-content:space-between">
-      <h1>Programmation des APSA</h1>
+      <h1>Programmation des APSA · ${esc(curSchoolYear())}</h1>
       <div class="row" style="gap:6px">
         ${Object.entries(RYTHMES).map(([k, v]) => `<button class="btn ${PROG.r === k ? 'on' : ''}" data-r="${k}">${v.t}</button>`).join('')}
+        <button class="btn rw-only" id="pr_toggle_slots">${PROG.editSlots ? '✓ Fermer créneaux EDT' : '🕒 Créneaux EDT des classes (8h30, 10h30…)'}</button>
+        <button class="btn rw-only" id="pr_toggle_per">${PROG.editPeriods ? '✓ Fermer dates des périodes' : '📅 Dates des périodes P1–P4'}</button>
         <a class="btn" href="#ressources" style="text-decoration:none" onclick="RESV.tab='apsa'">🎯 Catalogue APSA (${cat.length})</a>
         <a class="btn" href="#planning" style="text-decoration:none">📅 Planning</a>
       </div>
     </div>
     <div class="row" style="justify-content:space-between;background:#EEF4FF;border:1px solid #C7DAFA;border-radius:12px;padding:10px 14px">
       <div style="flex:1 1 320px">
-        <strong style="color:var(--accent)">💡 Programmation interactive reliée au planning annuel :</strong>
-        <span class="muted" style="display:block;color:#273142">Clique sur n’importe quelle case du tableau pour définir ou changer l’APSA d’une classe (depuis le catalogue APSA ou en saisie libre). Clique ensuite sur <strong>« Générer le planning annuel »</strong> pour réserver automatiquement toutes les installations compatibles en respectant les demandes (AS, Primaire, ACS).</span>
+        <strong style="color:var(--accent)">💡 Programmation interactive reliée au planning annuel (${esc(curSchoolYear())}) :</strong>
+        <span class="muted" style="display:block;color:#273142">Clique sur n’importe quelle case du tableau pour définir ou changer l’APSA d’une classe. Clique ensuite sur <strong>« ⚡ Générer / Mettre à jour le planning annuel »</strong> pour placer automatiquement les cours EPS sur les installations aux horaires 8h30–10h30, 10h30–12h30, 13h30–15h30, 15h30–17h30.</span>
       </div>
       <div class="row rw-only" style="gap:6px">
         <button class="btn go" id="pr_gen_all">⚡ Générer / Mettre à jour le planning annuel des installations</button>
         <a class="btn" href="#generateur" style="text-decoration:none">⚙️ Réglages du générateur</a>
       </div>
     </div>
+
+    ${PROG.editPeriods ? `<div class="card rw-only" style="border:2px solid #0284C7;background:#F0F9FF">
+      <div class="row" style="justify-content:space-between">
+        <h2>📅 Dates des périodes de programmation (${esc(R.t)} · ${esc(curSchoolYear())})</h2>
+        <button class="btn" id="pr_per_close">✕ Fermer</button>
+      </div>
+      <div class="row">
+        ${R.per.map(([pName, a, b], idx) => `<div class="card" style="padding:10px;background:#fff;flex:1 1 200px">
+          <strong>${esc(pName)}</strong>
+          <label class="f">Début<input type="date" data-prper="${idx}" data-k="1" value="${esc(a)}"></label>
+          <label class="f">Fin<input type="date" data-prper="${idx}" data-k="2" value="${esc(b)}"></label>
+        </div>`).join('')}
+      </div>
+      <div class="row">
+        <button class="btn go" id="pr_per_save">Enregistrer les dates des périodes (et synchroniser le planning)</button>
+      </div>
+    </div>` : ''}
+
+    ${PROG.editSlots ? `<div class="card rw-only" style="border:2px solid #0D9488;background:#F0FDFA">
+      <div class="row" style="justify-content:space-between">
+        <h2>🕒 Créneaux d’emploi du temps EPS des classes (${esc(curSchoolYear())})</h2>
+        <div class="row" style="gap:6px">
+          <label class="btn blue" style="display:inline-flex;align-items:center;gap:6px;cursor:pointer">✨ Importer un EDT (PDF / image) via Gemini <input type="file" id="pr_edt_ai" accept=".pdf,image/*" style="display:none"></label>
+          <button class="btn" id="pr_add_slot">+ Ajouter un créneau de classe</button>
+          <button class="btn" id="pr_slots_close">✕ Fermer</button>
+        </div>
+      </div>
+      <span class="muted">Modifie ici les jours et horaires EPS de chaque classe (ex. 08:30 à 10:30, 10:30 à 12:30, 13:30 à 15:30, 15:30 à 17:30) pour l’année scolaire ${esc(curSchoolYear())}.</span>
+      <div class="scroll" style="max-height:340px"><table class="t">
+        <tr><th>Classe</th><th>Jour</th><th>Début</th><th>Fin</th><th>Quinzaine</th><th></th></tr>
+        ${CAL.classes.map((c, ci) => `<tr>
+          <td><input type="text" data-cslot="${ci}" data-k="c" value="${esc(c.c)}" style="width:85px;font-weight:700"></td>
+          <td><select data-cslot="${ci}" data-k="d">${[['lun','Lundi'],['mar','Mardi'],['mer','Mercredi'],['jeu','Jeudi'],['ven','Vendredi']].map(([k,l]) => `<option value="${k}" ${c.d===k?'selected':''}>${l}</option>`).join('')}</select></td>
+          <td><input type="text" data-cslot="${ci}" data-k="s" value="${esc(c.s)}" placeholder="08:30" style="width:85px"></td>
+          <td><input type="text" data-cslot="${ci}" data-k="e" value="${esc(c.e)}" placeholder="10:30" style="width:85px"></td>
+          <td><label class="chk"><input type="checkbox" data-cslot="${ci}" data-k="qz" ${c.qz?'checked':''}> Quinzaine (1h)</label></td>
+          <td><button class="btn warn" data-cslot-del="${ci}" style="min-height:30px;padding:2px 8px">✕</button></td>
+        </tr>`).join('')}
+      </table></div>
+    </div>` : ''}
 
     ${edRow && edPer ? `<div class="card rw-only" id="pr_editor" style="border:2px solid var(--accent);background:#F8FAFC">
       <div class="row" style="justify-content:space-between">
@@ -2334,7 +2948,72 @@ VIEWS.programmation = function () {
     </table></div></div>
     <div class="row"><button class="btn go" id="prx">Exporter en Excel</button><span class="muted">Astuce : clique sur une case pour changer l’APSA. Cercle en pointillés = champ d’apprentissage non vu dans l’année.</span></div>
   </main>`;
+  bindSchoolYearBar(() => VIEWS.programmation());
   app.querySelectorAll('[data-r]').forEach(b => b.onclick = () => { PROG.r = b.dataset.r; PROG.editCell = null; VIEWS.programmation(); });
+  if ($('#pr_toggle_slots')) $('#pr_toggle_slots').onclick = () => { PROG.editSlots = !PROG.editSlots; VIEWS.programmation(); };
+  if ($('#pr_slots_close')) $('#pr_slots_close').onclick = () => { PROG.editSlots = false; VIEWS.programmation(); };
+  if ($('#pr_toggle_per')) $('#pr_toggle_per').onclick = () => { PROG.editPeriods = !PROG.editPeriods; VIEWS.programmation(); };
+  if ($('#pr_per_close')) $('#pr_per_close').onclick = () => { PROG.editPeriods = false; VIEWS.programmation(); };
+  if ($('#pr_per_save')) $('#pr_per_save').onclick = () => {
+    const ry = getProgRythmes();
+    app.querySelectorAll('[data-prper]').forEach(inp => {
+      const idx = +inp.dataset.prper, k = +inp.dataset.k;
+      if (ry[PROG.r].per[idx] && inp.value) ry[PROG.r].per[idx][k] = inp.value;
+    });
+    saveProgRythmes(ry);
+    if (PROG.r === 'college' && PLAN && PLAN.periods) {
+      ry.college.per.forEach(([pCode, fDate, tDate], idx) => {
+        if (PLAN.periods[idx]) { PLAN.periods[idx].from = fDate; PLAN.periods[idx].to = tDate; }
+      });
+      LS.set('planning', PLAN);
+    }
+    alertMsg('Dates des périodes enregistrées.');
+    PROG.editPeriods = false;
+    VIEWS.programmation();
+  };
+  app.querySelectorAll('[data-cslot]').forEach(el => el.onchange = () => {
+    const ci = +el.dataset.cslot, k = el.dataset.k;
+    if (!CAL.classes[ci]) return;
+    if (k === 'qz') CAL.classes[ci].qz = el.checked;
+    else if (k === 's' || k === 'e') CAL.classes[ci][k] = parseHeure(el.value) || el.value.trim();
+    else CAL.classes[ci][k] = el.value.trim();
+    LS.set('calendrier', CAL);
+    VIEWS.programmation();
+  });
+  app.querySelectorAll('[data-cslot-del]').forEach(b => b.onclick = () => {
+    const ci = +b.dataset.cslotDel;
+    if (!confirm(`Supprimer ce créneau (${CAL.classes[ci].c}) ?`)) return;
+    CAL.classes.splice(ci, 1);
+    LS.set('calendrier', CAL);
+    VIEWS.programmation();
+  });
+  if ($('#pr_add_slot')) $('#pr_add_slot').onclick = () => {
+    const cl = prompt('Nom de la classe (ex. 6A, 5B, 2A, Term) :', '6A');
+    if (!cl || !cl.trim()) return;
+    CAL.classes.push({ c: cl.trim(), d: 'lun', s: '08:30', e: '10:30', qz: false });
+    LS.set('calendrier', CAL);
+    VIEWS.programmation();
+  };
+  if ($('#pr_edt_ai')) $('#pr_edt_ai').onchange = async e => {
+    const f = e.target.files[0];
+    if (!f) return;
+    try {
+      alertMsg('Lecture de l’emploi du temps par Gemini en cours…');
+      const prompt = `Extrais les créneaux d'EPS des classes depuis ce document d'emploi du temps du lycée (les créneaux au LFIP commencent généralement à 08:30, 10:30, 13:30, 15:30). Réponds UNIQUEMENT avec un tableau JSON valide de la forme [{"c":"6A","d":"lun","s":"08:30","e":"10:30","qz":false}, ...] où d vaut "lun","mar","mer","jeu" ou "ven".`;
+      const raw = await askGeminiMultimodal(prompt, f);
+      const m = raw.match(/\[[\s\S]*\]/);
+      if (!m) throw new Error('Aucun tableau JSON détecté dans la réponse Gemini.');
+      const arr = JSON.parse(m[0]);
+      if (Array.isArray(arr) && arr.length && confirm(`Gemini a détecté ${arr.length} créneaux de classes. Remplacer / fusionner avec les créneaux actuels ?`)) {
+        CAL.classes = arr.map(x => ({ c: String(x.c || '').trim(), d: x.d || 'lun', s: parseHeure(x.s) || '08:30', e: parseHeure(x.e) || '10:30', qz: !!x.qz }));
+        LS.set('calendrier', CAL);
+        alertMsg(`${arr.length} créneaux d’EDT importés avec succès !`);
+        VIEWS.programmation();
+      }
+    } catch (err) {
+      alertMsg('Erreur lecture EDT Gemini : ' + err.message);
+    }
+  };
   app.querySelectorAll('[data-prcell]').forEach(td => td.onclick = () => {
     const [ci, pIdx] = td.dataset.prcell.split('|').map(Number);
     PROG.editCell = { ci, pIdx };
@@ -2379,12 +3058,12 @@ VIEWS.programmation = function () {
   $('#prx').onclick = () => {
     const wb = XLSX.utils.book_new();
     for (const [k, v] of Object.entries(RYTHMES)) {
-      const aoa = [['Programmation EPS 2026-2027 · ' + v.t], [], ['Classe', 'Créneau', ...v.per.map(([p, a, b]) => p + ' (' + fromIso(a).toLocaleDateString('fr-FR') + ' → ' + fromIso(b).toLocaleDateString('fr-FR') + ')')]];
+      const aoa = [['Programmation EPS ' + curSchoolYear() + ' · ' + v.t], [], ['Classe', 'Créneau', ...v.per.map(([p, a, b]) => p + ' (' + fromIso(a).toLocaleDateString('fr-FR') + ' → ' + fromIso(b).toLocaleDateString('fr-FR') + ')')]];
       progData(k).forEach(x => aoa.push([x.cl, x.cren, ...x.cells.map(c => c && c.apsa ? c.apsa + ' (' + c.n + ' séances, CA' + caOf(c.apsa) + ')' : '')]));
       const ws = XLSX.utils.aoa_to_sheet(aoa); ws['!cols'] = [8, 22, ...v.per.map(() => ({ wch: 30 }))].map(x => typeof x === 'number' ? { wch: x } : x);
       XLSX.utils.book_append_sheet(wb, ws, k === 'college' ? '5e-4e-3e' : '6e et lycée');
     }
-    XLSX.writeFile(wb, 'Programmation EPS 2026-2027.xlsx');
+    XLSX.writeFile(wb, 'Programmation EPS ' + curSchoolYear() + '.xlsx');
   };
 };
 
@@ -2397,6 +3076,7 @@ function calEvals() {
   const out = [];
   for (const [ds, list] of Object.entries(CAL.cal)) for (const [ci, act] of list) if (/^eval/i.test(act)) {
     const c = CAL.classes[ci];
+    if (!c) continue;
     const menu = c.c === 'Term' ? CAL.classes.filter(x => x.c === 'Term').indexOf(c) + 1 : 0;
     out.push({ id: 'e' + ds + ci, cls: menu ? 'Term · menu ' + menu : c.c, apsa: cap(act.replace(/^eval\s*/i, '').trim()), date: ds, ratt: '', coeval: '', src: 'calendrier' });
   }
@@ -2406,10 +3086,12 @@ if (!EVALS) { EVALS = calEvals(); LS.set('evals', EVALS); }
 const saveEvals = () => LS.set('evals', EVALS);
 function classRows() { return [...progData('college'), ...progData('lycee')]; }
 function periodOf(cl, ds) {
+  const RYTHMES = getProgRythmes();
   for (const [k, R] of Object.entries(RYTHMES)) { const base = cl.replace(/ · menu \d/, ''); if (R.cls.includes(base)) { const p = R.per.find(([, a, b]) => ds >= a && ds <= b); return p ? p[0] : null; } }
   return null;
 }
 function lastSession(cl, perName) {
+  const RYTHMES = getProgRythmes();
   const base = cl.replace(/ · menu \d/, ''); const menu = (cl.match(/menu (\d)/) || [])[1];
   const R = Object.values(RYTHMES).find(r => r.cls.includes(base)); if (!R) return null;
   const per = R.per.find(p => p[0] === perName); if (!per) return null;
@@ -2425,6 +3107,7 @@ VIEWS.evaluations = function () {
   const today = iso(new Date());
   const ev = [...EVALS].sort((a, b) => (a.date || '9').localeCompare(b.date || '9'));
   app.innerHTML = `<main>
+    ${schoolYearBarHTML()}
     <h1>Évaluations et séances</h1>
     <div class="card">
       <h2>Ajouter une évaluation</h2>
@@ -2448,13 +3131,15 @@ VIEWS.evaluations = function () {
       <div class="scroll"><table class="t" style="min-width:820px"><tr><th>Classe</th><th>Créneau</th><th>P1</th><th>P2</th><th>P3</th><th>P4</th></tr>
       ${rows.map(x => `<tr><td><strong>${esc(x.cl)}</strong></td><td class="muted">${esc(x.cren)}</td>${[0, 1, 2, 3].map(k => { const c = x.cells[k]; return `<td>${c ? `${esc(c.apsa)} · <strong>${c.n}</strong>` : '—'}</td>`; }).join('')}</tr>`).join('')}
       </table></div>
-      <span class="muted">Séances comptées dans le calendrier (vacances, fériés et quinzaines déjà retirés). Les périodes ne se modifient pas ici.</span>
+      <span class="muted">Séances comptées dans le calendrier (vacances, fériés et quinzaines déjà retirés).</span>
     </div>
   </main>`;
+  bindSchoolYearBar(() => VIEWS.evaluations());
   const clS = $('#ev_cl'), apI = $('#ev_ap'), dI = $('#ev_d');
   const fillAps = () => { const r = rows.filter(x => x.cl === clS.value); $('#ev_aps').innerHTML = [...new Set(r.flatMap(x => x.cells.filter(Boolean).map(c => c.apsa)))].map(a => `<option value="${esc(a)}">`).join(''); };
   clS.onchange = fillAps; fillAps();
   $('#ev_last').onclick = () => {
+    const RYTHMES = getProgRythmes();
     const r = rows.filter(x => x.cl === clS.value); const R = Object.values(RYTHMES).find(R => R.cls.includes(clS.value.replace(/ · menu \d/, '')));
     const ap = apI.value.trim().toLowerCase(); let per = null;
     for (const x of r) x.cells.forEach((c, k) => { if (c && c.apsa.toLowerCase() === ap) per = R.per[k][0]; });
@@ -2465,14 +3150,14 @@ VIEWS.evaluations = function () {
   app.querySelectorAll('[data-ev]').forEach(i => i.onchange = () => { const e = EVALS.find(x => x.id === i.dataset.ev); e[i.dataset.k] = i.value; saveEvals(); });
   app.querySelectorAll('[data-evdel]').forEach(b => b.onclick = () => { if (confirm('Supprimer cette évaluation ?')) { EVALS = EVALS.filter(x => x.id !== b.dataset.evdel); saveEvals(); VIEWS.evaluations(); } });
   $('#ev_x').onclick = () => {
-    const aoa = [['Évaluations EPS 2026-2027'], [], ['Date', 'Classe', 'APSA', 'Période', 'Rattrapage', 'Co-évaluateur']];
+    const aoa = [['Évaluations EPS ' + curSchoolYear()], [], ['Date', 'Classe', 'APSA', 'Période', 'Rattrapage', 'Co-évaluateur']];
     ev.forEach(e => aoa.push([frd(e.date), e.cls, e.apsa, e.date ? periodOf(e.cls, e.date) || '' : '', frd(e.ratt), e.coeval || '']));
     const ws = XLSX.utils.aoa_to_sheet(aoa); ws['!cols'] = [12, 16, 20, 8, 12, 18].map(w => ({ wch: w }));
     const wb = XLSX.utils.book_new(); XLSX.utils.book_append_sheet(wb, ws, 'Évaluations'); XLSX.writeFile(wb, 'Calendrier des évaluations EPS - ' + iso(new Date()) + '.xlsx');
   };
 };
 
-/* --- Protocole bac (aide iPackEPS) --- */
+/* --- Protocole bac (aide iPackEPS) + Lecture IA des dispenses médicales --- */
 let INAPT = LS.get('prive_inapt', []);
 const saveInapt = () => LS.set('prive_inapt', INAPT);
 VIEWS.bac = function () {
@@ -2495,15 +3180,23 @@ VIEWS.bac = function () {
   checks.push([all.every(l => l.e && l.e.coeval), 'Co-évaluateurs : ' + all.filter(l => l.e && l.e.coeval).length + ' / ' + all.length]);
   const sansCert = INAPT.filter(i => !i.lien).length;
   checks.push([!sansCert, 'Inaptitudes : ' + INAPT.length + ' dont ' + sansCert + ' sans certificat']);
+  const gem = LS.get('gemini', {}) || {};
   app.innerHTML = `<main>
-    <h1>Protocole bac EPS · session 2027</h1>
+    <h1>Protocole bac EPS · ${esc(curSchoolYear())}</h1>
     <p class="muted" style="margin:0">Dans l’ordre d’iPackEPS : groupes (menus) → APSA → protocole (dates, rattrapages, co-évaluateurs) → inaptitudes. Les dates se modifient ici ou dans « Évaluations ».</p>
     <div class="card"><h2>Prêt pour iPackEPS ?</h2>${checks.map(([ok, t]) => `<div class="row"><span class="chip ${ok ? 'ca2' : 'st-acs'}">${ok ? '✓' : 'à faire'}</span><span>${esc(t)}</span></div>`).join('')}
       <div class="row"><button class="btn go" id="bx">Fiche de saisie iPack (Excel)</button></div></div>
     ${blocks.map(({ m, lines }) => `<div class="card" style="padding:0"><div style="padding:14px 16px"><h2>${esc(m.cl)}</h2></div><div class="scroll"><table class="t" style="min-width:760px"><tr><th>APSA</th><th>CA</th><th>Évaluation</th><th>Rattrapage</th><th>Co-évaluateur</th></tr>
       ${lines.map(l => `<tr><td><strong>${esc(l.apsa)}</strong></td><td><span class="chip ca${l.ca}">CA${l.ca}</span></td>${l.e ? `<td><input type="date" data-bev="${l.e.id}" data-k="date" value="${l.e.date || ''}"></td><td><input type="date" data-bev="${l.e.id}" data-k="ratt" value="${l.e.ratt || ''}"></td><td><input type="text" data-bev="${l.e.id}" data-k="coeval" list="coevl" value="${esc(l.e.coeval || '')}"></td>` : `<td colspan="3"><button class="btn" data-bnew="${esc(m.cl)}|${esc(l.apsa)}">Créer l’évaluation</button></td>`}</tr>`).join('')}
     </table></div></div>`).join('')}
-    <div class="card"><h2>Inaptitudes et dispenses</h2>
+    <div class="card">
+      <div class="row" style="justify-content:space-between;align-items:center">
+        <h2>Inaptitudes et dispenses (avec lecture automatique par IA Gemini)</h2>
+        <div class="row" style="gap:6px">
+          <label class="btn blue" style="display:inline-flex;align-items:center;gap:6px;cursor:pointer" title="Charge un certificat médical ou une dispense (PDF ou photo) pour pré-remplir automatiquement les champs grâce à ta clé API Gemini">📄 Lire une dispense (PDF / photo) avec Gemini <input type="file" id="in_ai_file" accept=".pdf,image/*" style="display:none"></label>
+          <a class="btn" href="#etab" style="text-decoration:none;font-size:12px">🔑 Clé API Gemini (${gem.key ? 'configurée ✓' : 'à renseigner'})</a>
+        </div>
+      </div>
       <div class="banner">Données nominatives : à saisir seulement sur ton ordinateur personnel. Elles restent sur cet appareil, ne partent jamais dans les fichiers de partage, et le certificat reste dans ton Drive (l’app ne garde que le lien).</div>
       <div class="row">
         <label class="f">Élève<input type="text" id="in_n" style="width:180px"></label>
@@ -2520,6 +3213,26 @@ VIEWS.bac = function () {
   </main>`;
   app.querySelectorAll('[data-bev]').forEach(i => i.onchange = () => { const e = EVALS.find(x => x.id === i.dataset.bev); if (e[i.dataset.k] === i.value) return; e[i.dataset.k] = i.value; saveEvals(); setTimeout(() => current === 'bac' && VIEWS.bac(), 0); });
   app.querySelectorAll('[data-bnew]').forEach(b => b.onclick = () => { const [cl, ap] = b.dataset.bnew.split('|'); EVALS.push({ id: 'e' + Date.now(), cls: cl, apsa: ap, date: '', ratt: '', coeval: '' }); saveEvals(); VIEWS.bac(); });
+  if ($('#in_ai_file')) $('#in_ai_file').onchange = async e => {
+    const f = e.target.files[0];
+    if (!f) return;
+    try {
+      alertMsg('Analyse du certificat / dispense par Gemini en cours…');
+      const prompt = `Analyse ce certificat médical ou dispense d'EPS (même s'il est bilingue français/chinois ou anglais). Extrais les informations au format JSON strict : {"nom": "Nom Prénom de l'élève si lisible", "type": "Partielle ou Totale", "apsa": "limitations fonctionnelles ou APSA contre-indiquées / adaptations", "d1": "YYYY-MM-DD (date de début)", "d2": "YYYY-MM-DD (date de fin)"}. Réponds uniquement avec l'objet JSON.`;
+      const raw = await askGeminiMultimodal(prompt, f);
+      const m = raw.match(/\{[\s\S]*\}/);
+      if (!m) throw new Error('Format JSON non reconnu dans la réponse Gemini.');
+      const obj = JSON.parse(m[0]);
+      if (obj.nom && $('#in_n')) $('#in_n').value = obj.nom;
+      if (obj.type && $('#in_t')) $('#in_t').value = /tot/i.test(obj.type) ? 'Totale' : 'Partielle';
+      if (obj.apsa && $('#in_a')) $('#in_a').value = obj.apsa;
+      if (obj.d1 && /^\d{4}-\d{2}-\d{2}$/.test(obj.d1) && $('#in_d1')) $('#in_d1').value = obj.d1;
+      if (obj.d2 && /^\d{4}-\d{2}-\d{2}$/.test(obj.d2) && $('#in_d2')) $('#in_d2').value = obj.d2;
+      alertMsg('Dispense lue par Gemini ! Vérifie les champs pré-remplis puis clique sur « Ajouter ».');
+    } catch (err) {
+      alertMsg('Lecture Gemini impossible : ' + err.message);
+    }
+  };
   $('#in_add').onclick = () => {
     const v = id => $('#' + id).value.trim(); if (!v('in_n')) { alertMsg('Indique l’élève.'); return; }
     if (v('in_l') && !/^https?:\/\//i.test(v('in_l'))) { alertMsg('Le lien doit commencer par https://'); return; }
@@ -2871,19 +3584,74 @@ function printFicheNatation(nat) {
   </body></html>`);
   w.document.close();
 }
+function getC3ApsaList(lvl, caNum) {
+  if (!C3[lvl]) C3[lvl] = {};
+  const raw = C3[lvl][caNum];
+  if (Array.isArray(raw)) return raw;
+  if (typeof raw === 'string' && raw.trim()) {
+    return raw.split(/[,;·]/).map(s => s.trim()).filter(Boolean);
+  }
+  return [];
+}
+function setC3ApsaList(lvl, caNum, arr) {
+  if (!C3[lvl]) C3[lvl] = {};
+  C3[lvl][caNum] = arr;
+  saveC3();
+}
+const C3_REP_UI = { openKey: null };
 function cycle3Reperes() {
+  refreshApsaDatalist();
   const app = $('#app');
   const nat = ensureNatConfig();
   const six = { 1: new Set(), 2: new Set(), 3: new Set(), 4: new Set(), 5: new Set() };
   progData('lycee').filter(x => /^6/.test(x.cl)).forEach(x => x.cells.forEach(c => c && six[caOf(c.apsa)] && six[caOf(c.apsa)].add(c.apsa)));
   const CAN = ['', 'CA1 · Performance', 'CA2 · Milieux variés (savoir-nager)', 'CA3 · Artistique / acrobatique', 'CA4 · Affrontement'];
   const allPossibleNiv = ['GS', 'CP', 'CE1', 'CE2', 'CM1', 'CM2', '6e', '5e', '4e', '3e', '2de'];
+  const cat = apsaCatalog();
+
+  const renderC3Cell = (lvl, n) => {
+    const items = getC3ApsaList(lvl, n);
+    const key = `${lvl}_${n}`;
+    const isOpen = C3_REP_UI.openKey === key;
+    const caApsas = cat.filter(a => Number(a.ca) === Number(n));
+    return `<div style="display:flex;flex-direction:column;gap:6px">
+      <div class="chips" style="gap:5px">
+        ${items.map((txt, idx) => `<span class="chip ca${n}" style="display:inline-flex;align-items:center;gap:5px;font-size:12.5px">
+          ${esc(txt)}
+          <button type="button" data-c3del="${lvl}|${n}|${idx}" title="Retirer cette APSA" style="border:0;background:transparent;cursor:pointer;font-weight:900;color:inherit;padding:0 2px">✕</button>
+        </span>`).join('') || '<span class="muted" style="font-size:12px">Aucune APSA saisie</span>'}
+        <button type="button" class="chipbtn" data-c3open="${key}" style="min-height:26px;padding:2px 9px;font-size:12px;border-style:dashed">+ Ajouter une APSA</button>
+      </div>
+      ${isOpen ? `<div style="background:#F8FAFC;border:1px solid #CBD5E1;border-radius:10px;padding:8px;display:flex;flex-direction:column;gap:6px">
+        <div class="row" style="gap:6px">
+          <input type="text" id="c3_who_${key}" placeholder="Classe / Instit (ex. CM1A Martin — facultatif)" style="width:170px;min-height:32px;padding:2px 8px;font-size:12px">
+          <input type="text" id="c3_ap_${key}" list="apsa_dl" placeholder="APSA (ex. Athlétisme, Acrosport, Ultimate…)" style="flex:1 1 150px;min-height:32px;padding:2px 8px;font-size:12px">
+          <button type="button" class="btn go" data-c3add="${lvl}|${n}" style="min-height:32px;padding:2px 10px;font-size:12px">Ajouter</button>
+          <button type="button" class="btn" data-c3close="1" style="min-height:32px;padding:2px 8px;font-size:12px">✕</button>
+        </div>
+        ${caApsas.length ? `<div class="chips" style="gap:4px"><span class="muted" style="font-size:11px">Ajout 1 clic :</span>${caApsas.map(a => `<button type="button" class="chipbtn" data-c3quick="${lvl}|${n}|${esc(a.nom)}" style="min-height:24px;padding:1px 8px;font-size:11px">${esc(a.nom)}</button>`).join('')}</div>` : ''}
+      </div>` : ''}
+    </div>`;
+  };
 
   app.innerHTML = `<main>
     <h1>Liaison cycle 3 · Repères & Parcours Savoir-Nager</h1>
-    <div class="card" style="padding:0"><div class="scroll"><table class="t" style="min-width:760px"><tr><th>Champ d’apprentissage</th><th>CM1 (primaire)</th><th>CM2 (primaire)</th><th>6e (calendrier EPS)</th></tr>
-    ${[1, 2, 3, 4].map(n => `<tr><td><span class="chip ca${n}">${CAN[n]}</span></td><td><input type="text" data-c3="cm1" data-n="${n}" value="${esc(C3.cm1[n] || '')}" placeholder="APSA vécues" style="width:100%"></td><td><input type="text" data-c3="cm2" data-n="${n}" value="${esc(C3.cm2[n] || '')}" placeholder="APSA vécues" style="width:100%"></td><td>${[...six[n]].map(a => `<span class="chip ca${n}">${esc(a)}</span>`).join(' ') || '<span class="muted">—</span>'}</td></tr>`).join('')}
-    </table></div></div>
+    <div class="card" style="padding:0">
+      <div style="padding:12px 16px;border-bottom:1px solid #EEF0F4;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px">
+        <div>
+          <h2 style="margin:0">Repères CM1 · CM2 · 6e par champ d’apprentissage</h2>
+          <span class="muted">Chaque enseignant de CM1 et CM2 peut ajouter plusieurs APSA dans chaque champ d’apprentissage (avec précision facultative de sa classe ou de son nom).</span>
+        </div>
+      </div>
+      <div class="scroll"><table class="t" style="min-width:760px"><tr><th>Champ d’apprentissage</th><th style="width:34%">CM1 (primaire — plusieurs APSA possibles)</th><th style="width:34%">CM2 (primaire — plusieurs APSA possibles)</th><th>6e (calendrier EPS)</th></tr>
+      ${[1, 2, 3, 4].map(n => `<tr>
+        <td><span class="chip ca${n}">${CAN[n]}</span></td>
+        <td>${renderC3Cell('cm1', n)}</td>
+        <td>${renderC3Cell('cm2', n)}</td>
+        <td>${[...six[n]].map(a => `<span class="chip ca${n}">${esc(a)}</span>`).join(' ') || '<span class="muted">—</span>'}</td>
+      </tr>`).join('')}
+      </table></div>
+    </div>
 
     <div class="card" style="border-left:4px solid #0E7068">
       <div class="row" style="justify-content:space-between">
@@ -3022,7 +3790,42 @@ function cycle3Reperes() {
     <div class="row"><button class="btn go" id="c3x">Exporter la liaison & le Savoir-Nager (Excel)</button></div>
   </main>`;
 
-  app.querySelectorAll('[data-c3]').forEach(i => i.onchange = () => { C3[i.dataset.c3][i.dataset.n] = i.value.trim(); saveC3(); });
+  app.querySelectorAll('[data-c3open]').forEach(b => b.onclick = () => {
+    C3_REP_UI.openKey = C3_REP_UI.openKey === b.dataset.c3open ? null : b.dataset.c3open;
+    VIEWS.cycle3();
+  });
+  app.querySelectorAll('[data-c3close]').forEach(b => b.onclick = () => {
+    C3_REP_UI.openKey = null;
+    VIEWS.cycle3();
+  });
+  app.querySelectorAll('[data-c3add]').forEach(b => b.onclick = () => {
+    const [lvl, n] = b.dataset.c3add.split('|');
+    const key = `${lvl}_${n}`;
+    const who = ($(`#c3_who_${key}`) ? $(`#c3_who_${key}`).value : '').trim();
+    const ap = ($(`#c3_ap_${key}`) ? $(`#c3_ap_${key}`).value : '').trim();
+    if (!ap) { alertMsg('Indique l’APSA à ajouter.'); return; }
+    const label = who ? `${who} : ${ap}` : ap;
+    const list = getC3ApsaList(lvl, n);
+    list.push(label);
+    setC3ApsaList(lvl, n, list);
+    VIEWS.cycle3();
+  });
+  app.querySelectorAll('[data-c3quick]').forEach(b => b.onclick = () => {
+    const [lvl, n, apName] = b.dataset.c3quick.split('|');
+    const key = `${lvl}_${n}`;
+    const who = ($(`#c3_who_${key}`) ? $(`#c3_who_${key}`).value : '').trim();
+    const label = who ? `${who} : ${apName}` : apName;
+    const list = getC3ApsaList(lvl, n);
+    if (!list.includes(label)) { list.push(label); setC3ApsaList(lvl, n, list); }
+    VIEWS.cycle3();
+  });
+  app.querySelectorAll('[data-c3del]').forEach(b => b.onclick = () => {
+    const [lvl, n, idx] = b.dataset.c3del.split('|');
+    const list = getC3ApsaList(lvl, n);
+    list.splice(+idx, 1);
+    setC3ApsaList(lvl, n, list);
+    VIEWS.cycle3();
+  });
   app.querySelectorAll('[data-nats]').forEach(i => i.onchange = () => {
     const niv = i.dataset.nats, f = i.dataset.f;
     if (!nat.suivi[niv]) nat.suivi[niv] = {};
@@ -3088,7 +3891,7 @@ function cycle3Reperes() {
   app.querySelectorAll('[data-pjd]').forEach(b => b.onclick = () => { C3.projets.splice(+b.dataset.pjd, 1); saveC3(); VIEWS.cycle3(); });
   $('#c3x').onclick = () => {
     const aoa = [['Liaison cycle 3 · EPS'], [], ['Champ d’apprentissage', 'CM1', 'CM2', '6e']];
-    [1, 2, 3, 4].forEach(n => aoa.push([CAN[n], C3.cm1[n] || '', C3.cm2[n] || '', [...six[n]].join(', ')]));
+    [1, 2, 3, 4].forEach(n => aoa.push([CAN[n], getC3ApsaList('cm1', n).join(' · '), getC3ApsaList('cm2', n).join(' · '), [...six[n]].join(', ')]));
     aoa.push([], ['Parcours Savoir-Nager (' + nat.niveaux.join(' → ') + ')'], ['Niveau', 'Effectif total', 'Aisance aquatique', 'Pass nautique', 'ASNS validée', 'Besoins / Non-nageurs', 'Notes de liaison']);
     nat.niveaux.forEach(niv => {
       const s = nat.suivi[niv] || {};
@@ -4913,62 +5716,381 @@ const TOUT = { q: '', edGrp: null };
 const ETAB_DEF = {
   nom: 'Lycée français international de Pékin', court: 'LFIP', ville: 'Pékin', lat: 39.96, lon: 116.47, tz: 'Asia/Shanghai',
   aqiVigil: 100, aqiStop: 150, tFroid: -8, tChaud: 35, protoTxt: '', protoUrl: '',
-  dehors: [], hiver: [12, 1, 2], opuss: 'https://opuss.unss.org', comEmail: '', comNom: 'conseiller communication', asNom: 'AS', dossierMedias: '',
+  protoMode: 'lfip', airvisualPageUrl: 'https://www.iqair.com/china/beijing', airvisualApiUrl: '',
+  slotOffset: 30,
+  dehors: ['Terrain de foot', 'Piste', 'Sautoir', 'Terrain Basket ext'], hiver: [12, 1, 2], opuss: 'https://opuss.unss.org', opussUrl: 'https://opuss.unss.org', comEmail: '', comNom: 'conseiller communication', asNom: 'AS', dossierMedias: '',
   meteoOn: true
 };
-const etab = () => Object.assign({}, ETAB_DEF, LS.get('etab', {}));
-const isDehors = base => etab().dehors.includes(base);
+const etab = () => {
+  const e = Object.assign({}, ETAB_DEF, LS.get('etab', {}));
+  if (!e.opussUrl && e.opuss) e.opussUrl = e.opuss;
+  if (!e.opuss && e.opussUrl) e.opuss = e.opussUrl;
+  return e;
+};
+const isDehors = base => {
+  const cfg = getInstConfig().find(c => c.base === base);
+  if (cfg && cfg.outdoor !== undefined) return !!cfg.outdoor;
+  return etab().dehors.includes(base);
+};
+
+/* Grille officielle Protocole Pollution LFIP (AQI LFIP Pékin × PM2.5 µg/m³) */
+function lfipProtoRow(aqi, pm25) {
+  const a = aqi != null ? Number(aqi) : 0;
+  const p = pm25 != null ? Number(pm25) : 0;
+  if (a > 300) return { rowIdx: 6, lv: 'stop_all', colIdx: 3, label: 'Pas de pause ni d’activité sportive en intérieur (ni en extérieur)', badge: '🔴 AQI > 300 · Arrêt extérieur & intérieur' };
+  if (a >= 201) return { rowIdx: 5, lv: 'stop', colIdx: 2, label: 'Pas de pause ni d’activité sportive en extérieur MAIS les pauses et activités sportives en intérieur sont maintenues', badge: '🟠 AQI 201–300 · Intérieur uniquement' };
+  if (a >= 151) {
+    if (p > 90) return { rowIdx: 4, lv: 'stop', colIdx: 2, label: 'Pas de pause ni d’activité sportive en extérieur MAIS les pauses et activités sportives en intérieur sont maintenues', badge: '🟠 AQI 151–200 & PM2.5 > 90 · Intérieur uniquement' };
+    return { rowIdx: 3, lv: 'vigil_pai', colIdx: 1, label: 'Activité normale pour tous avec surveillance des élèves ayant un PAI pour problèmes respiratoires et/ou cardiovasculaires', badge: '🟢 AQI 151–200 & PM2.5 < 90 · Surveillance PAI' };
+  }
+  if (p > 90) return { rowIdx: 2, lv: 'stop', colIdx: 2, label: 'Pas de pause ni d’activité sportive en extérieur MAIS les pauses et activités sportives en intérieur sont maintenues', badge: '🟠 AQI < 150 & PM2.5 > 90 · Intérieur uniquement' };
+  if (p >= 70) return { rowIdx: 1, lv: 'vigil_pai', colIdx: 1, label: 'Activité normale pour tous avec surveillance des élèves ayant un PAI pour problèmes respiratoires et/ou cardiovasculaires', badge: '🟢 AQI < 150 & PM2.5 70–90 · Surveillance PAI' };
+  return { rowIdx: 0, lv: 'ok', colIdx: 0, label: 'Activité normale pour tous', badge: '🟢 AQI < 150 & PM2.5 < 70 · Activité normale pour tous' };
+}
+function lfipProtoTableHTML(aqi, pm25) {
+  const active = (aqi != null || pm25 != null) ? lfipProtoRow(aqi, pm25).rowIdx : -1;
+  const rows = [
+    { aqi: '< 150', rspan: 3, pm: '< 70', bg: '#C6E0B4', col: 0, cBg: '#C6E0B4', cFg: '#375623' },
+    { aqi: null, rspan: 0, pm: '70 à 90', bg: '#C6E0B4', col: 1, cBg: '#C6E0B4', cFg: '#375623' },
+    { aqi: null, rspan: 0, pm: '> 90', bg: '#FCE4D6', col: 2, cBg: '#FCE4D6', cFg: '#C65911' },
+    { aqi: '151 – 200', rspan: 2, pm: '< 90', bg: '#C6E0B4', col: 1, cBg: '#C6E0B4', cFg: '#375623' },
+    { aqi: null, rspan: 0, pm: '> 90', bg: '#FCE4D6', col: 2, cBg: '#FCE4D6', cFg: '#C65911' },
+    { aqi: '201 – 300', rspan: 1, pm: 'NA', bg: '#FCE4D6', col: 2, cBg: '#FCE4D6', cFg: '#C65911' },
+    { aqi: '> 300', rspan: 1, pm: 'NA', bg: '#FF9999', col: 3, cBg: '#FF9999', cFg: '#C00000' }
+  ];
+  return `<div class="scroll"><table class="t" style="border:2px solid #0F172A;border-collapse:collapse;text-align:center;font-size:12.5px;min-width:680px">
+    <thead>
+      <tr><th colspan="6" style="text-align:center;font-size:15px;font-weight:800;color:#C00000;background:#fff;border:1px solid #0F172A">Protocole Pollution LFIP</th></tr>
+      <tr style="background:#F8FAFC">
+        <th style="border:1px solid #0F172A;color:#0070C0;text-align:center;width:110px">AQI LFIP Pékin</th>
+        <th style="border:1px solid #0F172A;color:#0070C0;text-align:center;width:105px">PM<sub>2.5</sub> µg/m³</th>
+        <th style="border:1px solid #0F172A;color:#0070C0;text-align:center">Activité normale pour tous</th>
+        <th style="border:1px solid #0F172A;color:#0070C0;text-align:center">Activité normale pour tous avec surveillance des élèves ayant un PAI (respiratoire / cardiovasculaire)</th>
+        <th style="border:1px solid #0F172A;color:#0070C0;text-align:center">Pas de pause ni d’activité sportive en extérieur MAIS intérieur maintenu</th>
+        <th style="border:1px solid #0F172A;color:#0070C0;text-align:center">Pas de pause ni d’activité sportive en intérieur (ni extérieur)</th>
+      </tr>
+    </thead>
+    <tbody>
+      ${rows.map((r, idx) => {
+        const isAct = idx === active;
+        return `<tr style="${isAct ? 'outline:3px solid #1D4ED8;font-weight:800' : ''}">
+          ${r.aqi ? `<td rowspan="${r.rspan}" style="border:1px solid #0F172A;font-weight:800;color:#0070C0;font-size:14px;text-align:center;vertical-align:middle;background:#fff">${r.aqi}</td>` : ''}
+          <td style="border:1px solid #0F172A;background:${r.bg};color:${r.cFg};font-weight:800;text-align:center">${r.pm}</td>
+          ${[0, 1, 2, 3].map(c => `<td style="border:1px solid #0F172A;background:${c <= r.col ? r.cBg : '#fff'};color:${r.cFg};font-weight:900;font-size:15px;text-align:center">${c === r.col ? (isAct ? '✔ X (ACTIF)' : 'X') : ''}</td>`).join('')}
+        </tr>`;
+      }).join('')}
+    </tbody>
+  </table></div>`;
+}
+
 VIEWS.etab = function () {
-  const E = etab(), insts = PLAN ? installations().filter(b => !/^autre/i.test(b)) : [];
-  const fld = (k, t, type = 'text', w = '') => `<label class="f" style="${w}">${t}<input type="${type === 'num' ? 'text' : type}" ${type === 'num' ? 'inputmode="decimal"' : ''} data-e="${k}" data-t="${type}" value="${esc(E[k])}"></label>`;
+  const E = etab();
+  const instCfg = getInstConfig();
+  const gem = LS.get('gemini', {}) || {};
+  const sensor = LS.get('airvisual_manual', null);
+  const fld = (k, t, type = 'text', w = '') => `<label class="f" style="${w}">${t}<input type="${type === 'num' ? 'text' : type}" ${type === 'num' ? 'inputmode="decimal"' : ''} data-e="${k}" data-t="${type}" value="${esc(E[k] ?? '')}"></label>`;
   $('#app').innerHTML = `<main>
-    <h1>Établissement</h1>
-    <p class="muted" style="margin:0">Tout ce qui est propre à ton lycée. Pour utiliser l’app ailleurs, il suffit de changer ces réglages, d’importer le planning des installations et le calendrier EPS du nouvel établissement.</p>
-    <div class="card"><h2>Identité</h2>
+    ${schoolYearBarHTML()}
+    <h1>Établissement, Installations, Capteur AirVisual & Calendrier Scolaire</h1>
+    <p class="muted" style="margin:0">Tout ce qui est propre à ton lycée : installations sportives, protocole pollution LFIP & capteur AirVisual, calendrier de l’année scolaire (vacances et jours fériés par PDF) et clés API Gemini.</p>
+
+    <div class="card" style="border-left:4px solid #1D4ED8">
+      <div class="row" style="justify-content:space-between;align-items:center">
+        <div>
+          <h2 style="margin:0">🏟️ Liste des installations sportives du lycée (éditable)</h2>
+          <span class="muted">Ajoute, renomme ou supprime les installations du lycée. Coche « Divisible en 2 moitiés » pour créer automatiquement « moitié 1 » et « moitié 2 » dans le planning, et « Extérieur » pour appliquer le protocole pollution/météo.</span>
+        </div>
+        <div class="row" style="gap:6px">
+          <button class="btn blue" type="button" id="inst_add_btn">+ Ajouter une installation</button>
+          <button class="btn" type="button" id="inst_reset_btn">Rétablir la liste LFIP par défaut</button>
+        </div>
+      </div>
+      <div class="scroll"><table class="t" style="min-width:680px">
+        <tr><th>Nom de l’installation</th><th>Divisible en 2 moitiés (moitié 1 / moitié 2)</th><th>Installation en extérieur (plein air)</th><th>Aperçu dans le planning</th><th></th></tr>
+        ${instCfg.map((c, idx) => `<tr>
+          <td><input type="text" data-instcfg="${idx}" data-k="base" value="${esc(c.base)}" style="font-weight:700;width:220px"></td>
+          <td><label class="chk"><input type="checkbox" data-instcfg="${idx}" data-k="halves" ${c.halves ? 'checked' : ''}> Oui (2 moitiés)</label></td>
+          <td><label class="chk"><input type="checkbox" data-instcfg="${idx}" data-k="outdoor" ${c.outdoor ? 'checked' : ''}> 🌤️ Extérieur</label></td>
+          <td class="muted">${c.halves ? `${esc(c.base)} · moitié 1 & moitié 2` : esc(c.base)}</td>
+          <td><button class="btn warn" type="button" data-instdel="${idx}" style="min-height:30px;padding:2px 8px">Supprimer</button></td>
+        </tr>`).join('')}
+      </table></div>
+      <div class="row">
+        <span style="font-weight:600;font-size:14px">Mois d’hiver à éviter dehors (pour le générateur) :</span>
+        ${MOIS.map((m, i) => `<label class="chk"><input type="checkbox" data-hiv="${i + 1}" ${E.hiver.includes(i + 1) ? 'checked' : ''}> ${m.slice(0, 4)}.</label>`).join('')}
+      </div>
+    </div>
+
+    <div class="card" style="border-left:4px solid #C00000">
+      <h2>🌫️ Protocole Pollution LFIP & Capteur AirVisual (IQAir) du lycée</h2>
+      <label class="row" style="min-height:40px"><input type="checkbox" data-e="meteoOn" data-t="bool" ${E.meteoOn ? 'checked' : ''} style="width:20px;height:20px"> Afficher le protocole pollution et la météo sur l’Accueil et le Grand écran</label>
+      <div class="card" style="background:#F8FAFC;border:1px solid #CBD5E1">
+        <div class="row" style="justify-content:space-between;align-items:center">
+          <div>
+            <strong>📡 Capteur AirVisual / IQAir du lycée (mesure de référence prioritaire)</strong>
+            <span class="muted" style="display:block">Saisis ici (ou directement depuis la carte de l’écran d’Accueil) les valeurs lues sur le capteur AirVisual du lycée, ou colle le lien de la page / API AirVisual du capteur.</span>
+          </div>
+          ${E.airvisualPageUrl ? `<a class="btn blue" href="${esc(E.airvisualPageUrl)}" target="_blank" rel="noopener" style="text-decoration:none">🔗 Ouvrir le capteur AirVisual ↗</a>` : ''}
+        </div>
+        <div class="row" style="align-items:flex-end">
+          <label class="f" style="width:150px">AQI capteur lycée<input type="number" id="av_aqi" value="${sensor && sensor.aqi != null ? sensor.aqi : ''}" placeholder="Ex. 135"></label>
+          <label class="f" style="width:160px">PM2.5 capteur (µg/m³)<input type="number" id="av_pm25" value="${sensor && sensor.pm25 != null ? sensor.pm25 : ''}" placeholder="Ex. 78"></label>
+          <button class="btn go" type="button" id="av_apply">Appliquer le relevé du capteur du lycée</button>
+          ${sensor ? `<button class="btn" type="button" id="av_clear">Revenir à l’estimation automatique</button>` : ''}
+        </div>
+        <div class="row">
+          ${fld('airvisualPageUrl', 'Lien web du capteur AirVisual / IQAir du lycée (bouton d’accès rapide)', 'text', 'flex:1 1 280px')}
+          ${fld('airvisualApiUrl', 'URL flux JSON / API AirVisual (optionnel, si disponible)', 'text', 'flex:1 1 280px')}
+        </div>
+      </div>
+      ${lfipProtoTableHTML(sensor ? sensor.aqi : (METEO.data ? METEO.data.aqi : null), sensor ? sensor.pm25 : (METEO.data ? METEO.data.pm25 : null))}
+      <div class="row">${fld('tFroid', 'Seuil grand froid (°C)', 'num', 'width:180px')}${fld('tChaud', 'Seuil forte chaleur (°C)', 'num', 'width:180px')}</div>
+    </div>
+
+    <div class="card" style="border-left:4px solid #0D9488">
+      <div class="row" style="justify-content:space-between;align-items:center">
+        <div>
+          <h2 style="margin:0">📅 Calendrier de l’année scolaire (${esc(curSchoolYear())}) · Vacances, Jours fériés & Semaines Q1/Q2</h2>
+          <span class="muted">Envoie le PDF ou une image du calendrier scolaire du lycée pour placer automatiquement les vacances et les jours fériés au bon endroit avec Gemini, ou modifie-les ci-dessous.</span>
+        </div>
+        <div class="row" style="gap:6px">
+          <label class="btn blue" style="display:inline-flex;align-items:center;gap:6px;cursor:pointer">📄 Lire le PDF / image du calendrier scolaire (Gemini) <input type="file" id="cal_pdf_ai" accept=".pdf,image/*" style="display:none"></label>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:12px">
+        <div class="card" style="background:#F8FAFC;padding:12px">
+          <div class="row" style="justify-content:space-between">
+            <strong>🏖️ Vacances scolaires (${(CAL.vacances || []).length})</strong>
+            <button class="btn" type="button" id="vac_add" style="min-height:28px;padding:2px 10px;font-size:12px">+ Ajouter des vacances</button>
+          </div>
+          <table class="t"><tr><th>Intitulé</th><th>Du</th><th>Au</th><th></th></tr>
+            ${(CAL.vacances || []).map(([s, e, lbl], idx) => `<tr>
+              <td><input type="text" data-vac="${idx}" data-k="2" value="${esc(lbl || '')}" style="width:130px"></td>
+              <td><input type="date" data-vac="${idx}" data-k="0" value="${esc(s)}"></td>
+              <td><input type="date" data-vac="${idx}" data-k="1" value="${esc(e)}"></td>
+              <td><button class="btn warn" type="button" data-vacdel="${idx}" style="min-height:26px;padding:0 6px">✕</button></td>
+            </tr>`).join('') || '<tr><td colspan="4" class="muted">Aucune période de vacances.</td></tr>'}
+          </table>
+        </div>
+        <div class="card" style="background:#F8FAFC;padding:12px">
+          <div class="row" style="justify-content:space-between">
+            <strong>🎉 Jours fériés / chômés (${(CAL.feries || []).length})</strong>
+            <button class="btn" type="button" id="fer_add" style="min-height:28px;padding:2px 10px;font-size:12px">+ Ajouter un jour férié</button>
+          </div>
+          <table class="t"><tr><th>Intitulé</th><th>Date</th><th></th></tr>
+            ${(CAL.feries || []).map(([s, lbl], idx) => `<tr>
+              <td><input type="text" data-fer="${idx}" data-k="1" value="${esc(lbl || '')}" style="width:150px"></td>
+              <td><input type="date" data-fer="${idx}" data-k="0" value="${esc(s)}"></td>
+              <td><button class="btn warn" type="button" data-ferdel="${idx}" style="min-height:26px;padding:0 6px">✕</button></td>
+            </tr>`).join('') || '<tr><td colspan="3" class="muted">Aucun jour férié.</td></tr>'}
+          </table>
+        </div>
+      </div>
+      <div class="row" style="justify-content:space-between;align-items:center">
+        <span class="muted">Semaines de cours Q1 / Q2 : ${(CAL.semaines || []).length} semaines enregistrées.</span>
+        <div class="row" style="gap:6px">
+          <button class="btn go" type="button" id="cal_recalc_sem">🔄 Recalculer automatiquement les semaines Q1/Q2 hors vacances</button>
+          <button class="btn" id="calx">Exporter le calendrier (.json)</button>
+          <label class="btn" style="display:inline-flex;align-items:center">Importer (.json)<input type="file" id="cali" accept=".json" hidden></label>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" style="border-left:4px solid #7C3AED">
+      <h2>🔑 Clé API Gemini (Dispenses médicales, Calendrier PDF, Emplois du temps & Traductions chinois)</h2>
+      <span class="muted">Une seule clé API Gemini (Google AI Studio) alimente toute l’application : lecture des dispenses uploadées (Protocole Bac), lecture du PDF du calendrier scolaire (vacances et jours fériés), lecture des emplois du temps et traduction en chinois des commandes.</span>
+      <div class="row">
+        <label class="f" style="flex:1 1 280px">Clé API Gemini<input type="password" id="et_gkey" value="${esc(gem.key || '')}" placeholder="AIzaSy…" autocomplete="off"></label>
+        <label class="f" style="width:210px">Modèle par défaut<input type="text" id="et_gmod" value="${esc(gem.model || 'gemini-2.5-flash-lite')}"></label>
+        <button class="btn blue" type="button" id="et_gsave" style="align-self:flex-end">Enregistrer la clé API</button>
+      </div>
+    </div>
+
+    <div class="card"><h2>Identité & Créneaux horaires du lycée</h2>
       <div class="row">${fld('nom', 'Nom de l’établissement', 'text', 'flex:1 1 320px')}${fld('court', 'Nom court', 'text', 'width:120px')}${fld('ville', 'Ville')}</div>
-      <div class="row">${fld('lat', 'Latitude', 'num', 'width:120px')}${fld('lon', 'Longitude', 'num', 'width:120px')}${fld('tz', 'Fuseau horaire', 'text', 'width:180px')}<button class="btn" id="geo" style="align-self:flex-end">Utiliser la position de cet appareil</button></div>
-      <span class="muted">La position sert à la météo et à la qualité de l’air. Elle n’est envoyée qu’au service météo gratuit Open-Meteo.</span>
+      <div class="row">
+        ${fld('lat', 'Latitude', 'num', 'width:120px')}${fld('lon', 'Longitude', 'num', 'width:120px')}${fld('tz', 'Fuseau horaire', 'text', 'width:180px')}
+        <label class="f" style="width:230px">Calage des créneaux du planning<select data-e="slotOffset" data-t="num">
+          <option value="30" ${Number(E.slotOffset ?? 30) === 30 ? 'selected' : ''}>Créneaux xh30 (7h30, 8h30, 9h30… LFIP)</option>
+          <option value="0" ${Number(E.slotOffset ?? 30) === 0 ? 'selected' : ''}>Créneaux xh00 (8h00, 9h00, 10h00…)</option>
+        </select></label>
+        <button class="btn" id="geo" style="align-self:flex-end">Utiliser la position de cet appareil</button>
+      </div>
     </div>
-    <div class="card"><h2>Qualité de l’air et météo</h2>
-      <label class="row" style="min-height:44px"><input type="checkbox" data-e="meteoOn" data-t="bool" ${E.meteoOn ? 'checked' : ''} style="width:22px;height:22px"> Afficher la météo et la qualité de l’air (accueil, grand écran, générateur)</label>
-      <div class="row">${fld('aqiVigil', 'Vigilance à partir de l’indice', 'num', 'width:190px')}${fld('aqiStop', 'Pas d’activité dehors à partir de', 'num', 'width:220px')}${fld('tFroid', 'Froid : en dessous de (°C)', 'num', 'width:190px')}${fld('tChaud', 'Chaleur : au-dessus de (°C)', 'num', 'width:190px')}</div>
-      <span class="muted">Indice utilisé : AQI américain (le même que les applis et capteurs utilisés à Pékin). Le seuil de 150 est à confirmer avec le protocole officiel du lycée. Les valeurs affichées sont des estimations du modèle Open-Meteo : la décision se prend toujours sur la mesure de référence prévue par le protocole (capteur du lycée, appli officielle).</span>
-      <label class="f">Protocole pollution : lien vers le document officiel${`<input type="text" data-e="protoUrl" data-t="text" value="${esc(E.protoUrl)}" placeholder="https://…">`}</label>
-      <label class="f">Protocole pollution : texte affiché dans l’app (ce qu’on fait à chaque niveau)<textarea data-e="protoTxt" data-t="text" rows="6" placeholder="Exemple : AQI 100 à 150 : pas d’effort intense dehors, élèves sensibles à l’intérieur. Au-delà de 150 : toutes les activités à l’intérieur. Au-delà de 200 : …">${esc(E.protoTxt)}</textarea></label>
-    </div>
-    <div class="card"><h2>Installations extérieures</h2>
-      <span class="muted">Coche les installations en plein air. Elles sont signalées quand la pollution ou la température dépasse tes seuils, et le générateur peut les éviter pendant les mois d’hiver.</span>
-      <div class="row">${insts.map(b => `<label class="chk"><input type="checkbox" data-out="${esc(b)}" ${E.dehors.includes(b) ? 'checked' : ''}> ${esc(b)}</label>`).join('') || '<span class="muted">Importe d’abord le planning des installations (Réglages).</span>'}</div>
-      <div class="row"><span style="font-weight:600;font-size:14px">Mois d’hiver à éviter dehors :</span>${MOIS.map((m, i) => `<label class="chk"><input type="checkbox" data-hiv="${i + 1}" ${E.hiver.includes(i + 1) ? 'checked' : ''}> ${m.slice(0, 4)}.</label>`).join('')}</div>
-    </div>
+
     <div class="card"><h2>Association sportive et communication</h2>
       <div class="row">${fld('asNom', 'Nom de l’AS', 'text', 'width:200px')}${fld('opuss', 'Lien OPUSS (licences UNSS)', 'text', 'flex:1 1 280px')}</div>
       <div class="row">${fld('comNom', 'Interlocuteur communication', 'text', 'width:240px')}${fld('comEmail', 'Son adresse e-mail', 'email', 'flex:1 1 240px')}${fld('dossierMedias', 'Lien du dossier médias de l’AS (espace Microsoft du lycée)', 'text', 'flex:1 1 320px')}</div>
     </div>
-    <div class="card"><h2>Calendrier EPS de l’année</h2>
-      <span class="muted">Classes, créneaux, quinzaines et APSA de chaque séance. ${LS.get('calendrier', null) ? 'Un calendrier importé est utilisé.' : 'Calendrier intégré : LFIP 2026-2027.'} ${Object.keys(CAL.classes || {}).length} classes, ${Object.keys(CAL.cal || {}).length} jours.</span>
-      <div class="row"><button class="btn" id="calx">Exporter le calendrier (fichier de l’app)</button><label class="btn" style="display:inline-flex;align-items:center">Importer un calendrier<input type="file" id="cali" accept=".json" hidden></label>${LS.get('calendrier', null) ? '<button class="btn" id="calr">Revenir au calendrier intégré</button>' : ''}</div>
-    </div>
     <div class="card"><h2>Modèle pour un autre établissement</h2>
-      <span class="muted">Exporte tes réglages (établissement, règles du générateur, compatibilités, épreuves du suivi, banque de projets, fiches des pôles, check-list AS, modèles de messages), sans aucune donnée d’élève ni de collègue. Un autre coordonnateur l’importe et adapte.</span>
+      <span class="muted">Exporte tes réglages (établissement, installations, règles du générateur, compatibilités), sans aucune donnée d’élève ni de collègue.</span>
       <div class="row"><button class="btn" id="mdx">Exporter le modèle</button><label class="btn" style="display:inline-flex;align-items:center">Importer un modèle<input type="file" id="mdi" accept=".json" hidden></label></div>
     </div>
   </main>`;
-  const save = () => { const o = {}; $('#app').querySelectorAll('[data-e]').forEach(i => { const t = i.dataset.t; o[i.dataset.e] = t === 'bool' ? i.checked : t === 'num' ? (num(i.value) ?? ETAB_DEF[i.dataset.e]) : i.value.trim(); });
-    o.dehors = [...$('#app').querySelectorAll('[data-out]:checked')].map(i => i.dataset.out); o.hiver = [...$('#app').querySelectorAll('[data-hiv]:checked')].map(i => +i.dataset.hiv);
-    const prev = etab(); LS.set('etab', o); if (prev.lat !== o.lat || prev.lon !== o.lon) { LS.del('meteoCache'); METEO.data = null; } };
-  $('#app').querySelectorAll('[data-e],[data-out],[data-hiv]').forEach(i => i.onchange = save);
+  bindSchoolYearBar(() => VIEWS.etab());
+
+  const save = () => {
+    const o = etab();
+    $('#app').querySelectorAll('[data-e]').forEach(i => {
+      const t = i.dataset.t;
+      o[i.dataset.e] = t === 'bool' ? i.checked : t === 'num' ? (num(i.value) ?? ETAB_DEF[i.dataset.e]) : i.value.trim();
+    });
+    if (o.opuss) o.opussUrl = o.opuss;
+    o.dehors = getInstConfig().filter(c => c.outdoor).map(c => c.base);
+    o.hiver = [...$('#app').querySelectorAll('[data-hiv]:checked')].map(i => +i.dataset.hiv);
+    const prev = etab();
+    LS.set('etab', o);
+    if (prev.lat !== o.lat || prev.lon !== o.lon) { LS.del('meteoCache'); METEO.data = null; }
+  };
+  $('#app').querySelectorAll('[data-e],[data-hiv]').forEach(i => i.onchange = save);
+
+  // Gestionnaire des installations
+  $('#app').querySelectorAll('[data-instcfg]').forEach(el => el.onchange = () => {
+    const list = getInstConfig();
+    const idx = +el.dataset.instcfg, k = el.dataset.k;
+    if (!list[idx]) return;
+    if (k === 'base') list[idx].base = el.value.trim() || list[idx].base;
+    else list[idx][k] = el.checked;
+    saveInstConfig(list);
+    save();
+    VIEWS.etab();
+  });
+  $('#app').querySelectorAll('[data-instdel]').forEach(b => b.onclick = () => {
+    const list = getInstConfig();
+    const idx = +b.dataset.instdel;
+    if (!list[idx] || !confirm(`Supprimer l’installation « ${list[idx].base} » ?`)) return;
+    list.splice(idx, 1);
+    saveInstConfig(list);
+    save();
+    VIEWS.etab();
+  });
+  if ($('#inst_add_btn')) $('#inst_add_btn').onclick = () => {
+    const name = prompt('Nom de la nouvelle installation sportive (ex. Mur d’escalade, Salle de danse, Petit gymnase…) :');
+    if (!name || !name.trim()) return;
+    const halves = confirm('Cette installation est-elle divisible en 2 moitiés (moitié 1 / moitié 2) dans le planning ?');
+    const outdoor = confirm('Cette installation est-elle située en extérieur (plein air) ?');
+    const list = getInstConfig();
+    list.push({ base: name.trim(), halves, outdoor });
+    saveInstConfig(list);
+    save();
+    alertMsg(`Installation « ${name.trim()} » ajoutée !`);
+    VIEWS.etab();
+  };
+  if ($('#inst_reset_btn')) $('#inst_reset_btn').onclick = () => {
+    if (!confirm('Rétablir la liste des installations par défaut du LFIP ?')) return;
+    saveInstConfig(JSON.parse(JSON.stringify(DEFAULT_INST_CFG)));
+    save();
+    VIEWS.etab();
+  };
+
+  // Capteur AirVisual du lycée
+  if ($('#av_apply')) $('#av_apply').onclick = () => {
+    const aqi = num($('#av_aqi').value);
+    const pm25 = num($('#av_pm25').value);
+    if (aqi == null && pm25 == null) return alertMsg('Saisis au moins l’indice AQI ou le taux de PM2.5 du capteur AirVisual.');
+    LS.set('airvisual_manual', { aqi: aqi ?? 0, pm25: pm25 ?? 0, at: Date.now() });
+    alertMsg('Relevé du capteur AirVisual du lycée enregistré et appliqué au protocole pollution !');
+    VIEWS.etab();
+  };
+  if ($('#av_clear')) $('#av_clear').onclick = () => {
+    LS.del('airvisual_manual');
+    VIEWS.etab();
+  };
+
+  // Clé API Gemini
+  if ($('#et_gsave')) $('#et_gsave').onclick = () => {
+    LS.set('gemini', { key: $('#et_gkey').value.trim(), model: $('#et_gmod').value.trim() || 'gemini-2.5-flash-lite' });
+    alertMsg('Clé API Gemini enregistrée.');
+    VIEWS.etab();
+  };
+
+  // Éditeur Vacances & Jours fériés + Import PDF Gemini
+  $('#app').querySelectorAll('[data-vac]').forEach(inp => inp.onchange = () => {
+    const idx = +inp.dataset.vac, k = +inp.dataset.k;
+    if (CAL.vacances[idx]) { CAL.vacances[idx][k] = inp.value; LS.set('calendrier', CAL); saveCurrentSchoolYearSnapshot(); }
+  });
+  $('#app').querySelectorAll('[data-vacdel]').forEach(b => b.onclick = () => {
+    CAL.vacances.splice(+b.dataset.vacdel, 1);
+    LS.set('calendrier', CAL); saveCurrentSchoolYearSnapshot(); VIEWS.etab();
+  });
+  if ($('#vac_add')) $('#vac_add').onclick = () => {
+    const y0 = curSchoolYear().split('-')[0] || '2026';
+    if (!CAL.vacances) CAL.vacances = [];
+    CAL.vacances.push([`${y0}-10-17`, `${y0}-11-01`, 'Vacances']);
+    LS.set('calendrier', CAL); saveCurrentSchoolYearSnapshot(); VIEWS.etab();
+  };
+  $('#app').querySelectorAll('[data-fer]').forEach(inp => inp.onchange = () => {
+    const idx = +inp.dataset.fer, k = +inp.dataset.k;
+    if (CAL.feries[idx]) { CAL.feries[idx][k] = inp.value; LS.set('calendrier', CAL); saveCurrentSchoolYearSnapshot(); }
+  });
+  $('#app').querySelectorAll('[data-ferdel]').forEach(b => b.onclick = () => {
+    CAL.feries.splice(+b.dataset.ferdel, 1);
+    LS.set('calendrier', CAL); saveCurrentSchoolYearSnapshot(); VIEWS.etab();
+  });
+  if ($('#fer_add')) $('#fer_add').onclick = () => {
+    const y0 = curSchoolYear().split('-')[0] || '2026';
+    if (!CAL.feries) CAL.feries = [];
+    CAL.feries.push([`${y0}-10-01`, 'Jour férié']);
+    LS.set('calendrier', CAL); saveCurrentSchoolYearSnapshot(); VIEWS.etab();
+  };
+  const recalcSemaines = (rentreeIso, finIso) => {
+    const yParts = curSchoolYear().split('-').map(Number);
+    const startD = monday(fromIso(rentreeIso || `${yParts[0] || 2026}-09-01`));
+    const endD = fromIso(finIso || `${yParts[1] || 2027}-07-02`);
+    const sems = [];
+    let cur = startD, numW = 1;
+    while (cur <= endD) {
+      const fri = addDays(cur, 4);
+      const mid = addDays(cur, 2);
+      const dsMid = iso(mid);
+      const inVac = (CAL.vacances || []).some(([a, b]) => dsMid >= a && dsMid <= b);
+      if (!inVac) {
+        sems.push({ n: numW, type: numW % 2 === 1 ? 'Q1' : 'Q2', debut: iso(cur), fin: iso(fri) });
+        numW++;
+      }
+      cur = addDays(cur, 7);
+    }
+    CAL.semaines = sems;
+    LS.set('calendrier', CAL);
+    saveCurrentSchoolYearSnapshot();
+    return sems.length;
+  };
+  if ($('#cal_recalc_sem')) $('#cal_recalc_sem').onclick = () => {
+    const n = recalcSemaines();
+    alertMsg(`${n} semaines de cours (alternance Q1 / Q2 hors vacances) recalculées !`);
+    VIEWS.etab();
+  };
+  if ($('#cal_pdf_ai')) $('#cal_pdf_ai').onchange = async e => {
+    const f = e.target.files[0];
+    if (!f) return;
+    try {
+      alertMsg('Lecture du calendrier scolaire PDF/image par Gemini en cours…');
+      const prompt = `Analyse ce calendrier scolaire (année ${curSchoolYear()}). Extrais toutes les périodes de vacances scolaires (du 1er jour sans cours au dernier jour inclus), tous les jours fériés / ponts chômés, ainsi que la date de rentrée et de fin d'année. Réponds UNIQUEMENT avec un objet JSON strict :
+{"rentree": "YYYY-MM-DD", "fin": "YYYY-MM-DD", "vacances": [["YYYY-MM-DD", "YYYY-MM-DD", "Nom des vacances"], ...], "feries": [["YYYY-MM-DD", "Nom du jour férié"], ...]}`;
+      const raw = await askGeminiMultimodal(prompt, f);
+      const m = raw.match(/\{[\s\S]*\}/);
+      if (!m) throw new Error('Réponse JSON non reconnue.');
+      const obj = JSON.parse(m[0]);
+      if (Array.isArray(obj.vacances)) CAL.vacances = obj.vacances.filter(v => Array.isArray(v) && v[0] && v[1]);
+      if (Array.isArray(obj.feries)) CAL.feries = obj.feries.filter(v => Array.isArray(v) && v[0]);
+      const nbSem = recalcSemaines(obj.rentree, obj.fin);
+      alertMsg(`Calendrier scolaire mis à jour par Gemini : ${CAL.vacances.length} périodes de vacances, ${CAL.feries.length} jours fériés et ${nbSem} semaines Q1/Q2 !`);
+      VIEWS.etab();
+    } catch (err) {
+      alertMsg('Erreur lecture calendrier PDF Gemini : ' + err.message);
+    }
+  };
+
   $('#geo').onclick = () => { if (!navigator.geolocation) return alertMsg('Position indisponible sur cet appareil.'); navigator.geolocation.getCurrentPosition(p => { $('[data-e=lat]').value = p.coords.latitude.toFixed(3); $('[data-e=lon]').value = p.coords.longitude.toFixed(3); save(); alertMsg('Position enregistrée.'); }, () => alertMsg('Position refusée ou indisponible.')); };
   const dl = (obj, name) => { const a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([JSON.stringify(obj, null, 1)], { type: 'application/json' })); a.download = name; a.click(); setTimeout(() => URL.revokeObjectURL(a.href), 2000); };
-  $('#calx').onclick = () => dl({ app: 'coordo-eps', type: 'calendrier', ...CAL }, 'Calendrier EPS.json');
-  $('#cali').onchange = async e => { try { const d = JSON.parse(await e.target.files[0].text()); if (!d.cal || !d.classes) throw new Error('fichier non reconnu'); delete d.app; delete d.type; LS.set('calendrier', d); alertMsg('Calendrier importé. L’app redémarre.'); setTimeout(() => location.reload(), 900); } catch (er) { alertMsg('Import impossible : ' + er.message); } };
-  const cr = $('#calr'); if (cr) cr.onclick = () => { LS.del('calendrier'); location.reload(); };
-  const MODEL_KEYS = ['etab', 'genRules', 'compat', 'banque', 'polesEdits', 'priorites', 'serviceParams'];
+  $('#calx').onclick = () => dl({ app: 'coordo-eps', type: 'calendrier', ...CAL }, 'Calendrier EPS ' + curSchoolYear() + '.json');
+  $('#cali').onchange = async e => { try { const d = JSON.parse(await e.target.files[0].text()); if (!d.cal || !d.classes) throw new Error('fichier non reconnu'); delete d.app; delete d.type; CAL = d; LS.set('calendrier', d); saveCurrentSchoolYearSnapshot(); alertMsg('Calendrier importé.'); VIEWS.etab(); } catch (er) { alertMsg('Import impossible : ' + er.message); } };
+  const MODEL_KEYS = ['etab', 'inst_config', 'genRules', 'compat', 'banque', 'polesEdits', 'priorites', 'serviceParams'];
   $('#mdx').onclick = () => { const d = { app: 'coordo-eps', type: 'modele', v: VERSION }; for (const k of MODEL_KEYS) { const x = LS.get(k, null); if (x != null) d[k] = x; } const s = LS.get('suivi', null); if (s) d.suiviReglages = { epreuves: s.epreuves, prog: s.prog, cl: s.cl }; const r = LS.get('rencontres', null); if (r) d.asChk = r.chk; d.periodRules = LS.get('periodRules', []); dl(d, 'Coordo EPS - modèle d’établissement.json'); };
   $('#mdi').onchange = async e => { try { const d = JSON.parse(await e.target.files[0].text()); if (d.app !== 'coordo-eps' || d.type !== 'modele') throw new Error('ce n’est pas un modèle Coordo EPS'); if (!confirm('Remplacer tes réglages par ceux du modèle ? Tes données (planning, matériel, élèves…) ne sont pas touchées.')) return; for (const k of MODEL_KEYS) if (d[k] != null) LS.set(k, d[k]); if (d.suiviReglages) LS.set('suivi', Object.assign(LS.get('suivi', {}), d.suiviReglages)); if (d.asChk) LS.set('rencontres', Object.assign(LS.get('rencontres', {}), { chk: d.asChk })); if (d.periodRules) LS.set('periodRules', d.periodRules); alertMsg('Modèle importé.'); setTimeout(() => location.reload(), 900); } catch (er) { alertMsg('Import impossible : ' + er.message); } };
 };
 
-/* --- Météo et qualité de l'air (Open-Meteo, gratuit, sans clé) --- */
+/* --- Météo, Capteur AirVisual du lycée et Protocole Pollution LFIP --- */
 const METEO = { data: null, busy: false, err: null };
 const WMO = c => c === 0 ? 'Ciel clair' : c <= 2 ? 'Peu nuageux' : c === 3 ? 'Couvert' : c <= 48 ? 'Brouillard' : c <= 57 ? 'Bruine' : c <= 67 ? 'Pluie' : c <= 77 ? 'Neige' : c <= 82 ? 'Averses' : c <= 86 ? 'Averses de neige' : 'Orage';
 async function meteoLoad(force) {
@@ -4982,47 +6104,108 @@ async function meteoLoad(force) {
       fetch(`https://api.open-meteo.com/v1/forecast?${q}&current=temperature_2m,apparent_temperature,weather_code,wind_speed_10m,precipitation&hourly=temperature_2m,weather_code,precipitation_probability&daily=temperature_2m_max,temperature_2m_min,weather_code,precipitation_probability_max&forecast_days=3`).then(r => r.json()),
       fetch(`https://air-quality-api.open-meteo.com/v1/air-quality?${q}&current=us_aqi,pm2_5&hourly=us_aqi,pm2_5&forecast_days=3`).then(r => r.json())
     ]);
-    const hours = (w.hourly.time || []).map((t, i) => ({ t, temp: w.hourly.temperature_2m[i], code: w.hourly.weather_code[i], pp: w.hourly.precipitation_probability[i], aqi: (a.hourly && a.hourly.time.indexOf(t) >= 0) ? a.hourly.us_aqi[a.hourly.time.indexOf(t)] : null }));
-    METEO.data = { at: Date.now(), lat: E.lat, temp: w.current.temperature_2m, feel: w.current.apparent_temperature, code: w.current.weather_code, wind: w.current.wind_speed_10m, aqi: a.current ? a.current.us_aqi : null, pm25: a.current ? a.current.pm2_5 : null, hours, days: (w.daily.time || []).map((t, i) => ({ t, max: w.daily.temperature_2m_max[i], min: w.daily.temperature_2m_min[i], code: w.daily.weather_code[i], pp: w.daily.precipitation_probability_max[i] })) };
+    let avAqi = null, avPm25 = null;
+    if (E.airvisualApiUrl) {
+      try {
+        const avRes = await fetch(E.airvisualApiUrl).then(r => r.json());
+        const pol = (avRes.data && avRes.data.current && avRes.data.current.pollution) || avRes.current || avRes;
+        if (pol) {
+          if (pol.aqius != null) avAqi = Number(pol.aqius);
+          else if (pol.aqi != null) avAqi = Number(pol.aqi);
+          if (pol.pm25 != null) avPm25 = Number(typeof pol.pm25 === 'object' ? pol.pm25.conc : pol.pm25);
+        }
+      } catch (_) {}
+    }
+    const hours = (w.hourly.time || []).map((t, i) => ({ t, temp: w.hourly.temperature_2m[i], code: w.hourly.weather_code[i], pp: w.hourly.precipitation_probability[i], aqi: (a.hourly && a.hourly.time.indexOf(t) >= 0) ? a.hourly.us_aqi[a.hourly.time.indexOf(t)] : null, pm25: (a.hourly && a.hourly.time.indexOf(t) >= 0 && a.hourly.pm2_5) ? a.hourly.pm2_5[a.hourly.time.indexOf(t)] : null }));
+    METEO.data = { at: Date.now(), lat: E.lat, temp: w.current.temperature_2m, feel: w.current.apparent_temperature, code: w.current.weather_code, wind: w.current.wind_speed_10m, aqi: avAqi ?? (a.current ? a.current.us_aqi : null), pm25: avPm25 ?? (a.current ? a.current.pm2_5 : null), fromAvApi: avAqi != null, hours, days: (w.daily.time || []).map((t, i) => ({ t, max: w.daily.temperature_2m_max[i], min: w.daily.temperature_2m_min[i], code: w.daily.weather_code[i], pp: w.daily.precipitation_probability_max[i] })) };
     LS.set('meteoCache', METEO.data, true); METEO.err = null;
   } catch (e) { METEO.err = e.message; }
   finally { METEO.busy = false; }
   return METEO.data;
 }
-/* niveau pour une heure donnée (ou maintenant) : ok / vigil / stop */
-function airLevel(aqi, temp) {
-  const E = etab(); const why = [];
-  let lv = 'ok';
-  if (aqi != null && aqi >= E.aqiStop) { lv = 'stop'; why.push('AQI ' + Math.round(aqi) + ' ≥ ' + E.aqiStop); }
-  else if (aqi != null && aqi >= E.aqiVigil) { lv = 'vigil'; why.push('AQI ' + Math.round(aqi)); }
-  if (temp != null && (temp <= E.tFroid || temp >= E.tChaud)) { if (lv === 'ok') lv = 'vigil'; why.push(Math.round(temp) + ' °C'); }
-  return { lv, why };
+function getEffectiveAir(d) {
+  const manual = LS.get('airvisual_manual', null);
+  if (manual && (manual.aqi != null || manual.pm25 != null)) {
+    return { aqi: manual.aqi, pm25: manual.pm25, source: 'Capteur AirVisual du lycée (relevé direct)', isManual: true, at: manual.at };
+  }
+  if (d) {
+    return { aqi: d.aqi, pm25: d.pm25, source: d.fromAvApi ? 'API Capteur AirVisual du lycée' : 'Estimation Open-Meteo (clique sur « Capteur AirVisual » pour saisir le capteur du lycée)', isManual: false };
+  }
+  return { aqi: null, pm25: null, source: 'Indisponible', isManual: false };
 }
-const LVL = { ok: ['Dehors possible', '#1F7A45', '#DCF2E4'], vigil: ['Vigilance', '#7A3E00', '#FFF1DC'], stop: ['Activités à l’intérieur', '#B42318', '#FDE3E0'] };
+function airLevel(aqi, temp, pm25) {
+  const E = etab(); const why = [];
+  const pRow = lfipProtoRow(aqi, pm25);
+  let lv = pRow.lv;
+  if (aqi != null) why.push('AQI ' + Math.round(aqi));
+  if (pm25 != null) why.push('PM2.5 ' + Math.round(pm25) + ' µg/m³');
+  why.push(pRow.label);
+  if (temp != null && (temp <= E.tFroid || temp >= E.tChaud)) {
+    if (lv === 'ok') lv = 'vigil_pai';
+    why.push('Température ' + Math.round(temp) + ' °C');
+  }
+  return { lv, why, proto: pRow };
+}
+const LVL = {
+  ok: ['Activité normale pour tous', '#1F7A45', '#DCF2E4'],
+  vigil_pai: ['Activité normale + Surveillance élèves PAI', '#2E6B1E', '#E2F0D9'],
+  vigil: ['Vigilance PAI', '#7A3E00', '#FFF1DC'],
+  stop: ['Pas de sport en extérieur (intérieur maintenu)', '#C65911', '#FCE4D6'],
+  stop_all: ['ARRÊT TOTAL : Pas de sport ni dehors ni en intérieur', '#B42318', '#FDE3E0']
+};
 const aqiCol = v => v == null ? '#8792A2' : v < 51 ? '#1F7A45' : v < 101 ? '#A16207' : v < 151 ? '#C2410C' : v < 201 ? '#B42318' : '#7E1D7E';
 function meteoSmall() {
-  const d = METEO.data; if (!d) return METEO.err ? '<span title="Météo indisponible">Météo indisponible</span>' : '';
-  return `<span>${Math.round(d.temp)}°</span><span>${esc(WMO(d.code))}</span><span style="display:inline-flex;align-items:center;gap:5px"><i style="width:9px;height:9px;border-radius:50%;background:${aqiCol(d.aqi)};display:inline-block"></i>AQI ${d.aqi == null ? '—' : Math.round(d.aqi)}</span>`;
+  const d = METEO.data;
+  const eff = getEffectiveAir(d);
+  if (!d && eff.aqi == null) return METEO.err ? '<span title="Météo indisponible">Météo indisponible</span>' : '';
+  return `${d ? `<span>${Math.round(d.temp)}°</span><span>${esc(WMO(d.code))}</span>` : ''}<span style="display:inline-flex;align-items:center;gap:5px"><i style="width:9px;height:9px;border-radius:50%;background:${aqiCol(eff.aqi)};display:inline-block"></i>AQI ${eff.aqi == null ? '—' : Math.round(eff.aqi)}${eff.pm25 != null ? ' · PM2.5 ' + Math.round(eff.pm25) : ''}</span>`;
+}
+function promptSensorOverride() {
+  const cur = LS.get('airvisual_manual', null) || {};
+  const aqiStr = prompt('Saisis l’indice AQI affiché sur le capteur AirVisual du lycée (laisse vide pour effacer et revenir au mode automatique) :', cur.aqi != null ? String(cur.aqi) : '');
+  if (aqiStr === null) return;
+  if (aqiStr.trim() === '') {
+    LS.del('airvisual_manual');
+    paintMeteo();
+    return;
+  }
+  const pmStr = prompt('Saisis le taux de PM2.5 (µg/m³) affiché sur le capteur AirVisual du lycée :', cur.pm25 != null ? String(cur.pm25) : '');
+  LS.set('airvisual_manual', { aqi: num(aqiStr) ?? 0, pm25: num(pmStr) ?? 0, at: Date.now() });
+  paintMeteo();
 }
 function meteoCardHTML() {
   const E = etab(), d = METEO.data;
   if (!E.meteoOn) return '';
-  const head = `<div class="row" style="justify-content:space-between;align-items:center"><h2>Dehors aujourd’hui ?</h2>${homeOpenBtn('etab', 'Seuils & protocole')}</div>`;
-  if (!d) return `<div class="card home-card" data-meteo="card">${head}<span class="muted">${METEO.err ? 'Météo et qualité de l’air indisponibles pour l’instant (réseau).' : 'Chargement…'}</span></div>`;
-  const today = iso(new Date()), H = new Date().getHours();
-  const school = d.hours.filter(h => h.t.startsWith(today) && +h.t.slice(11, 13) >= Math.max(8, H) && +h.t.slice(11, 13) <= 17);
-  const now = airLevel(d.aqi, d.temp);
-  const maxA = school.reduce((m, h) => h.aqi != null && h.aqi > m ? h.aqi : m, d.aqi || 0);
-  const later = airLevel(maxA, null);
-  const [t, c, bg] = LVL[now.lv];
-  const tl = school.filter((_, i) => i % 2 === 0).slice(0, 5);
+  const eff = getEffectiveAir(d);
+  const head = `<div class="row" style="justify-content:space-between;align-items:center">
+    <h2>🌫️ Protocole Pollution LFIP & Météo</h2>
+    <div class="row" style="gap:6px">
+      <button type="button" class="btn blue" onclick="promptSensorOverride()" style="min-height:32px;padding:4px 10px;font-size:12px">📡 Saisir capteur AirVisual</button>
+      ${E.airvisualPageUrl ? `<a class="btn" href="${esc(E.airvisualPageUrl)}" target="_blank" rel="noopener" style="min-height:32px;padding:4px 10px;font-size:12px;text-decoration:none">AirVisual ↗</a>` : ''}
+      ${homeOpenBtn('etab', 'Réglages')}
+    </div>
+  </div>`;
+  if (!d && eff.aqi == null) return `<div class="card home-card" data-meteo="card">${head}<span class="muted">${METEO.err ? 'Météo indisponible (clique sur « 📡 Saisir capteur AirVisual » pour entrer les valeurs du capteur du lycée).' : 'Chargement…'}</span></div>`;
+  const now = airLevel(eff.aqi, d ? d.temp : null, eff.pm25);
+  const [t, c, bg] = LVL[now.lv] || LVL.ok;
   return `<div class="card home-card" data-meteo="card">${head}
-    <div style="background:${bg};color:${c};border-radius:12px;padding:12px 14px;display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center"><strong style="font-size:18px">${t}</strong><span>${esc(now.why.join(' · ') || 'Air et température dans tes seuils')}</span></div>
-    <div class="row" style="gap:16px"><span style="font-size:28px;font-weight:700">${Math.round(d.temp)}°</span><span>${esc(WMO(d.code))}<br><span class="muted">ressenti ${Math.round(d.feel)}° · vent ${Math.round(d.wind)} km/h</span></span><span><strong style="color:${aqiCol(d.aqi)}">AQI ${d.aqi == null ? '—' : Math.round(d.aqi)}</strong><br><span class="muted">PM2,5 ${d.pm25 == null ? '—' : Math.round(d.pm25)} µg/m³</span></span></div>
-    ${tl.length ? `<div class="row" style="gap:6px">${tl.map(h => `<span class="chip" style="background:#F4F6FB;color:#1B2330;font-weight:600">${+h.t.slice(11, 13)}h · ${Math.round(h.temp)}° · <span style="color:${aqiCol(h.aqi)}">AQI ${h.aqi == null ? '—' : Math.round(h.aqi)}</span></span>`).join('')}</div>` : ''}
-    ${later.lv !== 'ok' && later.lv !== now.lv ? `<span style="color:${LVL[later.lv][1]};font-weight:600">D’ici 17h : jusqu’à AQI ${Math.round(maxA)} prévu.</span>` : ''}
-    ${E.protoTxt || E.protoUrl ? `<details><summary style="cursor:pointer;font-weight:600">Protocole pollution</summary><div style="white-space:pre-line;margin-top:6px">${esc(E.protoTxt)}</div>${E.protoUrl ? `<a href="${esc(E.protoUrl)}" target="_blank" rel="noopener">Ouvrir le document officiel</a>` : ''}</details>` : '<span class="muted">Ajoute le protocole pollution du lycée dans Établissement : il s’affichera ici.</span>'}
-    <span class="muted">Estimation Open-Meteo, mise à jour toutes les 30 min. La mesure de référence du protocole fait foi.</span>
+    <div style="background:${bg};color:${c};border:1.5px solid ${c};border-radius:12px;padding:12px 14px;display:flex;flex-direction:column;gap:4px">
+      <strong style="font-size:17px">${esc(t)}</strong>
+      <span style="font-size:13.5px;font-weight:600">${esc(now.proto.label)}</span>
+    </div>
+    <div class="row" style="gap:16px;justify-content:space-between">
+      <div class="row" style="gap:14px">
+        ${d ? `<span style="font-size:28px;font-weight:700">${Math.round(d.temp)}°</span><span>${esc(WMO(d.code))}<br><span class="muted">ressenti ${Math.round(d.feel)}° · vent ${Math.round(d.wind)} km/h</span></span>` : ''}
+      </div>
+      <div style="background:#F8FAFC;border:1px solid #CBD5E1;border-radius:10px;padding:8px 12px;text-align:right">
+        <div><strong style="font-size:16px;color:${aqiCol(eff.aqi)}">AQI Pékin : ${eff.aqi == null ? '—' : Math.round(eff.aqi)}</strong> · <strong style="font-size:16px;color:#0F172A">PM<sub>2.5</sub> : ${eff.pm25 == null ? '—' : Math.round(eff.pm25)} µg/m³</strong></div>
+        <span class="muted" style="font-size:11.5px">${esc(eff.source)}</span>
+      </div>
+    </div>
+    <details>
+      <summary style="cursor:pointer;font-weight:700;color:#1D4ED8;font-size:13px">📋 Voir la grille officielle du Protocole Pollution LFIP (AQI × PM2.5)</summary>
+      <div style="margin-top:8px">${lfipProtoTableHTML(eff.aqi, eff.pm25)}</div>
+    </details>
   </div>`;
 }
 function paintMeteo() {
@@ -5047,9 +6230,14 @@ function paintMeteo() {
     const c = $('#app .clock');
     if (c && etab().meteoOn) { c.insertAdjacentHTML('beforebegin', `<div data-meteo="small" class="tvmeteo">${meteoSmall()}</div>`); meteoLoad().then(paintMeteo); }
     const d = METEO.data;
-    if (d && TV.mode === 'now' && etab().dehors.length) {
-      const lv = airLevel(d.aqi, d.temp);
-      if (lv.lv === 'stop') etab().dehors.forEach(n => $('#app').querySelectorAll('.tvcard .nm').forEach(el => { if (el.textContent === n) el.insertAdjacentHTML('afterend', '<span class="badge" style="background:#B42318;color:#fff">Pas d’activité dehors</span>'); }));
+    const eff = getEffectiveAir(d);
+    if ((d || eff.aqi != null) && TV.mode === 'now') {
+      const lv = airLevel(eff.aqi, d ? d.temp : null, eff.pm25);
+      if (lv.lv === 'stop_all') {
+        $('#app').querySelectorAll('.tvcard .nm').forEach(el => { el.insertAdjacentHTML('afterend', '<span class="badge" style="background:#B42318;color:#fff">🔴 AQI > 300 : Arrêt sport int. & ext.</span>'); });
+      } else if (lv.lv === 'stop') {
+        $('#app').querySelectorAll('.tvcard .nm').forEach(el => { if (isDehors(el.textContent)) el.insertAdjacentHTML('afterend', '<span class="badge" style="background:#C65911;color:#fff">🟠 Pas d’activité dehors</span>'); });
+      }
     }
   };
 })();
