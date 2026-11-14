@@ -250,7 +250,7 @@ var o=[];var l=Array.isArray(e);for(f=n.s.c;f<=n.e.c;++f)s[f]=ya(f);for(var c=n.
 window.__CS = {};
 (function () {
   var started = false;
-  function boot() { if (started) return; started = true; var m = document.getElementById('appmain'); var sc = document.createElement('script'); sc.text = m.textContent; document.body.appendChild(sc); }
+  function boot() { if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', boot); return; } if (started) return; started = true; var m = document.getElementById('appmain'); var sc = document.createElement('script'); sc.text = m.textContent; document.body.appendChild(sc); }
   function fromLS() { for (var i = localStorage.length - 1; i >= 0; i--) { var k = localStorage.key(i); if (k && k.indexOf('coordo.') === 0) { try { window.__CS[k.slice(7)] = JSON.parse(localStorage.getItem(k)); } catch (e) { } } } }
   try { if (navigator.storage && navigator.storage.persist) navigator.storage.persist(); } catch (e) { }
   try {
@@ -278,7 +278,7 @@ window.__CS = {};
 </script>
 <script type="text/plain" id="appmain">
 "use strict";
-const VERSION = '0.9.7';
+const VERSION = '0.9.8';
 const DEFAULT_CAL_2627 = {"classes":[{"c":"6A","d":"lun","s":"08:30","e":"10:30","qz":false},{"c":"4A","d":"lun","s":"10:30","e":"12:30","qz":false},{"c":"5C","d":"lun","s":"10:30","e":"12:30","qz":false},{"c":"5A","d":"lun","s":"13:30","e":"15:30","qz":false},{"c":"6C","d":"mar","s":"08:30","e":"10:30","qz":false},{"c":"3A","d":"mar","s":"10:30","e":"12:30","qz":false},{"c":"3B","d":"mar","s":"10:30","e":"12:30","qz":false},{"c":"5B","d":"mar","s":"13:30","e":"15:30","qz":false},{"c":"6B","d":"mer","s":"10:30","e":"12:30","qz":false},{"c":"3C","d":"mer","s":"10:30","e":"12:30","qz":true},{"c":"4B","d":"mer","s":"10:30","e":"12:30","qz":true},{"c":"6A","d":"jeu","s":"08:30","e":"10:30","qz":false},{"c":"5B","d":"jeu","s":"10:30","e":"12:30","qz":true},{"c":"5A","d":"jeu","s":"10:30","e":"12:30","qz":true},{"c":"4A","d":"jeu","s":"10:30","e":"12:30","qz":true},{"c":"3A","d":"jeu","s":"10:30","e":"12:30","qz":true},{"c":"5C","d":"jeu","s":"13:30","e":"15:30","qz":true},{"c":"3B","d":"jeu","s":"13:30","e":"15:30","qz":true},{"c":"1B","d":"jeu","s":"15:30","e":"17:30","qz":false},{"c":"1A","d":"jeu","s":"15:30","e":"17:30","qz":false},{"c":"2A","d":"jeu","s":"15:30","e":"17:30","qz":false},{"c":"6C","d":"ven","s":"08:30","e":"10:30","qz":false},{"c":"3C","d":"ven","s":"10:30","e":"12:30","qz":false},{"c":"4B","d":"ven","s":"10:30","e":"12:30","qz":false},{"c":"6B","d":"ven","s":"13:30","e":"15:30","qz":false},{"c":"2B","d":"ven","s":"15:30","e":"17:30","qz":false},{"c":"Term","d":"ven","s":"15:30","e":"17:30","qz":false},{"c":"Term","d":"ven","s":"15:30","e":"17:30","qz":false}],"cal":{"2026-09-01":[[4,"DF"],[5,"Bad"],[6,"combiné"],[7,"Combiné"]],"2026-09-02":[[8,"DF"],[9,"combiné"]],"2026-09-03":[[11,"Gym"],[13,"Combiné"],[15,"Bad"],[16,"Bad"],[18,"Gym"],[19,"Bad"],[20,"DF"]],"2026-09-04":[[21,"jeux collectifs"],[22,"combiné"],[23,"VB"],[24,"jeux collectifs"],[25,"Danse"],[26,"VB"],[27,"DF"]],"2026-09-07":[[0,"DF"],[1,"DF"],[2,"Bad"],[3,"Combiné"]],"2026-09-08":[[4,"DF"],[5,"Bad"],[6,"combiné"],[7,"Combiné"]],"2026-09-09":[[8,"DF"],[10,"VB"]],"2026-09-10":[[11,"Gym"],[12,"Combiné"],[14,"DF"],[17,"combiné"],[18,"Gym"],[19,"Bad"],[20,"DF"]],"2026-09-11":[[21,"jeux collectifs"],[22,"combiné"],[23,"VB"],[24,"jeux collectifs"],[25,"Danse"],[26,"VB"],[27,"DF"]],"2026-09-14":[[0,"DF"],[1,"DF"],[2,"Bad"],[3,"Combiné"]],"2026-09-15":[[4,"DF"],[5,"Bad"],[6,"combiné"],[7,"Combiné"]],"2026-09-16":[[8,"DF"],[9,"combiné"]],"2026-09-17":[[11,"Gym"],[13,"Combiné"],[15,"Bad"],[16,"Bad"],[18,"Gym"],[19,"Bad"],[20,"DF"]],"2026-09-18":[[21,"jeux collectifs"],[22,"combiné"],[23,"VB"],[24,"jeux collectifs"],[25,"Danse"],[26,"VB"],[27,"DF"]],"2026-09-21":[[0,"DF"],[1,"DF"],[2,"Bad"],[3,"Combiné"]],"2026-09-22":[[4,"DF"],[5,"Bad"],[6,"combiné"],[7,"Combiné"]],"2026-09-23":[[8,"DF"],[10,"VB"]],"2026-09-24":[[11,"Gym"],[12,"Combiné"],[14,"DF"],[17,"combiné"],[18,"Gym"],[19,"Bad"],[20,"DF"]],"2026-09-28":[[0,"DF"],[1,"DF"],[2,"Bad"],[3,"Combiné"]],"2026-09-29":[[4,"DF"],[5,"Bad"],[6,"combiné"],[7,"Combiné"]],"2026-09-30":[[8,"DF"],[9,"combiné"]],"2026-10-08":[[11,"Gym"],[12,"Combiné"],[14,"DF"],[17,"combiné"],[18,"Gym"],[19,"Bad"],[20,"DF"]],"2026-10-09":[[21,"jeux collectifs"],[22,"combiné"],[23,"VB"],[24,"jeux collectifs"],[25,"Danse"],[26,"VB"],[27,"DF"]],"2026-10-12":[[0,"DF"],[1,"DF"],[2,"Bad"],[3,"Combiné"]],"2026-10-13":[[4,"DF"],[5,"Bad"],[6,"combiné"],[7,"Combiné"]],"2026-10-14":[[8,"DF"],[9,"combiné"]],"2026-10-15":[[11,"Gym"],[13,"Combiné"],[15,"Bad"],[16,"Bad"],[18,"Gym"],[19,"Bad"],[20,"DF"]],"2026-10-16":[[21,"jeux collectifs"],[22,"combiné"],[23,"VB"],[24,"jeux collectifs"],[25,"Danse"],[26,"VB"],[27,"DF"]],"2026-10-19":[[0,"DF"],[1,"DF"],[2,"Bad"],[3,"Combiné"]],"2026-10-20":[[4,"DF"],[5,"Bad"],[6,"combiné"],[7,"Combiné"]],"2026-10-21":[[8,"DF"],[10,"VB"]],"2026-10-22":[[11,"Gym"],[12,"Combiné"],[14,"DF"],[17,"combiné"],[18,"Gym"],[19,"Bad"],[20,"DF"]],"2026-10-23":[[21,"jeux collectifs"],[22,"combiné"],[23,"VB"],[24,"jeux collectifs"],[25,"Danse"],[26,"VB"],[27,"DF"]],"2026-10-26":[[0,"DF"],[1,"DF"],[2,"Bad"],[3,"Combiné"]],"2026-10-27":[[4,"DF"],[5,"Bad"],[6,"combiné"],[7,"Combiné"]],"2026-10-28":[[8,"DF"],[9,"combiné"]],"2026-10-29":[[11,"Gym"],[13,"Combiné"],[15,"Bad"],[16,"Bad"],[18,"Gym"],[19,"Bad"],[20,"DF"]],"2026-10-30":[[21,"jeux collectifs"],[22,"combiné"],[23,"VB"],[24,"jeux collectifs"],[25,"Danse"],[26,"VB"],[27,"DF"]],"2026-11-02":[[0,"DF"],[1,"Boxe"],[2,"Handball"],[3,"Gym"]],"2026-11-03":[[4,"DF"],[5,"Handball"],[6,"cross training"],[7,"Handball"]],"2026-11-04":[[8,"DF"],[10,"Boxe"]],"2026-11-05":[[11,"Gym"],[12,"Handball"],[14,"Boxe"],[17,"cross training"],[18,"Gym"],[19,"Bad"],[20,"DF"]],"2026-11-06":[[21,"jeux collectifs"],[22,"Handball"],[23,"Boxe"],[24,"jeux collectifs"],[25,"Danse"],[26,"VB"],[27,"DF"]],"2026-11-16":[[0,"DF"],[1,"Boxe"],[2,"Handball"],[3,"Gym"]],"2026-11-17":[[4,"DF"],[5,"Handball"],[6,"cross training"],[7,"Handball"]],"2026-11-18":[[8,"DF"],[9,"Handball"]],"2026-11-19":[[11,"Gym"],[13,"Gym"],[15,"Handball"],[16,"Handball"],[18,"Gym"],[19,"Bad"],[20,"DF"]],"2026-11-20":[[21,"jeux collectifs"],[22,"Handball"],[23,"Boxe"],[24,"jeux collectifs"],[25,"Danse"],[26,"VB"],[27,"DF"]],"2026-11-23":[[0,"DF"],[1,"Boxe"],[2,"Handball"],[3,"Gym"]],"2026-11-24":[[4,"DF"],[5,"Handball"],[6,"cross training"],[7,"Handball"]],"2026-11-25":[[8,"DF"],[10,"Boxe"]],"2026-11-26":[[11,"Gym"],[12,"Handball"],[14,"Boxe"],[17,"cross training"],[18,"Gym"],[19,"Bad"],[20,"DF"]],"2026-11-27":[[21,"jeux collectifs"],[22,"Handball"],[23,"Boxe"],[24,"jeux collectifs"],[25,"Danse"],[26,"VB"],[27,"Eval DF"]],"2026-11-30":[[0,"Danse"],[1,"Boxe"],[2,"Handball"],[3,"Gym"]],"2026-12-01":[[4,"Danse"],[5,"Handball"],[6,"cross training"],[7,"Handball"]],"2026-12-02":[[8,"Danse"],[9,"Handball"]],"2026-12-03":[[11,"jeux collectifs"],[13,"Gym"],[15,"Handball"],[16,"Handball"],[18,"Bad"],[19,"cross training"],[20,"Danse"]],"2026-12-04":[[21,"Gym"],[22,"Handball"],[23,"Boxe"],[24,"Basket"],[25,"VB"],[26,"Eval VB"],[27,"Danse"]],"2026-12-07":[[0,"Danse"],[1,"Boxe"],[2,"Handball"],[3,"Gym"]],"2026-12-08":[[4,"Danse"],[5,"Handball"],[6,"cross training"],[7,"Handball"]],"2026-12-09":[[8,"Danse"],[10,"Boxe"]],"2026-12-10":[[11,"jeux collectifs"],[12,"Handball"],[14,"Boxe"],[17,"cross training"],[18,"Bad"],[19,"cross training"],[20,"Danse"]],"2026-12-11":[[21,"Gym"],[22,"Handball"],[23,"Boxe"],[24,"Basket"],[25,"VB"],[26,"cross training"],[27,"Danse"]],"2026-12-14":[[0,"Danse"],[1,"Boxe"],[2,"Handball"],[3,"Gym"]],"2026-12-15":[[4,"Danse"],[5,"Handball"],[6,"cross training"],[7,"Handball"]],"2026-12-16":[[8,"Danse"],[9,"Handball"]],"2026-12-17":[[11,"jeux collectifs"],[13,"Gym"],[15,"Handball"],[16,"Handball"],[18,"Bad"],[19,"cross training"],[20,"Danse"]],"2026-12-18":[[21,"Gym"],[22,"Handball"],[23,"Boxe"],[24,"Basket"],[25,"VB"],[26,"cross training"],[27,"Danse"]],"2027-01-04":[[0,"Danse"],[1,"Boxe"],[2,"Handball"],[3,"Gym"]],"2027-01-05":[[4,"Danse"],[5,"Handball"],[6,"cross training"],[7,"Handball"]],"2027-01-06":[[8,"Danse"],[10,"Boxe"]],"2027-01-07":[[11,"jeux collectifs"],[12,"Handball"],[14,"Boxe"],[17,"cross training"],[18,"Bad"],[19,"cross training"],[20,"Danse"]],"2027-01-08":[[21,"Gym"],[22,"Handball"],[23,"Boxe"],[24,"Basket"],[25,"VB"],[26,"cross training"],[27,"Danse"]],"2027-01-11":[[0,"Danse"],[1,"Boxe"],[2,"Handball"],[3,"Gym"]],"2027-01-12":[[4,"Danse"],[5,"Handball"],[6,"cross training"],[7,"Handball"]],"2027-01-13":[[8,"Danse"],[9,"Handball"]],"2027-01-14":[[11,"jeux collectifs"],[13,"Gym"],[15,"Handball"],[16,"Handball"],[18,"Bad"],[19,"cross training"],[20,"Danse"]],"2027-01-15":[[21,"Gym"],[22,"Handball"],[23,"Boxe"],[24,"Basket"],[25,"VB"],[26,"cross training"],[27,"Danse"]],"2027-01-18":[[0,"Danse"],[1,"VB"],[2,"Gym"],[3,"Handball"]],"2027-01-19":[[4,"Danse"],[5,"cross training"],[6,"Handball"],[7,"Gym"]],"2027-01-20":[[8,"Danse"],[10,"Danse"]],"2027-01-21":[[11,"jeux collectifs"],[12,"Gym"],[14,"VB"],[17,"Handball"],[18,"Bad"],[19,"cross training"],[20,"Danse"]],"2027-01-22":[[21,"Gym"],[22,"cross training"],[23,"Danse"],[24,"Basket"],[25,"VB"],[26,"cross training"],[27,"Danse"]],"2027-01-25":[[0,"Danse"],[1,"VB"],[2,"Gym"],[3,"Handball"]],"2027-01-26":[[4,"Danse"],[5,"cross training"],[6,"Handball"],[7,"Gym"]],"2027-01-27":[[8,"Danse"],[9,"cross training"]],"2027-01-28":[[11,"jeux collectifs"],[13,"Handball"],[15,"cross training"],[16,"Gym"],[18,"Bad"],[19,"cross training"],[20,"Danse"]],"2027-01-29":[[21,"Gym"],[22,"cross training"],[23,"Danse"],[24,"Basket"],[25,"VB"],[26,"cross training"],[27,"Danse"]],"2027-02-01":[[0,"Danse"],[1,"VB"],[2,"Gym"],[3,"Handball"]],"2027-02-02":[[4,"Danse"],[5,"cross training"],[6,"Handball"],[7,"Gym"]],"2027-02-03":[[8,"Danse"],[10,"Danse"]],"2027-02-04":[[11,"jeux collectifs"],[12,"Gym"],[14,"VB"],[17,"Handball"],[18,"Bad"],[19,"cross training"],[20,"Danse"]],"2027-02-22":[[0,"Danse"],[1,"VB"],[2,"Gym"],[3,"Handball"]],"2027-02-23":[[4,"Danse"],[5,"cross training"],[6,"Handball"],[7,"Gym"]],"2027-02-24":[[8,"Danse"],[9,"cross training"]],"2027-02-25":[[11,"jeux collectifs"],[13,"Handball"],[15,"cross training"],[16,"Gym"],[18,"Bad"],[19,"cross training"],[20,"Danse"]],"2027-02-26":[[21,"Gym"],[22,"cross training"],[23,"Danse"],[24,"Basket"],[25,"VB"],[26,"cross training"],[27,"Danse"]],"2027-03-01":[[0,"Danse"],[1,"VB"],[2,"Gym"],[3,"Handball"]],"2027-03-02":[[4,"Danse"],[5,"cross training"],[6,"Handball"],[7,"Gym"]],"2027-03-03":[[8,"Danse"],[10,"Danse"]],"2027-03-04":[[11,"jeux collectifs"],[12,"Gym"],[14,"VB"],[17,"Handball"],[18,"Bad"],[19,"cross training"],[20,"Danse"]],"2027-03-05":[[21,"Gym"],[22,"cross training"],[23,"Danse"],[24,"Basket"],[25,"VB"],[26,"Eval Cross training"],[27,"Eval Danse"]],"2027-03-08":[[0,"Basket"],[1,"VB"],[2,"Gym"],[3,"Handball"]],"2027-03-09":[[4,"Basket"],[5,"cross training"],[6,"Handball"],[7,"Gym"]],"2027-03-10":[[8,"Gym"],[9,"cross training"]],"2027-03-11":[[11,"Natation"],[13,"Handball"],[15,"cross training"],[16,"Gym"],[18,"cross training"],[19,"Gym"],[20,"VB"]],"2027-03-12":[[21,"Natation"],[22,"cross training"],[23,"Danse"],[24,"Natation"],[25,"DF"],[26,"combiné"],[27,"Bad"]],"2027-03-15":[[0,"Basket"],[1,"VB"],[2,"Gym"],[3,"Handball"]],"2027-03-16":[[4,"Basket"],[5,"cross training"],[6,"Handball"],[7,"Gym"]],"2027-03-17":[[8,"Gym"],[10,"Danse"]],"2027-03-18":[[11,"Natation"],[12,"Gym"],[14,"VB"],[17,"Handball"],[18,"cross training"],[19,"Gym"],[20,"VB"]],"2027-03-19":[[21,"Natation"],[22,"cross training"],[23,"Danse"],[24,"Natation"],[25,"DF"],[26,"combiné"],[27,"Bad"]],"2027-03-22":[[0,"Basket"],[1,"VB"],[2,"Gym"],[3,"Handball"]],"2027-03-23":[[4,"Basket"],[5,"cross training"],[6,"Handball"],[7,"Gym"]],"2027-03-24":[[8,"Gym"],[9,"cross training"]],"2027-03-25":[[11,"Natation"],[13,"Handball"],[15,"cross training"],[16,"Gym"],[18,"cross training"],[19,"Gym"],[20,"VB"]],"2027-03-26":[[21,"Natation"],[22,"cross training"],[23,"Danse"],[24,"Natation"],[25,"DF"],[26,"combiné"],[27,"Bad"]],"2027-03-29":[[0,"Basket"],[1,"Danse"],[2,"Combiné"],[3,"Bad"]],"2027-03-30":[[4,"Basket"],[5,"combiné"],[6,"Bad"],[7,"Bad"]],"2027-03-31":[[8,"Gym"],[10,"DF"]],"2027-04-01":[[11,"Natation"],[12,"Bad"],[14,"Danse"],[17,"Bad"],[18,"cross training"],[19,"Gym"],[20,"VB"]],"2027-04-06":[[4,"Basket"],[5,"combiné"],[6,"Bad"],[7,"Bad"]],"2027-04-07":[[8,"Gym"],[9,"Bad"]],"2027-04-08":[[11,"Natation"],[13,"Bad"],[15,"combiné"],[16,"Combiné"],[18,"cross training"],[19,"Gym"],[20,"VB"]],"2027-04-09":[[21,"Natation"],[22,"Bad"],[23,"DF"],[24,"Natation"],[25,"DF"],[26,"combiné"],[27,"Bad"]],"2027-04-12":[[0,"Basket"],[1,"Danse"],[2,"Combiné"],[3,"Bad"]],"2027-04-13":[[4,"Basket"],[5,"combiné"],[6,"Bad"],[7,"Bad"]],"2027-04-14":[[8,"Gym"],[10,"DF"]],"2027-04-15":[[11,"Natation"],[12,"Bad"],[14,"Danse"],[17,"Bad"],[18,"cross training"],[19,"Gym"],[20,"VB"]],"2027-04-16":[[21,"Natation"],[22,"Bad"],[23,"DF"],[24,"Natation"],[25,"DF"],[26,"combiné"],[27,"Bad"]],"2027-04-19":[[0,"Basket"],[1,"Danse"],[2,"Combiné"],[3,"Bad"]],"2027-04-20":[[4,"Basket"],[5,"combiné"],[6,"Bad"],[7,"Bad"]],"2027-04-21":[[8,"Gym"],[9,"Bad"]],"2027-04-22":[[11,"Natation"],[13,"Bad"],[15,"combiné"],[16,"Combiné"],[18,"cross training"],[19,"Gym"],[20,"VB"]],"2027-04-23":[[21,"Natation"],[22,"Bad"],[23,"DF"],[24,"Natation"],[25,"DF"],[26,"combiné"],[27,"Bad"]],"2027-05-10":[[0,"Basket"],[1,"Danse"],[2,"Combiné"],[3,"Bad"]],"2027-05-11":[[4,"Basket"],[5,"combiné"],[6,"Bad"],[7,"Bad"]],"2027-05-12":[[8,"Gym"],[10,"DF"]],"2027-05-13":[[11,"Natation"],[12,"Bad"],[14,"Danse"],[17,"Bad"],[18,"cross training"],[19,"Gym"],[20,"VB"]],"2027-05-14":[[21,"Natation"],[22,"Bad"],[23,"DF"],[24,"Natation"],[25,"DF"],[26,"combiné"],[27,"Bad"]],"2027-05-17":[[0,"Basket"],[1,"Danse"],[2,"Combiné"],[3,"Bad"]],"2027-05-18":[[4,"Basket"],[5,"combiné"],[6,"Bad"],[7,"Bad"]],"2027-05-19":[[8,"Gym"],[9,"Bad"]],"2027-05-20":[[11,"Natation"],[13,"Bad"],[15,"combiné"],[16,"Combiné"],[18,"cross training"],[19,"Gym"],[20,"VB"]],"2027-05-21":[[21,"Natation"],[22,"Bad"],[23,"DF"],[24,"Natation"],[25,"DF"],[26,"combiné"],[27,"Bad"]],"2027-05-24":[[0,"Basket"],[1,"Danse"],[2,"Combiné"],[3,"Bad"]],"2027-05-25":[[4,"Basket"],[5,"combiné"],[6,"Bad"],[7,"Bad"]],"2027-05-26":[[8,"Gym"],[10,"DF"]],"2027-05-27":[[11,"Natation"],[12,"Bad"],[14,"Danse"],[17,"Bad"],[18,"cross training"],[19,"Gym"],[20,"VB"]],"2027-05-28":[[21,"Natation"],[22,"Bad"],[23,"DF"],[24,"Natation"],[25,"DF"],[26,"Eval Combiné"],[27,"Eval Bad"]],"2027-05-31":[[0,"Basket"],[1,"Danse"],[2,"Combiné"],[3,"Bad"]],"2027-06-01":[[4,"Basket"],[5,"combiné"],[6,"Bad"],[7,"Bad"]],"2027-06-02":[[8,"Gym"],[9,"Bad"]],"2027-06-03":[[11,"jeux collectifs"],[13,"Bad"],[15,"combiné"],[16,"Combiné"],[18,"cross training"],[19,"Gym"],[20,"VB"]],"2027-06-04":[[21,"Natation"],[22,"Bad"],[23,"DF"],[24,"jeux collectifs"],[25,"DF"]]},"feries":["2026-09-25","2027-04-02","2027-04-05","2027-06-09"],"weeks":{"2026-08-31":1,"2026-09-07":2,"2026-09-14":1,"2026-09-21":2,"2026-09-28":1,"2026-10-05":2,"2026-10-12":1,"2026-10-19":2,"2026-10-26":1,"2026-11-02":2,"2026-11-16":1,"2026-11-23":2,"2026-11-30":1,"2026-12-07":2,"2026-12-14":1,"2027-01-04":2,"2027-01-11":1,"2027-01-18":2,"2027-01-25":1,"2027-02-01":2,"2027-02-22":1,"2027-03-01":2,"2027-03-08":1,"2027-03-15":2,"2027-03-22":1,"2027-03-29":2,"2027-04-05":1,"2027-04-12":2,"2027-04-19":1,"2027-05-10":2,"2027-05-17":1,"2027-05-24":2,"2027-05-31":1,"2027-06-07":2,"2027-06-14":1,"2027-06-21":2,"2027-06-28":1}};
 let CAL = (window.__CS && window.__CS.calendrier) || JSON.parse(JSON.stringify(DEFAULT_CAL_2627));
 // Normaliser les créneaux 08:00-10:00 et 10:00-12:00 hérités sur les créneaux LFIP en :30
@@ -3117,16 +3117,41 @@ function lastSession(cl, perName) {
   for (const [ds, list] of Object.entries(CAL.cal)) if (ds >= per[1] && ds <= per[2] && list.some(([i]) => idx.includes(i))) if (!last || ds > last) last = ds;
   return last;
 }
+var EVAL_UI = { tab: 'all', cls: '' };
 VIEWS.evaluations = function () {
   const app = $('#app'), rows = classRows();
   const classes = [...new Set(rows.map(r => r.cl))];
   const today = iso(new Date());
   const ev = [...EVALS].sort((a, b) => (a.date || '9').localeCompare(b.date || '9'));
+  const lastSessions = typeof getLastApsaSessions === 'function' ? getLastApsaSessions() : [];
+  const filtLast = lastSessions.filter(x => !EVAL_UI.cls || x.cls === EVAL_UI.cls || x.cls === EVAL_UI.cls.replace(/ · menu \d/, ''));
+  const filtEv = ev.filter(e => !EVAL_UI.cls || e.cls === EVAL_UI.cls);
+
   app.innerHTML = `<main>
     ${schoolYearBarHTML()}
-    <h1>Évaluations et séances</h1>
-    <div class="card">
-      <h2>Ajouter une évaluation</h2>
+    <div class="row" style="justify-content:space-between;align-items:center">
+      <h1>Évaluations (Bac & Derniers cours d’APSA)</h1>
+      <a class="btn" href="#calendrier" style="text-decoration:none">📅 Voir sur le Calendrier général →</a>
+    </div>
+    <div class="row noprint" style="justify-content:space-between;align-items:center">
+      <div class="row" style="gap:6px">
+        <button class="btn ${EVAL_UI.tab === 'all' ? 'on' : ''}" type="button" data-evtab="all">Tout voir (${filtEv.length + filtLast.length})</button>
+        <button class="btn ${EVAL_UI.tab === 'bac' ? 'on' : ''}" type="button" data-evtab="bac">🎓 Évaluations Bac / CCF (${filtEv.length})</button>
+        <button class="btn ${EVAL_UI.tab === 'last' ? 'on' : ''}" type="button" data-evtab="last">🏁 Derniers cours d’APSA · Toutes classes (${filtLast.length})</button>
+      </div>
+      <label class="f" style="flex-direction:row;align-items:center;gap:6px">Filtrer par classe :
+        <select id="ev_f_cls" style="min-height:34px;padding:4px 8px">
+          <option value="">Toutes les classes</option>
+          ${classes.map(c => `<option value="${esc(c)}" ${EVAL_UI.cls === c ? 'selected' : ''}>${esc(c)}</option>`).join('')}
+        </select>
+      </label>
+    </div>
+
+    ${EVAL_UI.tab !== 'last' ? `<div class="card">
+      <div class="row" style="justify-content:space-between;align-items:center">
+        <h2>🎓 Évaluations Bac / CCF & Évaluations spécifiques</h2>
+        <span class="muted">Les dates de Terminale alimentent automatiquement l’écran Protocole bac.</span>
+      </div>
       <div class="row">
         <label class="f">Classe<select id="ev_cl">${classes.map(c => `<option>${esc(c)}</option>`).join('')}</select></label>
         <label class="f">APSA<input type="text" id="ev_ap" list="ev_aps" style="width:180px"><datalist id="ev_aps"></datalist></label>
@@ -3135,14 +3160,47 @@ VIEWS.evaluations = function () {
         <button class="btn blue" id="ev_add" style="align-self:flex-end">Ajouter</button>
       </div>
       <span class="muted" id="ev_info"></span>
-    </div>
-    <div class="card"><h2>Calendrier des évaluations</h2>
-      <div class="scroll"><table class="t" style="min-width:820px"><tr><th>Date</th><th>Classe</th><th>APSA</th><th>Période</th><th>Rattrapage</th><th>Co-évaluateur</th><th></th></tr>
-      ${ev.map(e => `<tr style="${e.date && e.date < today ? 'opacity:.6' : ''}"><td><input type="date" data-ev="${e.id}" data-k="date" value="${e.date || ''}"></td><td><strong>${esc(e.cls)}</strong></td><td><span class="chip ca${caOf(e.apsa)}">${esc(e.apsa)}</span></td><td>${e.date ? periodOf(e.cls, e.date) || '' : ''}</td>
-        <td><input type="date" data-ev="${e.id}" data-k="ratt" value="${e.ratt || ''}"></td><td><input type="text" data-ev="${e.id}" data-k="coeval" list="coevl" value="${esc(e.coeval || '')}" style="width:130px"></td><td><button class="btn" data-evdel="${e.id}">Supprimer</button></td></tr>`).join('') || '<tr><td colspan="7" class="empty">Aucune évaluation.</td></tr>'}
+      <div class="scroll"><table class="t" style="min-width:820px"><tr><th>Type</th><th>Date</th><th>Classe</th><th>APSA</th><th>Période</th><th>Rattrapage</th><th>Co-évaluateur</th><th></th></tr>
+      ${filtEv.map(e => {
+        const isBac = /term|1a|1b|bac|ccf/i.test(e.cls || '');
+        return `<tr style="${e.date && e.date < today ? 'opacity:.6' : ''}">
+          <td><span class="chip" style="background:${isBac ? '#FFE4E6' : '#DBEAFE'};color:${isBac ? '#BE123C' : '#1D4ED8'};font-weight:700">${isBac ? '🎓 Bac / CCF' : '🎯 Éval'}</span></td>
+          <td><input type="date" data-ev="${e.id}" data-k="date" value="${e.date || ''}"></td>
+          <td><strong>${esc(e.cls)}</strong></td>
+          <td><span class="chip ca${caOf(e.apsa)}">${esc(e.apsa)}</span></td>
+          <td>${e.date ? periodOf(e.cls, e.date) || '' : ''}</td>
+          <td><input type="date" data-ev="${e.id}" data-k="ratt" value="${e.ratt || ''}"></td>
+          <td><input type="text" data-ev="${e.id}" data-k="coeval" list="coevl" value="${esc(e.coeval || '')}" style="width:130px"></td>
+          <td><button class="btn" data-evdel="${e.id}">Supprimer</button></td>
+        </tr>`;
+      }).join('') || '<tr><td colspan="8" class="empty">Aucune évaluation enregistrée.</td></tr>'}
       </table></div>
-      <div class="row"><button class="btn go" id="ev_x">Exporter en Excel</button><span class="muted">Les dates de Terminale alimentent l’écran Protocole bac.</span></div>
-    </div>
+      <div class="row"><button class="btn go" id="ev_x">Exporter en Excel</button></div>
+    </div>` : ''}
+
+    ${EVAL_UI.tab !== 'bac' ? `<div class="card">
+      <div class="row" style="justify-content:space-between;align-items:center">
+        <div>
+          <h2 style="margin:0">🏁 Dates d’évaluation de fin de séquence (Dernier cours de chaque APSA · Toutes classes)</h2>
+          <span class="muted">Chaque dernier cours d’une APSA dans une période est automatiquement considéré comme séance d’évaluation de fin de cycle.</span>
+        </div>
+      </div>
+      <div class="scroll"><table class="t" style="min-width:720px"><tr><th>Statut</th><th>Date du dernier cours (Éval)</th><th>Classe</th><th>Rythme & Période</th><th>APSA évaluée</th><th>Professeur</th></tr>
+      ${filtLast.map(lc => {
+        const isPast = lc.date < today;
+        const isSoon = !isPast && (fromIso(lc.date) - fromIso(today)) <= 14 * 86400000;
+        return `<tr style="${isPast ? 'opacity:.55' : isSoon ? 'background:#F0FDF4' : ''}">
+          <td><span class="chip" style="background:${isPast ? '#F1F5F9' : isSoon ? '#DCFCE7' : '#EFF6FF'};color:${isPast ? '#64748B' : isSoon ? '#15803D' : '#1D4ED8'};font-weight:700">${isPast ? 'Passé' : isSoon ? '⏳ À venir (< 14j)' : '🏁 Fin de cycle'}</span></td>
+          <td><strong>${frd(lc.date)}</strong></td>
+          <td><strong>${esc(lc.cls)}</strong></td>
+          <td><span class="chip" style="background:${lc.rythme === '3h' ? '#EDE9FE' : '#DBEAFE'};color:${lc.rythme === '3h' ? '#6D28D9' : '#1D4ED8'}">${esc(lc.per)} · ${esc(lc.rythme)}</span></td>
+          <td><span class="chip ca${caOf(lc.apsa)}">${esc(lc.apsa)}</span></td>
+          <td class="muted">${lc.prof ? '👤 ' + esc(lc.prof) : '—'}</td>
+        </tr>`;
+      }).join('') || '<tr><td colspan="6" class="empty">Aucun dernier cours trouvé.</td></tr>'}
+      </table></div>
+    </div>` : ''}
+
     <div class="card"><h2>Nombre de séances par cycle</h2>
       <div class="scroll"><table class="t" style="min-width:820px"><tr><th>Classe</th><th>Créneau</th><th>P1</th><th>P2</th><th>P3</th><th>P4</th></tr>
       ${rows.map(x => `<tr><td><strong>${esc(x.cl)}</strong></td><td class="muted">${esc(x.cren)}</td>${[0, 1, 2, 3].map(k => { const c = x.cells[k]; return `<td>${c ? `${esc(c.apsa)} · <strong>${c.n}</strong>` : '—'}</td>`; }).join('')}</tr>`).join('')}
@@ -3151,10 +3209,14 @@ VIEWS.evaluations = function () {
     </div>
   </main>`;
   bindSchoolYearBar(() => VIEWS.evaluations());
+  app.querySelectorAll('[data-evtab]').forEach(b => b.onclick = () => { EVAL_UI.tab = b.dataset.evtab; VIEWS.evaluations(); });
+  if ($('#ev_f_cls')) $('#ev_f_cls').onchange = e => { EVAL_UI.cls = e.target.value; VIEWS.evaluations(); };
   const clS = $('#ev_cl'), apI = $('#ev_ap'), dI = $('#ev_d');
-  const fillAps = () => { const r = rows.filter(x => x.cl === clS.value); $('#ev_aps').innerHTML = [...new Set(r.flatMap(x => x.cells.filter(Boolean).map(c => c.apsa)))].map(a => `<option value="${esc(a)}">`).join(''); };
-  clS.onchange = fillAps; fillAps();
-  $('#ev_last').onclick = () => {
+  if (clS && apI) {
+    const fillAps = () => { const r = rows.filter(x => x.cl === clS.value); $('#ev_aps').innerHTML = [...new Set(r.flatMap(x => x.cells.filter(Boolean).map(c => c.apsa)))].map(a => `<option value="${esc(a)}">`).join(''); };
+    clS.onchange = fillAps; fillAps();
+  }
+  if ($('#ev_last')) $('#ev_last').onclick = () => {
     const RYTHMES = getProgRythmes();
     const r = rows.filter(x => x.cl === clS.value); const R = Object.values(RYTHMES).find(R => R.cls.includes(clS.value.replace(/ · menu \d/, '')));
     const ap = apI.value.trim().toLowerCase(); let per = null;
@@ -3162,10 +3224,10 @@ VIEWS.evaluations = function () {
     if (!per) { $('#ev_info').textContent = 'Choisis d’abord une APSA de cette classe.'; return; }
     const d = lastSession(clS.value, per); if (d) { dI.value = d; $('#ev_info').textContent = 'Dernière séance de ' + per + ' : ' + frd(d); }
   };
-  $('#ev_add').onclick = () => { if (!apI.value.trim() || !dI.value) { alertMsg('Indique l’APSA et la date.'); return; } EVALS.push({ id: 'e' + Date.now(), cls: clS.value, apsa: cap(apI.value.trim()), date: dI.value, ratt: '', coeval: '' }); saveEvals(); VIEWS.evaluations(); };
+  if ($('#ev_add')) $('#ev_add').onclick = () => { if (!apI.value.trim() || !dI.value) { alertMsg('Indique l’APSA et la date.'); return; } EVALS.push({ id: 'e' + Date.now(), cls: clS.value, apsa: cap(apI.value.trim()), date: dI.value, ratt: '', coeval: '' }); saveEvals(); VIEWS.evaluations(); };
   app.querySelectorAll('[data-ev]').forEach(i => i.onchange = () => { const e = EVALS.find(x => x.id === i.dataset.ev); e[i.dataset.k] = i.value; saveEvals(); });
   app.querySelectorAll('[data-evdel]').forEach(b => b.onclick = () => { if (confirm('Supprimer cette évaluation ?')) { EVALS = EVALS.filter(x => x.id !== b.dataset.evdel); saveEvals(); VIEWS.evaluations(); } });
-  $('#ev_x').onclick = () => {
+  if ($('#ev_x')) $('#ev_x').onclick = () => {
     const aoa = [['Évaluations EPS ' + curSchoolYear()], [], ['Date', 'Classe', 'APSA', 'Période', 'Rattrapage', 'Co-évaluateur']];
     ev.forEach(e => aoa.push([frd(e.date), e.cls, e.apsa, e.date ? periodOf(e.cls, e.date) || '' : '', frd(e.ratt), e.coeval || '']));
     const ws = XLSX.utils.aoa_to_sheet(aoa); ws['!cols'] = [12, 16, 20, 8, 12, 18].map(w => ({ wch: w }));
@@ -4113,27 +4175,29 @@ VIEWS.ressources = function () {
   app.querySelectorAll('[data-rsd]').forEach(b => b.onclick = () => { RES = RES.filter(r => r.id !== b.dataset.rsd); saveRes(); VIEWS.ressources(); });
 };
 
-/* --- Accueil (personnalisable, échéances périodes 3h & 4h/2h, vacances, calendrier Mois/Année & hub Coordo) --- */
+/* --- Accueil ultra-synthétique (jauges échéances, évals Bac vs derniers cours APSA) & Rubrique Calendrier général --- */
 function homeOpenBtn(link, label = 'Ouvrir') {
   if (!link || !allowed(link)) return '';
   const ic = (typeof IC !== 'undefined' && IC[link]) ? svgIc(IC[link]) : '';
   return `<a href="#${link}" class="home-open-btn">${ic}<span>${esc(label)} →</span></a>`;
 }
-var HOME_UI = { calMode: 'mois', calMonth: null, clsFilter: '', profFilter: '', showCust: false, showAddJalon: false };
+var HOME_UI = { showCust: false };
+var CAL_VIEW_UI = { mode: 'mois', month: null, clsFilter: '', profFilter: '', typeFilter: 'all', showAdd: false, showNewYearProc: false };
+
 const HOME_DEFAULT_LAYOUT = [
-  { id: 'echeances', t: '⏳ Échéances, Périodes, Vacances & Calendrier (Mois / Année)', on: true, span: 2 },
-  { id: 'meteo', t: '🌤️ Météo & Protocole Pollution LFIP', on: true, span: 1 },
+  { id: 'echeances', t: '⏳ Échéances, Périodes & Vacances (jauges)', on: true, span: 1 },
+  { id: 'meteo', t: '🌤️ Météo & Qualité de l’air', on: true, span: 1 },
   { id: 'now', t: '📍 En ce moment sur les installations', on: true, span: 1 },
-  { id: 'coordo_hub', t: '🧭 Assistant & Mémo Coordo / Prof d’EPS', on: true, span: 1 },
-  { id: 'evaluations', t: '🎯 Prochaines évaluations & Bac', on: true, span: 1 },
+  { id: 'evaluations', t: '🎯 Prochaines évaluations (Bac & Derniers cours APSA)', on: true, span: 1 },
   { id: 'reunions', t: '🗓️ Prochaine réunion EPS', on: true, span: 1 },
   { id: 'incidents', t: '⚠️ Incidents ouverts', on: true, span: 1 },
   { id: 'materiel', t: '📦 Commandes & budget DAF', on: true, span: 1 },
   { id: 'travaux', t: '🛠️ Travaux en cours', on: true, span: 1 },
-  { id: 'rencontres', t: '🏆 Prochains matchs AS & PROZAP (optionnel)', on: false, span: 1 }
+  { id: 'rencontres', t: '🏆 Matchs AS & PROZAP (optionnel)', on: false, span: 1 },
+  { id: 'coordo_hub', t: '🧭 Mémo & Check-list Coordo (optionnel)', on: false, span: 1 }
 ];
 function getHomeLayout() {
-  const saved = LS.get('home_layout', null);
+  const saved = LS.get('home_layout_v2', null);
   if (!Array.isArray(saved) || !saved.length) return HOME_DEFAULT_LAYOUT.map(x => ({ ...x }));
   const map = new Map(saved.map(x => [x.id, x]));
   const res = saved.filter(x => HOME_DEFAULT_LAYOUT.some(d => d.id === x.id)).map(x => {
@@ -4143,7 +4207,8 @@ function getHomeLayout() {
   for (const d of HOME_DEFAULT_LAYOUT) if (!map.has(d.id)) res.push({ ...d });
   return res;
 }
-function saveHomeLayout(arr) { LS.set('home_layout', arr); }
+function saveHomeLayout(arr) { LS.set('home_layout_v2', arr); }
+
 function getCoordoJalons() {
   return LS.get('coordo_jalons', [
     { id: 'j_cc1', date: '2026-11-27', titre: 'Arrêt des notes T1 / Fin P1 (6e & Lycée)', cat: 'conseil' },
@@ -4162,12 +4227,44 @@ function getCoordoTodos() {
 }
 function saveCoordoTodos(arr) { LS.set('coordo_todos', arr); }
 
-/* Calcul du compte à rebours en semaines de cours (hors vacances) et semaines calendaires */
+/* Calcul du compte à rebours et du pourcentage d'avancement (jauges) */
+const DEFAULT_VACANCES_2627 = [
+  ['2026-10-01', '2026-10-07', 'Vacances Fête Nationale (Golden Week)'],
+  ['2026-11-07', '2026-11-15', 'Vacances d’Automne (Toussaint)'],
+  ['2026-12-19', '2027-01-03', 'Vacances de Noël / Fin d’année'],
+  ['2027-02-06', '2027-02-21', 'Vacances d’Hiver / Nouvel An Chinois'],
+  ['2027-04-24', '2027-05-09', 'Vacances de Printemps'],
+  ['2027-07-03', '2027-08-31', 'Vacances d’Été']
+];
+function getSchoolVacances() {
+  if (CAL && Array.isArray(CAL.vacances) && CAL.vacances.length) return CAL.vacances;
+  return DEFAULT_VACANCES_2627;
+}
+function getSchoolFeries() {
+  const f = (CAL && Array.isArray(CAL.feries)) ? CAL.feries : [];
+  const labels = {
+    '2026-09-25': 'Fête de la Mi-Automne',
+    '2027-04-02': 'Vendredi Saint / Qingming',
+    '2027-04-05': 'Lundi de Pâques / Qingming',
+    '2027-06-09': 'Fête des Bateaux-Dragons (Duanwu)'
+  };
+  return f.map(item => Array.isArray(item) ? item : [item, labels[item] || 'Jour férié']);
+}
 function countTeachingWeeksBetween(fromDs, toDs) {
   if (!toDs || toDs < fromDs) return 0;
   const sems = (CAL && Array.isArray(CAL.semaines)) ? CAL.semaines : [];
-  const matching = sems.filter(s => s.fin >= fromDs && s.debut <= toDs);
-  if (matching.length) return matching.length;
+  if (sems.length) {
+    const matching = sems.filter(s => s.fin >= fromDs && s.debut <= toDs);
+    if (matching.length) return matching.length;
+  }
+  if (CAL && CAL.weeks && typeof CAL.weeks === 'object') {
+    const mondays = Object.keys(CAL.weeks).sort();
+    const matching = mondays.filter(m => {
+      const fri = iso(addDays(fromIso(m), 4));
+      return fri >= fromDs && m <= toDs;
+    });
+    if (matching.length) return matching.length;
+  }
   return Math.max(0, Math.ceil((fromIso(toDs) - fromIso(fromDs)) / (7 * 86400000)));
 }
 function getPeriodCountdownInfo(perList, todayDs) {
@@ -4186,28 +4283,39 @@ function getPeriodCountdownInfo(perList, todayDs) {
   const diffDays = Math.max(0, Math.ceil((fromIso(targetDs) - fromIso(todayDs)) / 86400000));
   const calWeeks = Math.max(0, Math.round((diffDays / 7) * 10) / 10);
   const teachWeeks = countTeachingWeeksBetween(todayDs, targetDs);
-  return { pName, pFrom, pTo, status, diffDays, calWeeks, teachWeeks, nextPer, totalPeriods: perList.length, idx: idx + 1 };
+  const totalTeachWeeks = Math.max(1, countTeachingWeeksBetween(pFrom, pTo));
+  const totalMs = Math.max(86400000, fromIso(pTo) - fromIso(pFrom));
+  const elapsedMs = Math.max(0, Math.min(totalMs, fromIso(todayDs) - fromIso(pFrom)));
+  const pct = status === 'a_venir' ? 5 : status === 'termine' ? 100 : Math.min(100, Math.max(6, Math.round((elapsedMs / totalMs) * 100)));
+  return { pName, pFrom, pTo, status, diffDays, calWeeks, teachWeeks, totalTeachWeeks, pct, nextPer, totalPeriods: perList.length, idx: idx + 1 };
 }
 function getNextVacancesInfo(todayDs) {
-  const vacs = (CAL && Array.isArray(CAL.vacances)) ? CAL.vacances : [];
+  const vacs = getSchoolVacances();
   const active = vacs.find(([s, e]) => todayDs >= s && todayDs <= e);
-  const upcoming = vacs.find(([s, e]) => s > todayDs);
+  const upcomingIdx = vacs.findIndex(([s, e]) => s > todayDs);
   if (active) {
     const [s, e, lbl] = active;
     const leftDays = Math.max(0, Math.ceil((fromIso(e) - fromIso(todayDs)) / 86400000));
-    return { active: true, start: s, end: e, label: lbl, diffDays: leftDays, calWeeks: Math.round((leftDays / 7) * 10) / 10, teachWeeks: 0 };
+    if (leftDays > 2 || upcomingIdx < 0) {
+      const nextAfter = upcomingIdx >= 0 ? vacs[upcomingIdx] : null;
+      return { active: true, start: s, end: e, label: lbl, diffDays: leftDays, calWeeks: Math.round((leftDays / 7) * 10) / 10, teachWeeks: 0, pct: 100, nextAfter };
+    }
   }
-  if (upcoming) {
-    const [s, e, lbl] = upcoming;
+  if (upcomingIdx >= 0) {
+    const [s, e, lbl] = vacs[upcomingIdx];
+    const prevEnd = upcomingIdx > 0 ? vacs[upcomingIdx - 1][1] : ((CAL && CAL.semaines && CAL.semaines[0] && CAL.semaines[0].debut) || (s.slice(0, 4) + '-09-01'));
     const diffDays = Math.max(0, Math.ceil((fromIso(s) - fromIso(todayDs)) / 86400000));
     const calWeeks = Math.round((diffDays / 7) * 10) / 10;
     const teachWeeks = countTeachingWeeksBetween(todayDs, s);
-    return { active: false, start: s, end: e, label: lbl, diffDays, calWeeks, teachWeeks };
+    const spanMs = Math.max(86400000, fromIso(s) - fromIso(prevEnd));
+    const elMs = Math.max(0, Math.min(spanMs, fromIso(todayDs) - fromIso(prevEnd)));
+    const pct = Math.min(100, Math.max(12, Math.round((elMs / spanMs) * 100)));
+    return { active: false, start: s, end: e, label: lbl, diffDays, calWeeks, teachWeeks, pct };
   }
   return null;
 }
 
-/* Calcul automatique du dernier cours dans chaque APSA pour chaque classe (par période) */
+/* Calcul automatique du dernier cours dans chaque APSA pour chaque classe (considéré comme évaluation de fin de cycle) */
 function getLastApsaSessions() {
   if (!CAL || !CAL.cal || !Array.isArray(CAL.classes)) return [];
   const rythmes = typeof getProgRythmes === 'function' ? getProgRythmes() : null;
@@ -4250,48 +4358,113 @@ function getLastApsaSessions() {
   return out.sort((a, b) => a.date.localeCompare(b.date) || a.cls.localeCompare(b.cls));
 }
 
-/* Agrégation de tous les événements du calendrier Coordo & Prof EPS */
+/* Encart COMPACT sur l'Accueil : 3 jauges (Période 3h, Période 4h/2h, Prochaines vacances) + bouton Ouvrir -> #calendrier */
+function renderCompactEcheancesCard(now) {
+  const today = iso(now);
+  const ry = (typeof getProgRythmes === 'function') ? getProgRythmes() : { college: { per: [] }, lycee: { per: [] } };
+  const i3 = getPeriodCountdownInfo(ry.college ? ry.college.per : [], today);
+  const i4 = getPeriodCountdownInfo(ry.lycee ? ry.lycee.per : [], today);
+  const iv = getNextVacancesInfo(today);
+
+  const gaugeRow = (label, badgeTxt, rightTxt, subRight, pct, col, bg) => `
+    <div style="display:flex;flex-direction:column;gap:4px;padding:6px 0;border-bottom:1px solid #F1F5F9">
+      <div style="display:flex;justify-content:space-between;align-items:baseline;gap:6px;font-size:12.5px">
+        <div style="display:flex;align-items:center;gap:5px;min-width:0">
+          <span style="display:inline-block;padding:1px 6px;border-radius:99px;font-size:11px;font-weight:700;background:${bg};color:${col};white-space:nowrap">${esc(badgeTxt)}</span>
+          <strong style="color:#1E293B;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${esc(label)}</strong>
+        </div>
+        <div style="text-align:right;white-space:nowrap;flex-shrink:0">
+          <strong style="color:${col};font-size:13px">${esc(rightTxt)}</strong>
+          <span class="muted" style="font-size:11px"> · ${esc(subRight)}</span>
+        </div>
+      </div>
+      <div style="height:7px;background:#E2E8F0;border-radius:99px;overflow:hidden">
+        <div style="width:${pct}%;height:100%;background:${col};border-radius:99px;transition:width .3s"></div>
+      </div>
+    </div>`;
+
+  return `<div class="card home-card">
+    <div class="row" style="justify-content:space-between;align-items:center;margin-bottom:2px">
+      <h2 style="margin:0">⏳ Échéances & Vacances</h2>
+      ${homeOpenBtn('calendrier', 'Ouvrir')}
+    </div>
+    <div style="display:flex;flex-direction:column">
+      ${i3 ? gaugeRow('Classes 3h (5e·4e·3e)', `${i3.pName}/${i3.totalPeriods}`, `${i3.teachWeeks} sem. cours`, `fin ${frd(i3.pTo).slice(0, 5)}`, i3.pct, '#6D28D9', '#EDE9FE') : ''}
+      ${i4 ? gaugeRow('Classes 4h (6e) & 2h', `${i4.pName}/${i4.totalPeriods}`, `${i4.teachWeeks} sem. cours`, `fin ${frd(i4.pTo).slice(0, 5)}`, i4.pct, '#1D4ED8', '#DBEAFE') : ''}
+      ${iv ? gaugeRow(iv.label, '🏖️ Vacances', iv.active ? `En cours (${iv.diffDays} j)` : `dans ${iv.teachWeeks} sem. cours`, `du ${frd(iv.start).slice(0, 5)}`, iv.pct, '#0E7490', '#CFFAFE') : ''}
+    </div>
+  </div>`;
+}
+
+/* Encart COMPACT sur l'Accueil : Prochaines évaluations (différenciant Évals Bac et Derniers cours d'APSA de toutes les classes) */
+function renderHomeEvaluationsCard(today, span = 1) {
+  const bacEvs = (EVALS || []).filter(e => e.date && e.date >= today && /term|1a|1b|bac|ccf/i.test(e.cls || '')).sort((a, b) => a.date.localeCompare(b.date)).slice(0, 3);
+  const otherEvs = (EVALS || []).filter(e => e.date && e.date >= today && !/term|1a|1b|bac|ccf/i.test(e.cls || ''));
+  const lastSessions = getLastApsaSessions().filter(lc => lc.date >= today);
+  const combinedLasts = [
+    ...otherEvs.map(e => ({ date: e.date, cls: e.cls, apsa: e.apsa, per: periodOf(e.cls, e.date) || '' })),
+    ...lastSessions
+  ].sort((a, b) => a.date.localeCompare(b.date) || a.cls.localeCompare(b.cls)).slice(0, 4);
+
+  const body = `
+    <div style="display:flex;flex-direction:column;gap:8px;font-size:13px">
+      <div>
+        <div style="font-size:11.5px;font-weight:700;color:#BE123C;margin-bottom:3px">🎓 ÉVALUATIONS BAC / CCF À VENIR</div>
+        ${bacEvs.length ? bacEvs.map(e => `<div style="display:flex;justify-content:space-between;align-items:center;padding:2px 0"><span><strong>${frd(e.date).slice(0, 5)}</strong> · <strong>${esc(e.cls)}</strong></span><span class="chip" style="background:#FFE4E6;color:#BE123C;font-size:11px;padding:1px 7px">${esc(e.apsa)}</span></div>`).join('') : '<span class="muted" style="font-size:12px">Aucune évaluation Bac à venir.</span>'}
+      </div>
+      <div style="border-top:1px solid #F1F5F9;padding-top:6px">
+        <div style="font-size:11.5px;font-weight:700;color:#15803D;margin-bottom:3px">🏁 DERNIERS COURS D’APSA (ÉVALS FIN DE CYCLE · TOUTES CLASSES)</div>
+        ${combinedLasts.length ? combinedLasts.map(lc => `<div style="display:flex;justify-content:space-between;align-items:center;padding:2px 0"><span><strong>${frd(lc.date).slice(0, 5)}</strong> · <strong>${esc(lc.cls)}</strong> <small class="muted">${lc.per ? '(' + esc(lc.per) + ')' : ''}</small></span><span class="chip" style="background:#DCFCE7;color:#15803D;font-size:11px;padding:1px 7px">🏁 ${esc(lc.apsa)}</span></div>`).join('') : '<span class="muted" style="font-size:12px"> aucune fin de séquence à venir.</span>'}
+      </div>
+    </div>`;
+  return `<div class="card home-card" style="${span === 2 ? 'grid-column:1 / -1' : ''}"><div class="row" style="justify-content:space-between;align-items:center"><h2>Prochaines évaluations</h2>${homeOpenBtn('evaluations', 'Ouvrir')}</div>${body}</div>`;
+}
+
+/* Agrégation complète de tous les événements pour la rubrique Calendrier général */
 function collectSchoolCalendarEvents(opts = {}) {
   const includeLastCourse = !!opts.includeLastCourse;
   const clsFilter = (opts.clsFilter || '').trim();
   const profFilter = (opts.profFilter || '').trim();
+  const typeFilter = (opts.typeFilter || 'all').trim();
   const evts = [];
 
   // 1. Vacances scolaires
-  for (const [s, e, lbl] of ((CAL && CAL.vacances) || [])) {
-    evts.push({ date: s, dateFin: e, type: 'vacances', badge: '🏖️ Vacances', title: lbl, color: '#0369A1', bg: '#E0F2FE' });
+  for (const [s, e, lbl] of getSchoolVacances()) {
+    evts.push({ date: s, dateFin: e, type: 'vacances', catGroup: 'vacances', badge: '🏖️ Vacances', title: lbl, color: '#0369A1', bg: '#E0F2FE', link: '#calendrier' });
   }
   // 2. Jours fériés
-  for (const [d, lbl] of ((CAL && CAL.feries) || [])) {
-    evts.push({ date: d, type: 'ferie', badge: '🎉 Férié', title: lbl, color: '#B45309', bg: '#FEF3C7' });
+  for (const [d, lbl] of getSchoolFeries()) {
+    evts.push({ date: d, type: 'ferie', catGroup: 'vacances', badge: '🎉 Férié', title: lbl, color: '#B45309', bg: '#FEF3C7', link: '#calendrier' });
   }
   // 3. Fins de périodes (3h et 4h/2h)
   if (typeof getProgRythmes === 'function') {
     const ry = getProgRythmes();
     if (ry && ry.college) {
       for (const [pName, pFrom, pTo] of ry.college.per) {
-        evts.push({ date: pTo, type: 'periode', badge: '⏳ Fin ' + pName + ' (3h)', title: `Fin ${pName} · Classes à 3h (5e·4e·3e)`, color: '#6D28D9', bg: '#EDE9FE' });
+        evts.push({ date: pTo, type: 'periode', catGroup: 'periode', badge: '⏳ Fin ' + pName + ' (3h)', title: `Fin ${pName} · Classes à 3h (5e·4e·3e)`, color: '#6D28D9', bg: '#EDE9FE', link: '#programmation' });
       }
     }
     if (ry && ry.lycee) {
       for (const [pName, pFrom, pTo] of ry.lycee.per) {
-        evts.push({ date: pTo, type: 'periode', badge: '⏳ Fin ' + pName + ' (4h/2h)', title: `Fin ${pName} · Classes à 4h (6e) & 2h (Lycée)`, color: '#1D4ED8', bg: '#DBEAFE' });
+        evts.push({ date: pTo, type: 'periode', catGroup: 'periode', badge: '⏳ Fin ' + pName + ' (4h/2h)', title: `Fin ${pName} · Classes à 4h (6e) & 2h (Lycée)`, color: '#1D4ED8', bg: '#DBEAFE', link: '#programmation' });
       }
     }
   }
   // 4. Évaluations & CCF Bac (EVALS)
   for (const ev of (EVALS || [])) {
     if (!ev.date) continue;
-    if (clsFilter && ev.cls !== clsFilter) continue;
+    if (clsFilter && ev.cls !== clsFilter && ev.cls.replace(/ · menu \d/, '') !== clsFilter) continue;
     const isBac = /term|1a|1b|bac|ccf/i.test((ev.cls || '') + ' ' + (ev.note || ''));
     evts.push({
       date: ev.date,
       type: isBac ? 'bac' : 'eval',
-      badge: isBac ? '🎓 Éval Bac/Lycée' : '🎯 Éval',
+      catGroup: isBac ? 'bac' : 'last_apsa',
+      badge: isBac ? '🎓 Éval Bac' : '🎯 Éval',
       title: `${ev.cls} · ${ev.apsa}${ev.note ? ' (' + ev.note + ')' : ''}`,
       cls: ev.cls,
-      color: isBac ? '#BE123C' : '#9A3412',
-      bg: isBac ? '#FFE4E6' : '#FFEDD5'
+      color: isBac ? '#BE123C' : '#15803D',
+      bg: isBac ? '#FFE4E6' : '#DCFCE7',
+      link: isBac ? '#bac' : '#evaluations'
     });
   }
   // 5. PROZAP & Rencontres AS (REN().matchs)
@@ -4306,10 +4479,12 @@ function collectSchoolCalendarEvents(opts = {}) {
         date: m.date,
         dateFin: m.dateFin || '',
         type: isPz ? 'prozap' : 'as',
+        catGroup: 'as',
         badge: isPz ? '🏆 PROZAP' : (isEv ? '🎉 Événement AS' : '🏅 Match AS'),
         title: `${m.titre ? m.titre + ' · ' : ''}${m.sport || 'AS'} ${m.cat || ''}${adv && adv !== '—' ? ' vs ' + adv : ''}`.trim(),
         color: isPz ? '#4338CA' : '#047857',
-        bg: isPz ? '#E0E7FF' : '#D1FAE5'
+        bg: isPz ? '#E0E7FF' : '#D1FAE5',
+        link: '#rencontres'
       });
     }
   }
@@ -4317,38 +4492,38 @@ function collectSchoolCalendarEvents(opts = {}) {
   for (const p of (PROJ || [])) {
     for (const et of (p.etapes || [])) {
       if (et.date && /^\d{4}-\d{2}-\d{2}$/.test(et.date)) {
-        evts.push({ date: et.date, type: 'projet', badge: '🤝 Interdegré C3', title: `${p.t} · ${et.quoi}`, color: '#0F766E', bg: '#CCFBF1' });
+        evts.push({ date: et.date, type: 'projet', catGroup: 'projet', badge: '🤝 Projet C3', title: `${p.t} · ${et.quoi}`, color: '#0F766E', bg: '#CCFBF1', link: '#cycle3' });
       }
     }
   }
   for (const p of ((C3 && C3.projets) || [])) {
     if (p.date && /^\d{4}-\d{2}-\d{2}$/.test(p.date)) {
-      evts.push({ date: p.date, type: 'projet', badge: '🤝 Liaison C3', title: `${p.t}${p.classes ? ' (' + p.classes + ')' : ''}`, color: '#0F766E', bg: '#CCFBF1' });
+      evts.push({ date: p.date, type: 'projet', catGroup: 'projet', badge: '🤝 Liaison C3', title: `${p.t}${p.classes ? ' (' + p.classes + ')' : ''}`, color: '#0F766E', bg: '#CCFBF1', link: '#cycle3' });
     }
   }
   if (typeof asOrgCfg === 'function') {
     const ao = asOrgCfg();
     if (ao && ao.poDate) {
-      evts.push({ date: ao.poDate, type: 'projet', badge: '🏅 Portes ouvertes AS', title: `Portes ouvertes AS (${ao.poDebut || '13:00'}–${ao.poFin || '17:00'})`, color: '#047857', bg: '#D1FAE5' });
+      evts.push({ date: ao.poDate, type: 'projet', catGroup: 'as', badge: '🏅 Portes ouvertes AS', title: `Portes ouvertes AS (${ao.poDebut || '13:00'}–${ao.poFin || '17:00'})`, color: '#047857', bg: '#D1FAE5', link: '#as_mails' });
     }
   }
   // 7. Réunions EPS
   for (const r of (REU || [])) {
     if (!r.date) continue;
-    evts.push({ date: r.date, type: 'reunion', badge: '🗓️ Réunion EPS', title: r.titre || 'Réunion équipe EPS', color: '#334155', bg: '#F1F5F9' });
+    evts.push({ date: r.date, type: 'reunion', catGroup: 'reunion', badge: '🗓️ Réunion EPS', title: `${r.titre || 'Réunion équipe EPS'} (${(r.points || []).length} pt)`, color: '#334155', bg: '#E2E8F0', link: '#reunions' });
   }
   // 8. Jalons Coordo / Prof EPS personnalisés
   for (const j of getCoordoJalons()) {
     if (!j.date) continue;
     const catMap = {
-      bac: { b: '🎓 Bac / CCF', c: '#BE123C', bg: '#FFE4E6' },
-      conseil: { b: '📋 Conseil / Notes', c: '#6D28D9', bg: '#EDE9FE' },
-      projet: { b: '🤝 Événement / Projet', c: '#0F766E', bg: '#CCFBF1' },
-      daf: { b: '📦 Commande / DAF', c: '#B45309', bg: '#FEF3C7' }
-    }[j.cat] || { b: '📌 Jalon EPS', c: '#1D4ED8', bg: '#DBEAFE' };
-    evts.push({ id: j.id, isCustomJalon: true, date: j.date, type: j.cat || 'jalon', badge: catMap.b, title: j.titre, color: catMap.c, bg: catMap.bg });
+      bac: { b: '🎓 Bac / CCF', c: '#BE123C', bg: '#FFE4E6', g: 'bac' },
+      conseil: { b: '📋 Conseil / Notes', c: '#6D28D9', bg: '#EDE9FE', g: 'jalon' },
+      projet: { b: '🤝 Événement / Projet', c: '#0F766E', bg: '#CCFBF1', g: 'projet' },
+      daf: { b: '📦 Commande / DAF', c: '#B45309', bg: '#FEF3C7', g: 'jalon' }
+    }[j.cat] || { b: '📌 Jalon EPS', c: '#1D4ED8', bg: '#DBEAFE', g: 'jalon' };
+    evts.push({ id: j.id, isCustomJalon: true, date: j.date, type: j.cat || 'jalon', catGroup: catMap.g, badge: catMap.b, title: j.titre, color: catMap.c, bg: catMap.bg, link: '#calendrier' });
   }
-  // 9. Dernier cours dans chaque APSA par classe (uniquement en vue Mois !)
+  // 9. Dernier cours dans chaque APSA par classe (évaluations de fin de séquence)
   if (includeLastCourse) {
     const lasts = getLastApsaSessions();
     for (const lc of lasts) {
@@ -4357,257 +4532,23 @@ function collectSchoolCalendarEvents(opts = {}) {
       evts.push({
         date: lc.date,
         type: 'last_apsa',
-        badge: `🏁 Dernier cours ${lc.cls}`,
+        catGroup: 'last_apsa',
+        badge: `🏁 Éval / Fin ${lc.cls}`,
         title: `${lc.cls} · ${lc.apsa} (${lc.per})`,
         cls: lc.cls,
         apsa: lc.apsa,
         prof: lc.prof,
         color: '#15803D',
-        bg: '#DCFCE7'
+        bg: '#DCFCE7',
+        link: '#evaluations'
       });
     }
   }
-  return evts.sort((a, b) => a.date.localeCompare(b.date));
+  const filtered = typeFilter === 'all' ? evts : evts.filter(e => e.catGroup === typeFilter);
+  return filtered.sort((a, b) => a.date.localeCompare(b.date));
 }
 
-/* Rendu de l'encart principal : Échéances, Périodes (3h vs 4h/2h), Vacances & Calendrier (Mois / Année) */
-function renderEcheancesAndCalendarCard(now) {
-  const today = iso(now);
-  if (!HOME_UI.calMonth) HOME_UI.calMonth = today.slice(0, 7);
-  const ry = (typeof getProgRythmes === 'function') ? getProgRythmes() : { college: { per: [] }, lycee: { per: [] } };
-  const info3h = getPeriodCountdownInfo(ry.college ? ry.college.per : [], today);
-  const info4h2h = getPeriodCountdownInfo(ry.lycee ? ry.lycee.per : [], today);
-  const vacInfo = getNextVacancesInfo(today);
-
-  const fmtWeeks = (w, d) => {
-    if (d <= 0) return `Aujourd'hui !`;
-    if (w < 1) return `dans ${d} jour${d > 1 ? 's' : ''}`;
-    const wInt = Math.floor(w);
-    const remD = d - wInt * 7;
-    return `dans ${w} sem.` + (remD > 0 && wInt < 4 ? ` (${d} j)` : '');
-  };
-
-  const kpi3h = info3h ? `
-    <div style="background:linear-gradient(135deg,#F5F3FF,#EDE9FE);border:1.5px solid #C4B5FD;border-radius:12px;padding:12px 14px;display:flex;flex-direction:column;justify-content:space-between">
-      <div class="row" style="justify-content:space-between;align-items:center;gap:6px">
-        <span class="chip" style="background:#6D28D9;color:#fff;font-weight:700">Classes à 3h · 5e · 4e · 3e</span>
-        <span style="font-size:12px;font-weight:700;color:#5B21B6">${esc(info3h.pName)} / ${info3h.totalPeriods}</span>
-      </div>
-      <div style="margin:8px 0 4px">
-        <div style="font-size:12px;color:#4C1D95;font-weight:600">Prochaine fin de période (${esc(info3h.pName)}) : <strong>${frd(info3h.pTo)}</strong></div>
-        <div style="font-size:21px;font-weight:800;color:#4C1D95;margin-top:2px">⏳ ${info3h.teachWeeks} sem. de cours <span style="font-size:13px;font-weight:600;color:#6D28D9">(${fmtWeeks(info3h.calWeeks, info3h.diffDays)})</span></div>
-      </div>
-      <div style="font-size:11.5px;color:#5B21B6">Du ${frd(info3h.pFrom)} au ${frd(info3h.pTo)}${info3h.nextPer ? ` · Suivante : ${info3h.nextPer[0]} (${frd(info3h.nextPer[1])})` : ''}</div>
-    </div>` : '';
-
-  const kpi4h2h = info4h2h ? `
-    <div style="background:linear-gradient(135deg,#EFF6FF,#DBEAFE);border:1.5px solid #93C5FD;border-radius:12px;padding:12px 14px;display:flex;flex-direction:column;justify-content:space-between">
-      <div class="row" style="justify-content:space-between;align-items:center;gap:6px">
-        <span class="chip" style="background:#1D4ED8;color:#fff;font-weight:700">Classes à 4h (6e) & 2h (Lycée)</span>
-        <span style="font-size:12px;font-weight:700;color:#1E40AF">${esc(info4h2h.pName)} / ${info4h2h.totalPeriods}</span>
-      </div>
-      <div style="margin:8px 0 4px">
-        <div style="font-size:12px;color:#1E3A8A;font-weight:600">Prochaine fin de période (${esc(info4h2h.pName)}) : <strong>${frd(info4h2h.pTo)}</strong></div>
-        <div style="font-size:21px;font-weight:800;color:#1E3A8A;margin-top:2px">⏳ ${info4h2h.teachWeeks} sem. de cours <span style="font-size:13px;font-weight:600;color:#1D4ED8">(${fmtWeeks(info4h2h.calWeeks, info4h2h.diffDays)})</span></div>
-      </div>
-      <div style="font-size:11.5px;color:#1E40AF">Du ${frd(info4h2h.pFrom)} au ${frd(info4h2h.pTo)}${info4h2h.nextPer ? ` · Suivante : ${info4h2h.nextPer[0]} (${frd(info4h2h.nextPer[1])})` : ''}</div>
-    </div>` : '';
-
-  const kpiVac = vacInfo ? `
-    <div style="background:linear-gradient(135deg,#ECFEFF,#CFFAFE);border:1.5px solid #67E8F9;border-radius:12px;padding:12px 14px;display:flex;flex-direction:column;justify-content:space-between">
-      <div class="row" style="justify-content:space-between;align-items:center;gap:6px">
-        <span class="chip" style="background:#0E7490;color:#fff;font-weight:700">🏖️ ${vacInfo.active ? 'Vacances en cours' : 'Prochaines vacances'}</span>
-        <span style="font-size:12px;font-weight:700;color:#155E75">${frd(vacInfo.start)} → ${frd(vacInfo.end)}</span>
-      </div>
-      <div style="margin:8px 0 4px">
-        <div style="font-size:13px;color:#164E63;font-weight:700">${esc(vacInfo.label)}</div>
-        <div style="font-size:21px;font-weight:800;color:#0E7490;margin-top:2px">
-          ${vacInfo.active ? `Reprise dans ${vacInfo.diffDays} j` : `⏳ ${vacInfo.teachWeeks} sem. de cours <span style="font-size:13px;font-weight:600;color:#155E75">(${fmtWeeks(vacInfo.calWeeks, vacInfo.diffDays)})</span>`}
-        </div>
-      </div>
-      <div style="font-size:11.5px;color:#155E75">Du ${frd(vacInfo.start)} au ${frd(vacInfo.end)} inclus</div>
-    </div>` : '';
-
-  // Construction de la vue Mois ou Année
-  let calHTML = '';
-  if (HOME_UI.calMode === 'mois') {
-    const ym = HOME_UI.calMonth || today.slice(0, 7);
-    const [yrStr, moStr] = ym.split('-');
-    const yr = parseInt(yrStr, 10), mo = parseInt(moStr, 10) - 1;
-    const firstDay = new Date(yr, mo, 1);
-    const lastDay = new Date(yr, mo + 1, 0);
-    const monthStartIso = iso(firstDay), monthEndIso = iso(lastDay);
-    const monthNames = ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'];
-    const monthTitle = `${monthNames[mo]} ${yr}`;
-
-    const allEvts = collectSchoolCalendarEvents({
-      includeLastCourse: true,
-      clsFilter: HOME_UI.clsFilter,
-      profFilter: HOME_UI.profFilter
-    });
-    // Événements qui touchent ce mois
-    const monthEvts = allEvts.filter(e => {
-      const s = e.date, end = e.dateFin || e.date;
-      return s <= monthEndIso && end >= monthStartIso;
-    });
-
-    // Map par jour ISO du mois pour la grille
-    const byDay = {};
-    for (let d = 1; d <= lastDay.getDate(); d++) {
-      const ds = `${ym}-${pad(d)}`;
-      byDay[ds] = [];
-    }
-    for (const ev of monthEvts) {
-      const s = ev.date < monthStartIso ? monthStartIso : ev.date;
-      const end = (ev.dateFin && ev.dateFin > ev.date) ? (ev.dateFin > monthEndIso ? monthEndIso : ev.dateFin) : s;
-      for (let curD = fromIso(s); curD <= fromIso(end); curD = addDays(curD, 1)) {
-        const ds = iso(curD);
-        if (byDay[ds]) byDay[ds].push(ev);
-      }
-    }
-
-    const classesList = (CAL && Array.isArray(CAL.classes)) ? CAL.classes.map(c => c.c) : [];
-    const profsList = (typeof EQUIPE !== 'undefined' && Array.isArray(EQUIPE)) ? EQUIPE.map(p => p.nom) : [];
-
-    // Cellules du calendrier mensuel (Lundi = 0 ... Dimanche = 6)
-    const startDow = (firstDay.getDay() + 6) % 7;
-    let cells = '';
-    for (let i = 0; i < startDow; i++) cells += `<div style="background:#F8FAFC;border-radius:8px;min-height:76px;opacity:.5"></div>`;
-    for (let d = 1; d <= lastDay.getDate(); d++) {
-      const ds = `${ym}-${pad(d)}`;
-      const dayEvts = byDay[ds] || [];
-      const isToday = ds === today;
-      const isVac = dayEvts.some(e => e.type === 'vacances');
-      const isFerie = dayEvts.some(e => e.type === 'ferie');
-      const nonVacEvts = dayEvts.filter(e => e.type !== 'vacances');
-      const vacEvt = dayEvts.find(e => e.type === 'vacances');
-      cells += `<div style="background:${isToday ? '#EFF6FF' : isFerie ? '#FFFBEB' : isVac ? '#F0F9FF' : '#FFFFFF'};border:${isToday ? '2px solid #2563EB' : '1px solid #E2E8F0'};border-radius:8px;padding:5px 6px;min-height:78px;display:flex;flex-direction:column;gap:3px">
-        <div style="display:flex;justify-content:space-between;align-items:center">
-          <strong style="font-size:12.5px;color:${isToday ? '#1D4ED8' : '#0F172A'}">${d}</strong>
-          ${isToday ? '<span style="font-size:9.5px;background:#2563EB;color:#fff;padding:1px 5px;border-radius:99px;font-weight:700">Auj.</span>' : isVac ? `<span style="font-size:9.5px;color:#0369A1;font-weight:700">🏖️</span>` : ''}
-        </div>
-        ${vacEvt && d === parseInt(vacEvt.date.slice(8, 10), 10) ? `<div style="font-size:10px;background:${vacEvt.bg};color:${vacEvt.color};padding:1px 4px;border-radius:4px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis" title="${esc(vacEvt.title)}">🏖️ ${esc(vacEvt.title)}</div>` : ''}
-        ${nonVacEvts.slice(0, 3).map(e => `<div style="font-size:10px;background:${e.bg};color:${e.color};padding:1.5px 4px;border-radius:4px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis" title="${esc(e.badge + ' : ' + e.title)}">${esc(e.type === 'last_apsa' ? '🏁 ' + e.cls + ' ' + e.apsa : e.badge.split(' ')[0] + ' ' + e.title)}</div>`).join('')}
-        ${nonVacEvts.length > 3 ? `<div style="font-size:10px;color:#64748B;font-weight:600">+${nonVacEvts.length - 3} autre(s)</div>` : ''}
-      </div>`;
-    }
-
-    const listEvts = monthEvts.filter(e => e.type !== 'vacances' || e.date >= monthStartIso);
-    calHTML = `
-      <div style="margin-top:12px;border-top:1px solid #E2E8F0;padding-top:12px">
-        <div class="row" style="justify-content:space-between;align-items:center;margin-bottom:10px;gap:8px">
-          <div class="row" style="gap:6px;align-items:center">
-            <button class="btn" type="button" id="hcal_prev" style="padding:5px 10px">◀</button>
-            <strong style="font-size:16px;min-width:145px;text-align:center">${esc(monthTitle)}</strong>
-            <button class="btn" type="button" id="hcal_next" style="padding:5px 10px">▶</button>
-            <button class="btn" type="button" id="hcal_today" style="padding:5px 10px;font-size:12px">Ce mois-ci</button>
-          </div>
-          <div class="row" style="gap:6px;align-items:center">
-            <select id="hcal_cls" style="padding:5px 8px;font-size:12.5px;border-radius:8px;border:1px solid #CBD5E1">
-              <option value="">Toutes les classes (fins d'APSA & évals)</option>
-              ${classesList.map(c => `<option value="${esc(c)}" ${HOME_UI.clsFilter === c ? 'selected' : ''}>Classe ${esc(c)}</option>`).join('')}
-            </select>
-            <select id="hcal_prof" style="padding:5px 8px;font-size:12.5px;border-radius:8px;border:1px solid #CBD5E1">
-              <option value="">Tous les profs EPS</option>
-              ${profsList.map(p => `<option value="${esc(p)}" ${HOME_UI.profFilter === p ? 'selected' : ''}>Prof : ${esc(p)}</option>`).join('')}
-            </select>
-          </div>
-        </div>
-        <div style="display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:5px;margin-bottom:6px;text-align:center;font-size:11.5px;font-weight:700;color:#475569">
-          <div>Lun</div><div>Mar</div><div>Mer</div><div>Jeu</div><div>Ven</div><div>Sam</div><div>Dim</div>
-        </div>
-        <div style="display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:5px">
-          ${cells}
-        </div>
-        <details style="margin-top:10px" open>
-          <summary style="cursor:pointer;font-weight:700;font-size:13px;color:#1E293B">📋 Détail chronologique du mois (${monthEvts.length} échéance${monthEvts.length > 1 ? 's' : ''} : vacances, PROZAP, évals Bac, projets C3 & derniers cours APSA)</summary>
-          <div style="margin-top:8px;display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:6px;max-height:240px;overflow-y:auto;padding-right:4px">
-            ${monthEvts.length ? monthEvts.map(e => `<div style="display:flex;align-items:center;justify-content:space-between;gap:6px;background:${e.bg};color:${e.color};padding:6px 10px;border-radius:8px;font-size:12px">
-              <div><strong>${frd(e.date)}${e.dateFin && e.dateFin !== e.date ? ' → ' + frd(e.dateFin) : ''}</strong> · <span style="font-weight:700">${esc(e.badge)}</span> : ${esc(e.title)}</div>
-              ${e.isCustomJalon ? `<button class="btn" type="button" data-del-jalon="${esc(e.id)}" style="padding:1px 6px;font-size:11px;background:#fff;color:#B42318">✕</button>` : ''}
-            </div>`).join('') : '<span class="muted">Aucun événement sur ce mois avec les filtres actuels.</span>'}
-          </div>
-        </details>
-      </div>`;
-  } else if (HOME_UI.calMode === 'annee') {
-    // Vue Année scolaire (Septembre -> Juillet) sans les derniers cours de chaque classe
-    const allYearEvts = collectSchoolCalendarEvents({ includeLastCourse: false });
-    const startYear = (CAL && CAL.semaines && CAL.semaines.length) ? parseInt(CAL.semaines[0].debut.slice(0, 4), 10) : 2026;
-    const monthsOrder = [
-      [startYear, 8, 'Septembre'], [startYear, 9, 'Octobre'], [startYear, 10, 'Novembre'], [startYear, 11, 'Décembre'],
-      [startYear + 1, 0, 'Janvier'], [startYear + 1, 1, 'Février'], [startYear + 1, 2, 'Mars'], [startYear + 1, 3, 'Avril'],
-      [startYear + 1, 4, 'Mai'], [startYear + 1, 5, 'Juin'], [startYear + 1, 6, 'Juillet']
-    ];
-    calHTML = `
-      <div style="margin-top:12px;border-top:1px solid #E2E8F0;padding-top:12px">
-        <div class="muted" style="font-size:12px;margin-bottom:10px">Vue panoramique de l’année scolaire ${startYear}–${startYear + 1} (vacances, jours fériés, fins de périodes 3h & 4h/2h, évaluations Bac, projets interdegrés Cycle 3, PROZAP et jalons Coordo). <em>Clique sur un mois pour l’ouvrir en vue Mois avec les derniers cours par APSA.</em></div>
-        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:10px">
-          ${monthsOrder.map(([y, mIdx, mName]) => {
-            const ym = `${y}-${pad(mIdx + 1)}`;
-            const mStart = `${ym}-01`, mEnd = `${ym}-31`;
-            const mEvts = allYearEvts.filter(e => {
-              const s = e.date, end = e.dateFin || e.date;
-              return s <= mEnd && end >= mStart;
-            });
-            const isCurM = ym === today.slice(0, 7);
-            return `<div class="card" style="margin:0;padding:10px 12px;border:${isCurM ? '2px solid #2563EB' : '1px solid #E2E8F0'};background:${isCurM ? '#F8FAFC' : '#fff'}">
-              <div class="row" style="justify-content:space-between;align-items:center;margin-bottom:6px">
-                <strong style="font-size:14px;color:${isCurM ? '#1D4ED8' : '#0F172A'}">${mName} ${y}</strong>
-                <button class="btn" type="button" data-open-ym="${ym}" style="padding:2px 8px;font-size:11px">Voir mois →</button>
-              </div>
-              <div style="display:flex;flex-direction:column;gap:4px;max-height:175px;overflow-y:auto">
-                ${mEvts.length ? mEvts.map(e => `<div style="font-size:11.5px;background:${e.bg};color:${e.color};padding:3px 6px;border-radius:6px;line-height:1.3">
-                  <strong>${e.date.slice(8, 10)}/${e.date.slice(5, 7)}${e.dateFin && e.dateFin !== e.date ? '→' + e.dateFin.slice(8, 10) + '/' + e.dateFin.slice(5, 7) : ''}</strong> · <strong>${esc(e.badge)}</strong> : ${esc(e.title)}
-                </div>`).join('') : '<span class="muted" style="font-size:11.5px">Aucun jalon majeur enregistré.</span>'}
-              </div>
-            </div>`;
-          }).join('')}
-        </div>
-      </div>`;
-  }
-
-  const addJalonHTML = HOME_UI.showAddJalon ? `
-    <div style="margin-top:10px;background:#F8FAFC;border:1px solid #CBD5E1;border-radius:10px;padding:10px 12px">
-      <div style="font-weight:700;font-size:13px;margin-bottom:6px">➕ Ajouter un événement au calendrier EPS (Jalon Coordo, PROZAP, Éval Bac, Projet C3)</div>
-      <div class="row" style="align-items:flex-end;gap:8px">
-        <label class="f" style="width:175px">Catégorie<select id="hj_type">
-          <option value="prozap">🏆 Compétition PROZAP (AS)</option>
-          <option value="bac">🎓 Évaluation / Commission Bac</option>
-          <option value="conseil">📋 Conseil de classe / Arrêt notes</option>
-          <option value="projet">🤝 Projet interdegré / Événement</option>
-          <option value="daf">📦 Échéance Commande / DAF</option>
-        </select></label>
-        <label class="f" style="width:140px">Date début<input type="date" id="hj_date" value="${today}"></label>
-        <label class="f" style="width:140px">Date fin (opt.)<input type="date" id="hj_datefin" value=""></label>
-        <label class="f" style="flex:1 1 220px">Intitulé / Sport / Classe<input type="text" id="hj_titre" placeholder="Ex. PROZAP Basket Séoul, Arrêt des notes T2, Cross interdegré…"></label>
-        <button class="btn go" type="button" id="hj_save">Enregistrer</button>
-      </div>
-    </div>` : '';
-
-  return `<div class="card home-card" style="grid-column:1 / -1">
-    <div class="row" style="justify-content:space-between;align-items:center;gap:8px;margin-bottom:10px">
-      <div>
-        <h2 style="margin:0">⏳ Échéances, Périodes, Vacances & Calendrier EPS</h2>
-        <span class="muted" style="font-size:12px">Décompte différencié classes à 3h (4 périodes) vs 4h/2h (3 périodes), prochaines vacances, PROZAP, Bac et dernier cours par APSA.</span>
-      </div>
-      <div class="row" style="gap:6px">
-        <button class="btn ${HOME_UI.calMode === 'synthese' ? 'on' : ''}" type="button" data-hcal-mode="synthese" style="padding:6px 10px;font-size:12.5px">📋 Synthèse seule</button>
-        <button class="btn ${HOME_UI.calMode === 'mois' ? 'on' : ''}" type="button" data-hcal-mode="mois" style="padding:6px 10px;font-size:12.5px">📅 Calendrier du Mois</button>
-        <button class="btn ${HOME_UI.calMode === 'annee' ? 'on' : ''}" type="button" data-hcal-mode="annee" style="padding:6px 10px;font-size:12.5px">🗓️ Calendrier de l’Année</button>
-        <button class="btn" type="button" id="hj_toggle" style="padding:6px 10px;font-size:12.5px">➕ Jalon / PROZAP</button>
-      </div>
-    </div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:10px">
-      ${kpi3h}
-      ${kpi4h2h}
-      ${kpiVac}
-    </div>
-    ${addJalonHTML}
-    ${calHTML}
-  </div>`;
-}
-
-/* Rendu de l'assistant Coordo & Prof EPS (fins de séquence à venir, rappels métier, mémo rapide) */
+/* Rendu de l'assistant Coordo & Prof EPS (utilisé dans la rubrique Calendrier et en option sur l'Accueil) */
 function renderCoordoAssistantCard(today) {
   const in14Days = iso(addDays(fromIso(today), 14));
   const upcomingLasts = getLastApsaSessions().filter(x => x.date >= today && x.date <= in14Days);
@@ -4618,12 +4559,12 @@ function renderCoordoAssistantCard(today) {
 
   return `<div class="card home-card">
     <div class="row" style="justify-content:space-between;align-items:center">
-      <h2>🧭 Assistant Coordo & Prof d’EPS</h2>
+      <h2>🧭 Assistant Coordo & Check-list EPS</h2>
       ${homeOpenBtn('programmation', 'Programmation')}
     </div>
     <div style="display:flex;flex-direction:column;gap:8px;font-size:13px">
       <div style="background:#F0FDF4;border:1px solid #BBF7D0;border-radius:8px;padding:8px 10px">
-        <strong style="color:#166534">🏁 Derniers cours d’APSA dans les 14 prochains jours (${upcomingLasts.length}) :</strong>
+        <strong style="color:#166534">🏁 Évals de fin de cycle (Derniers cours d’APSA dans les 14 prochains jours : ${upcomingLasts.length}) :</strong>
         ${upcomingLasts.length ? `<div style="margin-top:4px;display:flex;flex-wrap:wrap;gap:4px">${upcomingLasts.slice(0, 8).map(x => `<span class="chip" style="background:#DCFCE7;color:#15803D;font-size:11.5px"><strong>${frd(x.date)}</strong> · ${esc(x.cls)} · ${esc(x.apsa)}</span>`).join('')}</div>` : `<div class="muted" style="font-size:12px;margin-top:2px">Aucune fin de séquence APSA dans les 14 prochains jours.</div>`}
       </div>
       <div style="background:#EEF2FF;border:1px solid #C7D2FE;border-radius:8px;padding:8px 10px">
@@ -4654,12 +4595,444 @@ function renderCoordoAssistantCard(today) {
   </div>`;
 }
 
+/* ================= RUBRIQUE CALENDRIER GÉNÉRAL (VIEWS.calendrier) ================= */
+VIEWS.calendrier = function () {
+  const app = $('#app'), now = new Date(), today = iso(now);
+  if (!CAL_VIEW_UI.month) CAL_VIEW_UI.month = today.slice(0, 7);
+  const ry = (typeof getProgRythmes === 'function') ? getProgRythmes() : { college: { per: [] }, lycee: { per: [] } };
+  const i3 = getPeriodCountdownInfo(ry.college ? ry.college.per : [], today);
+  const i4 = getPeriodCountdownInfo(ry.lycee ? ry.lycee.per : [], today);
+  const iv = getNextVacancesInfo(today);
+  const gem = LS.get('gemini', {}) || {};
+
+  const gaugeCard = (title, badge, mainTxt, subTxt, pct, col, bg) => `
+    <div class="card" style="margin:0;padding:12px 14px;border-left:4px solid ${col}">
+      <div class="row" style="justify-content:space-between;align-items:center;gap:6px">
+        <strong style="font-size:13.5px;color:#0F172A">${esc(title)}</strong>
+        <span class="chip" style="background:${bg};color:${col};font-weight:700;font-size:11.5px">${esc(badge)}</span>
+      </div>
+      <div style="font-size:19px;font-weight:800;color:${col};margin:6px 0 4px">${esc(mainTxt)}</div>
+      <div style="height:8px;background:#E2E8F0;border-radius:99px;overflow:hidden;margin-bottom:5px">
+        <div style="width:${pct}%;height:100%;background:${col};border-radius:99px"></div>
+      </div>
+      <div class="muted" style="font-size:11.5px">${esc(subTxt)}</div>
+    </div>`;
+
+  const filterPills = [
+    ['all', 'Tout voir'],
+    ['vacances', '🏖️ Vacances & Fériés'],
+    ['periode', '⏳ Fins de périodes'],
+    ['bac', '🎓 Évals Bac'],
+    ['last_apsa', '🏁 Derniers cours APSA (Évals)'],
+    ['reunion', '🗓️ Réunions EPS'],
+    ['as', '🏆 Matchs AS & PROZAP'],
+    ['projet', '🤝 Projets Cycle 3'],
+    ['jalon', '📌 Jalons Coordo']
+  ];
+
+  // Contenu principal selon le mode : Mois, Année ou Liste
+  let calBodyHTML = '';
+  const classesList = (CAL && Array.isArray(CAL.classes)) ? [...new Set(CAL.classes.map(c => c.c))] : [];
+  const profsList = (typeof EQUIPE !== 'undefined' && Array.isArray(EQUIPE)) ? EQUIPE.map(p => p.nom) : [];
+
+  if (CAL_VIEW_UI.mode === 'mois') {
+    const ym = CAL_VIEW_UI.month || today.slice(0, 7);
+    const [yrStr, moStr] = ym.split('-');
+    const yr = parseInt(yrStr, 10), mo = parseInt(moStr, 10) - 1;
+    const firstDay = new Date(yr, mo, 1);
+    const lastDay = new Date(yr, mo + 1, 0);
+    const monthStartIso = iso(firstDay), monthEndIso = iso(lastDay);
+    const monthNames = ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'];
+    const monthTitle = `${monthNames[mo]} ${yr}`;
+
+    const allEvts = collectSchoolCalendarEvents({
+      includeLastCourse: true,
+      clsFilter: CAL_VIEW_UI.clsFilter,
+      profFilter: CAL_VIEW_UI.profFilter,
+      typeFilter: CAL_VIEW_UI.typeFilter
+    });
+    const monthEvts = allEvts.filter(e => {
+      const s = e.date, end = e.dateFin || e.date;
+      return s <= monthEndIso && end >= monthStartIso;
+    });
+
+    const byDay = {};
+    for (let d = 1; d <= lastDay.getDate(); d++) byDay[`${ym}-${pad(d)}`] = [];
+    for (const ev of monthEvts) {
+      const s = ev.date < monthStartIso ? monthStartIso : ev.date;
+      const end = (ev.dateFin && ev.dateFin > ev.date) ? (ev.dateFin > monthEndIso ? monthEndIso : ev.dateFin) : s;
+      for (let curD = fromIso(s); curD <= fromIso(end); curD = addDays(curD, 1)) {
+        const ds = iso(curD);
+        if (byDay[ds]) byDay[ds].push(ev);
+      }
+    }
+
+    const startDow = (firstDay.getDay() + 6) % 7;
+    let cells = '';
+    for (let i = 0; i < startDow; i++) cells += `<div style="background:#F8FAFC;border-radius:8px;min-height:84px;opacity:.45"></div>`;
+    for (let d = 1; d <= lastDay.getDate(); d++) {
+      const ds = `${ym}-${pad(d)}`;
+      const dayEvts = byDay[ds] || [];
+      const isToday = ds === today;
+      const isVac = dayEvts.some(e => e.type === 'vacances');
+      const isFerie = dayEvts.some(e => e.type === 'ferie');
+      const nonVacEvts = dayEvts.filter(e => e.type !== 'vacances');
+      const vacEvt = dayEvts.find(e => e.type === 'vacances');
+      cells += `<div style="background:${isToday ? '#EFF6FF' : isFerie ? '#FFFBEB' : isVac ? '#F0F9FF' : '#FFFFFF'};border:${isToday ? '2px solid #2563EB' : '1px solid #E2E8F0'};border-radius:8px;padding:6px;min-height:86px;display:flex;flex-direction:column;gap:3px">
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <strong style="font-size:13px;color:${isToday ? '#1D4ED8' : '#0F172A'}">${d}</strong>
+          ${isToday ? '<span style="font-size:9.5px;background:#2563EB;color:#fff;padding:1px 5px;border-radius:99px;font-weight:700">Auj.</span>' : isVac ? `<span style="font-size:10px;color:#0369A1;font-weight:700">🏖️</span>` : ''}
+        </div>
+        ${vacEvt && d === parseInt(vacEvt.date.slice(8, 10), 10) ? `<div style="font-size:10.5px;background:${vacEvt.bg};color:${vacEvt.color};padding:1.5px 5px;border-radius:4px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis" title="${esc(vacEvt.title)}">🏖️ ${esc(vacEvt.title)}</div>` : ''}
+        ${nonVacEvts.slice(0, 4).map(e => `<a href="${e.link || '#calendrier'}" style="text-decoration:none;font-size:10.5px;background:${e.bg};color:${e.color};padding:2px 5px;border-radius:4px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:block" title="${esc(e.badge + ' : ' + e.title)}">${esc(e.type === 'last_apsa' ? '🏁 ' + e.cls + ' ' + e.apsa : e.badge.split(' ')[0] + ' ' + e.title)}</a>`).join('')}
+        ${nonVacEvts.length > 4 ? `<div style="font-size:10px;color:#64748B;font-weight:700">+${nonVacEvts.length - 4} autre(s)</div>` : ''}
+      </div>`;
+    }
+
+    calBodyHTML = `
+      <div class="row" style="justify-content:space-between;align-items:center;margin-bottom:10px;gap:8px">
+        <div class="row" style="gap:6px;align-items:center">
+          <button class="btn" type="button" id="cv_prev" style="padding:5px 10px">◀</button>
+          <strong style="font-size:17px;min-width:155px;text-align:center">${esc(monthTitle)}</strong>
+          <button class="btn" type="button" id="cv_next" style="padding:5px 10px">▶</button>
+          <button class="btn" type="button" id="cv_today" style="padding:5px 10px;font-size:12px">Ce mois-ci</button>
+        </div>
+        <div class="row" style="gap:6px;align-items:center">
+          <select id="cv_cls" style="padding:5px 8px;font-size:12.5px;border-radius:8px;border:1px solid #CBD5E1">
+            <option value="">Toutes les classes (derniers cours & évals)</option>
+            ${classesList.map(c => `<option value="${esc(c)}" ${CAL_VIEW_UI.clsFilter === c ? 'selected' : ''}>Classe ${esc(c)}</option>`).join('')}
+          </select>
+          <select id="cv_prof" style="padding:5px 8px;font-size:12.5px;border-radius:8px;border:1px solid #CBD5E1">
+            <option value="">Tous les profs EPS</option>
+            ${profsList.map(p => `<option value="${esc(p)}" ${CAL_VIEW_UI.profFilter === p ? 'selected' : ''}>Prof : ${esc(p)}</option>`).join('')}
+          </select>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:6px;margin-bottom:6px;text-align:center;font-size:12px;font-weight:700;color:#475569">
+        <div>Lun</div><div>Mar</div><div>Mer</div><div>Jeu</div><div>Ven</div><div>Sam</div><div>Dim</div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:6px">
+        ${cells}
+      </div>
+      <div style="margin-top:14px;border-top:1px solid #E2E8F0;padding-top:12px">
+        <strong style="font-size:13.5px;color:#0F172A">📋 Tous les événements du mois (${monthEvts.length}) :</strong>
+        <div style="margin-top:8px;display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:6px">
+          ${monthEvts.length ? monthEvts.map(e => `<div style="display:flex;align-items:center;justify-content:space-between;gap:6px;background:${e.bg};color:${e.color};padding:7px 10px;border-radius:8px;font-size:12.5px">
+            <a href="${e.link || '#calendrier'}" style="color:inherit;text-decoration:none;flex:1"><strong>${frd(e.date)}${e.dateFin && e.dateFin !== e.date ? ' → ' + frd(e.dateFin) : ''}</strong> · <strong>${esc(e.badge)}</strong> : ${esc(e.title)}</a>
+            ${e.isCustomJalon ? `<button class="btn" type="button" data-cv-deljalon="${esc(e.id)}" style="padding:1px 6px;font-size:11px;background:#fff;color:#B42318">✕</button>` : ''}
+          </div>`).join('') : '<span class="muted">Aucun événement sur ce mois avec les filtres sélectionnés.</span>'}
+        </div>
+      </div>`;
+  } else if (CAL_VIEW_UI.mode === 'annee') {
+    const allYearEvts = collectSchoolCalendarEvents({
+      includeLastCourse: false,
+      typeFilter: CAL_VIEW_UI.typeFilter
+    });
+    const startYear = (CAL && CAL.semaines && CAL.semaines.length) ? parseInt(CAL.semaines[0].debut.slice(0, 4), 10) : 2026;
+    const monthsOrder = [
+      [startYear, 8, 'Septembre'], [startYear, 9, 'Octobre'], [startYear, 10, 'Novembre'], [startYear, 11, 'Décembre'],
+      [startYear + 1, 0, 'Janvier'], [startYear + 1, 1, 'Février'], [startYear + 1, 2, 'Mars'], [startYear + 1, 3, 'Avril'],
+      [startYear + 1, 4, 'Mai'], [startYear + 1, 5, 'Juin'], [startYear + 1, 6, 'Juillet']
+    ];
+    calBodyHTML = `
+      <div class="muted" style="font-size:12.5px;margin-bottom:10px">Vue panoramique de l’année scolaire ${startYear}–${startYear + 1} (vacances, jours fériés, fins de périodes 3h & 4h/2h, évaluations Bac, réunions EPS, matchs AS & PROZAP, projets Cycle 3). <em>Clique sur « Voir mois → » pour afficher le détail mensuel et les derniers cours d’APSA par classe.</em></div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(265px,1fr));gap:12px">
+        ${monthsOrder.map(([y, mIdx, mName]) => {
+          const ym = `${y}-${pad(mIdx + 1)}`;
+          const mStart = `${ym}-01`, mEnd = `${ym}-31`;
+          const mEvts = allYearEvts.filter(e => {
+            const s = e.date, end = e.dateFin || e.date;
+            return s <= mEnd && end >= mStart;
+          });
+          const isCurM = ym === today.slice(0, 7);
+          return `<div class="card" style="margin:0;padding:10px 12px;border:${isCurM ? '2px solid #2563EB' : '1px solid #E2E8F0'};background:${isCurM ? '#F8FAFC' : '#fff'}">
+            <div class="row" style="justify-content:space-between;align-items:center;margin-bottom:6px">
+              <strong style="font-size:14.5px;color:${isCurM ? '#1D4ED8' : '#0F172A'}">${mName} ${y}</strong>
+              <button class="btn" type="button" data-cv-openym="${ym}" style="padding:2px 8px;font-size:11px">Voir mois →</button>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:4px;max-height:190px;overflow-y:auto">
+              ${mEvts.length ? mEvts.map(e => `<a href="${e.link || '#calendrier'}" style="text-decoration:none;font-size:11.5px;background:${e.bg};color:${e.color};padding:3.5px 6px;border-radius:6px;line-height:1.3;display:block">
+                <strong>${e.date.slice(8, 10)}/${e.date.slice(5, 7)}${e.dateFin && e.dateFin !== e.date ? '→' + e.dateFin.slice(8, 10) + '/' + e.dateFin.slice(5, 7) : ''}</strong> · <strong>${esc(e.badge)}</strong> : ${esc(e.title)}
+              </a>`).join('') : '<span class="muted" style="font-size:11.5px">Aucun événement majeur.</span>'}
+            </div>
+          </div>`;
+        }).join('')}
+      </div>`;
+  } else {
+    // Mode Liste chronologique complète
+    const allEvts = collectSchoolCalendarEvents({
+      includeLastCourse: true,
+      clsFilter: CAL_VIEW_UI.clsFilter,
+      profFilter: CAL_VIEW_UI.profFilter,
+      typeFilter: CAL_VIEW_UI.typeFilter
+    }).filter(e => (e.dateFin || e.date) >= today);
+    calBodyHTML = `
+      <div style="display:flex;flex-direction:column;gap:6px;max-height:540px;overflow-y:auto">
+        ${allEvts.length ? allEvts.map(e => `<div style="display:flex;align-items:center;justify-content:space-between;gap:8px;background:${e.bg};color:${e.color};padding:8px 12px;border-radius:8px;font-size:13px">
+          <a href="${e.link || '#calendrier'}" style="color:inherit;text-decoration:none;flex:1"><strong>${frd(e.date)}${e.dateFin && e.dateFin !== e.date ? ' → ' + frd(e.dateFin) : ''}</strong> · <strong>${esc(e.badge)}</strong> : ${esc(e.title)}</a>
+          ${e.isCustomJalon ? `<button class="btn" type="button" data-cv-deljalon="${esc(e.id)}" style="padding:1px 6px;font-size:11px;background:#fff;color:#B42318">✕</button>` : `<a href="${e.link || '#calendrier'}" class="btn" style="padding:2px 8px;font-size:11px;text-decoration:none">Ouvrir →</a>`}
+        </div>`).join('') : '<span class="muted">Aucune échéance à venir avec ce filtre.</span>'}
+      </div>`;
+  }
+
+  const addEventPanelHTML = CAL_VIEW_UI.showAdd ? `
+    <div class="card" style="background:#F8FAFC;border:2px solid #2563EB">
+      <div class="row" style="justify-content:space-between;align-items:center">
+        <h2 style="margin:0">➕ Ajouter un événement sur le Calendrier général</h2>
+        <button class="btn" type="button" id="cv_add_close">Fermer</button>
+      </div>
+      <div class="row" style="align-items:flex-end;gap:8px">
+        <label class="f" style="width:210px">Type d’événement<select id="cv_add_type">
+          <option value="prozap">🏆 Compétition PROZAP (AS)</option>
+          <option value="match">🏅 Match AS</option>
+          <option value="reunion">🗓️ Réunion d’équipe EPS</option>
+          <option value="bac">🎓 Évaluation / Commission Bac</option>
+          <option value="conseil">📋 Conseil de classe / Arrêt des notes</option>
+          <option value="projet">🤝 Projet interdegré / Événement lycée</option>
+          <option value="daf">📦 Échéance Commande / DAF</option>
+        </select></label>
+        <label class="f" style="width:140px">Date début<input type="date" id="cv_add_date" value="${today}"></label>
+        <label class="f" style="width:140px">Date fin (opt.)<input type="date" id="cv_add_datefin" value=""></label>
+        <label class="f" style="flex:1 1 240px">Intitulé / Sport / Détail<input type="text" id="cv_add_titre" placeholder="Ex. PROZAP Basket Séoul, Réunion bilan P1, Cross C3…"></label>
+        <button class="btn go" type="button" id="cv_add_save">Enregistrer dans le calendrier</button>
+      </div>
+    </div>` : '';
+
+  const newYearWizardHTML = CAL_VIEW_UI.showNewYearProc ? `
+    <div class="card" style="background:linear-gradient(135deg,#F5F3FF,#EFF6FF);border:2px solid #7C3AED">
+      <div class="row" style="justify-content:space-between;align-items:center">
+        <div>
+          <h2 style="margin:0;color:#4C1D95">🪄 Procédure de début d’année & Lecture IA (Gemini) du Calendrier PDF</h2>
+          <span class="muted">Prépare une nouvelle année scolaire ou importe en 1 clic le PDF du calendrier officiel du lycée (vacances, fériés, événements, conseils, PROZAP).</span>
+        </div>
+        <button class="btn" type="button" id="cv_ny_close">Fermer</button>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:10px;margin-top:6px">
+        <div style="background:#fff;border:1px solid #DDD6FE;border-radius:10px;padding:12px">
+          <strong style="color:#5B21B6">1️⃣ Créer ou basculer sur l’année scolaire</strong>
+          <p class="muted" style="font-size:12px;margin:6px 0">Utilise la barre bleue « Année scolaire » tout en haut pour créer une nouvelle année (en copiant l’année précédente ou en partant d’une année vierge).</p>
+        </div>
+        <div style="background:#fff;border:1px solid #DDD6FE;border-radius:10px;padding:12px">
+          <strong style="color:#5B21B6">2️⃣ Importer le PDF du calendrier avec Gemini</strong>
+          <p class="muted" style="font-size:12px;margin:6px 0">Charge le PDF (ou une photo) du calendrier officiel du lycée ou du calendrier des événements : Gemini place automatiquement les vacances, fériés, jalons et PROZAP !</p>
+          <div class="row" style="gap:6px;margin-top:6px">
+            <label class="btn blue" style="cursor:pointer;font-size:12px;display:inline-flex;align-items:center;gap:6px">
+              📄 Charger PDF / Image Calendrier avec Gemini
+              <input type="file" id="cv_pdf_gemini" accept=".pdf,image/*" style="display:none">
+            </label>
+            <a href="#etab" class="btn" style="font-size:11.5px;text-decoration:none">🔑 Clé Gemini (${gem.key ? 'OK ✓' : 'à configurer'})</a>
+          </div>
+        </div>
+        <div style="background:#fff;border:1px solid #DDD6FE;border-radius:10px;padding:12px">
+          <strong style="color:#5B21B6">3️⃣ Vérifier les périodes (3h vs 4h/2h) & Générer l’EDT</strong>
+          <p class="muted" style="font-size:12px;margin:6px 0">Ajuste ensuite les dates des 4 périodes (classes à 3h) et des 3 périodes (classes à 4h/2h) dans Programmation, puis lance le Générateur.</p>
+          <div class="row" style="gap:6px;margin-top:6px">
+            <a href="#programmation" class="btn" style="font-size:12px;text-decoration:none">📋 Périodes & Programmation →</a>
+            <a href="#generateur" class="btn" style="font-size:12px;text-decoration:none">⚡ Générateur →</a>
+          </div>
+        </div>
+      </div>
+    </div>` : '';
+
+  app.innerHTML = `<main>
+    ${schoolYearBarHTML()}
+    <div class="row" style="justify-content:space-between;align-items:center;gap:10px">
+      <div>
+        <h1 style="margin:0">📅 Calendrier général & Échéances EPS</h1>
+        <span class="muted">Vacances, fins de périodes (3h et 4h/2h), derniers cours d’APSA (évals fin de cycle), évaluations Bac, réunions EPS, matchs AS & PROZAP, projets Cycle 3.</span>
+      </div>
+      <div class="row" style="gap:6px">
+        <label class="btn blue" style="cursor:pointer;display:inline-flex;align-items:center;gap:6px" title="Importer un calendrier scolaire ou une liste d'événements en PDF / image grâce à l'IA Gemini">
+          📄 Importer PDF avec Gemini
+          <input type="file" id="cv_pdf_top" accept=".pdf,image/*" style="display:none">
+        </label>
+        <button class="btn" type="button" id="cv_ny_btn">🪄 Procédure Nouvelle Année</button>
+        <button class="btn go" type="button" id="cv_add_btn">➕ Ajouter un événement</button>
+      </div>
+    </div>
+
+    ${newYearWizardHTML}
+    ${addEventPanelHTML}
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px">
+      ${i3 ? gaugeCard('Classes à 3h (5e · 4e · 3e)', `${i3.pName} / ${i3.totalPeriods}`, `⏳ ${i3.teachWeeks} sem. de cours restantes`, `Fin de ${i3.pName} le ${frd(i3.pTo)} (du ${frd(i3.pFrom)} au ${frd(i3.pTo)})`, i3.pct, '#6D28D9', '#EDE9FE') : ''}
+      ${i4 ? gaugeCard('Classes à 4h (6e) & 2h (Lycée)', `${i4.pName} / ${i4.totalPeriods}`, `⏳ ${i4.teachWeeks} sem. de cours restantes`, `Fin de ${i4.pName} le ${frd(i4.pTo)} (du ${frd(i4.pFrom)} au ${frd(i4.pTo)})`, i4.pct, '#1D4ED8', '#DBEAFE') : ''}
+      ${iv ? gaugeCard(iv.label, '🏖️ Vacances', iv.active ? `Vacances en cours (${iv.diffDays} j)` : `⏳ Dans ${iv.teachWeeks} sem. de cours (${iv.calWeeks} sem.)`, `Du ${frd(iv.start)} au ${frd(iv.end)} inclus`, iv.pct, '#0E7490', '#CFFAFE') : ''}
+    </div>
+
+    <div class="card">
+      <div class="row" style="justify-content:space-between;align-items:center;gap:8px;margin-bottom:10px">
+        <div class="row" style="gap:6px">
+          <button class="btn ${CAL_VIEW_UI.mode === 'mois' ? 'on' : ''}" type="button" data-cvmode="mois">📅 Vue Mois (avec derniers cours APSA)</button>
+          <button class="btn ${CAL_VIEW_UI.mode === 'annee' ? 'on' : ''}" type="button" data-cvmode="annee">🗓️ Vue Année scolaire</button>
+          <button class="btn ${CAL_VIEW_UI.mode === 'liste' ? 'on' : ''}" type="button" data-cvmode="liste">📋 Échéancier chronologique</button>
+        </div>
+      </div>
+      <div class="row" style="gap:5px;margin-bottom:12px;padding-bottom:10px;border-bottom:1px solid #E2E8F0">
+        ${filterPills.map(([k, lbl]) => `<button class="btn ${CAL_VIEW_UI.typeFilter === k ? 'on' : ''}" type="button" data-cvtype="${k}" style="padding:4px 9px;font-size:12px;min-height:30px">${esc(lbl)}</button>`).join('')}
+      </div>
+      ${calBodyHTML}
+    </div>
+
+    ${renderCoordoAssistantCard(today)}
+  </main>`;
+
+  bindSchoolYearBar(() => VIEWS.calendrier());
+
+  // Modes & filtres
+  app.querySelectorAll('[data-cvmode]').forEach(b => b.onclick = () => { CAL_VIEW_UI.mode = b.dataset.cvmode; VIEWS.calendrier(); });
+  app.querySelectorAll('[data-cvtype]').forEach(b => b.onclick = () => { CAL_VIEW_UI.typeFilter = b.dataset.cvtype; VIEWS.calendrier(); });
+  if ($('#cv_prev')) $('#cv_prev').onclick = () => {
+    const [y, m] = (CAL_VIEW_UI.month || today.slice(0, 7)).split('-').map(Number);
+    const d = new Date(y, m - 2, 1);
+    CAL_VIEW_UI.month = `${d.getFullYear()}-${pad(d.getMonth() + 1)}`;
+    VIEWS.calendrier();
+  };
+  if ($('#cv_next')) $('#cv_next').onclick = () => {
+    const [y, m] = (CAL_VIEW_UI.month || today.slice(0, 7)).split('-').map(Number);
+    const d = new Date(y, m, 1);
+    CAL_VIEW_UI.month = `${d.getFullYear()}-${pad(d.getMonth() + 1)}`;
+    VIEWS.calendrier();
+  };
+  if ($('#cv_today')) $('#cv_today').onclick = () => { CAL_VIEW_UI.month = today.slice(0, 7); VIEWS.calendrier(); };
+  if ($('#cv_cls')) $('#cv_cls').onchange = e => { CAL_VIEW_UI.clsFilter = e.target.value; VIEWS.calendrier(); };
+  if ($('#cv_prof')) $('#cv_prof').onchange = e => { CAL_VIEW_UI.profFilter = e.target.value; VIEWS.calendrier(); };
+  app.querySelectorAll('[data-cv-openym]').forEach(b => b.onclick = () => {
+    CAL_VIEW_UI.month = b.dataset.cvOpenym; CAL_VIEW_UI.mode = 'mois'; VIEWS.calendrier();
+  });
+
+  // Ajout d'événement (Jalon, PROZAP, Match AS, Réunion, Éval Bac, Projet)
+  if ($('#cv_add_btn')) $('#cv_add_btn').onclick = () => { CAL_VIEW_UI.showAdd = !CAL_VIEW_UI.showAdd; VIEWS.calendrier(); };
+  if ($('#cv_add_close')) $('#cv_add_close').onclick = () => { CAL_VIEW_UI.showAdd = false; VIEWS.calendrier(); };
+  if ($('#cv_add_save')) $('#cv_add_save').onclick = () => {
+    const cat = $('#cv_add_type').value;
+    const dt = $('#cv_add_date').value;
+    const dtFin = $('#cv_add_datefin').value;
+    const titre = ($('#cv_add_titre').value || '').trim();
+    if (!dt || !titre) return alertMsg('Indique une date et un intitulé.');
+    if ((cat === 'prozap' || cat === 'match') && typeof REN === 'function') {
+      const R = REN();
+      R.matchs.push({ id: uid(), type: cat === 'prozap' ? 'prozap' : 'match', titre, date: dt, dateFin: dtFin || '', h: '', sport: titre, cat: cat === 'prozap' ? 'PROZAP' : 'AS', statut: 'confirmé', lieu: 'ext', chk: {} });
+      saveRen(R);
+    } else if (cat === 'reunion') {
+      REU.push({ id: 'r' + Date.now(), date: dt, titre, heure: '12:30', lieu: 'Bureau EPS', points: [], cr: '' });
+      saveReu();
+    } else {
+      const js = getCoordoJalons();
+      js.push({ id: 'j_' + Date.now(), date: dt, titre, cat });
+      saveCoordoJalons(js);
+    }
+    CAL_VIEW_UI.showAdd = false;
+    CAL_VIEW_UI.month = dt.slice(0, 7);
+    alertMsg('Événement ajouté au calendrier !');
+    VIEWS.calendrier();
+  };
+  app.querySelectorAll('[data-cv-deljalon]').forEach(b => b.onclick = () => {
+    saveCoordoJalons(getCoordoJalons().filter(x => x.id !== b.dataset.cvDeljalon));
+    VIEWS.calendrier();
+  });
+
+  // Procédure Nouvelle Année & Import PDF Gemini complet (vacances, fériés, événements, PROZAP, réunions)
+  if ($('#cv_ny_btn')) $('#cv_ny_btn').onclick = () => { CAL_VIEW_UI.showNewYearProc = !CAL_VIEW_UI.showNewYearProc; VIEWS.calendrier(); };
+  if ($('#cv_ny_close')) $('#cv_ny_close').onclick = () => { CAL_VIEW_UI.showNewYearProc = false; VIEWS.calendrier(); };
+
+  const handleCalendarPdfUpload = async (file) => {
+    if (!file) return;
+    try {
+      alertMsg('Analyse du document par Gemini en cours (vacances, fériés, événements, PROZAP)…');
+      const prompt = `Analyse ce document de calendrier scolaire ou planning d'événements (année ${curSchoolYear()}). Extrais :
+1) Les périodes de vacances scolaires : [["YYYY-MM-DD", "YYYY-MM-DD", "Nom des vacances"]]
+2) Les jours fériés / ponts chômés : [["YYYY-MM-DD", "Nom du jour férié"]]
+3) Les événements scolaires, conseils de classe, examens Bac, projets ou réunions : [{"date": "YYYY-MM-DD", "titre": "Intitulé", "cat": "conseil|bac|projet|reunion|prozap"}]
+4) Si mentionnées, la date de rentrée ("rentree": "YYYY-MM-DD") et de fin d'année ("fin": "YYYY-MM-DD").
+Réponds UNIQUEMENT avec un objet JSON strict :
+{"rentree": "YYYY-MM-DD", "fin": "YYYY-MM-DD", "vacances": [], "feries": [], "evenements": []}`;
+      const raw = await askGeminiMultimodal(prompt, file);
+      const m = raw.match(/\{[\s\S]*\}/);
+      if (!m) throw new Error('Format JSON non reconnu dans la réponse Gemini.');
+      const obj = JSON.parse(m[0]);
+      let nbV = 0, nbF = 0, nbE = 0;
+      if (Array.isArray(obj.vacances) && obj.vacances.length) {
+        CAL.vacances = obj.vacances.filter(v => Array.isArray(v) && v[0] && v[1]);
+        nbV = CAL.vacances.length;
+      }
+      if (Array.isArray(obj.feries) && obj.feries.length) {
+        CAL.feries = obj.feries.filter(v => Array.isArray(v) && v[0]);
+        nbF = CAL.feries.length;
+      }
+      if (Array.isArray(obj.evenements) && obj.evenements.length) {
+        const js = getCoordoJalons();
+        const R = typeof REN === 'function' ? REN() : null;
+        for (const ev of obj.evenements) {
+          if (!ev || !ev.date || !ev.titre) continue;
+          nbE++;
+          if (ev.cat === 'prozap' && R) {
+            R.matchs.push({ id: uid(), type: 'prozap', titre: ev.titre, date: ev.date, dateFin: ev.dateFin || '', h: '', sport: ev.titre, cat: 'PROZAP', statut: 'confirmé', lieu: 'ext', chk: {} });
+          } else if (ev.cat === 'reunion') {
+            REU.push({ id: 'r' + Date.now() + nbE, date: ev.date, titre: ev.titre, heure: '12:30', lieu: 'Salle EPS', points: [], cr: '' });
+          } else {
+            js.push({ id: 'j_' + Date.now() + '_' + nbE, date: ev.date, titre: ev.titre, cat: ev.cat || 'projet' });
+          }
+        }
+        saveCoordoJalons(js);
+        if (R) saveRen(R);
+        saveReu();
+      }
+      // Recalculer les semaines Q1/Q2 si vacances ou rentrée trouvées
+      if (nbV > 0 || obj.rentree) {
+        const yParts = curSchoolYear().split('-').map(Number);
+        const startD = monday(fromIso(obj.rentree || `${yParts[0] || 2026}-09-01`));
+        const endD = fromIso(obj.fin || `${yParts[1] || 2027}-07-02`);
+        const sems = [];
+        let cur = startD, numW = 1;
+        while (cur <= endD) {
+          const fri = addDays(cur, 4);
+          const dsMid = iso(addDays(cur, 2));
+          const inVac = (CAL.vacances || []).some(([a, b]) => dsMid >= a && dsMid <= b);
+          if (!inVac) {
+            sems.push({ n: numW, type: numW % 2 === 1 ? 'Q1' : 'Q2', debut: iso(cur), fin: iso(fri) });
+            numW++;
+          }
+          cur = addDays(cur, 7);
+        }
+        CAL.semaines = sems;
+      }
+      LS.set('calendrier', CAL);
+      saveCurrentSchoolYearSnapshot();
+      alertMsg(`Calendrier mis à jour par Gemini : ${nbV} période(s) de vacances, ${nbF} jour(s) férié(s) et ${nbE} événement(s) placés sur le calendrier !`);
+      VIEWS.calendrier();
+    } catch (err) {
+      alertMsg('Lecture PDF par Gemini impossible : ' + err.message);
+    }
+  };
+  if ($('#cv_pdf_top')) $('#cv_pdf_top').onchange = e => handleCalendarPdfUpload(e.target.files[0]);
+  if ($('#cv_pdf_gemini')) $('#cv_pdf_gemini').onchange = e => handleCalendarPdfUpload(e.target.files[0]);
+
+  // Check-list Coordo dans la vue Calendrier
+  app.querySelectorAll('[data-todo-chk]').forEach(cb => cb.onchange = () => {
+    const ts = getCoordoTodos(); const t = ts.find(x => x.id === cb.dataset.todoChk);
+    if (t) { t.done = cb.checked; saveCoordoTodos(ts); VIEWS.calendrier(); }
+  });
+  app.querySelectorAll('[data-todo-del]').forEach(b => b.onclick = () => {
+    saveCoordoTodos(getCoordoTodos().filter(x => x.id !== b.dataset.todoDel));
+    VIEWS.calendrier();
+  });
+  if ($('#coordo_todo_add')) $('#coordo_todo_add').onclick = () => {
+    const txt = ($('#coordo_todo_in').value || '').trim();
+    if (!txt) return;
+    const ts = getCoordoTodos();
+    ts.push({ id: 'td_' + Date.now(), txt, done: false });
+    saveCoordoTodos(ts);
+    VIEWS.calendrier();
+  };
+};
+
+/* ================= ÉCRAN D'ACCUEIL ULTRA-SYNTHÉTIQUE (VIEWS.accueil) ================= */
 VIEWS.accueil = function () {
   const app = $('#app'), now = new Date(), st = dayStatus(now), today = iso(now);
   const bl = PLAN ? mergeHalves(blocksFor(now)) : [];
   const nm = now.getHours() * 60 + now.getMinutes();
   const cur = bl.filter(b => toMin(b.s) <= nm && nm < toMin(b.e));
-  const evs = EVALS.filter(e => e.date >= today).sort((a, b) => a.date.localeCompare(b.date)).slice(0, 6);
   const reu = REU.filter(r => r.date >= today).sort((a, b) => a.date.localeCompare(b.date))[0];
   const incO = INC.filter(i => !i.closed), trO = TRAV.filter(t => t.statut !== 'Réalisé');
   const daf = MAT.filter(i => ['Demandé', 'Envoyé DAF'].includes(i.statut)), val = MAT.filter(i => i.statut === 'Validé');
@@ -4671,17 +5044,15 @@ VIEWS.accueil = function () {
     const sp = w.span === 2 ? 'grid-column:1 / -1' : '';
     switch (w.id) {
       case 'echeances':
-        return `<div style="${sp}">${renderEcheancesAndCalendarCard(now)}</div>`;
+        return `<div style="${sp}">${renderCompactEcheancesCard(now)}</div>`;
       case 'meteo':
         return etab().meteoOn ? `<div style="${sp}">${meteoCardHTML()}</div>` : '';
       case 'now':
         return card('En ce moment', st !== 'cours' ? `<span class="muted">${st === 'weekend' ? 'Week-end' : st === 'ferie' ? 'Jour férié' : 'Vacances'}.</span>` : cur.length ? cur.map(b => `<div class="row"><strong style="width:150px">${esc(b.halves ? b.base : b.inst)}</strong><span>${esc(blockLabel(b))}${slotTeacher(b) ? ` · <small class="muted">👤 ${esc(slotTeacher(b))}</small>` : ''}</span><span class="chip ${chipClass(b)}">${esc(b.apsa || b.stl)}</span></div>`).join('') : '<span class="muted">Aucune installation occupée.</span>', 'ecran', w.span);
-      case 'coordo_hub':
-        return `<div style="${sp}">${renderCoordoAssistantCard(today)}</div>`;
+      case 'evaluations':
+        return renderHomeEvaluationsCard(today, w.span);
       case 'incidents':
         return card('Incidents ouverts · ' + incO.length, incO.slice(0, 4).map(i => `<div><strong>${esc(i.lieu)}</strong> · ${esc(i.objet || i.type)} <span class="chip ${i.grav === 'Danger' ? 'ca1' : 'ca0'}">${esc(i.grav)}</span></div>`).join('') || '<span class="muted">Aucun.</span>', 'incidents', w.span);
-      case 'evaluations':
-        return card('Prochaines évaluations', evs.map(e => `<div><strong>${frd(e.date)}</strong> · ${esc(e.cls)} · ${esc(e.apsa)}</div>`).join('') || '<span class="muted">Aucune de prévue.</span>', 'evaluations', w.span);
       case 'travaux':
         return card('Travaux en cours · ' + trO.length, trO.slice(0, 4).map(t => `<div><strong>${esc(t.lieu)}</strong> · ${esc(t.objet)} <span class="chip ${TSTAT_CL[t.statut]}">${esc(t.statut)}</span></div>`).join('') || '<span class="muted">Aucun.</span>', 'travaux', w.span);
       case 'materiel':
@@ -4692,6 +5063,8 @@ VIEWS.accueil = function () {
         const ms = (typeof REN === 'function' ? (REN().matchs || []) : []).filter(m => !m.date || (m.dateFin || m.date) >= today).sort((a, b) => (a.date || '9').localeCompare(b.date || '9')).slice(0, 5);
         return card('Matchs AS & PROZAP', ms.length ? ms.map(m => `<div><strong>${m.date ? frd(m.date) : 'À fixer'}</strong> · <span class="chip ${m.type === 'prozap' ? 'ca3' : 'ca2'}">${m.type === 'prozap' ? '🏆 PROZAP' : 'Match AS'}</span> ${esc(m.titre || m.sport)} (${esc(m.cat)})</div>`).join('') : '<span class="muted">Aucun match ou PROZAP à venir.</span>', 'rencontres', w.span);
       }
+      case 'coordo_hub':
+        return `<div style="${sp}">${renderCoordoAssistantCard(today)}</div>`;
       default:
         return '';
     }
@@ -4702,23 +5075,23 @@ VIEWS.accueil = function () {
       <div class="row" style="justify-content:space-between;align-items:center;margin-bottom:8px">
         <div>
           <h2 style="margin:0">⚙️ Personnaliser l’écran d’accueil</h2>
-          <span class="muted" style="font-size:12px">Choisis les encarts affichés sur ton écran d’accueil, leur ordre (▲ / ▼) et leur largeur (1 colonne ou pleine largeur).</span>
+          <span class="muted" style="font-size:12px">Active/désactive les encarts, change leur ordre (▲ / ▼) ou leur largeur.</span>
         </div>
         <div class="row" style="gap:6px">
-          <button class="btn" type="button" id="hcust_reset">Réinitialiser par défaut</button>
+          <button class="btn" type="button" id="hcust_reset">Par défaut</button>
           <button class="btn go" type="button" id="hcust_close">Terminé</button>
         </div>
       </div>
       <div style="display:flex;flex-direction:column;gap:6px">
-        ${layout.map((w, idx) => `<div style="display:flex;align-items:center;justify-content:space-between;gap:8px;background:#fff;border:1px solid #E2E8F0;border-radius:8px;padding:7px 10px">
+        ${layout.map((w, idx) => `<div style="display:flex;align-items:center;justify-content:space-between;gap:8px;background:#fff;border:1px solid #E2E8F0;border-radius:8px;padding:6px 10px">
           <label style="display:flex;align-items:center;gap:8px;cursor:pointer;font-weight:600;flex:1">
             <input type="checkbox" data-hcust-on="${idx}" ${w.on ? 'checked' : ''}>
             <span>${esc(w.t)}</span>
           </label>
           <div class="row" style="gap:6px">
-            <button class="btn" type="button" data-hcust-span="${idx}" style="padding:3px 8px;font-size:11.5px">${w.span === 2 ? '↔️ Pleine largeur' : '▯ 1 colonne'}</button>
-            <button class="btn" type="button" data-hcust-up="${idx}" ${idx === 0 ? 'disabled' : ''} style="padding:3px 8px">▲</button>
-            <button class="btn" type="button" data-hcust-dn="${idx}" ${idx === layout.length - 1 ? 'disabled' : ''} style="padding:3px 8px">▼</button>
+            <button class="btn" type="button" data-hcust-span="${idx}" style="padding:2px 8px;font-size:11px">${w.span === 2 ? '↔️ Large' : '▯ 1 col.'}</button>
+            <button class="btn" type="button" data-hcust-up="${idx}" ${idx === 0 ? 'disabled' : ''} style="padding:2px 8px">▲</button>
+            <button class="btn" type="button" data-hcust-dn="${idx}" ${idx === layout.length - 1 ? 'disabled' : ''} style="padding:2px 8px">▼</button>
           </div>
         </div>`).join('')}
       </div>
@@ -4727,9 +5100,9 @@ VIEWS.accueil = function () {
   app.innerHTML = `<main>
     <div class="row" style="justify-content:space-between;align-items:center">
       <h1>${esc(frDate(now))}</h1>
-      <div class="row" style="gap:8px;align-items:center">
+      <div class="row" style="gap:6px;align-items:center">
         <span class="chip ${weekType(now) === 'Q1' ? 'ca2' : weekType(now) === 'Q2' ? 'ca4' : 'st-acs'}">${esc(weekLabel(now))}</span>
-        <button class="btn" type="button" id="home_cust_btn" style="padding:6px 11px;font-size:12.5px">⚙️ Personnaliser l’accueil</button>
+        <button class="btn" type="button" id="home_cust_btn" title="Personnaliser l’écran d’accueil" aria-label="Personnaliser l’écran d’accueil" style="width:32px;height:32px;min-height:32px;padding:0;display:inline-flex;align-items:center;justify-content:center;border-radius:8px;font-size:15px">⚙️</button>
       </div>
     </div>
     ${custPanelHTML}
@@ -4743,10 +5116,9 @@ VIEWS.accueil = function () {
     meteoLoad().then(paintMeteo);
   }
 
-  // Liaisons interactives de l'Accueil
   if ($('#home_cust_btn')) $('#home_cust_btn').onclick = () => { HOME_UI.showCust = !HOME_UI.showCust; VIEWS.accueil(); };
   if ($('#hcust_close')) $('#hcust_close').onclick = () => { HOME_UI.showCust = false; VIEWS.accueil(); };
-  if ($('#hcust_reset')) $('#hcust_reset').onclick = () => { LS.del('home_layout'); VIEWS.accueil(); };
+  if ($('#hcust_reset')) $('#hcust_reset').onclick = () => { LS.del('home_layout_v2'); VIEWS.accueil(); };
   app.querySelectorAll('[data-hcust-on]').forEach(cb => cb.onchange = () => {
     const l = getHomeLayout(); l[+cb.dataset.hcustOn].on = cb.checked; saveHomeLayout(l); VIEWS.accueil();
   });
@@ -4759,59 +5131,6 @@ VIEWS.accueil = function () {
   app.querySelectorAll('[data-hcust-dn]').forEach(b => b.onclick = () => {
     const l = getHomeLayout(); const i = +b.dataset.hcustDn; if (i < l.length - 1) { [l[i + 1], l[i]] = [l[i], l[i + 1]]; saveHomeLayout(l); VIEWS.accueil(); }
   });
-
-  // Navigation Calendrier Mois / Année / Synthèse
-  app.querySelectorAll('[data-hcal-mode]').forEach(b => b.onclick = () => {
-    HOME_UI.calMode = b.dataset.hcalMode; VIEWS.accueil();
-  });
-  if ($('#hcal_prev')) $('#hcal_prev').onclick = () => {
-    const [y, m] = (HOME_UI.calMonth || today.slice(0, 7)).split('-').map(Number);
-    const d = new Date(y, m - 2, 1);
-    HOME_UI.calMonth = `${d.getFullYear()}-${pad(d.getMonth() + 1)}`;
-    VIEWS.accueil();
-  };
-  if ($('#hcal_next')) $('#hcal_next').onclick = () => {
-    const [y, m] = (HOME_UI.calMonth || today.slice(0, 7)).split('-').map(Number);
-    const d = new Date(y, m, 1);
-    HOME_UI.calMonth = `${d.getFullYear()}-${pad(d.getMonth() + 1)}`;
-    VIEWS.accueil();
-  };
-  if ($('#hcal_today')) $('#hcal_today').onclick = () => {
-    HOME_UI.calMonth = today.slice(0, 7); VIEWS.accueil();
-  };
-  if ($('#hcal_cls')) $('#hcal_cls').onchange = e => { HOME_UI.clsFilter = e.target.value; VIEWS.accueil(); };
-  if ($('#hcal_prof')) $('#hcal_prof').onchange = e => { HOME_UI.profFilter = e.target.value; VIEWS.accueil(); };
-  app.querySelectorAll('[data-open-ym]').forEach(b => b.onclick = () => {
-    HOME_UI.calMonth = b.dataset.openYm; HOME_UI.calMode = 'mois'; VIEWS.accueil();
-  });
-
-  // Ajout rapide de Jalon Coordo ou PROZAP depuis le calendrier d'accueil
-  if ($('#hj_toggle')) $('#hj_toggle').onclick = () => { HOME_UI.showAddJalon = !HOME_UI.showAddJalon; VIEWS.accueil(); };
-  if ($('#hj_save')) $('#hj_save').onclick = () => {
-    const cat = $('#hj_type').value;
-    const dt = $('#hj_date').value;
-    const dtFin = $('#hj_datefin').value;
-    const titre = ($('#hj_titre').value || '').trim();
-    if (!dt || !titre) return alertMsg('Indique une date et un intitulé.');
-    if (cat === 'prozap' && typeof REN === 'function') {
-      const R = REN();
-      R.matchs.push({ id: uid(), type: 'prozap', titre, date: dt, dateFin: dtFin || '', h: '', sport: titre, cat: 'PROZAP', statut: 'confirmé', lieu: 'ext', chk: {} });
-      saveRen(R);
-    } else {
-      const js = getCoordoJalons();
-      js.push({ id: 'j_' + Date.now(), date: dt, titre, cat });
-      saveCoordoJalons(js);
-    }
-    HOME_UI.showAddJalon = false;
-    HOME_UI.calMonth = dt.slice(0, 7);
-    VIEWS.accueil();
-  };
-  app.querySelectorAll('[data-del-jalon]').forEach(b => b.onclick = () => {
-    saveCoordoJalons(getCoordoJalons().filter(x => x.id !== b.dataset.delJalon));
-    VIEWS.accueil();
-  });
-
-  // Check-list / Mémo Coordo
   app.querySelectorAll('[data-todo-chk]').forEach(cb => cb.onchange = () => {
     const ts = getCoordoTodos(); const t = ts.find(x => x.id === cb.dataset.todoChk);
     if (t) { t.done = cb.checked; saveCoordoTodos(ts); VIEWS.accueil(); }
@@ -4833,50 +5152,50 @@ VIEWS.accueil = function () {
 /* ================= v0.6 : navigation, profils, équipe et service, médias, projets cycle 3 ================= */
 
 /* --- Profils d'appareil, rubriques et autorisations --- */
-var ORDER = ['accueil', 'ecran', 'planning', 'generateur', 'programmation', 'evaluations', 'suivi', 'bac', 'cycle3', 'ressources', 'as', 'rencontres', 'poles', 'medias', 'as_mails', 'materiel', 'incidents', 'travaux', 'reunions', 'equipe', 'partage', 'etab', 'reglages'];
+var ORDER = ['accueil', 'calendrier', 'ecran', 'planning', 'generateur', 'programmation', 'evaluations', 'suivi', 'bac', 'cycle3', 'ressources', 'as', 'rencontres', 'poles', 'medias', 'as_mails', 'materiel', 'incidents', 'travaux', 'reunions', 'equipe', 'partage', 'etab', 'reglages'];
 const PROFILS = {
   coord: { t: 'Coordination EPS', views: '*' },
-  eps: { t: 'Professeur d’EPS', views: ['accueil', 'ecran', 'planning', 'programmation', 'evaluations', 'suivi', 'bac', 'cycle3', 'ressources', 'as', 'rencontres', 'poles', 'medias', 'as_mails', 'materiel', 'incidents', 'travaux', 'reunions', 'equipe'] },
-  primaire: { t: 'Enseignant du primaire', views: ['accueil', 'ecran', 'planning', 'suivi', 'cycle3', 'ressources', 'incidents', 'travaux', 'reunions'] },
-  as: { t: 'Responsable AS', views: ['accueil', 'ecran', 'planning', 'as', 'rencontres', 'poles', 'medias', 'as_mails', 'materiel', 'incidents', 'reunions'] },
-  acs: { t: 'Intervenant ACS', views: ['accueil', 'ecran', 'planning', 'incidents', 'travaux'] },
-  secr: { t: 'Secrétariat', views: ['accueil', 'ecran', 'planning', 'as', 'rencontres'] },
-  eleve: { t: 'Élève', views: ['accueil', 'ecran', 'planning', 'poles', 'rencontres', 'medias'] }
+  eps: { t: 'Professeur d’EPS', views: ['accueil', 'calendrier', 'ecran', 'planning', 'programmation', 'evaluations', 'suivi', 'bac', 'cycle3', 'ressources', 'as', 'rencontres', 'poles', 'medias', 'as_mails', 'materiel', 'incidents', 'travaux', 'reunions', 'equipe'] },
+  primaire: { t: 'Enseignant du primaire', views: ['accueil', 'calendrier', 'ecran', 'planning', 'suivi', 'cycle3', 'ressources', 'incidents', 'travaux', 'reunions'] },
+  as: { t: 'Responsable AS', views: ['accueil', 'calendrier', 'ecran', 'planning', 'as', 'rencontres', 'poles', 'medias', 'as_mails', 'materiel', 'incidents', 'reunions'] },
+  acs: { t: 'Intervenant ACS', views: ['accueil', 'calendrier', 'ecran', 'planning', 'incidents', 'travaux'] },
+  secr: { t: 'Secrétariat', views: ['accueil', 'calendrier', 'ecran', 'planning', 'as', 'rencontres'] },
+  eleve: { t: 'Élève', views: ['accueil', 'calendrier', 'ecran', 'planning', 'poles', 'rencontres', 'medias'] }
 };
 const DEFAULT_RIGHTS = {
   coord: {},
   eps: {
-    accueil: 'ro', ecran: 'ro', planning: 'rw', generateur: 'none', programmation: 'rw',
+    accueil: 'ro', calendrier: 'rw', ecran: 'ro', planning: 'rw', generateur: 'none', programmation: 'rw',
     evaluations: 'rw', suivi: 'rw', bac: 'rw', cycle3: 'rw', ressources: 'rw',
     as: 'rw', rencontres: 'rw', poles: 'rw', medias: 'rw', as_mails: 'rw', materiel: 'rw',
     incidents: 'rw', travaux: 'ro', reunions: 'rw', equipe: 'ro', partage: 'none', etab: 'none', reglages: 'none'
   },
   primaire: {
-    accueil: 'ro', ecran: 'ro', planning: 'ro', generateur: 'none', programmation: 'none',
+    accueil: 'ro', calendrier: 'ro', ecran: 'ro', planning: 'ro', generateur: 'none', programmation: 'none',
     evaluations: 'none', suivi: 'ro', bac: 'none', cycle3: 'rw', ressources: 'ro',
     as: 'none', rencontres: 'none', poles: 'none', medias: 'none', as_mails: 'none', materiel: 'none',
     incidents: 'rw', travaux: 'ro', reunions: 'ro', equipe: 'none', partage: 'none', etab: 'none', reglages: 'none'
   },
   as: {
-    accueil: 'ro', ecran: 'ro', planning: 'ro', generateur: 'none', programmation: 'none',
+    accueil: 'ro', calendrier: 'ro', ecran: 'ro', planning: 'ro', generateur: 'none', programmation: 'none',
     evaluations: 'none', suivi: 'none', bac: 'none', cycle3: 'none', ressources: 'none',
     as: 'rw', rencontres: 'rw', poles: 'rw', medias: 'rw', as_mails: 'rw', materiel: 'rw',
     incidents: 'rw', travaux: 'none', reunions: 'ro', equipe: 'none', partage: 'none', etab: 'none', reglages: 'none'
   },
   acs: {
-    accueil: 'ro', ecran: 'ro', planning: 'ro', generateur: 'none', programmation: 'none',
+    accueil: 'ro', calendrier: 'ro', ecran: 'ro', planning: 'ro', generateur: 'none', programmation: 'none',
     evaluations: 'none', suivi: 'none', bac: 'none', cycle3: 'none', ressources: 'none',
     as: 'none', rencontres: 'none', poles: 'none', medias: 'none', as_mails: 'none', materiel: 'none',
     incidents: 'rw', travaux: 'ro', reunions: 'none', equipe: 'none', partage: 'none', etab: 'none', reglages: 'none'
   },
   secr: {
-    accueil: 'ro', ecran: 'ro', planning: 'ro', generateur: 'none', programmation: 'none',
+    accueil: 'ro', calendrier: 'ro', ecran: 'ro', planning: 'ro', generateur: 'none', programmation: 'none',
     evaluations: 'none', suivi: 'none', bac: 'none', cycle3: 'none', ressources: 'none',
     as: 'ro', rencontres: 'ro', poles: 'none', medias: 'none', as_mails: 'none', materiel: 'none',
     incidents: 'none', travaux: 'none', reunions: 'none', equipe: 'none', partage: 'none', etab: 'none', reglages: 'none'
   },
   eleve: {
-    accueil: 'ro', ecran: 'ro', planning: 'ro', generateur: 'none', programmation: 'none',
+    accueil: 'ro', calendrier: 'ro', ecran: 'ro', planning: 'ro', generateur: 'none', programmation: 'none',
     evaluations: 'none', suivi: 'none', bac: 'none', cycle3: 'none', ressources: 'none',
     as: 'none', rencontres: 'ro', poles: 'ro', medias: 'ro', as_mails: 'none', materiel: 'none',
     incidents: 'none', travaux: 'none', reunions: 'none', equipe: 'none', partage: 'none', etab: 'none', reglages: 'none'
@@ -4910,13 +5229,13 @@ function profileActiveViews(k) {
   return ORDER.filter(v => r[v] === 'ro' || r[v] === 'rw');
 }
 const SECTIONS = [
-  { k: 'accueil', t: 'Accueil', views: ['accueil'], ic: '<path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/>' },
+  { k: 'accueil', t: 'Accueil', views: ['accueil', 'calendrier'], ic: '<path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/>' },
   { k: 'inst', t: 'Installations', views: ['ecran', 'planning', 'generateur'], ic: '<rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/>' },
   { k: 'ens', t: 'Enseignement', views: ['programmation', 'evaluations', 'bac', 'cycle3', 'ressources'], ic: '<path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"/><path d="M4 19V5M9 7h6"/>' },
   { k: 'mat', t: 'Matériel', views: ['materiel', 'incidents', 'travaux'], ic: '<path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.5-.5-.5-2.5z"/>' },
   { k: 'eq', t: 'Équipe', views: ['reunions', 'as', 'as_mails', 'equipe', 'partage', 'reglages'], ic: '<circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><circle cx="17" cy="9" r="2.5"/><path d="M16 14a5 5 0 0 1 6 5"/>' }
 ];
-const VLAB = { accueil: 'Accueil', ecran: 'Grand écran', planning: 'Planning', generateur: 'Générateur d’EDT', programmation: 'Programmation', evaluations: 'Évaluations', bac: 'Protocole bac', cycle3: 'Liaison cycle 3', ressources: 'Ressources', materiel: 'Matériel et commandes', incidents: 'Incidents', travaux: 'Travaux', reunions: 'Réunions', as: 'Licenciés & Groupes AS', as_mails: 'Mails & Organisation AS', equipe: 'Équipe et service', partage: 'Partage Excel', reglages: 'Réglages', poles: 'Pôles de l’AS' };
+const VLAB = { accueil: 'Accueil', calendrier: 'Calendrier', ecran: 'Grand écran', planning: 'Planning', generateur: 'Générateur d’EDT', programmation: 'Programmation', evaluations: 'Évaluations', bac: 'Protocole bac', cycle3: 'Liaison cycle 3', ressources: 'Ressources', materiel: 'Matériel et commandes', incidents: 'Incidents', travaux: 'Travaux', reunions: 'Réunions', as: 'Licenciés & Groupes AS', as_mails: 'Mails & Organisation AS', equipe: 'Équipe et service', partage: 'Partage Excel', reglages: 'Réglages', poles: 'Pôles de l’AS' };
 const profil = () => LS.get('profil', null);
 function allowed(v) {
   if (v === 'profil' || v === 'tout') return true;
@@ -6120,6 +6439,7 @@ PRIVATE_KEYS.push('suivi');
 /* --- Icônes et descriptions de chaque rubrique --- */
 const IC = {
   accueil: '<path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/>',
+  calendrier: '<rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4M7 13h3v3H7zM14 13h3v3h-3z"/>',
   ecran: '<rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 21h8M12 17v4"/>',
   planning: '<rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/>',
   generateur: '<rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/><path d="M10 6.5h4a3 3 0 0 1 3 3V14M14 17.5h-4a3 3 0 0 1-3-3V10"/>',
@@ -6144,20 +6464,21 @@ const IC = {
   reglages: '<circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9L7 7M17 17l2.1 2.1M4.9 19.1L7 17M17 7l2.1-2.1"/>',
   tout: '<rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/>'
 };
-Object.assign(VLAB, { as: 'Licenciés & Groupes AS', suivi: 'Suivi des élèves', rencontres: 'Rencontres AS', medias: 'Médias de l’AS', as_mails: 'Mails & Organisation AS', etab: 'Établissement', tout: 'Toutes les rubriques' });
+Object.assign(VLAB, { calendrier: 'Calendrier', as: 'Licenciés & Groupes AS', suivi: 'Suivi des élèves', rencontres: 'Rencontres AS', medias: 'Médias de l’AS', as_mails: 'Mails & Organisation AS', etab: 'Établissement', tout: 'Toutes les rubriques' });
 const VDESC = {
   accueil: 'Ce qui compte aujourd’hui, en un coup d’œil.',
+  calendrier: 'Calendrier général (Mois / Année), vacances, périodes 3h & 4h/2h, derniers cours d’APSA, Bac, réunions, matchs AS & PROZAP, projets et import PDF Gemini.',
   ecran: 'Qui est où, maintenant, demain, cette semaine. Pour la télé du gymnase.',
   planning: 'Les installations jour par jour, réservations et exports.',
   generateur: 'Placer les cours EPS sur les installations, avec tes règles.',
   programmation: 'Les APSA de chaque classe, période par période.',
-  evaluations: 'Les dates d’évaluation et le nombre de séances.',
+  evaluations: 'Les dates d’évaluation (Bac & derniers cours d’APSA) et le nombre de séances.',
   suivi: 'Quadrathlon, course longue, tests nationaux, cibles 6e et 5e.',
   bac: 'Protocole bac EPS : inaptitudes, épreuves adaptées.',
   cycle3: 'Projets CM1-CM2-6e, banque d’idées, générateur de projet et parcours Savoir-Nager (CE2/6e).',
   ressources: 'Catalogue des APSA du lycée (installations, matériel, référentiels, FPS) et documents d’équipe.',
   as: 'Listes Eduka, groupes, extractions pour l’AS.',
-  rencontres: 'Matchs contre d’autres établissements, contacts, messages en 3 langues.',
+  rencontres: 'Matchs contre d’autres établissements, PROZAP, contacts, messages en 3 langues.',
   poles: 'Les fiches des responsabilités confiées aux élèves.',
   medias: 'Photos, vidéos et articles de l’AS, avec les règles RGPD.',
   as_mails: 'Générateur d’e-mails d’organisation AS (portes ouvertes, inscriptions, planning, début des cours).',
@@ -6168,19 +6489,23 @@ const VDESC = {
   equipe: 'Annuaire, attributions, calcul des services et accès des profils.',
   partage: 'Envoyer et récupérer des fichiers Excel avec les collègues.',
   etab: 'Nom, lieu, seuils de pollution, installations extérieures : tout se règle ici.',
-  reglages: 'Import du planning, sauvegarde, synchronisation entre appareils.'
+  reglages: 'Import du planning, capteur AirVisual, sauvegarde, synchronisation entre appareils.'
 };
 // ORDER et profils sont définis plus haut
 const FAV_DEF = {
-  coord: ['ecran', 'planning', 'as', 'materiel', 'reunions', 'suivi'],
-  eps: ['planning', 'as', 'evaluations', 'suivi', 'materiel', 'incidents'],
-  primaire: ['planning', 'suivi', 'cycle3', 'incidents'],
-  as: ['as', 'rencontres', 'poles', 'medias', 'as_mails', 'planning'],
-  acs: ['planning', 'incidents', 'travaux'],
-  secr: ['as', 'rencontres', 'planning'],
-  eleve: ['planning', 'rencontres', 'poles', 'medias']
+  coord: ['calendrier', 'ecran', 'planning', 'as', 'materiel', 'reunions', 'suivi'],
+  eps: ['calendrier', 'planning', 'as', 'evaluations', 'suivi', 'materiel', 'incidents'],
+  primaire: ['calendrier', 'planning', 'suivi', 'cycle3', 'incidents'],
+  as: ['calendrier', 'as', 'rencontres', 'poles', 'medias', 'as_mails', 'planning'],
+  acs: ['calendrier', 'planning', 'incidents', 'travaux'],
+  secr: ['calendrier', 'as', 'rencontres', 'planning'],
+  eleve: ['calendrier', 'planning', 'rencontres', 'poles', 'medias']
 };
-const favs = () => (LS.get('favs', null) || FAV_DEF[profil()] || FAV_DEF.coord).filter(v => VIEWS[v] && allowed(v) && v !== 'accueil');
+const favs = () => {
+  const raw = LS.get('favs', null) || FAV_DEF[profil()] || FAV_DEF.coord;
+  const list = raw.includes('calendrier') ? raw : ['calendrier', ...raw];
+  return list.filter(v => VIEWS[v] && allowed(v) && v !== 'accueil');
+};
 const nIc = v => svgIc(IC[v] || IC.tout);
 
 /* --- Regroupements d'onglets dans la barre du haut (par défaut : uniquement l'onglet AS) --- */
@@ -6199,8 +6524,8 @@ function saveNavGroups(grps) {
   LS.set('nav_groups', grps);
 }
 
-const NAVLAB = { materiel: 'Matériel', rencontres: 'Rencontres AS', suivi: 'Suivi élèves', evaluations: 'Évaluations', generateur: 'Générateur', medias: 'Médias AS', poles: 'Pôles AS', as: 'Licenciés AS', as_mails: 'Mails AS', equipe: 'Équipe', partage: 'Partage Excel', ressources: 'Ressources', cycle3: 'Cycle 3', bac: 'Bac', etab: 'Établissement' };
-const VSHORT = { ecran: 'Écran', planning: 'Planning', generateur: 'Générateur', programmation: 'Program.', evaluations: 'Évals', suivi: 'Suivi', cycle3: 'Cycle 3', ressources: 'Ressources', rencontres: 'Matchs', poles: 'Pôles', medias: 'Médias', as_mails: 'Mails AS', materiel: 'Matériel', incidents: 'Incidents', travaux: 'Travaux', reunions: 'Réunions', equipe: 'Équipe', partage: 'Partage', etab: 'Établ.', reglages: 'Réglages', bac: 'Bac', as: 'Licenciés' };
+const NAVLAB = { calendrier: 'Calendrier', materiel: 'Matériel', rencontres: 'Rencontres AS', suivi: 'Suivi élèves', evaluations: 'Évaluations', generateur: 'Générateur', medias: 'Médias AS', poles: 'Pôles AS', as: 'Licenciés AS', as_mails: 'Mails AS', equipe: 'Équipe', partage: 'Partage Excel', ressources: 'Ressources', cycle3: 'Cycle 3', bac: 'Bac', etab: 'Établissement' };
+const VSHORT = { calendrier: 'Calendrier', ecran: 'Écran', planning: 'Planning', generateur: 'Générateur', programmation: 'Program.', evaluations: 'Évals', suivi: 'Suivi', cycle3: 'Cycle 3', ressources: 'Ressources', rencontres: 'Matchs', poles: 'Pôles', medias: 'Médias', as_mails: 'Mails AS', materiel: 'Matériel', incidents: 'Incidents', travaux: 'Travaux', reunions: 'Réunions', equipe: 'Équipe', partage: 'Partage', etab: 'Établ.', reglages: 'Réglages', bac: 'Bac', as: 'Licenciés' };
 
 renderNav = function (cur) {
   const f = favs();
@@ -6258,7 +6583,7 @@ renderNav = function (cur) {
     return items;
   };
 
-  const topItems = buildNavItems(['accueil', ...f], 7);
+  const topItems = buildNavItems(['accueil', ...f], 8);
   const curInTop = topItems.some(it => it.active);
   const curGrp = findGroup(cur);
   const curLabel = curGrp ? curGrp.t : (NAVLAB[cur] || VLAB[cur]);

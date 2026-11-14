@@ -1,5 +1,5 @@
 /* Coordo EPS · service worker : réseau d'abord, copie locale si hors ligne */
-const C = 'coordo-eps-v7';
+const C = 'coordo-eps-v8';
 const BASE = ['./', './index.html', './manifest.webmanifest', './icon-192.png', './icon-512.png'];
 self.addEventListener('install', e => { e.waitUntil(caches.open(C).then(c => c.addAll(BASE)).then(() => self.skipWaiting())); });
 self.addEventListener('activate', e => { e.waitUntil(caches.keys().then(k => Promise.all(k.filter(x => x !== C).map(x => caches.delete(x)))).then(() => self.clients.claim())); });
