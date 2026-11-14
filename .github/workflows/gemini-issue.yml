@@ -1,0 +1,69 @@
+name: Gemini Issue Resolver
+
+on:
+  issues:
+    types: [opened]
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  apply-issue-changes:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Gemini CLI
+        run: npm install -g @google/gemini-cli
+
+      - name: Apply requested changes with Gemini CLI
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          ISSUE_TITLE: ${{ github.event.issue.title }}
+          ISSUE_BODY: ${{ github.event.issue.body }}
+        run: |
+          PROMPT=$(cat << 'EOF'
+          Tu es un assistant de développement automatisé. Applique directement dans les fichiers du dépôt les modifications demandées dans l'issue GitHub suivante.
+          Ne fais pas de commit ni de push git toi-même, modifie uniquement les fichiers nécessaires.
+          EOF
+          )
+          FULL_PROMPT="${PROMPT}
+
+          Titre de l'issue : ${ISSUE_TITLE}
+
+          Description de l'issue :
+          ${ISSUE_BODY}"
+
+          gemini --yolo --prompt "$FULL_PROMPT"
+
+      - name: Commit and push changes to main
+        env:
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "Aucune modification détectée à commiter."
+          else
+            git commit -m "chore: apply changes from issue #${ISSUE_NUMBER}"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
+
+      - name: Comment on the issue
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+        run: |
+          gh issue comment "$ISSUE_NUMBER" --body "✅ Les modifications demandées dans cette issue ont été appliquées et poussées sur la branche \`main\`. La mise à jour est en ligne !"
