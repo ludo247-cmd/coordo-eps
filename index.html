@@ -887,7 +887,7 @@ function route() {
   }
   if (!allowed(current)) current = 'accueil';
   const isPlanBooker = current === 'planning' && typeof canBookPlanning === 'function' && canBookPlanning();
-  const ro = !canModify(current) && !isPlanBooker && current !== 'profil' && current !== 'accueil' && current !== 'ecran' && current !== 'tout';
+  const ro = !canModify(current) && !isPlanBooker && !(current === 'medias' && canPropose('medias')) && current !== 'profil' && current !== 'accueil' && current !== 'ecran' && current !== 'tout';
   document.body.classList.toggle('view-only', ro);
   renderNav(current); openDrawer(false);
   clearInterval(timer); timer = null;
@@ -5357,7 +5357,7 @@ function resolveDroitsRubriques(droits, role) {
   const o = {};
   ORDER.forEach(v => {
     const val = src ? src[v] : undefined;
-    if (val === 'none' || val === 'ro' || val === 'rw') o[v] = val;
+    if (val === 'none' || ['ro', 'rw', 'prop'].includes(val)) o[v] = val;
     else if (v === 'as_mails' && src && src.as !== undefined) o[v] = src.as;
     else o[v] = def[v] || 'none';
   });
@@ -5407,7 +5407,7 @@ function saveProfilRights(k, r) {
 function profileActiveViews(k) {
   if (k === 'coord' || !k) return '*';
   const r = profilRights(k);
-  return ORDER.filter(v => r[v] === 'ro' || r[v] === 'rw');
+  return ORDER.filter(v => ['ro', 'rw', 'prop'].includes(r[v]));
 }
 const SECTIONS = [
   { k: 'accueil', t: 'Accueil', views: ['accueil', 'calendrier'], ic: '<path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/>' },
@@ -5424,12 +5424,19 @@ function allowed(v) {
   const s = sbSession();
   if (s) {
     const r = resolveDroitsRubriques(s.droits, s.role);
-    return r[v] === 'ro' || r[v] === 'rw';
+    return ['ro', 'rw', 'prop'].includes(r[v]);
   }
   const p = profil();
   if (p === 'coord' || !p) return true;
   const r = profilRights(p);
-  return r[v] === 'ro' || r[v] === 'rw';
+  return ['ro', 'rw', 'prop'].includes(r[v]);
+}
+function canPropose(v) {
+  const curV = v || current; if (canModify(curV)) return true;
+  const s = sbSession();
+  if (s) { const r = resolveDroitsRubriques(s.droits, s.role); return r[curV] === 'prop'; }
+  const p = profil(); if (p === 'coord' || !p) return true;
+  return profilRights(p)[curV] === 'prop';
 }
 function canModify(v) {
   const curV = v || current;
@@ -5543,7 +5550,7 @@ VIEWS.profil = function () {
       const isUnl = isProfileUnlocked(k);
       const badge = isProt ? (isUnl ? '<span class="chip ca2" style="font-size:11px">✓ Déverrouillé</span>' : '<span class="chip ca1" style="font-size:11px">🔒 Protégé</span>') : '<span class="chip ca0" style="font-size:11px">Accès libre</span>';
       const r = profilRights(k);
-      const actViews = ORDER.filter(v => r[v] === 'ro' || r[v] === 'rw');
+      const actViews = ORDER.filter(v => ['ro', 'rw', 'prop'].includes(r[v]));
       const vDesc = k === 'coord' ? 'Toutes les rubriques (coordination complète)' : (actViews.filter(v => v !== 'accueil' && v !== 'tout').map(v => (r[v] === 'ro' ? '👁 ' : '') + (VLAB[v] || v)).join(' · ') || 'Aucune rubrique autorisée');
       return `<button class="pcard ${k === cur ? 'on' : ''}" data-prof="${k}">
         <div class="row" style="justify-content:space-between;width:100%;align-items:flex-start"><strong>${esc(p.t)}</strong>${badge}</div>
@@ -5744,6 +5751,9 @@ VIEWS.equipe = function () {
                     <label class="btn" style="cursor:pointer;padding:4px 9px;font-size:12px;display:inline-flex;align-items:center;gap:4px;${curR === 'ro' ? 'background:#EFF6FF;border-color:#93C5FD;color:#1E40AF;font-weight:700' : ''}">
                       <input type="radio" name="r_${v}" value="ro" ${curR === 'ro' ? 'checked' : ''} style="margin:0;width:auto;min-height:auto"> 👁 Vision seule
                     </label>
+                    ${v === 'medias' ? `<label class="btn" style="cursor:pointer;padding:4px 9px;font-size:12px;display:inline-flex;align-items:center;gap:4px;${curR === 'prop' ? 'background:#FEF3C7;border-color:#FCD34D;color:#92400E;font-weight:700' : ''}">
+                      <input type="radio" name="r_${v}" value="prop" ${curR === 'prop' ? 'checked' : ''} style="margin:0;width:auto;min-height:auto"> ✍️ Proposition
+                    </label>` : ''}
                     <label class="btn" style="cursor:pointer;padding:4px 9px;font-size:12px;display:inline-flex;align-items:center;gap:4px;${curR === 'rw' ? 'background:#DCFCE7;border-color:#86EFAC;color:#166534;font-weight:700' : ''}">
                       <input type="radio" name="r_${v}" value="rw" ${curR === 'rw' ? 'checked' : ''} style="margin:0;width:auto;min-height:auto"> ✏️ Modification
                     </label>
@@ -8605,6 +8615,9 @@ VIEWS.admin = async function () {
                     <label class="btn" style="cursor:pointer;padding:4px 9px;font-size:12px;display:inline-flex;align-items:center;gap:4px;${curR === 'ro' ? 'background:#EFF6FF;border-color:#93C5FD;color:#1E40AF;font-weight:700' : ''}">
                       <input type="radio" name="r_${v}" value="ro" ${curR === 'ro' ? 'checked' : ''} style="margin:0;width:auto;min-height:auto"> 👁 Vision seule
                     </label>
+                    ${v === 'medias' ? `<label class="btn" style="cursor:pointer;padding:4px 9px;font-size:12px;display:inline-flex;align-items:center;gap:4px;${curR === 'prop' ? 'background:#FEF3C7;border-color:#FCD34D;color:#92400E;font-weight:700' : ''}">
+                      <input type="radio" name="r_${v}" value="prop" ${curR === 'prop' ? 'checked' : ''} style="margin:0;width:auto;min-height:auto"> ✍️ Proposition
+                    </label>` : ''}
                     <label class="btn" style="cursor:pointer;padding:4px 9px;font-size:12px;display:inline-flex;align-items:center;gap:4px;${curR === 'rw' ? 'background:#DCFCE7;border-color:#86EFAC;color:#166534;font-weight:700' : ''}">
                       <input type="radio" name="r_${v}" value="rw" ${curR === 'rw' ? 'checked' : ''} style="margin:0;width:auto;min-height:auto"> ✏️ Modification
                     </label>
@@ -8709,14 +8722,14 @@ VIEWS.admin = async function () {
       app.querySelectorAll('[data-sub]').forEach(c => { sub[c.dataset.sub] = !!c.checked; });
       const hasAnyRW = Object.values(rubriques).some(v => v === 'rw') || !!sub.planning_book;
       const allRW = ORDER.every(v => rubriques[v] === 'rw');
-      const allVis = ORDER.every(v => rubriques[v] === 'ro' || rubriques[v] === 'rw');
+      const allVis = ORDER.every(v => ['ro', 'rw', 'prop'].includes(rubriques[v]));
       const droits = {
         admin: isAdmin,
         edit_all: isAdmin || allRW,
         edit_eps: !isAdmin && !allRW && hasAnyRW && role !== 'primaire',
         edit_primaire: !isAdmin && !allRW && hasAnyRW && role === 'primaire',
         read_all: isAdmin || allVis,
-        read_poles: rubriques.poles === 'ro' || rubriques.poles === 'rw',
+        read_poles: ['ro', 'rw', 'prop'].includes(rubriques.poles),
         rubriques,
         sub
       };
@@ -9060,6 +9073,95 @@ function printPolesPoster() {
   w.document.close();
 }
 
+
+/* ===== v1.0.2 : Médias — niveau « Proposition » (l'élève propose, le prof valide) + photo jointe ===== */
+(function () {
+  const MDP = { img: null };
+  const pend = LS.set.bind(LS);
+  LS.set = function (k, v, silent) {
+    if (k === 'medias' && Array.isArray(v) && typeof MDV !== 'undefined' && MDV.edit) {
+      const it = v.find(x => x.id === MDV.edit);
+      if (it) {
+        if (MDP.img !== null) { if (MDP.img) it.img = MDP.img; else delete it.img; MDP.img = null; }
+        if (!it.auteur) { const s = sbSession(); it.auteur = (s && (s.nom || s.name)) || (typeof profil === 'function' && profil()) || ''; }
+      }
+    }
+    return pend(k, v, silent);
+  };
+  function resize(f, cb) {
+    const r = new FileReader();
+    r.onload = () => { const im = new Image(); im.onload = () => { const k = Math.min(1, 800 / Math.max(im.width, im.height)); const c = document.createElement('canvas'); c.width = Math.round(im.width * k); c.height = Math.round(im.height * k); c.getContext('2d').drawImage(im, 0, 0, c.width, c.height); cb(c.toDataURL('image/jpeg', .7)); }; im.onerror = () => alertMsg('Image illisible.'); im.src = r.result; };
+    r.readAsDataURL(f);
+  }
+  const old = VIEWS.medias;
+  VIEWS.medias = function () {
+    old.apply(this, arguments);
+    try {
+      const L = LS.get('medias', []), propOnly = !canModify('medias') && canPropose('medias');
+      const ed = document.getElementById('mdedit'); const cur = ed && MDV.edit !== 'new' ? L.find(x => x.id === MDV.edit) : null;
+      if (propOnly) {
+        const m = document.querySelector('#app main');
+        if (m && !m.querySelector('.prop-banner')) m.insertAdjacentHTML('afterbegin', '<div class="banner prop-banner"><span style="font-size:20px;line-height:1">✍️</span><div style="flex:1"><strong>Mode proposition</strong> · Tu peux proposer une photo, un texte ou un lien. Un professeur d’EPS le vérifie avant qu’il soit transmis au conseiller communication.</div></div>');
+        document.querySelectorAll('[data-mdst],#md_purge').forEach(b => b.style.display = 'none');
+        if (ed) {
+          const chk = ed.querySelector('[data-mdc]'); if (chk) chk.closest('.card').style.display = 'none';
+          const co = ed.querySelector('#md_co'); if (co) co.closest('label').style.display = 'none';
+          const mg = ed.querySelector('#md_msg'); if (mg) mg.closest('.card').style.display = 'none';
+          if (cur && cur.statut !== 'propose') { ed.querySelectorAll('input,select,textarea').forEach(i => i.disabled = true); ['md_save', 'md_del'].forEach(i => { const b = document.getElementById(i); if (b) b.style.display = 'none'; }); }
+        }
+        document.querySelectorAll('.kan section').forEach((sec, i) => { if (i > 0) sec.querySelectorAll('.kc').forEach(c => { c.style.pointerEvents = 'none'; c.style.opacity = '.75'; }); });
+      }
+      if (ed && (canModify('medias') || propOnly)) {
+        const row = ed.querySelector('.row:last-of-type');
+        const img = (cur && cur.img) || '';
+        const box = document.createElement('div'); box.className = 'row'; box.style.margin = '8px 0';
+        box.innerHTML = `<label class="btn blue" style="cursor:pointer">📷 Photo<input type="file" id="md_img" accept="image/*" style="display:none"></label><label class="btn" style="cursor:pointer">📸 Prendre en photo<input type="file" id="md_cam" accept="image/*" capture="environment" style="display:none"></label><span id="md_prev">${img ? `<img src="${img}" style="height:70px;border-radius:8px;vertical-align:middle"> <button class="btn warn" id="md_imgdel" type="button">✕</button>` : '<span class="muted">Pas de photo jointe (pour une vidéo ou un fichier lourd : colle le lien ci-dessus).</span>'}</span>`;
+        (row || ed).before(box);
+        const pick = i => i.onchange = () => { const f = i.files[0]; if (!f) return; resize(f, u => { MDP.img = u; document.getElementById('md_prev').innerHTML = `<img src="${u}" style="height:70px;border-radius:8px;vertical-align:middle"> <span class="muted">sera jointe à l’enregistrement</span>`; }); };
+        pick(box.querySelector('#md_img')); pick(box.querySelector('#md_cam'));
+        const d = box.querySelector('#md_imgdel'); if (d) d.onclick = () => { MDP.img = ''; document.getElementById('md_prev').innerHTML = '<span class="muted">Photo retirée à l’enregistrement.</span>'; };
+        if (cur && cur.statut !== 'propose' && propOnly) box.style.display = 'none';
+      }
+      document.querySelectorAll('.kc').forEach(c => { const x = L.find(y => y.id === c.dataset.mded); if (x && x.img && !c.querySelector('img')) c.insertAdjacentHTML('afterbegin', `<img src="${x.img}" style="width:100%;max-height:90px;object-fit:cover;border-radius:6px">`); });
+    } catch (e) { console.warn('medias v1.0.2', e); }
+  };
+})();
+
+/* ===== v1.0.2 : Dispenses — prise de photo, lecture IA, et conservation du fichier sur cet appareil ===== */
+(function () {
+  const DB = () => new Promise((res, rej) => { const r = indexedDB.open('coordo_dispenses', 1); r.onupgradeneeded = () => r.result.createObjectStore('f'); r.onsuccess = () => res(r.result); r.onerror = () => rej(r.error); });
+  const put = async (k, f) => { const db = await DB(); return new Promise((res, rej) => { const t = db.transaction('f', 'readwrite'); t.objectStore('f').put(f, k); t.oncomplete = res; t.onerror = () => rej(t.error); }); };
+  const get = async k => { const db = await DB(); return new Promise((res, rej) => { const q = db.transaction('f').objectStore('f').get(k); q.onsuccess = () => res(q.result); q.onerror = () => rej(q.error); }); };
+  let PEND = null;
+  const old = VIEWS.bac;
+  VIEWS.bac = function () {
+    old.apply(this, arguments);
+    try {
+      const fl = document.getElementById('in_ai_file'); if (!fl) return;
+      const lab = fl.closest('label');
+      const keep = f => { PEND = f; };
+      const cam = document.createElement('label'); cam.className = 'btn blue'; cam.style.cssText = 'display:inline-flex;align-items:center;gap:6px;cursor:pointer'; cam.title = 'Prendre le certificat en photo : l’IA lit les dates';
+      cam.innerHTML = '📸 Photo <input type="file" accept="image/*" capture="environment" style="display:none">';
+      lab.after(cam);
+      const ci = cam.querySelector('input');
+      ci.onchange = () => { const f = ci.files[0]; if (!f) return; keep(f); fl.onchange({ target: { files: [f] } }); };
+      const o2 = fl.onchange; fl.onchange = e => { const f = e.target.files && e.target.files[0]; if (f) keep(f); return o2(e); };
+      const add = document.getElementById('in_add');
+      if (add) add.addEventListener('click', async () => {
+        const f = PEND; if (!f || !INAPT.length) return; const it = INAPT[INAPT.length - 1];
+        try { await put(it.id, f); it.local = true; it.fname = f.name || 'certificat'; saveInapt(); PEND = null; VIEWS.bac(); } catch (e) { alertMsg('Fichier non conservé : ' + e.message); }
+      });
+      const rows = [...document.querySelectorAll('table.t')].pop();
+      if (rows) [...rows.querySelectorAll('tr')].slice(1).forEach((tr, i) => {
+        const it = INAPT[i]; if (!it) return; const td = tr.children[5]; if (!td) return;
+        if (it.local) td.insertAdjacentHTML('beforeend', ` <button class="btn" type="button" data-ldoc="${it.id}" title="Ouvrir le fichier conservé sur cet appareil">📎 fichier</button>`);
+        else td.insertAdjacentHTML('beforeend', ` <label class="btn" style="cursor:pointer" title="Joindre le certificat (fichier ou photo) sur cet appareil">＋📎<input type="file" accept=".pdf,image/*" data-ladd="${it.id}" style="display:none"></label>`);
+      });
+      document.querySelectorAll('[data-ldoc]').forEach(b => b.onclick = async () => { const f = await get(b.dataset.ldoc); if (!f) return alertMsg('Fichier introuvable sur cet appareil (il n’est conservé que sur l’appareil où il a été ajouté).'); window.open(URL.createObjectURL(f), '_blank'); });
+      document.querySelectorAll('[data-ladd]').forEach(i => i.onchange = async () => { const f = i.files[0]; if (!f) return; const it = INAPT.find(x => x.id === i.dataset.ladd); if (!it) return; await put(it.id, f); it.local = true; it.fname = f.name; saveInapt(); VIEWS.bac(); });
+    } catch (e) { console.warn('dispenses v1.0.2', e); }
+  };
+})();
 </script>
 </body>
 </html>
